@@ -5,6 +5,7 @@
 * [ ] Menu Elements.
     * [X] Forum.
     * [X] Sign In.
+    * [X] Recordings.
     * [ ] Messages?
     * [ ] Grades?
 * [ ] Breadcrumbs?
