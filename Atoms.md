@@ -1,17 +1,17 @@
 # Atoms
 
 ## NavBar.
-* [ ] Logo.
+* [X] Logo.
 * [ ] Menu Elements.
-    * [ ] Forum.
-    * [ ] Sign In.
+    * [X] Forum.
+    * [X] Sign In.
     * [ ] Messages?
     * [ ] Grades?
 * [ ] Breadcrumbs?
 
 ## Menu.
-* [ ] Modules List.
-* [ ] Module Lessons.
+* [X] Modules List.
+* [X] Module Lessons.
 * [ ] SocialQ Footer.
 
 ## Video.
@@ -42,6 +42,7 @@
 * [ ] Questions
     * [ ] Votes 
     * [ ] Date
+* [ ] Sumbit Modal
 * [ ] Search?
 
 ## Recordings.
