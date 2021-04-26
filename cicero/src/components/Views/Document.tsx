@@ -1,5 +1,7 @@
-interface iDocument { title:string, link:string, description:string, next():void }
-export const Document = ({ title, link, description, next }:iDocument) => <div className="content">
+const defaultDoc = ''
+
+interface iDocument { title:string, link?:string, description:string, next():void }
+export const Document = ({ title, link=defaultDoc, description, next }:iDocument) => <div className="content">
     <h1> { title } </h1>
     <p> { description } </p>
 

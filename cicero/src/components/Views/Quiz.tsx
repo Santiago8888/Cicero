@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 interface iAnswer { answer:string, value:number }
-interface iQuestion { index:number, question:string, answers:iAnswer[]}
+export interface iQuestion { index:number, question:string, answers:iAnswer[]}
 interface IQuestion extends iQuestion { select(index:number, value:number):void }
 const Question = ({index, question, answers, select}:IQuestion) => <div className="field is-horizontal">
     <div className="field-label">
@@ -40,8 +40,8 @@ const Modal = ({ congratulations, isActive, deactivate, next }:iModal) => <div c
 </div>
 
 
-interface iQuiz { title:string, description:string, questions:iQuestion[], congratulations:string, next():void }
-export const Quiz = ({ title, description, questions, congratulations, next }: iQuiz) =>  {
+interface iQuiz { title:string, description:string, questions?:iQuestion[], congratulations?:string, next():void }
+export const Quiz = ({ title, description, questions=[], congratulations='', next }: iQuiz) =>  {
     const [isActive, setActive] = useState(false)
     const [answers, setAnswers] = useState<{[index:number]:number|undefined}>(
         questions.reduce((d, { index }) => ({...d, [index]: undefined }), {})
