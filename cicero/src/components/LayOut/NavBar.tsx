@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 
 const Forum = () => <a style = {{color:'white'}}> <strong> Forum </strong> </a>
-const SignIn = () => <a style = {{color:'white'}}> <strong> Forum </strong> </a>
+const SignIn = () => <a style = {{color:'white'}}> <strong> Iniciar Sesión </strong> </a>
 
 export const NavBar = () => {
     const [ isActive, setActive ] = useState(false)
