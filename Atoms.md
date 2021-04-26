@@ -21,8 +21,8 @@
 * [ ] Minutes?
 
 ## Document.
-* [ ] Title & Minutes?
-* [ ] Download CTA.
+* [X] Title & Minutes?
+* [X] Download CTA.
 * [ ] Text.
 
 ## Quiz.
