@@ -1,6 +1,5 @@
 # Tasks
 
-
 ## Course Elements
 
 * [ ] NavBar
@@ -14,6 +13,16 @@
 
 
 ## Database & Content
+
+* [ ] Lock Content
+* [ ] Serve 6 Modules
+* [ ] User Progress
+* [ ] Quiz Results
+* [ ] Video Progress
+* [ ] PDF Download
+* [ ] Submitting Answers - Upvoting
+* [ ] Adding Video Recording
+
 
 
 ## Payment & Auth
