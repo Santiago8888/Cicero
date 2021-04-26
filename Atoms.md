@@ -27,12 +27,13 @@
 * [ ] Minutes?
 
 ## Quiz.
-* [ ] Title
-* [ ] Questions
+* [X] Title
+* [X] Description
+* [X] Questions
     * [X] Question
     * [X] Answer
     * [X] Ratio
-* [ ] Submit Button
+* [X] Submit Button
 * [ ] Score Modal
 * [ ] Minutes?
 
