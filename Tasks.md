@@ -2,14 +2,14 @@
 
 ## Course Elements
 
-* [ ] NavBar.
-* [ ] Menu.
-* [ ] Video.
-* [ ] Document.
-* [ ] Quiz.
+* [X] NavBar.
+* [X] Menu.
+* [X] Video.
+* [X] Document.
+* [X] Quiz.
 * [ ] Activity.
-* [ ] Forum.
-* [ ] Recordings.
+* [X] Forum.
+* [X] Recordings.
 
 
 ## Database & Content
