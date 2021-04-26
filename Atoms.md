@@ -21,23 +21,26 @@
 * [ ] Minutes?
 
 ## Document.
-* [X] Title & Minutes?
+* [X] Title
 * [X] Download CTA.
 * [ ] Text.
+* [ ] Minutes?
 
 ## Quiz.
-* [ ] Title & Minutes?
+* [ ] Title
 * [ ] Questions
-    * [ ] Question
-    * [ ] Answer
-    * [ ] Checkbox
+    * [X] Question
+    * [X] Answer
+    * [X] Ratio
 * [ ] Submit Button
 * [ ] Score Modal
+* [ ] Minutes?
 
 ## Activity.
-* [ ] Title & Minutes
+* [ ] Title
 * [ ] Text
 * [ ] CTA
+* [ ] Minutes?
 
 ## Forum.
 * [ ] Questions
