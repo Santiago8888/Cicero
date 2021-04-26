@@ -1,21 +1,30 @@
+import { iQuestion } from "../Views/Quiz"
 
 type Lesson = 'Video' | 'Actividad' | 'Quiz' | 'Lectura'
-interface iLesson { name:string, type:Lesson, locked:boolean }
-interface iModule { name:string, locked:boolean, lessons:iLesson[] }
+export interface iLesson { 
+    title:string, 
+    type:Lesson, 
+    locked:boolean, 
+    description:string, 
+    link?:string, 
+    questions?:iQuestion[] 
+}
+
+export interface iModule { title:string, locked:boolean, lessons:iLesson[] }
 interface iMenu { modules:iModule[] }
 
 export const Menu = ({ modules }: iMenu) => <aside className="menu">
     {
-        modules.map(({ name, lessons }) => 
+        modules.map(({ title, lessons }) => 
             <>
-                <p className="menu-label"> { name } </p>
+                <p className="menu-label"> { title } </p>
                 <ul className="menu-list">
                     {
-                        lessons.map(({ name, type }) =>
+                        lessons.map(({ title, type }) =>
                                 <li>
                                     <a>
                                         <strong> {type}: </strong> 
-                                        { name } 
+                                        { title } 
                                     </a>
                                 </li>
                         )
