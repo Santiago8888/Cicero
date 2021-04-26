@@ -1,6 +1,6 @@
 import { iQuestion } from "../Views/Quiz"
 
-type Lesson = 'Video' | 'Actividad' | 'Quiz' | 'Lectura'
+type Lesson = 'Video' | 'Quiz' | 'Reading'
 export interface iLesson { 
     title:string, 
     type:Lesson, 
