@@ -29,9 +29,20 @@ const Question = ({index, question, answers, select}:IQuestion) => <div classNam
 </div>
 
 
+interface iModal { congratulations:string, isActive:boolean, deactivate():void, next():void }
+const Modal = ({ congratulations, isActive, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
+    <div className="modal-background" />
+    <div className="modal-content">
+        <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
+        { congratulations }
+    </div>
+    <button className='button' onClick={next}> Siguiente </button>
+</div>
 
-interface iQuiz { title:string, description:string, questions:iQuestion[] }
-export const Quiz = ({ title, description, questions }: iQuiz) =>  {
+
+interface iQuiz { title:string, description:string, questions:iQuestion[], congratulations:string, next():void }
+export const Quiz = ({ title, description, questions, congratulations, next }: iQuiz) =>  {
+    const [isActive, setActive] = useState(false)
     const [answers, setAnswers] = useState<{[index:number]:number|undefined}>(
         questions.reduce((d, { index }) => ({...d, [index]: undefined }), {})
     )
@@ -53,5 +64,12 @@ export const Quiz = ({ title, description, questions }: iQuiz) =>  {
         <button className='button' disabled={Object.values(answers).some(a => !a)}> 
             Enviar 
         </button>
+
+        <Modal 
+            isActive={isActive} 
+            congratulations={congratulations} 
+            deactivate={() => setActive(false)}
+            next={next}
+        />
     </div>
 }
