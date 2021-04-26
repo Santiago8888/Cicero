@@ -56,7 +56,7 @@
 * [ ] Search?
 
 ## Recordings.
-* [ ] List
-* [ ] Link
-* [ ] Preview?
+* [X] List
+* [X] Link
+* [X] Preview?
 * [ ] Collapse?
