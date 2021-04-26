@@ -48,10 +48,10 @@
 * [ ] Next Button
 
 ## Forum.
-* [ ] Questions
+* [X] Questions
     * [ ] Votes 
     * [ ] Date
-* [ ] Sumbit Modal
+* [X] Sumbit Modal
 * [ ] Search?
 
 ## Recordings.
