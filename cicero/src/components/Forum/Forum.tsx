@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const cardStyle = {
+export const cardStyle = {
     backgroundColor: 'rgb(48, 48, 48)',
     borderRadius: 12,
     margin: 'auto',
@@ -8,7 +8,7 @@ const cardStyle = {
     border: '1px solid white'
 }
 
-const headerStyle = { backgroundColor: 'rgb(72, 72, 72)', borderTopLeftRadius: 12, borderTopRightRadius: 12 }
+export const headerStyle = { backgroundColor: 'rgb(72, 72, 72)', borderTopLeftRadius: 12, borderTopRightRadius: 12 }
 
 interface iQuestion { question:string, details:string }
 const Question = ({ question, details }: iQuestion) => <div className='card' style={cardStyle}>
