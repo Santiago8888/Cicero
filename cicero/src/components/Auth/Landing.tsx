@@ -1,1 +1,1 @@
-export const Landing = () => {}
+export const Landing = () => <></>
