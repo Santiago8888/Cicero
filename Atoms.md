@@ -15,9 +15,10 @@
 * [ ] SocialQ Footer.
 
 ## Video.
-* [ ] Title & Minutes?
-* [ ] Embeded Video.
-* [ ] Text.
+* [X] Title
+* [X] Embeded Video.
+* [X] Text.
+* [ ] Minutes?
 
 ## Document.
 * [ ] Title & Minutes?
