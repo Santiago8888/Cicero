@@ -6,7 +6,6 @@ const Recording = ({ title, link, description }: iRecording) => <div className='
         <p className='card-header-title' style={{color:'white', fontSize:'1.25rem'}}> { title } </p>
     </header>
 
-
     <article className='media' style={{marginBottom:0}}>
         <figure className='media-left' style={{width:'40%', height:256}}>
             <iframe src={ link } width="600" height="338" frameBorder="0" allowFullScreen/>
@@ -20,4 +19,13 @@ const Recording = ({ title, link, description }: iRecording) => <div className='
             </div>
          </div>
     </article>
+</div>
+
+
+interface iRecordings { title:string, description:string, recordings:iRecording[] }
+export const Recordings = ({ title, description, recordings}: iRecordings) => <div className="content">
+    <h1> { title } </h1>
+    <p> { description } </p> 
+
+    { recordings.map((r, i)=> <Recording {...r} key={i}/>) }
 </div>
