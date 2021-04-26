@@ -19,12 +19,14 @@
 * [X] Embeded Video.
 * [X] Text.
 * [ ] Minutes?
+* [X] Next Button
 
 ## Document.
 * [X] Title
 * [X] Download CTA.
 * [ ] Text.
 * [ ] Minutes?
+* [X] Next Button
 
 ## Quiz.
 * [X] Title
@@ -36,12 +38,14 @@
 * [X] Submit Button
 * [ ] Score Modal
 * [ ] Minutes?
+* [X] Next Button
 
 ## Activity.
 * [ ] Title
 * [ ] Text
 * [ ] CTA
 * [ ] Minutes?
+* [ ] Next Button
 
 ## Forum.
 * [ ] Questions
