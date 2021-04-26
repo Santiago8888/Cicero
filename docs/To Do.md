@@ -4,7 +4,7 @@
 ## Pre Database Tasks
 
 * [ ] Logic on Home Component.
-    * [ ] Set Landing.
+    * [X] Set Landing.
     * [ ] Set Login.
     * [ ] Set Billing Funnel.
     * [ ] Set Course Study.
@@ -14,3 +14,6 @@
     * [ ] Click Event to Expand.
     * [ ] Capture Next Event.
     * [ ] Feed Sample Modules.
+
+* [ ] Missing Views
+    * [ ] Error Page
