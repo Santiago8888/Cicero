@@ -5,10 +5,18 @@ import { iLoginInput } from './components/Auth/Login'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { Home } from './components/Home'
 
+import { App as RealmApp, User, Credentials } from 'realm-web'
 import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
 import './App.css'
+
+const connectMongo = async() => {
+    const REALM_APP_ID = 'tasktracker-kjrie'
+    const app = new RealmApp({ id: REALM_APP_ID })
+    const user: User = await app.logIn(Credentials.anonymous())
+    return user
+}
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 const lesson: iLesson = { title:'', description:'', type:'Video' }
@@ -33,8 +41,10 @@ export const App = () => {
     const [isLogin, setLogin] = useState(false)
     const [forum, setForum] = useState(Forum)
     const [homeData, setHomeData] = useState<iHomeData>(initialData)
-    const [user, setUser] = useState<iUser>(defaultUser)
+    const [ user, setUser ] = useState<iUser>(defaultUser)
+    const [ mongoUser, setMongoUser ] = useState<User>()
 
+    useEffect(() => { connectMongo().then(mongoUser => setMongoUser(mongoUser)) }, [])
     useEffect(() => { 
         setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]}) 
     }, [user.current])
@@ -50,7 +60,6 @@ export const App = () => {
         setAuth(true)
         setLogin(true)
     }
-
 
     const nextLesson = ({module, lesson}:iPosition) => {
         if (modules[module].lessons[lesson+1]) return { module:module, lesson:lesson+1 }
@@ -100,15 +109,17 @@ export const App = () => {
 
     const submit = (doubt:iDoubt) => setForum({...forum, questions:[...forum.questions, doubt]})
 
+
     return <div className="App">
         <NavBar click={(item) => clickNavbar(item)}/>
         <Menu modules={modules} navigate={navigate} user={user}/>
 
         <Home 
-            {...homeData} 
             user={user}
+            {...homeData} 
             isAuth={isAuth} 
             isLogin={isLogin} 
+            mongoUser={mongoUser}
             approve={approve} 
             submit={submit}
             login={login} 
