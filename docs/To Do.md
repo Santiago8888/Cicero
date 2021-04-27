@@ -5,8 +5,8 @@
 
 * [ ] Logic on Home Component.
     * [X] Set Landing.
-    * [ ] Set Login.
-    * [ ] Set Billing Funnel.
+    * [X] Set Login.
+    * [X] Set Billing Funnel.
     * [ ] Set Course Study.
 
 * [ ] Logic on Menu.
