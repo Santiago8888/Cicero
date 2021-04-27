@@ -1,6 +1,7 @@
 import { iQuestion } from "../Views/Quiz"
 import { useState } from "react"
 
+
 type Lesson = 'Video' | 'Quiz' | 'Reading'
 export interface iLesson { 
     title:string, 
@@ -11,28 +12,29 @@ export interface iLesson {
     questions?:iQuestion[] 
 }
 
+interface iPosition {module:number, lesson:number | undefined}
 export interface iModule { title:string, locked:boolean, lessons:iLesson[] }
-interface iMenu { modules:iModule[], current:{module:number, lesson:number | undefined} }
-export const Menu = ({ modules, current }: iMenu) => {
-    const [active, setActive] = useState(current)
+interface iMenu { modules:iModule[], current:iPosition, navigate(position:iPosition):void }
+export const Menu = ({ modules, current, navigate }: iMenu) => {
+    const [active, setActive] = useState(current.module)
+    const expand = (moduleId:number, locked:boolean) => {
+        if(locked) return
+        setActive(moduleId)
+    }
 
     return <aside className="menu">
         {
             modules.map(({ title, lessons, locked }, idx) => 
                 <>
-                    <a 
-                        className="menu-label" 
-                        onClick={() => 
-                            !locked && idx !==  active.module 
-                                ?   setActive({module:idx, lesson:undefined}) 
-                                :   null
-                        }
-                    > { title } </a>
+                    <a className="menu-label"   onClick={() => expand(idx, locked)}> { title } </a>
                     <ul className="menu-list" style={{display: active ? 'initial' : 'none' }}>
                         {
                             lessons.map(({ title, type, locked }, i) =>
-                                <li style={{background:current.lesson===i?'blue':'white'}} key={i}>
-                                    <a onClick={() => !locked ? setActive({...active, lesson:i}) : null}>
+                                <li 
+                                    key={i} 
+                                    style={active===idx && current.lesson === i ? {background:'blue',color:'white'} : {}}
+                                >
+                                    <a onClick={() => !locked ? navigate({module:active, lesson:i}) : null}>
                                         <strong> {type}: </strong> 
                                         { title } 
                                     </a>
