@@ -21,8 +21,8 @@
 * [X] Submit Quiz.
 * [X] Video Progress.
 * [X] PDF Download.
-* [ ] Posing Forum Questions.
-* [ ] Add Video Recording.
+* [X] Posing Forum Questions.
+* [X] Add Video Recording.
 * [ ] Upvoting.
 * [ ] Implement DB & connections.
 
