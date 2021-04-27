@@ -1,6 +1,5 @@
-
+import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iLesson, Menu } from './components/LayOut/Menu'
-import { NavBar } from './components/LayOut/NavBar'
 import { Home } from './components/Home'
 import { useState } from 'react'
 
@@ -25,9 +24,15 @@ export const App = () => {
     const [isAuth, setAuth] = useState(false)
     const [isLogin, setLogin] = useState(false)
 
+    const clickNavbar = (item:NavbarItem) => {
+        if(item === 'Forum') return
+        if(item === 'Login') return
+        if(item === 'Recordings') return
+    }    
+
 
     return <div className="App">
-        <NavBar />
+        <NavBar click={(item) => clickNavbar(item)}/>
         <Menu modules={[]}/>
         <Home {...data} isAuth={isAuth} isLogin={isLogin}/>
     </div>
