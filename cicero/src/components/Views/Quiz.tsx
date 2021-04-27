@@ -1,8 +1,8 @@
 import { useState } from "react"
 
-interface iAnswer { answer:string, value:number }
+interface iAnswer { answer:string, value:boolean }
 export interface iQuestion { index:number, question:string, answers:iAnswer[]}
-interface IQuestion extends iQuestion { select(index:number, value:number):void }
+interface IQuestion extends iQuestion { select(index:number, value:boolean):void }
 const Question = ({index, question, answers, select}:IQuestion) => <div className="field is-horizontal">
     <div className="field-label">
         <label className="label"> { question } </label>
@@ -29,23 +29,37 @@ const Question = ({index, question, answers, select}:IQuestion) => <div classNam
 </div>
 
 
-interface iModal { congratulations:string, isActive:boolean, deactivate():void, next():void }
-const Modal = ({ congratulations, isActive, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
+interface iModal { result:number, isActive:boolean, deactivate():void, next():void }
+const Modal = ({ result, isActive, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
     <div className="modal-background" />
     <div className="modal-content">
         <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
-        { congratulations }
+        { result }
     </div>
     <button className='button' onClick={next}> Siguiente </button>
 </div>
 
+export interface iMessage {approve:string, fail:string}
+interface iQuiz { 
+    title:string, 
+    description:string, 
+    questions?:iQuestion[], 
+    message?:iMessage, 
+    next():void 
+}
 
-interface iQuiz { title:string, description:string, questions?:iQuestion[], congratulations?:string, next():void }
-export const Quiz = ({ title, description, questions=[], congratulations='', next }: iQuiz) =>  {
+const defaultMessage = { approve:'', fail:'' }
+export const Quiz = ({ title, description, questions=[], message=defaultMessage, next }: iQuiz) =>  {
     const [isActive, setActive] = useState(false)
-    const [answers, setAnswers] = useState<{[index:number]:number|undefined}>(
+    const [answers, setAnswers] = useState<{[index:number]:boolean|undefined}>(
         questions.reduce((d, { index }) => ({...d, [index]: undefined }), {})
     )
+
+    const [result, setResult] = useState<number>() 
+    const submit = () => {
+        setResult(Object.values(answers).filter(a => a).length)
+        setActive(true)
+    }
 
     return <div className="content">
         <h1> { title } </h1>
@@ -61,14 +75,16 @@ export const Quiz = ({ title, description, questions=[], congratulations='', nex
             )
         }
 
-        <button className='button' disabled={Object.values(answers).some(a => !a)}> 
-            Enviar 
-        </button>
+        <button 
+            className='button' 
+            disabled={Object.values(answers).some(a => a === undefined)} 
+            onClick={submit}
+        > Enviar </button>
 
         <Modal 
             isActive={isActive} 
-            congratulations={congratulations} 
-            deactivate={() => setActive(false)}
+            result={result as number}
+            deactivate={()=> setActive(false)}
             next={next}
         />
     </div>
