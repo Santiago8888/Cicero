@@ -1,10 +1,16 @@
+import Vimeo from '@u-wave/react-vimeo'
+import { iUser } from '../../App'
 
 const defaultVideo = ''
-interface iVideo { title:string, link?:string, description:string, next():void }
-export const Video = ({ title, link=defaultVideo, description, next }: iVideo) => <div className="content">
+interface iVideo { user:iUser, title:string, link?:string, description:string, next():void, approve():boolean | void}
+export const Video = ({ user, title, link=defaultVideo, description, next, approve }: iVideo) => <div className="content">
     <h1> { title } </h1>
     <p> { description } </p>
 
-    <iframe src={ link } width="600" height="338" frameBorder="0" allowFullScreen/>
-    <a className='button' onClick={next}> Siguiente </a>
+    <Vimeo video={link} onEnd={approve}/>
+    <a 
+        className='button' 
+        onClick={next} 
+        hidden={user.current.module > user.progress.module && user.progress.lesson > user.current.lesson}
+    > Siguiente </a>
 </div>
