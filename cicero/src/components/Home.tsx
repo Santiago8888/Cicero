@@ -16,7 +16,7 @@ interface iHome extends iLogin {
     forum?:iForum, 
     recordings?:iRecordings 
     next():void
-    approve(score:number):boolean
+    approve(score?:number):boolean | void
 }
 
 export const Home = ({ user, isAuth, isLogin, lesson, forum, recordings, login, next, approve }: iHome) => {
@@ -24,7 +24,7 @@ export const Home = ({ user, isAuth, isLogin, lesson, forum, recordings, login, 
         ?   isLogin ?  <Login login={login}/>
             :   forum ? <Forum {...forum}/>
             :   recordings ? <Recordings {...recordings}/>
-            :   lesson.type === 'Video' ? <Video {...lesson} next={next}/>
+            :   lesson.type === 'Video' ? <Video user={user} {...lesson} next={next} approve={approve}/>
             :   lesson.type === 'Reading' ? <Document {...lesson} next={next}/>
             :   lesson.type === 'Quiz' ? <Quiz  {...lesson} next={next} approve={approve} user={user}/> : <Landing/>
         :   <Landing/>
