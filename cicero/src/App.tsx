@@ -5,7 +5,7 @@ import { iLoginInput } from './components/Auth/Login'
 import { iForum } from './components/Forum/Forum'
 import { Home } from './components/Home'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
 import './App.css'
@@ -34,6 +34,9 @@ export const App = () => {
     const [homeData, setHomeData] = useState<iHomeData>(initialData)
     const [user, setUser] = useState<iUser>(defaultUser)
 
+    useEffect(() => { 
+        setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]}) 
+    }, [user.current])
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
@@ -72,7 +75,7 @@ export const App = () => {
         if(module > user.progress.module) return
         if(lesson > user.progress.lesson) return
 
-        setUser({...user, current: { module, lesson } })
+        setUser({...user, current:{ module, lesson } })
     }
 
     const approveQuiz = (score:number) => {
@@ -97,6 +100,15 @@ export const App = () => {
     return <div className="App">
         <NavBar click={(item) => clickNavbar(item)}/>
         <Menu modules={modules} navigate={navigate} user={user}/>
-        <Home {...homeData} isAuth={isAuth} isLogin={isLogin} login={login} next={next} approve={approve} user={user}/>
+
+        <Home 
+            {...homeData} 
+            isAuth={isAuth} 
+            isLogin={isLogin} 
+            login={login} 
+            next={next} 
+            approve={approve} 
+            user={user}
+        />
     </div>
 }
