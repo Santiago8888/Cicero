@@ -9,7 +9,7 @@ export interface iLesson {
     description:string, 
     link?:string, 
     questions?:iQuestion[] 
-    minScore?:number
+    min?:number
 }
 
 export interface iPosition {module:number, lesson:number}

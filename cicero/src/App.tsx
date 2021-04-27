@@ -5,7 +5,7 @@ import { iLoginInput } from './components/Auth/Login'
 import { iForum } from './components/Forum/Forum'
 import { Home } from './components/Home'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import 'bulma/css/bulma.css'
 import './App.css'
@@ -78,7 +78,7 @@ export const App = () => {
     const approveQuiz = (score:number) => {
         if(!lesson.questions?.length) return false 
 
-        const minScore = lesson.minScore || lesson.questions.length*.7
+        const minScore = lesson.min || lesson.questions.length*.7
         const isPassing = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
 
         if(isPassing && score >= minScore) setUser({...user, progress:nextLesson(user.progress), quizFailures:0})
