@@ -48,13 +48,17 @@ export const App = () => {
     }
 
     const next = () => {
-        // Update Current
-        if (modules[current.module].lessons[current.lesson+1]) setCurrent({...current, lesson:current.lesson+1})
-        else if (modules[current.module + 1]) setCurrent({module:current.module+1, lesson:0})
-        else alert('Congratulations')
+        if (modules[current.module].lessons[current.lesson+1]) {
+            const newPosition = { module:current.module, lesson:current.lesson+1 }
+            setCurrent(newPosition)
+            setUser({...user, progress:newPosition})
 
-        // Update User
+        } else if (modules[current.module + 1]) {
+            const newPosition = { module:current.module+1, lesson:0 }
+            setCurrent(newPosition)
+            setUser({...user, progress:newPosition})
 
+        } else alert('Congratulations')
     }
 
     return <div className="App">
