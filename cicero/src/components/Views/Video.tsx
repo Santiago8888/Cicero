@@ -6,5 +6,5 @@ export const Video = ({ title, link=defaultVideo, description, next }: iVideo) =
     <p> { description } </p>
 
     <iframe src={ link } width="600" height="338" frameBorder="0" allowFullScreen/>
-    <a className='button'> onClick={next} Siguiente </a>
+    <a className='button' onClick={next}> Siguiente </a>
 </div>

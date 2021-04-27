@@ -9,5 +9,5 @@ export const Document = ({ title, link=defaultDoc, description, next }:iDocument
         Leer
     </a>
 
-    <a className='button'> onClick={next} Siguiente </a>
+    <a className='button' onClick={next}> Siguiente </a>
 </div>
