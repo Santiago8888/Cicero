@@ -10,24 +10,9 @@ import 'bulma/css/bulma.css'
 import './App.css'
 
 
-const lesson: iLesson = {
-    title:'',
-    description:'',
-    type:'Video',
-    locked:false    
-}
-
-const forum:iForum = {
-    title:'',
-    description:'',
-    questions:[]    
-}
-
-const recordings:iRecordings = {
-    title:'',
-    description:'',
-    recordings:[]
-}
+const lesson: iLesson = { title:'', description:'', type:'Video', locked:false }
+const forum:iForum = { title:'', description:'', questions:[] }
+const recordings:iRecordings = { title:'', description:'', recordings:[] }
 
 const Modules:iModule[] = [
     { title:'Modulo 1', locked:false, lessons:[]},
@@ -45,6 +30,7 @@ export const App = () => {
     const [isLogin, setLogin] = useState(false)
     const [homeData, setHomeData] = useState<iHomeData>(initialData)
     const [modules, setModules] = useState(Modules)
+    const [current, setCurrent] = useState({module:0, lesson:0})
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
@@ -58,10 +44,9 @@ export const App = () => {
         setLogin(true)
     }
 
-
     return <div className="App">
         <NavBar click={(item) => clickNavbar(item)}/>
-        <Menu modules={modules} current={0}/>
+        <Menu modules={modules} current={current} navigate={(curr) => setCurrent(curr)}/>
         <Home {...homeData} isAuth={isAuth} isLogin={isLogin} login={login}/>
     </div>
 }

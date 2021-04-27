@@ -12,7 +12,7 @@ export interface iLesson {
     questions?:iQuestion[] 
 }
 
-interface iPosition {module:number, lesson:number | undefined}
+interface iPosition {module:number, lesson:number}
 export interface iModule { title:string, locked:boolean, lessons:iLesson[] }
 interface iMenu { modules:iModule[], current:iPosition, navigate(position:iPosition):void }
 export const Menu = ({ modules, current, navigate }: iMenu) => {
