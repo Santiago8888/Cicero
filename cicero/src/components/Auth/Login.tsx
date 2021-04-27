@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
-interface iLogin { submit(email:string, password:string):void }
-export const Login = ({ submit }: iLogin) => {
+export interface iLoginInput {email:string, password:string}
+export interface iLogin { login(loginInput:iLoginInput):void }
+export const Login = ({ login }: iLogin) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -31,7 +32,7 @@ export const Login = ({ submit }: iLogin) => {
             </div>
         </div>
 
-        <button className='button' onClick={() => submit(email, password)}> 
+        <button className='button' onClick={() => login({email, password})}> 
             Siguiente 
         </button>
     </div>

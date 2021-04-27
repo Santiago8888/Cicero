@@ -1,5 +1,6 @@
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iLesson, Menu } from './components/LayOut/Menu'
+import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 import { useState } from 'react'
 
@@ -26,14 +27,20 @@ export const App = () => {
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return
-        if(item === 'Login') return
+        if(item === 'Login') setLogin(true)
         if(item === 'Recordings') return
-    }    
+    }
+    
+    const login = ({ email, password }:iLoginInput) => {
+        console.log(email, password)
+        setAuth(true)
+        setLogin(true)
+    }
 
 
     return <div className="App">
         <NavBar click={(item) => clickNavbar(item)}/>
         <Menu modules={[]}/>
-        <Home {...data} isAuth={isAuth} isLogin={isLogin}/>
+        <Home {...data} isAuth={isAuth} isLogin={isLogin} login={login}/>
     </div>
 }
