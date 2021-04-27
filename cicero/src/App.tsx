@@ -21,7 +21,7 @@ const connectMongo = async() => {
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 const lesson: iLesson = { title:'', description:'', type:'Video' }
 const Forum:iForum = { title:'', description:'', questions:[] }
-const recordings:iRecordings = { title:'', description:'', recordings:[] }
+const Recordings:iRecordings = { title:'', description:'', recordings:[] }
 
 const modules:iModule[] = [
     { title:'Modulo 1', lessons:[{title:'', type:'Video', description:'', link:''}]},
@@ -37,12 +37,12 @@ const initialData:iHomeData = { forum:undefined, recordings:undefined, lesson }
 const initialPosition = {module:0, lesson:0}
 const defaultUser:iUser = { email:'test@branding.gq', progress:initialPosition, current:initialPosition, quizFailures:0 }
 export const App = () => {
-    const [isAuth, setAuth] = useState(false)
-    const [isLogin, setLogin] = useState(false)
-    const [forum, setForum] = useState(Forum)
-    const [homeData, setHomeData] = useState<iHomeData>(initialData)
+    const [ isLogin, setLogin ] = useState(false)
+    const [ forum, setForum ] = useState(Forum)
+    const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
     const [ user, setUser ] = useState<iUser>(defaultUser)
     const [ mongoUser, setMongoUser ] = useState<User>()
+    const [ recordings, setRecordings ] = useState(Recordings)
 
     useEffect(() => { connectMongo().then(mongoUser => setMongoUser(mongoUser)) }, [])
     useEffect(() => { 
@@ -55,10 +55,19 @@ export const App = () => {
         if(item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings})
     }
     
-    const login = ({ email, password }:iLoginInput) => {
-        console.log(email, password)
-        setAuth(true)
-        setLogin(true)
+    const login = async({ email, password }:iLoginInput) => {
+        if(!mongoUser) return
+
+        const mongo = mongoUser.mongoClient('myAtlasCluster')
+
+        const db = mongo.db('Cicero')
+        const collection = db.collection('users')
+        const user = await collection.findOne({ email, password })
+        setUser(user)
+        setLogin(false)
+
+        const recordings:iRecordings = await db.collection('recordings').findOne({})
+        setRecordings(recordings)
     }
 
     const nextLesson = ({module, lesson}:iPosition) => {
@@ -117,7 +126,6 @@ export const App = () => {
         <Home 
             user={user}
             {...homeData} 
-            isAuth={isAuth} 
             isLogin={isLogin} 
             mongoUser={mongoUser}
             approve={approve} 
