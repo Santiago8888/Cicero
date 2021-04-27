@@ -51,23 +51,23 @@ export const App = () => {
         if(current.lesson > user.progress.lesson || current.module > user.progress.module) setUser({...user, progress:current})
     }, [current])
 
-    const next = () => {
-        if (modules[current.module].lessons[current.lesson+1]) {
-            const newPosition = { module:current.module, lesson:current.lesson+1 }
-            setCurrent(newPosition)
-            
-
-        } else if (modules[current.module + 1]) {
-            const newPosition = { module:current.module+1, lesson:0 }
-            setCurrent(newPosition)
-
-        } else alert('Congratulations')
-    }
-
     const nextLesson = ({module, lesson}:iPosition) => {
         if (modules[module].lessons[lesson+1]) return { module:module, lesson:lesson+1 }
         else if (modules[current.module + 1]) return { module: module+1, lesson:0 }
         else return { module, lesson }
+    }
+
+    const next = () => {
+        if(lesson.type === 'Quiz'){
+            if(user.quizFailures === 0) return setCurrent(nextLesson(current))
+            if(user.quizFailures === 1) return
+            if(user.quizFailures === 2) {
+                const newPosition = {...current, lesson:0}
+                setCurrent(newPosition)
+                setUser({...user, quizFailures:0, progress:newPosition})
+            }
+
+        } else return setCurrent(nextLesson(current))
     }
 
     const navigate = ({module, lesson}:iPosition) => {
@@ -83,25 +83,22 @@ export const App = () => {
         const minScore = lesson.minScore || lesson.questions.length*.7
         const isPassing = user.progress.lesson === current.lesson && user.progress.module === current.module
 
-        if(isPassing && score >= minScore) {
-            setUser({...user, progress:nextLesson(user.progress), quizFailures:0})
-            return { success:true, message: '' }
+        if(isPassing && score >= minScore) setUser({...user, progress:nextLesson(user.progress), quizFailures:0})
+        else if(isPassing && user.quizFailures > 1) setUser({...user, quizFailures:2 })
+        else if(isPassing) setUser({...user, quizFailures:1})
+        
+        if(score >= minScore) return true
+        else return false
+    }
 
-        } else if(isPassing && user.quizFailures > 1) {
-            setUser({...user, progress:{module:user.progress.module, lesson:0}})
-            return { success:false, message: '' }
-
-        } else if(isPassing)  { 
-            setUser({...user, quizFailures:1})
-            return { success:false, message: '' }
-
-        } else if(score >= minScore) return { sucess:true , message:'' }
-        else return { sucess:true , message:'' }
+    const approve = (score:number) => {
+        if(lesson.type === 'Quiz') return approveQuiz(score)
+        else return approveQuiz(score)
     }
 
     return <div className="App">
         <NavBar click={(item) => clickNavbar(item)}/>
         <Menu modules={modules} current={current} navigate={navigate} user={user}/>
-        <Home {...homeData} isAuth={isAuth} isLogin={isLogin} login={login} next={next} />
+        <Home {...homeData} isAuth={isAuth} isLogin={isLogin} login={login} next={next} approve={approveQuiz} user={user}/>
     </div>
 }
