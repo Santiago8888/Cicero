@@ -2,7 +2,7 @@ import { iLesson, iModule, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
 import { iLoginInput } from './components/Auth/Login'
-import { iForum } from './components/Forum/Forum'
+import { iDoubt, iForum } from './components/Forum/Forum'
 import { Home } from './components/Home'
 
 import { useState, useEffect } from 'react'
@@ -12,7 +12,7 @@ import './App.css'
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 const lesson: iLesson = { title:'', description:'', type:'Video' }
-const forum:iForum = { title:'', description:'', questions:[] }
+const Forum:iForum = { title:'', description:'', questions:[] }
 const recordings:iRecordings = { title:'', description:'', recordings:[] }
 
 const modules:iModule[] = [
@@ -31,6 +31,7 @@ const defaultUser:iUser = { email:'test@branding.gq', progress:initialPosition, 
 export const App = () => {
     const [isAuth, setAuth] = useState(false)
     const [isLogin, setLogin] = useState(false)
+    const [forum, setForum] = useState(Forum)
     const [homeData, setHomeData] = useState<iHomeData>(initialData)
     const [user, setUser] = useState<iUser>(defaultUser)
 
@@ -61,7 +62,7 @@ export const App = () => {
         if(lesson.type === 'Quiz'){
             if(user.quizFailures === 0) return setUser({...user, current:nextLesson(user.current)})
             if(user.quizFailures === 1) return
-            if(user.quizFailures === 2) setUser({
+            if(user.quizFailures === 2) return setUser({
                 ...user, 
                 quizFailures:0, 
                 progress:{...user.current, lesson:0}, 
@@ -97,18 +98,21 @@ export const App = () => {
         return setUser({...user, progress:nextLesson(user.progress)})
     }
 
+    const submit = (doubt:iDoubt) => setForum({...forum, questions:[...forum.questions, doubt]})
+
     return <div className="App">
         <NavBar click={(item) => clickNavbar(item)}/>
         <Menu modules={modules} navigate={navigate} user={user}/>
 
         <Home 
             {...homeData} 
+            user={user}
             isAuth={isAuth} 
             isLogin={isLogin} 
+            approve={approve} 
+            submit={submit}
             login={login} 
             next={next} 
-            approve={approve} 
-            user={user}
         />
     </div>
 }
