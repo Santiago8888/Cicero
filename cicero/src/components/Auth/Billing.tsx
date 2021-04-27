@@ -3,6 +3,8 @@ import { loadStripe, StripeCardNumberElement, StripeCardNumberElementChangeEvent
 import { useEffect, useState, useMemo, FormEvent } from "react"
 import { User } from 'realm-web'
 import '../../Stripe.css'
+import { iLanding } from './Landing'
+import { iLoginInput } from './Login'
 
 
 const useResponsiveFontSize = () => {
@@ -45,7 +47,8 @@ const useOptions = () => {
   return options
 }
 
-const CardForm = ({mongoUser}: {mongoUser?:User}) => {
+
+const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
     const [succeeded, setSucceeded] = useState(false)
     const [error, setError] = useState<string>()
     const [processing, setProcessing] = useState(false)
@@ -89,6 +92,7 @@ const CardForm = ({mongoUser}: {mongoUser?:User}) => {
             setError('')
             setProcessing(false)
             setSucceeded(true)
+            db.collection('users').insertOne({ email, password })
         }
     }
 
@@ -125,6 +129,7 @@ const CardForm = ({mongoUser}: {mongoUser?:User}) => {
 }
 
 
-export const Billing = ({mongoUser}:{mongoUser?:User}) => <Elements stripe={stripePromise}>
-    <CardForm mongoUser={mongoUser}/>
+interface iBilling extends iLanding { loginInput:iLoginInput }
+export const Billing = ({mongoUser, db, loginInput}:iBilling) => <Elements stripe={stripePromise}>
+    <CardForm mongoUser={mongoUser} db={db} loginInput={loginInput}/>
 </Elements>
