@@ -14,15 +14,17 @@
 
 ## Database & Content
 
-* [ ] Design Database Models.
-* [ ] Lock Content.
-* [ ] Serve 6 Modules.
-* [ ] User Progress.
-* [ ] Submit Quiz.
+* [X] Design Database Models.
+* [X] Lock Content.
+* [X] Serve 6 Modules.
+* [X] User Progress.
+* [X] Submit Quiz.
 * [ ] Video Progress.
-* [ ] PDF Download.
-* [ ] Posing Forum Questions - Upvoting.
+* [X] PDF Download.
+* [ ] Posing Forum Questions.
 * [ ] Adding Video Recording.
+* [ ] Upvoting.
+* [ ] Implement DB & connections.
 
 
 ## Payment & Auth

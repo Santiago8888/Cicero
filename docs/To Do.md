@@ -18,3 +18,4 @@
 * [ ] Missing Views
     * [ ] Error Page.
     * [ ] Loading View.
+    * [ ] Divide Content View vs Others (considerate router also).
