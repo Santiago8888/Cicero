@@ -1,6 +1,7 @@
 import { Billing } from './Billing'
 import { useState } from "react"
 import { Login } from './Login'
+import { User } from 'realm-web'
 
 interface iWelcome { subscribe():void }
 const Welcome = ({ subscribe }:iWelcome) => <div className="content">
@@ -12,14 +13,14 @@ const Welcome = ({ subscribe }:iWelcome) => <div className="content">
 </div>
 
 
-export const Landing = () => {
+export const Landing = ({mongoUser}: {mongoUser?: User}) => {
     const [ subscribe, setSubscribe ] = useState(false)
     const [ isSignUp, setSignUp ] = useState(false)
 
     return subscribe
         ?   isSignUp    
             ?   <Login login={() => {}}/>
-            :   <Billing />   
+            :   <Billing mongoUser={mongoUser}/>   
         :   <Welcome subscribe={() => setSubscribe(true)}/>
     
 }

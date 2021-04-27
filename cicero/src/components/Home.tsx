@@ -7,6 +7,8 @@ import { iLesson } from './LayOut/Menu'
 import { Content } from './Content'
 import { iUser } from '../App'
 
+import { User } from 'realm-web'
+
 
 interface iHome extends iLogin { 
     user:iUser
@@ -15,16 +17,18 @@ interface iHome extends iLogin {
     lesson:iLesson, 
     forum?:iForum, 
     recordings?:iRecordings 
+    mongoUser?:User
+
     next():void
     approve(score?:number):boolean | void
     submit(doubt:iDoubt):void
 }
 
-export const Home = ({ user, isAuth, isLogin, lesson, forum, recordings, login, next, approve, submit }: iHome) => {
+export const Home = ({ user, isAuth, isLogin, lesson, forum, recordings, mongoUser, login, next, approve, submit }: iHome) => {
     return isAuth
         ?   isLogin ?  <Login login={login}/>
             :   forum ? <Forum {...forum} submit={submit}/>
             :   recordings ? <Recordings {...recordings}/>
             :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
-        :   <Landing/>
+        :   <Landing mongoUser={mongoUser}/>
 }
