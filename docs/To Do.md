@@ -7,10 +7,10 @@
     * [X] Set Landing.
     * [X] Set Login.
     * [X] Set Billing Funnel.
-    * [ ] Set Course Study.
+    * [X] Set Course Study.
 
 * [ ] Logic on Menu.
-    * [ ] Lock/Unlock Items.
+    * [X] Lock/Unlock Items.
     * [X] Click Event to Expand.
     * [ ] Capture Next Event.
     * [ ] Feed Sample Modules.
