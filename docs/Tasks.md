@@ -18,10 +18,10 @@
 * [ ] Lock Content.
 * [ ] Serve 6 Modules.
 * [ ] User Progress.
-* [ ] Quiz Results.
+* [ ] Submit Quiz.
 * [ ] Video Progress.
 * [ ] PDF Download.
-* [ ] Submitting Answers - Upvoting.
+* [ ] Posing Forum Questions - Upvoting.
 * [ ] Adding Video Recording.
 
 

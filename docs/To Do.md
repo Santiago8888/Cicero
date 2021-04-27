@@ -11,9 +11,10 @@
 
 * [ ] Logic on Menu.
     * [ ] Lock/Unlock Items.
-    * [ ] Click Event to Expand.
+    * [X] Click Event to Expand.
     * [ ] Capture Next Event.
     * [ ] Feed Sample Modules.
 
 * [ ] Missing Views
-    * [ ] Error Page
+    * [ ] Error Page.
+    * [ ] Loading View.
