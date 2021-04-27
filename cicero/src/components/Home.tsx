@@ -25,7 +25,7 @@ export const Home = ({ user, isAuth, isLogin, lesson, forum, recordings, login, 
             :   forum ? <Forum {...forum}/>
             :   recordings ? <Recordings {...recordings}/>
             :   lesson.type === 'Video' ? <Video user={user} {...lesson} next={next} approve={approve}/>
-            :   lesson.type === 'Reading' ? <Document {...lesson} next={next}/>
+            :   lesson.type === 'Reading' ? <Document user={user} {...lesson} next={next} approve={approve}/>
             :   lesson.type === 'Quiz' ? <Quiz  {...lesson} next={next} approve={approve} user={user}/> : <Landing/>
         :   <Landing/>
 }
