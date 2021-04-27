@@ -1,6 +1,7 @@
 import { Elements, useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
 import { loadStripe, StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
 import { useEffect, useState, useMemo, FormEvent } from "react"
+import { User } from 'realm-web'
 import '../../Stripe.css'
 
 
@@ -44,7 +45,7 @@ const useOptions = () => {
   return options
 }
 
-const CardForm = () => {
+const CardForm = ({mongoUser}: {mongoUser?:User}) => {
     const [succeeded, setSucceeded] = useState(false)
     const [error, setError] = useState<string>()
     const [processing, setProcessing] = useState(false)
@@ -56,14 +57,9 @@ const CardForm = () => {
     const options = useOptions()
 
     useEffect(() => {
-        window.fetch("/create-payment-intent", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({items: [{ id: "xl-tshirt" }]})
-        })
-        .then(res => res.json())
+        mongoUser?.functions.paymentIntent()
         .then(({clientSecret}) => setClientSecret(clientSecret))
-    }, [])
+    }, [mongoUser])
 
     const handleChange = async (event:StripeCardNumberElementChangeEvent) => {
         setDisabled(event.empty)
@@ -129,6 +125,6 @@ const CardForm = () => {
 }
 
 
-export const Billing = () => <Elements stripe={stripePromise}>
-    <CardForm />
+export const Billing = ({mongoUser}:{mongoUser?:User}) => <Elements stripe={stripePromise}>
+    <CardForm mongoUser={mongoUser}/>
 </Elements>
