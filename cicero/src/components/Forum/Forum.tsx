@@ -10,8 +10,8 @@ export const cardStyle = {
 
 export const headerStyle = { backgroundColor: 'rgb(72, 72, 72)', borderTopLeftRadius: 12, borderTopRightRadius: 12 }
 
-interface iQuestion { question:string, details:string }
-const Question = ({ question, details }: iQuestion) => <div className='card' style={cardStyle}>
+export interface iDoubt { question:string, details:string }
+const Doubt = ({ question, details }:iDoubt) => <div className='card' style={cardStyle}>
     <header className='card-header' style={headerStyle}>
         <p className='card-header-title' style={{color:'white', fontSize:'1.25rem'}}> { question } </p>
     </header>
@@ -22,7 +22,7 @@ const Question = ({ question, details }: iQuestion) => <div className='card' sty
 </div>
 
 
-interface iModal { isActive:boolean, deactivate():void, submit(question:iQuestion):void }
+interface iModal { isActive:boolean, deactivate():void, submit(question:iDoubt):void }
 const Modal = ({ isActive, deactivate, submit }:iModal) => {
     const [question, setQuestion] = useState('')
     const [details, setDetails] = useState('')
@@ -62,10 +62,10 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 }
 
 
-export interface iForum { title:string, description:string, questions:iQuestion[] }
-export const Forum = ({ title, description, questions }: iForum) => {
+export interface iForum { title:string, description:string, questions:iDoubt[] }
+interface IForum extends iForum { submit(question:iDoubt):void }
+export const Forum = ({ title, description, questions, submit }: IForum) => {
     const [isActive, setActive] = useState(false)
-    const submit = (question:iQuestion) => {console.log('question', question)}
 
     return <div className="content">
         <h1> { title } </h1>
@@ -83,7 +83,7 @@ export const Forum = ({ title, description, questions }: iForum) => {
 
         {
             questions.map((q, i) => 
-                <Question  {...q} key={i}/>
+                <Doubt  {...q} key={i}/>
             )
         }
 
