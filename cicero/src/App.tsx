@@ -37,17 +37,28 @@ const initialData:iHomeData = { forum:undefined, recordings:undefined, lesson }
 const initialPosition = {module:0, lesson:0}
 const defaultUser:iUser = { email:'test@branding.gq', progress:initialPosition, current:initialPosition, quizFailures:0 }
 export const App = () => {
-    const [ isLogin, setLogin ] = useState(false)
-    const [ forum, setForum ] = useState(Forum)
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
-    const [ user, setUser ] = useState<iUser>(defaultUser)
+
+    const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
+    const [ user, setUser ] = useState<iUser>(defaultUser)
+
+    const [ forum, setForum ] = useState(Forum)
+    const [ isLogin, setLogin ] = useState(false)
     const [ recordings, setRecordings ] = useState(Recordings)
 
-    useEffect(() => { connectMongo().then(mongoUser => setMongoUser(mongoUser)) }, [])
+
+    useEffect(() => { connectMongo().then(mongoUser => {
+        setMongoUser(mongoUser)
+        const mongo = mongoUser.mongoClient('myAtlasCluster')
+        const db = mongo.db('Cicero')
+        setDB(db)
+    }) }, [])
+
     useEffect(() => { 
-        setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]}) 
-    }, [user.current])
+        setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
+        db?.collection('users').updateOne({ email: user.email }, user)
+    }, [user])
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
@@ -56,18 +67,18 @@ export const App = () => {
     }
     
     const login = async({ email, password }:iLoginInput) => {
-        if(!mongoUser) return
+        if(!db) return
 
-        const mongo = mongoUser.mongoClient('myAtlasCluster')
-
-        const db = mongo.db('Cicero')
         const collection = db.collection('users')
         const user = await collection.findOne({ email, password })
         setUser(user)
         setLogin(false)
 
-        const recordings:iRecordings = await db.collection('recordings').findOne({})
-        setRecordings(recordings)
+        const recordings = await db.collection('recordings').find({})
+        setRecordings({...Recordings, recordings })
+
+        const doubts = await db.collection('doubts').findOne({})
+        setForum({...forum, questions:doubts})
     }
 
     const nextLesson = ({module, lesson}:iPosition) => {
@@ -116,7 +127,10 @@ export const App = () => {
         return setUser({...user, progress:nextLesson(user.progress)})
     }
 
-    const submit = (doubt:iDoubt) => setForum({...forum, questions:[...forum.questions, doubt]})
+    const submit = (doubt:iDoubt) => {
+        setForum({...forum, questions:[...forum.questions, doubt]})
+        db?.collection('doubts').insertOne(doubt)
+    }
 
 
     return <div className="App">
