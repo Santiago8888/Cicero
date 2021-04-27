@@ -11,8 +11,7 @@ import { User } from 'realm-web'
 
 
 interface iHome extends iLogin { 
-    user:iUser
-    isAuth:boolean, 
+    user?:iUser
     isLogin:boolean, 
     lesson:iLesson, 
     forum?:iForum, 
@@ -24,8 +23,8 @@ interface iHome extends iLogin {
     submit(doubt:iDoubt):void
 }
 
-export const Home = ({ user, isAuth, isLogin, lesson, forum, recordings, mongoUser, login, next, approve, submit }: iHome) => {
-    return isAuth
+export const Home = ({ user, isLogin, lesson, forum, recordings, mongoUser, login, next, approve, submit }: iHome) => {
+    return user
         ?   isLogin ?  <Login login={login}/>
             :   forum ? <Forum {...forum} submit={submit}/>
             :   recordings ? <Recordings {...recordings}/>
