@@ -1,4 +1,4 @@
-import { iMessage, iQuestion } from "../Views/Quiz"
+import { iQuestion } from "../Views/Quiz"
 import { useState } from "react"
 import { iUser } from '../../App'
 
@@ -9,7 +9,7 @@ export interface iLesson {
     description:string, 
     link?:string, 
     questions?:iQuestion[] 
-    message?:iMessage
+    minScore?:number
 }
 
 export interface iPosition {module:number, lesson:number}
