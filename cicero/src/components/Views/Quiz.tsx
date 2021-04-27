@@ -60,7 +60,7 @@ interface iQuiz {
     questions?:iQuestion[]
     minScore?:number,
     next():void
-    approve(score:number):boolean
+    approve(score:number):boolean|void
     user:iUser
 }
 
@@ -76,7 +76,7 @@ export const Quiz = ({ title, description, questions=[], minScore, next, approve
     const submit = () => {
         const score = Object.values(answers).filter(a => a).length
 
-        const isApproved = approve(score)
+        const isApproved = approve(score) || false
         setApproved(isApproved)
 
         setActive(true)
