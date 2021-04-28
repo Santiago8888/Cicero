@@ -26,7 +26,7 @@
 * [ ] Styling
     * [X] Video Lessons.
     * [x] Document Lessons.
-    * [ ] Quizes.
+    * [X] Quizes.
     * [ ] Forum.
     * [ ] Recordings.
     * [ ] Sign Up Form.
@@ -34,6 +34,8 @@
     * [ ] Pricing Table.
     * [ ] Billing Form.
     * [ ] Menu Items.
+    * [ ] Question Modal.
+    * [ ] Doubt Modal.
 
 * [ ] UX
     * [ ] Course Items Toggling.
