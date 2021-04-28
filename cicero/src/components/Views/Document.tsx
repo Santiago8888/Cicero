@@ -18,17 +18,43 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
     useEffect(() => { setTimeout(() => approve(), 1000*(min||10)) }, [])
 
     return <div className="content">
-        <h1> { title } </h1>
-        <p> { description } </p>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h3 
+            style={{
+                margin:'0rem auto',
+                color: '#333',
+                fontSize: '1.25em',
+                textAlign: 'left',
+                fontWeight: 500,
+                width: 800        
+            }}
+        > { description } </h3>
 
-        <a target='_blank' rel='noreferrer' href={link} style={{padding:0}} className='button'>
-            Leer
-        </a>
 
-        <a 
-            className='button' 
-            onClick={next}
-            hidden={user.current.module > user.progress.module && user.progress.lesson > user.current.lesson}
-        > Siguiente </a>
+        <div style={{ width:800, margin:'3rem auto 1rem'}}>
+            <a 
+                target='_blank' 
+                rel='noreferrer' 
+                href={link} 
+                className='button is-link'
+                style={{
+                    borderRadius:12, 
+                    width:180, 
+                    fontSize:'1.25rem', 
+                    fontWeight:600, 
+                    marginLeft:90,
+                    backgroundColor:'darkblue'
+                }}
+            >
+                Leer
+            </a>
+
+            <a 
+                onClick={next} 
+                className='button is-link' 
+                style={{float:'right', borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
+                hidden={user.current.module > user.progress.module && user.progress.lesson > user.current.lesson}
+            > CONTINUAR </a>
+        </div>
     </div>
 }
