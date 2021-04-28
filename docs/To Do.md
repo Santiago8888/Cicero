@@ -27,8 +27,8 @@
     * [X] Video Lessons.
     * [x] Document Lessons.
     * [X] Quizes.
-    * [ ] Forum.
-    * [ ] Recordings.
+    * [X] Forum.
+    * [X] Recordings.
     * [ ] Sign Up Form.
     * [ ] Login Form.
     * [ ] Pricing Table.
@@ -46,6 +46,7 @@
     * [ ] Module Completion.
     * [ ] Submit new Doubt.
     * [ ] New User Funnel.
+    * [ ] Visit Landing on Icon Click.
 
 * [ ] Ops
     * [ ] DB Events.
