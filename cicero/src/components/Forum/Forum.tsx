@@ -11,14 +11,9 @@ export const cardStyle = {
 export const headerStyle = { backgroundColor: 'rgb(72, 72, 72)', borderTopLeftRadius: 12, borderTopRightRadius: 12 }
 
 export interface iDoubt { question:string, details:string }
-const Doubt = ({ question, details }:iDoubt) => <div className='card' style={cardStyle}>
-    <header className='card-header' style={headerStyle}>
-        <p className='card-header-title' style={{color:'white', fontSize:'1.25rem'}}> { question } </p>
-    </header>
-
-    <div className='content' style={{color:'whitesmoke', marginTop:'1rem'}}> 
-        <p> { details } </p> 
-    </div>
+const Doubt = ({ question, details }:iDoubt) => <div style={{maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em'}}>
+    <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
+    <p> { details } </p> 
 </div>
 
 
@@ -85,15 +80,18 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
             <button 
                 className='button is-link' 
                 style={{
-                    borderRadius:12, 
                     width:240, 
-                    fontSize:'1.25rem', 
                     fontWeight:600, 
+                    borderRadius:12, 
                     marginTop:'1.5em', 
+                    fontSize:'1.25rem', 
+                    marginBottom:'1.5em',
                     backgroundColor:'darkblue'
                 }}
             > Haz una Pregunta </button>
-        </div>
+        </div> 
+        
+        <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:600 }}/>
 
         {
             questions.map((q, i) => 
