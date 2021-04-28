@@ -68,17 +68,31 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
     const [isActive, setActive] = useState(false)
 
     return <div className="content">
-        <h1> { title } </h1>
-        <div className='columns' >
-            <div className='column'>
-                <p> { description } </p>
-            </div>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h3 
+            style={{
+                margin:'0rem auto',
+                color: '#333',
+                fontSize: '1.25em',
+                textAlign: 'left',
+                fontWeight: 500,
+                width: 800        
+            }}
+        > { description } </h3>
 
-            <div className='column'>
-                <button className='button'> 
-                    Nueva Pregunta 
-                </button>
-            </div>
+
+        <div style={{maxWidth:800, margin:'auto'}}>
+            <button 
+                className='button is-link' 
+                style={{
+                    borderRadius:12, 
+                    width:240, 
+                    fontSize:'1.25rem', 
+                    fontWeight:600, 
+                    marginTop:'1.5em', 
+                    backgroundColor:'darkblue'
+                }}
+            > Haz una Pregunta </button>
         </div>
 
         {
