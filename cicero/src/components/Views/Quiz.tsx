@@ -1,32 +1,31 @@
 import { iUser } from "../../App"
 import { useState } from "react"
 
+
 interface iAnswer { answer:string, value:boolean }
 export interface iQuestion { index:number, question:string, answers:iAnswer[], }
-interface IQuestion extends iQuestion { select(index:number, value:boolean):void }
-const Question = ({index, question, answers, select}:IQuestion) => <div className="field is-horizontal">
-    <div className="field-label">
-        <label className="label"> { question } </label>
-    </div>
 
-    <div className="field-body">
-        <div className="field is-narrow">
+interface IQuestion extends iQuestion { select(index:number, value:boolean):void }
+const Question = ({index, question, answers, select}:IQuestion) => <div 
+    className="field" 
+    style={{textAlign:'left', maxWidth:800, margin:'auto'}}
+>
+    <label className="label" style={{fontSize:'1.25em'}}> { question } </label>
+    {
+        answers.map(({ answer, value }) => 
             <div className="control">
-                {
-                    answers.map(({ answer, value }) => 
-                        <label className="radio">
-                            <input 
-                                type="radio" 
-                                name="member" 
-                                onChange={() => select(index, value)}
-                            />
-                            { answer }
-                        </label>
-                    )
-                }
+                <label className="radio" style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
+                    <input 
+                        type="radio" 
+                        name="member" 
+                        style={{marginRight:12}}
+                        onChange={() => select(index, value)}
+                    />
+                    { answer }
+                </label>
             </div>
-        </div>
-    </div>
+        )
+    }
 </div>
 
 
@@ -83,8 +82,17 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
     }
 
     return <div className="content">
-        <h1> { title } </h1>
-        <p> { description } </p>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h3 
+            style={{
+                margin:'0rem auto 2rem',
+                color: '#333',
+                fontSize: '1.25em',
+                textAlign: 'left',
+                fontWeight: 500,
+                width: 800        
+            }}
+        > { description } </h3>
 
         {
             questions.map((q, i) => 
@@ -97,10 +105,11 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         }
 
         <button 
-            className='button' 
+            className='button is-link' 
+            style={{borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, marginTop:'2em', backgroundColor:'darkblue'}}
             disabled={Object.values(answers).some(a => a === undefined)} 
             onClick={submit}
-        > Enviar </button>
+        > ENVIAR </button>
 
         <Modal 
             isActive={isActive} 
