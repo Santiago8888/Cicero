@@ -9,8 +9,13 @@ interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 export const NavBar = ({ click, user }: iNavBar) => {
     const [ isActive, setActive ] = useState(false)
 
-    return <nav className='navbar is-black' role='navigation' aria-label='main navigation'>
-        <div className='container'>
+    return <nav 
+        className='navbar is-link' 
+        role='navigation' 
+        aria-label='main navigation' 
+        style={{borderBottom: '2px solid #ccc', backgroundColor:'darkblue', padding:'0px 2.5rem'}}
+    >
+        <div className='container' style={{maxWidth:2000, paddingLeft:'2.5rem', paddingRight:'3em' }}>
             <div className='navbar-brand'>
                 <a className='navbar-item'>
                     <img src='SocialQ.png' style={{ height:36, maxHeight: 'none' }} alt={'SocialQ logo'}/>
@@ -33,11 +38,11 @@ export const NavBar = ({ click, user }: iNavBar) => {
 
             <div 
                 className={`navbar-menu ${isActive ? 'is-active navbar-menu-active': ''}`} 
-                style={{ maxWidth:1200, marginRight:'auto' }}
+                style={{ marginRight:'auto' }}
             >
                 { 
-                    !user && <div className={`navbar-end `} style={{fontSize: '1.2em'}} >
-                        <a style = {{color:'white'}} onClick={() => click('Login')} className={'navbar-item'}> 
+                    !user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkblue'}} >
+                        <a onClick={() => click('Login')} className={'navbar-item'}> 
                             <strong> Iniciar Sesión </strong> 
                         </a>
                     </div> 
@@ -45,7 +50,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
 
                 {
                     user && <div className={`navbar-end `} style={{fontSize: '1.2em'}} hidden={!!user}>
-                        <a style = {{color:'white'}} onClick={() => click('Forum')} className={'navbar-item'}> 
+                        <a onClick={() => click('Forum')} className={'navbar-item'}> 
                             <strong> Forum </strong> 
                         </a>                    
                     </div>
@@ -53,7 +58,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
 
                 {
                     user && <div className={`navbar-end `} style={{fontSize: '1.2em'}}>
-                        <a style = {{color:'white'}} onClick={() => click('Recordings')} className={'navbar-item'}> 
+                        <a onClick={() => click('Recordings')} className={'navbar-item'}> 
                             <strong> Grabaciones </strong> 
                         </a>
                     </div>
