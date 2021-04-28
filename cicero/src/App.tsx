@@ -19,7 +19,7 @@ const connectMongo = async() => {
 }
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
-const lesson: iLesson = { title:'', description:'', type:'Video' }
+const lesson: iLesson = { title:'', description:'', type:'Reading', link:'439430168' }
 const Forum:iForum = { title:'', description:'', questions:[] }
 const Recordings:iRecordings = { title:'', description:'', recordings:[] }
 
@@ -41,21 +41,25 @@ export const App = () => {
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>(defaultUser)
+    const [ user, setUser ] = useState<iUser>()
 
     const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
     const [ recordings, setRecordings ] = useState(Recordings)
 
 
-    useEffect(() => { connectMongo().then(mongoUser => {
-        setMongoUser(mongoUser)
-        const mongo = mongoUser.mongoClient('myAtlasCluster')
-        const db = mongo.db('Cicero')
-        setDB(db)
-    }) }, [])
+    useEffect(() => { 
+        return
+        connectMongo().then(mongoUser => {
+            setMongoUser(mongoUser)
+            const mongo = mongoUser.mongoClient('myAtlasCluster')
+            const db = mongo.db('Cicero')
+            setDB(db)
+        }) 
+    }, [])
 
     useEffect(() => { 
+        if(!user) return
         setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
         db?.collection('users').updateOne({ email: user.email }, user)
     }, [user])
@@ -81,14 +85,20 @@ export const App = () => {
         setForum({...forum, questions:doubts})
     }
 
-    const nextLesson = ({module, lesson}:iPosition) => {
+    const nextLesson = ({module, lesson}:iPosition):iPosition => {
+        if(!user) return { module:0, lesson: 0}
         if (modules[module].lessons[lesson+1]) return { module:module, lesson:lesson+1 }
         else if (modules[user.current.module + 1]) return { module: module+1, lesson:0 }
         else return { module, lesson }
     }
 
     const next = () => {
+        if(!user) return
+
         if(lesson.type === 'Quiz'){
+            if(!user.current.lesson) return
+            if(!user.current.lesson) return
+
             if(user.quizFailures === 0) return setUser({...user, current:nextLesson(user.current)})
             if(user.quizFailures === 1) return
             if(user.quizFailures === 2) return setUser({
@@ -102,6 +112,7 @@ export const App = () => {
     }
 
     const navigate = ({module, lesson}:iPosition) => {
+        if(!user) return
         if(module > user.progress.module) return
         if(lesson > user.progress.lesson) return
 
@@ -109,6 +120,7 @@ export const App = () => {
     }
 
     const approveQuiz = (score:number) => {
+        if(!user) return
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
@@ -123,6 +135,7 @@ export const App = () => {
     }
 
     const approve = (score?:number) => {
+        if(!user) return
         if(lesson.type === 'Quiz' && score) return approveQuiz(score)
         return setUser({...user, progress:nextLesson(user.progress)})
     }
@@ -133,19 +146,27 @@ export const App = () => {
     }
 
 
-    return <div className="App">
-        <NavBar click={(item) => clickNavbar(item)}/>
-        <Menu modules={modules} navigate={navigate} user={user}/>
+    return <div>
+        <NavBar user={user} click={(item) => clickNavbar(item)}/>
+        <section className="main-content is-fullheight">
+            <div className="container">
+                <div className="columns">
+                    <Menu modules={modules} navigate={navigate} user={user}/>
 
-        <Home 
-            user={user}
-            {...homeData} 
-            isLogin={isLogin} 
-            mongoUser={mongoUser}
-            approve={approve} 
-            submit={submit}
-            login={login} 
-            next={next} 
-        />
+                    <div className="column is-10">
+                        <Home 
+                            user={user}
+                            {...homeData} 
+                            isLogin={isLogin} 
+                            mongoUser={mongoUser}
+                            approve={approve} 
+                            submit={submit}
+                            login={login} 
+                            next={next} 
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 }
