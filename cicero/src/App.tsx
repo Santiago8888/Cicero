@@ -19,7 +19,7 @@ const connectMongo = async() => {
 }
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
-const lesson: iLesson = { title:'', description:'', type:'Reading', link:'439430168' }
+const lesson: iLesson = { title:'', description:'', type:'Video', link:'439430168' }
 const Forum:iForum = { title:'', description:'', questions:[] }
 const Recordings:iRecordings = { title:'', description:'', recordings:[] }
 
@@ -148,25 +148,33 @@ export const App = () => {
 
     return <div>
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
-        <section className="main-content is-fullheight">
-            <div className="container">
-                <div className="columns">
-                    <Menu modules={modules} navigate={navigate} user={user}/>
+        <div className="container" style={{maxWidth:'100%'}}>
+            <div className="columns" style={{margin:0}}>
+                <Menu modules={modules} navigate={navigate} user={user}/>
 
-                    <div className="column is-10">
-                        <Home 
-                            user={user}
-                            {...homeData} 
-                            isLogin={isLogin} 
-                            mongoUser={mongoUser}
-                            approve={approve} 
-                            submit={submit}
-                            login={login} 
-                            next={next} 
-                        />
-                    </div>
+                <div 
+                    className="column is-10" 
+                    style={{ 
+                        padding:'3rem', 
+                        marginLeft:3, 
+                        marginRight:0, 
+                        margin:'0px auto', 
+                        backgroundColor: 'aliceblue', 
+                        width: 'calc(100vw - 253px)' 
+                    }}
+                >
+                    <Home 
+                        user={user}
+                        {...homeData} 
+                        isLogin={isLogin} 
+                        mongoUser={mongoUser}
+                        approve={approve} 
+                        submit={submit}
+                        login={login} 
+                        next={next} 
+                    />
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 }
