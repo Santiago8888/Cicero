@@ -57,7 +57,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 }
 
                 {
-                    user && <div className={`navbar-end `} style={{fontSize: '1.2em'}}>
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial'}}>
                         <a onClick={() => click('Recordings')} className={'navbar-item'}> 
                             <strong> Grabaciones </strong> 
                         </a>
