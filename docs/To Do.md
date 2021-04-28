@@ -24,8 +24,8 @@
 ## Debugging Tasks
 
 * [ ] Styling
-    * [ ] Video Lessons.
-    * [ ] Document Lessons.
+    * [X] Video Lessons.
+    * [x] Document Lessons.
     * [ ] Quizes.
     * [ ] Forum.
     * [ ] Recordings.
