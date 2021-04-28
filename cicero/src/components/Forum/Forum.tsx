@@ -1,14 +1,5 @@
 import { useState } from "react"
 
-export const cardStyle = {
-    backgroundColor: 'rgb(48, 48, 48)',
-    borderRadius: 12,
-    margin: 'auto',
-    marginBottom: '1.5em',
-    border: '1px solid white'
-}
-
-export const headerStyle = { backgroundColor: 'rgb(72, 72, 72)', borderTopLeftRadius: 12, borderTopRightRadius: 12 }
 
 export interface iDoubt { question:string, details:string }
 const Doubt = ({ question, details }:iDoubt) => <div style={{maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em'}}>
