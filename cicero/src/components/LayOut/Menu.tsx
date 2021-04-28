@@ -1,5 +1,5 @@
+import { useEffect, useState } from "react"
 import { iQuestion } from "../Views/Quiz"
-import { useState } from "react"
 import { iUser } from '../../App'
 
 type Lesson = 'Video' | 'Quiz' | 'Reading'
@@ -14,36 +14,42 @@ export interface iLesson {
 
 export interface iPosition {module:number, lesson:number}
 export interface iModule { title:string, lessons:iLesson[] }
-interface iMenu { modules:iModule[], navigate(position:iPosition):void, user:iUser }
+interface iMenu { modules:iModule[], navigate(position:iPosition):void, user?:iUser }
 export const Menu = ({ modules, navigate, user }: iMenu) => {
-    const [active, setActive] = useState(user.current.module)
+    const [active, setActive] = useState<number>(user?.current.module || 0)
+
     const expand = (id:number) => {
+        if(!user) return 
         if(user.progress.module > id) return
         setActive(id)
     }
 
-    return <aside className="menu">
-        {
-            modules.map(({ title, lessons }, idx) => 
-                <>
-                    <a className="menu-label"   onClick={() => expand(idx)}> { title } </a>
-                    <ul className="menu-list" style={{display: active ? 'initial' : 'none' }}>
-                        {
-                            lessons.map(({ title, type }, i) =>
+    useEffect(() => { setActive(user?.current.module as number) },[user])
+
+    return <aside 
+        className="menu column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile"
+        style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.25rem' }}
+    >
+        <ul className="menu-list" style={{lineHeight:2}}>
+            {
+                modules.map(({ title, lessons }, idx) => 
+                    <li><a onClick={() => expand(idx)}> { title } </a></li>
+                        /*
+                            idx === active && lessons.map(({ title, type }, i) =>
                                 <li 
                                     key={i} 
-                                    style={active===idx && user.current.lesson === i ? {background:'blue',color:'white'} : {}}
+                                    style={active===idx && user?.current.lesson === i ? {background:'blue',color:'white'} : {}}
                                 >
-                                    <a onClick={() => navigate({module:active, lesson:i})}>
+                                    <a onClick={() => active ? navigate({module:active, lesson:i}) : null}>
                                         <strong> {type}: </strong> 
                                         { title } 
                                     </a>
                                 </li>
                             )
-                        }
-                    </ul>
-                </>
-            )
-        }
+                        */                        
+                    
+                )
+            }
+        </ul>
     </aside>
 }
