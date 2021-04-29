@@ -1,15 +1,17 @@
-import { iLesson, iModule, Menu, iPosition } from './components/LayOut/Menu'
+import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
 import { iLoginInput } from './components/Auth/Login'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { Home } from './components/Home'
 
+import { lesson, modules, Recordings, Forum } from './data/data'
 import { App as RealmApp, User, Credentials } from 'realm-web'
 import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
 import './App.css'
+
 
 const connectMongo = async() => {
     const REALM_APP_ID = 'tasktracker-kjrie'
@@ -19,19 +21,6 @@ const connectMongo = async() => {
 }
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
-const lesson: iLesson = { title:'', description:'', type:'Video', link:'439430168' }
-const Forum:iForum = { title:'', description:'', questions:[] }
-const Recordings:iRecordings = { title:'', description:'', recordings:[] }
-
-const modules:iModule[] = [
-    { title:'Modulo 1', lessons:[{title:'', type:'Video', description:'', link:''}]},
-    { title:'Módulo 2', lessons:[{title:'', type:'Reading', description:'', link:''}]},
-    { title:'Módulo 3', lessons:[{title:'', type:'Quiz', description:'', questions:[{question:'', answers:[], index:0}]}]},
-    { title:'Módulo 4', lessons:[{title:'', type:'Video', description:'', link:''}]},
-    { title:'Módulo 5', lessons:[{title:'', type:'Video', description:'', link:''}]},
-    { title:'Módulo 6', lessons:[{title:'', type:'Video', description:'', link:''}]}
-]
-
 interface iHomeData { forum?:iForum, recordings?:iRecordings, lesson:iLesson}
 const initialData:iHomeData = { forum:undefined, recordings:undefined, lesson }
 const initialPosition = {module:0, lesson:0}
@@ -41,7 +30,7 @@ export const App = () => {
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>()
+    const [ user, setUser ] = useState<iUser>(defaultUser)
 
     const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
@@ -58,11 +47,11 @@ export const App = () => {
         }) 
     }, [])
 
-    useEffect(() => { 
-        if(!user) return
-        setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
-        db?.collection('users').updateOne({ email: user.email }, user)
-    }, [user])
+    // useEffect(() => { 
+    //     if(!user) return
+    //     setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
+    //     db?.collection('users').updateOne({ email: user.email }, user)
+    // }, [user])
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
@@ -160,7 +149,8 @@ export const App = () => {
                         marginRight:0, 
                         margin:'0px auto', 
                         backgroundColor: 'aliceblue', 
-                        width: 'calc(100vw - 253px)' 
+                        width: 'calc(100vw - 253px)',
+                        textAlign:'center'
                     }}
                 >
                     <Home 
