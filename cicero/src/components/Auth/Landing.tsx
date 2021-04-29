@@ -30,7 +30,7 @@ export const Landing = ({mongoUser, db}: iLanding) => {
 
     return subscribe
         ?   !loginInput    
-            ?   <Login login={(loginInput) => setLoginInput(loginInput)}/>
+            ?   <Login login={(loginInput) => setLoginInput(loginInput)} newUser={true}/>
             :   <Billing mongoUser={mongoUser} db={db} loginInput={loginInput}/>   
         :   <Welcome subscribe={() => setSubscribe(true)}/>
 }
