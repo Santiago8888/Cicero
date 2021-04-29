@@ -34,11 +34,11 @@ const useOptions = () => {
 
 
 const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
-    const [succeeded, setSucceeded] = useState(false)
-    const [error, setError] = useState<string>()
-    const [processing, setProcessing] = useState(false)
-    const [disabled, setDisabled] = useState(true)
-    const [clientSecret, setClientSecret] = useState('')
+    const [ error, setError ] = useState<string>()
+    const [ disabled, setDisabled ] = useState(true)
+    const [ succeeded, setSucceeded ] = useState(false)
+    const [ processing, setProcessing ] = useState(false)
+    const [ clientSecret, setClientSecret ] = useState('')
 
     const stripe = useStripe()
     const elements = useElements()
@@ -46,7 +46,9 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
 
     useEffect(() => {
         mongoUser?.functions.paymentIntent()
-        .then(({clientSecret}) => setClientSecret(clientSecret))
+        .then(({clientSecret}) => 
+            setClientSecret(clientSecret)
+        )
     }, [mongoUser])
 
     const handleChange = async ({ complete, error }:StripeCardNumberElementChangeEvent) => {
@@ -67,8 +69,6 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
             }
         })
 
-        console.log("[PaymentMethod]", payload)
-
         if (payload.error) {
             setError(`Payment failed ${payload.error.message}`)
             setProcessing(false)
@@ -78,6 +78,7 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
             setProcessing(false)
             setSucceeded(true)
             db.collection('users').insertOne({ email, password })
+ 
         }
     }
 
@@ -113,7 +114,12 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
                         <CardCvcElement options={options} />
                     </div>
 
-                    <button className="stripeButton" disabled={processing || disabled || succeeded} id="submit" style={{marginTop:'2.5rem'}}>
+                    <button 
+                        id="submit" 
+                        className="stripeButton" 
+                        style={{marginTop:'2.5rem'}}
+                        disabled={processing || disabled || !clientSecret || succeeded} 
+                    >
                         <span id="button-text">
                             {processing ? <div className="spinner" id="spinner"></div> : "Pagar" }
                         </span>
