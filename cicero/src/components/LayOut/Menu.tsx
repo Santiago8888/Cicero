@@ -28,28 +28,32 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
 
     return <aside 
         className="menu column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile"
-        style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.25rem' }}
+        style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.15em' }}
     >
-        <ul className="menu-list" style={{lineHeight:2}}>
-            {
-                modules.map(({ title, lessons }, idx) => 
-                    <li><a onClick={() => expand(idx)}> { title } </a></li>
-                        /*
-                            idx === active && lessons.map(({ title, type }, i) =>
-                                <li 
-                                    key={i} 
-                                    style={active===idx && user?.current.lesson === i ? {background:'blue',color:'white'} : {}}
-                                >
-                                    <a onClick={() => active ? navigate({module:active, lesson:i}) : null}>
-                                        <strong> {type}: </strong> 
-                                        { title } 
-                                    </a>
+        <p className="menu-label"> Astroconsciencia </p>
+        <ul className="menu-list">
+            { modules.map(({ title, lessons }, idx) => 
+                <li style={{lineHeight:2}}>
+                    <a onClick={() => expand(idx)}> { title } </a>
+                    {
+                        user?.current.module === idx && <ul>
+                            { lessons.map(({ title }, i) => 
+                                <li style={{lineHeight:1.25}}>
+                                    <a
+                                        style={
+                                            user?.current.lesson === i 
+                                                ? {backgroundColor:'darkblue', borderRadius:8} 
+                                                : {}
+                                        }
+                                        className={`${user?.current.lesson === i ? 'is-active': ''}`}
+                                        onClick={() => active ? navigate({module:active, lesson:i}) : null}
+                                    > { title } </a>
                                 </li>
-                            )
-                        */                        
-                    
-                )
-            }
+                            )}
+                        </ul>
+                    }
+                </li>
+            )}
         </ul>
     </aside>
 }
