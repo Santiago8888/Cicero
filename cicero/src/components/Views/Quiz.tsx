@@ -3,21 +3,21 @@ import { useState } from "react"
 
 
 interface iAnswer { answer:string, value:boolean }
-export interface iQuestion { index:number, question:string, answers:iAnswer[], }
+export interface iQuestion { question:string, answers:iAnswer[], }
 
-interface IQuestion extends iQuestion { select(index:number, value:boolean):void }
+interface IQuestion extends iQuestion { index:number, select(index:number, value:boolean):void }
 const Question = ({index, question, answers, select}:IQuestion) => <div 
     className="field" 
-    style={{textAlign:'left', maxWidth:800, margin:'auto'}}
+    style={{textAlign:'left', maxWidth:800, margin:'auto', marginBottom:'1.5rem'}}
 >
     <label className="label" style={{fontSize:'1.25em'}}> { question } </label>
     {
-        answers.map(({ answer, value }) => 
+        answers.map(({ answer, value }, i) => 
             <div className="control">
                 <label className="radio" style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
                     <input 
                         type="radio" 
-                        name="member" 
+                        name={String(index)}
                         style={{marginRight:12}}
                         onChange={() => select(index, value)}
                     />
@@ -29,29 +29,42 @@ const Question = ({index, question, answers, select}:IQuestion) => <div
 </div>
 
 
-interface iModal { user:iUser, score:number, isActive:boolean, approved:boolean, min:number, deactivate():void, next():void }
-const Modal = ({ user, score, isActive, approved, min, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
+
+const encouragementMsg = () => `!Ánimo aún tienes otra oportunidad!`
+const retryMsg = 'Lo sentimos, no has aprobado el quiz. Deberas reiniciar el módulo.'
+interface iModal { user:iUser, questions: iQuestion[], score:number, isActive:boolean, approved:boolean, min:number, deactivate():void, next():void }
+const Modal = ({ user, questions, score, isActive, approved, min, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
     <div className="modal-background" />
-    <div className="modal-content">
-        { 
-            !approved && user.quizFailures === 2 ? null 
-            :   <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
-        }
+    <div className="modal-card">
+        <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+            <p className="modal-card-title" style={{marginBottom:0, color:'white'}}>Quiz</p>
+            { 
+                !approved && user.quizFailures === 2 ? null 
+                :   <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
+            }
+        </header>
 
-        { approved ? `!Felicidades! Has acertado ${score} preguntas` : '' }
-        { !approved && user.quizFailures === 0 ? `` : `Lo sentimos solo has acertado ${score} preguntas.` }
-        { !approved && user.quizFailures === 1 ? `` : `Acertaste ${score} preguntas, necesitas ${min} para aprobar.` }
-        { !approved && user.quizFailures === 1 ? `` : `Aún tienes una oportunidad más para intentarlo o deberas repetir el módulo.` }
-        { !approved && user.quizFailures === 2 ? `` : `Lo sentimos, no has pasado el quiz. Deberas reiniciar el módulo.` }
+        <section className="modal-card-body" style={{minHeight:120, display:'table'}}>
+            <p style={{display:'table-cell', verticalAlign:'middle'}}>
+                { approved ? <span style={{fontSize:'1.5rem', fontWeight:600}}>¡Felicidades!</span> : <>Lo sentimos.</> } <br/> 
+                 Acertaste <strong>{score}</strong> de <strong>{questions.length}</strong> preguntas. <br/>
+                { !approved && user.quizFailures > 0 ? <>Necesitas mínimo {min} para aprobar <br/></>: '' }
+                { !approved && user.quizFailures > 1 ? encouragementMsg : '' }
+                { !approved && user.quizFailures > 2 ? retryMsg : '' }
 
+            </p>
+        </section>
+
+        <footer className="modal-card-foot">
+            <button className='button is-link' onClick={next} style={{backgroundColor:'darkblue', margin:'auto'}}> 
+                { approved || user.quizFailures === 0 ? `Continuar` : '' }
+                { !approved && user.quizFailures === 1 ? `Intentar de Nuevo` : '' }
+                { !approved && user.quizFailures === 2 ? `Reiniciar` : '' }
+            </button>
+        </footer>
     </div>
- 
-    <button className='button' onClick={next}> 
-        { approved ? `Continuar` : '' }
-        { !approved && user.quizFailures === 1 ? `Intentar de Nuevo` : '' }
-        { !approved && user.quizFailures === 2 ? `Reiniciar` : '' }
-    </button>
 </div>
+
 
 interface iQuiz { 
     title:string
@@ -62,18 +75,18 @@ interface iQuiz {
     approve(score:number):boolean|void
     user:iUser
 }
-
 const defaultMessage = { approve:'', fail:'' }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
     const [isActive, setActive] = useState(false)
-    const [answers, setAnswers] = useState<{[index:number]:boolean|undefined}>(
-        questions.reduce((d, { index }) => ({...d, [index]: undefined }), {})
+    const [answers, setAnswers] = useState<{[idx:number]:boolean|undefined}>(
+        questions.reduce((d, {}, idx) => ({...d, [idx]: undefined }), {})
     )
 
     const [score, setScore] = useState<number>() 
     const [approved, setApproved] = useState<boolean>()
     const submit = () => {
         const score = Object.values(answers).filter(a => a).length
+        setScore(score)
 
         const isApproved = approve(score) || false
         setApproved(isApproved)
@@ -97,9 +110,10 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         {
             questions.map((q, i) => 
                 <Question 
-                    {...q} 
+                    {...q}
+                    index={i}
                     key={i} 
-                    select={(index, value) => setAnswers({...answers, [index]:value})}
+                    select={(idx, value) => setAnswers({...answers, [idx]:value})}
                 />
             )
         }
@@ -113,6 +127,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
 
         <Modal 
             isActive={isActive} 
+            questions={questions}
             deactivate={()=> setActive(false)}
 
             score={score as number}
