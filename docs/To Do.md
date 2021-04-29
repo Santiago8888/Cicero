@@ -40,10 +40,10 @@
 * [ ] UX
     * [X] Course Items Toggling.
     * [X] Next Event Listener on Video Lessons.
-    * [ ] Next Timeout on Documents.
-    * [ ] Add Duration on Document Lessons. 
-    * [ ] Quiz submission. 
-    * [ ] Module Completion.
+    * [X] Next Timeout on Documents.
+    * [X] Add Duration on Document Lessons. 
+    * [X] Quiz submission. 
+    * [ ] Module Completion (Add Congratulatory Banner).
     * [ ] Submit new Doubt.
     * [ ] New User Funnel.
     * [ ] Visit Landing on Icon Click.
