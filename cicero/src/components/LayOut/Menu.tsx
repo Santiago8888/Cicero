@@ -20,8 +20,8 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
 
     const expand = (id:number) => {
         if(!user) return 
-        if(user.progress.module > id) return
-        setActive(id)
+        if(user.progress.module < id) return
+        setActive(id===active ? user.current.module : id)
     }
 
     useEffect(() => { setActive(user?.current.module as number) },[user])
@@ -36,21 +36,21 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
                 <li style={{lineHeight:2}}>
                     <a onClick={() => expand(idx)}> { title } </a>
                     {
-                        user?.current.module === idx && <ul>
+                        active === idx || user?.current.module === idx ? <ul>
                             { lessons.map(({ title }, i) => 
                                 <li style={{lineHeight:1.25}}>
                                     <a
                                         style={
-                                            user?.current.lesson === i 
+                                            user?.current.lesson === i && user?.current.module === idx 
                                                 ? {backgroundColor:'darkblue', borderRadius:8} 
                                                 : {}
                                         }
-                                        className={`${user?.current.lesson === i ? 'is-active': ''}`}
-                                        onClick={() => active ? navigate({module:active, lesson:i}) : null}
+                                        className={`${user?.current.lesson === i  && user?.current.module === idx ? 'is-active': ''}`}
+                                        onClick={() => navigate({module:active, lesson:i})}
                                     > { title } </a>
                                 </li>
                             )}
-                        </ul>
+                        </ul> : null
                     }
                 </li>
             )}
