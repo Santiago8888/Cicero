@@ -87,7 +87,6 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
     const [score, setScore] = useState<number>() 
     const [approved, setApproved] = useState<boolean>()
     const submit = () => {
-        console.log(values)
         const answers = Object.entries(values).map(([k, v]) => questions[k as unknown as number].answers[v].value)
         const score = answers.filter(a=>a).length
         setScore(score)
