@@ -14,6 +14,13 @@ export interface iLesson {
     min?:number
 }
 
+
+const Lock = () => <img 
+    alt="lock-icon"
+    style={{marginTop:-8, marginRight:10, height:24, verticalAlign:'middle'}}
+    src="https://cdn.iconscout.com/icon/premium/png-256-thumb/lock-1967458-1668608.png" 
+/>
+
 export interface iPosition { module:number, lesson:number }
 export interface iModule { title:string, lessons:iLesson[] }
 interface iMenu { modules:iModule[], navigate(position:iPosition):void, user?:iUser }
@@ -37,11 +44,7 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
             { modules.map(({ title, lessons }, idx) => 
                 <li style={{lineHeight:2}}>
                     <a onClick={() => expand(idx)} style={!user ? {cursor:'initial'} : {}}>
-                        { (!user || user.progress.module < idx) && <img 
-                            alt="lock-icon"
-                            style={{marginTop:-8, marginRight:10, height:24, verticalAlign:'middle'}}
-                            src="https://cdn.iconscout.com/icon/premium/png-256-thumb/lock-1967458-1668608.png" 
-                        /> }
+                        { (!user || user.progress.module < idx) && <Lock/> }
                         { title } 
                     </a>
                     {
@@ -52,11 +55,14 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
                                         style={
                                             user?.current.lesson === i && user?.current.module === idx 
                                                 ? {backgroundColor:'darkblue', borderRadius:8} 
-                                                : !user ? {cursor:'initial'} : {}
+                                                : !user || (idx === user?.progress.module && i > user?.progress.lesson) ? {cursor:'initial'} : {}
                                         }
                                         className={`${user?.current.lesson === i  && user?.current.module === idx ? 'is-active': ''}`}
                                         onClick={() => navigate({module:active, lesson:i})}
-                                    > { title } </a>
+                                    > 
+                                        { (idx === user?.progress.module && i > user?.progress.lesson) && <Lock/> }
+                                        { title } 
+                                    </a>
                                 </li>
                             )}
                         </ul> : null
