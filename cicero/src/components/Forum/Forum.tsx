@@ -15,35 +15,47 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className="modal-background" />
-        <div className="modal-content">
-            <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
-            <div className="field">
-                <label className="label"> Pregunta </label>
+        <div className="modal-card">
+            <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+                <p className="modal-card-title" style={{marginBottom:0, color:'white'}}> Haz una Pregunta </p>
+                <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
+            </header>
 
-                <div className="control">
-                    <input 
-                        className="input" 
-                        type="text" 
-                        value={question} 
-                        onChange={({target:{value}})=> setQuestion(value)}
-                    />
-                </div>
-            </div>
+            <section className="modal-card-body" style={{minHeight:120, display:'table', textAlign:'left'}}>
+                <div className="field">
+                    <label className="label"> Pregunta </label>
 
-            <div className="field">
-                <label className="label"> Detalles Adicionales (opcional): </label>    
-                <div className="control">
-                    <textarea 
-                        className="textarea" 
-                        placeholder="e.g. Hello world" 
-                        value={details} 
-                        onChange={({target:{value}})=> setDetails(value)}
-                    />
+                    <div className="control">
+                        <input 
+                            className="input" 
+                            type="text" 
+                            value={question} 
+                            onChange={({target:{value}})=> setQuestion(value)}
+                        />
+                    </div>
                 </div>
-            </div>
+
+                <div className="field">
+                    <label className="label"> Detalles Adicionales (opcional): </label>    
+                    <div className="control">
+                        <textarea 
+                            className="textarea" 
+                            placeholder="e.g. Hello world" 
+                            value={details} 
+                            onChange={({target:{value}})=> setDetails(value)}
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <footer className="modal-card-foot">
+                <button 
+                    className='button is-link' 
+                    onClick={() => submit({ question, details })} 
+                    style={{backgroundColor:'darkblue', margin:'auto'}}
+                >  Siguiente </button>
+            </footer>
         </div>
-
-        <button className='button' onClick={() => submit({ question, details })}> Siguiente </button>
     </div>
 }
 
@@ -52,6 +64,11 @@ export interface iForum { title:string, description:string, questions:iDoubt[] }
 interface IForum extends iForum { submit(question:iDoubt):void }
 export const Forum = ({ title, description, questions, submit }: IForum) => {
     const [isActive, setActive] = useState(false)
+
+    const clickModal = (doubt:iDoubt) => {
+        setActive(false)
+        submit(doubt)
+    }
 
     return <div className="content">
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
@@ -79,6 +96,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
                     marginBottom:'1.5em',
                     backgroundColor:'darkblue'
                 }}
+                onClick={() => setActive(true)}
             > Haz una Pregunta </button>
         </div> 
         
@@ -93,7 +111,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
         <Modal 
             isActive={isActive} 
             deactivate={() => setActive(false)}
-            submit={submit}
+            submit={clickModal}
         />
 
     </div>
