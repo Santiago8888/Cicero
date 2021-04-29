@@ -7,33 +7,60 @@ export const Login = ({ login }: iLogin) => {
     const [password, setPassword] = useState('')
 
     return <div className="content">
-        <div className="field">
-            <label className="label"> Correo Electrónico: </label>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+        <h3 
+            style={{
+                margin:'0rem auto 2rem',
+                color: '#333',
+                fontSize: '1.25em',
+                textAlign: 'center',
+                fontWeight: 500,
+                width: 800        
+            }}
+        > Bienvdenid@ de vuelta, ingresa tu correo electrónico para acceder al curso. </h3>
 
-            <div className="control">
-                <input 
-                    className="input" 
-                    type="email" 
-                    value={email} 
-                    onChange={({target:{value}})=> setEmail(value)}
-                />
+        <div className="field is-horizontal" style={{maxWidth:570, marginLeft:'auto', marginRight:'auto'}}>
+            <div className="field-label is-normal" style={{maxWidth:180}}>
+                <label className="label"> Correo Electrónico: </label>
+            </div>
+
+            <div className="field-body" style={{textAlign:'left', maxWidth:390}}>
+                <div className="field">
+                    <input 
+                        className="input" 
+                        type="email" 
+                        value={email} 
+                        style={{maxWidth:300}}
+                        onChange={({target:{value}})=> setEmail(value)}
+                    />
+                </div>
             </div>
         </div>
 
-        <div className="field">
-            <label className="label"> Contraseña: </label>    
-            <div className="control">
-            <input 
-                    className="input" 
-                    type="password" 
-                    value={password} 
-                    onChange={({target:{value}})=> setPassword(value)}
-                />
+        <div className="field is-horizontal" style={{maxWidth:570, marginLeft:'auto', marginRight:'auto'}}>
+            <div className="field-label is-normal" style={{maxWidth:180}}>
+                <label className="label"> Contraseña: </label>
+            </div>
+
+            <div className="field-body" style={{textAlign:'left', maxWidth:390}}>
+                <div className="field">
+                    <input 
+                        className="input" 
+                        type="password" 
+                        value={password} 
+                        style={{maxWidth:300}}
+                        onChange={({target:{value}})=> setPassword(value)}
+                    />
+                </div>
             </div>
         </div>
 
-        <button className='button' onClick={() => login({email, password})}> 
-            Siguiente 
-        </button>
+        <div style={{ width:800, margin:'3rem auto 1rem', textAlign:'center'}}>
+            <a 
+                onClick={() => login({email, password})}
+                className='button is-link' 
+                style={{borderRadius:12, width:360, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
+            > CONTINUAR </a>
+        </div>
     </div>
 }
