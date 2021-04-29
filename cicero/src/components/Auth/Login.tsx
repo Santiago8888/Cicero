@@ -15,7 +15,7 @@ export const Login = ({ newUser, login }: iLogin) => {
                 fontSize: '1.25em',
                 textAlign: 'center',
                 fontWeight: 500,
-                width: 800        
+                width: 600        
             }}
         > 
             {
