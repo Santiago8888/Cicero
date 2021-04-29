@@ -26,9 +26,11 @@ interface iHome extends iLogin {
 
 export const Home = ({ user, isLogin, lesson, forum, recordings, mongoUser, db, login, next, approve, submit }: iHome) => {
     return user
-        ?   isLogin ?  <Login login={login}/>
-            :   forum ? <Forum {...forum} submit={submit}/>
+        ?   forum 
+            ?   <Forum {...forum} submit={submit}/>
             :   recordings ? <Recordings {...recordings}/>
             :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
-        :   <Landing mongoUser={mongoUser} db={db as Realm.Services.MongoDBDatabase}/>
+        :   isLogin 
+            ?  <Login login={login}/>
+            :   <Landing mongoUser={mongoUser} db={db as Realm.Services.MongoDBDatabase}/>
 }
