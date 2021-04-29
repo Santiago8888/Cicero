@@ -5,7 +5,7 @@ import { iDoubt, iForum } from './components/Forum/Forum'
 import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
-import { lesson, modules, Recordings, Forum, defaultUser } from './data/data'
+import { modules, Recordings, Forum, defaultUser } from './data/data'
 import { App as RealmApp, User, Credentials } from 'realm-web'
 import { useState, useEffect } from 'react'
 
@@ -22,7 +22,12 @@ const connectMongo = async() => {
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 interface iHomeData { forum?:iForum, recordings?:iRecordings, lesson:iLesson}
-const initialData:iHomeData = { forum:undefined, recordings:undefined, lesson }
+const initialData:iHomeData = { 
+    forum:undefined, 
+    recordings:undefined, 
+    lesson:modules[defaultUser.current.module].lessons[defaultUser.current.lesson] 
+}
+
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
 
@@ -45,11 +50,11 @@ export const App = () => {
         }) 
     }, [])
 
-    useEffect(() => { 
-        if(!user) return
+    const updateUser = (user:iUser) => {
+        setUser(user)
         setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
         // db?.collection('users').updateOne({ email: user.email }, user)
-    }, [user])
+    } 
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
@@ -63,7 +68,7 @@ export const App = () => {
 
         const collection = db.collection('users')
         const user = await collection.findOne({ email, password })
-        setUser(user)
+        updateUser(user)
         setLogin(false)
 
         const recordings = await db.collection('recordings').find({})
@@ -83,20 +88,21 @@ export const App = () => {
     const next = () => {
         if(!user) return
 
+        const lesson = modules[user.current.module].lessons[user.current.lesson]
         if(lesson.type === 'Quiz'){
             if(!user.current.lesson) return
             if(!user.current.lesson) return
 
-            if(user.quizFailures === 0) return setUser({...user, current:nextLesson(user.current)})
+            if(user.quizFailures === 0) return updateUser({...user, current:nextLesson(user.current)})
             if(user.quizFailures === 1) return
-            if(user.quizFailures === 2) return setUser({
+            if(user.quizFailures === 2) return updateUser({
                 ...user, 
                 quizFailures:0, 
                 progress:{...user.current, lesson:0}, 
                 current: {...user.current, lesson:0}
             })
 
-        } else return setUser({...user, current:nextLesson(user.current)})
+        } else updateUser({...user, current:nextLesson(user.current)})
     }
 
     const navigate = ({module, lesson}:iPosition) => {
@@ -104,19 +110,21 @@ export const App = () => {
         if(module > user.progress.module) return
         if(module === user.progress.module && lesson > user.progress.lesson) return
 
-        setUser({...user, current:{ module, lesson } })
+        updateUser({...user, current:{ module, lesson } })
     }
 
     const approveQuiz = (score:number) => {
         if(!user) return
+
+        const lesson = modules[user.current.module].lessons[user.current.lesson]
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
         const isPassing = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
 
-        if(isPassing && score >= minScore) setUser({...user, progress:nextLesson(user.progress), quizFailures:0})
-        else if(isPassing && user.quizFailures > 1) setUser({...user, quizFailures:2 })
-        else if(isPassing) setUser({...user, quizFailures:1})
+        if(isPassing && score >= minScore) updateUser({...user, progress:nextLesson(user.progress), quizFailures:0})
+        else if(isPassing && user.quizFailures > 1) updateUser({...user, quizFailures:2 })
+        else if(isPassing) updateUser({...user, quizFailures:1})
         
         if(score >= minScore) return true
         else return false
@@ -124,8 +132,10 @@ export const App = () => {
 
     const approve = (score?:number) => {
         if(!user) return
+
+        const lesson = modules[user.current.module].lessons[user.current.lesson]
         if(lesson.type === 'Quiz' && score) return approveQuiz(score)
-        return setUser({...user, progress:nextLesson(user.progress)})
+        return updateUser({...user, progress:nextLesson(user.progress)})
     }
 
     const submit = (doubt:iDoubt) => {
