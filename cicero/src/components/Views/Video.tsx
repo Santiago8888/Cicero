@@ -13,15 +13,16 @@ export const Video = ({ user, title, link=defaultVideo, description, next, appro
             textAlign: 'left',
             fontWeight: 500,
             width: 800        
-        }}> { description } </h3>
+        }}
+    > { description } </h3>
 
     <Vimeo video={link} onEnd={approve} width={800} height={400}/>
     <div style={{ marginTop:'3rem', width:800, margin:'auto'}}>
-        <a 
+        <button
             onClick={next} 
             className='button is-link' 
             style={{float:'right', borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
-            hidden={user.current.module > user.progress.module && user.progress.lesson > user.current.lesson}
-        > CONTINUAR </a>
+            disabled={user.current.module === user.progress.module && user.progress.lesson === user.current.lesson}
+        > CONTINUAR </button>
     </div>
 </div>
