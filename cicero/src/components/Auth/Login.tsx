@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 export interface iLoginInput {email:string, password:string}
-export interface iLogin { login(loginInput:iLoginInput):void }
-export const Login = ({ login }: iLogin) => {
+export interface iLogin { newUser:boolean, login(loginInput:iLoginInput):void }
+export const Login = ({ newUser, login }: iLogin) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -17,7 +17,13 @@ export const Login = ({ login }: iLogin) => {
                 fontWeight: 500,
                 width: 800        
             }}
-        > Bienvdenid@ de vuelta, ingresa tu correo electrónico para acceder al curso. </h3>
+        > 
+            {
+                !newUser 
+                ? 'Bienvdenid@ de vuelta, ingresa tu correo electrónico para acceder al curso.' 
+                : 'Para acceder al curso, por favor crea un usuario.'
+            }
+        </h3>
 
         <div className="field is-horizontal" style={{maxWidth:570, marginLeft:'auto', marginRight:'auto'}}>
             <div className="field-label is-normal" style={{maxWidth:180}}>
@@ -60,7 +66,7 @@ export const Login = ({ login }: iLogin) => {
                 onClick={() => login({email, password})}
                 className='button is-link' 
                 style={{borderRadius:12, width:360, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
-            > CONTINUAR </a>
+            > CONTINUAR  </a>
         </div>
     </div>
 }
