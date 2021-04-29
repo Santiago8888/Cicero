@@ -28,6 +28,13 @@ export const Login = ({ newUser, login }: iLogin) => {
                         value={email} 
                         placeholder='Correo Electrónico'
                         style={{maxWidth:360}}
+                        onKeyPress={({ key }) => 
+                            key === 'Enter' 
+                            && email.match(/^\S+@\S+\.\S+$/) 
+                            && password.length >= 6 
+                                ? login({email, password}) 
+                                : null
+                        }
                         onChange={({target:{value}})=> setEmail(value)}
                     />
                 </div>
@@ -39,6 +46,13 @@ export const Login = ({ newUser, login }: iLogin) => {
                         value={password} 
                         placeholder='Contraseña'
                         style={{maxWidth:360}}
+                        onKeyPress={({ key }) => 
+                            key === 'Enter' 
+                            && email.match(/^\S+@\S+\.\S+$/) 
+                            && password.length >= 6 
+                                ? login({email, password}) 
+                                : null
+                        }
                         onChange={({target:{value}})=> setPassword(value)}
                     />
                 </div>
