@@ -38,8 +38,8 @@
     * [ ] Doubt Modal.
 
 * [ ] UX
-    * [ ] Course Items Toggling.
-    * [ ] Next Event Listener on Video Lessons.
+    * [X] Course Items Toggling.
+    * [X] Next Event Listener on Video Lessons.
     * [ ] Next Timeout on Documents.
     * [ ] Add Duration on Document Lessons. 
     * [ ] Quiz submission. 
@@ -48,6 +48,7 @@
     * [ ] New User Funnel.
     * [ ] Visit Landing on Icon Click.
     * [ ] Dismiss Auth Funnel on Home Click.
+    * [ ] Lock items on cursor.
 
 * [ ] Ops
     * [ ] DB Events.
