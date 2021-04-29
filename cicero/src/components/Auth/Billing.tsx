@@ -1,14 +1,13 @@
 import { Elements, useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
 import { loadStripe, StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
 import { useEffect, useState, useMemo, FormEvent } from "react"
-import { User } from 'realm-web'
-import '../../Stripe.css'
 import { iLanding } from './Landing'
 import { iLoginInput } from './Login'
+import '../../Stripe.css'
 
 
 const useResponsiveFontSize = () => {
-    const getFontSize = () => (window.innerWidth < 450 ? "16px" : "18px")
+    const getFontSize = () => (window.innerWidth < 450 ? "25px" : "36px")
     const [fontSize, setFontSize] = useState(getFontSize)
 
     useEffect(() => {
@@ -28,10 +27,11 @@ const useOptions = () => {
         () => ({
             style: {
                 base: {
-                    fontSize,
+                    fontSize:'20px',
                     color: "#424770",
                     letterSpacing: "0.025em",
                     fontSmoothing: "antialiased",
+                    backgroundColor:'white',
                     fontFamily: "Source Code Pro, monospace",
                     "::placeholder": { color: "#aab7c4" }
                 },
@@ -44,7 +44,7 @@ const useOptions = () => {
         }), [fontSize]
     )
 
-  return options
+    return options
 }
 
 
@@ -97,22 +97,25 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
     }
 
 
-    return <form id="payment-form" onSubmit={handleSubmit}>
-        <label> Card number
+    return <form id="payment-form" onSubmit={handleSubmit} style={{maxWidth:600, margin:'auto', textAlign:'left'}}>
+        <label className="label">  Card number: </label>
+        <div className="field">
             <CardNumberElement options={options} onChange={handleChange}/>
-        </label>
+        </div>
 
-        <label> Expiration date
+        <label className="label"> Expiration date: </label>
+        <div className="field">
             <CardExpiryElement options={options} />
-        </label>
+        </div>
 
-        <label> CVC
+        <label className="label"> CVC: </label>
+        <div className="field">
             <CardCvcElement options={options} />
-        </label>
+        </div>
 
-        <button disabled={processing || disabled || succeeded} id="submit" >
+        <button className="stripeButton" disabled={processing || disabled || succeeded} id="submit" style={{marginTop:'2rem'}}>
             <span id="button-text">
-                {processing ? <div className="spinner" id="spinner"></div> : "Pay now" }
+                {processing ? <div className="spinner" id="spinner"></div> : "Pagar" }
             </span>
         </button>
 
