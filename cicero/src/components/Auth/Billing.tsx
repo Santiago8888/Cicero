@@ -6,23 +6,8 @@ import { iLoginInput } from './Login'
 import '../../Stripe.css'
 
 
-const useResponsiveFontSize = () => {
-    const getFontSize = () => (window.innerWidth < 450 ? "25px" : "36px")
-    const [fontSize, setFontSize] = useState(getFontSize)
-
-    useEffect(() => {
-        const onResize = () => { setFontSize(getFontSize()) }
-        window.addEventListener("resize", onResize)
-        return () => { window.removeEventListener("resize", onResize) }
-    })
-
-    return fontSize
-}
-
-
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
 const useOptions = () => {
-    const fontSize = useResponsiveFontSize()
     const options = useMemo(
         () => ({
             style: {
@@ -41,7 +26,7 @@ const useOptions = () => {
                 }
             },
             showIcon:true
-        }), [fontSize]
+        }), []
     )
 
     return options
