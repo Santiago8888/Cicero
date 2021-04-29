@@ -14,7 +14,7 @@ export interface iLesson {
     min?:number
 }
 
-export interface iPosition {module:number, lesson:number}
+export interface iPosition { module:number, lesson:number }
 export interface iModule { title:string, lessons:iLesson[] }
 interface iMenu { modules:iModule[], navigate(position:iPosition):void, user?:iUser }
 export const Menu = ({ modules, navigate, user }: iMenu) => {
@@ -23,7 +23,7 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
     const expand = (id:number) => {
         if(!user) return 
         if(user.progress.module < id) return
-        setActive(id===active ? user.current.module : id)
+        setActive( id === active ? user.current.module : id)
     }
 
     useEffect(() => { setActive(user?.current.module as number) },[user])
@@ -36,16 +36,23 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
         <ul className="menu-list">
             { modules.map(({ title, lessons }, idx) => 
                 <li style={{lineHeight:2}}>
-                    <a onClick={() => expand(idx)}> { title } </a>
+                    <a onClick={() => expand(idx)} style={!user ? {cursor:'initial'} : {}}>
+                        { (!user || user.progress.module < idx) && <img 
+                            alt="lock-icon"
+                            style={{marginTop:-8, marginRight:10, height:24, verticalAlign:'middle'}}
+                            src="https://cdn.iconscout.com/icon/premium/png-256-thumb/lock-1967458-1668608.png" 
+                        /> }
+                        { title } 
+                    </a>
                     {
-                        active === idx || user?.current.module === idx ? <ul>
+                        active === idx || user?.current.module === idx || (!user && idx === 0) ? <ul>
                             { lessons.map(({ title }, i) => 
                                 <li style={{lineHeight:1.25}}>
                                     <a
                                         style={
                                             user?.current.lesson === i && user?.current.module === idx 
                                                 ? {backgroundColor:'darkblue', borderRadius:8} 
-                                                : {}
+                                                : !user ? {cursor:'initial'} : {}
                                         }
                                         className={`${user?.current.lesson === i  && user?.current.module === idx ? 'is-active': ''}`}
                                         onClick={() => navigate({module:active, lesson:i})}
