@@ -32,8 +32,8 @@
     * [X] Sign Up Form.
     * [X] Login Form.
     * [ ] Pricing Table.
-    * [ ] Billing Form.
-    * [ ] Menu Items.
+    * [X] Billing Form.
+    * [X] Menu Items.
     * [ ] Question Modal.
     * [ ] Doubt Modal.
 
@@ -47,6 +47,7 @@
     * [ ] Submit new Doubt.
     * [ ] New User Funnel.
     * [ ] Visit Landing on Icon Click.
+    * [ ] Dismiss Auth Funnel on Home Click.
 
 * [ ] Ops
     * [ ] DB Events.
@@ -58,4 +59,4 @@
     * [ ] MongoDB Authentication.
     * [ ] Document Next Steps.
     * [ ] Private Security Checklist.
-    * [ ] Share.
+    * [ ] Share with Stackholders.
