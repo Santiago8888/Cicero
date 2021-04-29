@@ -90,9 +90,6 @@ export const App = () => {
 
         const lesson = modules[user.current.module].lessons[user.current.lesson]
         if(lesson.type === 'Quiz'){
-            if(!user.current.lesson) return
-            if(!user.current.lesson) return
-
             if(user.quizFailures === 0) return updateUser({...user, current:nextLesson(user.current)})
             if(user.quizFailures === 1) return
             if(user.quizFailures === 2) return updateUser({
@@ -120,11 +117,11 @@ export const App = () => {
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
-        const isPassing = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
+        const needsApproval = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
 
-        if(isPassing && score >= minScore) updateUser({...user, progress:nextLesson(user.progress), quizFailures:0})
-        else if(isPassing && user.quizFailures > 1) updateUser({...user, quizFailures:2 })
-        else if(isPassing) updateUser({...user, quizFailures:1})
+        if(needsApproval && score >= minScore) updateUser({...user, progress:nextLesson(user.progress), quizFailures:0})
+        else if(needsApproval && user.quizFailures === 1) updateUser({...user, quizFailures:2 })
+        else if(needsApproval) updateUser({...user, quizFailures:1})
         
         if(score >= minScore) return true
         else return false
@@ -134,7 +131,7 @@ export const App = () => {
         if(!user) return
 
         const lesson = modules[user.current.module].lessons[user.current.lesson]
-        if(lesson.type === 'Quiz' && score) return approveQuiz(score)
+        if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
         return updateUser({...user, progress:nextLesson(user.progress)})
     }
 
