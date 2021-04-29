@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
+import { iRecordings } from "../Forum/Recordings"
 import { useEffect, useState } from "react"
 import { iQuestion } from "../Views/Quiz"
+import { iForum } from "../Forum/Forum"
 import { iUser } from '../../App'
+
 
 type Lesson = 'Video' | 'Quiz' | 'Reading'
 export interface iLesson { 
@@ -23,8 +26,8 @@ const Lock = () => <img
 
 export interface iPosition { module:number, lesson:number }
 export interface iModule { title:string, lessons:iLesson[] }
-interface iMenu { modules:iModule[], navigate(position:iPosition):void, user?:iUser }
-export const Menu = ({ modules, navigate, user }: iMenu) => {
+interface iMenu { modules:iModule[], navigate(position:iPosition):void, user?:iUser, forum?:iForum, recordings?:iRecordings }
+export const Menu = ({ modules, navigate, user, forum, recordings }: iMenu) => {
     const [active, setActive] = useState<number>(user?.current.module || 0)
 
     const expand = (id:number) => {
@@ -54,7 +57,7 @@ export const Menu = ({ modules, navigate, user }: iMenu) => {
                                     <a
                                         style={
                                             user?.current.lesson === i && user?.current.module === idx 
-                                                ? {backgroundColor:'darkblue', borderRadius:8} 
+                                                ? {backgroundColor: !forum && !recordings ? 'darkblue' : 'lightblue', borderRadius:8} 
                                                 : !user || (idx === user?.progress.module && i > user?.progress.lesson) ? {cursor:'initial'} : {}
                                         }
                                         className={`${user?.current.lesson === i  && user?.current.module === idx ? 'is-active': ''}`}
