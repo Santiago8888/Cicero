@@ -44,11 +44,12 @@
     * [X] Add Duration on Document Lessons. 
     * [X] Quiz submission. 
     * [ ] Module Completion (Add Congratulatory Banner).
-    * [ ] Submit new Doubt.
+    * [X] Submit new Doubt.
     * [ ] New User Funnel.
     * [ ] Visit Landing on Icon Click.
     * [ ] Dismiss Auth Funnel on Home Click.
-    * [ ] Lock items on cursor.
+    * [ ] Lock items on cursor - (Add Icon)
+    * [ ] Menu Style & Iteractions when on Forum or Recordings.
 
 * [ ] Ops
     * [ ] DB Events.
