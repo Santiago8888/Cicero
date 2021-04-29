@@ -7,66 +7,51 @@ export const Login = ({ newUser, login }: iLogin) => {
     const [password, setPassword] = useState('')
 
     return <div className="content">
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> ASTROCONSCIENCIA </h1>
-        <h3 
-            style={{
-                margin:'0rem auto 2rem',
-                color: '#333',
-                fontSize: '1.25em',
-                textAlign: 'center',
-                fontWeight: 500,
-                width: 600        
-            }}
-        > 
-            {
-                !newUser 
-                ? 'Bienvdenid@ de vuelta, ingresa tu correo electrónico para acceder al curso.' 
-                : 'Para acceder al curso, por favor crea un usuario.'
-            }
-        </h3>
+        <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
+            <div  style={{display:'table-cell', verticalAlign:'middle'}}>
+                <h1 style={{fontSize:'3rem', marginBottom:'1rem', color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+                <h3
+                    style={{
+                        margin:'0rem auto 2rem',
+                        color: '#333',
+                        fontSize: '1.25em',
+                        textAlign: 'center',
+                        fontWeight: 500,
+                        width: 600
+                    }}
+                >   {   newUser  ? 'Crear Usuario' : 'Iniciar Sesión' } </h3>
 
-        <div className="field is-horizontal" style={{maxWidth:570, marginLeft:'auto', marginRight:'auto'}}>
-            <div className="field-label is-normal" style={{maxWidth:180}}>
-                <label className="label"> Correo Electrónico: </label>
-            </div>
-
-            <div className="field-body" style={{textAlign:'left', maxWidth:390}}>
                 <div className="field">
                     <input 
                         className="input" 
                         type="email" 
                         value={email} 
-                        style={{maxWidth:300}}
+                        placeholder='Correo Electrónico'
+                        style={{maxWidth:360}}
                         onChange={({target:{value}})=> setEmail(value)}
                     />
                 </div>
-            </div>
-        </div>
 
-        <div className="field is-horizontal" style={{maxWidth:570, marginLeft:'auto', marginRight:'auto'}}>
-            <div className="field-label is-normal" style={{maxWidth:180}}>
-                <label className="label"> Contraseña: </label>
-            </div>
-
-            <div className="field-body" style={{textAlign:'left', maxWidth:390}}>
                 <div className="field">
                     <input 
                         className="input" 
                         type="password" 
                         value={password} 
-                        style={{maxWidth:300}}
+                        placeholder='Contraseña'
+                        style={{maxWidth:360}}
                         onChange={({target:{value}})=> setPassword(value)}
                     />
                 </div>
-            </div>
-        </div>
 
-        <div style={{ width:800, margin:'3rem auto 1rem', textAlign:'center'}}>
-            <a 
-                onClick={() => login({email, password})}
-                className='button is-link' 
-                style={{borderRadius:12, width:360, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
-            > CONTINUAR  </a>
+                <div style={{ width:800, margin:'3rem auto 1rem', textAlign:'center'}}>
+                    <button
+                        className='button is-link' 
+                        onClick={() => login({email, password})}
+                        disabled={!email.match(/^\S+@\S+\.\S+$/) || password.length < 6}
+                        style={{borderRadius:12, width:360, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
+                    > CONTINUAR  </button>
+                </div>
+            </div>
         </div>
     </div>
 }
