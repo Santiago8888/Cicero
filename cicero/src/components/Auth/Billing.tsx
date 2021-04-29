@@ -27,7 +27,7 @@ const useOptions = () => {
         () => ({
             style: {
                 base: {
-                    fontSize:'20px',
+                    fontSize:'22px',
                     color: "#424770",
                     letterSpacing: "0.025em",
                     fontSmoothing: "antialiased",
@@ -97,38 +97,52 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
     }
 
 
-    return <form id="payment-form" onSubmit={handleSubmit} style={{maxWidth:600, margin:'auto', textAlign:'left'}}>
-        <label className="label">  Card number: </label>
-        <div className="field">
-            <CardNumberElement options={options} onChange={handleChange}/>
-        </div>
+    return <div className="content">
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+        <h3 
+            style={{
+                margin:'0rem auto 3rem',
+                color: '#555',
+                fontSize: '1.25em',
+                textAlign: 'center',
+                fontWeight: 500,
+                width: 600        
+            }}
+        >   Disfruta de acceso completo al curso de Astroconsciencia por un pago único de $400 USD. </h3>        
 
-        <label className="label"> Expiration date: </label>
-        <div className="field">
-            <CardExpiryElement options={options} />
-        </div>
+        <form id="payment-form" onSubmit={handleSubmit} style={{maxWidth:600, margin:'auto', textAlign:'left'}}>
+            <label className="label" style={{color:'#555'}}>  Número de Tarjeta: </label>
+            <div className="field">
+                <CardNumberElement options={options} onChange={handleChange}/>
+            </div>
 
-        <label className="label"> CVC: </label>
-        <div className="field">
-            <CardCvcElement options={options} />
-        </div>
+            <label className="label" style={{color:'#555'}}> Fecha de Expiración: </label>
+            <div className="field">
+                <CardExpiryElement options={options} />
+            </div>
 
-        <button className="stripeButton" disabled={processing || disabled || succeeded} id="submit" style={{marginTop:'2rem'}}>
-            <span id="button-text">
-                {processing ? <div className="spinner" id="spinner"></div> : "Pagar" }
-            </span>
-        </button>
+            <label className="label" style={{color:'#555'}}> CVC: </label>
+            <div className="field">
+                <CardCvcElement options={options} />
+            </div>
 
-        { error && <div className="card-error" role="alert"> {error} </div> }
-        <p className={succeeded ? "result-message" : "result-message hidden"}>
-            Payment succeeded, see the result in your
-            <a href={`https://dashboard.stripe.com/test/payments`}>
-                {" "}
-                Stripe dashboard.
-            </a> Refresh the page to pay again.
-        </p>
+            <button className="stripeButton" disabled={processing || disabled || succeeded} id="submit" style={{marginTop:'2.5rem'}}>
+                <span id="button-text">
+                    {processing ? <div className="spinner" id="spinner"></div> : "Pagar" }
+                </span>
+            </button>
 
-    </form>
+            { error && <div className="card-error" role="alert"> {error} </div> }
+            <p className={succeeded ? "result-message" : "result-message hidden"}>
+                Payment succeeded, see the result in your
+                <a href={`https://dashboard.stripe.com/test/payments`}>
+                    {" "}
+                    Stripe dashboard.
+                </a> Refresh the page to pay again.
+            </p>
+
+        </form>
+    </div>
 }
 
 
