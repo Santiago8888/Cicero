@@ -1,11 +1,11 @@
 import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
-import { iLoginInput } from './components/Auth/Login'
 import { iDoubt, iForum } from './components/Forum/Forum'
+import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
-import { lesson, modules, Recordings, Forum } from './data/data'
+import { lesson, modules, Recordings, Forum, defaultUser } from './data/data'
 import { App as RealmApp, User, Credentials } from 'realm-web'
 import { useState, useEffect } from 'react'
 
@@ -23,8 +23,6 @@ const connectMongo = async() => {
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 interface iHomeData { forum?:iForum, recordings?:iRecordings, lesson:iLesson}
 const initialData:iHomeData = { forum:undefined, recordings:undefined, lesson }
-const initialPosition = {module:0, lesson:0}
-const defaultUser:iUser = { email:'test@branding.gq', progress:initialPosition, current:initialPosition, quizFailures:0 }
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
 
@@ -47,16 +45,17 @@ export const App = () => {
         }) 
     }, [])
 
-    // useEffect(() => { 
-    //     if(!user) return
-    //     setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
-    //     db?.collection('users').updateOne({ email: user.email }, user)
-    // }, [user])
+    useEffect(() => { 
+        if(!user) return
+        setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
+        // db?.collection('users').updateOne({ email: user.email }, user)
+    }, [user])
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
-        if(item === 'Login') return setLogin(true)
+        if(item === 'Login') return setLogin(!isLogin)
         if(item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings})
+        if(item === 'Home') return setLogin(false)
     }
     
     const login = async({ email, password }:iLoginInput) => {
@@ -103,7 +102,7 @@ export const App = () => {
     const navigate = ({module, lesson}:iPosition) => {
         if(!user) return
         if(module > user.progress.module) return
-        if(lesson > user.progress.lesson) return
+        if(module === user.progress.module && lesson > user.progress.lesson) return
 
         setUser({...user, current:{ module, lesson } })
     }
