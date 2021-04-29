@@ -29,8 +29,8 @@
     * [X] Quizes.
     * [X] Forum.
     * [X] Recordings.
-    * [ ] Sign Up Form.
-    * [ ] Login Form.
+    * [X] Sign Up Form.
+    * [X] Login Form.
     * [ ] Pricing Table.
     * [ ] Billing Form.
     * [ ] Menu Items.
