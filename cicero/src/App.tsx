@@ -33,7 +33,7 @@ export const App = () => {
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>()
+    const [ user, setUser ] = useState<iUser>(defaultUser)
 
     const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
@@ -41,15 +41,14 @@ export const App = () => {
     const [ recordings, setRecordings ] = useState(Recordings)
 
 
-    useEffect(() => { 
-        return
-        connectMongo().then(mongoUser => {
-            setMongoUser(mongoUser)
-            const mongo = mongoUser.mongoClient('myAtlasCluster')
-            const db = mongo.db('Cicero')
-            setDB(db)
-        }) 
-    }, [])
+    // useEffect(() => { 
+    //     connectMongo().then(mongoUser => {
+    //         setMongoUser(mongoUser)
+    //         const mongo = mongoUser.mongoClient('myAtlasCluster')
+    //         const db = mongo.db('Cicero')
+    //         setDB(db)
+    //     }) 
+    // }, [])
 
     const updateUser = (user:iUser) => {
         setUser(user)
@@ -115,6 +114,7 @@ export const App = () => {
         if(module === user.progress.module && lesson > user.progress.lesson) return
 
         updateUser({...user, current:{ module, lesson } })
+        setHomeData({...homeData, recordings:undefined, forum:undefined})
     }
 
     const approveQuiz = (score:number) => {
@@ -151,7 +151,13 @@ export const App = () => {
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
         <div className="container" style={{maxWidth:'100%'}}>
             <div className="columns" style={{margin:0}}>
-                <Menu modules={modules} navigate={navigate} user={user}/>
+                <Menu 
+                    user={user}
+                    modules={modules} 
+                    navigate={navigate} 
+                    forum={homeData.forum}
+                    recordings={homeData.recordings}
+                />
 
                 <div 
                     className="column is-10" 
