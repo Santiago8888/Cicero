@@ -13,6 +13,7 @@ import { User } from 'realm-web'
 interface iHome { 
     user?:iUser
     isLogin:boolean
+    isWelcome:boolean
     lesson:iLesson
     forum?:iForum
     recordings?:iRecordings 
@@ -23,9 +24,10 @@ interface iHome {
     approve(score?:number):boolean | void
     login(loginInput:iLoginInput):void
     submit(doubt:iDoubt):void
+    setWelcome():void
 }
 
-export const Home = ({ user, isLogin, lesson, forum, recordings, mongoUser, db, login, next, approve, submit }: iHome) => {
+export const Home = ({ user, isLogin, lesson, forum, recordings, mongoUser, db, login, next, approve, submit, isWelcome, setWelcome }: iHome) => {
     return user
         ?   forum 
             ?   <Forum {...forum} submit={submit}/>
@@ -33,5 +35,5 @@ export const Home = ({ user, isLogin, lesson, forum, recordings, mongoUser, db, 
             :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
         :   isLogin 
             ?  <Login login={login} newUser={false}/>
-            :   <Landing mongoUser={mongoUser} db={db as Realm.Services.MongoDBDatabase}/>
+            :   <Landing mongoUser={mongoUser} db={db as Realm.Services.MongoDBDatabase} isWelcome={isWelcome} setWelcome={setWelcome}/>
 }
