@@ -33,10 +33,11 @@ export const App = () => {
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>(defaultUser)
+    const [ user, setUser ] = useState<iUser>()
 
     const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
+    const [ isWelcome, setWelcome ] = useState(true)
     const [ recordings, setRecordings ] = useState(Recordings)
 
 
@@ -58,9 +59,15 @@ export const App = () => {
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
-        if(item === 'Login') return setLogin(!isLogin)
+        if(item === 'Login') return setLogin(true)
         if(item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings})
-        if(item === 'Home') return setLogin(false)
+        if(item === 'Home') reset()
+    }
+
+    const reset = () => {
+        setLogin(false)
+        setWelcome(true)
+        setHomeData({...homeData, forum:undefined, recordings:undefined})
     }
     
     const login = async({ email, password }:iLoginInput) => {
@@ -140,7 +147,6 @@ export const App = () => {
         db?.collection('doubts').insertOne(doubt)
     }
 
-
     return <div>
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
         <div className="container" style={{maxWidth:'100%'}}>
@@ -163,11 +169,13 @@ export const App = () => {
                         user={user}
                         {...homeData} 
                         isLogin={isLogin} 
+                        isWelcome={isWelcome}
                         mongoUser={mongoUser}
+                        setWelcome={() => setWelcome(false)}
                         approve={approve} 
                         submit={submit}
                         login={login} 
-                        next={next} 
+                        next={next}
                     />
                 </div>
             </div>
