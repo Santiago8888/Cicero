@@ -45,7 +45,7 @@
     * [X] Quiz submission. 
     * [ ] Module Completion (Add Congratulatory Banner).
     * [X] Submit new Doubt.
-    * [ ] New User Funnel.
+    * [X] New User Funnel.
     * [ ] Visit Landing on Icon Click.
     * [ ] Dismiss Auth Funnel on Home Click.
     * [ ] Lock items on cursor - (Add Icon)
