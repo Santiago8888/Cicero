@@ -48,9 +48,9 @@
     * [X] New User Funnel.
     * [X] Visit Landing on Icon Click.
     * [X] Dismiss Auth Funnel on Home Click.
-    * [ ] Lock items on cursor - (Add Icon)
+    * [X] Lock items on cursor - (Add Icon)
     * [ ] Menu Style & Iteractions when on Forum or Recordings.
-    * [ ] Submit Login Form on Enter.
+    * [X] Submit Login Form on Enter.
 
 * [ ] Ops
     * [ ] DB Events.
