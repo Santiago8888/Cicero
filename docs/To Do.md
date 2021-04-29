@@ -46,10 +46,11 @@
     * [ ] Module Completion (Add Congratulatory Banner).
     * [X] Submit new Doubt.
     * [X] New User Funnel.
-    * [ ] Visit Landing on Icon Click.
-    * [ ] Dismiss Auth Funnel on Home Click.
+    * [X] Visit Landing on Icon Click.
+    * [X] Dismiss Auth Funnel on Home Click.
     * [ ] Lock items on cursor - (Add Icon)
     * [ ] Menu Style & Iteractions when on Forum or Recordings.
+    * [ ] Submit Login Form on Enter.
 
 * [ ] Ops
     * [ ] DB Events.
