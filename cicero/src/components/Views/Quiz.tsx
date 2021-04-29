@@ -78,11 +78,10 @@ interface iQuiz {
     approve(score:number):boolean|void
     user:iUser
 }
-const defaultMessage = { approve:'', fail:'' }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
     const [isActive, setActive] = useState(false)
     const [values, setValues] = useState<{[idx:number]:number}>(
-        questions.reduce((d, {}, idx) => ({...d, [idx]: -1 }), {})
+        questions.reduce((d, _, idx) => ({...d, [idx]: -1 }), {})
     )
 
     const [score, setScore] = useState<number>() 
@@ -102,7 +101,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
     const modalClick = () => {
         next()
         setActive(false)
-        if(user.quizFailures === 1) setValues(questions.reduce((d, {}, idx) => ({...d, [idx]: -1 }), {}))
+        if(user.quizFailures === 1) setValues(questions.reduce((d, _, idx) => ({...d, [idx]: -1 }), {}))
     }
 
     return <div className="content">

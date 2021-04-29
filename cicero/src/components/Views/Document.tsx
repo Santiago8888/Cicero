@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { iUser } from '../../App'
 
 const defaultDoc = ''
