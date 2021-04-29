@@ -15,7 +15,7 @@ interface iDocument {
 
 
 export const Document = ({ user, title, link=defaultDoc, description, min, next, approve }:iDocument) => {
-    useEffect(() => { setTimeout(() => approve(), 1000*(min||10)) }, [])
+    const initCountdown = () => setTimeout(() => approve(), 1000*60*(min || 10))
 
     return <div className="content">
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
@@ -33,6 +33,7 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
 
         <div style={{ width:800, margin:'3rem auto 1rem'}}>
             <a 
+                onClick={initCountdown}
                 target='_blank' 
                 rel='noreferrer' 
                 href={link} 
@@ -49,12 +50,12 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
                 Leer
             </a>
 
-            <a 
+            <button 
                 onClick={next} 
                 className='button is-link' 
                 style={{float:'right', borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
-                hidden={user.current.module > user.progress.module && user.progress.lesson > user.current.lesson}
-            > CONTINUAR </a>
+                disabled={user.current.module === user.progress.module && user.progress.lesson === user.current.lesson}
+            > CONTINUAR </button>
         </div>
     </div>
 }
