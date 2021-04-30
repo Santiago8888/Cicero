@@ -10,19 +10,32 @@ import { User } from 'realm-web'
 interface iWelcome { subscribe():void }
 const Welcome = ({ subscribe }:iWelcome) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
+    const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+
     return <div className="content" style={{textAlign:'center'}}>
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+        <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+        <Vimeo video={'539430817'} width={midScreen ? 800 : !smallScreen ? 400 : 300 } height={midScreen ? 400 : !smallScreen ? 300 : 200 }/>
 
-        <Vimeo video={'539430817'} width={midScreen ? 800 : 400} height={midScreen ? 400 : 300}/>
-
-        <div style={{marginTop:'3rem'}}>
-            <h2 style={{marginBottom:'2rem', marginRight:'auto', marginLeft:'auto', width:600, color:'navy'}}>
-                Escucha el llamado de tu alma en las estrellas, los planetas y tu interior.
-            </h2>
+        <div style={{marginTop:!smallScreen ? '3rem' : 0}}>
+            {
+                !smallScreen 
+                    ?   <h2 style={{marginBottom:'2rem', marginRight:'auto', marginLeft:'auto', width:600, color:'navy'}}>
+                            Escucha el llamado de tu alma en las estrellas, los planetas y tu interior.
+                        </h2>
+                    :   <h2 style={{marginBottom:'1.5rem', marginRight:'auto', marginLeft:'auto', color:'navy', fontSize:'1.25rem', marginTop:'1rem'}}>
+                            Escucha el llamado de tu alma.
+                        </h2>
+            }
             <a
                 onClick={subscribe}
                 className='button is-link'
-                style={{ width:460, fontSize: '2rem', fontWeight:900, backgroundColor:'mediumblue', borderRadius:20 }}
+                style={{ 
+                    width:!smallScreen ? 460 : 260 , 
+                    fontSize: !smallScreen ? '2rem' : '1.25rem', 
+                    fontWeight:900, 
+                    backgroundColor:'mediumblue', 
+                    borderRadius:20 
+                }}
             > INICIA TU CAMNINO </a>
         </div>
     </div>
