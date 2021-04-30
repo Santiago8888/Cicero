@@ -5,8 +5,10 @@ import { iDoubt, iForum } from './components/Forum/Forum'
 import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
-import { App as RealmApp, User, Credentials } from 'realm-web'
 import { modules, Recordings, Forum } from './data/data'
+
+import { App as RealmApp, User, Credentials } from 'realm-web'
+import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
@@ -30,6 +32,7 @@ const initialData:iHomeData = {
 
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
+    const largeScreen = useMediaQuery({ query: '(min-width: 1200px)' })
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
@@ -169,23 +172,27 @@ export const App = () => {
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
         <div className="container" style={{maxWidth:'100%'}}>
             <div className="columns" style={{margin:0}}>
-                <Menu 
-                    user={user}
-                    modules={modules} 
-                    navigate={navigate} 
-                    forum={homeData.forum}
-                    recordings={homeData.recordings}
-                />
+                {
+                    largeScreen &&
+                        <Menu
+                            user={user}
+                            modules={modules}
+                            navigate={navigate}
+                            forum={homeData.forum}
+                            recordings={homeData.recordings}
+                        />
+                }
 
                 <div 
                     className="column is-10" 
                     style={{ 
-                        padding:'3rem', 
+                        paddingTop:'3rem', 
                         marginLeft:3, 
                         marginRight:0, 
                         margin:'0px auto', 
                         backgroundColor: 'aliceblue', 
-                        width: 'calc(100vw - 253px)',
+                        width: largeScreen ? 'calc(100vw - 253px)' : '100%',
+                        minHeight:'calc(100vh - 82px)',
                         textAlign:'center'
                     }}
                 >
