@@ -12,9 +12,10 @@ export const Login = ({ newUser, login }: iLogin) => {
     return <div className="content">
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
             <div  style={{display:'table-cell', verticalAlign:'middle'}}>
-                <h1 
-                    style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'darkblue'}
-                }> ASTROCONSCIENCIA </h1>
+                <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'darkblue'}}> 
+                    ASTROCONSCIENCIA 
+                </h1>
+
                 <h3
                     style={{
                         margin:'0rem auto 2rem',
