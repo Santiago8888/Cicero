@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive'
 import { iUser } from "../../App"
 import { useState } from "react"
 
@@ -79,6 +80,8 @@ interface iQuiz {
     user:iUser
 }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
+    const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+
     const [isActive, setActive] = useState(false)
     const [values, setValues] = useState<{[idx:number]:number}>(
         questions.reduce((d, _, idx) => ({...d, [idx]: -1 }), {})
@@ -112,7 +115,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
                 fontSize: '1.25em',
                 textAlign: 'left',
                 fontWeight: 500,
-                width: 800        
+                width: !smallScreen ? 800 : 320        
             }}
         > { description } </h3>
 
