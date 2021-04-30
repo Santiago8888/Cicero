@@ -56,16 +56,24 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 }
 
                 {
-                    user && <div className={`navbar-end `} style={{fontSize: '1.2em'}} hidden={!!user}>
-                        <a onClick={() => click('Forum')} className={'navbar-item'}> 
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkblue'}}>
+                        <a 
+                            onClick={() => click('Forum')} 
+                            className={'navbar-item'}
+                            style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
+                        > 
                             <strong> Forum </strong> 
                         </a>                    
                     </div>
                 }
 
                 {
-                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial'}}>
-                        <a onClick={() => click('Recordings')} className={'navbar-item'}> 
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial', backgroundClip:'darkblue'}}>
+                        <a 
+                            onClick={() => click('Recordings')} 
+                            className={'navbar-item'}
+                            style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
+                        > 
                             <strong> Grabaciones </strong> 
                         </a>
                     </div>
