@@ -1,23 +1,28 @@
+import { useMediaQuery } from 'react-responsive'
 import { useState } from 'react'
 
 export interface iLoginInput {email:string, password:string}
 export interface iLogin { newUser:boolean, login(loginInput:iLoginInput):void }
 export const Login = ({ newUser, login }: iLogin) => {
-    const [email, setEmail] = useState('')
+    const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+
     const [password, setPassword] = useState('')
+    const [email, setEmail] = useState('')
 
     return <div className="content">
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
             <div  style={{display:'table-cell', verticalAlign:'middle'}}>
-                <h1 style={{fontSize:'3rem', marginBottom:'1rem', color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+                <h1 
+                    style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'darkblue'}
+                }> ASTROCONSCIENCIA </h1>
                 <h3
                     style={{
                         margin:'0rem auto 2rem',
                         color: '#333',
-                        fontSize: '1.25em',
+                        fontSize: !smallScreen ? '1.25em' : '1rem',
                         textAlign: 'center',
                         fontWeight: 500,
-                        width: 600
+                        width: !smallScreen ? 600 : 300
                     }}
                 >   {   newUser  ? 'Crear Usuario' : 'Iniciar Sesión' } </h3>
 
@@ -27,7 +32,7 @@ export const Login = ({ newUser, login }: iLogin) => {
                         type="email" 
                         value={email} 
                         placeholder='Correo Electrónico'
-                        style={{maxWidth:360}}
+                        style={{width: !smallScreen ? 360 : 240}}
                         onKeyPress={({ key }) => 
                             key === 'Enter' 
                             && email.match(/^\S+@\S+\.\S+$/) 
@@ -45,7 +50,7 @@ export const Login = ({ newUser, login }: iLogin) => {
                         type="password" 
                         value={password} 
                         placeholder='Contraseña'
-                        style={{maxWidth:360}}
+                        style={{width: !smallScreen ? 360 : 240}}
                         onKeyPress={({ key }) => 
                             key === 'Enter' 
                             && email.match(/^\S+@\S+\.\S+$/) 
@@ -57,12 +62,18 @@ export const Login = ({ newUser, login }: iLogin) => {
                     />
                 </div>
 
-                <div style={{ width:800, margin:'3rem auto 1rem', textAlign:'center'}}>
+                <div style={{ width: !smallScreen ? 600 : 300, margin:'3rem auto 1rem', textAlign:'center'}}>
                     <button
                         className='button is-link' 
                         onClick={() => login({email, password})}
                         disabled={!email.match(/^\S+@\S+\.\S+$/) || password.length < 6}
-                        style={{borderRadius:12, width:360, fontSize:'1.25rem', fontWeight:600, backgroundColor:'darkblue'}}
+                        style={{
+                            borderRadius:12, 
+                            width: !smallScreen ? 360 : 240, 
+                            fontSize: !smallScreen ? '1.25rem' : '1rem', 
+                            fontWeight: 600, 
+                            backgroundColor:'darkblue'
+                        }}
                     > CONTINUAR  </button>
                 </div>
             </div>
