@@ -1,6 +1,10 @@
 import { Elements, useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
-import { loadStripe, StripeCardNumberElement } from '@stripe/stripe-js'
+import { loadStripe, StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
 import { useEffect, useState, useMemo, FormEvent } from "react"
+import { User } from 'realm-web'
+import '../../Stripe.css'
+import { iLanding } from './Landing'
+import { iLoginInput } from './Login'
 
 
 const useResponsiveFontSize = () => {
@@ -17,8 +21,7 @@ const useResponsiveFontSize = () => {
 }
 
 
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx')
-
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
 const useOptions = () => {
     const fontSize = useResponsiveFontSize()
     const options = useMemo(
@@ -28,10 +31,14 @@ const useOptions = () => {
                     fontSize,
                     color: "#424770",
                     letterSpacing: "0.025em",
+                    fontSmoothing: "antialiased",
                     fontFamily: "Source Code Pro, monospace",
                     "::placeholder": { color: "#aab7c4" }
                 },
-                invalid: { color: "#9e2146" }
+                invalid: { 
+                    color: "#9e2146",
+                    iconColor: "#fa755a"
+                }
             },
             showIcon:true
         }), [fontSize]
@@ -40,27 +47,59 @@ const useOptions = () => {
   return options
 }
 
-const CardForm = () => {
+
+const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
+    const [succeeded, setSucceeded] = useState(false)
+    const [error, setError] = useState<string>()
+    const [processing, setProcessing] = useState(false)
+    const [disabled, setDisabled] = useState(true)
+    const [clientSecret, setClientSecret] = useState('')
+
     const stripe = useStripe()
     const elements = useElements()
     const options = useOptions()
 
+    useEffect(() => {
+        mongoUser?.functions.paymentIntent()
+        .then(({clientSecret}) => setClientSecret(clientSecret))
+    }, [mongoUser])
+
+    const handleChange = async (event:StripeCardNumberElementChangeEvent) => {
+        setDisabled(event.empty)
+        setError(event.error ? event.error.message : "")
+    }
+
+
     const handleSubmit = async (event:FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        setProcessing(true)
 
         if (!stripe || !elements) return
 
-        const payload = await stripe.createPaymentMethod({
-            type: "card",
-            card: elements.getElement(CardNumberElement) as StripeCardNumberElement
+        const payload = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: { 
+                card: elements.getElement(CardNumberElement) as StripeCardNumberElement 
+            }
         })
 
         console.log("[PaymentMethod]", payload)
+
+        if (payload.error) {
+            setError(`Payment failed ${payload.error.message}`)
+            setProcessing(false)
+
+        } else {
+            setError('')
+            setProcessing(false)
+            setSucceeded(true)
+            db.collection('users').insertOne({ email, password })
+        }
     }
 
-    return <form onSubmit={handleSubmit}>
+
+    return <form id="payment-form" onSubmit={handleSubmit}>
         <label> Card number
-            <CardNumberElement options={options} />
+            <CardNumberElement options={options} onChange={handleChange}/>
         </label>
 
         <label> Expiration date
@@ -71,11 +110,26 @@ const CardForm = () => {
             <CardCvcElement options={options} />
         </label>
 
-        <button type="submit" disabled={!stripe}> Pay </button>      
+        <button disabled={processing || disabled || succeeded} id="submit" >
+            <span id="button-text">
+                {processing ? <div className="spinner" id="spinner"></div> : "Pay now" }
+            </span>
+        </button>
+
+        { error && <div className="card-error" role="alert"> {error} </div> }
+        <p className={succeeded ? "result-message" : "result-message hidden"}>
+            Payment succeeded, see the result in your
+            <a href={`https://dashboard.stripe.com/test/payments`}>
+                {" "}
+                Stripe dashboard.
+            </a> Refresh the page to pay again.
+        </p>
+
     </form>
 }
 
 
-export const Billing = () => <Elements stripe={stripePromise}>
-    <CardForm />
+interface iBilling extends iLanding { loginInput:iLoginInput }
+export const Billing = ({mongoUser, db, loginInput}:iBilling) => <Elements stripe={stripePromise}>
+    <CardForm mongoUser={mongoUser} db={db} loginInput={loginInput}/>
 </Elements>

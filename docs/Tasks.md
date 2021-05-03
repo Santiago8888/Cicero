@@ -19,10 +19,10 @@
 * [X] Serve 6 Modules.
 * [X] User Progress.
 * [X] Submit Quiz.
-* [ ] Video Progress.
+* [X] Video Progress.
 * [X] PDF Download.
-* [ ] Posing Forum Questions.
-* [ ] Adding Video Recording.
+* [X] Posing Forum Questions.
+* [X] Add Video Recording.
 * [ ] Upvoting.
 * [ ] Implement DB & connections.
 

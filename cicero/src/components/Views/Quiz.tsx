@@ -30,8 +30,8 @@ const Question = ({index, question, answers, select}:IQuestion) => <div classNam
 </div>
 
 
-interface iModal { user:iUser, score:number, isActive:boolean, approved:boolean, minScore:number, deactivate():void, next():void }
-const Modal = ({ user, score, isActive, approved, minScore, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
+interface iModal { user:iUser, score:number, isActive:boolean, approved:boolean, min:number, deactivate():void, next():void }
+const Modal = ({ user, score, isActive, approved, min, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
     <div className="modal-background" />
     <div className="modal-content">
         { 
@@ -41,7 +41,7 @@ const Modal = ({ user, score, isActive, approved, minScore, deactivate, next }:i
 
         { approved ? `!Felicidades! Has acertado ${score} preguntas` : '' }
         { !approved && user.quizFailures === 0 ? `` : `Lo sentimos solo has acertado ${score} preguntas.` }
-        { !approved && user.quizFailures === 1 ? `` : `Acertaste ${score} preguntas, necesitas ${minScore} para aprobar.` }
+        { !approved && user.quizFailures === 1 ? `` : `Acertaste ${score} preguntas, necesitas ${min} para aprobar.` }
         { !approved && user.quizFailures === 1 ? `` : `Aún tienes una oportunidad más para intentarlo o deberas repetir el módulo.` }
         { !approved && user.quizFailures === 2 ? `` : `Lo sentimos, no has pasado el quiz. Deberas reiniciar el módulo.` }
 
@@ -58,14 +58,14 @@ interface iQuiz {
     title:string
     description:string,
     questions?:iQuestion[]
-    minScore?:number,
+    min?:number,
     next():void
     approve(score:number):boolean|void
     user:iUser
 }
 
 const defaultMessage = { approve:'', fail:'' }
-export const Quiz = ({ title, description, questions=[], minScore, next, approve, user }: iQuiz) =>  {
+export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
     const [isActive, setActive] = useState(false)
     const [answers, setAnswers] = useState<{[index:number]:boolean|undefined}>(
         questions.reduce((d, { index }) => ({...d, [index]: undefined }), {})
@@ -108,7 +108,7 @@ export const Quiz = ({ title, description, questions=[], minScore, next, approve
 
             score={score as number}
             approved={approved as boolean}
-            minScore={minScore as number}
+            min={min as number}
             user={user}
 
             next={next}

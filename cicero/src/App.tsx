@@ -2,18 +2,26 @@ import { iLesson, iModule, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
 import { iLoginInput } from './components/Auth/Login'
-import { iForum } from './components/Forum/Forum'
+import { iDoubt, iForum } from './components/Forum/Forum'
 import { Home } from './components/Home'
 
-import { useEffect, useState } from 'react'
+import { App as RealmApp, User, Credentials } from 'realm-web'
+import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
 import './App.css'
 
+const connectMongo = async() => {
+    const REALM_APP_ID = 'tasktracker-kjrie'
+    const app = new RealmApp({ id: REALM_APP_ID })
+    const user: User = await app.logIn(Credentials.anonymous())
+    return user
+}
+
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 const lesson: iLesson = { title:'', description:'', type:'Video' }
-const forum:iForum = { title:'', description:'', questions:[] }
-const recordings:iRecordings = { title:'', description:'', recordings:[] }
+const Forum:iForum = { title:'', description:'', questions:[] }
+const Recordings:iRecordings = { title:'', description:'', recordings:[] }
 
 const modules:iModule[] = [
     { title:'Modulo 1', lessons:[{title:'', type:'Video', description:'', link:''}]},
@@ -29,11 +37,28 @@ const initialData:iHomeData = { forum:undefined, recordings:undefined, lesson }
 const initialPosition = {module:0, lesson:0}
 const defaultUser:iUser = { email:'test@branding.gq', progress:initialPosition, current:initialPosition, quizFailures:0 }
 export const App = () => {
-    const [isAuth, setAuth] = useState(false)
-    const [isLogin, setLogin] = useState(false)
-    const [homeData, setHomeData] = useState<iHomeData>(initialData)
-    const [user, setUser] = useState<iUser>(defaultUser)
+    const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
 
+    const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
+    const [ mongoUser, setMongoUser ] = useState<User>()
+    const [ user, setUser ] = useState<iUser>(defaultUser)
+
+    const [ forum, setForum ] = useState(Forum)
+    const [ isLogin, setLogin ] = useState(false)
+    const [ recordings, setRecordings ] = useState(Recordings)
+
+
+    useEffect(() => { connectMongo().then(mongoUser => {
+        setMongoUser(mongoUser)
+        const mongo = mongoUser.mongoClient('myAtlasCluster')
+        const db = mongo.db('Cicero')
+        setDB(db)
+    }) }, [])
+
+    useEffect(() => { 
+        setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
+        db?.collection('users').updateOne({ email: user.email }, user)
+    }, [user])
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
@@ -41,12 +66,20 @@ export const App = () => {
         if(item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings})
     }
     
-    const login = ({ email, password }:iLoginInput) => {
-        console.log(email, password)
-        setAuth(true)
-        setLogin(true)
-    }
+    const login = async({ email, password }:iLoginInput) => {
+        if(!db) return
 
+        const collection = db.collection('users')
+        const user = await collection.findOne({ email, password })
+        setUser(user)
+        setLogin(false)
+
+        const recordings = await db.collection('recordings').find({})
+        setRecordings({...Recordings, recordings })
+
+        const doubts = await db.collection('doubts').findOne({})
+        setForum({...forum, questions:doubts})
+    }
 
     const nextLesson = ({module, lesson}:iPosition) => {
         if (modules[module].lessons[lesson+1]) return { module:module, lesson:lesson+1 }
@@ -58,7 +91,7 @@ export const App = () => {
         if(lesson.type === 'Quiz'){
             if(user.quizFailures === 0) return setUser({...user, current:nextLesson(user.current)})
             if(user.quizFailures === 1) return
-            if(user.quizFailures === 2) setUser({
+            if(user.quizFailures === 2) return setUser({
                 ...user, 
                 quizFailures:0, 
                 progress:{...user.current, lesson:0}, 
@@ -72,13 +105,13 @@ export const App = () => {
         if(module > user.progress.module) return
         if(lesson > user.progress.lesson) return
 
-        setUser({...user, current: { module, lesson } })
+        setUser({...user, current:{ module, lesson } })
     }
 
     const approveQuiz = (score:number) => {
         if(!lesson.questions?.length) return false 
 
-        const minScore = lesson.minScore || lesson.questions.length*.7
+        const minScore = lesson.min || lesson.questions.length*.7
         const isPassing = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
 
         if(isPassing && score >= minScore) setUser({...user, progress:nextLesson(user.progress), quizFailures:0})
@@ -94,9 +127,25 @@ export const App = () => {
         return setUser({...user, progress:nextLesson(user.progress)})
     }
 
+    const submit = (doubt:iDoubt) => {
+        setForum({...forum, questions:[...forum.questions, doubt]})
+        db?.collection('doubts').insertOne(doubt)
+    }
+
+
     return <div className="App">
         <NavBar click={(item) => clickNavbar(item)}/>
         <Menu modules={modules} navigate={navigate} user={user}/>
-        <Home {...homeData} isAuth={isAuth} isLogin={isLogin} login={login} next={next} approve={approve} user={user}/>
+
+        <Home 
+            user={user}
+            {...homeData} 
+            isLogin={isLogin} 
+            mongoUser={mongoUser}
+            approve={approve} 
+            submit={submit}
+            login={login} 
+            next={next} 
+        />
     </div>
 }

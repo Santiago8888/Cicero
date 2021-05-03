@@ -1,31 +1,34 @@
 import { Recordings, iRecordings } from './Forum/Recordings'
-import { Forum, iForum } from './Forum/Forum'
+import { Forum, iDoubt, iForum } from './Forum/Forum'
 
-import { Document, Quiz, Video } from './Views'
 import { Login, iLogin } from './Auth/Login'
 import { Landing } from './Auth/Landing'
 import { iLesson } from './LayOut/Menu'
+import { Content } from './Content'
 import { iUser } from '../App'
+
+import { User } from 'realm-web'
 
 
 interface iHome extends iLogin { 
-    user:iUser
-    isAuth:boolean, 
-    isLogin:boolean, 
-    lesson:iLesson, 
-    forum?:iForum, 
+    user?:iUser
+    isLogin:boolean
+    lesson:iLesson
+    forum?:iForum
     recordings?:iRecordings 
+    mongoUser?:User
+    db?:Realm.Services.MongoDBDatabase
+
     next():void
     approve(score?:number):boolean | void
+    submit(doubt:iDoubt):void
 }
 
-export const Home = ({ user, isAuth, isLogin, lesson, forum, recordings, login, next, approve }: iHome) => {
-    return isAuth
+export const Home = ({ user, isLogin, lesson, forum, recordings, mongoUser, db, login, next, approve, submit }: iHome) => {
+    return user
         ?   isLogin ?  <Login login={login}/>
-            :   forum ? <Forum {...forum}/>
+            :   forum ? <Forum {...forum} submit={submit}/>
             :   recordings ? <Recordings {...recordings}/>
-            :   lesson.type === 'Video' ? <Video user={user} {...lesson} next={next} approve={approve}/>
-            :   lesson.type === 'Reading' ? <Document {...lesson} next={next}/>
-            :   lesson.type === 'Quiz' ? <Quiz  {...lesson} next={next} approve={approve} user={user}/> : <Landing/>
-        :   <Landing/>
+            :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
+        :   <Landing mongoUser={mongoUser} db={db as Realm.Services.MongoDBDatabase}/>
 }
