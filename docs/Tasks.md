@@ -2,27 +2,29 @@
 
 ## Course Elements
 
-* [ ] NavBar.
-* [ ] Menu.
-* [ ] Video.
-* [ ] Document.
-* [ ] Quiz.
+* [X] NavBar.
+* [X] Menu.
+* [X] Video.
+* [X] Document.
+* [X] Quiz.
 * [ ] Activity.
-* [ ] Forum.
-* [ ] Recordings.
+* [X] Forum.
+* [X] Recordings.
 
 
 ## Database & Content
 
-* [ ] Design Database Models.
-* [ ] Lock Content.
-* [ ] Serve 6 Modules.
-* [ ] User Progress.
-* [ ] Quiz Results.
+* [X] Design Database Models.
+* [X] Lock Content.
+* [X] Serve 6 Modules.
+* [X] User Progress.
+* [X] Submit Quiz.
 * [ ] Video Progress.
-* [ ] PDF Download.
-* [ ] Submitting Answers - Upvoting.
+* [X] PDF Download.
+* [ ] Posing Forum Questions.
 * [ ] Adding Video Recording.
+* [ ] Upvoting.
+* [ ] Implement DB & connections.
 
 
 ## Payment & Auth

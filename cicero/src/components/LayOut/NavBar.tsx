@@ -3,11 +3,9 @@
 import { useState } from 'react'
 
 
-const Forum = () => <a style = {{color:'white'}}> <strong> Forum </strong> </a>
-const SignIn = () => <a style = {{color:'white'}}> <strong> Iniciar Sesión </strong> </a>
-const Recordings = () => <a style = {{color:'white'}}> <strong> Grabaciones </strong> </a>
-
-export const NavBar = () => {
+export type NavbarItem =  'Login' | 'Recordings' | 'Forum'
+interface iNavBar { click(item:NavbarItem):void }
+export const NavBar = ({ click }: iNavBar) => {
     const [ isActive, setActive ] = useState(false)
 
     return <nav className='navbar is-black' role='navigation' aria-label='main navigation'>
@@ -37,15 +35,21 @@ export const NavBar = () => {
                 style={{ maxWidth:1200, marginRight:'auto', background:'#0A0A0A' }}
             >
                 <div className={`navbar-end `} style={{fontSize: '1.2em'}}>
-                    <Forum /> 
+                    <a style = {{color:'white'}} onClick={() => click('Login')}> 
+                        <strong> Iniciar Sesión </strong> 
+                    </a>
                 </div>
 
                 <div className={`navbar-end `} style={{fontSize: '1.2em'}}>
-                    <SignIn /> 
+                    <a style = {{color:'white'}} onClick={() => click('Forum')}> 
+                        <strong> Forum </strong> 
+                    </a>                    
                 </div>
 
                 <div className={`navbar-end `} style={{fontSize: '1.2em'}}>
-                    <Recordings /> 
+                    <a style = {{color:'white'}} onClick={() => click('Recordings')}> 
+                        <strong> Grabaciones </strong> 
+                    </a>
                 </div>
             </div>
         </div>

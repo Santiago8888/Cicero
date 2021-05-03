@@ -62,7 +62,7 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 }
 
 
-interface iForum { title:string, description:string, questions:iQuestion[] }
+export interface iForum { title:string, description:string, questions:iQuestion[] }
 export const Forum = ({ title, description, questions }: iForum) => {
     const [isActive, setActive] = useState(false)
     const submit = (question:iQuestion) => {console.log('question', question)}

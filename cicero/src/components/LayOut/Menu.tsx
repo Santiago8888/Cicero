@@ -1,27 +1,49 @@
+import { iQuestion } from "../Views/Quiz"
+import { useState } from "react"
+import { iUser } from '../../App'
 
-type Lesson = 'Video' | 'Actividad' | 'Quiz' | 'Lectura'
-interface iLesson { name:string, type:Lesson, locked:boolean }
-interface iModule { name:string, locked:boolean, lessons:iLesson[] }
-interface iMenu { modules:iModule[] }
+type Lesson = 'Video' | 'Quiz' | 'Reading'
+export interface iLesson { 
+    title:string, 
+    type:Lesson, 
+    description:string, 
+    link?:string, 
+    questions?:iQuestion[] 
+    minScore?:number
+}
 
-export const Menu = ({ modules }: iMenu) => <aside className="menu">
-    {
-        modules.map(({ name, lessons }) => 
-            <>
-                <p className="menu-label"> { name } </p>
-                <ul className="menu-list">
-                    {
-                        lessons.map(({ name, type }) =>
-                                <li>
-                                    <a>
+export interface iPosition {module:number, lesson:number}
+export interface iModule { title:string, lessons:iLesson[] }
+interface iMenu { modules:iModule[], navigate(position:iPosition):void, user:iUser }
+export const Menu = ({ modules, navigate, user }: iMenu) => {
+    const [active, setActive] = useState(user.current.module)
+    const expand = (id:number) => {
+        if(user.progress.module > id) return
+        setActive(id)
+    }
+
+    return <aside className="menu">
+        {
+            modules.map(({ title, lessons }, idx) => 
+                <>
+                    <a className="menu-label"   onClick={() => expand(idx)}> { title } </a>
+                    <ul className="menu-list" style={{display: active ? 'initial' : 'none' }}>
+                        {
+                            lessons.map(({ title, type }, i) =>
+                                <li 
+                                    key={i} 
+                                    style={active===idx && user.current.lesson === i ? {background:'blue',color:'white'} : {}}
+                                >
+                                    <a onClick={() => navigate({module:active, lesson:i})}>
                                         <strong> {type}: </strong> 
-                                        { name } 
+                                        { title } 
                                     </a>
                                 </li>
-                        )
-                    }
-                </ul>
-            </>
-        )
-    }
-</aside>
+                            )
+                        }
+                    </ul>
+                </>
+            )
+        }
+    </aside>
+}

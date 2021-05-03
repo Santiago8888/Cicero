@@ -22,7 +22,7 @@ const Recording = ({ title, link, description }: iRecording) => <div className='
 </div>
 
 
-interface iRecordings { title:string, description:string, recordings:iRecording[] }
+export interface iRecordings { title:string, description:string, recordings:iRecording[] }
 export const Recordings = ({ title, description, recordings}: iRecordings) => <div className="content">
     <h1> { title } </h1>
     <p> { description } </p> 
