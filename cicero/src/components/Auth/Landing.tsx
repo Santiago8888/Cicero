@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { iLoginInput, Login } from './Login'
 import Vimeo from '@u-wave/react-vimeo'
 import { Billing } from './Billing'
@@ -23,14 +25,14 @@ const Welcome = ({ subscribe }:iWelcome) => <div className="content" style={{tex
 </div>
 
 
-export interface iLanding {mongoUser?: User, db:Realm.Services.MongoDBDatabase}
-export const Landing = ({mongoUser, db}: iLanding) => {
-    const [ subscribe, setSubscribe ] = useState(false)
+export interface iLanding { mongoUser?: User, db:Realm.Services.MongoDBDatabase }
+interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
+export const Landing = ({mongoUser, db, isWelcome, setWelcome}: ILanding) => {
     const [ loginInput, setLoginInput ] = useState<iLoginInput>()
 
-    return subscribe
-        ?   !loginInput    
-            ?   <Login login={(loginInput) => setLoginInput(loginInput)}/>
-            :   <Billing mongoUser={mongoUser} db={db} loginInput={loginInput}/>   
-        :   <Welcome subscribe={() => setSubscribe(true)}/>
+    return isWelcome
+        ?   <Welcome subscribe={setWelcome}/>
+        :   !loginInput
+            ?   <Login login={(loginInput) => setLoginInput(loginInput)} newUser={true}/>
+            :   <Billing mongoUser={mongoUser} db={db} loginInput={loginInput}/>
 }

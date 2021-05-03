@@ -1,58 +1,73 @@
 import { iUser } from "../../App"
 import { useState } from "react"
 
+
 interface iAnswer { answer:string, value:boolean }
-export interface iQuestion { index:number, question:string, answers:iAnswer[], }
-interface IQuestion extends iQuestion { select(index:number, value:boolean):void }
-const Question = ({index, question, answers, select}:IQuestion) => <div className="field is-horizontal">
-    <div className="field-label">
-        <label className="label"> { question } </label>
-    </div>
+export interface iQuestion { question:string, answers:iAnswer[] }
 
-    <div className="field-body">
-        <div className="field is-narrow">
+interface IQuestion extends iQuestion { index:number, value:number, select(index:number, value:number):void }
+const Question = ({index, question, value, answers, select}:IQuestion) => <div 
+    className="field" 
+    style={{textAlign:'left', maxWidth:800, margin:'auto', marginBottom:'1.5rem'}}
+>
+    <label className="label" style={{fontSize:'1.25em'}}> { question } </label>
+    {
+        answers.map(({ answer:a }, i) => 
             <div className="control">
-                {
-                    answers.map(({ answer, value }) => 
-                        <label className="radio">
-                            <input 
-                                type="radio" 
-                                name="member" 
-                                onChange={() => select(index, value)}
-                            />
-                            { answer }
-                        </label>
-                    )
-                }
+                <label className="radio" style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
+                    <input 
+                        type="radio" 
+                        checked={value === i}
+                        name={String(index)}
+                        style={{marginRight:12}}
+                        onChange={() => select(index, i)}
+                    />
+                    { a }
+                </label>
             </div>
-        </div>
-    </div>
+        )
+    }
 </div>
 
 
-interface iModal { user:iUser, score:number, isActive:boolean, approved:boolean, min:number, deactivate():void, next():void }
-const Modal = ({ user, score, isActive, approved, min, deactivate, next }:iModal) => <div className={`modal ${isActive ? 'is-active' : ''}`}>
+
+const encouragementMsg = `¡Ánimo aún tienes otra oportunidad!`
+const retryMsg = 'Te invitamos a reiniciar el módulo.'
+interface iModal { user:iUser, questions: iQuestion[], score:number, isActive:boolean, approved:boolean, min:number, deactivate():void, next():void }
+const Modal = ({ user, questions, score, isActive, approved, min, deactivate, next }:iModal) => <div 
+    className={`modal ${isActive ? 'is-active' : ''}`}
+>
     <div className="modal-background" />
-    <div className="modal-content">
-        { 
-            !approved && user.quizFailures === 2 ? null 
-            :   <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
-        }
+    <div className="modal-card">
+        <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+            <p className="modal-card-title" style={{marginBottom:0, color:'white'}}>Quiz</p>
+            { approved && <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/> }
+        </header>
 
-        { approved ? `!Felicidades! Has acertado ${score} preguntas` : '' }
-        { !approved && user.quizFailures === 0 ? `` : `Lo sentimos solo has acertado ${score} preguntas.` }
-        { !approved && user.quizFailures === 1 ? `` : `Acertaste ${score} preguntas, necesitas ${min} para aprobar.` }
-        { !approved && user.quizFailures === 1 ? `` : `Aún tienes una oportunidad más para intentarlo o deberas repetir el módulo.` }
-        { !approved && user.quizFailures === 2 ? `` : `Lo sentimos, no has pasado el quiz. Deberas reiniciar el módulo.` }
+        <section className="modal-card-body" style={{minHeight:120, display:'table'}}>
+            <p style={{display:'table-cell', verticalAlign:'middle'}}>
+                { approved ? <span style={{fontSize:'1.5rem', fontWeight:600}}>¡Felicidades!</span> : <>Lo sentimos.</> } <br/> 
+                 Acertaste <strong>{score}</strong> de <strong>{questions.length}</strong> preguntas. <br/>
+                { 
+                    !approved && user.quizFailures === 1 
+                    ? <>Necesitas {min} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
+                    : '' 
+                }
+                { !approved && user.quizFailures === 1 ? <><br/>{encouragementMsg}</> : '' }
+                { !approved && user.quizFailures === 2 ? <><br/>{ retryMsg }</> : '' }
+            </p>
+        </section>
 
+        <footer className="modal-card-foot">
+            <button className='button is-link' onClick={next} style={{backgroundColor:'darkblue', margin:'auto'}}> 
+                { approved || user.quizFailures === 0 ? `Continuar` : '' }
+                { !approved && user.quizFailures === 1 ? `Intentar de Nuevo` : '' }
+                { !approved && user.quizFailures === 2 ? `Reiniciar` : '' }
+            </button>
+        </footer>
     </div>
- 
-    <button className='button' onClick={next}> 
-        { approved ? `Continuar` : '' }
-        { !approved && user.quizFailures === 1 ? `Intentar de Nuevo` : '' }
-        { !approved && user.quizFailures === 2 ? `Reiniciar` : '' }
-    </button>
 </div>
+
 
 interface iQuiz { 
     title:string
@@ -63,18 +78,18 @@ interface iQuiz {
     approve(score:number):boolean|void
     user:iUser
 }
-
-const defaultMessage = { approve:'', fail:'' }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
     const [isActive, setActive] = useState(false)
-    const [answers, setAnswers] = useState<{[index:number]:boolean|undefined}>(
-        questions.reduce((d, { index }) => ({...d, [index]: undefined }), {})
+    const [values, setValues] = useState<{[idx:number]:number}>(
+        questions.reduce((d, _, idx) => ({...d, [idx]: -1 }), {})
     )
 
     const [score, setScore] = useState<number>() 
     const [approved, setApproved] = useState<boolean>()
     const submit = () => {
-        const score = Object.values(answers).filter(a => a).length
+        const answers = Object.entries(values).map(([k, v]) => questions[k as unknown as number].answers[v].value)
+        const score = answers.filter(a=>a).length
+        setScore(score)
 
         const isApproved = approve(score) || false
         setApproved(isApproved)
@@ -82,28 +97,47 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         setActive(true)
     }
 
+    const modalClick = () => {
+        next()
+        setActive(false)
+        if(user.quizFailures === 1) setValues(questions.reduce((d, _, idx) => ({...d, [idx]: -1 }), {}))
+    }
+
     return <div className="content">
-        <h1> { title } </h1>
-        <p> { description } </p>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h3 
+            style={{
+                margin:'0rem auto 2rem',
+                color: '#333',
+                fontSize: '1.25em',
+                textAlign: 'left',
+                fontWeight: 500,
+                width: 800        
+            }}
+        > { description } </h3>
 
         {
             questions.map((q, i) => 
                 <Question 
-                    {...q} 
+                    {...q}
                     key={i} 
-                    select={(index, value) => setAnswers({...answers, [index]:value})}
+                    index={i}
+                    value={values[i]}
+                    select={(idx, i) => setValues({...values, [idx]:i})}
                 />
             )
         }
 
         <button 
-            className='button' 
-            disabled={Object.values(answers).some(a => a === undefined)} 
+            className='button is-link' 
+            style={{borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, marginTop:'2em', backgroundColor:'darkblue'}}
+            disabled={Object.values(values).some(a => a === undefined)} 
             onClick={submit}
-        > Enviar </button>
+        > ENVIAR </button>
 
         <Modal 
             isActive={isActive} 
+            questions={questions}
             deactivate={()=> setActive(false)}
 
             score={score as number}
@@ -111,7 +145,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
             min={min as number}
             user={user}
 
-            next={next}
+            next={modalClick}
         />
     </div>
 }

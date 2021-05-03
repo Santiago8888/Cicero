@@ -1,15 +1,17 @@
-import { iLesson, iModule, Menu, iPosition } from './components/LayOut/Menu'
+import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
-import { iLoginInput } from './components/Auth/Login'
 import { iDoubt, iForum } from './components/Forum/Forum'
+import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
+import { modules, Recordings, Forum, defaultUser } from './data/data'
 import { App as RealmApp, User, Credentials } from 'realm-web'
 import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
 import './App.css'
+
 
 const connectMongo = async() => {
     const REALM_APP_ID = 'tasktracker-kjrie'
@@ -19,55 +21,52 @@ const connectMongo = async() => {
 }
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
-const lesson: iLesson = { title:'', description:'', type:'Video', link:'439430168' }
-const Forum:iForum = { title:'', description:'', questions:[] }
-const Recordings:iRecordings = { title:'', description:'', recordings:[] }
-
-const modules:iModule[] = [
-    { title:'Modulo 1', lessons:[{title:'', type:'Video', description:'', link:''}]},
-    { title:'Módulo 2', lessons:[{title:'', type:'Reading', description:'', link:''}]},
-    { title:'Módulo 3', lessons:[{title:'', type:'Quiz', description:'', questions:[{question:'', answers:[], index:0}]}]},
-    { title:'Módulo 4', lessons:[{title:'', type:'Video', description:'', link:''}]},
-    { title:'Módulo 5', lessons:[{title:'', type:'Video', description:'', link:''}]},
-    { title:'Módulo 6', lessons:[{title:'', type:'Video', description:'', link:''}]}
-]
-
 interface iHomeData { forum?:iForum, recordings?:iRecordings, lesson:iLesson}
-const initialData:iHomeData = { forum:undefined, recordings:undefined, lesson }
-const initialPosition = {module:0, lesson:0}
-const defaultUser:iUser = { email:'test@branding.gq', progress:initialPosition, current:initialPosition, quizFailures:0 }
+const initialData:iHomeData = { 
+    forum:undefined, 
+    recordings:undefined, 
+    lesson:modules[defaultUser.current.module].lessons[defaultUser.current.lesson] 
+}
+
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>()
+    const [ user, setUser ] = useState<iUser>(defaultUser)
 
     const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
+    const [ isWelcome, setWelcome ] = useState(true)
     const [ recordings, setRecordings ] = useState(Recordings)
 
 
-    useEffect(() => { 
-        return
-        connectMongo().then(mongoUser => {
-            setMongoUser(mongoUser)
-            const mongo = mongoUser.mongoClient('myAtlasCluster')
-            const db = mongo.db('Cicero')
-            setDB(db)
-        }) 
-    }, [])
+    // useEffect(() => { 
+    //     connectMongo().then(mongoUser => {
+    //         setMongoUser(mongoUser)
+    //         const mongo = mongoUser.mongoClient('myAtlasCluster')
+    //         const db = mongo.db('Cicero')
+    //         setDB(db)
+    //     }) 
+    // }, [])
 
-    useEffect(() => { 
-        if(!user) return
+    const updateUser = (user:iUser) => {
+        setUser(user)
         setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
-        db?.collection('users').updateOne({ email: user.email }, user)
-    }, [user])
+        // db?.collection('users').updateOne({ email: user.email }, user)
+    } 
 
     const clickNavbar = (item:NavbarItem) => {
         if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
         if(item === 'Login') return setLogin(true)
         if(item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings})
+        if(item === 'Home') reset()
+    }
+
+    const reset = () => {
+        setLogin(false)
+        setWelcome(true)
+        setHomeData({...homeData, forum:undefined, recordings:undefined})
     }
     
     const login = async({ email, password }:iLoginInput) => {
@@ -75,7 +74,7 @@ export const App = () => {
 
         const collection = db.collection('users')
         const user = await collection.findOne({ email, password })
-        setUser(user)
+        updateUser(user)
         setLogin(false)
 
         const recordings = await db.collection('recordings').find({})
@@ -95,40 +94,41 @@ export const App = () => {
     const next = () => {
         if(!user) return
 
+        const lesson = modules[user.current.module].lessons[user.current.lesson]
         if(lesson.type === 'Quiz'){
-            if(!user.current.lesson) return
-            if(!user.current.lesson) return
-
-            if(user.quizFailures === 0) return setUser({...user, current:nextLesson(user.current)})
+            if(user.quizFailures === 0) return updateUser({...user, current:nextLesson(user.current)})
             if(user.quizFailures === 1) return
-            if(user.quizFailures === 2) return setUser({
+            if(user.quizFailures === 2) return updateUser({
                 ...user, 
                 quizFailures:0, 
                 progress:{...user.current, lesson:0}, 
                 current: {...user.current, lesson:0}
             })
 
-        } else return setUser({...user, current:nextLesson(user.current)})
+        } else updateUser({...user, current:nextLesson(user.current)})
     }
 
     const navigate = ({module, lesson}:iPosition) => {
         if(!user) return
         if(module > user.progress.module) return
-        if(lesson > user.progress.lesson) return
+        if(module === user.progress.module && lesson > user.progress.lesson) return
 
-        setUser({...user, current:{ module, lesson } })
+        updateUser({...user, current:{ module, lesson } })
+        setHomeData({...homeData, recordings:undefined, forum:undefined})
     }
 
     const approveQuiz = (score:number) => {
         if(!user) return
+
+        const lesson = modules[user.current.module].lessons[user.current.lesson]
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
-        const isPassing = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
+        const needsApproval = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
 
-        if(isPassing && score >= minScore) setUser({...user, progress:nextLesson(user.progress), quizFailures:0})
-        else if(isPassing && user.quizFailures > 1) setUser({...user, quizFailures:2 })
-        else if(isPassing) setUser({...user, quizFailures:1})
+        if(needsApproval && score >= minScore) updateUser({...user, progress:nextLesson(user.progress), quizFailures:0})
+        else if(needsApproval && user.quizFailures === 1) updateUser({...user, quizFailures:2 })
+        else if(needsApproval) updateUser({...user, quizFailures:1})
         
         if(score >= minScore) return true
         else return false
@@ -136,8 +136,10 @@ export const App = () => {
 
     const approve = (score?:number) => {
         if(!user) return
-        if(lesson.type === 'Quiz' && score) return approveQuiz(score)
-        return setUser({...user, progress:nextLesson(user.progress)})
+
+        const lesson = modules[user.current.module].lessons[user.current.lesson]
+        if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
+        return updateUser({...user, progress:nextLesson(user.progress)})
     }
 
     const submit = (doubt:iDoubt) => {
@@ -145,12 +147,17 @@ export const App = () => {
         db?.collection('doubts').insertOne(doubt)
     }
 
-
     return <div>
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
         <div className="container" style={{maxWidth:'100%'}}>
             <div className="columns" style={{margin:0}}>
-                <Menu modules={modules} navigate={navigate} user={user}/>
+                <Menu 
+                    user={user}
+                    modules={modules} 
+                    navigate={navigate} 
+                    forum={homeData.forum}
+                    recordings={homeData.recordings}
+                />
 
                 <div 
                     className="column is-10" 
@@ -160,18 +167,21 @@ export const App = () => {
                         marginRight:0, 
                         margin:'0px auto', 
                         backgroundColor: 'aliceblue', 
-                        width: 'calc(100vw - 253px)' 
+                        width: 'calc(100vw - 253px)',
+                        textAlign:'center'
                     }}
                 >
                     <Home 
                         user={user}
                         {...homeData} 
                         isLogin={isLogin} 
+                        isWelcome={isWelcome}
                         mongoUser={mongoUser}
+                        setWelcome={() => setWelcome(false)}
                         approve={approve} 
                         submit={submit}
                         login={login} 
-                        next={next} 
+                        next={next}
                     />
                 </div>
             </div>

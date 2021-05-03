@@ -1,6 +1,3 @@
-import { Recordings, iRecordings } from './Forum/Recordings'
-import { Forum, iForum } from './Forum/Forum'
-
 import { Document, Quiz, Video } from './Views'
 import { iLesson } from './LayOut/Menu'
 import { iUser } from '../App'

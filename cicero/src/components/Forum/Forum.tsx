@@ -1,24 +1,10 @@
 import { useState } from "react"
 
-export const cardStyle = {
-    backgroundColor: 'rgb(48, 48, 48)',
-    borderRadius: 12,
-    margin: 'auto',
-    marginBottom: '1.5em',
-    border: '1px solid white'
-}
-
-export const headerStyle = { backgroundColor: 'rgb(72, 72, 72)', borderTopLeftRadius: 12, borderTopRightRadius: 12 }
 
 export interface iDoubt { question:string, details:string }
-const Doubt = ({ question, details }:iDoubt) => <div className='card' style={cardStyle}>
-    <header className='card-header' style={headerStyle}>
-        <p className='card-header-title' style={{color:'white', fontSize:'1.25rem'}}> { question } </p>
-    </header>
-
-    <div className='content' style={{color:'whitesmoke', marginTop:'1rem'}}> 
-        <p> { details } </p> 
-    </div>
+const Doubt = ({ question, details }:iDoubt) => <div style={{maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em'}}>
+    <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
+    <p> { details } </p> 
 </div>
 
 
@@ -29,35 +15,47 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className="modal-background" />
-        <div className="modal-content">
-            <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
-            <div className="field">
-                <label className="label"> Pregunta </label>
+        <div className="modal-card">
+            <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+                <p className="modal-card-title" style={{marginBottom:0, color:'white'}}> Haz una Pregunta </p>
+                <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
+            </header>
 
-                <div className="control">
-                    <input 
-                        className="input" 
-                        type="text" 
-                        value={question} 
-                        onChange={({target:{value}})=> setQuestion(value)}
-                    />
-                </div>
-            </div>
+            <section className="modal-card-body" style={{minHeight:120, display:'table', textAlign:'left'}}>
+                <div className="field">
+                    <label className="label"> Pregunta </label>
 
-            <div className="field">
-                <label className="label"> Detalles Adicionales (opcional): </label>    
-                <div className="control">
-                    <textarea 
-                        className="textarea" 
-                        placeholder="e.g. Hello world" 
-                        value={details} 
-                        onChange={({target:{value}})=> setDetails(value)}
-                    />
+                    <div className="control">
+                        <input 
+                            className="input" 
+                            type="text" 
+                            value={question} 
+                            onChange={({target:{value}})=> setQuestion(value)}
+                        />
+                    </div>
                 </div>
-            </div>
+
+                <div className="field">
+                    <label className="label"> Detalles Adicionales (opcional): </label>    
+                    <div className="control">
+                        <textarea 
+                            className="textarea" 
+                            placeholder="e.g. Hello world" 
+                            value={details} 
+                            onChange={({target:{value}})=> setDetails(value)}
+                        />
+                    </div>
+                </div>
+            </section>
+
+            <footer className="modal-card-foot">
+                <button 
+                    className='button is-link' 
+                    onClick={() => submit({ question, details })} 
+                    style={{backgroundColor:'darkblue', margin:'auto'}}
+                >  Siguiente </button>
+            </footer>
         </div>
-
-        <button className='button' onClick={() => submit({ question, details })}> Siguiente </button>
     </div>
 }
 
@@ -67,19 +65,42 @@ interface IForum extends iForum { submit(question:iDoubt):void }
 export const Forum = ({ title, description, questions, submit }: IForum) => {
     const [isActive, setActive] = useState(false)
 
-    return <div className="content">
-        <h1> { title } </h1>
-        <div className='columns' >
-            <div className='column'>
-                <p> { description } </p>
-            </div>
+    const clickModal = (doubt:iDoubt) => {
+        setActive(false)
+        submit(doubt)
+    }
 
-            <div className='column'>
-                <button className='button'> 
-                    Nueva Pregunta 
-                </button>
-            </div>
-        </div>
+    return <div className="content">
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h3 
+            style={{
+                margin:'0rem auto',
+                color: '#333',
+                fontSize: '1.25em',
+                textAlign: 'left',
+                fontWeight: 500,
+                width: 800        
+            }}
+        > { description } </h3>
+
+
+        <div style={{maxWidth:800, margin:'auto'}}>
+            <button 
+                className='button is-link' 
+                style={{
+                    width:240, 
+                    fontWeight:600, 
+                    borderRadius:12, 
+                    marginTop:'1.5em', 
+                    fontSize:'1.25rem', 
+                    marginBottom:'1.5em',
+                    backgroundColor:'darkblue'
+                }}
+                onClick={() => setActive(true)}
+            > Haz una Pregunta </button>
+        </div> 
+        
+        <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:600 }}/>
 
         {
             questions.map((q, i) => 
@@ -90,7 +111,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
         <Modal 
             isActive={isActive} 
             deactivate={() => setActive(false)}
-            submit={submit}
+            submit={clickModal}
         />
 
     </div>

@@ -4,7 +4,7 @@ import { iUser } from '../../App'
 import { useState } from 'react'
 
 
-export type NavbarItem =  'Login' | 'Recordings' | 'Forum'
+export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home'
 interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 export const NavBar = ({ click, user }: iNavBar) => {
     const [ isActive, setActive ] = useState(false)
@@ -17,7 +17,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
     >
         <div className='container' style={{maxWidth:2000, paddingLeft:'2.5rem', paddingRight:'3em' }}>
             <div className='navbar-brand'>
-                <a className='navbar-item'>
+                <a className='navbar-item' onClick={() => click('Home')}>
                     <img src='SocialQ.png' style={{ height:36, maxHeight: 'none' }} alt={'SocialQ logo'}/>
                     <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > SocialQ </p>
                 </a>
@@ -57,7 +57,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 }
 
                 {
-                    user && <div className={`navbar-end `} style={{fontSize: '1.2em'}}>
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial'}}>
                         <a onClick={() => click('Recordings')} className={'navbar-item'}> 
                             <strong> Grabaciones </strong> 
                         </a>
