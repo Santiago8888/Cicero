@@ -1,6 +1,6 @@
 
-type Module = 'Video' | 'Activity' | 'Quiz' | 'Document'
-interface iLesson { name:string, type:Module, locked:boolean }
+type Lesson = 'Video' | 'Actividad' | 'Quiz' | 'Lectura'
+interface iLesson { name:string, type:Lesson, locked:boolean }
 interface iModule { name:string, locked:boolean, lessons:iLesson[] }
 interface iMenu { modules:iModule[] }
 

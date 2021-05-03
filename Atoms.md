@@ -5,6 +5,7 @@
 * [ ] Menu Elements.
     * [X] Forum.
     * [X] Sign In.
+    * [X] Recordings.
     * [ ] Messages?
     * [ ] Grades?
 * [ ] Breadcrumbs?
@@ -19,35 +20,43 @@
 * [X] Embeded Video.
 * [X] Text.
 * [ ] Minutes?
+* [X] Next Button
 
 ## Document.
-* [ ] Title & Minutes?
-* [ ] Download CTA.
+* [X] Title
+* [X] Download CTA.
 * [ ] Text.
+* [ ] Minutes?
+* [X] Next Button
 
 ## Quiz.
-* [ ] Title & Minutes?
-* [ ] Questions
-    * [ ] Question
-    * [ ] Answer
-    * [ ] Checkbox
-* [ ] Submit Button
+* [X] Title
+* [X] Description
+* [X] Questions
+    * [X] Question
+    * [X] Answer
+    * [X] Ratio
+* [X] Submit Button
 * [ ] Score Modal
+* [ ] Minutes?
+* [X] Next Button
 
 ## Activity.
-* [ ] Title & Minutes
+* [ ] Title
 * [ ] Text
 * [ ] CTA
+* [ ] Minutes?
+* [ ] Next Button
 
 ## Forum.
-* [ ] Questions
+* [X] Questions
     * [ ] Votes 
     * [ ] Date
-* [ ] Sumbit Modal
+* [X] Sumbit Modal
 * [ ] Search?
 
 ## Recordings.
-* [ ] List
-* [ ] Link
-* [ ] Preview?
+* [X] List
+* [X] Link
+* [X] Preview?
 * [ ] Collapse?
