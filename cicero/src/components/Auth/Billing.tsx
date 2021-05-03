@@ -1,8 +1,11 @@
 import { Elements, useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
 import { loadStripe, StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
 import { useEffect, useState, useMemo, FormEvent } from "react"
-import { iLanding } from './Landing'
+import { useMediaQuery } from 'react-responsive'
+
 import { iLoginInput } from './Login'
+import { iLanding } from './Landing'
+
 import '../../Stripe.css'
 
 
@@ -33,7 +36,9 @@ const useOptions = () => {
 }
 
 
-const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
+const CardForm = ({mongoUser, loginInput:{email, password}, createUser}: iBilling) => {
+    const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+
     const [ error, setError ] = useState<string>()
     const [ disabled, setDisabled ] = useState(true)
     const [ succeeded, setSucceeded ] = useState(false)
@@ -77,8 +82,8 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
             setError('')
             setProcessing(false)
             setSucceeded(true)
-            db.collection('users').insertOne({ email, password })
- 
+            createUser({ email, password })
+
         }
     }
 
@@ -86,7 +91,10 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
     return <div className="content">
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
             <div  style={{display:'table-cell', verticalAlign:'middle'}}>
-                <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+                <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'darkblue'}}> 
+                    ASTROCONSCIENCIA 
+                </h1>
+
                 <h3 
                     style={{
                         margin:'0rem auto 3rem',
@@ -94,7 +102,7 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
                         fontSize: '1.25em',
                         textAlign: 'center',
                         fontWeight: 500,
-                        width: 500        
+                        width: !smallScreen ? 500 : 300        
                     }}
                 >   Disfruta de acceso completo al curso de Astroconsciencia por un pago único de $400 USD. </h3>        
 
@@ -142,6 +150,6 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
 
 
 interface iBilling extends iLanding { loginInput:iLoginInput }
-export const Billing = ({mongoUser, db, loginInput}:iBilling) => <Elements stripe={stripePromise}>
-    <CardForm mongoUser={mongoUser} db={db} loginInput={loginInput}/>
+export const Billing = ({mongoUser, loginInput, createUser }:iBilling) => <Elements stripe={stripePromise}>
+    <CardForm mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
 </Elements>

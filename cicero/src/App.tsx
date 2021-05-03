@@ -5,8 +5,10 @@ import { iDoubt, iForum } from './components/Forum/Forum'
 import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
-import { modules, Recordings, Forum, defaultUser } from './data/data'
+import { modules, Recordings, Forum } from './data/data'
+
 import { App as RealmApp, User, Credentials } from 'realm-web'
+import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
@@ -14,7 +16,7 @@ import './App.css'
 
 
 const connectMongo = async() => {
-    const REALM_APP_ID = 'tasktracker-kjrie'
+    const REALM_APP_ID = process.env.REACT_APP_REALM_ID as string
     const app = new RealmApp({ id: REALM_APP_ID })
     const user: User = await app.logIn(Credentials.anonymous())
     return user
@@ -25,15 +27,16 @@ interface iHomeData { forum?:iForum, recordings?:iRecordings, lesson:iLesson}
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
-    lesson:modules[defaultUser.current.module].lessons[defaultUser.current.lesson] 
+    lesson:modules[0].lessons[0] 
 }
 
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
+    const largeScreen = useMediaQuery({ query: '(min-width: 1200px)' })
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>(defaultUser)
+    const [ user, setUser ] = useState<iUser>()
 
     const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
@@ -41,19 +44,34 @@ export const App = () => {
     const [ recordings, setRecordings ] = useState(Recordings)
 
 
-    // useEffect(() => { 
-    //     connectMongo().then(mongoUser => {
-    //         setMongoUser(mongoUser)
-    //         const mongo = mongoUser.mongoClient('myAtlasCluster')
-    //         const db = mongo.db('Cicero')
-    //         setDB(db)
-    //     }) 
-    // }, [])
+    useEffect(() => { 
+        connectMongo().then(mongoUser => {
+            setMongoUser(mongoUser)
+            const mongo = mongoUser.mongoClient('mongodb-atlas')
+            const db = mongo.db('Cicero')
+            setDB(db)
+        }) 
+    }, [])
+
+
+    const createUser = (loginInput:iLoginInput) => {
+        if(!db) return
+
+        const startingPosition: iPosition = { module:0, lesson:0 }
+        const newUser: iUser = { 
+            ...loginInput, 
+            current:startingPosition, 
+            progress:startingPosition , 
+            quizFailures:0
+        }
+
+        db.collection('users').insertOne(newUser)
+        setUser(newUser)
+    } 
 
     const updateUser = (user:iUser) => {
         setUser(user)
-        setHomeData({...homeData, lesson:modules[user.current.module].lessons[user.current.lesson]})
-        // db?.collection('users').updateOne({ email: user.email }, user)
+        db?.collection('users').updateOne({ email: user.email }, user)
     } 
 
     const clickNavbar = (item:NavbarItem) => {
@@ -74,14 +92,16 @@ export const App = () => {
 
         const collection = db.collection('users')
         const user = await collection.findOne({ email, password })
+
+        if(!user) return
         updateUser(user)
         setLogin(false)
 
         const recordings = await db.collection('recordings').find({})
-        setRecordings({...Recordings, recordings })
+        setRecordings({...Recordings, recordings:recordings.sort(() => -1 )})
 
-        const doubts = await db.collection('doubts').findOne({})
-        setForum({...forum, questions:doubts})
+        const doubts = await db.collection('doubts').find({})
+        setForum({...forum, questions:doubts.sort((a,b) => -1 )})
     }
 
     const nextLesson = ({module, lesson}:iPosition):iPosition => {
@@ -143,7 +163,8 @@ export const App = () => {
     }
 
     const submit = (doubt:iDoubt) => {
-        setForum({...forum, questions:[...forum.questions, doubt]})
+        setForum({...forum, questions:[doubt, ...forum.questions]})
+        setHomeData({...homeData, forum:{...forum, questions:[doubt, ...forum.questions]}})
         db?.collection('doubts').insertOne(doubt)
     }
 
@@ -151,23 +172,27 @@ export const App = () => {
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
         <div className="container" style={{maxWidth:'100%'}}>
             <div className="columns" style={{margin:0}}>
-                <Menu 
-                    user={user}
-                    modules={modules} 
-                    navigate={navigate} 
-                    forum={homeData.forum}
-                    recordings={homeData.recordings}
-                />
+                {
+                    largeScreen &&
+                        <Menu
+                            user={user}
+                            modules={modules}
+                            navigate={navigate}
+                            forum={homeData.forum}
+                            recordings={homeData.recordings}
+                        />
+                }
 
                 <div 
                     className="column is-10" 
                     style={{ 
-                        padding:'3rem', 
+                        paddingTop:'3rem', 
                         marginLeft:3, 
                         marginRight:0, 
                         margin:'0px auto', 
                         backgroundColor: 'aliceblue', 
-                        width: 'calc(100vw - 253px)',
+                        width: largeScreen ? 'calc(100vw - 253px)' : '100%',
+                        minHeight:'calc(100vh - 82px)',
                         textAlign:'center'
                     }}
                 >
@@ -177,7 +202,9 @@ export const App = () => {
                         isLogin={isLogin} 
                         isWelcome={isWelcome}
                         mongoUser={mongoUser}
+                        lesson={modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
+                        createUser={createUser}
                         approve={approve} 
                         submit={submit}
                         login={login} 

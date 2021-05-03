@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive'
 import { iUser } from "../../App"
 import { useState } from "react"
 
@@ -79,6 +80,8 @@ interface iQuiz {
     user:iUser
 }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
+    const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+
     const [isActive, setActive] = useState(false)
     const [values, setValues] = useState<{[idx:number]:number}>(
         questions.reduce((d, _, idx) => ({...d, [idx]: -1 }), {})
@@ -112,7 +115,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
                 fontSize: '1.25em',
                 textAlign: 'left',
                 fontWeight: 500,
-                width: 800        
+                width: !smallScreen ? 800 : 320        
             }}
         > { description } </h3>
 
@@ -131,7 +134,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         <button 
             className='button is-link' 
             style={{borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, marginTop:'2em', backgroundColor:'darkblue'}}
-            disabled={Object.values(values).some(a => a === undefined)} 
+            disabled={Object.values(values).some(a => a === -1)}
             onClick={submit}
         > ENVIAR </button>
 

@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive'
 import { useState } from "react"
 
 
@@ -63,6 +64,7 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 export interface iForum { title:string, description:string, questions:iDoubt[] }
 interface IForum extends iForum { submit(question:iDoubt):void }
 export const Forum = ({ title, description, questions, submit }: IForum) => {
+    const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [isActive, setActive] = useState(false)
 
     const clickModal = (doubt:iDoubt) => {
@@ -79,7 +81,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
                 fontSize: '1.25em',
                 textAlign: 'left',
                 fontWeight: 500,
-                width: 800        
+                width: midScreen ? 800 : 320        
             }}
         > { description } </h3>
 
@@ -100,7 +102,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
             > Haz una Pregunta </button>
         </div> 
         
-        <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:600 }}/>
+        <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
         {
             questions.map((q, i) => 

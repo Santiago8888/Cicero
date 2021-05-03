@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { iUser } from '../../App'
+import { useState } from 'react'
 
 const defaultDoc = ''
 
@@ -15,6 +16,8 @@ interface iDocument {
 
 
 export const Document = ({ user, title, link=defaultDoc, description, min, next, approve }:iDocument) => {
+    const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
+    
     const [ isCounting, setCounting ] = useState(false)
     const initCountdown = () => {
         setCounting(true)
@@ -29,12 +32,12 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
                 color: '#444',
                 fontSize: '1.25em',
                 fontWeight: 500,
-                width: 800        
+                width: midScreen ? 800 : 320        
             }}
         > { description } </h3>
 
 
-        <div style={{ width:800, margin:'3rem auto 1rem'}}>
+        <div style={{ width:midScreen ? 800 : 320, margin:'3rem auto 1rem'}}>
             {
                 user.current.module < user.progress.module 
                 || (user.progress.lesson < user.current.lesson && user.current.module === user.progress.module)
