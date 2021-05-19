@@ -33,7 +33,7 @@ const useOptions = () => {
 }
 
 
-const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
+const CardForm = ({mongoUser, loginInput:{email, password}, createUser}: iBilling) => {
     const [ error, setError ] = useState<string>()
     const [ disabled, setDisabled ] = useState(true)
     const [ succeeded, setSucceeded ] = useState(false)
@@ -77,8 +77,8 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
             setError('')
             setProcessing(false)
             setSucceeded(true)
-            db.collection('users').insertOne({ email, password })
- 
+            createUser({ email, password })
+
         }
     }
 
@@ -142,6 +142,6 @@ const CardForm = ({mongoUser, db, loginInput:{email, password}}: iBilling) => {
 
 
 interface iBilling extends iLanding { loginInput:iLoginInput }
-export const Billing = ({mongoUser, db, loginInput}:iBilling) => <Elements stripe={stripePromise}>
-    <CardForm mongoUser={mongoUser} db={db} loginInput={loginInput}/>
+export const Billing = ({mongoUser, loginInput, createUser }:iBilling) => <Elements stripe={stripePromise}>
+    <CardForm mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
 </Elements>

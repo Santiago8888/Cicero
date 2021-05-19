@@ -25,14 +25,14 @@ const Welcome = ({ subscribe }:iWelcome) => <div className="content" style={{tex
 </div>
 
 
-export interface iLanding { mongoUser?: User, db:Realm.Services.MongoDBDatabase }
+export interface iLanding { mongoUser?: User, createUser(loginInput:iLoginInput):void }
 interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
-export const Landing = ({mongoUser, db, isWelcome, setWelcome}: ILanding) => {
+export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding) => {
     const [ loginInput, setLoginInput ] = useState<iLoginInput>()
 
     return isWelcome
         ?   <Welcome subscribe={setWelcome}/>
         :   !loginInput
             ?   <Login login={(loginInput) => setLoginInput(loginInput)} newUser={true}/>
-            :   <Billing mongoUser={mongoUser} db={db} loginInput={loginInput}/>
+            :   <Billing mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
 }

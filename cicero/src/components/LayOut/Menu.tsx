@@ -45,7 +45,7 @@ export const Menu = ({ modules, navigate, user, forum, recordings }: iMenu) => {
         <p className="menu-label"> Astroconsciencia </p>
         <ul className="menu-list">
             { modules.map(({ title, lessons }, idx) => 
-                <li style={{lineHeight:2}}>
+                <li style={{lineHeight:2}} key={idx}>
                     <a onClick={() => expand(idx)} style={!user ? {cursor:'initial'} : {}}>
                         { (!user || user.progress.module < idx) && <Lock/> }
                         { title } 
@@ -53,7 +53,7 @@ export const Menu = ({ modules, navigate, user, forum, recordings }: iMenu) => {
                     {
                         active === idx || user?.current.module === idx || (!user && idx === 0) ? <ul>
                             { lessons.map(({ title }, i) => 
-                                <li style={{lineHeight:1.25}}>
+                                <li style={{lineHeight:1.25}} key={i}>
                                     <a
                                         style={
                                             user?.current.lesson === i && user?.current.module === idx 

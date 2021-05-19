@@ -131,7 +131,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         <button 
             className='button is-link' 
             style={{borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, marginTop:'2em', backgroundColor:'darkblue'}}
-            disabled={Object.values(values).some(a => a === undefined)} 
+            disabled={Object.values(values).some(a => a === -1)}
             onClick={submit}
         > ENVIAR </button>
 

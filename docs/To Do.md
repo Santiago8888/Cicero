@@ -53,9 +53,9 @@
     * [X] Submit Login Form on Enter.
 
 * [ ] Ops
-    * [ ] DB Events.
-    * [ ] Stripe Payment.
-    * [ ] Document Tests.
+    * [X] Document Tests.
+    * [X] DB Events.
+    * [X] Stripe Payment.
     * [ ] Responsiveness.
     * [ ] Feed Demo Lessons.
     * [ ] Domain & Deployment.
@@ -63,3 +63,10 @@
     * [ ] Document Next Steps.
     * [ ] Private Security Checklist.
     * [ ] Share with Stackholders.
+
+
+## After Tests
+    
+    * [ ] Welcome Modal after payment.
+    * [ ] Login Errors on Form Submission.
+    * [ ] Avoid submitting null doubts.
