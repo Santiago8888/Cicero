@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
+import { Header, Modal } from "./Atoms"
 
-interface iPost { title:string, detail:string, likes:number, comments:string[], submit(reply:string):void }
-export const Post = ({ title, detail, comments, submit }: iPost) => {
+interface iPost { id?:string, title:string, detail:string, likes?:number, comments?:string[] }
+interface IPost extends iPost { id:string, reply(text:string, postId:string):void }
+export const Post = ({ id, title, detail, comments=[], reply }: IPost) => {
     const [value, setValue] = useState('')
     const [replies, setReplies] = useState<string[]>([])
 
@@ -12,9 +14,7 @@ export const Post = ({ title, detail, comments, submit }: iPost) => {
 
     return <nav className="panel">
         <p className="panel-heading"> { title } </p>
-        <div className="panel-block">
-            { detail }
-        </div>
+        <div className="panel-block"> { detail } </div>
 
         <div className="panel-block">
             <div className="field has-addons">
@@ -24,12 +24,12 @@ export const Post = ({ title, detail, comments, submit }: iPost) => {
                         className="input" 
                         placeholder="Comentar"
                         onChange={({target:{value}}) => setValue(value)}                        
-                        onKeyPress={({ key }) => key === 'Enter' ? submit(value) : null}
+                        onKeyPress={({ key }) => key === 'Enter' ? reply(value, id) : null}
                     />
                 </div>
 
                 <div className="control">
-                    <a className="button is-info" onClick={() => submit('text')}> 
+                    <a className="button is-info" onClick={() => reply(value, id)}> 
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 24 24" 
@@ -45,8 +45,8 @@ export const Post = ({ title, detail, comments, submit }: iPost) => {
             </div>
         </div>
 
-        { replies.map(comment => <a className="panel-block is-active"> { comment } </a> ) }
 
+        { replies.map(comment => <a className="panel-block is-active"> { comment } </a> ) }
 
         <div 
             className="panel-block" 
@@ -58,4 +58,48 @@ export const Post = ({ title, detail, comments, submit }: iPost) => {
             </button>
         </div>
     </nav>
+}
+
+
+interface iPosts { posts:iPost[], submit(post:iPost):void, reply(text:string, postId:string):void }
+export const Posts = ({posts, submit, reply}: iPosts) => {
+    const [ isActive, setActive] = useState(false)
+    const [ newPost, setNewPost ] = useState<iPost>({ title:'', detail:''})
+
+    return <div className='content'>
+        <Header 
+            title={"AstroChat"} 
+            description={"Interactua con el grupo y comparte lo que haz aprendido."} 
+            buttonText={"Publicar"}
+            submit={() => setActive(true)}
+        />
+
+        <Modal title={"Publicar"} isActive={isActive} submit={() => submit(newPost)} deactivate={() => setActive(false)}>
+            <div className="field">
+                <label className="label"> Título: </label>
+                <div className="control">
+                    <input 
+                        className="input" 
+                        type="text" 
+                        value={newPost.title} 
+                        onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
+                    />
+                </div>
+            </div>
+
+            <div className="field">
+                <label className="label"> Contentido Adicional (opcional): </label>    
+                <div className="control">
+                    <textarea 
+                        className="textarea" 
+                        placeholder="e.g. Hello world" 
+                        value={newPost.detail} 
+                        onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
+                    />
+                </div>
+            </div>
+        </Modal>
+
+        { posts.map((post, i) => <Post id={String(i)} {...post} reply={reply}/>) } 
+    </div>
 }
