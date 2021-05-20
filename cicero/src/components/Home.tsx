@@ -1,13 +1,14 @@
-import { Recordings, iRecordings } from './Forum/Recordings'
-import { Forum, iDoubt, iForum } from './Forum/Forum'
+import { iRecordings } from './Forum/Recordings'
+import { iDoubt, iForum } from './Forum/Forum'
 
 import { iLoginInput, Login } from './Auth/Login'
 import { Landing } from './Auth/Landing'
 import { iLesson } from './LayOut/Menu'
 import { Content } from './Content'
-import { iUser } from '../App'
+import { iPost, iUser } from '../App'
 
 import { User } from 'realm-web'
+import { Iteraction } from './Interaction'
 
 
 interface iHome { 
@@ -16,6 +17,7 @@ interface iHome {
     isWelcome:boolean
     lesson:iLesson
     forum?:iForum
+    questions?:iPost[]
     recordings?:iRecordings 
     mongoUser?:User
 
@@ -30,22 +32,25 @@ interface iHome {
 export const Home = ({
     user, 
     mongoUser, 
-    isWelcome,
-    next,
-    approve,
-    setWelcome, 
-    createUser, 
+
     isLogin, 
-    login, 
+    isWelcome,
+
     lesson, 
     forum, 
+    questions,
     recordings, 
+
+    next,
+    approve,
+    setWelcome,
+    createUser,
+    login,
     submit
 }: iHome) => {
     return user
-        ?   forum 
-            ?   <Forum {...forum} submit={submit}/>
-            :   recordings ? <Recordings {...recordings}/>
+        ?   forum || recordings || questions 
+            ?   <Iteraction forum={forum} recordings={recordings} questions={questions} submit={submit}/>
             :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
         :   isLogin 
             ?  <Login login={login} newUser={false}/>
