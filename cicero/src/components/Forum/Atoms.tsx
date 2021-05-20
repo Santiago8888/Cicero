@@ -21,8 +21,8 @@ const buttonStyle:CSSProperties = {
 }
 
 const dividerStyle = { backgroundColor:'darkblue', margin:'1.5rem auto 3rem' }
-interface iHeader { title:string, description:string, submit():void }
-export const Header = ({ title, description, submit }:iHeader) => {
+interface iHeader { title:string, description:string, buttonText:string, submit():void }
+export const Header = ({ title, description, buttonText, submit }:iHeader) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
     return <div>
@@ -37,7 +37,7 @@ export const Header = ({ title, description, submit }:iHeader) => {
 
         <div style={{maxWidth:800, margin:'auto'}}>
             <button className='button is-link' style={buttonStyle} onClick={submit}> 
-                Haz una Pregunta 
+                { buttonText } 
             </button>
         </div> 
         
