@@ -7,8 +7,9 @@
 - [ ] Remove Title & Description from Recordings and Forum.
 - [ ] Add Astology Chart Lesson Type.
 - [ ] Post to AstroChat or Share on FaceBook. 
-- [ ] NavBar type for AstroChat/Posts.
+- [X] NavBar type for AstroChat/Posts.
 - [ ] Image of Sign and Name for Posts.
+- [ ] Add datetime property on Posts and replies objects.
 
 - [ ] Google Sheets CMS.
 - [ ] Import as Package atomic-react
