@@ -4,7 +4,8 @@ import { iRecordings } from "../Forum/Recordings"
 import { useEffect, useState } from "react"
 import { iQuestion } from "../Views/Quiz"
 import { iForum } from "../Forum/Forum"
-import { iPost, iUser } from '../../App'
+import { iPost } from "../Forum/Posts"
+import { iUser } from '../../App'
 
 
 type Lesson = 'Video' | 'Quiz' | 'Reading'
