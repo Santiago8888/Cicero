@@ -3,6 +3,7 @@ import { iRecordings } from "../components/Forum/Recordings"
 import { iForum } from "../components/Forum/Forum"
 import { iPost } from "../components/Forum/Posts"
 import { iUser } from "../App"
+import { planets } from "./chart"
 
 
 export const lesson: iLesson = { 
@@ -71,8 +72,8 @@ const lessons:iLesson[] = [
 
 export const defaultUser:iUser = { 
     email:'test@branding.gq', 
-    progress:{unit:3, module:1, lesson:0}, 
-    current:{unit:0, module:0, lesson:2}, 
+    progress:{unit:3, module:0, lesson:5}, 
+    current:{unit:3, module:0, lesson:1}, 
     quizFailures:0 
 }
 
@@ -113,8 +114,16 @@ export const Units:iUnit[] = [{
         { 
             title: '4.1 Planetas', 
             lessons:[
-                ...lessons, 
-                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente'}
+                { title:'Sol', type:'Chart', description:'El sol representa quien eres', planets:['Sun']},
+                { title:'Luna', type:'Chart', description:'La Luna rige tus emociones', planets:['Moon']},
+                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente', planets:['Mercury']},
+                { title:'Venus', type:'Chart', description:'El planeta que rige el amor', planets:['Venus']},
+                { title:'Marte', type:'Chart', description:'El planeta que rige la energía', planets:['Mars']},
+                { title:'Jupiter', type:'Chart', description:'El planeta que rige la suerte', planets:['Jupiter']},
+                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planets:['Saturn']},
+                { title:'Urano', type:'Chart', description:'El planeta de la creatividad', planets:['Uranus']},
+                { title:'Neptuno', type:'Chart', description:'El planeta de la imaginación y espiritualidad', planets:['Neptune']},
+                { title:'Pluto', type:'Chart', description:'El planeta del subconsciente', planets:['Pluto']},
             ] 
         },
         { title: '4.2 Regencia/Dignidad', lessons },
