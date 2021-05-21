@@ -6,7 +6,7 @@ type SVG =  Selection<SVGSVGElement, unknown, HTMLElement, any>
 export type HouseNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |12
 
 export interface iPlanet { 
-    name:string,
+    name:Planet,
     house: HouseNumber,
     degrees: number, 
     text: string 
@@ -16,7 +16,7 @@ interface iMappedPlanet {
     house: HouseNumber,
     text: string, 
     degree: number, 
-    name: typeof planet_names[number],
+    name: Planet,
     path: string, 
     color: DeepColor    
 }
@@ -51,7 +51,7 @@ const planet_names = [
     'North Node', 
     'South Node'
 ] as const
-
+export type Planet =  typeof planet_names[number]
 
 const planet_imgs = [...planet_names.filter((_, i) => i < 10), 'Node', 'Node'].map(i => `planets/${i}`)
 const get_element = (color:DeepColor) => ({ '#950193': 'fire', '#B16148': 'terra', '#1528B2': 'air', '#054D1B': 'water' })[color]
@@ -138,7 +138,7 @@ const find_oppositions = (planets:iMappedPlanet[]) => planets.map(({degree: i, n
     .map(({ degree: j, name: m }) => [{planet: n, degree: i, color:'#FF0090'}, {planet: m, degree: j, color:'#FF0090'}])
 ).flat()
 
-interface iAspect { planet:typeof planet_names[number], degree:number, color:string}
+interface iAspect { planet:Planet, degree:number, color:string}
 const get_all_aspects = (planets:iMappedPlanet[]) => [ ...find_conjunctions(planets), ...find_semi_sextils(planets), 
   ...find_sextils(planets), ...find_cuadratures(planets), ...find_trigons(planets), ...find_quintiles(planets),
   ...find_oppositions(planets).reduce((d, i, idx, l) => idx < l.length - 1 ? [...d, i] : d, [] as iAspect[][])
@@ -197,15 +197,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             .style('stroke', '#ADD8E6')
             .style('fill', fill || 'rgba(0,0,0,0)')
 
-        const create_text = (svg:SVG, {x, y}:{x:number, y:number}, text:number, color:string) => {
-            console.log(text, 
-                `translate(
-                    ${ x > 300 ? text !== 6 && text !== 7 ? x - 1 : text === 7 ? x - 5 : x - 4 : text !== 1 ? x - 8 : x - 3}, 
-                    ${ y > 300 ? text !== 3 && text !== 4 ? y : y + 3 : text !== 9 && text !== 10 && text !== 11 ? y + 10 : y + 7 }
-                )`
-                
-                )
-            return svg
+        const create_text = (svg:SVG, {x, y}:{x:number, y:number}, text:number, color:string) => svg
             .append('text')
             .text(text)
             .attr(
@@ -216,7 +208,6 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
                 )`
             )
             .style('fill', color)
-        }
 
         const draw_image = (svg:SVG, { x, y }:{x:number, y:number}, path:string, idx:HouseNumber) => svg
             .append('image')
@@ -280,11 +271,13 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
 
     
         const draw_chart = (planets:iMappedPlanet[]) => {
-            const svg = select('#viz').append('svg').attr('width', 600).attr('height', 600)
+            const lastSVG = select('#viz')
+            lastSVG.selectAll("*").remove()
+
+            const svg = select('#viz').append('svg').attr('id', '#AstralChart').attr('width', 600).attr('height', 600)
             circles.map(r => draw_circle(svg, r))
 
             const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + houses[0] % 30)
-
             signs.map((d, i) => draw_arc(svg, {startAngle: d, endAngle: signs[i+1], innerRadius: 260, outerRadius: 300, fill:'' }))
             signs.map((d, i) => draw_arc(svg, {
                 startAngle: d, 
