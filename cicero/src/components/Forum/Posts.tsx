@@ -147,24 +147,36 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
 
 interface iPosts { 
     posts:iPost[]
-    submit(post:iPost):void
+    post(post:iPost):void
     like(id:string):void
     reply(text:string, postId:string):void
 }
 
-export const Posts = ({posts, submit, reply, like}: iPosts) => {
+const emptyPost = { title:'', detail:''}
+export const Posts = ({posts, post, reply, like}: iPosts) => {
     const [ isActive, setActive] = useState(false)
-    const [ newPost, setNewPost ] = useState<iPost>({ title:'', detail:''})
+    const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
+
+    const submit = () => {
+        post(newPost)
+        setActive(false)
+        setNewPost(emptyPost)
+    }
 
     return <div className='content' style={{maxWidth:720, margin:'auto'}}>
         <Header 
             title={"AstroChat"} 
             description={"Interactua con el grupo y comparte lo que haz aprendido."} 
             buttonText={"Publicar"}
-            submit={() => setActive(true)}
+            click={() => setActive(true)}
         />
 
-        <Modal title={"Publicar"} isActive={isActive} submit={() => submit(newPost)} deactivate={() => setActive(false)}>
+        <Modal 
+            submit={submit} 
+            title={"Publicar"} 
+            isActive={isActive} 
+            deactivate={() => setActive(false)}
+        >
             <div className="field">
                 <label className="label"> Título: </label>
                 <div className="control">
