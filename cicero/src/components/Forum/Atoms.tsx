@@ -30,12 +30,12 @@ export const Header = ({ title, description, buttonText, submit }:iHeader) => {
             { title } 
         </h1>
 
-        <h3 style={{...descriptionStyle, width:midScreen ? 800 : 320}}> 
+        <h3 style={{...descriptionStyle, width:midScreen ? '100%' : 320}}> 
             { description } 
         </h3>
 
 
-        <div style={{maxWidth:800, margin:'auto'}}>
+        <div style={{maxWidth:'100%', margin:'auto'}}>
             <button className='button is-link' style={buttonStyle} onClick={submit}> 
                 { buttonText } 
             </button>
