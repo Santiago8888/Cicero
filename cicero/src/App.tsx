@@ -1,4 +1,4 @@
-import { modules, Recordings, Forum, Posts, defaultUser } from './data/data'
+import { modules, Recordings, Forum, Posts, defaultUser, Units } from './data/data'
 import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
@@ -240,7 +240,7 @@ export const App = () => {
                     largeScreen &&
                         <Menu
                             user={user}
-                            modules={modules}
+                            units={Units}
                             navigate={navigate}
                             {...homeData}
                         />
