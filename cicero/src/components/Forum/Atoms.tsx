@@ -79,8 +79,8 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
 }
 
 
-interface iLikes { likes:number, like():void } 
-export const Likes = ({likes, like}: iLikes) => <div style={{width:80}}>
+interface iLikes { likes:number, like():void, style?:CSSProperties } 
+export const Likes = ({likes, like, style}: iLikes) => <div style={{width:80, ...style}}>
     <a title="Like" onClick={like}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={20} style={{fill:'goldenrod'}}>
             <path d="M0 15.878 l12-11.878 12 11.878-4 4.122-8-8-8 8-4-4.122z" />
