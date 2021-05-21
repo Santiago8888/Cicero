@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties } from 'react'
 

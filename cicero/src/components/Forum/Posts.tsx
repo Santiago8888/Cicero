@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { Header, Modal, Likes } from "./Atoms"
 import { CSSProperties, useEffect, useState } from "react"
 
