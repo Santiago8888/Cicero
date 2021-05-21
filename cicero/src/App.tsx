@@ -2,6 +2,8 @@ import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
+import { iPost } from './components/Forum/Posts'
+
 import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
@@ -24,8 +26,6 @@ const connectMongo = async() => {
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 
-interface iComment { comment:string, replies:string[], likes:number }
-export interface iPost { post:string, likes:number, comments:iComment[]}
 interface iHomeData { forum?:iForum, recordings?:iRecordings, questions?:iPost[], lesson:iLesson}
 
 const initialData:iHomeData = { 
