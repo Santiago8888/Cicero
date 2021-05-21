@@ -280,7 +280,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
 
     
         const draw_chart = (planets:iMappedPlanet[]) => {
-            const svg = select('#viz').append('svg').attr('width', 900).attr('height', 900)
+            const svg = select('#viz').append('svg').attr('width', 600).attr('height', 600)
             circles.map(r => draw_circle(svg, r))
 
             const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + houses[0] % 30)
