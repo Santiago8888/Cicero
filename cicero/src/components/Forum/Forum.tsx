@@ -109,11 +109,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
         
         <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
-        {
-            questions.map((q, i) => 
-                <Doubt  {...q} key={i}/>
-            )
-        }
+        { questions.map((q, i) => <Doubt  {...q} key={i}/> ) }
 
         <Modal 
             isActive={isActive} 
