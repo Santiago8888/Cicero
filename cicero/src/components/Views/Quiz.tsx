@@ -14,7 +14,7 @@ const Question = ({index, question, value, answers, select}:IQuestion) => <div
     <label className="label" style={{fontSize:'1.25em'}}> { question } </label>
     {
         answers.map(({ answer:a }, i) => 
-            <div className="control">
+            <div className="control" key={i}>
                 <label className="radio" style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
                     <input 
                         type="radio" 
