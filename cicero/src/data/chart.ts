@@ -12,7 +12,7 @@ export const planets:iPlanet[] = [
     { name: 'Uranus', house: 9, degrees: 27.184362562164154, text: "27° 11'" },
     { name: 'Neptune', house: 10, degrees: 7.683397604334232, text:"7° 41'" },
     { name: 'Pluto', house: 8, degrees: 9.995782220991515, text:"9° 59'" },
-    { name: 'Node', house: 12, degrees: 14.1482424765004, text:"14° 08'" }
+    { name: 'North Node', house: 12, degrees: 14.1482424765004, text:"14° 08'" }
 ]
   
 export const houses = [
