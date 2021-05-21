@@ -83,5 +83,6 @@ export const defaultUser:iUser = {
 export const Posts:iPost[] = [{
     title:'Title', 
     detail:'Detail', 
-    comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age']
+    comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age'],
+    likes:0
 }]
