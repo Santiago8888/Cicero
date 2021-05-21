@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 
-export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Questions'
+export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts'
 interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 export const NavBar = ({ click, user }: iNavBar) => {
     const midScreen = useMediaQuery({ query: '(min-width: 1024px)' })
@@ -58,11 +58,11 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 {
                     user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkblue'}}>
                         <a 
-                            onClick={() => click('Questions')} 
+                            onClick={() => click('Posts')} 
                             className={'navbar-item'}
                             style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
                         > 
-                            <strong> Forum </strong> 
+                            <strong> Chat </strong> 
                         </a>                    
                     </div>
                 }
@@ -74,7 +74,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                             className={'navbar-item'}
                             style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
                         > 
-                            <strong> Dudas </strong> 
+                            <strong> Forum </strong> 
                         </a>                    
                     </div>
                 }
