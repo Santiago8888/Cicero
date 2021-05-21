@@ -27,8 +27,9 @@ const Lock = () => <img
 
 export interface iPosition { module:number, lesson:number }
 export interface iModule { title:string, lessons:iLesson[] }
+export interface iUnit { title:string, modules:iModule[] }
 interface iMenu { 
-    modules:iModule[]
+    units:iUnit[]
     navigate(position:iPosition):void
     user?:iUser
     forum?:iForum
@@ -37,7 +38,7 @@ interface iMenu {
 }
 
 
-export const Menu = ({ modules, navigate, user, forum, posts, recordings }: iMenu) => {
+export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu) => {
     const [active, setActive] = useState<number>(user?.current.module || 0)
 
     const expand = (id:number) => {
@@ -52,36 +53,48 @@ export const Menu = ({ modules, navigate, user, forum, posts, recordings }: iMen
         className="menu column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile"
         style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.15em' }}
     >
-        <p className="menu-label"> Astroconsciencia </p>
-        <ul className="menu-list">
-            { modules.map(({ title, lessons }, idx) => 
-                <li style={{lineHeight:2}} key={idx}>
-                    <a onClick={() => expand(idx)} style={!user ? {cursor:'initial'} : {}}>
-                        { (!user || user.progress.module < idx) && <Lock/> }
-                        { title } 
-                    </a>
-                    {
-                        active === idx || user?.current.module === idx || (!user && idx === 0) ? <ul>
-                            { lessons.map(({ title }, i) => 
-                                <li style={{lineHeight:1.25}} key={i}>
-                                    <a
-                                        style={
-                                            user?.current.lesson === i && user?.current.module === idx 
-                                                ? {backgroundColor: !forum && !recordings && !posts ? 'darkblue' : 'lightblue', borderRadius:8} 
-                                                : !user || (idx === user?.progress.module && i > user?.progress.lesson) ? {cursor:'initial'} : {}
-                                        }
-                                        className={`${user?.current.lesson === i  && user?.current.module === idx ? 'is-active': ''}`}
-                                        onClick={() => navigate({module:active, lesson:i})}
-                                    > 
-                                        { (idx === user?.progress.module && i > user?.progress.lesson) && <Lock/> }
-                                        { title } 
-                                    </a>
-                                </li>
-                            )}
-                        </ul> : null
-                    }
-                </li>
-            )}
-        </ul>
+        {
+            units.map(({ title, modules }) => <>
+                <p className="menu-label"> { title } </p>
+                <ul className="menu-list">
+                    { modules.map(({ title, lessons }, idx) => 
+                        <li style={{lineHeight:2}} key={idx}>
+                            <a onClick={() => expand(idx)} style={!user ? {cursor:'initial'} : {}}>
+                                { (!user || user.progress.module < idx) && <Lock/> }
+                                { title } 
+                            </a>
+                            {
+                                (active === idx || user?.current.module === idx || (!user && idx === 0)) && lessons.length
+                                ?   <ul>
+                                        { lessons.map(({ title }, i) => 
+                                            <li style={{lineHeight:1.25}} key={i}>
+                                                <a
+                                                    style={
+                                                        user?.current.lesson === i && user?.current.module === idx 
+                                                            ?   {
+                                                                    backgroundColor: !forum && !recordings && !posts ? 'darkblue' : 'lightblue', 
+                                                                    borderRadius:8
+                                                                }
+                                                            : !user || (idx === user?.progress.module && i > user?.progress.lesson) 
+                                                                ? {cursor:'initial'} 
+                                                                : {}
+                                                    }
+                                                    className={`${user?.current.lesson === i  && user?.current.module === idx ? 'is-active': ''}`}
+                                                    onClick={() => navigate({module:active, lesson:i})}
+                                                > 
+                                                    { (idx === user?.progress.module && i > user?.progress.lesson) && <Lock/> }
+                                                    { title } 
+                                                </a>
+                                            </li>
+                                        )}
+                                    </ul> 
+                                :   null
+                            }
+                        </li>
+                    )}
+                </ul>
+
+            </>)
+        }
     </aside>
 }
