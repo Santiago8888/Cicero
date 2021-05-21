@@ -31,7 +31,7 @@ interface iHome {
 
     post(post:iPost):void
     likePost(id:string):void
-    reply(text:string, postId:string):void
+    reply(text:string, id:string):void
 }
 
 export const Home = ({

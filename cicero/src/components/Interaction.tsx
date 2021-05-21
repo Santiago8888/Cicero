@@ -13,7 +13,7 @@ interface iInteraction {
     submit(doubt:iDoubt):void
     post(post:iPost):void
     likePost(id:string):void
-    reply(text:string, postId:string):void
+    reply(text:string, id:string):void
 }
 
 export const Interaction = ({ forum, recordings, posts, submit, post, likePost, reply }: iInteraction) => {
