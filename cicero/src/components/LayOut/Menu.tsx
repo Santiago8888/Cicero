@@ -8,7 +8,7 @@ import { iUser } from '../../App'
 import { useState } from "react"
 
 
-type Lesson = 'Video' | 'Quiz' | 'Reading'
+type Lesson = 'Video' | 'Quiz' | 'Reading' | 'Chart'
 export interface iLesson { 
     title:string, 
     type:Lesson, 
