@@ -3,10 +3,12 @@ import { CSSProperties, useState } from "react"
 import { Likes } from "./Atoms"
 
 
-export interface iDoubt { question:string, details:string }
+export interface iDoubt { question:string, details:string, likes:number }
 const doubtStyle:CSSProperties = {maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
-const Doubt = ({ question, details }:iDoubt) => <div style={doubtStyle}>
-    <Likes likes={0} like={() => {}} style={{textAlign:'center'}}/>
+
+interface IDoubt extends iDoubt { like():void } 
+const Doubt = ({ question, details, likes, like }:IDoubt) => <div style={doubtStyle}>
+    <Likes likes={likes} like={like} style={{textAlign:'center'}}/>
     <div>
         <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
         <p> { details } </p>
@@ -57,7 +59,7 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
             <footer className="modal-card-foot">
                 <button 
                     className='button is-link' 
-                    onClick={() => submit({ question, details })} 
+                    onClick={() => submit({ question, details, likes:0 })} 
                     style={{backgroundColor:'darkblue', margin:'auto'}}
                 >  Siguiente </button>
             </footer>
@@ -67,8 +69,8 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 
 
 export interface iForum { title:string, description:string, questions:iDoubt[] }
-interface IForum extends iForum { submit(question:iDoubt):void }
-export const Forum = ({ title, description, questions, submit }: IForum) => {
+interface IForum extends iForum { submit(question:iDoubt):void, like(id:string):void }
+export const Forum = ({ title, description, questions, submit, like }: IForum) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [isActive, setActive] = useState(false)
 
@@ -109,7 +111,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
         
         <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
-        { questions.map((q, i) => <Doubt  {...q} key={i}/> ) }
+        { questions.map((q, i) => <Doubt  {...q} like={() => like(String(i))} key={i}/> ) }
 
         <Modal 
             isActive={isActive} 

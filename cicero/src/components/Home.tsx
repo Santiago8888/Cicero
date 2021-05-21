@@ -29,9 +29,10 @@ interface iHome {
     submit(doubt:iDoubt):void
     setWelcome():void
 
+    like(id:string):void
     post(post:iPost):void
     likePost(id:string):void
-    reply(text:string, postId:string):void
+    reply(text:string, id:string):void
 }
 
 export const Home = ({
@@ -53,6 +54,7 @@ export const Home = ({
     login,
     submit,
 
+    like,
     post,
     reply,
     likePost
@@ -63,6 +65,7 @@ export const Home = ({
                     forum={forum} 
                     recordings={recordings} 
                     posts={posts} 
+                    like={like}
                     submit={submit}
                     post={post}
                     reply={reply}

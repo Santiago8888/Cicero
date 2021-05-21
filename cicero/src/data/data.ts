@@ -32,10 +32,12 @@ export const Forum:iForum = {
     description:'Comparte las dudas y preguntas que quieras que sean respondidas en la sesión semanal.', 
     questions:[{ 
         question: '¿Qué significa cuando el Sol está en Leo?', 
-        details: 'Mi carta tiene el Sol en Leo y no se que significa.'
+        details: 'Mi carta tiene el Sol en Leo y no se que significa.',
+        likes: 2
     }, { 
-        question: '¿Qué significa cuando el Sol está en Cancer?', 
-        details: 'Mi carta tiene el Sol en Cancer y no se que significa.'
+        question: 'Cómo afecta la Luna en Cancer mis emociones?', 
+        details: 'Mi carta tiene la Luna en Cancer cual es el efecto en mis emociones.',
+        likes: 0
     }] 
 }
 

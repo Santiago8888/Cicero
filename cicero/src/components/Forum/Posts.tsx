@@ -57,6 +57,13 @@ const Post = ({ id, title, detail, likes, comments, reply, like }: IPost) => {
 
     useEffect(() => {}, [comments])
 
+    const comment = (text:string, id:string) => {
+        reply(text, id)
+        setCanComment(false)
+        setShowComments(true)
+        setValue('')
+    }
+    
     return <div style={{display:'flex', marginBottom:64}}>
         <Likes likes={likes} like={() => like(id)}/>
 
@@ -115,12 +122,12 @@ const Post = ({ id, title, detail, likes, comments, reply, like }: IPost) => {
                             className="input" 
                             placeholder="Comentar"
                             onChange={({target:{value}}) => setValue(value)}                        
-                            onKeyPress={({ key }) => key === 'Enter' ? reply(value, id) : null}
+                            onKeyPress={({ key }) => key === 'Enter' ? comment(value, id) : null}
                         />
                     </div>
 
                     <div className="control" style={{marginRight:20}}>
-                        <a className="button is-info" onClick={() => reply(value, id)}> 
+                        <a className="button is-info" onClick={() => comment(value, id)}> 
                             <svg 
                                 xmlns="http://www.w3.org/2000/svg" 
                                 viewBox="0 0 24 24" 
@@ -149,7 +156,7 @@ interface iPosts {
     posts:iPost[]
     post(post:iPost):void
     like(id:string):void
-    reply(text:string, postId:string):void
+    reply(text:string, id:string):void
 }
 
 const emptyPost = { title:'', detail:'', likes:0, comments:[] }
