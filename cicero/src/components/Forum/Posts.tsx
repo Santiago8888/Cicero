@@ -1,5 +1,5 @@
 import { Header, Modal, Likes } from "./Atoms"
-import { useEffect, useState } from "react"
+import { CSSProperties, useEffect, useState } from "react"
 
 
 const monthDict = (month:number) => ({
@@ -18,10 +18,32 @@ const monthDict = (month:number) => ({
 }[month])
 
 
-export const DateTime = ({ date }:{ date:Date }) => <i style={{marginBottom:12}}>
+const DateTime = ({ date }:{ date:Date }) => <i style={{marginBottom:12, color:'gray'}}>
     { date.getHours() % 12 }:{ date.getMinutes() } { date.getHours() > 12 ? 'PM - ' : 'AM - ' }  
     { date.getDate() } { monthDict(date.getMonth()) } { date.getFullYear() } <br/>
 </i>
+
+
+const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
+const Comment = ({ comment }:{comment:string}) => <div style={{...footerBoxStyle, padding:10, marginBottom:0}}>
+    <div className="media">
+        <div className="media-left" style={{margin:'auto'}}>
+            <figure className="image is-24x24" style={{marginBottom:'0.5rem'}}>
+                <img src="signs/Aqu.png" alt="Solar sign" />
+            </figure>
+            <p className="title is-6">Beth Doe</p>
+        </div>
+
+        <div className="level-item" style={{width:'calc(100% - 160px)'}}>
+            <div className="content" style={{ textAlign:'left', width:'100%'}}>
+                <p> 
+                    <DateTime date={new Date()} />
+                    { comment } 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 export interface iPost { id?:string, title:string, detail:string, likes?:number, comments?:string[] }
@@ -36,7 +58,7 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
         setReplies(recentComments)
     }, [comments])
 
-    return <div style={{display:'flex'}}>
+    return <div style={{display:'flex', marginBottom:64}}>
         <Likes likes={likes} like={() => like(id)}/>
 
         <div className="card" style={{textAlign:'left', width:'100%'}}>
@@ -61,7 +83,7 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
 
                     <div className="level-item" style={{width:'calc(100% - 160px)', minHeight:100}}>
                         <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
-                            <p> 
+                            <p style={{marginTop:'-1rem'}}> 
                                 <DateTime date={new Date()} />
                                 { detail } 
                             </p>
@@ -72,12 +94,12 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
 
             <footer className="card-footer">
                 { !canComment && <a href="#" className="card-footer-item" onClick={() => setCanComment(true)}> Comentar </a> }
-                <a href="#" className="card-footer-item"> Mostrar Comentarios </a>
+                { comments.length && <a href="#" className="card-footer-item"> Mostrar Comentarios </a> }
             </footer>
 
             {
                 canComment && 
-                <div className="field has-addons" style={{marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}}>
+                <div className="field has-addons" style={footerBoxStyle}>
                     <div className="control" style={{width:'100%', marginLeft:20}}>
                         <input 
                             type="text" 
@@ -104,7 +126,11 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
                     </div>
                 </div>
             }
-        </div>        
+
+            { comments.map((comment) => <Comment comment={comment}/>)}
+        </div>
+
+
         <div style={{width:80}}/>
     </div>
 }
