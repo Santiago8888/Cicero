@@ -1,4 +1,4 @@
-import { modules, Recordings, Forum, Posts, defaultUser, Units } from './data/data'
+import { Recordings, Forum, Posts, defaultUser, Units } from './data/data'
 import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
@@ -32,7 +32,7 @@ const initialData:iHomeData = {
     forum:undefined, 
     recordings:undefined, 
     posts:undefined,
-    lesson:modules[0].lessons[0] 
+    lesson:Units[0].modules[0].lessons[0] 
 }
 
 
@@ -122,9 +122,9 @@ export const App = () => {
     const nextLesson = ({unit, module, lesson}:iPosition):iPosition => {
         if(!user) return { unit:0, module:0, lesson: 0}
 
-        const hasNextLesson = modules[module].lessons[lesson+1]
-        const hasNextModule = modules[user.current.module + 1]
-        const hasNextUnit = modules[user.current.module + 1]
+        const hasNextLesson = Units[unit].modules[module].lessons[lesson+1]
+        const hasNextModule = Units[unit].modules[user.current.module + 1]
+        const hasNextUnit = Units[user.current.unit + 1]
 
         if (hasNextLesson) return { unit, module, lesson:lesson+1 }
         else if (hasNextModule) return { unit, module:module+1, lesson:0 }
@@ -135,24 +135,27 @@ export const App = () => {
     const next = () => {
         if(!user) return
 
-        const lesson = modules[user.current.module].lessons[user.current.lesson]
+        const { current } = user 
+        const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
+
         if(lesson.type === 'Quiz'){
-            if(user.quizFailures === 0) return updateUser({...user, current:nextLesson(user.current)})
+            if(user.quizFailures === 0) return updateUser({...user, current:nextLesson(current)})
             if(user.quizFailures === 1) return
             if(user.quizFailures === 2) return updateUser({
                 ...user, 
                 quizFailures:0, 
-                progress:{...user.current, lesson:0}, 
-                current: {...user.current, lesson:0}
+                progress:{...current, lesson:0}, 
+                current: {...current, lesson:0}
             })
 
-        } else updateUser({...user, current:nextLesson(user.current)})
+        } else updateUser({...user, current:nextLesson(current)})
     }
 
     const navigate = ({unit, module, lesson}:iPosition) => {
         if(!user) return
-        if(module > user.progress.module) return
-        if(module === user.progress.module && lesson > user.progress.lesson) return
+        if(unit > user.progress.unit) return
+        if(unit === user.progress.unit && module > user.progress.module) return
+        if(unit === user.progress.unit && module === user.progress.module && lesson > user.progress.lesson) return
 
         updateUser({...user, current:{ unit, module, lesson } })
         setHomeData({...homeData, recordings:undefined, forum:undefined, posts:undefined})
@@ -161,13 +164,14 @@ export const App = () => {
     const approveQuiz = (score:number) => {
         if(!user) return
 
-        const lesson = modules[user.current.module].lessons[user.current.lesson]
+        const { current, progress } = user 
+        const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
-        const needsApproval = user.progress.lesson === user.current.lesson && user.progress.module === user.current.module
+        const needsApproval = progress.lesson === current.lesson && progress.module === current.module
 
-        if(needsApproval && score >= minScore) updateUser({...user, progress:nextLesson(user.progress), quizFailures:0})
+        if(needsApproval && score >= minScore) updateUser({...user, progress:nextLesson(progress), quizFailures:0})
         else if(needsApproval && user.quizFailures === 1) updateUser({...user, quizFailures:2 })
         else if(needsApproval) updateUser({...user, quizFailures:1})
         
@@ -178,7 +182,8 @@ export const App = () => {
     const approve = (score?:number) => {
         if(!user) return
 
-        const lesson = modules[user.current.module].lessons[user.current.lesson]
+        const { current } = user 
+        const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
         return updateUser({...user, progress:nextLesson(user.progress)})
     }
@@ -271,7 +276,7 @@ export const App = () => {
                         isLogin={isLogin} 
                         isWelcome={isWelcome}
                         mongoUser={mongoUser}
-                        lesson={modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
+                        lesson={Units[user?.current.unit || 0].modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}
                         likePost={likePost}
