@@ -146,7 +146,7 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
 interface iPosts { 
     posts:iPost[]
     submit(post:iPost):void
-    like(postId:string):void
+    like(id:string):void
     reply(text:string, postId:string):void
 }
 
