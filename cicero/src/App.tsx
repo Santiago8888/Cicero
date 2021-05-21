@@ -198,12 +198,25 @@ export const App = () => {
     const likePost = (id:string) => {
         const likedPosts = posts.map((post, i) => 
             id === String(i) 
-            ? {...post, likes:post.likes ? post.likes + 1: 1 || 1} 
+            ? {...post, likes: post.likes + 1 } 
             : post
         )
 
         setPosts(likedPosts)
         setHomeData({...homeData, posts:likedPosts})
+ 
+        // db?.collection('posts').inse(post)
+    }
+
+    const reply = (text:string, id:string) => {
+        const repliedPosts = posts.map((post, i) => 
+            id === String(i) 
+            ? {...post, comments:[...post.comments, text]} 
+            : post
+        )
+
+        setPosts(repliedPosts)
+        setHomeData({...homeData, posts:repliedPosts})
  
         // db?.collection('posts').inse(post)
     }
@@ -246,9 +259,9 @@ export const App = () => {
                         createUser={createUser}
                         likePost={likePost}
                         approve={approve} 
-                        reply={() => {}}
                         submit={submit}
                         login={login} 
+                        reply={reply}
                         post={post}
                         next={next}
                     />
