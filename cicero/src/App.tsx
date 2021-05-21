@@ -66,7 +66,7 @@ export const App = () => {
     const createUser = (loginInput:iLoginInput) => {
         if(!db) return
 
-        const startingPosition: iPosition = { module:0, lesson:0 }
+        const startingPosition: iPosition = { unit:0, module:0, lesson:0 }
         const newUser: iUser = { 
             ...loginInput, 
             current:startingPosition, 
@@ -119,11 +119,17 @@ export const App = () => {
         setPosts([])
     }
 
-    const nextLesson = ({module, lesson}:iPosition):iPosition => {
-        if(!user) return { module:0, lesson: 0}
-        if (modules[module].lessons[lesson+1]) return { module:module, lesson:lesson+1 }
-        else if (modules[user.current.module + 1]) return { module: module+1, lesson:0 }
-        else return { module, lesson }
+    const nextLesson = ({unit, module, lesson}:iPosition):iPosition => {
+        if(!user) return { unit:0, module:0, lesson: 0}
+
+        const hasNextLesson = modules[module].lessons[lesson+1]
+        const hasNextModule = modules[user.current.module + 1]
+        const hasNextUnit = modules[user.current.module + 1]
+
+        if (hasNextLesson) return { unit, module, lesson:lesson+1 }
+        else if (hasNextModule) return { unit, module:module+1, lesson:0 }
+        else if (hasNextUnit) return { unit, module:module+1, lesson:0 }
+        else return { unit, module, lesson }
     }
 
     const next = () => {
@@ -143,12 +149,12 @@ export const App = () => {
         } else updateUser({...user, current:nextLesson(user.current)})
     }
 
-    const navigate = ({module, lesson}:iPosition) => {
+    const navigate = ({unit, module, lesson}:iPosition) => {
         if(!user) return
         if(module > user.progress.module) return
         if(module === user.progress.module && lesson > user.progress.lesson) return
 
-        updateUser({...user, current:{ module, lesson } })
+        updateUser({...user, current:{ unit, module, lesson } })
         setHomeData({...homeData, recordings:undefined, forum:undefined, posts:undefined})
     }
 
