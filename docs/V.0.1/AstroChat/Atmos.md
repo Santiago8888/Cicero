@@ -1,22 +1,22 @@
 # Atoms
 
 ## Forum Header
-- [ ] Title.
-- [ ] Description (paragraph).
-- [ ] Submit Button.
-- [ ] Divider.
+- [X] Title.
+- [X] Description (paragraph).
+- [X] Submit Button.
+- [X] Divider.
 
 
 ## Posts Panel
-- [ ] Title.
-- [ ] Content.
-- [ ] Reply Box.
-- [ ] Replies.
-- [ ] Expand Comments Button.
-- [ ] Likes
-    - [ ] Arrow
-    - [ ] Counter
+- [X] Title.
+- [X] Content.
+- [X] Reply Box.
+- [X] Replies.
+- [X] Expand Comments Button.
+- [X] Likes
+    - [X] Arrow
+    - [X] Counter
 
 
 ## Grid
-- [ ] Iterate through top N stories.
+- [X] Iterate through top N stories.
