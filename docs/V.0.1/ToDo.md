@@ -8,6 +8,7 @@
 - [ ] Add Astology Chart Lesson Type.
 - [ ] Post to AstroChat or Share on FaceBook. 
 - [ ] NavBar type for AstroChat/Posts.
+- [ ] Image of Sign and Name for Posts.
 
 - [ ] Google Sheets CMS.
 - [ ] Import as Package atomic-react
