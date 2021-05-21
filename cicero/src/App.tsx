@@ -224,6 +224,9 @@ export const App = () => {
                         lesson={modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}
+                        likePost={() => {}}
+                        reply={() => {}}
+                        post={() => {}}
                         approve={approve} 
                         submit={submit}
                         login={login} 
