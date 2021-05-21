@@ -20,6 +20,6 @@ export const Interaction = ({ forum, recordings, posts, submit, post, likePost, 
 
     return  forum ? <Forum {...forum} submit={submit}/>
         :   recordings ? <Recordings {...recordings}/>
-        :   posts ?  <Posts posts={posts} submit={post} reply={reply} like={likePost}/>
+        :   posts ?  <Posts posts={posts} post={post} reply={reply} like={likePost}/>
     : <Error/>
 }
