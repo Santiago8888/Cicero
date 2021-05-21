@@ -1,4 +1,4 @@
-import { iLesson, iModule } from "../components/LayOut/Menu"
+import { iLesson, iModule, iUnit } from "../components/LayOut/Menu"
 import { iRecordings } from "../components/Forum/Recordings"
 import { iForum } from "../components/Forum/Forum"
 import { iPost } from "../components/Forum/Posts"
@@ -87,4 +87,53 @@ export const Posts:iPost[] = [{
     detail:'Detail', 
     comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age'],
     likes:0
+}]
+
+
+export const Units:iUnit[] = [{ 
+    title: '1. ASTROCONCIENCIA', 
+    modules: [
+        { title: '1.1 Introducción a la astroconsciencia', lessons:[] },
+        { title: '1.2 Historia de la astrología', lessons:[] },
+        { title: '1.3 Proposito de vida desde la Astronciencia', lessons:[] }
+    ]
+}, { 
+    title: '2. LOS 12 SIGNOS DEL ZODIACO', 
+    modules: [
+        { title: '2.1 Características, elementos y cualidades de los signos', lessons:[] },
+        { title: '2.2 Los 12 signos', lessons:[] }
+    ] 
+}, { 
+    title: '3. LAS 12 CASAS DE LA CARTA ASTRAL', 
+    modules: [
+        { title: '3.1 Estructura de la carta astral', lessons:[] },
+        { title: '3.2 Casas en la carta astral', lessons:[] },
+        { title: '3.3 Ascendentes', lessons:[] },
+        { title: '3.4 Signos en las casas', lessons:[] }
+    ] 
+}, { 
+    title: '4. ASTROCONCIENCIA PLANETARIA', 
+    modules: [
+        { title: '4.1 Planetas', lessons:[] },
+        { title: '4.2 Regencia/Dignidad', lessons:[] },
+        { title: '4.3 Planetas en signos y casas', lessons:[] }
+    ] 
+}, { 
+    title: '5. ASTROCONCIENCIA KARMICA', 
+    modules: [
+        { title: '5.1 Consciencia karmica', lessons:[] },
+        { title: '5.2 Luna', lessons:[] },
+        { title: '5.3 Saturno y Kirón', lessons:[] },
+        { title: '5.4 Casa 12', lessons:[] },
+        { title: '5.5 Nodos lunares', lessons:[] }
+    ] 
+}, { 
+    title: '6. MISIONES', 
+    modules: [
+        { title: '6.1 Nuestras misiones', lessons:[] },
+        { title: '6.2 Misión personal', lessons:[] },
+        { title: '6.3 Misión conciente', lessons:[] },
+        { title: '6.4 Misión transpersonal', lessons:[] },
+        { title: '6.5 Dones divinos', lessons:[] },
+    ] 
 }]
