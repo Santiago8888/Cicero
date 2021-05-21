@@ -1,11 +1,16 @@
 import { useMediaQuery } from 'react-responsive'
-import { useState } from "react"
+import { CSSProperties, useState } from "react"
+import { Likes } from "./Atoms"
 
 
 export interface iDoubt { question:string, details:string }
-const Doubt = ({ question, details }:iDoubt) => <div style={{maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em'}}>
-    <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
-    <p> { details } </p> 
+const doubtStyle:CSSProperties = {maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
+const Doubt = ({ question, details }:iDoubt) => <div style={doubtStyle}>
+    <Likes likes={0} like={() => {}} style={{textAlign:'center'}}/>
+    <div>
+        <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
+        <p> { details } </p>
+    </div>
 </div>
 
 
@@ -104,11 +109,7 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
         
         <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
-        {
-            questions.map((q, i) => 
-                <Doubt  {...q} key={i}/>
-            )
-        }
+        { questions.map((q, i) => <Doubt  {...q} key={i}/> ) }
 
         <Modal 
             isActive={isActive} 

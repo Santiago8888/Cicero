@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { Header, Modal, Likes } from "./Atoms"
 import { CSSProperties, useEffect, useState } from "react"
 
@@ -46,9 +48,9 @@ const Comment = ({ comment }:{comment:string}) => <div style={{...footerBoxStyle
 </div>
 
 
-export interface iPost { id?:string, title:string, detail:string, likes?:number, comments?:string[] }
+export interface iPost { id?:string, title:string, detail:string, likes:number, comments:string[] }
 interface IPost extends iPost { id:string, reply(text:string, postId:string):void, like(postId:string):void }
-const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) => {
+const Post = ({ id, title, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -145,24 +147,36 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
 
 interface iPosts { 
     posts:iPost[]
-    submit(post:iPost):void
-    like(postId:string):void
+    post(post:iPost):void
+    like(id:string):void
     reply(text:string, postId:string):void
 }
 
-export const Posts = ({posts, submit, reply, like}: iPosts) => {
+const emptyPost = { title:'', detail:'', likes:0, comments:[] }
+export const Posts = ({posts, post, reply, like}: iPosts) => {
     const [ isActive, setActive] = useState(false)
-    const [ newPost, setNewPost ] = useState<iPost>({ title:'', detail:''})
+    const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
+
+    const submit = () => {
+        post(newPost)
+        setActive(false)
+        setNewPost(emptyPost)
+    }
 
     return <div className='content' style={{maxWidth:720, margin:'auto'}}>
         <Header 
             title={"AstroChat"} 
             description={"Interactua con el grupo y comparte lo que haz aprendido."} 
             buttonText={"Publicar"}
-            submit={() => setActive(true)}
+            click={() => setActive(true)}
         />
 
-        <Modal title={"Publicar"} isActive={isActive} submit={() => submit(newPost)} deactivate={() => setActive(false)}>
+        <Modal 
+            submit={submit} 
+            title={"Publicar"} 
+            isActive={isActive} 
+            deactivate={() => setActive(false)}
+        >
             <div className="field">
                 <label className="label"> Título: </label>
                 <div className="control">
@@ -188,6 +202,6 @@ export const Posts = ({posts, submit, reply, like}: iPosts) => {
             </div>
         </Modal>
 
-        { posts.map((post, i) => <Post id={String(i)} {...post} reply={reply} like={like}/>) } 
+        { posts.map((post, i) => <Post id={String(i)} {...post} reply={reply} like={like} key={i}/>) } 
     </div>
 }

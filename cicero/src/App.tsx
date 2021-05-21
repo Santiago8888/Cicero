@@ -1,3 +1,4 @@
+import { modules, Recordings, Forum, Posts, defaultUser } from './data/data'
 import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
@@ -7,7 +8,6 @@ import { iPost } from './components/Forum/Posts'
 import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
-import { modules, Recordings, Forum, defaultUser } from './data/data'
 
 import { App as RealmApp, User, Credentials } from 'realm-web'
 import { useMediaQuery } from 'react-responsive'
@@ -26,12 +26,12 @@ const connectMongo = async() => {
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
 
-interface iHomeData { forum?:iForum, recordings?:iRecordings, questions?:iPost[], lesson:iLesson}
+interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
 
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
-    questions:undefined,
+    posts:undefined,
     lesson:modules[0].lessons[0] 
 }
 
@@ -49,7 +49,7 @@ export const App = () => {
     const [ isLogin, setLogin ] = useState(false)
     const [ isWelcome, setWelcome ] = useState(true)
     const [ recordings, setRecordings ] = useState(Recordings)
-    const [ questions, setQuestions ] = useState([])
+    const [ posts, setPosts ] = useState(Posts)
 
 
     useEffect(() => { 
@@ -86,9 +86,9 @@ export const App = () => {
     const clickNavbar = (item:NavbarItem) => {
         if (item === 'Login') return setLogin(true)
 
-        if (item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined, questions:undefined })
-        if (item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings, questions:undefined})
-        if (item === 'Questions') return setHomeData({...homeData, forum:undefined, recordings:undefined, questions})
+        if (item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined, posts:undefined })
+        if (item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings, posts:undefined})
+        if (item === 'Posts') return setHomeData({...homeData, forum:undefined, recordings:undefined, posts})
 
         if(item === 'Home') reset()
     }
@@ -96,7 +96,7 @@ export const App = () => {
     const reset = () => {
         setLogin(false)
         setWelcome(true)
-        setHomeData({...homeData, forum:undefined, recordings:undefined, questions:undefined})
+        setHomeData({...homeData, forum:undefined, recordings:undefined, posts:undefined})
     }
     
     const login = async({ email, password }:iLoginInput) => {
@@ -115,7 +115,8 @@ export const App = () => {
         const doubts = await db.collection('doubts').find({})
         setForum({...forum, questions:doubts.sort((a,b) => -1 )})
 
-        setQuestions([])
+        // TODO: Fetch Posts.
+        setPosts([])
     }
 
     const nextLesson = ({module, lesson}:iPosition):iPosition => {
@@ -148,7 +149,7 @@ export const App = () => {
         if(module === user.progress.module && lesson > user.progress.lesson) return
 
         updateUser({...user, current:{ module, lesson } })
-        setHomeData({...homeData, recordings:undefined, forum:undefined, questions:undefined})
+        setHomeData({...homeData, recordings:undefined, forum:undefined, posts:undefined})
     }
 
     const approveQuiz = (score:number) => {
@@ -177,9 +178,34 @@ export const App = () => {
     }
 
     const submit = (doubt:iDoubt) => {
-        setForum({...forum, questions:[doubt, ...forum.questions]})
-        setHomeData({...homeData, forum:{...forum, questions:[doubt, ...forum.questions]}})
+        const questions = [doubt, ...forum.questions]
+
+        setForum({...forum, questions})
+        setHomeData({...homeData, forum:{...forum, questions}})
+
         db?.collection('doubts').insertOne(doubt)
+    }
+
+    const post = (newPost:iPost) => {
+        const newPosts = [...posts, newPost]
+ 
+        setPosts(newPosts)
+        setHomeData({...homeData, posts:newPosts})
+ 
+        db?.collection('posts').insertOne(post)
+    }
+
+    const likePost = (id:string) => {
+        const likedPosts = posts.map((post, i) => 
+            id === String(i) 
+            ? {...post, likes:post.likes ? post.likes + 1: 1 || 1} 
+            : post
+        )
+
+        setPosts(likedPosts)
+        setHomeData({...homeData, posts:likedPosts})
+ 
+        // db?.collection('posts').inse(post)
     }
 
     return <div>
@@ -192,9 +218,7 @@ export const App = () => {
                             user={user}
                             modules={modules}
                             navigate={navigate}
-                            forum={homeData.forum}
-                            posts={homeData.questions}
-                            recordings={homeData.recordings}
+                            {...homeData}
                         />
                 }
 
@@ -220,9 +244,12 @@ export const App = () => {
                         lesson={modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}
+                        likePost={likePost}
                         approve={approve} 
+                        reply={() => {}}
                         submit={submit}
                         login={login} 
+                        post={post}
                         next={next}
                     />
                 </div>

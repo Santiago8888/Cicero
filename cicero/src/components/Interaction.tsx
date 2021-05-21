@@ -5,23 +5,21 @@ import { Posts, iPost } from './Forum/Posts'
 import { Error } from './Error'
 
 
-interface iIteraction { 
+interface iInteraction { 
     forum?:iForum
     recordings?:iRecordings 
-    questions?:iPost[]
+    posts?:iPost[]
+
     submit(doubt:iDoubt):void
+    post(post:iPost):void
+    likePost(id:string):void
+    reply(text:string, postId:string):void
 }
 
-const posts:iPost[] = [{
-    title:'Title', 
-    detail:'Detail', 
-    comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age']
-}]
-
-export const Iteraction = ({ forum, recordings, questions, submit }: iIteraction) => {
+export const Interaction = ({ forum, recordings, posts, submit, post, likePost, reply }: iInteraction) => {
 
     return  forum ? <Forum {...forum} submit={submit}/>
         :   recordings ? <Recordings {...recordings}/>
-        :   questions ?  <Posts posts={posts} submit={() => {}} reply={() => {}} like={() => {}}/>
+        :   posts ?  <Posts posts={posts} post={post} reply={reply} like={likePost}/>
     : <Error/>
 }
