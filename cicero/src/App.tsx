@@ -186,6 +186,17 @@ export const App = () => {
         db?.collection('doubts').insertOne(doubt)
     }
 
+    const like = (id:string) => {
+        const questions = forum.questions.map((post, i) => 
+            id === String(i) 
+            ? {...post, likes: post.likes + 1 } 
+            : post
+        )
+
+        setForum({...forum, questions})
+        setHomeData({...homeData, forum:{...forum, questions}})
+    }
+
     const post = (newPost:iPost) => {
         const newPosts = [...posts, newPost]
  
@@ -263,6 +274,7 @@ export const App = () => {
                         login={login} 
                         reply={reply}
                         post={post}
+                        like={like}
                         next={next}
                     />
                 </div>
