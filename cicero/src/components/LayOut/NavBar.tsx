@@ -21,7 +21,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')}>
                     <img src='SocialQ.png' style={{ height:36, maxHeight: 'none' }} alt={'SocialQ logo'}/>
-                    <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > SocialQ </p>
+                    <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > Astro Consciencia </p>
                 </a>
 
                 <a 
