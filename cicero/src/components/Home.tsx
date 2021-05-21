@@ -1,11 +1,12 @@
 import { iRecordings } from './Forum/Recordings'
 import { iDoubt, iForum } from './Forum/Forum'
+import { iPost } from './Forum/Posts'
 
 import { iLoginInput, Login } from './Auth/Login'
 import { Landing } from './Auth/Landing'
 import { iLesson } from './LayOut/Menu'
 import { Content } from './Content'
-import { iPost, iUser } from '../App'
+import { iUser } from '../App'
 
 import { User } from 'realm-web'
 import { Iteraction } from './Interaction'
