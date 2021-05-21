@@ -48,9 +48,9 @@ const Comment = ({ comment }:{comment:string}) => <div style={{...footerBoxStyle
 </div>
 
 
-export interface iPost { id?:string, title:string, detail:string, likes?:number, comments?:string[] }
+export interface iPost { id?:string, title:string, detail:string, likes:number, comments:string[] }
 interface IPost extends iPost { id:string, reply(text:string, postId:string):void, like(postId:string):void }
-const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) => {
+const Post = ({ id, title, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -152,7 +152,7 @@ interface iPosts {
     reply(text:string, postId:string):void
 }
 
-const emptyPost = { title:'', detail:''}
+const emptyPost = { title:'', detail:'', likes:0, comments:[] }
 export const Posts = ({posts, post, reply, like}: iPosts) => {
     const [ isActive, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
@@ -202,6 +202,6 @@ export const Posts = ({posts, post, reply, like}: iPosts) => {
             </div>
         </Modal>
 
-        { posts.map((post, i) => <Post id={String(i)} {...post} reply={reply} like={like}/>) } 
+        { posts.map((post, i) => <Post id={String(i)} {...post} reply={reply} like={like} key={i}/>) } 
     </div>
 }
