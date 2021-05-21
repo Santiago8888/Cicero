@@ -75,8 +75,8 @@ export const modules:iModule[] = [
 
 export const defaultUser:iUser = { 
     email:'test@branding.gq', 
-    progress:{module:3, lesson:1}, 
-    current:{module:0, lesson:2}, 
+    progress:{unit:3, module:3, lesson:1}, 
+    current:{unit:0, module:0, lesson:2}, 
     quizFailures:0 
 }
 
