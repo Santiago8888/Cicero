@@ -6,9 +6,9 @@ import { Likes } from "./Atoms"
 export interface iDoubt { question:string, details:string, likes:number }
 const doubtStyle:CSSProperties = {maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
 
-interface IDoubt extends iDoubt { like(id:string):void } 
+interface IDoubt extends iDoubt { like():void } 
 const Doubt = ({ question, details, likes, like }:IDoubt) => <div style={doubtStyle}>
-    <Likes likes={likes} like={() => like} style={{textAlign:'center'}}/>
+    <Likes likes={likes} like={like} style={{textAlign:'center'}}/>
     <div>
         <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
         <p> { details } </p>
