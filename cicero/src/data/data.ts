@@ -110,7 +110,13 @@ export const Units:iUnit[] = [{
 }, { 
     title: '4. ASTROCONCIENCIA PLANETARIA', 
     modules: [
-        { title: '4.1 Planetas', lessons },
+        { 
+            title: '4.1 Planetas', 
+            lessons:[
+                ...lessons, 
+                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente'}
+            ] 
+        },
         { title: '4.2 Regencia/Dignidad', lessons },
         { title: '4.3 Planetas en signos y casas', lessons }
     ] 
