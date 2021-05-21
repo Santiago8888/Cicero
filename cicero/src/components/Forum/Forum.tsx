@@ -3,10 +3,10 @@ import { CSSProperties, useState } from "react"
 import { Likes } from "./Atoms"
 
 
-export interface iDoubt { question:string, details:string }
+export interface iDoubt { question:string, details:string, likes:number }
 const doubtStyle:CSSProperties = {maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
-const Doubt = ({ question, details }:iDoubt) => <div style={doubtStyle}>
-    <Likes likes={0} like={() => {}} style={{textAlign:'center'}}/>
+const Doubt = ({ question, details, likes }:iDoubt) => <div style={doubtStyle}>
+    <Likes likes={likes} like={() => {}} style={{textAlign:'center'}}/>
     <div>
         <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
         <p> { details } </p>
@@ -57,7 +57,7 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
             <footer className="modal-card-foot">
                 <button 
                     className='button is-link' 
-                    onClick={() => submit({ question, details })} 
+                    onClick={() => submit({ question, details, likes:0 })} 
                     style={{backgroundColor:'darkblue', margin:'auto'}}
                 >  Siguiente </button>
             </footer>
