@@ -7,7 +7,7 @@
 - [ ] Remove Title & Description from Recordings and Forum.
 - [ ] Add Astology Chart Lesson Type.
 - [ ] Post to AstroChat or Share on FaceBook. 
-
+- [ ] NavBar type for AstroChat/Posts.
 
 - [ ] Google Sheets CMS.
 - [ ] Import as Package atomic-react
