@@ -8,20 +8,14 @@ import { Error } from './Error'
 interface iIteraction { 
     forum?:iForum
     recordings?:iRecordings 
-    questions?:iPost[]
+    posts?:iPost[]
     submit(doubt:iDoubt):void
 }
 
-const posts:iPost[] = [{
-    title:'Title', 
-    detail:'Detail', 
-    comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age']
-}]
-
-export const Iteraction = ({ forum, recordings, questions, submit }: iIteraction) => {
+export const Iteraction = ({ forum, recordings, posts, submit }: iIteraction) => {
 
     return  forum ? <Forum {...forum} submit={submit}/>
         :   recordings ? <Recordings {...recordings}/>
-        :   questions ?  <Posts posts={posts} submit={() => {}} reply={() => {}} like={() => {}}/>
+        :   posts ?  <Posts posts={posts} submit={() => {}} reply={() => {}} like={() => {}}/>
     : <Error/>
 }
