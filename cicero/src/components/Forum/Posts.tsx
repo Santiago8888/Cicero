@@ -25,13 +25,13 @@ const DateTime = ({ date }:{ date:Date }) => <i style={{marginBottom:12, color:'
 
 
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
-const Comment = ({ comment }:{comment:string}) => <div style={{...footerBoxStyle, padding:10, marginBottom:0}}>
+const Comment = ({ comment }:{comment:string}) => <div style={{...footerBoxStyle, padding:10, marginBottom:0, marginTop:'0.5rem'}}>
     <div className="media">
         <div className="media-left" style={{margin:'auto'}}>
             <figure className="image is-24x24" style={{marginBottom:'0.5rem'}}>
                 <img src="signs/Aqu.png" alt="Solar sign" />
             </figure>
-            <p className="title is-6">Beth Doe</p>
+            <p className="title is-6" style={{textAlign:'center'}}>Beth Doe</p>
         </div>
 
         <div className="level-item" style={{width:'calc(100% - 160px)'}}>
@@ -50,13 +50,10 @@ export interface iPost { id?:string, title:string, detail:string, likes?:number,
 interface IPost extends iPost { id:string, reply(text:string, postId:string):void, like(postId:string):void }
 const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
+    const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
-    const [ replies, setReplies ] = useState<string[]>([])
 
-    useEffect(() => {
-        const recentComments = comments.filter((_, i) => i < 5)
-        setReplies(recentComments)
-    }, [comments])
+    useEffect(() => {}, [comments])
 
     return <div style={{display:'flex', marginBottom:64}}>
         <Likes likes={likes} like={() => like(id)}/>
@@ -92,10 +89,20 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
                 </nav>
             </div>
 
-            <footer className="card-footer">
-                { !canComment && <a href="#" className="card-footer-item" onClick={() => setCanComment(true)}> Comentar </a> }
-                { comments.length && <a href="#" className="card-footer-item"> Mostrar Comentarios </a> }
-            </footer>
+            {
+                (!canComment || !!comments.length) &&
+                <footer className="card-footer">
+                    { !canComment && <a className="card-footer-item" onClick={() => setCanComment(true)}> Comentar </a> }
+                    { 
+                        !!comments.length &&  
+                        <a 
+                            className="card-footer-item" 
+                            onClick={() => setShowComments(!showComments)} 
+                        >  { !showComments ? 'Mostrar' : 'Ocultar' } Comentarios </a> 
+                    }
+                </footer>
+            }
+
 
             {
                 canComment && 
@@ -127,7 +134,7 @@ const Post = ({ id, title, detail, likes=0, comments=[], reply, like }: IPost) =
                 </div>
             }
 
-            { comments.map((comment) => <Comment comment={comment}/>)}
+            { showComments && comments.map((comment) => <Comment comment={comment}/>)}
         </div>
 
 
