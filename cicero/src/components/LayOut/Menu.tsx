@@ -25,7 +25,7 @@ const Lock = () => <img
     src="https://cdn.iconscout.com/icon/premium/png-256-thumb/lock-1967458-1668608.png" 
 />
 
-export interface iPosition { module:number, lesson:number }
+export interface iPosition { unit:number, module:number, lesson:number }
 export interface iModule { title:string, lessons:iLesson[] }
 export interface iUnit { title:string, modules:iModule[] }
 interface iMenu { 
@@ -54,7 +54,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
         style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.15em' }}
     >
         {
-            units.map(({ title, modules }) => <>
+            units.map(({ title, modules }, k) => <>
                 <p className="menu-label"> { title } </p>
                 <ul className="menu-list">
                     { modules.map(({ title, lessons }, idx) => 
@@ -80,7 +80,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                                                                 : {}
                                                     }
                                                     className={`${user?.current.lesson === i  && user?.current.module === idx ? 'is-active': ''}`}
-                                                    onClick={() => navigate({module:active, lesson:i})}
+                                                    onClick={() => navigate({unit:k, module:active, lesson:i})}
                                                 > 
                                                     { (idx === user?.progress.module && i > user?.progress.lesson) && <Lock/> }
                                                     { title } 
