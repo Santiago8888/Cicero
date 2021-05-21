@@ -18,7 +18,7 @@ interface iHome {
     isWelcome:boolean
     lesson:iLesson
     forum?:iForum
-    questions?:iPost[]
+    posts?:iPost[]
     recordings?:iRecordings 
     mongoUser?:User
 
@@ -39,7 +39,7 @@ export const Home = ({
 
     lesson, 
     forum, 
-    questions,
+    posts,
     recordings, 
 
     next,
@@ -50,8 +50,8 @@ export const Home = ({
     submit
 }: iHome) => {
     return user
-        ?   forum || recordings || questions 
-            ?   <Iteraction forum={forum} recordings={recordings} questions={questions} submit={submit}/>
+        ?   forum || recordings || posts 
+            ?   <Iteraction forum={forum} recordings={recordings} posts={posts} submit={submit}/>
             :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
         :   isLogin 
             ?  <Login login={login} newUser={false}/>
