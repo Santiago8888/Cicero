@@ -2,10 +2,12 @@ import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
+import { iPost } from './components/Forum/Posts'
+
 import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
-import { modules, Recordings, Forum } from './data/data'
+import { modules, Recordings, Forum, defaultUser } from './data/data'
 
 import { App as RealmApp, User, Credentials } from 'realm-web'
 import { useMediaQuery } from 'react-responsive'
@@ -23,12 +25,17 @@ const connectMongo = async() => {
 }
 
 export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
-interface iHomeData { forum?:iForum, recordings?:iRecordings, lesson:iLesson}
+
+interface iHomeData { forum?:iForum, recordings?:iRecordings, questions?:iPost[], lesson:iLesson}
+
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
+    questions:undefined,
     lesson:modules[0].lessons[0] 
 }
+
+
 
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
@@ -36,15 +43,17 @@ export const App = () => {
 
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>()
+    const [ user, setUser ] = useState<iUser>(defaultUser)
 
     const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
     const [ isWelcome, setWelcome ] = useState(true)
     const [ recordings, setRecordings ] = useState(Recordings)
+    const [ questions, setQuestions ] = useState([])
 
 
     useEffect(() => { 
+        return 
         connectMongo().then(mongoUser => {
             setMongoUser(mongoUser)
             const mongo = mongoUser.mongoClient('mongodb-atlas')
@@ -75,16 +84,19 @@ export const App = () => {
     } 
 
     const clickNavbar = (item:NavbarItem) => {
-        if(item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined})
-        if(item === 'Login') return setLogin(true)
-        if(item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings})
+        if (item === 'Login') return setLogin(true)
+
+        if (item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined, questions:undefined })
+        if (item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings, questions:undefined})
+        if (item === 'Questions') return setHomeData({...homeData, forum:undefined, recordings:undefined, questions})
+
         if(item === 'Home') reset()
     }
 
     const reset = () => {
         setLogin(false)
         setWelcome(true)
-        setHomeData({...homeData, forum:undefined, recordings:undefined})
+        setHomeData({...homeData, forum:undefined, recordings:undefined, questions:undefined})
     }
     
     const login = async({ email, password }:iLoginInput) => {
@@ -102,6 +114,8 @@ export const App = () => {
 
         const doubts = await db.collection('doubts').find({})
         setForum({...forum, questions:doubts.sort((a,b) => -1 )})
+
+        setQuestions([])
     }
 
     const nextLesson = ({module, lesson}:iPosition):iPosition => {
@@ -134,7 +148,7 @@ export const App = () => {
         if(module === user.progress.module && lesson > user.progress.lesson) return
 
         updateUser({...user, current:{ module, lesson } })
-        setHomeData({...homeData, recordings:undefined, forum:undefined})
+        setHomeData({...homeData, recordings:undefined, forum:undefined, questions:undefined})
     }
 
     const approveQuiz = (score:number) => {
@@ -179,6 +193,7 @@ export const App = () => {
                             modules={modules}
                             navigate={navigate}
                             forum={homeData.forum}
+                            posts={homeData.questions}
                             recordings={homeData.recordings}
                         />
                 }
