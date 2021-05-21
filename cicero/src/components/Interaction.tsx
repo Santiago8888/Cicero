@@ -5,7 +5,7 @@ import { Posts, iPost } from './Forum/Posts'
 import { Error } from './Error'
 
 
-interface iIteraction { 
+interface iInteraction { 
     forum?:iForum
     recordings?:iRecordings 
     posts?:iPost[]
@@ -16,7 +16,7 @@ interface iIteraction {
     reply(text:string, postId:string):void
 }
 
-export const Iteraction = ({ forum, recordings, posts, submit, post, likePost, reply }: iIteraction) => {
+export const Interaction = ({ forum, recordings, posts, submit, post, likePost, reply }: iInteraction) => {
 
     return  forum ? <Forum {...forum} submit={submit}/>
         :   recordings ? <Recordings {...recordings}/>
