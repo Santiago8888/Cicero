@@ -1,6 +1,7 @@
 import { iLesson, iModule } from "../components/LayOut/Menu"
 import { iRecordings } from "../components/Forum/Recordings"
 import { iForum } from "../components/Forum/Forum"
+import { iPost } from "../components/Forum/Posts"
 import { iUser } from "../App"
 
 
@@ -77,3 +78,10 @@ export const defaultUser:iUser = {
     quizFailures:0 
 }
 
+
+
+export const Posts:iPost[] = [{
+    title:'Title', 
+    detail:'Detail', 
+    comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age']
+}]
