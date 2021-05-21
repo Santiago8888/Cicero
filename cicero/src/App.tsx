@@ -195,6 +195,19 @@ export const App = () => {
         db?.collection('posts').insertOne(post)
     }
 
+    const likePost = (id:string) => {
+        const likedPosts = posts.map((post, i) => 
+            id === String(i) 
+            ? {...post, likes:post.likes ? post.likes + 1: 1 || 1} 
+            : post
+        )
+
+        setPosts(likedPosts)
+        setHomeData({...homeData, posts:likedPosts})
+ 
+        // db?.collection('posts').inse(post)
+    }
+
     return <div>
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
         <div className="container" style={{maxWidth:'100%'}}>
@@ -231,9 +244,9 @@ export const App = () => {
                         lesson={modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}
-                        likePost={() => {}}
-                        reply={() => {}}
+                        likePost={likePost}
                         approve={approve} 
+                        reply={() => {}}
                         submit={submit}
                         login={login} 
                         post={post}
