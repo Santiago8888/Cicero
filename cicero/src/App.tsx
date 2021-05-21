@@ -186,6 +186,15 @@ export const App = () => {
         db?.collection('doubts').insertOne(doubt)
     }
 
+    const post = (newPost:iPost) => {
+        const newPosts = [...posts, newPost]
+ 
+        setPosts(newPosts)
+        setHomeData({...homeData, posts:newPosts})
+ 
+        db?.collection('posts').insertOne(post)
+    }
+
     return <div>
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
         <div className="container" style={{maxWidth:'100%'}}>
@@ -196,9 +205,7 @@ export const App = () => {
                             user={user}
                             modules={modules}
                             navigate={navigate}
-                            forum={homeData.forum}
-                            posts={homeData.posts}
-                            recordings={homeData.recordings}
+                            {...homeData}
                         />
                 }
 
@@ -226,10 +233,10 @@ export const App = () => {
                         createUser={createUser}
                         likePost={() => {}}
                         reply={() => {}}
-                        post={() => {}}
                         approve={approve} 
                         submit={submit}
                         login={login} 
+                        post={post}
                         next={next}
                     />
                 </div>
