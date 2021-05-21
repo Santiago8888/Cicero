@@ -6,16 +6,16 @@ const descriptionStyle:CSSProperties = {
     margin:'0rem auto',
     color: '#333',
     fontSize: '1.25em',
-    textAlign: 'left',
+    textAlign: 'center',
     fontWeight: 500,
 }
 
 const buttonStyle:CSSProperties = {
-    width:240, 
-    fontWeight:600, 
+    width:180, 
+    fontWeight:500, 
     borderRadius:12, 
-    marginTop:'1.5em', 
-    fontSize:'1.25rem', 
+    marginTop:'2em', 
+    fontSize:'1.1rem', 
     marginBottom:'1.5em',
     backgroundColor:'darkblue'
 }
@@ -80,10 +80,12 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
 
 
 interface iLikes { likes:number, like():void } 
-export const Likes = ({likes, like}: iLikes) => <a title="Like" onClick={like}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="ember12870758">
-        <path d="M0 15.878 l12-11.878 12 11.878-4 4.122-8-8-8 8-4-4.122z" />
-    </svg>
+export const Likes = ({likes, like}: iLikes) => <div style={{width:80}}>
+    <a title="Like" onClick={like}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={20} style={{fill:'goldenrod'}}>
+            <path d="M0 15.878 l12-11.878 12 11.878-4 4.122-8-8-8 8-4-4.122z" />
+        </svg>
+    </a><br/>
 
-    <span> { likes } </span>
-</a>
+    <p style={{color:'darkblue', fontSize:24, fontWeight:600, marginTop:-10}}> { likes } </p>
+</div>
