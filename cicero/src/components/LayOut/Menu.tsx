@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { iRecordings } from "../Forum/Recordings"
+import { Planet } from "../Astral/AstralChart"
 import { iQuestion } from "../Views/Quiz"
 import { iForum } from "../Forum/Forum"
 import { iPost } from "../Forum/Posts"
 import { iUser } from '../../App'
 import { useState } from "react"
-
 
 type Lesson = 'Video' | 'Quiz' | 'Reading' | 'Chart'
 export interface iLesson { 
@@ -16,6 +16,7 @@ export interface iLesson {
     link?:string, 
     questions?:iQuestion[] 
     min?:number
+    planets?:Planet[]
 }
 
 
@@ -56,7 +57,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
         style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.15em' }}
     >
         {
-            units.map(({ title, modules }, u) => <>
+            units.map(({ title, modules }, u) => <div style={{marginTop:16}}>
                 { 
                     user && u <= user.progress.unit 
                     ? <a className="menu-label" onClick={() => setSelected(u !== selectedUnit ? u : undefined)}> { title } </a> 
@@ -123,7 +124,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                     )}
                 </ul>
 
-            </>)
+            </div>)
         }
     </aside>
 }
