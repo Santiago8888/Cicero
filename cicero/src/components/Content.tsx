@@ -16,6 +16,6 @@ export const Content = ({ user, lesson, next, approve }: iContent) => {
     return  lesson.type === 'Video' ? <Video user={user} {...lesson} next={next} approve={approve}/>
         :   lesson.type === 'Reading' ? <Document user={user} {...lesson} next={next} approve={approve}/>
         :   lesson.type === 'Quiz' ? <Quiz  {...lesson} next={next} approve={approve} user={user}/> 
-        :   lesson.type === 'Chart' ? <Chart user={user} {...lesson} next={next} />
+        :   lesson.type === 'Chart' ? <Chart user={user} {...lesson} next={next} approve={approve} />
     : <Error/>
 }
