@@ -150,19 +150,25 @@ const get_origin = ({degree, color}:{degree:number, color:string}) => ({ x: get_
 type DrawAspect = [{x:number, y:number, color:string}, {x:number, y:number}]
 const get_aspect_coords = (aspect:iAspect[]):DrawAspect => aspect.map(({ degree, color }) => get_origin({ degree, color })) as DrawAspect
 
-const map_planets =(planets:iPlanet[]):iMappedPlanet[] => planets.map(({name, house, degrees, text}, idx) => ({ 
-    house: house, 
-    text: text, 
-    degree: house*30 + degrees, 
-    name: name, 
-    path: `planets/${name}`, 
-    color: deep_colors[(house + 3) % 4] as DeepColor
-}))
+const map_planets =(planets:iPlanet[], asc:number):iMappedPlanet[] => planets.map(({name, house, degrees, text}) => {
+    console.log({name, house, degrees, text})
+    console.log(house*30 + degrees)
+    return ({ 
+        house: house,
+        text: text,
+        degree: 180 + asc - ((house -1)*30 + degrees), 
+        name: name,
+        path: `planets/${name}`,
+        color: deep_colors[(house + 3) % 4] as DeepColor
+    })
+})
 
-const dynamic_x_coord = ({degree, r }:{degree:number, r:number}) => x_center + Math.cos((degree + 192)* Math.PI/180)*r
-const dynamic_y_coord = ({degree, r }:{degree:number, r:number}) => y_center + Math.sin((degree + 372)* Math.PI/180)*r
+const dynamic_x_coord = ({degree, r}:{degree:number, r:number}) => x_center + Math.cos((degree)* Math.PI/180)*r
+const dynamic_y_coord = ({degree, r }:{degree:number, r:number}) => y_center + Math.sin((degree)* Math.PI/180)*r
+
 const get_dynamic_coords = ({degree, color}:{degree:number, color:string}, r:number) => ({ 
-    x: dynamic_x_coord({degree, r:r}), y: dynamic_y_coord({degree, r:r}), color 
+    x: dynamic_x_coord({degree, r:r}), 
+    y: dynamic_y_coord({degree, r:r}), color 
 })
 
 const are_planets_close = (planets:iMappedPlanet[]) => !!planets.find(({ degree }) => 
@@ -327,15 +333,13 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
                 return draw_arc(svg, {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 100, outerRadius: 260, fill:''})
             })
 
-            return
-
             const aspects = get_all_aspects(planets)
             aspects.map(aspect => draw_aspect(svg, get_aspect_coords(aspect)))
             ward_off_planets(svg, planets)
         }
 
 
-        const mappedPlanets = map_planets(planets)
+        const mappedPlanets = map_planets(planets, houses[0])
         draw_chart(mappedPlanets, [...houses])
     }, [planets, houses])
 
