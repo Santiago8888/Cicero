@@ -2,7 +2,7 @@ import { select, Selection, ValueFn } from "d3-selection"
 import { arc, Arc, DefaultArcObject } from 'd3-shape'
 import { useEffect } from "react"
 
-type SVG =  Selection<SVGSVGElement, unknown, HTMLElement, any>
+type SVG = Selection<SVGSVGElement, unknown, HTMLElement, any>
 export type HouseNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |12
 
 export interface iPlanet { 
@@ -61,11 +61,11 @@ const get_arc_middle = ({ grade_one, grade_two, depth }:iGetArc) => ({
     y: 300 - Math.cos((grade_one + (grade_two - grade_one)/2)*Math.PI/180)*depth
 })
 
-
 const get_new_arc_middle = ({ grade_one, grade_two, depth }:iGetArc) => ({
     x: Math.sin((grade_one + (grade_two - grade_one)/2)*Math.PI/180)*depth + 300,
     y: 300 - Math.cos((grade_one + (grade_two - grade_one)/2)*Math.PI/180)*depth
 })
+
 
 const get_x = (id:HouseNumber, x:number) => ({
     0: -10, 
@@ -83,7 +83,6 @@ const get_x = (id:HouseNumber, x:number) => ({
     12: -10
 })[id || 12] + x
 
-
 const get_y = (id:HouseNumber, y:number) => ({
     0: -12, 
     1: -14, 
@@ -99,7 +98,6 @@ const get_y = (id:HouseNumber, y:number) => ({
     11:-14, 
     12: -10
 })[id || 11] + y
-
 
 
 const find_conjunctions = (planets:iMappedPlanet[]) => planets.map(({degree: i, name: n}) => planets
@@ -151,8 +149,6 @@ type DrawAspect = [{x:number, y:number, color:string}, {x:number, y:number}]
 const get_aspect_coords = (aspect:iAspect[]):DrawAspect => aspect.map(({ degree, color }) => get_origin({ degree, color })) as DrawAspect
 
 const map_planets =(planets:iPlanet[], asc:number):iMappedPlanet[] => planets.map(({name, house, degrees, text}) => {
-    console.log({name, house, degrees, text})
-    console.log(house*30 + degrees)
     return ({ 
         house: house,
         text: text,
@@ -230,9 +226,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             .attr("x2", x2)
             .attr("y2", y2)
 
-        
         const draw_aspect = (svg:SVG, [{x:x1, y:y1, color}, {x:x2, y:y2}]:DrawAspect) => draw_line(svg, {x1: x1, x2: x2, y1: y1, y2: y2}, color)
-
 
         interface iRotatedText { text:string, color:string, rotation:number, pixels:string}
         const rotated_text = (svg:SVG, {x, y}:{x:number, y:number}, {text, color, rotation, pixels}:iRotatedText) => svg
@@ -260,7 +254,6 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             )
         }
 
-
         const ward_off_planets = (svg:SVG, planets:iMappedPlanet[]):void[] => are_planets_close(planets)
             ?   ward_off_planets(
                         svg, 
@@ -274,7 +267,6 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
                     )
             :  planets.map(planet => draw_planet(svg, planet))
 
-    
         const draw_chart = (planets:iMappedPlanet[], houses:number[]) => {
             const lastSVG = select('#viz')
             lastSVG.selectAll("*").remove()
@@ -286,12 +278,17 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + (asc % 30))
             signs.map((d, i) => draw_arc(svg, {startAngle: d, endAngle: signs[i+1], innerRadius: 260, outerRadius: 300, fill:'' }))
 
+            console.log('Asc:', asc)
+            console.log('Idx:', Math.ceil(asc/30) + 1)
+            console.log('colors', colors)
+
+            // ['yellow', 'red', 'green', 'blue']
             signs.map((d, i) => draw_arc(svg, {
                 startAngle: d, 
                 endAngle: signs[i+1] ? signs[i+1] : signs[0] + 360, 
                 innerRadius: 270, 
-                outerRadius: 297, 
-                fill: colors[(Math.round(asc/30) + i + 1)%4]
+                outerRadius: 297,
+                fill: colors.reduce((d, i) => [i, ...d], [] as Color[])[(16 + Math.ceil(asc/30) - i) % 4]
             }))
 
             signs.map((_, i) => 
@@ -315,20 +312,12 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
                 -90
             ]
 
-
             chartHouses.filter((_, i) => i < 12).map((d, i) => {
-                draw_arc(
-                    svg, 
-                    {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 103, outerRadius: 120, fill: house_colors[(15-i) % 4]}
-                )
+                const arc = {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 103, outerRadius: 120, fill: house_colors[(15-i) % 4]}
+                draw_arc(svg, arc)
 
-
-                create_text(
-                    svg,
-                    get_arc_middle({grade_one: d, grade_two: chartHouses[i + 1], depth: 113}),
-                    i + 1,
-                    deep_colors[(i+4)%4]
-                )
+                const { x, y } = get_arc_middle({grade_one: d, grade_two: chartHouses[i + 1], depth: 113})
+                create_text(svg, { x, y}, i + 1, deep_colors[(i+4)%4])
 
                 return draw_arc(svg, {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 100, outerRadius: 260, fill:''})
             })
@@ -337,7 +326,6 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             aspects.map(aspect => draw_aspect(svg, get_aspect_coords(aspect)))
             ward_off_planets(svg, planets)
         }
-
 
         const mappedPlanets = map_planets(planets, houses[0])
         draw_chart(mappedPlanets, [...houses])
