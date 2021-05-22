@@ -53,7 +53,6 @@ const planet_names = [
 ] as const
 export type Planet =  typeof planet_names[number]
 
-const planet_imgs = [...planet_names.filter((_, i) => i < 10), 'Node', 'Node'].map(i => `planets/${i}`)
 const get_element = (color:DeepColor) => ({ '#950193': 'fire', '#B16148': 'terra', '#1528B2': 'air', '#054D1B': 'water' })[color]
 
 interface iGetArc { grade_one:number, grade_two:number, depth:number}
@@ -151,12 +150,12 @@ const get_origin = ({degree, color}:{degree:number, color:string}) => ({ x: get_
 type DrawAspect = [{x:number, y:number, color:string}, {x:number, y:number}]
 const get_aspect_coords = (aspect:iAspect[]):DrawAspect => aspect.map(({ degree, color }) => get_origin({ degree, color })) as DrawAspect
 
-const map_planets =(planets:iPlanet[]):iMappedPlanet[] => planets.map(({house, degrees, text}, idx) => ({ 
+const map_planets =(planets:iPlanet[]):iMappedPlanet[] => planets.map(({name, house, degrees, text}, idx) => ({ 
     house: house, 
     text: text, 
     degree: house*30 + degrees, 
-    name: planet_names[idx], 
-    path: planet_imgs[idx], 
+    name: name, 
+    path: `planets/${name}`, 
     color: deep_colors[(house + 3) % 4] as DeepColor
 }))
 
@@ -178,7 +177,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
         const draw_circle = (svg:SVG, r:number) => svg
             .append('circle')
             .style('stroke', '#ADD8E6')
-            .style('fill', 'rgba(0,0,0,0)')
+            .style('fill', 'rgb(256,256,256)')
             .attr('r', r)
             .attr('cx', 300)
             .attr('cy', 300)
@@ -289,7 +288,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
 
             const flint = 0
             const chartHouses = [
-                ...houses.reverse().map(h => Math.round(h + flint  - houses[0] + 710.4) % 360), 
+                ...houses.map(h => Math.round(h + flint  - houses[0] + 710.4) % 360), 
                 Math.round(flint - 9.6) % 360
             ]
 
