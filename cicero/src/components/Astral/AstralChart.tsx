@@ -276,6 +276,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             const svg = select('#viz').append('svg').attr('id', '#AstralChart').attr('width', 600).attr('height', 600)
             circles.map(r => draw_circle(svg, r))
 
+
             const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + houses[0] % 30)
             signs.map((d, i) => draw_arc(svg, {startAngle: d, endAngle: signs[i+1], innerRadius: 260, outerRadius: 300, fill:'' }))
             signs.map((d, i) => draw_arc(svg, {
@@ -286,30 +287,32 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
                 fill: colors[i%4]
             }))
 
-            const flint = 0
             const chartHouses = [
-                ...houses.reverse().map(h => Math.round(h + flint  - houses[0] + 710.4) % 360), 
-                Math.round(flint - 9.6) % 360
+                ...houses.reduce((d, i, idx, l) => {
+                    const delta = 270 + l[0] - i
+                    return [...d, i >= l[0] ? delta : delta - 360 ]
+                }, [] as number[]),
+                -90
             ]
 
-            console.log(houses)
-            console.log(chartHouses)
 
             chartHouses.filter((_, i) => i < 12).map((d, i) => {
                 draw_arc(
                     svg, 
-                    {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 103, outerRadius: 120, fill: house_colors[(14-i) % 4]}
+                    {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 103, outerRadius: 120, fill: house_colors[(15-i) % 4]}
                 )
+
 
                 create_text(
                     svg,
                     get_arc_middle({grade_one: d, grade_two: chartHouses[i + 1], depth: 113}),
-                    ((i+9) % 12) + 1,
-                    deep_colors[(i+1)%4]
+                    i + 1,
+                    deep_colors[(i+4)%4]
                 )
 
                 return draw_arc(svg, {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 100, outerRadius: 260, fill:''})
             })
+
 
             signs.map((_, i) => draw_image(
                 svg, 
