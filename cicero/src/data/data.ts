@@ -3,7 +3,6 @@ import { iRecordings } from "../components/Forum/Recordings"
 import { iForum } from "../components/Forum/Forum"
 import { iPost } from "../components/Forum/Posts"
 import { iUser } from "../App"
-import { planets } from "./chart"
 
 
 export const lesson: iLesson = { 
