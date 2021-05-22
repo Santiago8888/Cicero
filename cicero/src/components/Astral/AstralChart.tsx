@@ -276,16 +276,30 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             const svg = select('#viz').append('svg').attr('id', '#AstralChart').attr('width', 600).attr('height', 600)
             circles.map(r => draw_circle(svg, r))
 
-
-            const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + houses[0] % 30)
+            const asc = houses[0]
+            const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + (asc % 30))
             signs.map((d, i) => draw_arc(svg, {startAngle: d, endAngle: signs[i+1], innerRadius: 260, outerRadius: 300, fill:'' }))
+
             signs.map((d, i) => draw_arc(svg, {
                 startAngle: d, 
                 endAngle: signs[i+1] ? signs[i+1] : signs[0] + 360, 
                 innerRadius: 270, 
                 outerRadius: 297, 
-                fill: colors[i%4]
+                fill: colors[(Math.round(asc/30) + i + 1)%4]
             }))
+
+            signs.map((_, i) => 
+                draw_image(
+                    svg, 
+                    get_new_arc_middle({ 
+                        grade_one: signs[0] + i*30, 
+                        grade_two: signs[1] + i*30, 
+                        depth: 280
+                    }), 
+                    sign_imgs[(12 - Math.ceil(asc/30) -1 + i) % 12], 
+                    i as HouseNumber
+                )
+            )
 
             const chartHouses = [
                 ...houses.reduce((d, i, idx, l) => {
@@ -313,16 +327,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
                 return draw_arc(svg, {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 100, outerRadius: 260, fill:''})
             })
 
-
-            signs.map((_, i) => draw_image(
-                svg, 
-                get_new_arc_middle({ 
-                    grade_one: signs[0] + i*30, 
-                    grade_two: signs[1] + i*30, 
-                    depth: 280
-                })
-                , sign_imgs[i], i as HouseNumber
-            ))
+            return
 
             const aspects = get_all_aspects(planets)
             aspects.map(aspect => draw_aspect(svg, get_aspect_coords(aspect)))
