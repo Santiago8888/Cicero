@@ -269,7 +269,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             :  planets.map(planet => draw_planet(svg, planet))
 
     
-        const draw_chart = (planets:iMappedPlanet[]) => {
+        const draw_chart = (planets:iMappedPlanet[], houses:number[]) => {
             const lastSVG = select('#viz')
             lastSVG.selectAll("*").remove()
 
@@ -288,9 +288,12 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
 
             const flint = 0
             const chartHouses = [
-                ...houses.map(h => Math.round(h + flint  - houses[0] + 710.4) % 360), 
+                ...houses.reverse().map(h => Math.round(h + flint  - houses[0] + 710.4) % 360), 
                 Math.round(flint - 9.6) % 360
             ]
+
+            console.log(houses)
+            console.log(chartHouses)
 
             chartHouses.filter((_, i) => i < 12).map((d, i) => {
                 draw_arc(
@@ -325,7 +328,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
 
 
         const mappedPlanets = map_planets(planets)
-        draw_chart(mappedPlanets)
+        draw_chart(mappedPlanets, [...houses])
     }, [planets, houses])
 
 
