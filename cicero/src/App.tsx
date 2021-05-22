@@ -182,10 +182,14 @@ export const App = () => {
     const approve = (score?:number) => {
         if(!user) return
 
-        const { current } = user 
+        const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
-        return updateUser({...user, progress:nextLesson(user.progress)})
+
+        if(current.unit !== progress.unit) return
+        if(current.module !== progress.module) return
+        if(current.lesson !== progress.lesson) return
+        return updateUser({...user, progress:nextLesson(progress)})
     }
 
     const submit = (doubt:iDoubt) => {

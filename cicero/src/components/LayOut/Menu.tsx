@@ -57,7 +57,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
         style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.15em' }}
     >
         {
-            units.map(({ title, modules }, u) => <div style={{marginTop:16}}>
+            units.map(({ title, modules }, u) => <div style={{marginTop:16}} key={u}>
                 { 
                     user && u <= user.progress.unit 
                     ? <a className="menu-label" onClick={() => setSelected(u !== selectedUnit ? u : undefined)}> { title } </a> 
