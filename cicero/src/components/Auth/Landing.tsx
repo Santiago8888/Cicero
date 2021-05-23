@@ -6,6 +6,7 @@ import Vimeo from '@u-wave/react-vimeo'
 import { Billing } from './Billing'
 import { useState } from "react"
 import { User } from 'realm-web'
+import { SignUp } from './SignUp'
 
 interface iWelcome { subscribe():void }
 const Welcome = ({ subscribe }:iWelcome) => {
@@ -50,6 +51,6 @@ export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding
     return isWelcome
         ?   <Welcome subscribe={setWelcome}/>
         :   !loginInput
-            ?   <Login login={(loginInput) => setLoginInput(loginInput)} newUser={true}/>
+            ?   <SignUp login={(loginInput) => setLoginInput(loginInput)} />
             :   <Billing mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
 }
