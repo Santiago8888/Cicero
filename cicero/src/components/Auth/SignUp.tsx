@@ -3,8 +3,11 @@ import { useMediaQuery } from 'react-responsive'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 
-export interface iSignUpInput {name:string, email:string, password:string, date:Date}
-export interface iSignUp { signUp(signUpInput:iSignUpInput):void }
+import { iPlanet } from "../Astral/AstralChart"
+
+interface iNatalChart { planets?:iPlanet[], houses:number[] }
+export interface iNewUser {name:string, email:string, password:string, date:Date, natalChart?:iNatalChart }
+export interface iSignUp { signUp(newUser:iNewUser):void }
 export const SignUp = ({ signUp }: iSignUp) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
