@@ -10,8 +10,7 @@ import { iLoginInput } from './components/Auth/Login'
 import { iNewUser } from './components/Auth/SignUp'
 import { Home } from './components/Home'
 
-
-import { App as RealmApp, User, Credentials } from 'realm-web'
+import { App as RealmApp, Credentials } from 'realm-web'
 import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
 
@@ -22,6 +21,7 @@ import './App.css'
 export interface iNatalChart { planets:iPlanet[], houses:number[] }
 export type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
 export interface iUser { 
+    date:Date
     name:string
     sign?:Sign
     email:string
@@ -56,7 +56,6 @@ export const App = () => {
     const [ isWelcome, setWelcome ] = useState(true)
 
     const [ user, setUser ] = useState<iUser>()
-    const [ mongoUser, setMongoUser ] = useState<User>()
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
 
@@ -77,32 +76,36 @@ export const App = () => {
             const db = mongo.db('Cicero')
             setDB(db)
         }
-
-
         connectMongo()
     }, [])
 
 
-    const createUser = async({ name, email, natalChart, password }:iNewUser) => {
-        if(!db) return
-        const startingPosition: iPosition = { unit:0, module:0, lesson:0 }
+    const createUser = async({ name, email, password, date }:iNewUser) => {
+        if(!app) return
 
-        const sun = natalChart?.planets.find(({ name }) => name === 'Sun')
-        const sign = sun ? mapSign(sun) : undefined
+        await app.emailPasswordAuth.registerUser(email, password)
+        await app.logIn(Credentials.emailPassword(email, password))
+        if(!app.currentUser) return
+        const { id } = app.currentUser
 
-        const user: iUser = { 
-            name,
-            sign,
-            email,
-            natalChart,
-            quizFailures:0,
-            current:startingPosition, 
-            progress:{unit:3, module:0, lesson:5}
-        }
+        const mongo = app.currentUser.mongoClient('mongodb-atlas')
+        const db = mongo.db('Cicero')
 
+        const current: iPosition = { unit:0, module:0, lesson:0 }
+        const progress: iPosition = {unit:3, module:0, lesson:5}
+        const user:iUser = { name, email, date, quizFailures:0, current, progress} 
         setUser(user)
-        await app?.emailPasswordAuth.registerUser(email, password);
-        await db.collection('users').insertOne(user)
+
+        await db.collection('users').insertOne({ user_id:id, ...user })
+        setDB(db)
+
+        const { planets, houses } =  await app.currentUser.functions.getPlanets(date)
+        const sun = planets.find(({name}:{name:string}) => name === 'Sun')
+        const sign = mapSign(sun)
+        const fullUser = {...user, sign, natalChart:{planets, houses}}
+        setUser(fullUser)
+
+        await db.collection('users').updateOne({ user_id:id }, fullUser)
     } 
 
     const updateUser = (user:iUser) => {
@@ -307,11 +310,11 @@ export const App = () => {
                     }}
                 >
                     <Home 
+                        app={app}
                         user={user}
                         {...homeData} 
                         isLogin={isLogin} 
                         isWelcome={isWelcome}
-                        mongoUser={mongoUser}
                         lesson={Units[user?.current.unit || 0].modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}
