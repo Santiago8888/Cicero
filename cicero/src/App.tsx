@@ -4,7 +4,7 @@ import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { iPost } from './components/Forum/Posts'
 
-import { Recordings, Forum, Posts, Units } from './data/data'
+import { Recordings, Forum, Posts, Units, defaultUser } from './data/data'
 import { iPlanet } from './components/Astral/AstralChart'
 import { iLoginInput } from './components/Auth/Login'
 import { iNewUser } from './components/Auth/SignUp'
@@ -20,7 +20,7 @@ import './App.css'
 
 
 export interface iNatalChart { planets:iPlanet[], houses:number[] }
-type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
+export type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
 export interface iUser { 
     name:string
     sign?:Sign
@@ -55,7 +55,7 @@ export const App = () => {
     const [ isLogin, setLogin ] = useState(false)
     const [ isWelcome, setWelcome ] = useState(true)
 
-    const [ user, setUser ] = useState<iUser>()
+    const [ user, setUser ] = useState<iUser>(defaultUser)
     const [ mongoUser, setMongoUser ] = useState<User>()
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
@@ -242,7 +242,8 @@ export const App = () => {
     }
 
     const post = (newPost:iPost) => {
-        const newPosts = [...posts, newPost]
+        if(!user) return 
+        const newPosts:iPost[] = [...posts, {...newPost, name:user.name, image:user.sign }]
  
         setPosts(newPosts)
         setHomeData({...homeData, posts:newPosts})
@@ -263,11 +264,13 @@ export const App = () => {
         // db?.collection('posts').inse(post)
     }
 
-    const reply = (text:string, id:string) => {
+    const reply = (comment:string, id:string) => {
+        if(!user) return 
+
         const repliedPosts = posts.map((post, i) => 
             id === String(i) 
-            ? {...post, comments:[...post.comments, text]} 
-            : post
+            ?   {...post, comments:[...post.comments, {comment, name:user.name, image:user.sign }]} 
+            :   post
         )
 
         setPosts(repliedPosts)
