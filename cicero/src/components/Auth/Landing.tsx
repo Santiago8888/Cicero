@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { useMediaQuery } from 'react-responsive'
-import { iLoginInput, Login } from './Login'
-import Vimeo from '@u-wave/react-vimeo'
+import { iSignUpInput, SignUp } from './SignUp'
 import { Billing } from './Billing'
+
+import { useMediaQuery } from 'react-responsive'
 import { useEffect, useState } from "react"
+import Vimeo from '@u-wave/react-vimeo'
 import { User } from 'realm-web'
-import { SignUp } from './SignUp'
+
 
 interface iWelcome { subscribe():void, reset():void }
 const Welcome = ({ subscribe, reset }:iWelcome) => {
@@ -44,15 +45,15 @@ const Welcome = ({ subscribe, reset }:iWelcome) => {
 }
 
 
-export interface iLanding { mongoUser?: User, createUser(loginInput:iLoginInput):void }
+export interface iLanding { mongoUser?: User, createUser(signUp:iSignUpInput):void }
 interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
 export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding) => {
-    const [ loginInput, setLoginInput ] = useState<iLoginInput>()
+    const [ signUpInput, setSignUpInput ] = useState<iSignUpInput>()
 
-    const reset = () => { setLoginInput(undefined) }
+    const reset = () => { setSignUpInput(undefined) }
     return isWelcome
         ?   <Welcome subscribe={setWelcome} reset={reset} />
-        :   !loginInput
-            ?   <SignUp login={(loginInput) => setLoginInput(loginInput)} />
-            :   <Billing mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
+        :   !signUpInput
+            ?   <SignUp signUp={(signUpInput) => setSignUpInput(signUpInput)} />
+            :   <Billing mongoUser={mongoUser} signUpInput={signUpInput} createUser={createUser}/>
 }
