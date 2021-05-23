@@ -16,7 +16,7 @@ export interface iLesson {
     link?:string, 
     questions?:iQuestion[] 
     min?:number
-    planets?:Planet[]
+    planet?:Planet
 }
 
 
