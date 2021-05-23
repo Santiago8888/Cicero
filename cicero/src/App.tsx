@@ -28,7 +28,7 @@ export interface iUser {
     current:iPosition
     progress:iPosition
     quizFailures:number
-    natalChart?:iNatalChart
+    natalChart:iNatalChart
 }
 
 const mapSign = (sun:iPlanet):Sign => {
@@ -93,7 +93,8 @@ export const App = () => {
 
         const current: iPosition = { unit:0, module:0, lesson:0 }
         const progress: iPosition = {unit:3, module:0, lesson:5}
-        const user:iUser = { name, email, date, quizFailures:0, current, progress} 
+        const natalChart = {planets:[], houses:[]}
+        const user:iUser = { name, email, date, quizFailures:0, current, progress, natalChart } 
         setUser(user)
 
         await db.collection('users').insertOne({ user_id:id, ...user })
