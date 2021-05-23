@@ -1,4 +1,6 @@
+import "react-datepicker/dist/react-datepicker.css"
 import { useMediaQuery } from 'react-responsive'
+import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 
 export interface iLoginInput {email:string, password:string}
@@ -8,9 +10,11 @@ export const SignUp = ({ login }: iSignUp) => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [date, setDate] = useState<Date>()
     const [password, setPassword] = useState('')
 
     const keyPress = ({key}:{key:string}) => key === 'Enter' 
+        && date
         && name
         && email.match(/^\S+@\S+\.\S+$/) 
         && password.length >= 6 
@@ -60,7 +64,7 @@ export const SignUp = ({ login }: iSignUp) => {
                     />
                 </div>
 
-                <div className="field" style={{marginTop:'1.75rem'}}>
+                <div className="field" style={{marginTop:'1.75rem', marginBottom:0}}>
                     <input 
                         type="password" 
                         value={password} 
@@ -72,11 +76,28 @@ export const SignUp = ({ login }: iSignUp) => {
                     />
                 </div>
 
+                <DatePicker
+                    className="input"
+                    showTimeInput
+                    showYearDropdown
+                    showMonthDropdown
+                    dropdownMode="select"
+                    selected={date}
+                    maxDate={new Date()}
+                    yearDropdownItemNumber={15}
+                    timeInputLabel="Time:"
+                    yearItemNumber={130}
+                    shouldCloseOnSelect={false}
+                    dateFormat="MM/dd/yyyy h:mm aa"
+                    onChange={date => setDate(date as Date)}
+                    placeholderText={'Fecha y Hora de Nacimiento'}
+                />                
+
                 <div style={{ width: !smallScreen ? 600 : 300, margin:'3rem auto 1rem', textAlign:'center'}}>
                     <button
                         className='button is-link' 
                         onClick={() => login({email, password})}
-                        disabled={!name || !email.match(/^\S+@\S+\.\S+$/) || password.length < 6}
+                        disabled={!name || !email.match(/^\S+@\S+\.\S+$/) || password.length < 6 || !date}
                         style={{
                             borderRadius:12, 
                             width: !smallScreen ? 360 : 240, 
