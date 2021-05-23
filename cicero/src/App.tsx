@@ -71,16 +71,14 @@ export const App = () => {
             const app = new RealmApp({ id: REALM_APP_ID })
             setApp(app)
 
-            const user: User = await app.logIn(Credentials.anonymous())
-            setMongoUser(user)
+            if(!app.currentUser) return
 
-            const mongo = user.mongoClient('mongodb-atlas')
+            const mongo = app.currentUser.mongoClient('mongodb-atlas')
             const db = mongo.db('Cicero')
             setDB(db)
         }
 
 
-        return 
         connectMongo()
     }, [])
 
@@ -129,8 +127,10 @@ export const App = () => {
     }
     
     const login = async({ email, password }:iLoginInput) => {
-        if(!db) return
+        if(!app) return
+        await app.logIn(Credentials.emailPassword(email, password))
 
+        if(!db) return
         const collection = db.collection('users')
         const user = await collection.findOne({ email, password })
 
