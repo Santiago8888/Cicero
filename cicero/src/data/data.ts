@@ -83,9 +83,13 @@ export const defaultUser:iUser = {
 
 
 export const Posts:iPost[] = [{
+    name:'Alice',
     title:'Title', 
+    image:'Pis',
     detail:'Detail', 
-    comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age'],
+    comments:[
+        {name:'Beth', image:'Aqu', comment:'Test'} 
+    ],
     likes:0
 }]
 
@@ -95,7 +99,7 @@ export const Units:iUnit[] = [{
     modules: [
         { title: '1.1 Introducción a la astroconsciencia', lessons },
         { title: '1.2 Historia de la astrología', lessons },
-        { title: '1.3 Proposito de vida desde la Astronciencia', lessons }
+        { title: '1.3 Proposito de vida', lessons }
     ]
 }, { 
     title: '2. LOS 12 SIGNOS DEL ZODIACO', 
