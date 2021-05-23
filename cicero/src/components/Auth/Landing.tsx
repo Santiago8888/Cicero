@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { iSignUpInput, SignUp } from './SignUp'
-import { Billing } from './Billing'
-
+import { Elements } from '@stripe/react-stripe-js'
 import { useMediaQuery } from 'react-responsive'
+import { loadStripe } from '@stripe/stripe-js'
 import { useEffect, useState } from "react"
 import Vimeo from '@u-wave/react-vimeo'
 import { User } from 'realm-web'
+
+import { iSignUpInput, SignUp } from './SignUp'
+import { Billing } from './Billing'
 
 
 interface iWelcome { subscribe():void, reset():void }
@@ -49,11 +51,21 @@ export interface iLanding { mongoUser?: User, createUser(signUp:iSignUpInput):vo
 interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
 export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding) => {
     const [ signUpInput, setSignUpInput ] = useState<iSignUpInput>()
+    const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
 
     const reset = () => { setSignUpInput(undefined) }
+    const signUp = async(signUpInput:iSignUpInput) => {
+        setSignUpInput(signUpInput)
+        await mongoUser?.functions.getPlanets(signUpInput.date)
+    } 
+
     return isWelcome
         ?   <Welcome subscribe={setWelcome} reset={reset} />
-        :   !signUpInput
-            ?   <SignUp signUp={(signUpInput) => setSignUpInput(signUpInput)} />
-            :   <Billing mongoUser={mongoUser} signUpInput={signUpInput} createUser={createUser}/>
+        :   <Elements stripe={stripePromise}>
+                {
+                    !signUpInput
+                    ?   <SignUp signUp={signUp} />
+                    :   <Billing mongoUser={mongoUser} signUpInput={signUpInput} createUser={createUser}/>        
+                }
+            </Elements>
 }
