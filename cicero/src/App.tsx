@@ -80,6 +80,7 @@ export const App = () => {
     }, [])
 
 
+    /**************************        Auth            ***************************/
     const createUser = async({ name, email, password, date }:iNewUser) => {
         if(!app) return
 
@@ -114,22 +115,6 @@ export const App = () => {
         db?.collection('users').updateOne({ email: user.email }, user)
     } 
 
-    const clickNavbar = (item:NavbarItem) => {
-        if (item === 'Login') return setLogin(true)
-
-        if (item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined, posts:undefined })
-        if (item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings, posts:undefined})
-        if (item === 'Posts') return setHomeData({...homeData, forum:undefined, recordings:undefined, posts})
-
-        if(item === 'Home') reset()
-    }
-
-    const reset = () => {
-        setLogin(false)
-        setWelcome(true)
-        setHomeData({...homeData, forum:undefined, recordings:undefined, posts:undefined})
-    }
-    
     const login = async({ email, password }:iLoginInput) => {
         if(!app) return
         await app.logIn(Credentials.emailPassword(email, password))
@@ -152,6 +137,24 @@ export const App = () => {
         setPosts([])
     }
 
+    
+    /*******************        Navigation            *******************/
+    const clickNavbar = (item:NavbarItem) => {
+        if (item === 'Login') return setLogin(true)
+
+        if (item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined, posts:undefined })
+        if (item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings, posts:undefined})
+        if (item === 'Posts') return setHomeData({...homeData, forum:undefined, recordings:undefined, posts})
+
+        if(item === 'Home') reset()
+    }
+
+    const reset = () => {
+        setLogin(false)
+        setWelcome(true)
+        setHomeData({...homeData, forum:undefined, recordings:undefined, posts:undefined})
+    }
+    
     const nextLesson = ({unit, module, lesson}:iPosition):iPosition => {
         if(!user) return { unit:0, module:0, lesson: 0}
 
@@ -225,6 +228,8 @@ export const App = () => {
         return updateUser({...user, progress:nextLesson(progress)})
     }
 
+
+    /*******************        DB Methods            *******************/
     const submit = (doubt:iDoubt) => {
         const questions = [doubt, ...forum.questions]
 
