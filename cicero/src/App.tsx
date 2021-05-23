@@ -4,7 +4,7 @@ import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { iPost } from './components/Forum/Posts'
 
-import { Recordings, Forum, Posts, Units, defaultUser } from './data/data'
+import { Recordings, Forum, Posts, Units } from './data/data'
 import { iPlanet } from './components/Astral/AstralChart'
 import { iLoginInput } from './components/Auth/Login'
 import { iNewUser } from './components/Auth/SignUp'
@@ -55,7 +55,7 @@ export const App = () => {
     const [ isLogin, setLogin ] = useState(false)
     const [ isWelcome, setWelcome ] = useState(true)
 
-    const [ user, setUser ] = useState<iUser>(defaultUser)
+    const [ user, setUser ] = useState<iUser>()
     const [ mongoUser, setMongoUser ] = useState<User>()
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()

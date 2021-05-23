@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { Header, Modal, Likes } from "./Atoms"
 import { CSSProperties, useEffect, useState } from "react"
-
+import { Header, Modal, Likes } from "./Atoms"
+import { Sign } from '../../App'
 
 const monthDict = (month:number) => ({
     0: 'Enero',
@@ -27,13 +27,14 @@ const DateTime = ({ date }:{ date:Date }) => <i style={{marginBottom:12, color:'
 
 
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
-const Comment = ({ comment }:{comment:string}) => <div style={{...footerBoxStyle, padding:10, marginBottom:0, marginTop:'0.5rem'}}>
+interface iComment { comment:string, name:string, image?:Sign }
+const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBoxStyle, padding:10, marginBottom:0, marginTop:'0.5rem'}}>
     <div className="media">
         <div className="media-left" style={{margin:'auto'}}>
             <figure className="image is-24x24" style={{marginBottom:'0.5rem'}}>
-                <img src="signs/Aqu.png" alt="Solar sign" />
+                <img src={`signs/${image}.png`} alt="Solar sign" />
             </figure>
-            <p className="title is-6" style={{textAlign:'center'}}>Beth Doe</p>
+            <p className="title is-6" style={{textAlign:'center'}}> { name } </p>
         </div>
 
         <div className="level-item" style={{width:'calc(100% - 160px)'}}>
@@ -48,9 +49,9 @@ const Comment = ({ comment }:{comment:string}) => <div style={{...footerBoxStyle
 </div>
 
 
-export interface iPost { id?:string, title:string, detail:string, likes:number, comments:string[] }
+export interface iPost { id?:string, title:string, name:string, image?:Sign, detail:string, likes:number, comments:iComment[] }
 interface IPost extends iPost { id:string, reply(text:string, postId:string):void, like(postId:string):void }
-const Post = ({ id, title, detail, likes, comments, reply, like }: IPost) => {
+const Post = ({ id, title, name, image, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -80,9 +81,9 @@ const Post = ({ id, title, detail, likes, comments, reply, like }: IPost) => {
                         <div className="media">
                             <div className="media-left">
                                 <figure className="image is-48x48">
-                                    <img src="signs/Leo.png" alt="Solar sign" />
+                                    <img src={`signs/${image}.png`} alt="Solar sign" />
                                 </figure>
-                                <p className="title is-4">John Smith</p>
+                                <p className="title is-4" style={{textAlign:'center'}}>{ name }</p>
                             </div>
                         </div>
                     </div>
@@ -143,7 +144,7 @@ const Post = ({ id, title, detail, likes, comments, reply, like }: IPost) => {
                 </div>
             }
 
-            { showComments && comments.map((comment) => <Comment comment={comment}/>)}
+            { showComments && comments.map((comment) => <Comment {...comment}/>)}
         </div>
 
 
@@ -159,7 +160,7 @@ interface iPosts {
     reply(text:string, id:string):void
 }
 
-const emptyPost = { title:'', detail:'', likes:0, comments:[] }
+const emptyPost = { title:'', name:'', detail:'', likes:0, comments:[] }
 export const Posts = ({posts, post, reply, like}: iPosts) => {
     const [ isActive, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
