@@ -59,9 +59,8 @@ export const Landing = ({app, isWelcome, setWelcome, createUser}: ILanding) => {
         if(!app) return
 
         setWelcome()
-        await app?.logIn(Credentials.anonymous())
-        const user: User | undefined = await app?.logIn(Credentials.anonymous())        
-        const { clientSecret } = await user?.functions.paymentIntent()
+        const user: User | undefined = await app.logIn(Credentials.anonymous())        
+        const { clientSecret } = await user.functions.paymentIntent()
         setClientSecret(clientSecret)
     }
 
