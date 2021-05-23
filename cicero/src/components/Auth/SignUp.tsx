@@ -3,9 +3,9 @@ import { useMediaQuery } from 'react-responsive'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 
-export interface iLoginInput {email:string, password:string}
-export interface iSignUp { login(loginInput:iLoginInput):void }
-export const SignUp = ({ login }: iSignUp) => {
+export interface iSignUpInput {name:string, email:string, password:string, date:Date}
+export interface iSignUp { signUp(signUpInput:iSignUpInput):void }
+export const SignUp = ({ signUp }: iSignUp) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [name, setName] = useState('')
@@ -14,12 +14,8 @@ export const SignUp = ({ login }: iSignUp) => {
     const [password, setPassword] = useState('')
 
     const keyPress = ({key}:{key:string}) => key === 'Enter' 
-        && date
-        && name
-        && email.match(/^\S+@\S+\.\S+$/) 
-        && password.length >= 6 
-            ? login({email, password}) 
-            : null
+        && date && name && email.match(/^\S+@\S+\.\S+$/)  && password.length >= 6 
+            ? signUp({name, email, password, date}) : null
 
     return <div className="content">
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
@@ -96,7 +92,7 @@ export const SignUp = ({ login }: iSignUp) => {
                 <div style={{ width: !smallScreen ? 600 : 300, margin:'3rem auto 1rem', textAlign:'center'}}>
                     <button
                         className='button is-link' 
-                        onClick={() => login({email, password})}
+                        onClick={() => date && signUp({name, email, password, date})}
                         disabled={!name || !email.match(/^\S+@\S+\.\S+$/) || password.length < 6 || !date}
                         style={{
                             borderRadius:12, 
