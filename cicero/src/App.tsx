@@ -1,11 +1,13 @@
-import { Recordings, Forum, Posts, defaultUser, Units } from './data/data'
 import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { iPost } from './components/Forum/Posts'
 
+import { Recordings, Forum, Posts, Units } from './data/data'
+import { iPlanet } from './components/Astral/AstralChart'
 import { iLoginInput } from './components/Auth/Login'
+import { iNewUser } from './components/Auth/SignUp'
 import { Home } from './components/Home'
 
 
@@ -17,17 +19,26 @@ import 'bulma/css/bulma.css'
 import './App.css'
 
 
-const connectMongo = async() => {
-    const REALM_APP_ID = process.env.REACT_APP_REALM_ID as string
-    const app = new RealmApp({ id: REALM_APP_ID })
-    const user: User = await app.logIn(Credentials.anonymous())
-    return user
+export interface iNatalChart { planets:iPlanet[], houses:number[] }
+type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
+export interface iUser { 
+    name:string
+    sign?:Sign
+    email:string
+    current:iPosition
+    progress:iPosition
+    quizFailures:number
+    natalChart?:iNatalChart
 }
 
-export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
+const mapSign = (sun:iPlanet):Sign => {
+    const signs:Sign[] = ['Ari', 'Tau', 'Gem', 'Can', 'Leo', 'Vir', 'Lib', 'Sco', 'Sag', 'Cap', 'Aqu', 'Pis' ]
+    const sign = signs[sun.house - 1]
+    return sign
+}
+
 
 interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
-
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
@@ -41,41 +52,59 @@ export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
     const largeScreen = useMediaQuery({ query: '(min-width: 1200px)' })
 
-    const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
-    const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>(defaultUser)
-
-    const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
     const [ isWelcome, setWelcome ] = useState(true)
-    const [ recordings, setRecordings ] = useState(Recordings)
+
+    const [ user, setUser ] = useState<iUser>()
+    const [ mongoUser, setMongoUser ] = useState<User>()
+    const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
+    const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
+
     const [ posts, setPosts ] = useState(Posts)
+    const [ forum, setForum ] = useState(Forum)
+    const [ recordings, setRecordings ] = useState(Recordings)
 
 
     useEffect(() => { 
-        return 
-        connectMongo().then(mongoUser => {
-            setMongoUser(mongoUser)
-            const mongo = mongoUser.mongoClient('mongodb-atlas')
+        const connectMongo = async() => {
+            const REALM_APP_ID = process.env.REACT_APP_REALM_ID as string
+            const app = new RealmApp({ id: REALM_APP_ID })
+            setApp(app)
+
+            const user: User = await app.logIn(Credentials.anonymous())
+            setMongoUser(user)
+
+            const mongo = user.mongoClient('mongodb-atlas')
             const db = mongo.db('Cicero')
             setDB(db)
-        }) 
+        }
+
+
+        return 
+        connectMongo()
     }, [])
 
 
-    const createUser = (loginInput:iLoginInput) => {
+    const createUser = async({ name, email, natalChart, password }:iNewUser) => {
         if(!db) return
-
         const startingPosition: iPosition = { unit:0, module:0, lesson:0 }
-        const newUser: iUser = { 
-            ...loginInput, 
+
+        const sun = natalChart?.planets.find(({ name }) => name === 'Sun')
+        const sign = sun ? mapSign(sun) : undefined
+
+        const user: iUser = { 
+            name,
+            sign,
+            email,
+            natalChart,
+            quizFailures:0,
             current:startingPosition, 
-            progress:startingPosition , 
-            quizFailures:0
+            progress:{unit:3, module:0, lesson:5}
         }
 
-        db.collection('users').insertOne(newUser)
-        setUser(newUser)
+        setUser(user)
+        await app?.emailPasswordAuth.registerUser(email, password);
+        await db.collection('users').insertOne(user)
     } 
 
     const updateUser = (user:iUser) => {
