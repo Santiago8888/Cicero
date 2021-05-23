@@ -2,8 +2,8 @@ import { useMediaQuery } from 'react-responsive'
 import { useState } from 'react'
 
 export interface iLoginInput {email:string, password:string}
-export interface iLogin { newUser:boolean, login(loginInput:iLoginInput):void }
-export const Login = ({ newUser, login }: iLogin) => {
+export interface iLogin { login(loginInput:iLoginInput):void }
+export const Login = ({ login }: iLogin) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [password, setPassword] = useState('')
@@ -25,7 +25,7 @@ export const Login = ({ newUser, login }: iLogin) => {
                         fontWeight: 500,
                         width: !smallScreen ? 600 : 300
                     }}
-                >   {   newUser  ? 'Crear Usuario' : 'Iniciar Sesión' } </h3>
+                >   Curso en línea </h3>
 
                 <div className="field">
                     <input 
@@ -75,7 +75,7 @@ export const Login = ({ newUser, login }: iLogin) => {
                             fontWeight: 600, 
                             backgroundColor:'darkblue'
                         }}
-                    > CONTINUAR  </button>
+                    > Iniciar Sesión </button>
                 </div>
             </div>
         </div>
