@@ -3,8 +3,8 @@ import { StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@st
 import { useEffect, useState, useMemo, FormEvent } from "react"
 import { useMediaQuery } from 'react-responsive'
 
-import { iSignUpInput } from './SignUp'
 import { iLanding } from './Landing'
+import { iNewUser } from './SignUp'
 
 import '../../Stripe.css'
 
@@ -35,8 +35,8 @@ const useOptions = () => {
 }
 
 
-interface iBilling extends iLanding { signUpInput:iSignUpInput }
-export const Billing = ({mongoUser, signUpInput, createUser}: iBilling) => {
+interface iBilling extends iLanding { newUser:iNewUser }
+export const Billing = ({mongoUser, newUser, createUser}: iBilling) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [ error, setError ] = useState<string>()
@@ -82,7 +82,7 @@ export const Billing = ({mongoUser, signUpInput, createUser}: iBilling) => {
             setError('')
             setProcessing(false)
             setSucceeded(true)
-            createUser(signUpInput)
+            createUser(newUser)
         }
     }
 
