@@ -4,14 +4,15 @@ import { useMediaQuery } from 'react-responsive'
 import { iLoginInput, Login } from './Login'
 import Vimeo from '@u-wave/react-vimeo'
 import { Billing } from './Billing'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { User } from 'realm-web'
 import { SignUp } from './SignUp'
 
-interface iWelcome { subscribe():void }
-const Welcome = ({ subscribe }:iWelcome) => {
+interface iWelcome { subscribe():void, reset():void }
+const Welcome = ({ subscribe, reset }:iWelcome) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+    useEffect(() => { reset() }, [])
 
     return <div className="content" style={{textAlign:'center'}}>
         <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
@@ -48,8 +49,9 @@ interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
 export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding) => {
     const [ loginInput, setLoginInput ] = useState<iLoginInput>()
 
+    const reset = () => { setLoginInput(undefined) }
     return isWelcome
-        ?   <Welcome subscribe={setWelcome}/>
+        ?   <Welcome subscribe={setWelcome} reset={reset} />
         :   !loginInput
             ?   <SignUp login={(loginInput) => setLoginInput(loginInput)} />
             :   <Billing mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
