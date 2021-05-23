@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 import Vimeo from '@u-wave/react-vimeo'
 import { User } from 'realm-web'
 
-import { iSignUpInput, SignUp } from './SignUp'
+import { iNewUser, SignUp } from './SignUp'
 import { Billing } from './Billing'
 
 
@@ -47,25 +47,26 @@ const Welcome = ({ subscribe, reset }:iWelcome) => {
 }
 
 
-export interface iLanding { mongoUser?: User, createUser(signUp:iSignUpInput):void }
+export interface iLanding { mongoUser?: User, createUser(signUp:iNewUser):void }
 interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
 export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding) => {
-    const [ signUpInput, setSignUpInput ] = useState<iSignUpInput>()
+    const [ newUser, setNewUser ] = useState<iNewUser>()
     const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
 
-    const reset = () => { setSignUpInput(undefined) }
-    const signUp = async(signUpInput:iSignUpInput) => {
-        setSignUpInput(signUpInput)
-        await mongoUser?.functions.getPlanets(signUpInput.date)
+    const reset = () => { setNewUser(undefined) }
+    const signUp = async(newUser:iNewUser) => {
+        setNewUser(newUser)
+        const { planets, houses } =  await mongoUser?.functions.getPlanets(newUser.date)
+        setNewUser({...newUser, natalChart:{ planets, houses }})
     } 
 
     return isWelcome
         ?   <Welcome subscribe={setWelcome} reset={reset} />
         :   <Elements stripe={stripePromise}>
                 {
-                    !signUpInput
+                    !newUser
                     ?   <SignUp signUp={signUp} />
-                    :   <Billing mongoUser={mongoUser} signUpInput={signUpInput} createUser={createUser}/>        
+                    :   <Billing mongoUser={mongoUser} newUser={newUser} createUser={createUser}/>        
                 }
             </Elements>
 }
