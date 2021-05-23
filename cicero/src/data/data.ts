@@ -1,7 +1,8 @@
-import { iLesson, iUnit } from "../components/LayOut/Menu"
 import { iRecordings } from "../components/Forum/Recordings"
+import { iLesson, iUnit } from "../components/LayOut/Menu"
 import { iForum } from "../components/Forum/Forum"
 import { iPost } from "../components/Forum/Posts"
+import { planets, houses } from './chart'
 import { iUser } from "../App"
 
 
@@ -70,9 +71,12 @@ const lessons:iLesson[] = [
 ]
 
 export const defaultUser:iUser = { 
+    name:'Santiago M.',
     email:'test@branding.gq', 
     progress:{unit:3, module:0, lesson:5}, 
     current:{unit:3, module:0, lesson:1}, 
+    natalChart:{ planets, houses },
+    sign:'Leo',
     quizFailures:0 
 }
 
