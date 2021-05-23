@@ -10,7 +10,7 @@ import { iLoginInput } from './components/Auth/Login'
 import { iNewUser } from './components/Auth/SignUp'
 import { Home } from './components/Home'
 
-import { App as RealmApp, Credentials } from 'realm-web'
+import { App as RealmApp, Credentials, User } from 'realm-web'
 import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
 
@@ -56,6 +56,7 @@ export const App = () => {
     const [ isWelcome, setWelcome ] = useState(true)
 
     const [ user, setUser ] = useState<iUser>()
+    const [ mongoUser, setMongoUser ] = useState<User|null>()
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
 
@@ -70,14 +71,35 @@ export const App = () => {
             const app = new RealmApp({ id: REALM_APP_ID })
             setApp(app)
 
-            if(!app.currentUser) return
-
-            const mongo = app.currentUser.mongoClient('mongodb-atlas')
-            const db = mongo.db('Cicero')
-            setDB(db)
+            if(app.currentUser) setMongoUser(app.currentUser)
         }
         connectMongo()
     }, [])
+
+    useEffect(() => {
+        if(!mongoUser) return
+
+        const fetchData = async() => {
+            const user = mongoUser.customData
+            setUser(user)
+    
+            const mongo = mongoUser.mongoClient('mongodb-atlas')
+            const db = mongo.db('Cicero')
+            setDB(db)
+
+            const recordings = await db.collection('recordings').find({})
+            setRecordings({...Recordings, recordings:recordings.sort(() => -1)})
+
+            const doubts = await db.collection('doubts').find({})
+            setForum({...forum, questions:doubts.sort(() => -1)})
+
+            const posts = await db.collection('posts').find({})
+            setPosts(posts.sort(() => -1))
+        }
+
+        fetchData()
+
+    }, [mongoUser])
 
 
     /**************************        Auth            ***************************/
@@ -88,6 +110,7 @@ export const App = () => {
         await app.logIn(Credentials.emailPassword(email, password))
         if(!app.currentUser) return
         const { id } = app.currentUser
+        setMongoUser(app.currentUser)
 
         const mongo = app.currentUser.mongoClient('mongodb-atlas')
         const db = mongo.db('Cicero')
@@ -99,7 +122,6 @@ export const App = () => {
         setUser(user)
 
         await db.collection('users').insertOne({ user_id:id, ...user })
-        setDB(db)
 
         const { planets, houses } =  await app.currentUser.functions.getPlanets(date)
         const sun = planets.find(({name}:{name:string}) => name === 'Sun')
@@ -111,33 +133,19 @@ export const App = () => {
     } 
 
     const updateUser = (user:iUser) => {
+        if(!app?.currentUser) return
+
         setUser(user)
-        db?.collection('users').updateOne({ email: user.email }, user)
+        db?.collection('users').updateOne({ user_id:app.currentUser.id }, user)
     } 
 
     const login = async({ email, password }:iLoginInput) => {
         if(!app) return
         await app.logIn(Credentials.emailPassword(email, password))
-
-        if(!db) return
-        const collection = db.collection('users')
-        const user = await collection.findOne({ email, password })
-
-        if(!user) return
-        updateUser(user)
-        setLogin(false)
-
-        const recordings = await db.collection('recordings').find({})
-        setRecordings({...Recordings, recordings:recordings.sort(() => -1 )})
-
-        const doubts = await db.collection('doubts').find({})
-        setForum({...forum, questions:doubts.sort((a,b) => -1 )})
-
-        // TODO: Fetch Posts.
-        setPosts([])
+        setMongoUser(app.currentUser)
     }
 
-    
+
     /*******************        Navigation            *******************/
     const clickNavbar = (item:NavbarItem) => {
         if (item === 'Login') return setLogin(true)
