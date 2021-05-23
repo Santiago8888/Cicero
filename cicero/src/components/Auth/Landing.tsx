@@ -15,7 +15,7 @@ interface iWelcome { subscribe():void, reset():void }
 const Welcome = ({ subscribe, reset }:iWelcome) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
-    useEffect(() => { reset() }, [])
+    useEffect(() => { reset() }, [reset])
 
     return <div className="content" style={{textAlign:'center'}}>
         <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
