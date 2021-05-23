@@ -4,6 +4,7 @@ import { iPost } from './Forum/Posts'
 
 import { iLoginInput, Login } from './Auth/Login'
 import { Interaction } from './Interaction'
+import { iNewUser } from './Auth/SignUp'
 import { Landing } from './Auth/Landing'
 import { iLesson } from './LayOut/Menu'
 import { Content } from './Content'
@@ -23,7 +24,7 @@ interface iHome {
     mongoUser?:User
 
     next():void
-    createUser(loginInput:iLoginInput):void
+    createUser(newUser:iNewUser):void
     approve(score?:number):boolean | void
     login(loginInput:iLoginInput):void
     submit(doubt:iDoubt):void
