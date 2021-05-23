@@ -73,7 +73,7 @@ export const Home = ({
                 />
             :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
         :   isLogin 
-            ?  <Login login={login} newUser={false}/>
+            ?  <Login login={login}/>
             :   <Landing 
                     mongoUser={mongoUser} 
                     isWelcome={isWelcome} 

@@ -1,16 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
+import { Elements } from '@stripe/react-stripe-js'
 import { useMediaQuery } from 'react-responsive'
-import { iLoginInput, Login } from './Login'
+import { loadStripe } from '@stripe/stripe-js'
+import { useEffect, useState } from "react"
 import Vimeo from '@u-wave/react-vimeo'
-import { Billing } from './Billing'
-import { useState } from "react"
 import { User } from 'realm-web'
 
-interface iWelcome { subscribe():void }
-const Welcome = ({ subscribe }:iWelcome) => {
+import { iNewUser, SignUp } from './SignUp'
+import { Billing } from './Billing'
+
+
+interface iWelcome { subscribe():void, reset():void }
+const Welcome = ({ subscribe, reset }:iWelcome) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+    useEffect(() => { reset() }, [])
 
     return <div className="content" style={{textAlign:'center'}}>
         <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
@@ -42,14 +47,26 @@ const Welcome = ({ subscribe }:iWelcome) => {
 }
 
 
-export interface iLanding { mongoUser?: User, createUser(loginInput:iLoginInput):void }
+export interface iLanding { mongoUser?: User, createUser(signUp:iNewUser):void }
 interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
 export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding) => {
-    const [ loginInput, setLoginInput ] = useState<iLoginInput>()
+    const [ newUser, setNewUser ] = useState<iNewUser>()
+    const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
+
+    const reset = () => { setNewUser(undefined) }
+    const signUp = async(newUser:iNewUser) => {
+        setNewUser(newUser)
+        const { planets, houses } =  await mongoUser?.functions.getPlanets(newUser.date)
+        setNewUser({...newUser, natalChart:{ planets, houses }})
+    } 
 
     return isWelcome
-        ?   <Welcome subscribe={setWelcome}/>
-        :   !loginInput
-            ?   <Login login={(loginInput) => setLoginInput(loginInput)} newUser={true}/>
-            :   <Billing mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
+        ?   <Welcome subscribe={setWelcome} reset={reset} />
+        :   <Elements stripe={stripePromise}>
+                {
+                    !newUser
+                    ?   <SignUp signUp={signUp} />
+                    :   <Billing mongoUser={mongoUser} newUser={newUser} createUser={createUser}/>        
+                }
+            </Elements>
 }
