@@ -71,16 +71,15 @@ const lessons:iLesson[] = [
 ]
 
 export const defaultUser:iUser = { 
+    sign:'Leo',
+    quizFailures:0,
     name:'Santiago M.',
     email:'test@branding.gq', 
-    progress:{unit:3, module:0, lesson:5}, 
-    current:{unit:3, module:0, lesson:1}, 
+    date:new Date(1988,7,17,12,37),
     natalChart:{ planets, houses },
-    sign:'Leo',
-    quizFailures:0 
+    current:{unit:3, module:0, lesson:1}, 
+    progress:{unit:3, module:0, lesson:5}, 
 }
-
-
 
 export const Posts:iPost[] = [{
     name:'Alice',
