@@ -35,26 +35,18 @@ const useOptions = () => {
 }
 
 
-interface iBilling extends iLanding { newUser:iNewUser }
-export const Billing = ({mongoUser, newUser, createUser}: iBilling) => {
+interface iBilling extends iLanding { clientSecret?:string, newUser:iNewUser }
+export const Billing = ({clientSecret, newUser, createUser}: iBilling) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [ error, setError ] = useState<string>()
     const [ disabled, setDisabled ] = useState(true)
     const [ succeeded, setSucceeded ] = useState(false)
     const [ processing, setProcessing ] = useState(false)
-    const [ clientSecret, setClientSecret ] = useState('')
 
     const stripe = useStripe()
     const elements = useElements()
     const options = useOptions()
-
-    useEffect(() => {
-        mongoUser?.functions.paymentIntent()
-        .then(({clientSecret}) => 
-            setClientSecret(clientSecret)
-        )
-    }, [mongoUser])
 
     const handleChange = async ({ complete, error }:StripeCardNumberElementChangeEvent) => {
         setDisabled(!complete)
@@ -66,13 +58,10 @@ export const Billing = ({mongoUser, newUser, createUser}: iBilling) => {
         event.preventDefault()
         setProcessing(true)
 
-        if (!stripe || !elements) return
+        if (!stripe || !elements || !clientSecret) return
 
-        const payload = await stripe.confirmCardPayment(clientSecret, {
-            payment_method: { 
-                card: elements.getElement(CardNumberElement) as StripeCardNumberElement 
-            }
-        })
+        const card = elements.getElement(CardNumberElement) as StripeCardNumberElement
+        const payload = await stripe.confirmCardPayment(clientSecret,{payment_method:{card}})
 
         if (payload.error) {
             setError(`Payment failed ${payload.error.message}`)
@@ -125,7 +114,7 @@ export const Billing = ({mongoUser, newUser, createUser}: iBilling) => {
                         id="submit" 
                         className="stripeButton" 
                         style={{marginTop:'2.5rem'}}
-                        disabled={processing || disabled || !clientSecret || succeeded} 
+                        disabled={processing || disabled || succeeded || !clientSecret} 
                     >
                         <span id="button-text">
                             {processing ? <div className="spinner" id="spinner"></div> : "Pagar" }
