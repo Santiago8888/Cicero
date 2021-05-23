@@ -3,22 +3,22 @@
 ## Natal Chart
 - [ ] Cloud Function.
 - [X] Import Code.
-- [ ] Parametrize Chart.
-- [ ] Modularize Rendering.
+- [X] Parametrize Chart.
+- [X] Modularize Rendering.
 - [ ] Form & DB.
 
 
 ## Comments
-- [ ] List questions.
-- [ ] Answer questions.
-- [ ] Show Answers.
-- [ ] Vote Answers.
+- [X] List questions.
+- [X] Answer questions.
+- [X] Show Answers.
+- [X] Vote Answers.
 - [ ] Reply to Answers.
 
 
 ## Voting
-- [ ] Votes icon.
-- [ ] Submit vote.
+- [X] Votes icon.
+- [X] Submit vote.
 - [ ] Date ordering.
 - [ ] Sort by recent and votes.
 - [ ] Hide older.
@@ -31,6 +31,6 @@
 
 
 ## Menu
-- [ ] Units Mapping.
-- [ ] Import Menu.
-- [ ] Logic & Tests.
+- [X] Units Mapping.
+- [X] Import Menu.
+- [X] Logic & Tests.
