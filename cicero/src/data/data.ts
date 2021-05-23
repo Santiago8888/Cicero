@@ -125,7 +125,7 @@ export const Units:iUnit[] = [{
                 { title:'Pluto', type:'Chart', description:'El planeta del subconsciente', planets:['Pluto']},
             ] 
         },
-        { title: '4.2 Regencia/Dignidad', lessons },
+        { title: '4.2 Regencia/ Dignidad', lessons },
         { title: '4.3 Planetas en signos y casas', lessons }
     ] 
 }, { 
