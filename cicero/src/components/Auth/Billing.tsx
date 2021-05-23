@@ -1,5 +1,5 @@
-import { Elements, useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
-import { loadStripe, StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
+import { useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
+import { StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
 import { useEffect, useState, useMemo, FormEvent } from "react"
 import { useMediaQuery } from 'react-responsive'
 
@@ -9,7 +9,6 @@ import { iLanding } from './Landing'
 import '../../Stripe.css'
 
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
 const useOptions = () => {
     const options = useMemo(
         () => ({
@@ -36,7 +35,8 @@ const useOptions = () => {
 }
 
 
-const CardForm = ({mongoUser, signUpInput, createUser}: iBilling) => {
+interface iBilling extends iLanding { signUpInput:iSignUpInput }
+export const Billing = ({mongoUser, signUpInput, createUser}: iBilling) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [ error, setError ] = useState<string>()
@@ -146,9 +146,3 @@ const CardForm = ({mongoUser, signUpInput, createUser}: iBilling) => {
         </div>
     </div>
 }
-
-
-interface iBilling extends iLanding { signUpInput:iSignUpInput }
-export const Billing = ({mongoUser, signUpInput, createUser }:iBilling) => <Elements stripe={stripePromise}>
-    <CardForm mongoUser={mongoUser} signUpInput={signUpInput} createUser={createUser}/>
-</Elements>
