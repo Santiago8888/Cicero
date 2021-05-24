@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { App, Credentials, User } from 'realm-web'
 import { Elements } from '@stripe/react-stripe-js'
 import { useMediaQuery } from 'react-responsive'
 import { loadStripe } from '@stripe/stripe-js'
@@ -48,19 +47,15 @@ const Welcome = ({ click, reset }:iWelcome) => {
 
 
 export interface iLanding { createUser(signUp:iNewUser):void }
-interface ILanding extends iLanding { app?:App, isWelcome:boolean, setWelcome():void }
-export const Landing = ({app, isWelcome, setWelcome, createUser}: ILanding) => {
+interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
+export const Landing = ({ isWelcome, setWelcome, createUser}: ILanding) => {
     const [ newUser, setNewUser ] = useState<iNewUser>()
     const [ clientSecret, setClientSecret ] = useState<string>()
     const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
 
     const reset = () => { setNewUser(undefined) }
     const callStripe = async() => {
-        if(!app) return
-
         setWelcome()
-        const user: User | undefined = await app.logIn(Credentials.anonymous())        
-        const { clientSecret } = await user.functions.paymentIntent()
         setClientSecret(clientSecret)
     }
 
