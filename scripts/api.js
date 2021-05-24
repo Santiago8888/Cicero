@@ -48,7 +48,10 @@ const getChart = async({ year, month, day, hour=12, minute=0, query='' }) => {
     console.log(lat, lng)
 
     const unixTime = Math.round(new Date(year, month - 1, day, hour, minute)/1000)
+    console.log(unixTime)
+
     const offset = await getTimeZone({ lat, lng, time:unixTime })
+    console.log(offset)
 
     const minutes = minute/60
     const time = (hour + minutes - offset/3600) 
@@ -83,4 +86,4 @@ const getChart = async({ year, month, day, hour=12, minute=0, query='' }) => {
 const Santiago = { year:1988, month:8, day:17, hour:18, minute:37, query:'Mexico City'}
 const Test1 = { year:1997, month:8, day:17, hour:19, minute:37, query:'Puebla, Mexico'}
 const Test2 = { year:1997, month:8, day:18, hour:7, minute:37, query:'Puebla, Mexico'}
-getChart(Test2).catch(console.log)
+getChart(Santiago).catch(console.log)
