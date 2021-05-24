@@ -8,6 +8,7 @@ import Vimeo from '@u-wave/react-vimeo'
 
 import { iNewUser, SignUp } from './SignUp'
 import { Billing } from './Billing'
+import axios from 'axios'
 
 
 interface iWelcome { click():void, reset():void }
@@ -56,17 +57,16 @@ export const Landing = ({ isWelcome, setWelcome, createUser}: ILanding) => {
     const reset = () => { setNewUser(undefined) }
     const callStripe = async() => {
         setWelcome()
-        setClientSecret(clientSecret)
+        const { data } = await axios.get('/.netlify/functions/payment-intent')
+        setClientSecret(data)
     }
-
-
 
     return isWelcome
         ?   <Welcome click={callStripe} reset={reset} />
         :   <Elements stripe={stripePromise}>
                 {
                     !newUser
-                    ?   <SignUp signUp={() => setNewUser(newUser)} />
+                    ?   <SignUp signUp={setNewUser} />
                     :   <Billing newUser={newUser} createUser={createUser} clientSecret={clientSecret}/>        
                 }
             </Elements>
