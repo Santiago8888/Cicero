@@ -1,0 +1,14 @@
+{
+  "name": "netlify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "swisseph": "^0.5.15"
+  },
+  "scripts": {
+    "build": "yarn install"
+  }
+}
