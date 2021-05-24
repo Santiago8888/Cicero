@@ -1,15 +1,16 @@
-import { Recordings, Forum, Posts, defaultUser, Units } from './data/data'
 import { iLesson, Menu, iPosition } from './components/LayOut/Menu'
 import { NavBar, NavbarItem } from './components/LayOut/NavBar'
 import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { iPost } from './components/Forum/Posts'
 
+import { Recordings, Forum, Posts, Units } from './data/data'
+import { iPlanet } from './components/Astral/AstralChart'
 import { iLoginInput } from './components/Auth/Login'
+import { iNewUser } from './components/Auth/SignUp'
 import { Home } from './components/Home'
 
-
-import { App as RealmApp, User, Credentials } from 'realm-web'
+import { App as RealmApp, Credentials, User } from 'realm-web'
 import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
 
@@ -17,17 +18,27 @@ import 'bulma/css/bulma.css'
 import './App.css'
 
 
-const connectMongo = async() => {
-    const REALM_APP_ID = process.env.REACT_APP_REALM_ID as string
-    const app = new RealmApp({ id: REALM_APP_ID })
-    const user: User = await app.logIn(Credentials.anonymous())
-    return user
+export interface iNatalChart { planets:iPlanet[], houses:number[] }
+export type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
+export interface iUser { 
+    date:Date
+    name:string
+    sign?:Sign
+    email:string
+    current:iPosition
+    progress:iPosition
+    quizFailures:number
+    natalChart:iNatalChart
 }
 
-export interface iUser { email:string, progress:iPosition, quizFailures:number, current:iPosition }
+const mapSign = (sun:iPlanet):Sign => {
+    const signs:Sign[] = ['Ari', 'Tau', 'Gem', 'Can', 'Leo', 'Vir', 'Lib', 'Sco', 'Sag', 'Cap', 'Aqu', 'Pis' ]
+    const sign = signs[sun.house - 1]
+    return sign
+}
+
 
 interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
-
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
@@ -41,48 +52,101 @@ export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
     const largeScreen = useMediaQuery({ query: '(min-width: 1200px)' })
 
-    const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
-    const [ mongoUser, setMongoUser ] = useState<User>()
-    const [ user, setUser ] = useState<iUser>(defaultUser)
-
-    const [ forum, setForum ] = useState(Forum)
     const [ isLogin, setLogin ] = useState(false)
     const [ isWelcome, setWelcome ] = useState(true)
-    const [ recordings, setRecordings ] = useState(Recordings)
+
+    const [ user, setUser ] = useState<iUser>()
+    const [ mongoUser, setMongoUser ] = useState<User|null>()
+    const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
+    const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
+
     const [ posts, setPosts ] = useState(Posts)
+    const [ forum, setForum ] = useState(Forum)
+    const [ recordings, setRecordings ] = useState(Recordings)
 
 
     useEffect(() => { 
-        return 
-        connectMongo().then(mongoUser => {
-            setMongoUser(mongoUser)
+        const connectMongo = async() => {
+            const REALM_APP_ID = process.env.REACT_APP_REALM_ID as string
+            const app = new RealmApp({ id: REALM_APP_ID })
+            setApp(app)
+
+            if(app.currentUser) setMongoUser(app.currentUser)
+        }
+        connectMongo()
+    }, [])
+
+    useEffect(() => {
+        if(!mongoUser) return
+
+        const fetchData = async() => {
+            const user = mongoUser.customData
+            setUser(user)
+    
             const mongo = mongoUser.mongoClient('mongodb-atlas')
             const db = mongo.db('Cicero')
             setDB(db)
-        }) 
-    }, [])
 
+            const recordings = await db.collection('recordings').find({})
+            setRecordings({...Recordings, recordings:recordings.sort(() => -1)})
 
-    const createUser = (loginInput:iLoginInput) => {
-        if(!db) return
+            const doubts = await db.collection('doubts').find({})
+            setForum({...forum, questions:doubts.sort(() => -1)})
 
-        const startingPosition: iPosition = { unit:0, module:0, lesson:0 }
-        const newUser: iUser = { 
-            ...loginInput, 
-            current:startingPosition, 
-            progress:startingPosition , 
-            quizFailures:0
+            const posts = await db.collection('posts').find({})
+            setPosts(posts.sort(() => -1))
         }
 
-        db.collection('users').insertOne(newUser)
-        setUser(newUser)
+        fetchData()
+
+    }, [mongoUser])
+
+
+    /**************************        Auth            ***************************/
+    const createUser = async({ name, email, password, date }:iNewUser) => {
+        if(!app) return
+
+        await app.emailPasswordAuth.registerUser(email, password)
+        await app.logIn(Credentials.emailPassword(email, password))
+        if(!app.currentUser) return
+        const { id } = app.currentUser
+        setMongoUser(app.currentUser)
+
+        const mongo = app.currentUser.mongoClient('mongodb-atlas')
+        const db = mongo.db('Cicero')
+
+        const current: iPosition = { unit:0, module:0, lesson:0 }
+        const progress: iPosition = {unit:3, module:0, lesson:5}
+        const natalChart = {planets:[], houses:[]}
+        const user:iUser = { name, email, date, quizFailures:0, current, progress, natalChart } 
+        setUser(user)
+
+        await db.collection('users').insertOne({ user_id:id, ...user })
+
+        const { planets, houses } =  await app.currentUser.functions.getPlanets(date)
+        const sun = planets.find(({name}:{name:string}) => name === 'Sun')
+        const sign = mapSign(sun)
+        const fullUser = {...user, sign, natalChart:{planets, houses}}
+        setUser(fullUser)
+
+        await db.collection('users').updateOne({ user_id:id }, fullUser)
     } 
 
     const updateUser = (user:iUser) => {
+        if(!app?.currentUser) return
+
         setUser(user)
-        db?.collection('users').updateOne({ email: user.email }, user)
+        db?.collection('users').updateOne({ user_id:app.currentUser.id }, user)
     } 
 
+    const login = async({ email, password }:iLoginInput) => {
+        if(!app) return
+        await app.logIn(Credentials.emailPassword(email, password))
+        setMongoUser(app.currentUser)
+    }
+
+
+    /*******************        Navigation            *******************/
     const clickNavbar = (item:NavbarItem) => {
         if (item === 'Login') return setLogin(true)
 
@@ -99,26 +163,6 @@ export const App = () => {
         setHomeData({...homeData, forum:undefined, recordings:undefined, posts:undefined})
     }
     
-    const login = async({ email, password }:iLoginInput) => {
-        if(!db) return
-
-        const collection = db.collection('users')
-        const user = await collection.findOne({ email, password })
-
-        if(!user) return
-        updateUser(user)
-        setLogin(false)
-
-        const recordings = await db.collection('recordings').find({})
-        setRecordings({...Recordings, recordings:recordings.sort(() => -1 )})
-
-        const doubts = await db.collection('doubts').find({})
-        setForum({...forum, questions:doubts.sort((a,b) => -1 )})
-
-        // TODO: Fetch Posts.
-        setPosts([])
-    }
-
     const nextLesson = ({unit, module, lesson}:iPosition):iPosition => {
         if(!user) return { unit:0, module:0, lesson: 0}
 
@@ -192,6 +236,8 @@ export const App = () => {
         return updateUser({...user, progress:nextLesson(progress)})
     }
 
+
+    /*******************        DB Methods            *******************/
     const submit = (doubt:iDoubt) => {
         const questions = [doubt, ...forum.questions]
 
@@ -213,7 +259,8 @@ export const App = () => {
     }
 
     const post = (newPost:iPost) => {
-        const newPosts = [...posts, newPost]
+        if(!user) return 
+        const newPosts:iPost[] = [...posts, {...newPost, name:user.name, image:user.sign }]
  
         setPosts(newPosts)
         setHomeData({...homeData, posts:newPosts})
@@ -234,11 +281,13 @@ export const App = () => {
         // db?.collection('posts').inse(post)
     }
 
-    const reply = (text:string, id:string) => {
+    const reply = (comment:string, id:string) => {
+        if(!user) return 
+
         const repliedPosts = posts.map((post, i) => 
             id === String(i) 
-            ? {...post, comments:[...post.comments, text]} 
-            : post
+            ?   {...post, comments:[...post.comments, {comment, name:user.name, image:user.sign }]} 
+            :   post
         )
 
         setPosts(repliedPosts)
@@ -275,11 +324,11 @@ export const App = () => {
                     }}
                 >
                     <Home 
+                        app={app}
                         user={user}
                         {...homeData} 
                         isLogin={isLogin} 
                         isWelcome={isWelcome}
-                        mongoUser={mongoUser}
                         lesson={Units[user?.current.unit || 0].modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}

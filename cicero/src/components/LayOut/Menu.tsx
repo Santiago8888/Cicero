@@ -16,7 +16,7 @@ export interface iLesson {
     link?:string, 
     questions?:iQuestion[] 
     min?:number
-    planets?:Planet[]
+    planet?:Planet
 }
 
 
@@ -57,7 +57,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
         style={{ minHeight:'calc(100vh - 85px)', width:250, boxShadow: '3px 0 3px 0 #ccc', fontSize:'1.15em' }}
     >
         {
-            units.map(({ title, modules }, u) => <div style={{marginTop:16}} key={u}>
+            units.map(({ title, modules }, u) => <div style={{marginTop:24}} key={u}>
                 { 
                     user && u <= user.progress.unit 
                     ? <a className="menu-label" onClick={() => setSelected(u !== selectedUnit ? u : undefined)}> { title } </a> 
@@ -65,7 +65,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                 }
 
                 <ul className="menu-list">
-                    { (user?.current.unit  === u || selectedUnit === u) && modules.map(({ title, lessons }, m) => 
+                    { (user?.current.unit  === u || selectedUnit === u || (!user && u === 0)) && modules.map(({ title, lessons }, m) => 
                         <li style={{lineHeight:2}} key={m}>
                             <a 
                                 onClick={() => expand(u, m)} 
@@ -78,7 +78,6 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                                 (
                                     (u === active.unit && active.module === m) 
                                     || (user?.current.unit === u && user?.current.module === m) 
-                                    || (!user && m === 0)
                                 ) && lessons.length
                                 ?   <ul>
                                         { lessons.map(({ title }, l) => 

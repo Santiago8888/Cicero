@@ -4,26 +4,28 @@ import { iPost } from './Forum/Posts'
 
 import { iLoginInput, Login } from './Auth/Login'
 import { Interaction } from './Interaction'
+import { iNewUser } from './Auth/SignUp'
 import { Landing } from './Auth/Landing'
 import { iLesson } from './LayOut/Menu'
 import { Content } from './Content'
 import { iUser } from '../App'
 
-import { User } from 'realm-web'
+import { App } from 'realm-web'
 
 
 interface iHome { 
+    app?:App
     user?:iUser
     isLogin:boolean
     isWelcome:boolean
+
     lesson:iLesson
     forum?:iForum
     posts?:iPost[]
     recordings?:iRecordings 
-    mongoUser?:User
 
     next():void
-    createUser(loginInput:iLoginInput):void
+    createUser(newUser:iNewUser):void
     approve(score?:number):boolean | void
     login(loginInput:iLoginInput):void
     submit(doubt:iDoubt):void
@@ -36,10 +38,9 @@ interface iHome {
 }
 
 export const Home = ({
+    app,
     user, 
-    mongoUser, 
-
-    isLogin, 
+    isLogin,
     isWelcome,
 
     lesson, 
@@ -74,10 +75,5 @@ export const Home = ({
             :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
         :   isLogin 
             ?  <Login login={login}/>
-            :   <Landing 
-                    mongoUser={mongoUser} 
-                    isWelcome={isWelcome} 
-                    setWelcome={setWelcome}
-                    createUser={createUser}
-                />
+            :   <Landing app={app} isWelcome={isWelcome} setWelcome={setWelcome} createUser={createUser}/>
 }

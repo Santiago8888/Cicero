@@ -10,9 +10,10 @@
 - [X] Add Astrology Chart Lesson Type.
 - [ ] Post to AstroChat or Share on FaceBook. 
 - [X] NavBar type for AstroChat/Posts.
-- [ ] Image of Sign and Name for Posts.
+- [X] Image of Sign and Name for Posts.
 - [ ] Add datetime property on Posts and replies objects.
+- [ ] Header of Posts based on Author Sign.
 
-
+## Ideas
 - [ ] Google Sheets CMS.
-- [ ] Import as Package atomic-react
+- [ ] Import atoms from custom npm package or submodule

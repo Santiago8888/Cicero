@@ -1,7 +1,8 @@
-import { iLesson, iUnit } from "../components/LayOut/Menu"
 import { iRecordings } from "../components/Forum/Recordings"
+import { iLesson, iUnit } from "../components/LayOut/Menu"
 import { iForum } from "../components/Forum/Forum"
 import { iPost } from "../components/Forum/Posts"
+import { planets, houses } from './chart'
 import { iUser } from "../App"
 
 
@@ -70,18 +71,24 @@ const lessons:iLesson[] = [
 ]
 
 export const defaultUser:iUser = { 
+    sign:'Leo',
+    quizFailures:0,
+    name:'Santiago M.',
     email:'test@branding.gq', 
-    progress:{unit:3, module:0, lesson:5}, 
+    date:new Date(1988,7,17,12,37),
+    natalChart:{ planets, houses },
     current:{unit:3, module:0, lesson:1}, 
-    quizFailures:0 
+    progress:{unit:3, module:0, lesson:5}, 
 }
 
-
-
 export const Posts:iPost[] = [{
+    name:'Alice',
     title:'Title', 
+    image:'Pis',
     detail:'Detail', 
-    comments:['Test', 'Tost', 'Tust', 'Tast', 'Cast', 'Age'],
+    comments:[
+        {name:'Beth', image:'Aqu', comment:'Test'} 
+    ],
     likes:0
 }]
 
@@ -91,7 +98,7 @@ export const Units:iUnit[] = [{
     modules: [
         { title: '1.1 Introducción a la astroconsciencia', lessons },
         { title: '1.2 Historia de la astrología', lessons },
-        { title: '1.3 Proposito de vida desde la Astronciencia', lessons }
+        { title: '1.3 Proposito de vida', lessons }
     ]
 }, { 
     title: '2. LOS 12 SIGNOS DEL ZODIACO', 
@@ -113,16 +120,16 @@ export const Units:iUnit[] = [{
         { 
             title: '4.1 Planetas', 
             lessons:[
-                { title:'Sol', type:'Chart', description:'El sol representa quien eres', planets:['Sun']},
-                { title:'Luna', type:'Chart', description:'La Luna rige tus emociones', planets:['Moon']},
-                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente', planets:['Mercury']},
-                { title:'Venus', type:'Chart', description:'El planeta que rige el amor', planets:['Venus']},
-                { title:'Marte', type:'Chart', description:'El planeta que rige la energía', planets:['Mars']},
-                { title:'Jupiter', type:'Chart', description:'El planeta que rige la suerte', planets:['Jupiter']},
-                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planets:['Saturn']},
-                { title:'Urano', type:'Chart', description:'El planeta de la creatividad', planets:['Uranus']},
-                { title:'Neptuno', type:'Chart', description:'El planeta de la imaginación y espiritualidad', planets:['Neptune']},
-                { title:'Pluto', type:'Chart', description:'El planeta del subconsciente', planets:['Pluto']},
+                { title:'Sol', type:'Chart', description:'El sol representa quien eres', planet:'Sun'},
+                { title:'Luna', type:'Chart', description:'La Luna rige tus emociones', planet:'Moon'},
+                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente', planet:'Mercury'},
+                { title:'Venus', type:'Chart', description:'El planeta que rige el amor', planet:'Venus'},
+                { title:'Marte', type:'Chart', description:'El planeta que rige la energía', planet:'Mars'},
+                { title:'Jupiter', type:'Chart', description:'El planeta que rige la suerte', planet:'Jupiter'},
+                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'},
+                { title:'Urano', type:'Chart', description:'El planeta de la creatividad', planet:'Uranus'},
+                { title:'Neptuno', type:'Chart', description:'El planeta de la imaginación y espiritualidad', planet:'Neptune'},
+                { title:'Pluto', type:'Chart', description:'El planeta del subconsciente', planet:'Pluto'},
             ] 
         },
         { title: '4.2 Regencia/ Dignidad', lessons },

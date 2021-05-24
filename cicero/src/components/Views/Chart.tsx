@@ -1,12 +1,11 @@
-import { houses, planets as planetsData } from '../../data/chart'
 import { AstralChart, Planet } from '../Astral/AstralChart'
 import { useMediaQuery } from 'react-responsive'
 import { iUser } from '../../App'
 import { useEffect } from 'react'
 
 
-interface iChart { user:iUser, title:string, description:string, planets?:Planet[], approve():boolean | void, next():void }
-export const Chart = ({ title, description, planets=[], next, approve }: iChart) => {
+interface iChart { user:iUser, title:string, description:string, planet?:Planet, approve():boolean | void, next():void }
+export const Chart = ({ user:{natalChart:{planets, houses}}, title, description, planet, next, approve }: iChart) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     useEffect(() => { approve() }, [approve])
 
@@ -24,7 +23,7 @@ export const Chart = ({ title, description, planets=[], next, approve }: iChart)
         > { description } </h3>
 
         <AstralChart 
-            planets={planets?.length ? planetsData.filter(({ name }) => planets?.includes(name)) : planetsData} 
+            planets={planet ? planets.filter(({ name }) => name === planet) : planets} 
             houses={houses}
         />
 

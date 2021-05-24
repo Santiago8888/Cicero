@@ -3,9 +3,9 @@ import { useMediaQuery } from 'react-responsive'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 
-import { iPlanet } from "../Astral/AstralChart"
+import { iNatalChart } from "../../App"
 
-interface iNatalChart { planets?:iPlanet[], houses:number[] }
+
 export interface iNewUser {name:string, email:string, password:string, date:Date, natalChart?:iNatalChart }
 export interface iSignUp { signUp(newUser:iNewUser):void }
 export const SignUp = ({ signUp }: iSignUp) => {
