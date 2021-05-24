@@ -324,7 +324,6 @@ export const App = () => {
                     }}
                 >
                     <Home 
-                        app={app}
                         user={user}
                         {...homeData} 
                         isLogin={isLogin} 
