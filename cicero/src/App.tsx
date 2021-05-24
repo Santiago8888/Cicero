@@ -91,7 +91,7 @@ export const App = () => {
             setRecordings({...Recordings, recordings:recordings.sort(() => -1)})
 
             const doubts = await db.collection('doubts').find({})
-            setForum({...forum, questions:doubts.sort(() => -1)})
+            setForum({...Forum, questions:doubts.sort(() => -1)})
 
             const posts = await db.collection('posts').find({})
             setPosts(posts.sort(() => -1))
@@ -329,7 +329,6 @@ export const App = () => {
                         {...homeData} 
                         isLogin={isLogin} 
                         isWelcome={isWelcome}
-                        lesson={Units[user?.current.unit || 0].modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}
                         likePost={likePost}
