@@ -6,11 +6,11 @@ import { iLoginInput, Login } from './Auth/Login'
 import { Interaction } from './Interaction'
 import { iNewUser } from './Auth/SignUp'
 import { Landing } from './Auth/Landing'
-import { iLesson } from './LayOut/Menu'
 import { Content } from './Content'
 import { iUser } from '../App'
 
 import { App } from 'realm-web'
+import { Units } from '../data/data'
 
 
 interface iHome { 
@@ -19,7 +19,6 @@ interface iHome {
     isLogin:boolean
     isWelcome:boolean
 
-    lesson:iLesson
     forum?:iForum
     posts?:iPost[]
     recordings?:iRecordings 
@@ -43,7 +42,6 @@ export const Home = ({
     isLogin,
     isWelcome,
 
-    lesson, 
     forum, 
     posts,
     recordings, 
@@ -72,7 +70,12 @@ export const Home = ({
                     reply={reply}
                     likePost={likePost}
                 />
-            :   <Content user={user} lesson={lesson} next={next} approve={approve}/>
+            :   <Content 
+                    user={user} 
+                    next={next} 
+                    approve={approve}
+                    lesson={Units[user.current.unit || 0].modules[user.current.module || 0].lessons[user.current.lesson || 0]} 
+                />
         :   isLogin 
             ?  <Login login={login}/>
             :   <Landing app={app} isWelcome={isWelcome} setWelcome={setWelcome} createUser={createUser}/>
