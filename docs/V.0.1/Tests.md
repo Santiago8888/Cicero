@@ -11,6 +11,6 @@
 - [X] I can upvote a qustion.
 - [X] I can see the recordings.
 - [X] I can create a post.
-- [ ] I can like a post.
-- [ ] I can reply to a post. 
+- [X] I can like a post.
+- [X] I can reply to a post. 
 - [ ] Responsiveness.
