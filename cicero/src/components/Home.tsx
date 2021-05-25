@@ -28,7 +28,7 @@ interface iHome {
     submit(doubt:iDoubt):void
     setWelcome():void
 
-    like(id:string):void
+    like(id:number):void
     post(post:iPost):void
     likePost(id:string):void
     reply(text:string, id:string):void

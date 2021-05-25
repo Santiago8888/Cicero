@@ -10,7 +10,7 @@ interface iInteraction {
     recordings?:iRecordings 
     posts?:iPost[]
 
-    like(id:string):void
+    like(id:number):void
     submit(doubt:iDoubt):void
     post(post:iPost):void
     likePost(id:string):void
