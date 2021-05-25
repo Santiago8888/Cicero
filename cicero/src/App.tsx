@@ -137,8 +137,9 @@ export const App = () => {
         if(!app) return
         await app.logIn(Credentials.emailPassword(email, password))
 
-        await app.currentUser?.refreshCustomData()
-        if(!app.currentUser?.customData.current) return
+        if(!app.currentUser) return
+        await app.currentUser.refreshCustomData()
+        if(!app.currentUser.customData.current) return
 
         const mongo = app.currentUser.mongoClient('mongodb-atlas')
         const db = mongo.db('Cicero')
@@ -263,58 +264,61 @@ export const App = () => {
 
     /*******************        DB Methods            *******************/
     const submit = (doubt:iDoubt) => {
-        const questions:iDoubt[] = [{...doubt, likes:[user?.user_id as string]}, ...forum.questions]
+        if(!user || !db) return
+
+        const questions:iDoubt[] = [{...doubt, likes:[user.user_id as string]}, ...forum.questions]
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
 
-        db?.collection('doubts').insertOne(doubt)
+        db.collection('doubts').insertOne(doubt)
     }
 
     const like = (id:number) => {
-        if(!user) return
+        if(!user || !db) return
 
         const liked = forum.questions[id]
-        const question:iDoubt = !liked.likes.includes(user?.user_id) 
-            ?   {...liked, likes: [...liked.likes, user?.user_id]}
-            :   {...liked, likes: liked.likes.filter((like) => like !== user?.user_id)}
+        const question:iDoubt = !liked.likes.includes(user.user_id) 
+            ?   {...liked, likes: [...liked.likes, user.user_id]}
+            :   {...liked, likes: liked.likes.filter((like) => like !== user.user_id)}
 
         const questions = forum.questions.map((q, i) => id === i ? question  : q)
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
 
-        db?.collection('doubts').updateOne({_id:question._id}, {...question})
+        db.collection('doubts').updateOne({_id:question._id}, {...question})
     }
 
     const post = (newPost:iPost) => {
-        if(!user) return 
+        if(!user || !db) return 
         const newPosts:iPost[] = [{...newPost, name:user.name, image:user.sign }, ...posts]
  
         setPosts(newPosts)
         setHomeData({...homeData, posts:newPosts})
  
-        db?.collection('posts').insertOne(newPost)
+        db.collection('posts').insertOne(newPost)
     }
 
     const likePost = (id:number) => {
-        if(!user) return
+        if(!user || !db) return
 
         const post:iPost = !posts[id].likes.includes(user.user_id) 
-            ?   {...posts[id], likes: [...posts[id].likes, user?.user_id]}
-            :   {...posts[id], likes: posts[id].likes.filter((like) => like !== user?.user_id)}
+            ?   {...posts[id], likes: [...posts[id].likes, user.user_id]}
+            :   {...posts[id], likes: posts[id].likes.filter((like) => like !== user.user_id)}
 
         const updatedPosts = posts.map((p, i) => id === i ? post  : p)
 
         setPosts(updatedPosts)
         setHomeData({...homeData, posts:updatedPosts})
 
-        db?.collection('posts').updateOne({_id:post._id}, {...post})
+        db.collection('posts').updateOne({_id:post._id}, {...post})
     }
 
     const reply = (comment:string, id:number) => {
-        if(!user) return 
+        if(!user || !db) return 
 
+        
         const repliedPosts = posts.map((post, i) => 
             id === i 
             ?   {...post, comments:[...post.comments, {comment, name:user.name, image:user.sign }]} 
@@ -323,8 +327,9 @@ export const App = () => {
 
         setPosts(repliedPosts)
         setHomeData({...homeData, posts:repliedPosts})
- 
-        // db?.collection('posts').inse(post)
+
+        const post:iPost = {...posts[id], comments:[...posts[id].comments, {comment, name:user.name, image:user.sign }]} 
+        db.collection('posts').updateOne({_id:post._id}, {...post})
     }
 
     return <div>
