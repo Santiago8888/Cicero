@@ -15,7 +15,7 @@ const Recording = ({ title, link, description }: iRecording) => {
 
             {
                 midScreen && 
-                <div className='media-content' style={{paddingBottom:'0.5rem', paddingRight:'1rem', marginLeft:'1rem'}}>
+                <div className='media-content' style={{paddingBottom:'0.5rem', paddingRight:'1rem', marginLeft:'1rem', width:400}}>
                     <div className='content'>
                         <div className='content' style={{color:'gray', marginTop:'1rem'}}> 
                             { description } 
