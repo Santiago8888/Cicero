@@ -271,15 +271,14 @@ export const App = () => {
         db?.collection('doubts').insertOne(doubt)
     }
 
-    const like = (id:string) => {
-        const questions = forum.questions.map((post, i) => 
-            id === String(i) 
-            ? {...post, likes: post.likes + 1 } 
-            : post
-        )
+    const like = (id:number) => {
+        const questions = forum.questions.map((post, i) => id === i ? {...post, likes: post.likes + 1 }  : post)
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
+
+        const question:iDoubt = forum.questions[id]
+        db?.collection('doubts').updateOne({_id:question._id}, {...question, likes:question.likes+1})
     }
 
     const post = (newPost:iPost) => {
