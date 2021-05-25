@@ -14,8 +14,8 @@ interface iInteraction {
     like(id:number):void
     submit(doubt:iDoubt):void
     post(post:iPost):void
-    likePost(id:string):void
-    reply(text:string, id:string):void
+    likePost(id:number):void
+    reply(text:string, id:number):void
 }
 
 export const Interaction = ({ user, forum, recordings, posts, submit, post, likePost, reply, like }: iInteraction) => {
