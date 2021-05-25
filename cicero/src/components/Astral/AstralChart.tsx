@@ -33,7 +33,7 @@ const colors:Color[] = ['#FFFEDD', '#FDEDF6', '#E0FCDF', '#DFFFF9']
 const house_colors = ['#E0FCDF', '#DFFFF9', '#FFFEDD', '#FDEDF6']
 
 type DeepColor = '#950193' | '#B16148' | '#1528B2' | '#054D1B'
-const deep_colors = ['#950193', '#B16148', '#1528B2', '#054D1B']
+const deep_colors = ['#950193', '#B16148', '#1528B2', '#054D1B'] // fire , earth , air , water
 const sign_names = [ 'Cap', 'Sag', 'Sco', 'Lib', 'Vir', 'Leo', 'Can', 'Gem', 'Tau', 'Ari', 'Pis', 'Aqu' ]
 const sign_imgs = sign_names.map(sign => `/signs/${sign}.png`) 
 

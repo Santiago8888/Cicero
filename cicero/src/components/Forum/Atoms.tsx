@@ -2,6 +2,7 @@
 
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties } from 'react'
+import { iUser } from '../../App'
 
 
 const descriptionStyle:CSSProperties = {
@@ -81,13 +82,18 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
 }
 
 
-interface iLikes { likes:number, like():void, style?:CSSProperties } 
-export const Likes = ({likes, like, style}: iLikes) => <div style={{width:80, ...style}}>
+interface iLikes { user:iUser, likes:string[], like():void, style?:CSSProperties } 
+export const Likes = ({user, likes, style, like}: iLikes) => <div style={{width:80, ...style}}>
     <a title="Like" onClick={like}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={20} style={{fill:'goldenrod'}}>
+        <svg 
+            width={20} 
+            viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" 
+            style={{fill:likes.includes(user.user_id) ? 'darkblue' : 'goldenrod'}}
+        >
             <path d="M0 15.878 l12-11.878 12 11.878-4 4.122-8-8-8 8-4-4.122z" />
         </svg>
     </a><br/>
 
-    <p style={{color:'darkblue', fontSize:24, fontWeight:600, marginTop:-10}}> { likes } </p>
+    <p style={{color:'darkblue', fontSize:24, fontWeight:600, marginTop:-10}}> { likes.length } </p>
 </div>

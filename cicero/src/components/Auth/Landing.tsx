@@ -3,8 +3,8 @@
 import { Elements } from '@stripe/react-stripe-js'
 import { useMediaQuery } from 'react-responsive'
 import { loadStripe } from '@stripe/stripe-js'
+import ReactPlayer from 'react-player/youtube'
 import { useEffect, useState } from "react"
-import Vimeo from '@u-wave/react-vimeo'
 
 import { iNewUser, SignUp } from './SignUp'
 import { Billing } from './Billing'
@@ -19,7 +19,14 @@ const Welcome = ({ click, reset }:iWelcome) => {
 
     return <div className="content" style={{textAlign:'center'}}>
         <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
-        <Vimeo video={'539430817'} width={midScreen ? 800 : !smallScreen ? 400 : 300 } height={midScreen ? 400 : !smallScreen ? 300 : 200 }/>
+        <div>
+            <ReactPlayer 
+                style={{margin:'auto'}}
+                width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
+                height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
+                url='https://www.youtube.com/watch?v=8u9sRggTos8' 
+            />
+        </div>
 
         <div style={{marginTop:!smallScreen ? '3rem' : 0}}>
             {

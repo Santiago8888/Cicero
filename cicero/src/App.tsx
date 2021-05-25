@@ -23,9 +23,10 @@ export interface iNatalChart { planets:iPlanet[], houses:number[] }
 export type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
 export interface iUser { 
     date:Date
-    name:string
     sign?:Sign
+    name:string
     email:string
+    user_id:string
     location:string
     current:iPosition
     progress:iPosition
@@ -97,7 +98,7 @@ export const App = () => {
         } catch(e){ return } // TODO: Handle on UI
 
         if(!app.currentUser) return
-        const { id } = app.currentUser
+        const { id:user_id } = app.currentUser
 
         const mongo = app.currentUser.mongoClient('mongodb-atlas')
         const db = mongo.db('Cicero')
@@ -106,11 +107,10 @@ export const App = () => {
         const current: iPosition = { unit:0, module:0, lesson:0 }
         const progress: iPosition = {unit:3, module:0, lesson:5}
         const natalChart = {planets:[], houses:[]}
-        const user:iUser = { name, email, date, location, quizFailures:0, current, progress, natalChart }
+        const user:iUser = { user_id, name, email, date, location, quizFailures:0, current, progress, natalChart }
         setUser(user)
 
-        await db.collection('users').insertOne({ user_id:id, ...user })
-        
+        await db.collection('users').insertOne(user)        
         const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
             date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
         }`
@@ -123,7 +123,7 @@ export const App = () => {
         const fullUser = {...user, sign, natalChart:{planets, houses}}
         setUser(fullUser)
 
-        db.collection('users').updateOne({ user_id:id }, {...fullUser, user_id:id})
+        db.collection('users').updateOne({ user_id }, {...fullUser, user_id})
     } 
 
     const updateUser = (user:iUser) => {
@@ -137,8 +137,9 @@ export const App = () => {
         if(!app) return
         await app.logIn(Credentials.emailPassword(email, password))
 
-        await app.currentUser?.refreshCustomData()
-        if(!app.currentUser?.customData.current) return
+        if(!app.currentUser) return
+        await app.currentUser.refreshCustomData()
+        if(!app.currentUser.customData.current) return
 
         const mongo = app.currentUser.mongoClient('mongodb-atlas')
         const db = mongo.db('Cicero')
@@ -263,61 +264,72 @@ export const App = () => {
 
     /*******************        DB Methods            *******************/
     const submit = (doubt:iDoubt) => {
-        const questions = [doubt, ...forum.questions]
+        if(!user || !db) return
+
+        const questions:iDoubt[] = [{...doubt, likes:[user.user_id as string]}, ...forum.questions]
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
 
-        db?.collection('doubts').insertOne(doubt)
+        db.collection('doubts').insertOne(doubt)
     }
 
-    const like = (id:string) => {
-        const questions = forum.questions.map((post, i) => 
-            id === String(i) 
-            ? {...post, likes: post.likes + 1 } 
-            : post
-        )
+    const like = (id:number) => {
+        if(!user || !db) return
+
+        const liked = forum.questions[id]
+        const question:iDoubt = !liked.likes.includes(user.user_id) 
+            ?   {...liked, likes: [...liked.likes, user.user_id]}
+            :   {...liked, likes: liked.likes.filter((like) => like !== user.user_id)}
+
+        const questions = forum.questions.map((q, i) => id === i ? question  : q)
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
+
+        db.collection('doubts').updateOne({_id:question._id}, {...question})
     }
 
     const post = (newPost:iPost) => {
-        if(!user) return 
-        const newPosts:iPost[] = [...posts, {...newPost, name:user.name, image:user.sign }]
+        if(!user || !db) return 
+        const newPosts:iPost[] = [{...newPost, name:user.name, image:user.sign }, ...posts]
  
         setPosts(newPosts)
         setHomeData({...homeData, posts:newPosts})
  
-        db?.collection('posts').insertOne(post)
+        db.collection('posts').insertOne(newPost)
     }
 
-    const likePost = (id:string) => {
-        const likedPosts = posts.map((post, i) => 
-            id === String(i) 
-            ? {...post, likes: post.likes + 1 } 
-            : post
-        )
+    const likePost = (id:number) => {
+        if(!user || !db) return
 
-        setPosts(likedPosts)
-        setHomeData({...homeData, posts:likedPosts})
- 
-        // db?.collection('posts').inse(post)
+        const post:iPost = !posts[id].likes.includes(user.user_id) 
+            ?   {...posts[id], likes: [...posts[id].likes, user.user_id]}
+            :   {...posts[id], likes: posts[id].likes.filter((like) => like !== user.user_id)}
+
+        const updatedPosts = posts.map((p, i) => id === i ? post  : p)
+
+        setPosts(updatedPosts)
+        setHomeData({...homeData, posts:updatedPosts})
+
+        db.collection('posts').updateOne({_id:post._id}, {...post})
     }
 
-    const reply = (comment:string, id:string) => {
-        if(!user) return 
+    const reply = (comment:string, id:number) => {
+        if(!user || !db) return 
 
+        
         const repliedPosts = posts.map((post, i) => 
-            id === String(i) 
+            id === i 
             ?   {...post, comments:[...post.comments, {comment, name:user.name, image:user.sign }]} 
             :   post
         )
 
         setPosts(repliedPosts)
         setHomeData({...homeData, posts:repliedPosts})
- 
-        // db?.collection('posts').inse(post)
+
+        const post:iPost = {...posts[id], comments:[...posts[id].comments, {comment, name:user.name, image:user.sign }]} 
+        db.collection('posts').updateOne({_id:post._id}, {...post})
     }
 
     return <div>

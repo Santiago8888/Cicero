@@ -5,10 +5,12 @@
 - [X] I can advance through the lessons.
 - [X] I can see my Natal Chart.
 - [X] My progress is saved.
-- [ ] YouTube videos are rendered.
-- [ ] Quizes are submitted.
-- [ ] I can submit a forum question.
-- [ ] I can see the recordings.
-- [ ] I can create a post.
-- [ ] I can like a post.
-- [ ] I can reply to a post. 
+- [X] YouTube videos are rendered.
+- [X] Quizes are submitted.
+- [X] I can submit a forum question.
+- [X] I can upvote a qustion.
+- [X] I can see the recordings.
+- [X] I can create a post.
+- [X] I can like a post.
+- [X] I can reply to a post. 
+- [ ] Responsiveness.

@@ -6,6 +6,20 @@ import { planets, houses } from './chart'
 import { iUser } from "../App"
 
 
+export const defaultUser:iUser = { 
+    sign:'Leo',
+    user_id:'0',
+    quizFailures:0,
+    name:'Santiago M.',
+    location:'Mexico City',
+    email:'test@branding.gq', 
+    date:new Date(1988,7,17,12,37),
+    natalChart:{ planets, houses },
+    current:{unit:3, module:0, lesson:1}, 
+    progress:{unit:3, module:0, lesson:5}, 
+}
+
+
 export const lesson: iLesson = { 
     title:'Quiz', 
     description:'El signo solar indica el caracter, la escencia y misión de la persona.', 
@@ -24,21 +38,22 @@ export const lesson: iLesson = {
         ]
     }],
     min:1,
-    link:'439429304'
+    link:'https://www.youtube.com/watch?v=8u9sRggTos8'
 }
 
 
 export const Forum:iForum = { 
+    user:defaultUser,
     title:'Portal de Dudas', 
     description:'Comparte las dudas y preguntas que quieras que sean respondidas en la sesión semanal.', 
     questions:[{ 
         question: '¿Qué significa cuando el Sol está en Leo?', 
         details: 'Mi carta tiene el Sol en Leo y no se que significa.',
-        likes: 2
+        likes: []
     }, { 
         question: 'Cómo afecta la Luna en Cancer mis emociones?', 
         details: 'Mi carta tiene la Luna en Cancer cual es el efecto en mis emociones.',
-        likes: 0
+        likes: []
     }] 
 }
 
@@ -48,11 +63,11 @@ export const Recordings:iRecordings = {
     description:'Todos los Miércoles nos reunimos por Zoom para resolver sus dudas, estás son las grabaciones de la anteriores.', 
     recordings:[{ 
         title: 'Marzo 28: El Sol y los Signos', 
-        link:'439429304', 
+        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
         description: 'Aclaramos lo que signfica tu signo solar, la casa y como trabajar las energias.' 
     },  { 
         title: 'Abril 3: La Luna y el Karma', 
-        link:'539430817', 
+        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
         description: 'Como puedes utilizar el poder de manifestación de las emociones para materializar un presente abundante.' 
     }] 
 }
@@ -70,18 +85,6 @@ const lessons:iLesson[] = [
     lesson
 ]
 
-export const defaultUser:iUser = { 
-    sign:'Leo',
-    quizFailures:0,
-    name:'Santiago M.',
-    location:'Mexico City',
-    email:'test@branding.gq', 
-    date:new Date(1988,7,17,12,37),
-    natalChart:{ planets, houses },
-    current:{unit:3, module:0, lesson:1}, 
-    progress:{unit:3, module:0, lesson:5}, 
-}
-
 export const Posts:iPost[] = [{
     name:'Alice',
     title:'Title', 
@@ -90,7 +93,7 @@ export const Posts:iPost[] = [{
     comments:[
         {name:'Beth', image:'Aqu', comment:'Test'} 
     ],
-    likes:0
+    likes: []
 }]
 
 

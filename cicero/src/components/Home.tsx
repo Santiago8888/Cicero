@@ -28,10 +28,10 @@ interface iHome {
     submit(doubt:iDoubt):void
     setWelcome():void
 
-    like(id:string):void
+    like(id:number):void
     post(post:iPost):void
-    likePost(id:string):void
-    reply(text:string, id:string):void
+    likePost(id:number):void
+    reply(text:string, id:number):void
 }
 
 export const Home = ({
@@ -58,14 +58,15 @@ export const Home = ({
     return user
         ?   forum || recordings || posts 
             ?   <Interaction 
+                    user={user} 
+                    posts={posts} 
                     forum={forum} 
                     recordings={recordings} 
-                    posts={posts} 
-                    like={like}
-                    submit={submit}
-                    post={post}
-                    reply={reply}
                     likePost={likePost}
+                    submit={submit}
+                    reply={reply}
+                    like={like}
+                    post={post}
                 />
             :   <Content 
                     user={user} 
