@@ -1,10 +1,10 @@
-import Vimeo from '@u-wave/react-vimeo'
-import { iUser } from '../../App'
 import { useMediaQuery } from 'react-responsive'
+import ReactPlayer from 'react-player/youtube'
+import { iUser } from '../../App'
 
-const defaultVideo = ''
+
 interface iVideo { user:iUser, title:string, link?:string, description:string, next():void, approve():boolean | void}
-export const Video = ({ user, title, link=defaultVideo, description, next, approve }: iVideo) => {
+export const Video = ({ user, title, link='', description, next, approve }: iVideo) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
@@ -21,12 +21,16 @@ export const Video = ({ user, title, link=defaultVideo, description, next, appro
             }}
         > { description } </h3>
 
-        <Vimeo 
-            video={link} 
-            onEnd={approve} 
-            width={midScreen ? 800 : !smallScreen ? 540 : 300 } 
-            height={midScreen ? 400 : !smallScreen ? 300 : 200 }
-        />
+        <div style={{margin:'2.5em 0px'}}>
+            <ReactPlayer 
+                url={link} 
+                onEnded={approve}
+                style={{margin:'auto'}}
+                width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
+                height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
+            />
+        </div>        
+
         <div style={{ marginTop:'3rem', width: midScreen ? 800 : 320, margin:'auto'}}>
             <button
                 onClick={next} 
