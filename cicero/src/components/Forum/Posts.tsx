@@ -3,6 +3,8 @@
 import { CSSProperties, useEffect, useState } from "react"
 import { Header, Modal, Likes } from "./Atoms"
 import { iUser, Sign } from '../../App'
+import { ObjectID } from 'bson'
+
 
 const monthDict = (month:number) => ({
     0: 'Enero',
@@ -49,8 +51,8 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
 </div>
 
 
-export interface iPost { id?:string, title:string, name:string, image?:Sign, detail:string, likes:string[], comments:iComment[] }
-interface IPost extends iPost { id:string, user:iUser, reply(text:string, postId:string):void, like(postId:string):void }
+export interface iPost { _id?:ObjectID, id?:number, title:string, name:string, image?:Sign, detail:string, likes:string[], comments:iComment[] }
+interface IPost extends iPost { id:number, user:iUser, reply(text:string, postId:number):void, like(postId:number):void }
 const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
@@ -58,7 +60,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
     useEffect(() => {}, [comments])
 
-    const comment = (text:string, id:string) => {
+    const comment = (text:string, id:number) => {
         reply(text, id)
         setCanComment(false)
         setShowComments(true)
@@ -157,8 +159,8 @@ interface iPosts {
     user:iUser
     posts:iPost[]
     post(post:iPost):void
-    like(id:string):void
-    reply(text:string, id:string):void
+    like(id:number):void
+    reply(text:string, id:number):void
 }
 
 const emptyPost = { title:'', name:'', detail:'', likes:[], comments:[] }
@@ -211,6 +213,6 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
             </div>
         </Modal>
 
-        { posts.map((post, i) => <Post id={String(i)} user={user} {...post} reply={reply} like={like} key={i}/>) } 
+        { posts.map((post, i) => <Post id={i} user={user} {...post} reply={reply} like={like} key={i}/>) } 
     </div>
 }
