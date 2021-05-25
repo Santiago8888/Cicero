@@ -13,6 +13,7 @@ import { Home } from './components/Home'
 import { App as RealmApp, Credentials } from 'realm-web'
 import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
+import amplitude from 'amplitude-js'
 
 import 'bulma/css/bulma.css'
 import axios from 'axios'
@@ -85,6 +86,9 @@ export const App = () => {
         }
 
         connectMongo()
+
+        amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
+        amplitude.getInstance().logEvent('VISIT_ASTRO')
     }, [])
 
 
