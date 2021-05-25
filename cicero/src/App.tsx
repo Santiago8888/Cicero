@@ -23,9 +23,10 @@ export interface iNatalChart { planets:iPlanet[], houses:number[] }
 export type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
 export interface iUser { 
     date:Date
-    name:string
     sign?:Sign
+    name:string
     email:string
+    user_id:string
     location:string
     current:iPosition
     progress:iPosition
@@ -97,7 +98,7 @@ export const App = () => {
         } catch(e){ return } // TODO: Handle on UI
 
         if(!app.currentUser) return
-        const { id } = app.currentUser
+        const { id:user_id } = app.currentUser
 
         const mongo = app.currentUser.mongoClient('mongodb-atlas')
         const db = mongo.db('Cicero')
@@ -106,11 +107,10 @@ export const App = () => {
         const current: iPosition = { unit:0, module:0, lesson:0 }
         const progress: iPosition = {unit:3, module:0, lesson:5}
         const natalChart = {planets:[], houses:[]}
-        const user:iUser = { name, email, date, location, quizFailures:0, current, progress, natalChart }
+        const user:iUser = { user_id, name, email, date, location, quizFailures:0, current, progress, natalChart }
         setUser(user)
 
-        await db.collection('users').insertOne({ user_id:id, ...user })
-        
+        await db.collection('users').insertOne(user)        
         const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
             date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
         }`
@@ -123,7 +123,7 @@ export const App = () => {
         const fullUser = {...user, sign, natalChart:{planets, houses}}
         setUser(fullUser)
 
-        db.collection('users').updateOne({ user_id:id }, {...fullUser, user_id:id})
+        db.collection('users').updateOne({ user_id }, {...fullUser, user_id})
     } 
 
     const updateUser = (user:iUser) => {
@@ -263,7 +263,7 @@ export const App = () => {
 
     /*******************        DB Methods            *******************/
     const submit = (doubt:iDoubt) => {
-        const questions = [doubt, ...forum.questions]
+        const questions:iDoubt[] = [{...doubt, likes:[user?.user_id as string]}, ...forum.questions]
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
@@ -272,13 +272,19 @@ export const App = () => {
     }
 
     const like = (id:number) => {
-        const questions = forum.questions.map((post, i) => id === i ? {...post, likes: post.likes + 1 }  : post)
+        if(!user) return
+
+        const liked = forum.questions[id]
+        const question:iDoubt = !liked.likes.includes(user?.user_id) 
+            ?   {...liked, likes: [...liked.likes, user?.user_id]}
+            :   {...liked, likes: liked.likes.filter((like) => like !== user?.user_id)}
+
+        const questions = forum.questions.map((q, i) => id === i ? question  : q)
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
 
-        const question:iDoubt = forum.questions[id]
-        db?.collection('doubts').updateOne({_id:question._id}, {...question, likes:question.likes+1})
+        db?.collection('doubts').updateOne({_id:question._id}, {...question})
     }
 
     const post = (newPost:iPost) => {
@@ -294,7 +300,8 @@ export const App = () => {
     const likePost = (id:string) => {
         const likedPosts = posts.map((post, i) => 
             id === String(i) 
-            ? {...post, likes: post.likes + 1 } 
+            // ? {...post, likes: post.likes + 1 } 
+            ? {...post, likes: [] } 
             : post
         )
 
