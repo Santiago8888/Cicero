@@ -48,11 +48,11 @@ export const Recordings:iRecordings = {
     description:'Todos los Miércoles nos reunimos por Zoom para resolver sus dudas, estás son las grabaciones de la anteriores.', 
     recordings:[{ 
         title: 'Marzo 28: El Sol y los Signos', 
-        link:'439429304', 
+        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
         description: 'Aclaramos lo que signfica tu signo solar, la casa y como trabajar las energias.' 
     },  { 
         title: 'Abril 3: La Luna y el Karma', 
-        link:'539430817', 
+        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
         description: 'Como puedes utilizar el poder de manifestación de las emociones para materializar un presente abundante.' 
     }] 
 }
