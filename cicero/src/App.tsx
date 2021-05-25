@@ -112,7 +112,7 @@ export const App = () => {
         await db.collection('users').insertOne({ user_id:id, ...user })
         
         const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
-            date.getMonth()}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
+            date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
         }`
 
         const { data: { houses, planets } } =  await axios.get(`/.netlify/functions/astro-chart${chartParams}`)
