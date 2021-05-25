@@ -297,25 +297,26 @@ export const App = () => {
         db?.collection('posts').insertOne(newPost)
     }
 
-    const likePost = (id:string) => {
-        const likedPosts = posts.map((post, i) => 
-            id === String(i) 
-            // ? {...post, likes: post.likes + 1 } 
-            ? {...post, likes: [] } 
-            : post
-        )
+    const likePost = (id:number) => {
+        if(!user) return
 
-        setPosts(likedPosts)
-        setHomeData({...homeData, posts:likedPosts})
- 
-        // db?.collection('posts').inse(post)
+        const post:iPost = !posts[id].likes.includes(user.user_id) 
+            ?   {...posts[id], likes: [...posts[id].likes, user?.user_id]}
+            :   {...posts[id], likes: posts[id].likes.filter((like) => like !== user?.user_id)}
+
+        const updatedPosts = posts.map((p, i) => id === i ? post  : p)
+
+        setPosts(updatedPosts)
+        setHomeData({...homeData, posts:updatedPosts})
+
+        db?.collection('posts').updateOne({_id:post._id}, {...post})
     }
 
-    const reply = (comment:string, id:string) => {
+    const reply = (comment:string, id:number) => {
         if(!user) return 
 
         const repliedPosts = posts.map((post, i) => 
-            id === String(i) 
+            id === i 
             ?   {...post, comments:[...post.comments, {comment, name:user.name, image:user.sign }]} 
             :   post
         )
