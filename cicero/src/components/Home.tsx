@@ -58,14 +58,15 @@ export const Home = ({
     return user
         ?   forum || recordings || posts 
             ?   <Interaction 
+                    user={user} 
+                    posts={posts} 
                     forum={forum} 
                     recordings={recordings} 
-                    posts={posts} 
-                    like={like}
-                    submit={submit}
-                    post={post}
-                    reply={reply}
                     likePost={likePost}
+                    submit={submit}
+                    reply={reply}
+                    like={like}
+                    post={post}
                 />
             :   <Content 
                     user={user} 
