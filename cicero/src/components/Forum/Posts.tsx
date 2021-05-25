@@ -167,7 +167,7 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
 
     const submit = () => {
-        post(newPost)
+        post({...newPost, likes:[user.user_id], image:user.sign })
         setActive(false)
         setNewPost(emptyPost)
     }
