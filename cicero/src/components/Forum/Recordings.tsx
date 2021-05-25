@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive'
-import Vimeo from '@u-wave/react-vimeo'
+import ReactPlayer from 'react-player/youtube'
 
 interface iRecording { title:string, link:string, description:string }
 const Recording = ({ title, link, description }: iRecording) => {
@@ -11,7 +11,7 @@ const Recording = ({ title, link, description }: iRecording) => {
         </p>
 
         <article className='media' style={{marginBottom:0}}>
-            <Vimeo video={link} width={400} height={200} style={midScreen ? {} : {margin:'auto'}}/>
+            <ReactPlayer controls url={link} width={400} height={200} style={midScreen ? {} : {margin:'auto'}} />
 
             {
                 midScreen && 
@@ -22,7 +22,6 @@ const Recording = ({ title, link, description }: iRecording) => {
                         </div>
                     </div>
                 </div>
-
             }
         </article>
 
