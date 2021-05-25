@@ -7,9 +7,10 @@
 - [X] My progress is saved.
 - [X] YouTube videos are rendered.
 - [X] Quizes are submitted.
-- [ ] I can submit a forum question.
-- [ ] I can upvote a qustion.
+- [X] I can submit a forum question.
+- [X] I can upvote a qustion.
 - [ ] I can see the recordings.
 - [ ] I can create a post.
 - [ ] I can like a post.
 - [ ] I can reply to a post. 
+- [ ] Responsiveness.
