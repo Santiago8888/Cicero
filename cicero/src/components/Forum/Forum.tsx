@@ -1,8 +1,8 @@
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from "react"
+import { iUser } from '../../App'
 import { Likes } from "./Atoms"
 import { ObjectID } from 'bson'
-import { iUser } from '../../App'
 
 
 export interface iDoubt { _id?:ObjectID, question:string, details:string, likes:string[] }
