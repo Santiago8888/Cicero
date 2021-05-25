@@ -74,6 +74,7 @@ export const defaultUser:iUser = {
     sign:'Leo',
     quizFailures:0,
     name:'Santiago M.',
+    location:'Mexico City',
     email:'test@branding.gq', 
     date:new Date(1988,7,17,12,37),
     natalChart:{ planets, houses },
