@@ -1,9 +1,10 @@
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from "react"
 import { Likes } from "./Atoms"
+import { ObjectID } from 'bson'
 
 
-export interface iDoubt { question:string, details:string, likes:number }
+export interface iDoubt { _id?:ObjectID, question:string, details:string, likes:number }
 const doubtStyle:CSSProperties = {maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
 
 interface IDoubt extends iDoubt { like():void } 
@@ -69,7 +70,7 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 
 
 export interface iForum { title:string, description:string, questions:iDoubt[] }
-interface IForum extends iForum { submit(question:iDoubt):void, like(id:string):void }
+interface IForum extends iForum { submit(question:iDoubt):void, like(id:number):void }
 export const Forum = ({ title, description, questions, submit, like }: IForum) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [isActive, setActive] = useState(false)
@@ -111,7 +112,7 @@ export const Forum = ({ title, description, questions, submit, like }: IForum) =
         
         <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
-        { questions.map((q, i) => <Doubt  {...q} like={() => like(String(i))} key={i}/> ) }
+        { questions.map((q, i) => <Doubt  {...q} like={() => like(i)} key={i}/> ) }
 
         <Modal 
             isActive={isActive} 
