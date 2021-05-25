@@ -1,6 +1,6 @@
 import { useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
 import { StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
-import { useEffect, useState, useMemo, FormEvent } from "react"
+import { useState, useMemo, FormEvent } from "react"
 import { useMediaQuery } from 'react-responsive'
 
 import { iLanding } from './Landing'

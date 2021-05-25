@@ -10,11 +10,12 @@ import { iLoginInput } from './components/Auth/Login'
 import { iNewUser } from './components/Auth/SignUp'
 import { Home } from './components/Home'
 
-import { App as RealmApp, Credentials, User } from 'realm-web'
+import { App as RealmApp, Credentials } from 'realm-web'
 import { useMediaQuery } from 'react-responsive'
 import { useState, useEffect } from 'react'
 
 import 'bulma/css/bulma.css'
+import axios from 'axios'
 import './App.css'
 
 
@@ -25,6 +26,7 @@ export interface iUser {
     name:string
     sign?:Sign
     email:string
+    location:string
     current:iPosition
     progress:iPosition
     quizFailures:number
@@ -56,7 +58,6 @@ export const App = () => {
     const [ isWelcome, setWelcome ] = useState(true)
 
     const [ user, setUser ] = useState<iUser>()
-    const [ mongoUser, setMongoUser ] = useState<User|null>()
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
 
@@ -71,90 +72,113 @@ export const App = () => {
             const app = new RealmApp({ id: REALM_APP_ID })
             setApp(app)
 
-            if(app.currentUser) setMongoUser(app.currentUser)
+            await app.currentUser?.refreshCustomData()
+            if(!app.currentUser?.customData.current) return
+
+            const mongo = app.currentUser.mongoClient('mongodb-atlas')
+            const db = mongo.db('Cicero') 
+            setDB(db)
+
+            const user = await db.collection('users').findOne({ user_id:app.currentUser.id })
+            setUser(user)
         }
+
         connectMongo()
     }, [])
 
-    useEffect(() => {
-        if(!mongoUser) return
-
-        const fetchData = async() => {
-            const user = mongoUser.customData
-            setUser(user)
-    
-            const mongo = mongoUser.mongoClient('mongodb-atlas')
-            const db = mongo.db('Cicero')
-            setDB(db)
-
-            const recordings = await db.collection('recordings').find({})
-            setRecordings({...Recordings, recordings:recordings.sort(() => -1)})
-
-            const doubts = await db.collection('doubts').find({})
-            setForum({...forum, questions:doubts.sort(() => -1)})
-
-            const posts = await db.collection('posts').find({})
-            setPosts(posts.sort(() => -1))
-        }
-
-        fetchData()
-
-    }, [mongoUser])
-
 
     /**************************        Auth            ***************************/
-    const createUser = async({ name, email, password, date }:iNewUser) => {
+    const createUser = async({ name, email, password, date, location }:iNewUser) => {
         if(!app) return
 
-        await app.emailPasswordAuth.registerUser(email, password)
-        await app.logIn(Credentials.emailPassword(email, password))
+        try{
+            await app.emailPasswordAuth.registerUser(email, password)
+            await app.logIn(Credentials.emailPassword(email, password))    
+        } catch(e){ return } // TODO: Handle on UI
+
         if(!app.currentUser) return
         const { id } = app.currentUser
-        setMongoUser(app.currentUser)
 
         const mongo = app.currentUser.mongoClient('mongodb-atlas')
         const db = mongo.db('Cicero')
+        setDB(db)
 
         const current: iPosition = { unit:0, module:0, lesson:0 }
         const progress: iPosition = {unit:3, module:0, lesson:5}
         const natalChart = {planets:[], houses:[]}
-        const user:iUser = { name, email, date, quizFailures:0, current, progress, natalChart } 
+        const user:iUser = { name, email, date, location, quizFailures:0, current, progress, natalChart }
         setUser(user)
 
         await db.collection('users').insertOne({ user_id:id, ...user })
+        
+        const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
+            date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
+        }`
 
-        const { planets, houses } =  await app.currentUser.functions.getPlanets(date)
+        const { data: { houses, planets } } =  await axios.get(`/.netlify/functions/astro-chart${chartParams}`)
+        console.log(houses, planets)
+
         const sun = planets.find(({name}:{name:string}) => name === 'Sun')
         const sign = mapSign(sun)
         const fullUser = {...user, sign, natalChart:{planets, houses}}
         setUser(fullUser)
 
-        await db.collection('users').updateOne({ user_id:id }, fullUser)
+        db.collection('users').updateOne({ user_id:id }, {...fullUser, user_id:id})
     } 
 
     const updateUser = (user:iUser) => {
-        if(!app?.currentUser) return
+        if(!app?.currentUser || !db) return
 
         setUser(user)
-        db?.collection('users').updateOne({ user_id:app.currentUser.id }, user)
+        db.collection('users').updateOne({ user_id:app.currentUser.id }, {...user, user_id:app.currentUser.id})
     } 
 
     const login = async({ email, password }:iLoginInput) => {
         if(!app) return
         await app.logIn(Credentials.emailPassword(email, password))
-        setMongoUser(app.currentUser)
+
+        await app.currentUser?.refreshCustomData()
+        if(!app.currentUser?.customData.current) return
+
+        const mongo = app.currentUser.mongoClient('mongodb-atlas')
+        const db = mongo.db('Cicero')
+        setDB(db)
+
+        const user = await db.collection('users').findOne({ user_id:app.currentUser.id })
+        setUser(user)
     }
 
 
     /*******************        Navigation            *******************/
-    const clickNavbar = (item:NavbarItem) => {
-        if (item === 'Login') return setLogin(true)
-
-        if (item === 'Forum') return setHomeData({...homeData, forum, recordings:undefined, posts:undefined })
-        if (item === 'Recordings') return setHomeData({...homeData, forum:undefined, recordings, posts:undefined})
-        if (item === 'Posts') return setHomeData({...homeData, forum:undefined, recordings:undefined, posts})
-
+    const clickNavbar = async(item:NavbarItem) => {
         if(item === 'Home') reset()
+        if (item === 'Login') return setLogin(true)
+        if(!db) return
+
+        if (item === 'Forum') {
+            setHomeData({...homeData, forum, recordings:undefined, posts:undefined })
+            const doubts = await db.collection('doubts').find({})
+            const fetchedForum = {...Forum, questions:doubts.sort(() => -1)}
+
+            setForum(fetchedForum)
+            return setHomeData({...homeData, forum:fetchedForum, recordings:undefined, posts:undefined })
+
+        } else if (item === 'Recordings'){ 
+            setHomeData({...homeData, forum:undefined, recordings, posts:undefined})
+
+            const records = await db.collection('recordings').find({})
+            const fetchedRecordings = {...Recordings, recordings:records.sort(() => -1)}
+            setRecordings(fetchedRecordings)
+            return setHomeData({...homeData, forum:undefined, recordings:fetchedRecordings, posts:undefined})
+
+        } else if (item === 'Posts') {   
+            setHomeData({...homeData, forum:undefined, recordings:undefined, posts})
+
+            const fetchedPosts = await db.collection('posts').find({})
+            setPosts(fetchedPosts.sort(() => -1))
+            return setHomeData({...homeData, forum:undefined, recordings:undefined, posts:fetchedPosts})
+        }
+
     }
 
     const reset = () => {
@@ -324,12 +348,10 @@ export const App = () => {
                     }}
                 >
                     <Home 
-                        app={app}
                         user={user}
                         {...homeData} 
                         isLogin={isLogin} 
                         isWelcome={isWelcome}
-                        lesson={Units[user?.current.unit || 0].modules[user?.current.module || 0].lessons[user?.current.lesson || 0]}
                         setWelcome={() => setWelcome(false)}
                         createUser={createUser}
                         likePost={likePost}

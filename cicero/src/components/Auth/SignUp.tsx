@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { iNatalChart } from "../../App"
 
 
-export interface iNewUser {name:string, email:string, password:string, date:Date, natalChart?:iNatalChart }
+export interface iNewUser {name:string, email:string, password:string, date:Date, location:string, natalChart?:iNatalChart }
 export interface iSignUp { signUp(newUser:iNewUser):void }
 export const SignUp = ({ signUp }: iSignUp) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
@@ -15,10 +15,11 @@ export const SignUp = ({ signUp }: iSignUp) => {
     const [email, setEmail] = useState('')
     const [date, setDate] = useState<Date>()
     const [password, setPassword] = useState('')
+    const [location, setLocation] = useState('')
 
     const keyPress = ({key}:{key:string}) => key === 'Enter' 
-        && date && name && email.match(/^\S+@\S+\.\S+$/)  && password.length >= 6 
-            ? signUp({name, email, password, date}) : null
+        && location && date && name && email.match(/^\S+@\S+\.\S+$/)  && password.length >= 6 
+            ? signUp({name, email, password, date, location}) : null
 
     return <div className="content">
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
@@ -92,11 +93,23 @@ export const SignUp = ({ signUp }: iSignUp) => {
                     placeholderText={'Fecha y Hora de Nacimiento'}
                 />                
 
+                <div className="field" style={{marginTop:'1.75rem', marginBottom:0}}>
+                    <input 
+                        type="text" 
+                        value={location} 
+                        className="input" 
+                        onKeyPress={keyPress}
+                        placeholder={'Ciudad y País de Nacimiento'}
+                        style={{width: !smallScreen ? 360 : 240}}
+                        onChange={({target:{value}})=> setLocation(value)}
+                    />
+                </div>
+
                 <div style={{ width: !smallScreen ? 600 : 300, margin:'3rem auto 1rem', textAlign:'center'}}>
                     <button
                         className='button is-link' 
-                        onClick={() => date && signUp({name, email, password, date})}
-                        disabled={!name || !email.match(/^\S+@\S+\.\S+$/) || password.length < 6 || !date}
+                        onClick={() => date && signUp({name, email, password, date, location})}
+                        disabled={!name || !email.match(/^\S+@\S+\.\S+$/) || password.length < 6 || !date || !location}
                         style={{
                             borderRadius:12, 
                             width: !smallScreen ? 360 : 240, 

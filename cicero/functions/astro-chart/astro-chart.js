@@ -1,10 +1,9 @@
-// node -r esm api
-
-import swisseph from 'swisseph'
-import axios from 'axios'
-
+const swisseph = require('swisseph')
+const axios = require('axios')
 require('dotenv').config()
 
+const { location_key } = process.env;
+const { timezone_key } = process.env;
 
 swisseph.swe_set_ephe_path (__dirname + './../../ephe')
 const flag = swisseph.SEFLG_SPEED
@@ -27,23 +26,29 @@ const planets_objs = [ SUN, MOON, MERCURY, VENUS, MARS, JUPITER, SATURN, URANUS,
 const planet_names = [ 'Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'North Node' ]
 
 
-const timeRoot = `http://api.timezonedb.com/v2.1/get-time-zone`
-const timeParams = `format=json&by=position&`
-const getTimeZone = async({ lat, lng, time }) => {
-    const url = `${timeRoot}?key=${process.env.timezone_key}&${timeParams}lat=${lat}&lng=${lng}&time=${time}`
-    const { data } = await axios.get(url)
-    return data.gmtOffset
-}
-
 const locationRoot = 'http://api.positionstack.com/v1/forward'
 const getCoordinates = async(query) => {
-    const url = `${locationRoot}?access_key=${process.env.location_key}&query=${query}`
+    const url = `${locationRoot}?access_key=${location_key}&query=${query}`
     const { data } = await axios.get(url)
     return { lat:data.data[0].latitude, lng:data.data[0].longitude }
 }
 
+const timeRoot = `http://api.timezonedb.com/v2.1/get-time-zone`
+const timeParams = `format=json&by=position&`
+const getTimeZone = async({ lat, lng, time }) => {
+    const url = `${timeRoot}?key=${timezone_key}&${timeParams}lat=${lat}&lng=${lng}&time=${time}`
+    const { data } = await axios.get(url)
+    return data.gmtOffset
+}
 
-const getChart = async({ year, month, day, hour=12, minute=0, query='' }) => {
+exports.handler = async ({ queryStringParameters }, context) => {
+    const { query } = queryStringParameters
+	const year = Number(queryStringParameters.year)
+	const month = Number(queryStringParameters.month)
+	const day = Number(queryStringParameters.day)
+	const hour = Number(queryStringParameters.hour)
+	const minute = Number(queryStringParameters.minute)
+  
     const { lat, lng } = await getCoordinates(query)
     console.log(lat, lng)
 
@@ -75,15 +80,12 @@ const getChart = async({ year, month, day, hour=12, minute=0, query='' }) => {
     
 
     const { house: houses } = swisseph.swe_houses(jul_day, lat, lng, 'P')
-
-    console.log(planets)
-    console.log(houses)
-    return { planets, houses }
-}
-
-
-
-const Santiago = { year:1988, month:8, day:17, hour:18, minute:37, query:'Mexico City'}
-const Test1 = { year:1997, month:8, day:17, hour:19, minute:37, query:'Puebla, Mexico'}
-const Test2 = { year:1997, month:8, day:18, hour:7, minute:37, query:'Puebla, Mexico'}
-getChart(Santiago).catch(console.log)
+	
+	return {
+        statusCode: 200,
+        body: JSON.stringify({ 
+            planets,
+            houses 
+        }),
+    };
+};
