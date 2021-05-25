@@ -30,8 +30,8 @@ interface iHome {
 
     like(id:number):void
     post(post:iPost):void
-    likePost(id:string):void
-    reply(text:string, id:string):void
+    likePost(id:number):void
+    reply(text:string, id:number):void
 }
 
 export const Home = ({
