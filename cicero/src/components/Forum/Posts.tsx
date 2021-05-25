@@ -2,7 +2,7 @@
 
 import { CSSProperties, useEffect, useState } from "react"
 import { Header, Modal, Likes } from "./Atoms"
-import { Sign } from '../../App'
+import { iUser, Sign } from '../../App'
 
 const monthDict = (month:number) => ({
     0: 'Enero',
@@ -49,9 +49,9 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
 </div>
 
 
-export interface iPost { id?:string, title:string, name:string, image?:Sign, detail:string, likes:number, comments:iComment[] }
-interface IPost extends iPost { id:string, reply(text:string, postId:string):void, like(postId:string):void }
-const Post = ({ id, title, name, image, detail, likes, comments, reply, like }: IPost) => {
+export interface iPost { id?:string, title:string, name:string, image?:Sign, detail:string, likes:string[], comments:iComment[] }
+interface IPost extends iPost { id:string, user:iUser, reply(text:string, postId:string):void, like(postId:string):void }
+const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -66,7 +66,7 @@ const Post = ({ id, title, name, image, detail, likes, comments, reply, like }: 
     }
     
     return <div style={{display:'flex', marginBottom:64}}>
-        <Likes likes={likes} like={() => like(id)}/>
+        <Likes user={user} likes={likes} like={() => like(id)}/>
 
         <div className="card" style={{textAlign:'left', width:'100%'}}>
             <header className="card-header" style={{backgroundColor:'goldenrod'}}>
@@ -154,14 +154,15 @@ const Post = ({ id, title, name, image, detail, likes, comments, reply, like }: 
 
 
 interface iPosts { 
+    user:iUser
     posts:iPost[]
     post(post:iPost):void
     like(id:string):void
     reply(text:string, id:string):void
 }
 
-const emptyPost = { title:'', name:'', detail:'', likes:0, comments:[] }
-export const Posts = ({posts, post, reply, like}: iPosts) => {
+const emptyPost = { title:'', name:'', detail:'', likes:[], comments:[] }
+export const Posts = ({user, posts, post, reply, like}: iPosts) => {
     const [ isActive, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
 
@@ -210,6 +211,6 @@ export const Posts = ({posts, post, reply, like}: iPosts) => {
             </div>
         </Modal>
 
-        { posts.map((post, i) => <Post id={String(i)} {...post} reply={reply} like={like} key={i}/>) } 
+        { posts.map((post, i) => <Post id={String(i)} user={user} {...post} reply={reply} like={like} key={i}/>) } 
     </div>
 }
