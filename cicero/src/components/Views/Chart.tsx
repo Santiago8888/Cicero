@@ -1,5 +1,6 @@
 import { AstralChart, Planet } from '../Astral/AstralChart'
 import { useMediaQuery } from 'react-responsive'
+import { MiniChart } from '../Astral/MiniChart'
 import { iUser } from '../../App'
 import { useEffect } from 'react'
 
@@ -7,6 +8,8 @@ import { useEffect } from 'react'
 interface iChart { user:iUser, title:string, description:string, planet?:Planet, approve():boolean | void, next():void }
 export const Chart = ({ user:{natalChart:{planets, houses}}, title, description, planet, next, approve }: iChart) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
+    const smallScreen = useMediaQuery({ query: '(max-width: 680px)' })
+
     useEffect(() => { approve() }, [approve])
 
     return <div className="content">
@@ -22,10 +25,11 @@ export const Chart = ({ user:{natalChart:{planets, houses}}, title, description,
             }}
         > { description } </h3>
 
-        <AstralChart 
-            planets={planet ? planets.filter(({ name }) => name === planet) : planets} 
-            houses={houses}
-        />
+        {
+            !smallScreen
+            ?   <AstralChart planets={planet ? planets.filter(({ name }) => name === planet) : planets} houses={houses}/>
+            :   <MiniChart planets={planet ? planets.filter(({ name }) => name === planet) : planets} houses={houses}/>            
+        }
 
         <div style={{ marginTop:'3rem', width: midScreen ? 800 : 320, margin:'auto'}}>
             <button

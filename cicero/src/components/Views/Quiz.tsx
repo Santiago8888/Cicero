@@ -80,6 +80,7 @@ interface iQuiz {
     user:iUser
 }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
+    const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [isActive, setActive] = useState(false)
@@ -115,21 +116,24 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
                 fontSize: '1.25em',
                 textAlign: 'left',
                 fontWeight: 500,
-                width: !smallScreen ? 800 : 320        
+                width: midScreen ? 660 : 320        
             }}
         > { description } </h3>
 
-        {
-            questions.map((q, i) => 
-                <Question 
-                    {...q}
-                    key={i} 
-                    index={i}
-                    value={values[i]}
-                    select={(idx, i) => setValues({...values, [idx]:i})}
-                />
-            )
-        }
+        <div style={{ width: midScreen ? 660 : !smallScreen ? 450 : 360, margin:'auto' }}>
+            {
+                questions.map((q, i) => 
+                    <Question 
+                        {...q}
+                        key={i} 
+                        index={i}
+                        value={values[i]}
+                        select={(idx, i) => setValues({...values, [idx]:i})}
+                    />
+                )
+            }
+        </div>
+
 
         <button 
             className='button is-link' 
