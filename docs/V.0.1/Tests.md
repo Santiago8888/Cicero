@@ -9,8 +9,8 @@
 - [X] Quizes are submitted.
 - [X] I can submit a forum question.
 - [X] I can upvote a qustion.
-- [ ] I can see the recordings.
-- [ ] I can create a post.
+- [X] I can see the recordings.
+- [X] I can create a post.
 - [ ] I can like a post.
 - [ ] I can reply to a post. 
 - [ ] Responsiveness.
