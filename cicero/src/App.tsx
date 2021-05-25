@@ -289,12 +289,12 @@ export const App = () => {
 
     const post = (newPost:iPost) => {
         if(!user) return 
-        const newPosts:iPost[] = [...posts, {...newPost, name:user.name, image:user.sign }]
+        const newPosts:iPost[] = [{...newPost, name:user.name, image:user.sign }, ...posts]
  
         setPosts(newPosts)
         setHomeData({...homeData, posts:newPosts})
  
-        db?.collection('posts').insertOne(post)
+        db?.collection('posts').insertOne(newPost)
     }
 
     const likePost = (id:string) => {
