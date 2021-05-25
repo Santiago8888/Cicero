@@ -24,7 +24,7 @@ export const lesson: iLesson = {
         ]
     }],
     min:1,
-    link:'439429304'
+    link:'https://www.youtube.com/watch?v=8u9sRggTos8'
 }
 
 
