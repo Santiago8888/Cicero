@@ -1,6 +1,6 @@
 # Tests
 
-- [ ] I can create a user.
+- [X] I can create a user.
 - [ ] I can login with a user.
 - [ ] I can advance through the lessons.
 - [ ] I can see my Natal Chart.
