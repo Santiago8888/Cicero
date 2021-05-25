@@ -1,15 +1,14 @@
-import { Elements, useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
-import { loadStripe, StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
-import { useEffect, useState, useMemo, FormEvent } from "react"
+import { useStripe, useElements, CardExpiryElement, CardNumberElement, CardCvcElement } from '@stripe/react-stripe-js'
+import { StripeCardNumberElement, StripeCardNumberElementChangeEvent } from '@stripe/stripe-js'
+import { useState, useMemo, FormEvent } from "react"
 import { useMediaQuery } from 'react-responsive'
 
-import { iLoginInput } from './Login'
 import { iLanding } from './Landing'
+import { iNewUser } from './SignUp'
 
 import '../../Stripe.css'
 
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
 const useOptions = () => {
     const options = useMemo(
         () => ({
@@ -36,25 +35,18 @@ const useOptions = () => {
 }
 
 
-const CardForm = ({mongoUser, loginInput:{email, password}, createUser}: iBilling) => {
+interface iBilling extends iLanding { clientSecret?:string, newUser:iNewUser }
+export const Billing = ({clientSecret, newUser, createUser}: iBilling) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [ error, setError ] = useState<string>()
     const [ disabled, setDisabled ] = useState(true)
     const [ succeeded, setSucceeded ] = useState(false)
     const [ processing, setProcessing ] = useState(false)
-    const [ clientSecret, setClientSecret ] = useState('')
 
     const stripe = useStripe()
     const elements = useElements()
     const options = useOptions()
-
-    useEffect(() => {
-        mongoUser?.functions.paymentIntent()
-        .then(({clientSecret}) => 
-            setClientSecret(clientSecret)
-        )
-    }, [mongoUser])
 
     const handleChange = async ({ complete, error }:StripeCardNumberElementChangeEvent) => {
         setDisabled(!complete)
@@ -66,13 +58,10 @@ const CardForm = ({mongoUser, loginInput:{email, password}, createUser}: iBillin
         event.preventDefault()
         setProcessing(true)
 
-        if (!stripe || !elements) return
+        if (!stripe || !elements || !clientSecret) return
 
-        const payload = await stripe.confirmCardPayment(clientSecret, {
-            payment_method: { 
-                card: elements.getElement(CardNumberElement) as StripeCardNumberElement 
-            }
-        })
+        const card = elements.getElement(CardNumberElement) as StripeCardNumberElement
+        const payload = await stripe.confirmCardPayment(clientSecret,{payment_method:{card}})
 
         if (payload.error) {
             setError(`Payment failed ${payload.error.message}`)
@@ -82,8 +71,7 @@ const CardForm = ({mongoUser, loginInput:{email, password}, createUser}: iBillin
             setError('')
             setProcessing(false)
             setSucceeded(true)
-            createUser({ email, password })
-
+            createUser(newUser)
         }
     }
 
@@ -126,7 +114,7 @@ const CardForm = ({mongoUser, loginInput:{email, password}, createUser}: iBillin
                         id="submit" 
                         className="stripeButton" 
                         style={{marginTop:'2.5rem'}}
-                        disabled={processing || disabled || !clientSecret || succeeded} 
+                        disabled={processing || disabled || succeeded || !clientSecret} 
                     >
                         <span id="button-text">
                             {processing ? <div className="spinner" id="spinner"></div> : "Pagar" }
@@ -147,9 +135,3 @@ const CardForm = ({mongoUser, loginInput:{email, password}, createUser}: iBillin
         </div>
     </div>
 }
-
-
-interface iBilling extends iLanding { loginInput:iLoginInput }
-export const Billing = ({mongoUser, loginInput, createUser }:iBilling) => <Elements stripe={stripePromise}>
-    <CardForm mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
-</Elements>

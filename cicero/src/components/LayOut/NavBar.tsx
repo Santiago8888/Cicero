@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 
 
-export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home'
+export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts'
 interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 export const NavBar = ({ click, user }: iNavBar) => {
     const midScreen = useMediaQuery({ query: '(min-width: 1024px)' })
@@ -21,7 +21,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')}>
                     <img src='SocialQ.png' style={{ height:36, maxHeight: 'none' }} alt={'SocialQ logo'}/>
-                    <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > SocialQ </p>
+                    <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > Astro Consciencia </p>
                 </a>
 
                 <a 
@@ -57,6 +57,18 @@ export const NavBar = ({ click, user }: iNavBar) => {
 
                 {
                     user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkblue'}}>
+                        <a 
+                            onClick={() => click('Posts')} 
+                            className={'navbar-item'}
+                            style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
+                        > 
+                            <strong> Chat </strong> 
+                        </a>                    
+                    </div>
+                }
+
+                {
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial', backgroundColor:'darkblue'}}>
                         <a 
                             onClick={() => click('Forum')} 
                             className={'navbar-item'}

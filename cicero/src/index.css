@@ -1,3 +1,6 @@
 body { min-height: 100vh }
 
-::placeholder { color: darkblue !important }
+html { 
+    overflow:auto;
+    background-color:'aliceblue'
+}

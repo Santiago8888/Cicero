@@ -1,16 +1,25 @@
 import { useMediaQuery } from 'react-responsive'
-import { useState } from "react"
+import { CSSProperties, useState } from "react"
+import { iUser } from '../../App'
+import { Likes } from "./Atoms"
+import { ObjectID } from 'bson'
 
 
-export interface iDoubt { question:string, details:string }
-const Doubt = ({ question, details }:iDoubt) => <div style={{maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em'}}>
-    <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
-    <p> { details } </p> 
+export interface iDoubt { _id?:ObjectID, question:string, details:string, likes:string[] }
+const doubtStyle:CSSProperties = {maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
+
+interface IDoubt extends iDoubt { user:iUser, like():void } 
+const Doubt = ({ user, question, details, likes, like }:IDoubt) => <div style={doubtStyle}>
+    <Likes user={user} likes={likes} like={like} style={{textAlign:'center'}}/>
+    <div>
+        <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
+        <p> { details } </p>
+    </div>
 </div>
 
 
-interface iModal { isActive:boolean, deactivate():void, submit(question:iDoubt):void }
-const Modal = ({ isActive, deactivate, submit }:iModal) => {
+interface iModal { user:iUser, isActive:boolean, deactivate():void, submit(question:iDoubt):void }
+const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
     const [question, setQuestion] = useState('')
     const [details, setDetails] = useState('')
 
@@ -52,8 +61,8 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
             <footer className="modal-card-foot">
                 <button 
                     className='button is-link' 
-                    onClick={() => submit({ question, details })} 
                     style={{backgroundColor:'darkblue', margin:'auto'}}
+                    onClick={() => submit({ question, details, likes:[user.user_id] })} 
                 >  Siguiente </button>
             </footer>
         </div>
@@ -61,9 +70,9 @@ const Modal = ({ isActive, deactivate, submit }:iModal) => {
 }
 
 
-export interface iForum { title:string, description:string, questions:iDoubt[] }
-interface IForum extends iForum { submit(question:iDoubt):void }
-export const Forum = ({ title, description, questions, submit }: IForum) => {
+export interface iForum { user:iUser, title:string, description:string, questions:iDoubt[] }
+interface IForum extends iForum { submit(question:iDoubt):void, like(id:number):void }
+export const Forum = ({ user, title, description, questions, submit, like }: IForum) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [isActive, setActive] = useState(false)
 
@@ -104,16 +113,13 @@ export const Forum = ({ title, description, questions, submit }: IForum) => {
         
         <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
-        {
-            questions.map((q, i) => 
-                <Doubt  {...q} key={i}/>
-            )
-        }
+        { questions.map((q, i) => <Doubt  {...q} user={user} like={() => like(i)} key={i}/> ) }
 
         <Modal 
+            user={user}
             isActive={isActive} 
-            deactivate={() => setActive(false)}
             submit={clickModal}
+            deactivate={() => setActive(false)}
         />
 
     </div>

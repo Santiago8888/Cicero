@@ -1,20 +1,32 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
+import { Elements } from '@stripe/react-stripe-js'
 import { useMediaQuery } from 'react-responsive'
-import { iLoginInput, Login } from './Login'
-import Vimeo from '@u-wave/react-vimeo'
-import { Billing } from './Billing'
-import { useState } from "react"
-import { User } from 'realm-web'
+import { loadStripe } from '@stripe/stripe-js'
+import ReactPlayer from 'react-player/youtube'
+import { useEffect, useState } from "react"
 
-interface iWelcome { subscribe():void }
-const Welcome = ({ subscribe }:iWelcome) => {
+import { iNewUser, SignUp } from './SignUp'
+import { Billing } from './Billing'
+import axios from 'axios'
+
+
+interface iWelcome { click():void, reset():void }
+const Welcome = ({ click, reset }:iWelcome) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
+    useEffect(() => { reset() }, [reset])
 
     return <div className="content" style={{textAlign:'center'}}>
         <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
-        <Vimeo video={'539430817'} width={midScreen ? 800 : !smallScreen ? 400 : 300 } height={midScreen ? 400 : !smallScreen ? 300 : 200 }/>
+        <div>
+            <ReactPlayer 
+                style={{margin:'auto'}}
+                width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
+                height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
+                url='https://www.youtube.com/watch?v=8u9sRggTos8' 
+            />
+        </div>
 
         <div style={{marginTop:!smallScreen ? '3rem' : 0}}>
             {
@@ -27,7 +39,7 @@ const Welcome = ({ subscribe }:iWelcome) => {
                         </h2>
             }
             <a
-                onClick={subscribe}
+                onClick={click}
                 className='button is-link'
                 style={{ 
                     width:!smallScreen ? 460 : 260 , 
@@ -42,14 +54,27 @@ const Welcome = ({ subscribe }:iWelcome) => {
 }
 
 
-export interface iLanding { mongoUser?: User, createUser(loginInput:iLoginInput):void }
+export interface iLanding { createUser(signUp:iNewUser):void }
 interface ILanding extends iLanding { isWelcome:boolean, setWelcome():void }
-export const Landing = ({mongoUser, isWelcome, setWelcome, createUser}: ILanding) => {
-    const [ loginInput, setLoginInput ] = useState<iLoginInput>()
+export const Landing = ({ isWelcome, setWelcome, createUser}: ILanding) => {
+    const [ newUser, setNewUser ] = useState<iNewUser>()
+    const [ clientSecret, setClientSecret ] = useState<string>()
+    const stripePromise = loadStripe(process.env.REACT_APP_STRIPE as string)
+
+    const reset = () => { setNewUser(undefined) }
+    const callStripe = async() => {
+        setWelcome()
+        const { data } = await axios.get('/.netlify/functions/payment-intent')
+        setClientSecret(data)
+    }
 
     return isWelcome
-        ?   <Welcome subscribe={setWelcome}/>
-        :   !loginInput
-            ?   <Login login={(loginInput) => setLoginInput(loginInput)} newUser={true}/>
-            :   <Billing mongoUser={mongoUser} loginInput={loginInput} createUser={createUser}/>
+        ?   <Welcome click={callStripe} reset={reset} />
+        :   <Elements stripe={stripePromise}>
+                {
+                    !newUser
+                    ?   <SignUp signUp={setNewUser} />
+                    :   <Billing newUser={newUser} createUser={createUser} clientSecret={clientSecret}/>        
+                }
+            </Elements>
 }
