@@ -75,3 +75,32 @@ Para cada uno de los módulos obtendrás información de apoyo en caso de que se
 4.2 Que cambia en nuestra relación con Saturno al iniciar con la Kabbalah
 4.3 Qué es lo que Saturno nos está enseñando en 2021 
 
+
+## FAQ
+* ¿Es posible tomar el curso en otras fechas?
+Si, planeamos reabrir una nueva generación en el 2022. La fecha dependerá de la demanda y los nuevos cursos que lancemos.
+
+* ¿Ofrecen descuentos?
+Si, tenemos descuentos para alumnos de Fer y Gaby, para grupos y pare, y por compra anticipada.
+
+* ¿Es posible incribirme al curso una vez iniciado?
+Tal vez, queremos ofrecer un buen servicio y por lo tanto es posible que limitemos el cupo.
+
+* ¿Por cuanto tiempo tendré acceso a la información y plataforma?
+Las lecturas podrás descargarlas, los vídeos y lives estarán al aire por lo menos durante un año y la plataforma durante 6 meses. En el futuro, abriremos nuevas comunidades (temporales y permanentes) para que puedas continuar en contact
+
+* ¿Qué formas de pago aceptan?
+En está págino aceptamos PayPal y tarjetas de crédito y débito. Si estás en México puedes también hacer una transferencia bancaria: por favor, ponte en contacto para obtener el número de cuenta.
+
+* ¿Ofrecen becas?
+Si, tenemos becas para estudiantes y otras circustanciales. Por favor envía un correo explicando tus circustancias y como podrías aportar a la comunidad, con gusto consideraremos tu petición.
+
+* ¿Cómo puedo ponerme en contacto?
+Puedes ponerte en contacto con Lourdes Quintero su correo es luquintero77@gmail.com
+
+* ¿Cómo puedo saber más sobre Fernando y Gaby? 
+Te recomendamos su canal de YouTube y páginas de Facebook. También puedes agendar una consulta individual.
+
+* ¿Cómo podemos ayudar?
+Si también estás buscando bajar luz a este mundo, nos encantará saber de ti y tus ideas. Por favor mandanos un correo y te ofreceremos algunas opciones :)
+
