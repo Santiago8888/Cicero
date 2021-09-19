@@ -26,3 +26,9 @@ En una epoca de confusión e incertidumbre, Fernando y Gabriela buscan lanzar un
 
 Te invitamos a que aproveches está oportunidad, seas uno de los primeros miembros de la nueva comunidad y te conviertas en el ancla que se mantenga en paz para tus seres queridos.
 
+
+## ¿A quién está dirigido?
+
+* Estudiantes de Fer y Gaby que busquen profundizar sus conocimientos de Saturno, continuar con sus estudios de forma remota e invitar a sus seres queridos a iniciar un camino de conciencia.
+* Personas que disfrutan de la astrología y sienten la necesidad de aprender más sobre ella.
+* Kabalistas que entienden el rol que juega la Astrología en la vida diaria y buscan un curso impartido con la filosofía kabalística.
