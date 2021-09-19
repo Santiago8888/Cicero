@@ -16,6 +16,7 @@
 * Carta Astral con Saturno
 * Meditaciones
 
+
 ## Introducción
 
 Fernando y Gabriela Quintero han enseñado astrología por 21 y 14 años respectivamente. Han ayudado a miles de personas, que no encontraban una solución *lógica* a sus problemas a vivir con felicidad, aceptación y armonía.
@@ -32,3 +33,10 @@ Te invitamos a que aproveches está oportunidad, seas uno de los primeros miembr
 * Estudiantes de Fer y Gaby que busquen profundizar sus conocimientos de Saturno, continuar con sus estudios de forma remota e invitar a sus seres queridos a iniciar un camino de conciencia.
 * Personas que disfrutan de la astrología y sienten la necesidad de aprender más sobre ella.
 * Kabalistas que entienden el rol que juega la Astrología en la vida diaria y buscan un curso impartido con la filosofía kabalística.
+
+
+## ¿Cuál es el objetivo?
+
+1. Qué tengas conocimiento sobre como Saturno opera en tu carta astral y herramientas para lidiar con sus pruebas y lecciones.
+2. Qué comprendas que está enseñandonos Saturno en este 2021 a través del COVID.
+3. Qué adoptes hábitos que te permitan convivir con la energía e inteligencia de Saturno desde una conciencia kabalística.
