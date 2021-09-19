@@ -16,3 +16,13 @@
 * Carta Astral con Saturno
 * Meditaciones
 
+## Introducción
+
+Fernando y Gabriela Quintero han enseñado astrología por 21 y 14 años respectivamente. Han ayudado a miles de personas, que no encontraban una solución *lógica* a sus problemas a vivir con felicidad, aceptación y armonía.
+
+Dentro de su experiencia, se han dado cuenta que la representación de Saturno es el causante del mayor sufrimiento en la vida de las personas. Afortunadamente, sólo es necesario que entendamos cuales son las lecciones que Saturno quiere enseñarnos para alinear nuestro presente con el compromiso que adquirimos al llegar a este planeta.
+
+En una epoca de confusión e incertidumbre, Fernando y Gabriela buscan lanzar un curso dígital por primera vez para llegar a más personas, generar más conciencia y que entendamos cuales son las lecciones que a nivel sociedad debemos estar aprendiendo.
+
+Te invitamos a que aproveches está oportunidad, seas uno de los primeros miembros de la nueva comunidad y te conviertas en el ancla que se mantenga en paz para tus seres queridos.
+
