@@ -8,3 +8,11 @@
 **Lecturas:** 10
 **Modulos:** 4
 **Inicio:** 3 de Noviembre
+
+**Extras:**
+* Ejercicios de Reflexión
+* Foro de Preguntas
+* Comunidad de conciencia
+* Carta Astral con Saturno
+* Meditaciones
+
