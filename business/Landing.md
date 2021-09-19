@@ -40,3 +40,15 @@ Te invitamos a que aproveches está oportunidad, seas uno de los primeros miembr
 1. Qué tengas conocimiento sobre como Saturno opera en tu carta astral y herramientas para lidiar con sus pruebas y lecciones.
 2. Qué comprendas que está enseñandonos Saturno en este 2021 a través del COVID.
 3. Qué adoptes hábitos que te permitan convivir con la energía e inteligencia de Saturno desde una conciencia kabalística.
+
+
+## Formato del curso
+
+Durante 4 semanas tendrás acceso a un nuevo módulo del curso.
+Cada módulo estará compuesto por 6 vídeos de 10 minutos cada uno, con 2 o 3 lecturas las cuales serán seleccionadas de acuerdo a tu carta astral y ejercicios de reflexión para que interiorices el contenido del curso y comprendas como aplican las enseñanzas en tu vida cotidiana. Finalmente, cada módulo culminará con una meditación guiada.
+
+Además tendras acceso a un foro de dudas en donde podras votar por las preguntas más frecuentes las cuales serán resueltas en lives durante la duración del curso. Participarás en una comunidad de conciencia en la cual podrás intercambiar aprendizajes, experiencias y conocer a personas que también están en busca de vivir con más conciencia día a día.
+
+Para cada uno de los módulos obtendrás información de apoyo en caso de que sea tu primer experiencia estudiando y practicando astrología.
+
+
