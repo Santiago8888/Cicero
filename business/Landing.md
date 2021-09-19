@@ -42,7 +42,7 @@ Te invitamos a que aproveches está oportunidad, seas uno de los primeros miembr
 3. Qué adoptes hábitos que te permitan convivir con la energía e inteligencia de Saturno desde una conciencia kabalística.
 
 
-## Formato del curso
+## Estructura del curso:
 
 Durante 4 semanas tendrás acceso a un nuevo módulo del curso.
 Cada módulo estará compuesto por 6 vídeos de 10 minutos cada uno, con 2 o 3 lecturas las cuales serán seleccionadas de acuerdo a tu carta astral y ejercicios de reflexión para que interiorices el contenido del curso y comprendas como aplican las enseñanzas en tu vida cotidiana. Finalmente, cada módulo culminará con una meditación guiada.
@@ -51,4 +51,27 @@ Además tendras acceso a un foro de dudas en donde podras votar por las pregunta
 
 Para cada uno de los módulos obtendrás información de apoyo en caso de que sea tu primer experiencia estudiando y practicando astrología.
 
+
+## Contenido
+
+1. Introducción a Saturno
+1.1 Porque Saturno es tan importante en tu carta astral. 
+1.2 Qué es el ciclo de 7 años de Saturno y como lidiar con él. 
+1.3 Cuál es la relación de Saturno con el karma y tus vidas pasadas. 
+
+2. El signo de tu Saturno natal
+2.1 Cómo cambia Saturno de acuerdo al signo en el que se encuentra
+2.2 Que vienes a enseñar en esta vida según tu Saturno
+2.3 Tus vidas pasadas de acuerdo al sigo de Saturno
+
+3. La casa en la que que vive Saturno
+3.1 Porque Saturno tiene tanto poder sobre un aspecto de tu vida.
+3.2 Cómo vivir ese aspecto que funciona tan diferente para tí.
+3.3 Cómo afecta Saturno en las diferentes etapas de tu vida.
+
+
+4. Binah: Saturno y la Kabbalah 
+4.1 Porque iniciamos el estudio de la Kabbalah con Saturno 
+4.2 Que cambia en nuestra relación con Saturno al iniciar con la Kabbalah
+4.3 Qué es lo que Saturno nos está enseñando en 2021 
 
