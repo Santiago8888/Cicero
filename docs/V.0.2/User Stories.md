@@ -20,8 +20,8 @@
 
 ## Second & Third Lessons
 
-* [ ] 
-* [ ] 
-* [ ] 
-* [ ] 
-* [ ] 
+* [ ] Upload videos.
+* [ ] Create Quizes.
+* [ ] Congratulatory modal after comment.
+* [ ] Module end reflection.
+* [ ] Forum & upvotes on questions.
