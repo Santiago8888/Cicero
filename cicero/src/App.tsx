@@ -296,7 +296,7 @@ export const App = () => {
 
     const post = (newPost:iPost) => {
         if(!user || !db) return 
-        const newPosts:iPost[] = [{...newPost, name:user.name, image:user.sign }, ...posts]
+        const newPosts:iPost[] = [newPost, ...posts]
  
         setPosts(newPosts)
         setHomeData({...homeData, posts:newPosts})
