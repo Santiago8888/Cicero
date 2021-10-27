@@ -6,3 +6,8 @@
 * [ ] Instrcutions are placed at the start.
 * [ ] User can see first video.
 
+* [ ] Upon completion of the video, user gets to a quiz.
+* [ ] User needs at least 80% to pass to the next lesson.
+* [ ] The user can continue to the second video.
+* [ ] User is invited to make a post.
+* [ ] Congratulatory modal after posting completing first lesson.
