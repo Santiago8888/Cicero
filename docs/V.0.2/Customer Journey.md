@@ -14,6 +14,7 @@
  
 5. [ ] Second lesson has:
     * [ ] Third Video
+    * [ ] Reading on Saturn.
     * [ ] A short quiz
     * [ ] Fourth Video
     * [ ] Comments with instructions
