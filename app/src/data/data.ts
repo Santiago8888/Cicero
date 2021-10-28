@@ -21,13 +21,62 @@ export const defaultUser:iUser = {
 }
 
 const quiz11:iQuestion[] = [
-    { question:'1. ¿Qué indica Saturno en la carta astral?', answers:[] },
-    { question:'2. ¿Cuando nos indica Saturno que es tiempo de cambios?', answers:[] },
-    { question:'3. ¿Cuál es uno de los principales mensajes de Saturno?', answers:[] },
-    { question:'4. ¿Qué nos enseña Saturno?', answers:[] },
-    { question:'5. ¿Cuál es la responsabilidad de Saturno?', answers:[] },
-    { question:'6. ¿Todos tenemos el mismo Saturno?', answers:[] },
-    { question:'7. ¿Cuál es el objetivo final de tu Saturno?', answers:[] }
+    { 
+        question:'1. ¿Qué indica Saturno en la carta astral?', 
+        answers:[
+            { answer:'Si tienes tiempo o se te acabo el tiempo', value: true },
+            { answer:'Como encontrar abundancia', value: false },
+            { answer:'Nuestra espiritualidad y conexión con la fuente dívina', value: false },
+            { answer:'Lo que amamos y nos hace felices', value: false }
+        ] 
+    }, { 
+        question:'2. ¿Cuando nos indica Saturno que es tiempo de cambios?', 
+        answers:[
+            { answer:'', value: true },
+            { answer:'', value: false },
+            { answer:'', value: false },
+            { answer:'', value: false }
+        ] 
+    }, { 
+        question:'3. ¿Cuál es uno de los principales mensajes de Saturno?', 
+        answers:[
+            { answer:'', value: true },
+            { answer:'', value: false },
+            { answer:'', value: false },
+            { answer:'', value: false }
+        ] 
+    }, { 
+        question:'4. ¿Qué nos enseña Saturno?', 
+        answers:[
+            { answer:'', value: true },
+            { answer:'', value: false },
+            { answer:'', value: false },
+            { answer:'', value: false }
+        ] 
+    }, { 
+        question:'5. ¿Cuál es la responsabilidad de Saturno?', 
+        answers:[
+            { answer:'', value: true },
+            { answer:'', value: false },
+            { answer:'', value: false },
+            { answer:'', value: false }
+        ] 
+    }, { 
+        question:'6. ¿Todos tenemos el mismo Saturno?', 
+        answers:[            { answer:'', value: true },
+            { answer:'', value: false },
+            { answer:'', value: false },
+            { answer:'', value: false }
+        ] 
+    }, { 
+        question:'7. ¿Cuál es el objetivo final de tu Saturno?', 
+        answers:[
+            { answer:'', value: true },
+            { answer:'', value: false },
+            { answer:'', value: false },
+            { answer:'', value: false }
+        ] 
+    }
 ]
 
 
