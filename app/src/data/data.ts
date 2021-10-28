@@ -112,13 +112,20 @@ const module12:iLesson[] = [
     { type:'Quiz', title:'Ejercicio: Compartir', description:'' },
 ]
 
+const module13:iLesson[] = [
+    { type:'Video', title:'Las lecciones de Saturno', description:'' },
+    { type:'Quiz', title:'Quiz', description:'' },
+    { type:'Video', title:'Escucha las señales', description:'' },
+    { type:'Quiz', title:'Ejercicio: Compartir', description:'' }
+]
+
 
 export const Units:iUnit[] = [{ 
     title: '1. Saturno y el Karma', 
     modules: [
         { title: '1.1 La importancia de Saturno', lessons:module11 },
         { title: '1.2 El Karma y Saturno', lessons:module12 },
-        { title: '1.3 Las lecciones de Saturno', lessons }
+        { title: '1.3 Las lecciones de Saturno', lessons:module13 }
     ]
 }, { 
     title: '2. El Signo de Saturno', 
