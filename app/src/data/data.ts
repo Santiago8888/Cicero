@@ -139,22 +139,4 @@ export const Units:iUnit[] = [{
         { title: '4.2 Regencia/ Dignidad', lessons },
         { title: '4.3 Planetas en signos y casas', lessons }
     ] 
-}, { 
-    title: '5. ASTROCONCIENCIA KARMICA', 
-    modules: [
-        { title: '5.1 Consciencia karmica', lessons },
-        { title: '5.2 Luna', lessons },
-        { title: '5.3 Saturno y Kirón', lessons },
-        { title: '5.4 Casa 12', lessons },
-        { title: '5.5 Nodos lunares', lessons }
-    ] 
-}, { 
-    title: '6. MISIONES', 
-    modules: [
-        { title: '6.1 Nuestras misiones', lessons },
-        { title: '6.2 Misión personal', lessons },
-        { title: '6.3 Misión conciente', lessons },
-        { title: '6.4 Misión transpersonal', lessons },
-        { title: '6.5 Dones divinos', lessons },
-    ] 
 }]
