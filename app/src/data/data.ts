@@ -108,6 +108,7 @@ const module11:iLesson[] = [
 const module12:iLesson[] = [
     { type:'Video', title:'El Karma', description:'' },
     { type:'Quiz', title:'Quiz', description:'' },
+    { type:'Reading', title:'Saturno en la Astrología', description:'' },
     { type:'Video', title:'Saturno, el maestro', description:'' },
     { type:'Quiz', title:'Ejercicio: Compartir', description:'' },
 ]
