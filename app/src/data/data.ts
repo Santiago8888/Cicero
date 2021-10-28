@@ -114,10 +114,9 @@ export const Units:iUnit[] = [{
 }, { 
     title: '3. La Casa de Saturno', 
     modules: [
-        { title: '3.1 Estructura de la carta astral', lessons },
-        { title: '3.2 Casas en la carta astral', lessons },
-        { title: '3.3 Ascendentes', lessons },
-        { title: '3.4 Signos en las casas', lessons }
+        { title: '3.1 La casa de tu Saturno', lessons },
+        { title: '3.2 El ciclo de 7 años de Saturno', lessons },
+        { title: '3.3 Saturno y la Salud.', lessons }
     ] 
 }, { 
     title: '4. Saturno y la Kabbalah', 
@@ -125,16 +124,7 @@ export const Units:iUnit[] = [{
         { 
             title: '4.1 Planetas', 
             lessons:[
-                { title:'Sol', type:'Chart', description:'El sol representa quien eres', planet:'Sun'},
-                { title:'Luna', type:'Chart', description:'La Luna rige tus emociones', planet:'Moon'},
-                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente', planet:'Mercury'},
-                { title:'Venus', type:'Chart', description:'El planeta que rige el amor', planet:'Venus'},
-                { title:'Marte', type:'Chart', description:'El planeta que rige la energía', planet:'Mars'},
-                { title:'Jupiter', type:'Chart', description:'El planeta que rige la suerte', planet:'Jupiter'},
-                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'},
-                { title:'Urano', type:'Chart', description:'El planeta de la creatividad', planet:'Uranus'},
-                { title:'Neptuno', type:'Chart', description:'El planeta de la imaginación y espiritualidad', planet:'Neptune'},
-                { title:'Pluto', type:'Chart', description:'El planeta del subconsciente', planet:'Pluto'},
+                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'}
             ] 
         },
         { title: '4.2 Regencia/ Dignidad', lessons },
