@@ -63,18 +63,19 @@ const quiz11:iQuestion[] = [
         ] 
     }, { 
         question:'6. ¿Todos tenemos el mismo Saturno?', 
-        answers:[            { answer:'', value: true },
-            { answer:'', value: false },
-            { answer:'', value: false },
-            { answer:'', value: false }
+        answers:[            
+            { answer:'No, para cada uno fluye de forma diferente.', value: true },
+            { answer:'Solo al principio después cambia conforme a nuestra acciones.', value: false },
+            { answer:'Si, Saturno forma parte de una conciencia universal.', value: false },
+            { answer:'Va cambiando, pero lo que esta bien y mal es igual para todos.', value: false }
         ] 
     }, { 
         question:'7. ¿Cuál es el objetivo final de tu Saturno?', 
         answers:[
-            { answer:'', value: true },
-            { answer:'', value: false },
-            { answer:'', value: false },
-            { answer:'', value: false }
+            { answer:'Enseñarnos a dar un buen ejemplo en un área específica de la vida.', value: true },
+            { answer:'Limitarnos para que no nos salgamos de control.', value: false },
+            { answer:'Premiar a quienes se conectan con su ser divino interior.', value: false },
+            { answer:'Llevar la contabilidad de tus acciones y karma.', value: false }
         ] 
     }
 ]
