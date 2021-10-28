@@ -97,10 +97,18 @@ export const Posts:iPost[] = [{
 }]
 
 
+const module11:iLesson[] = [
+    { type:'Video', title:'¿Qué es Saturno?', description:'' },
+    { type:'Quiz', title:'Quiz', description:'' },
+    { type:'Video', title:'La importancia de Saturno', description:'' },
+    { type:'Quiz', title:'Reflexión', description:'' },
+]
+
+
 export const Units:iUnit[] = [{ 
     title: '1. Saturno y el Karma', 
     modules: [
-        { title: '1.1 La importancia de Saturno', lessons },
+        { title: '1.1 La importancia de Saturno', lessons:module11 },
         { title: '1.2 El Karma y Saturno', lessons },
         { title: '1.3 Las lecciones de Saturno', lessons }
     ]
