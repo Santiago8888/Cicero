@@ -98,63 +98,37 @@ export const Posts:iPost[] = [{
 
 
 export const Units:iUnit[] = [{ 
-    title: '1. ASTROCONCIENCIA', 
+    title: '1. Saturno y el Karma', 
     modules: [
-        { title: '1.1 Introducción a la astroconsciencia', lessons },
-        { title: '1.2 Historia de la astrología', lessons },
-        { title: '1.3 Proposito de vida', lessons }
+        { title: '1.1 La importancia de Saturno', lessons },
+        { title: '1.2 El Karma y Saturno', lessons },
+        { title: '1.3 Las lecciones de Saturno', lessons }
     ]
 }, { 
-    title: '2. LOS 12 SIGNOS DEL ZODIACO', 
+    title: '2. El Signo de Saturno', 
     modules: [
-        { title: '2.1 Características, elementos y cualidades de los signos', lessons },
-        { title: '2.2 Los 12 signos', lessons }
+        { title: '2.1 El significado del signo de tu Saturno', lessons },
+        { title: '2.2 La misión de tu Saturno', lessons },
+        { title: '2.3 Tus vidas pasadas', lessons }
     ] 
 }, { 
-    title: '3. LAS 12 CASAS DE LA CARTA ASTRAL', 
+    title: '3. La Casa de Saturno', 
     modules: [
-        { title: '3.1 Estructura de la carta astral', lessons },
-        { title: '3.2 Casas en la carta astral', lessons },
-        { title: '3.3 Ascendentes', lessons },
-        { title: '3.4 Signos en las casas', lessons }
+        { title: '3.1 La casa de tu Saturno', lessons },
+        { title: '3.2 El ciclo de 7 años de Saturno', lessons },
+        { title: '3.3 Saturno y la Salud.', lessons }
     ] 
 }, { 
-    title: '4. ASTROCONCIENCIA PLANETARIA', 
+    title: '4. Saturno y la Kabbalah', 
     modules: [
         { 
-            title: '4.1 Planetas', 
+            title: '4.1 Binah y el inicio de la existencia', 
             lessons:[
-                { title:'Sol', type:'Chart', description:'El sol representa quien eres', planet:'Sun'},
-                { title:'Luna', type:'Chart', description:'La Luna rige tus emociones', planet:'Moon'},
-                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente', planet:'Mercury'},
-                { title:'Venus', type:'Chart', description:'El planeta que rige el amor', planet:'Venus'},
-                { title:'Marte', type:'Chart', description:'El planeta que rige la energía', planet:'Mars'},
-                { title:'Jupiter', type:'Chart', description:'El planeta que rige la suerte', planet:'Jupiter'},
                 { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'},
-                { title:'Urano', type:'Chart', description:'El planeta de la creatividad', planet:'Uranus'},
-                { title:'Neptuno', type:'Chart', description:'El planeta de la imaginación y espiritualidad', planet:'Neptune'},
-                { title:'Pluto', type:'Chart', description:'El planeta del subconsciente', planet:'Pluto'},
+                ...lessons
             ] 
         },
-        { title: '4.2 Regencia/ Dignidad', lessons },
-        { title: '4.3 Planetas en signos y casas', lessons }
-    ] 
-}, { 
-    title: '5. ASTROCONCIENCIA KARMICA', 
-    modules: [
-        { title: '5.1 Consciencia karmica', lessons },
-        { title: '5.2 Luna', lessons },
-        { title: '5.3 Saturno y Kirón', lessons },
-        { title: '5.4 Casa 12', lessons },
-        { title: '5.5 Nodos lunares', lessons }
-    ] 
-}, { 
-    title: '6. MISIONES', 
-    modules: [
-        { title: '6.1 Nuestras misiones', lessons },
-        { title: '6.2 Misión personal', lessons },
-        { title: '6.3 Misión conciente', lessons },
-        { title: '6.4 Misión transpersonal', lessons },
-        { title: '6.5 Dones divinos', lessons },
+        { title: '4.2 Saturno desde la Kabbalah', lessons },
+        { title: '4.3 El COVID y Saturno en Acuario', lessons }
     ] 
 }]
