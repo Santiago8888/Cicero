@@ -122,12 +122,13 @@ export const Units:iUnit[] = [{
     title: '4. Saturno y la Kabbalah', 
     modules: [
         { 
-            title: '4.1 Planetas', 
+            title: '4.1 Binah y el inicio de la existencia', 
             lessons:[
-                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'}
+                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'},
+                ...lessons
             ] 
         },
-        { title: '4.2 Regencia/ Dignidad', lessons },
-        { title: '4.3 Planetas en signos y casas', lessons }
+        { title: '4.2 Saturno desde la Kabbalah', lessons },
+        { title: '4.3 El COVID y Saturno en Acuario', lessons }
     ] 
 }]
