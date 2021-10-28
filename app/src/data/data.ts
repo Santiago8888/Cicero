@@ -107,8 +107,9 @@ export const Units:iUnit[] = [{
 }, { 
     title: '2. El Signo de Saturno', 
     modules: [
-        { title: '2.1 Características, elementos y cualidades de los signos', lessons },
-        { title: '2.2 Los 12 signos', lessons }
+        { title: '2.1 El significado del signo de tu Saturno', lessons },
+        { title: '2.2 La misión de tu Saturno', lessons },
+        { title: '2.3 Tus vidas pasadas', lessons }
     ] 
 }, { 
     title: '3. La Casa de Saturno', 
