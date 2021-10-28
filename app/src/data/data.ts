@@ -24,32 +24,32 @@ const quiz11:iQuestion[] = [
     { 
         question:'1. ¿Qué indica Saturno en la carta astral?', 
         answers:[
-            { answer:'Si tienes tiempo o se te acabo el tiempo', value: true },
             { answer:'Como encontrar abundancia', value: false },
+            { answer:'Si tienes tiempo o se te acabo el tiempo', value: true },
             { answer:'Nuestra espiritualidad y conexión con la fuente dívina', value: false },
             { answer:'Lo que amamos y nos hace felices', value: false }
         ] 
     }, { 
         question:'2. ¿Cuando nos indica Saturno que es tiempo de cambios?', 
         answers:[
-            { answer:'Aproximadamente cada siete años', value: true },
             { answer:'Cada que llega al signo de Acuario', value: false },
             { answer:'Durante la infancia y adolescencia', value: false },
+            { answer:'Aproximadamente cada siete años', value: true },
             { answer:'A los 42 cuando se junta con Urano', value: false }
         ] 
     }, { 
         question:'3. ¿Cuál es uno de los principales mensajes de Saturno?', 
         answers:[
-            { answer:'Hazte responsable, madura', value: true },
             { answer:'Disfruta la vida, se feliz', value: false },
             { answer:'Ama incondicionalmente', value: false },
-            { answer:'Perdona al projimo', value: false }
+            { answer:'Perdona al projimo', value: false },
+            { answer:'Hazte responsable, madura', value: true }
         ] 
     }, { 
         question:'4. ¿Qué nos enseña Saturno?', 
         answers:[
-            { answer:'La consecuencia de nuestras acciones', value: true },
             { answer:'Nuestros defectos y áreas de oportunidad', value: false },
+            { answer:'La consecuencia de nuestras acciones', value: true },
             { answer:'El futuro y el pasado', value: false },
             { answer:'Como tomar el contral el control nuestra vida', value: false }
         ] 
@@ -64,9 +64,9 @@ const quiz11:iQuestion[] = [
     }, { 
         question:'6. ¿Todos tenemos el mismo Saturno?', 
         answers:[            
-            { answer:'No, para cada uno fluye de forma diferente.', value: true },
             { answer:'Solo al principio después cambia conforme a nuestra acciones.', value: false },
             { answer:'Si, Saturno forma parte de una conciencia universal.', value: false },
+            { answer:'No, para cada uno fluye de forma diferente.', value: true },
             { answer:'Va cambiando, pero lo que esta bien y mal es igual para todos.', value: false }
         ] 
     }, { 
