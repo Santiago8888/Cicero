@@ -1,5 +1,6 @@
 import { iRecordings } from "../components/Forum/Recordings"
 import { iLesson, iUnit } from "../components/LayOut/Menu"
+import { iQuestion } from "../components/Views/Quiz"
 import { iForum } from "../components/Forum/Forum"
 import { iPost } from "../components/Forum/Posts"
 import { planets, houses } from './chart'
@@ -18,6 +19,16 @@ export const defaultUser:iUser = {
     current:{unit:3, module:0, lesson:1}, 
     progress:{unit:3, module:0, lesson:5}, 
 }
+
+const quiz11:iQuestion[] = [
+    { question:'1. ¿Qué indica Saturno en la carta astral?', answers:[] },
+    { question:'2. ¿Cuando nos indica Saturno que es tiempo de cambios?', answers:[] },
+    { question:'3. ¿Cuál es uno de los principales mensajes de Saturno?', answers:[] },
+    { question:'4. ¿Qué nos enseña Saturno?', answers:[] },
+    { question:'5. ¿Cuál es la responsabilidad de Saturno?', answers:[] },
+    { question:'6. ¿Todos tenemos el mismo Saturno?', answers:[] },
+    { question:'7. ¿Cuál es el objetivo final de tu Saturno?', answers:[] }
+]
 
 
 export const lesson: iLesson = { 
@@ -100,7 +111,7 @@ export const Posts:iPost[] = [{
 const module11:iLesson[] = [
     { type:'Video', title:'¿Qué es Saturno?', description:'', link:'https://youtu.be/-AEpq9zauQ8'  },
     { type:'Video', title:'La importancia de Saturno', description:'', link:'https://youtu.be/gQarN9nNKdA' },
-    { type:'Quiz', title:'Quiz 1.1', description:'' },
+    { type:'Quiz', title:'Quiz 1.1', description:'', questions:quiz11 },
     { type:'Quiz', title:'Ejercicio de Reflexión', description:'' },
 ]
 
