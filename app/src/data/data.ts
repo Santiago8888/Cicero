@@ -98,20 +98,20 @@ export const Posts:iPost[] = [{
 
 
 export const Units:iUnit[] = [{ 
-    title: '1. ASTROCONCIENCIA', 
+    title: '1. Saturno y el Karma', 
     modules: [
         { title: '1.1 Introducción a la astroconsciencia', lessons },
         { title: '1.2 Historia de la astrología', lessons },
         { title: '1.3 Proposito de vida', lessons }
     ]
 }, { 
-    title: '2. LOS 12 SIGNOS DEL ZODIACO', 
+    title: '2. El Signo de Saturno', 
     modules: [
         { title: '2.1 Características, elementos y cualidades de los signos', lessons },
         { title: '2.2 Los 12 signos', lessons }
     ] 
 }, { 
-    title: '3. LAS 12 CASAS DE LA CARTA ASTRAL', 
+    title: '3. La Casa de Saturno', 
     modules: [
         { title: '3.1 Estructura de la carta astral', lessons },
         { title: '3.2 Casas en la carta astral', lessons },
@@ -119,7 +119,7 @@ export const Units:iUnit[] = [{
         { title: '3.4 Signos en las casas', lessons }
     ] 
 }, { 
-    title: '4. ASTROCONCIENCIA PLANETARIA', 
+    title: '4. Saturno y la Kabbalah', 
     modules: [
         { 
             title: '4.1 Planetas', 
