@@ -97,12 +97,36 @@ export const Posts:iPost[] = [{
 }]
 
 
+const module11:iLesson[] = [
+    { type:'Video', title:'¿Qué es Saturno?', description:'' },
+    { type:'Quiz', title:'Quiz', description:'' },
+    { type:'Video', title:'La importancia de Saturno', description:'' },
+    { type:'Quiz', title:'Ejercicio: Reflexión', description:'' },
+]
+
+
+const module12:iLesson[] = [
+    { type:'Video', title:'El Karma', description:'' },
+    { type:'Quiz', title:'Quiz', description:'' },
+    { type:'Reading', title:'Saturno en la Astrología', description:'' },
+    { type:'Video', title:'Saturno, el maestro', description:'' },
+    { type:'Quiz', title:'Ejercicio: Compartir', description:'' },
+]
+
+const module13:iLesson[] = [
+    { type:'Video', title:'Las lecciones de Saturno', description:'' },
+    { type:'Quiz', title:'Quiz', description:'' },
+    { type:'Video', title:'Escucha las señales', description:'' },
+    { type:'Quiz', title:'Ejercicio: Compartir', description:'' }
+]
+
+
 export const Units:iUnit[] = [{ 
     title: '1. Saturno y el Karma', 
     modules: [
-        { title: '1.1 La importancia de Saturno', lessons },
-        { title: '1.2 El Karma y Saturno', lessons },
-        { title: '1.3 Las lecciones de Saturno', lessons }
+        { title: '1.1 La importancia de Saturno', lessons:module11 },
+        { title: '1.2 El Karma y Saturno', lessons:module12 },
+        { title: '1.3 Las lecciones de Saturno', lessons:module13 }
     ]
 }, { 
     title: '2. El Signo de Saturno', 
