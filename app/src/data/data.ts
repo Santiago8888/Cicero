@@ -56,10 +56,10 @@ const quiz11:iQuestion[] = [
     }, { 
         question:'5. ¿Cuál es la responsabilidad de Saturno?', 
         answers:[
-            { answer:'', value: true },
-            { answer:'', value: false },
-            { answer:'', value: false },
-            { answer:'', value: false }
+            { answer:'Ponernos limites', value: true },
+            { answer:'Elevar la consciencia cósmica', value: false },
+            { answer:'Distinguir entre la verdad y la mentira', value: false },
+            { answer:'Sostener la creación', value: false }
         ] 
     }, { 
         question:'6. ¿Todos tenemos el mismo Saturno?', 
