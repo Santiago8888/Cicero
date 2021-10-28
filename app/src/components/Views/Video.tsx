@@ -24,6 +24,7 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
         <div style={{margin:'2.5em 0px'}}>
             <ReactPlayer 
                 url={link} 
+                controls={true}
                 onEnded={approve}
                 style={{margin:'auto'}}
                 width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
