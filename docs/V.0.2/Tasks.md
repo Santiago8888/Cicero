@@ -9,6 +9,8 @@
 
 - [ ] Content
     - [ ] 4 modules with names
+        - [ ] First unit modules and lessons.
+
     - [ ] First lesson
         - [ ] Video 1
             - [ ] Completion logic
@@ -17,5 +19,16 @@
         - [ ] Video 2
         - [ ] Post instructions
             - [ ] Completion logic
+        - [ ] Congratulatory message.
 
-- [ ] 
+    - [ ] Next lessons
+        - [ ] Videos
+        - [ ] Quizes
+        - [ ] Readings
+            - [ ] Completion logic
+        - [ ] Comment excercise
+            - [ ] Completion
+        - [ ] Final excersice
+            - [ ] Completion
+        - [ ] Congratulatory Module.
+ 
