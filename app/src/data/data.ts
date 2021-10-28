@@ -40,18 +40,18 @@ const quiz11:iQuestion[] = [
     }, { 
         question:'3. ¿Cuál es uno de los principales mensajes de Saturno?', 
         answers:[
-            { answer:'', value: true },
-            { answer:'', value: false },
-            { answer:'', value: false },
-            { answer:'', value: false }
+            { answer:'Hazte responsable, madura', value: true },
+            { answer:'Disfruta la vida, se feliz', value: false },
+            { answer:'Ama incondicionalmente', value: false },
+            { answer:'Perdona al projimo', value: false }
         ] 
     }, { 
         question:'4. ¿Qué nos enseña Saturno?', 
         answers:[
-            { answer:'', value: true },
-            { answer:'', value: false },
-            { answer:'', value: false },
-            { answer:'', value: false }
+            { answer:'La consecuencia de nuestras acciones', value: true },
+            { answer:'Nuestros defectos y áreas de oportunidad', value: false },
+            { answer:'El futuro y el pasado', value: false },
+            { answer:'Como tomar el contral el control nuestra vida', value: false }
         ] 
     }, { 
         question:'5. ¿Cuál es la responsabilidad de Saturno?', 
