@@ -98,26 +98,26 @@ export const Posts:iPost[] = [{
 
 
 const module11:iLesson[] = [
-    { type:'Video', title:'¿Qué es Saturno?', description:'' },
-    { type:'Quiz', title:'Quiz', description:'' },
-    { type:'Video', title:'La importancia de Saturno', description:'' },
-    { type:'Quiz', title:'Ejercicio: Reflexión', description:'' },
+    { type:'Video', title:'¿Qué es Saturno?', description:'', link:'https://youtu.be/-AEpq9zauQ8'  },
+    { type:'Video', title:'La importancia de Saturno', description:'', link:'https://youtu.be/gQarN9nNKdA' },
+    { type:'Quiz', title:'Quiz 1.1', description:'' },
+    { type:'Quiz', title:'Ejercicio de Reflexión', description:'' },
 ]
 
 
 const module12:iLesson[] = [
-    { type:'Video', title:'El Karma', description:'' },
-    { type:'Quiz', title:'Quiz', description:'' },
+    { type:'Video', title:'El Karma', description:'', link:'https://youtu.be/dNt2saEg8As' },
+    { type:'Quiz', title:'Quiz 1.2', description:'' },
     { type:'Reading', title:'Saturno en la Astrología', description:'' },
-    { type:'Video', title:'Saturno, el maestro', description:'' },
-    { type:'Quiz', title:'Ejercicio: Compartir', description:'' },
+    { type:'Video', title:'Saturno, el maestro', description:'', link:'https://youtu.be/uilBR7op_GY' },
+    { type:'Quiz', title:'Ejercicio de Compartir', description:'' },
 ]
 
 const module13:iLesson[] = [
-    { type:'Video', title:'Las lecciones de Saturno', description:'' },
-    { type:'Quiz', title:'Quiz', description:'' },
-    { type:'Video', title:'Escucha las señales', description:'' },
-    { type:'Quiz', title:'Ejercicio: Compartir', description:'' }
+    { type:'Video', title:'Las lecciones de Saturno', description:'', link:'https://youtu.be/H3xrXhqG5MY' },
+    { type:'Quiz', title:'Quiz 1.3', description:'' },
+    { type:'Video', title:'Escucha las señales', description:'', link:'https://youtu.be/_BqqI3A1SZY' },
+    { type:'Quiz', title:'Ejercicio Final 1', description:'' }
 ]
 
 
