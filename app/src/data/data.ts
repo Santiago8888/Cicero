@@ -100,9 +100,9 @@ export const Posts:iPost[] = [{
 export const Units:iUnit[] = [{ 
     title: '1. Saturno y el Karma', 
     modules: [
-        { title: '1.1 Introducción a la astroconsciencia', lessons },
-        { title: '1.2 Historia de la astrología', lessons },
-        { title: '1.3 Proposito de vida', lessons }
+        { title: '1.1 La importancia de Saturno', lessons },
+        { title: '1.2 El Karma y Saturno', lessons },
+        { title: '1.3 Las lecciones de Saturno', lessons }
     ]
 }, { 
     title: '2. El Signo de Saturno', 
