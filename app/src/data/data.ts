@@ -32,10 +32,10 @@ const quiz11:iQuestion[] = [
     }, { 
         question:'2. ¿Cuando nos indica Saturno que es tiempo de cambios?', 
         answers:[
-            { answer:'', value: true },
-            { answer:'', value: false },
-            { answer:'', value: false },
-            { answer:'', value: false }
+            { answer:'Aproximadamente cada siete años', value: true },
+            { answer:'Cada que llega al signo de Acuario', value: false },
+            { answer:'Durante la infancia y adolescencia', value: false },
+            { answer:'A los 42 cuando se junta con Urano', value: false }
         ] 
     }, { 
         question:'3. ¿Cuál es uno de los principales mensajes de Saturno?', 
