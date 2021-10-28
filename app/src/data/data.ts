@@ -160,8 +160,8 @@ export const Posts:iPost[] = [{
 
 const module11:iLesson[] = [
     { type:'Video', title:'¿Qué es Saturno?', description:'', link:'https://youtu.be/-AEpq9zauQ8'  },
-    { type:'Video', title:'La importancia de Saturno', description:'', link:'https://youtu.be/gQarN9nNKdA' },
     { type:'Quiz', title:'Quiz 1.1', description:'', questions:quiz11 },
+    { type:'Video', title:'La importancia de Saturno', description:'', link:'https://youtu.be/gQarN9nNKdA' },
     { type:'Quiz', title:'Ejercicio de Reflexión', description:'' },
 ]
 
