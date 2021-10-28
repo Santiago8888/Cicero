@@ -11,8 +11,11 @@
     - [ ] 4 modules with names
     - [ ] First lesson
         - [ ] Video 1
+            - [ ] Completion logic
         - [ ] Quiz
+            - [ ] Completion logic
         - [ ] Video 2
         - [ ] Post instructions
+            - [ ] Completion logic
 
 - [ ] 
