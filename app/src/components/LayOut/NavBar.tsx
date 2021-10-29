@@ -21,7 +21,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')}>
                     <img src='planets/Saturn_terra.png' style={{ height:56, maxHeight:'none', background:'white', borderRadius:'50%', padding:6}} alt={'SocialQ logo'}/>
-                    <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > Astro Consciencia </p>
+                    <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > Manejo y Liberación del Karma </p>
                 </a>
 
                 <a 
