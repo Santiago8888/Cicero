@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
-import { iUser } from "../../App"
 import { CSSProperties, useState } from "react"
+import { iUser } from "../../App"
 
 
 interface iAnswer { answer:string, value:boolean }
