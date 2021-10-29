@@ -19,9 +19,9 @@ export const NavBar = ({ click, user }: iNavBar) => {
     >
         <div className='container' style={{maxWidth:2000, paddingLeft:midScreen ? '2.5rem' : 0, paddingRight:midScreen ? '3em' : 0 }}>
             <div className='navbar-brand'>
-                <a className='navbar-item' onClick={() => click('Home')}>
+                <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
                     <img src='planets/Saturn_terra.png' style={{ height:56, maxHeight:'none', background:'white', borderRadius:'50%', padding:6}} alt={'SocialQ logo'}/>
-                    <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > Manejo y Liberación del Karma </p>
+                    <p className='navbar-item' style={{ fontSize: '2em', color:'white', marginLeft:24 }} > Manejo y Liberación del Karma </p>
                 </a>
 
                 <a 
@@ -44,7 +44,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 style={{ marginRight:'auto', backgroundColor:'darkolivegreen' }}
             >
                 { 
-                    !user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkolivegreen'}} >
+                    !user && <div className={`navbar-end`} style={{fontSize: '1.2em', backgroundColor:'darkolivegreen'}} >
                         <a 
                             onClick={() => click('Login')} 
                             className={'navbar-item'} 
