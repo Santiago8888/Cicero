@@ -15,12 +15,12 @@ export const NavBar = ({ click, user }: iNavBar) => {
         className='navbar is-link' 
         role='navigation' 
         aria-label='main navigation' 
-        style={{borderBottom: '2px solid #ccc', backgroundColor:'darkblue', padding:'0px 2.5rem'}}
+        style={{borderBottom: '2px solid #ccc', backgroundColor:'darkolivegreen', padding:'0px 2.5rem'}}
     >
         <div className='container' style={{maxWidth:2000, paddingLeft:midScreen ? '2.5rem' : 0, paddingRight:midScreen ? '3em' : 0 }}>
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')}>
-                    <img src='SocialQ.png' style={{ height:36, maxHeight: 'none' }} alt={'SocialQ logo'}/>
+                    <img src='planets/Saturn_terra.png' style={{ height:56, maxHeight:'none', background:'white', borderRadius:'50%', padding:6}} alt={'SocialQ logo'}/>
                     <p className='navbar-item' style={{ fontSize: '2em', color:'white' }} > Astro Consciencia </p>
                 </a>
 
@@ -41,14 +41,14 @@ export const NavBar = ({ click, user }: iNavBar) => {
 
             <div 
                 className={`navbar-menu ${isActive ? 'is-active navbar-menu-active': ''}`} 
-                style={{ marginRight:'auto', backgroundColor:'darkblue' }}
+                style={{ marginRight:'auto', backgroundColor:'darkolivegreen' }}
             >
                 { 
-                    !user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkblue'}} >
+                    !user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkolivegreen'}} >
                         <a 
                             onClick={() => click('Login')} 
                             className={'navbar-item'} 
-                            style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
+                            style={{textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}}
                         > 
                             <strong> Iniciar Sesión </strong> 
                         </a>
@@ -56,11 +56,11 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 }
 
                 {
-                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkblue'}}>
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', backgroundColor:'darkolivegreen'}}>
                         <a 
                             onClick={() => click('Posts')} 
                             className={'navbar-item'}
-                            style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
+                            style={{textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}}
                         > 
                             <strong> Chat </strong> 
                         </a>                    
@@ -68,11 +68,11 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 }
 
                 {
-                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial', backgroundColor:'darkblue'}}>
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial', backgroundColor:'darkolivegreen'}}>
                         <a 
                             onClick={() => click('Forum')} 
                             className={'navbar-item'}
-                            style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
+                            style={{textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}}
                         > 
                             <strong> Forum </strong> 
                         </a>                    
@@ -80,11 +80,11 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 }
 
                 {
-                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial', backgroundClip:'darkblue'}}>
+                    user && <div className={`navbar-end `} style={{fontSize: '1.2em', marginLeft:'initial', backgroundClip:'darkolivegreen'}}>
                         <a 
                             onClick={() => click('Recordings')} 
                             className={'navbar-item'}
-                            style={{textAlign:'center', color:'white', backgroundColor:'darkblue'}}
+                            style={{textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}}
                         > 
                             <strong> Grabaciones </strong> 
                         </a>
