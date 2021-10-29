@@ -9,7 +9,7 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     return <div className="content">
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
                 margin:'0rem auto',
@@ -42,7 +42,7 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
                     width:180, 
                     fontSize:'1.25rem', 
                     fontWeight:600, 
-                    backgroundColor:'darkblue'
+                    backgroundColor:'saddlebrown'
                 }}
                 disabled={user.current.module === user.progress.module && user.progress.lesson === user.current.lesson}
             > CONTINUAR </button>
