@@ -18,7 +18,7 @@ const Welcome = ({ click, reset }:iWelcome) => {
     useEffect(() => { reset() }, [reset])
 
     return <div className="content" style={{textAlign:'center'}}>
-        <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
+        <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'saddlebrown'}}> SATURNO </h1>
         <div>
             <ReactPlayer 
                 style={{margin:'auto'}}
@@ -31,8 +31,8 @@ const Welcome = ({ click, reset }:iWelcome) => {
         <div style={{marginTop:!smallScreen ? '3rem' : 0}}>
             {
                 !smallScreen 
-                    ?   <h2 style={{marginBottom:'2rem', marginRight:'auto', marginLeft:'auto', width:600, color:'navy'}}>
-                            Escucha el llamado de tu alma en las estrellas, los planetas y tu interior.
+                    ?   <h2 style={{marginBottom:'2rem', marginRight:'auto', marginLeft:'auto', width:640, color:'darkgoldenrod'}}>
+                            Libera tu karma y descubre que es lo que has venido a enseñar a esta vida.
                         </h2>
                     :   <h2 style={{marginBottom:'1.5rem', marginRight:'auto', marginLeft:'auto', color:'navy', fontSize:'1.25rem', marginTop:'1rem'}}>
                             Escucha el llamado de tu alma.
@@ -45,7 +45,7 @@ const Welcome = ({ click, reset }:iWelcome) => {
                     width:!smallScreen ? 460 : 260 , 
                     fontSize: !smallScreen ? '2rem' : '1.25rem', 
                     fontWeight:900, 
-                    backgroundColor:'mediumblue', 
+                    backgroundColor:'saddlebrown', 
                     borderRadius:20 
                 }}
             > INICIA TU CAMNINO </a>
