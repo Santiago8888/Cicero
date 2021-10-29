@@ -13,7 +13,7 @@ export const Chart = ({ user:{natalChart:{planets, houses}}, title, description,
     useEffect(() => { approve() }, [approve])
 
     return <div className="content">
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
                 margin:'0rem auto',
@@ -40,7 +40,7 @@ export const Chart = ({ user:{natalChart:{planets, houses}}, title, description,
                     width:180, 
                     fontSize:'1.25rem', 
                     fontWeight:600, 
-                    backgroundColor:'darkblue'
+                    backgroundColor:'saddlebrown'
                 }}
             > CONTINUAR </button>
         </div>
