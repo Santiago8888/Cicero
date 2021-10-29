@@ -88,7 +88,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                                                         && user?.current.lesson === l
                                                         && user?.current.module === m 
                                                             ?   {
-                                                                    backgroundColor: !forum && !recordings && !posts ? 'darkblue' : 'lightblue', 
+                                                                    backgroundColor: !forum && !recordings && !posts ? 'darkolivegreen' : 'lightblue', 
                                                                     borderRadius:8
                                                                 }
                                                             : !user || (

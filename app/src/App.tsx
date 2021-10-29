@@ -357,7 +357,7 @@ export const App = () => {
                         marginLeft:3, 
                         marginRight:0, 
                         margin:'0px auto', 
-                        backgroundColor: 'aliceblue', 
+                        backgroundColor: '#EEEEEE', 
                         width: largeScreen ? 'calc(100vw - 253px)' : '100%',
                         minHeight:'calc(100vh - 82px)',
                         textAlign:'center'
