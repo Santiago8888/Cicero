@@ -29,7 +29,7 @@ const Welcome = ({ click, }:iWelcome) => {
                     style={{margin:'auto'}}
                     width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
                     height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
-                    url='https://www.youtube.com/watch?v=8u9sRggTos8' 
+                    url='https://youtu.be/-AEpq9zauQ8' 
                 />
             </div>
         </div>
