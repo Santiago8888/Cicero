@@ -12,8 +12,8 @@ export const Login = ({ login }: iLogin) => {
     return <div className="content">
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
             <div  style={{display:'table-cell', verticalAlign:'middle'}}>
-                <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'darkblue'}}> 
-                    ASTROCONSCIENCIA 
+                <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'saddlebrown'}}> 
+                    SATURNO 🪐  
                 </h1>
 
                 <h3
@@ -73,7 +73,7 @@ export const Login = ({ login }: iLogin) => {
                             width: !smallScreen ? 360 : 240, 
                             fontSize: !smallScreen ? '1.25rem' : '1rem', 
                             fontWeight: 600, 
-                            backgroundColor:'darkblue'
+                            backgroundColor:'saddlebrown'
                         }}
                     > Iniciar Sesión </button>
                 </div>
