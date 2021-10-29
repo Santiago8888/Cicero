@@ -47,11 +47,11 @@ export const Recordings = ({ title, description, recordings}: iRecordings) => {
         <h3 
             style={{
                 margin:'0rem auto',
-                color: '#333',
+                color: '#363636',
                 fontSize: '1.25em',
-                textAlign: 'left',
+                textAlign: 'center',
                 fontWeight: 500,
-                width: midScreen ? 800 : !smallScreen ? 540 : 320
+                width: midScreen ? 640 : !smallScreen ? 540 : 320
             }}
         > { description } </h3>
 
