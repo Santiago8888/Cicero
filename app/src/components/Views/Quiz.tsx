@@ -1,15 +1,25 @@
 import { useMediaQuery } from 'react-responsive'
 import { iUser } from "../../App"
-import { useState } from "react"
+import { CSSProperties, useState } from "react"
 
 
 interface iAnswer { answer:string, value:boolean }
 export interface iQuestion { question:string, answers:iAnswer[] }
 
+const questionStyle:CSSProperties = {
+    textAlign:'left', 
+    maxWidth:800, 
+    margin:'auto auto 3em', 
+    border:'1px solid', 
+    borderRadius:25, 
+    padding:20, 
+    borderColor:'#AAA'
+}
+
 interface IQuestion extends iQuestion { index:number, value:number, select(index:number, value:number):void }
 const Question = ({index, question, value, answers, select}:IQuestion) => <div 
     className="field" 
-    style={{textAlign:'left', maxWidth:800, margin:'auto', marginBottom:'1.5rem'}}
+    style={questionStyle}
 >
     <label className="label" style={{fontSize:'1.25em'}}> { question } </label>
     {
@@ -108,7 +118,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
     }
 
     return <div className="content">
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
                 margin:'0rem auto 2rem',
@@ -120,7 +130,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
             }}
         > { description } </h3>
 
-        <div style={{ width: midScreen ? 660 : !smallScreen ? 450 : 360, margin:'auto' }}>
+        <div style={{ width: midScreen ? 880 : !smallScreen ? 450 : 360, margin:'auto' }}>
             {
                 questions.map((q, i) => 
                     <Question 
