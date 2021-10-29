@@ -43,7 +43,7 @@ export const Recordings = ({ title, description, recordings}: iRecordings) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     return <div className="content">
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
+        <h1 style={{fontSize:'3rem', marginBottom:'1.5rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
                 margin:'0rem auto',
@@ -55,7 +55,7 @@ export const Recordings = ({ title, description, recordings}: iRecordings) => {
             }}
         > { description } </h3>
 
-        <hr style={{ backgroundColor:'darkolivegreen', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
+        <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 
 
         { recordings.map((r, i)=> <Recording {...r} key={i}/>) }
