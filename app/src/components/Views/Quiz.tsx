@@ -50,7 +50,7 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
 >
     <div className="modal-background" />
     <div className="modal-card">
-        <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+        <header className="modal-card-head" style={{backgroundColor:'darkolivegreen'}}>
             <p className="modal-card-title" style={{marginBottom:0, color:'white'}}>Quiz</p>
             { approved && <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/> }
         </header>
@@ -70,7 +70,7 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
         </section>
 
         <footer className="modal-card-foot">
-            <button className='button is-link' onClick={next} style={{backgroundColor:'darkblue', margin:'auto'}}> 
+            <button className='button is-link' onClick={next} style={{backgroundColor:'saddlebrown', margin:'auto'}}> 
                 { approved || user.quizFailures === 0 ? `Continuar` : '' }
                 { !approved && user.quizFailures === 1 ? `Intentar de Nuevo` : '' }
                 { !approved && user.quizFailures === 2 ? `Reiniciar` : '' }
