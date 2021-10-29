@@ -18,34 +18,48 @@ const Welcome = ({ click, reset }:iWelcome) => {
     useEffect(() => { reset() }, [reset])
 
     return <div className="content" style={{textAlign:'center'}}>
-        <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:!smallScreen ? '2rem' : 0, color:'darkblue'}}> ASTROCONSCIENCIA </h1>
-        <div>
-            <ReactPlayer 
-                style={{margin:'auto'}}
-                width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
-                height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
-                url='https://www.youtube.com/watch?v=8u9sRggTos8' 
-            />
-        </div>
+        <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:0, color:'saddlebrown'}}> SATURNO </h1>
 
-        <div style={{marginTop:!smallScreen ? '3rem' : 0}}>
+        <div style={{marginBottom:!smallScreen ? '2rem' : 0}}>
             {
                 !smallScreen 
-                    ?   <h2 style={{marginBottom:'2rem', marginRight:'auto', marginLeft:'auto', width:600, color:'navy'}}>
-                            Escucha el llamado de tu alma en las estrellas, los planetas y tu interior.
+                    ?   <h2 style={{marginBottom:'1.5rem', marginRight:'auto', marginLeft:'auto', width:760, color:'saddlebrown'}}>
+                            El maestro del Karma
                         </h2>
                     :   <h2 style={{marginBottom:'1.5rem', marginRight:'auto', marginLeft:'auto', color:'navy', fontSize:'1.25rem', marginTop:'1rem'}}>
                             Escucha el llamado de tu alma.
                         </h2>
             }
+            <div>
+                <ReactPlayer 
+                    style={{margin:'auto'}}
+                    width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
+                    height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
+                    url='https://www.youtube.com/watch?v=8u9sRggTos8' 
+                />
+            </div>
+        </div>
+
+        <div style={{marginTop:!smallScreen ? '2rem' : 0}}>
+            {
+                !smallScreen 
+                    ?   <h2 style={{marginBottom:'0rem', marginRight:'auto', marginLeft:'auto', width:760, color:'saddlebrown'}}>
+                            Descubre que es lo que has venido a enseñar
+                        </h2>
+                    :   <h2 style={{marginBottom:'1.5rem', marginRight:'auto', marginLeft:'auto', color:'navy', fontSize:'1.25rem', marginTop:'1rem'}}>
+                            Escucha el llamado de tu alma.
+                        </h2>
+            }
+
             <a
                 onClick={click}
                 className='button is-link'
                 style={{ 
-                    width:!smallScreen ? 460 : 260 , 
-                    fontSize: !smallScreen ? '2rem' : '1.25rem', 
+                    width:!smallScreen ? 320 : 260 , 
+                    fontSize: !smallScreen ? '1.5rem' : '1.25rem', 
                     fontWeight:900, 
-                    backgroundColor:'mediumblue', 
+                    marginTop:'1.25rem',
+                    backgroundColor:'saddlebrown', 
                     borderRadius:20 
                 }}
             > INICIA TU CAMNINO </a>
