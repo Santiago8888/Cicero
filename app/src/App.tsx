@@ -7,7 +7,6 @@ import { iPost } from './components/Forum/Posts'
 import { Recordings, Forum, Posts, Units } from './data/data'
 import { iPlanet } from './components/Astral/AstralChart'
 import { iLoginInput } from './components/Auth/Login'
-import { iNewUser } from './components/Auth/SignUp'
 import { Home } from './components/Home'
 
 import { App as RealmApp, Credentials } from 'realm-web'
@@ -16,7 +15,6 @@ import { useState, useEffect } from 'react'
 import amplitude from 'amplitude-js'
 
 import 'bulma/css/bulma.css'
-import axios from 'axios'
 import './App.css'
 
 
@@ -35,12 +33,6 @@ export interface iUser {
     natalChart:iNatalChart
 }
 
-const mapSign = (sun:iPlanet):Sign => {
-    const signs:Sign[] = ['Ari', 'Tau', 'Gem', 'Can', 'Leo', 'Vir', 'Lib', 'Sco', 'Sag', 'Cap', 'Aqu', 'Pis' ]
-    const sign = signs[sun.house - 1]
-    return sign
-}
-
 
 interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
 const initialData:iHomeData = { 
@@ -57,7 +49,6 @@ export const App = () => {
     const largeScreen = useMediaQuery({ query: '(min-width: 1200px)' })
 
     const [ isLogin, setLogin ] = useState(false)
-    const [ isWelcome, setWelcome ] = useState(true)
 
     const [ user, setUser ] = useState<iUser>()
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
@@ -93,43 +84,6 @@ export const App = () => {
 
 
     /**************************        Auth            ***************************/
-    const createUser = async({ name, email, password, date, location }:iNewUser) => {
-        if(!app) return
-
-        try{
-            await app.emailPasswordAuth.registerUser(email, password)
-            await app.logIn(Credentials.emailPassword(email, password))    
-        } catch(e){ return } // TODO: Handle on UI
-
-        if(!app.currentUser) return
-        const { id:user_id } = app.currentUser
-
-        const mongo = app.currentUser.mongoClient('mongodb-atlas')
-        const db = mongo.db('Cicero')
-        setDB(db)
-
-        const current: iPosition = { unit:0, module:0, lesson:0 }
-        const progress: iPosition = {unit:3, module:0, lesson:5}
-        const natalChart = {planets:[], houses:[]}
-        const user:iUser = { user_id, name, email, date, location, quizFailures:0, current, progress, natalChart }
-        setUser(user)
-
-        await db.collection('users').insertOne(user)        
-        const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
-            date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
-        }`
-
-        const { data: { houses, planets } } =  await axios.get(`/.netlify/functions/astro-chart${chartParams}`)
-        console.log(houses, planets)
-
-        const sun = planets.find(({name}:{name:string}) => name === 'Sun')
-        const sign = mapSign(sun)
-        const fullUser = {...user, sign, natalChart:{planets, houses}}
-        setUser(fullUser)
-
-        db.collection('users').updateOne({ user_id }, {...fullUser, user_id})
-    } 
-
     const updateUser = (user:iUser) => {
         if(!app?.currentUser || !db) return
 
@@ -188,7 +142,6 @@ export const App = () => {
 
     const reset = () => {
         setLogin(false)
-        setWelcome(true)
         setHomeData({...homeData, forum:undefined, recordings:undefined, posts:undefined})
     }
     
@@ -366,18 +319,16 @@ export const App = () => {
                     <Home 
                         user={user}
                         {...homeData} 
-                        isLogin={isLogin} 
-                        isWelcome={isWelcome}
-                        setWelcome={() => setWelcome(false)}
-                        createUser={createUser}
-                        likePost={likePost}
-                        approve={approve} 
-                        submit={submit}
-                        login={login} 
-                        reply={reply}
                         post={post}
                         like={like}
                         next={next}
+                        login={login} 
+                        reply={reply}
+                        submit={submit}
+                        approve={approve} 
+                        isLogin={isLogin} 
+                        likePost={likePost}
+                        setLogin={() => setLogin(true)}
                     />
                 </div>
             </div>
