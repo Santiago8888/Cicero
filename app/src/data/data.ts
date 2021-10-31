@@ -121,7 +121,7 @@ export const Forum:iForum = {
 
 export const Recordings:iRecordings = { 
     title:'Grabaciones Semanales', 
-    description:'Todos los Miércoles nos reunimos por Zoom para resolver sus dudas, estás son las grabaciones de la anteriores.', 
+    description:'Todos los Jueves nos reunimos por Zoom para resolver tus dudas, estás son las grabaciones de la anteriores.', 
     recordings:[{ 
         title: 'Marzo 28: El Sol y los Signos', 
         link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
