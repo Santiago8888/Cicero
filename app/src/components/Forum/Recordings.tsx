@@ -5,8 +5,8 @@ interface iRecording { title:string, link:string, description:string }
 const Recording = ({ title, link, description }: iRecording) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
-    return <div style={{width:midScreen ? 800 : 450, textAlign:'left', margin:'auto', marginBottom:'1.5em'}}>
-        <p style={{color:'saddlebrown', fontSize:'1.25rem', fontWeight:600, marginBottom:0, textAlign: midScreen ? 'initial' : 'center'}}> 
+    return <div style={{width:midScreen ? 800 : 450, textAlign:'left', margin:'auto', marginBottom:'2.5em'}}>
+        <p style={{color:'saddlebrown', fontSize:'1.25rem', fontWeight:600, marginBottom:'0.75rem', textAlign: midScreen ? 'initial' : 'center'}}> 
             { title } 
         </p>
 
@@ -17,7 +17,7 @@ const Recording = ({ title, link, description }: iRecording) => {
                 midScreen && 
                 <div className='media-content' style={{paddingBottom:'0.5rem', paddingRight:'1rem', marginLeft:'1rem', width:400}}>
                     <div className='content'>
-                        <div className='content' style={{color:'gray', marginTop:'1rem'}}> 
+                        <div className='content' style={{color:'#363636', marginTop:'1rem'}}> 
                             { description } 
                         </div>
                     </div>
