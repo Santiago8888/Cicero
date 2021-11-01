@@ -68,13 +68,12 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
     }
     
     return <div style={{display:'flex', marginBottom:64}}>
-        <Likes user={user} likes={likes} like={() => like(id)}/>
-
         <div className="card" style={{textAlign:'left', width:'100%'}}>
-            <header className="card-header" style={{backgroundColor:'goldenrod'}}>
-                <p className="card-header-title" style={{color:'white'}}>
-                    { title }
-                </p>
+            <header className="card-header" style={{height:48}}>
+                <figure className="image is-24x24" style={{margin:'auto 12px'}}>
+                    <img src={`signs/${image}.png`} alt="Solar sign" />
+                </figure>
+                <p className="title is-4" style={{ margin:'auto 12px'}}>{ name }</p>
             </header>
 
             <div className="card-content">
@@ -82,10 +81,6 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                     <div className='level-item' style={{width:160}}>
                         <div className="media">
                             <div className="media-left">
-                                <figure className="image is-48x48">
-                                    <img src={`signs/${image}.png`} alt="Solar sign" />
-                                </figure>
-                                <p className="title is-4" style={{textAlign:'center'}}>{ name }</p>
                             </div>
                         </div>
                     </div>
@@ -148,9 +143,6 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
             { showComments && comments.map((comment) => <Comment {...comment}/>)}
         </div>
-
-
-        <div style={{width:80}}/>
     </div>
 }
 
