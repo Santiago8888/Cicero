@@ -12,8 +12,8 @@ interface IDoubt extends iDoubt { user:iUser, like():void }
 const Doubt = ({ user, question, details, likes, like }:IDoubt) => <div style={doubtStyle}>
     <Likes user={user} likes={likes} like={like} style={{textAlign:'center'}}/>
     <div>
-        <p style={{color:'darkblue', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
-        <p> { details } </p>
+        <p style={{color:'saddlebrown', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
+        <p style={{color:'#363636'}}> { details } </p>
     </div>
 </div>
 
@@ -23,10 +23,17 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
     const [question, setQuestion] = useState('')
     const [details, setDetails] = useState('')
 
+    const click = () => {
+        submit({ question, details, likes:[user.user_id] })
+        
+        setQuestion('')
+        setDetails('')
+    }
+
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className="modal-background" />
         <div className="modal-card">
-            <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+            <header className="modal-card-head" style={{backgroundColor:'darkolivegreen'}}>
                 <p className="modal-card-title" style={{marginBottom:0, color:'white'}}> Haz una Pregunta </p>
                 <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
             </header>
@@ -50,7 +57,7 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
                     <div className="control">
                         <textarea 
                             className="textarea" 
-                            placeholder="e.g. Hello world" 
+                            placeholder="Comparte un poco de contexto o la motivación de tu pregunta." 
                             value={details} 
                             onChange={({target:{value}})=> setDetails(value)}
                         />
@@ -61,9 +68,9 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
             <footer className="modal-card-foot">
                 <button 
                     className='button is-link' 
-                    style={{backgroundColor:'darkblue', margin:'auto'}}
-                    onClick={() => submit({ question, details, likes:[user.user_id] })} 
-                >  Siguiente </button>
+                    style={{backgroundColor:'saddlebrown', margin:'auto'}}
+                    onClick={click} 
+                >  Preguntar </button>
             </footer>
         </div>
     </div>
@@ -82,15 +89,15 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
     }
 
     return <div className="content">
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> { title } </h1>
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
                 margin:'0rem auto',
                 color: '#333',
                 fontSize: '1.25em',
-                textAlign: 'left',
+                textAlign: 'center',
                 fontWeight: 500,
-                width: midScreen ? 800 : 320        
+                width: midScreen ? 640 : 320        
             }}
         > { description } </h3>
 
@@ -105,15 +112,18 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
                     marginTop:'1.5em', 
                     fontSize:'1.25rem', 
                     marginBottom:'1.5em',
-                    backgroundColor:'darkblue'
+                    backgroundColor:'darkolivegreen'
                 }}
                 onClick={() => setActive(true)}
             > Haz una Pregunta </button>
         </div> 
         
-        <hr style={{ backgroundColor:'darkblue', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
+        <hr style={{ backgroundColor:'darkolivegreen', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
-        { questions.map((q, i) => <Doubt  {...q} user={user} like={() => like(i)} key={i}/> ) }
+        { 
+            questions.sort(({likes:a}, {likes:b}) => a.length > b.length ? -1 : 1)
+            .map((q, i) => <Doubt  {...q} user={user} like={() => like(i)} key={i}/> ) 
+        }
 
         <Modal 
             user={user}
