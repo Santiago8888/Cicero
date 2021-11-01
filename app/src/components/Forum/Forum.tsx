@@ -23,6 +23,13 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
     const [question, setQuestion] = useState('')
     const [details, setDetails] = useState('')
 
+    const click = () => {
+        submit({ question, details, likes:[user.user_id] })
+        
+        setQuestion('')
+        setDetails('')
+    }
+
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className="modal-background" />
         <div className="modal-card">
@@ -62,8 +69,8 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
                 <button 
                     className='button is-link' 
                     style={{backgroundColor:'saddlebrown', margin:'auto'}}
-                    onClick={() => submit({ question, details, likes:[user.user_id] })} 
-                >  Siguiente </button>
+                    onClick={click} 
+                >  Preguntar </button>
             </footer>
         </div>
     </div>
