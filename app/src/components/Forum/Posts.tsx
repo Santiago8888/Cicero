@@ -68,13 +68,12 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
     }
     
     return <div style={{display:'flex', marginBottom:64}}>
-        <Likes user={user} likes={likes} like={() => like(id)}/>
-
         <div className="card" style={{textAlign:'left', width:'100%'}}>
-            <header className="card-header" style={{backgroundColor:'goldenrod'}}>
-                <p className="card-header-title" style={{color:'white'}}>
-                    { title }
-                </p>
+            <header className="card-header" style={{height:48}}>
+                <figure className="image is-24x24" style={{margin:'auto 12px'}}>
+                    <img src={`signs/${image}.png`} alt="Solar sign" />
+                </figure>
+                <p className="title is-4" style={{ margin:'auto 12px'}}>{ name }</p>
             </header>
 
             <div className="card-content">
@@ -82,10 +81,6 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                     <div className='level-item' style={{width:160}}>
                         <div className="media">
                             <div className="media-left">
-                                <figure className="image is-48x48">
-                                    <img src={`signs/${image}.png`} alt="Solar sign" />
-                                </figure>
-                                <p className="title is-4" style={{textAlign:'center'}}>{ name }</p>
                             </div>
                         </div>
                     </div>
@@ -148,9 +143,6 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
             { showComments && comments.map((comment) => <Comment {...comment}/>)}
         </div>
-
-
-        <div style={{width:80}}/>
     </div>
 }
 
@@ -174,38 +166,26 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
         setNewPost(emptyPost)
     }
 
-    return <div className='content' style={{maxWidth:720, margin:'auto'}}>
+    return <div className='content' style={{maxWidth:640, margin:'auto'}}>
         <Header 
-            title={"AstroChat"} 
-            description={"Interactua con el grupo y comparte lo que haz aprendido."} 
-            buttonText={"Publicar"}
+            title={"Astro Café"} 
+            description={"Comparte con el grupo lo que has aprendido y celebra los logros de los demás."} 
+            buttonText={"Nueva Publicación"}
             click={() => setActive(true)}
         />
 
         <Modal 
             submit={submit} 
-            title={"Publicar"} 
+            title={"Nueva Publicación"} 
             isActive={isActive} 
             deactivate={() => setActive(false)}
         >
             <div className="field">
-                <label className="label"> Título: </label>
-                <div className="control">
-                    <input 
-                        className="input" 
-                        type="text" 
-                        value={newPost.title} 
-                        onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
-                    />
-                </div>
-            </div>
-
-            <div className="field">
-                <label className="label"> Contentido Adicional (opcional): </label>    
+                <label className="label"> Mensaje: </label>    
                 <div className="control">
                     <textarea 
                         className="textarea" 
-                        placeholder="e.g. Hello world" 
+                        placeholder="Platica libremente sobre lo que quieras compartir o sigue las sugerencias de cada lección." 
                         value={newPost.detail} 
                         onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
                     />

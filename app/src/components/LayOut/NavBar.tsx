@@ -62,7 +62,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                             className={'navbar-item'}
                             style={{textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}}
                         > 
-                            <strong> Chat </strong> 
+                            <strong> Café </strong> 
                         </a>                    
                     </div>
                 }
@@ -74,7 +74,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                             className={'navbar-item'}
                             style={{textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}}
                         > 
-                            <strong> Forum </strong> 
+                            <strong> Dudas </strong> 
                         </a>                    
                     </div>
                 }

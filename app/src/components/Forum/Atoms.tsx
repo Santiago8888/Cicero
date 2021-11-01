@@ -7,7 +7,7 @@ import { iUser } from '../../App'
 
 const descriptionStyle:CSSProperties = {
     margin:'0rem auto',
-    color: '#333',
+    color: '#363636',
     fontSize: '1.25em',
     textAlign: 'center',
     fontWeight: 500,
@@ -20,16 +20,16 @@ const buttonStyle:CSSProperties = {
     marginTop:'2em', 
     fontSize:'1.1rem', 
     marginBottom:'1.5em',
-    backgroundColor:'darkblue'
+    backgroundColor:'darkolivegreen'
 }
 
-const dividerStyle = { backgroundColor:'darkblue', margin:'1.5rem auto 3rem' }
+const dividerStyle = { backgroundColor:'darkolivegreen', margin:'1.5rem auto 3rem' }
 interface iHeader { title:string, description:string, buttonText:string, click():void }
 export const Header = ({ title, description, buttonText, click }:iHeader) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
     return <div>
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'darkblue'}}> 
+        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> 
             { title } 
         </h1>
 
@@ -61,7 +61,7 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className="modal-background" />
         <div className="modal-card">
-            <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+            <header className="modal-card-head" style={{backgroundColor:'darkolivegreen'}}>
                 <p className="modal-card-title" style={{marginBottom:0, color:'white'}}> { title } </p>
                 <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
             </header>
@@ -74,8 +74,8 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
                 <button 
                     className='button is-link' 
                     onClick={submit}
-                    style={{backgroundColor:'darkblue', margin:'auto'}}
-                >  Siguiente </button>
+                    style={{backgroundColor:'saddlebrown', margin:'auto'}}
+                >  Publicar </button>
             </footer>
         </div>
     </div>
