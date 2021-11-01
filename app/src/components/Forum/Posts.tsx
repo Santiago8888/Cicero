@@ -184,28 +184,16 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
 
         <Modal 
             submit={submit} 
-            title={"Publicar"} 
+            title={"Nueva Publicación"} 
             isActive={isActive} 
             deactivate={() => setActive(false)}
         >
             <div className="field">
-                <label className="label"> Título: </label>
-                <div className="control">
-                    <input 
-                        className="input" 
-                        type="text" 
-                        value={newPost.title} 
-                        onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
-                    />
-                </div>
-            </div>
-
-            <div className="field">
-                <label className="label"> Contentido Adicional (opcional): </label>    
+                <label className="label"> Mensaje: </label>    
                 <div className="control">
                     <textarea 
                         className="textarea" 
-                        placeholder="e.g. Hello world" 
+                        placeholder="Platica libremente sobre lo que quieras compartir o sigue las sugerencias de cada lección." 
                         value={newPost.detail} 
                         onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
                     />
