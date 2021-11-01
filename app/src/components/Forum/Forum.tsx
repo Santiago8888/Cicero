@@ -118,7 +118,7 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
             > Haz una Pregunta </button>
         </div> 
         
-        <hr style={{ backgroundColor:'saddlebrown', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
+        <hr style={{ backgroundColor:'darkolivegreen', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
         { 
             questions.sort(({likes:a}, {likes:b}) => a.length > b.length ? -1 : 1)
