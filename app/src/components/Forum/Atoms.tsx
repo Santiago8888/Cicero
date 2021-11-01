@@ -75,7 +75,7 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
                     className='button is-link' 
                     onClick={submit}
                     style={{backgroundColor:'saddlebrown', margin:'auto'}}
-                >  Siguiente </button>
+                >  Publicar </button>
             </footer>
         </div>
     </div>
