@@ -13,7 +13,7 @@ const Doubt = ({ user, question, details, likes, like }:IDoubt) => <div style={d
     <Likes user={user} likes={likes} like={like} style={{textAlign:'center'}}/>
     <div>
         <p style={{color:'saddlebrown', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
-        <p> { details } </p>
+        <p style={{color:'#363636'}}> { details } </p>
     </div>
 </div>
 
@@ -26,7 +26,7 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className="modal-background" />
         <div className="modal-card">
-            <header className="modal-card-head" style={{backgroundColor:'saddlebrown'}}>
+            <header className="modal-card-head" style={{backgroundColor:'darkolivegreen'}}>
                 <p className="modal-card-title" style={{marginBottom:0, color:'white'}}> Haz una Pregunta </p>
                 <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
             </header>
