@@ -3,19 +3,19 @@
 # Onboarding
 
 - [ ] Change main button to login.
-    - [ ] Appereance
+    - [X] Appereance
     - [ ] Logic
     - [ ] Loading spinner after login.
 
 - [ ] Content
-    - [ ] 4 modules with names
-        - [ ] First unit modules and lessons.
+    - [X] 4 modules with names
+        - [X] First unit modules and lessons.
 
     - [ ] First lesson
         - [ ] Video 1
             - [ ] Completion logic
-        - [ ] Quiz
-            - [ ] Completion logic
+        - [X] Quiz
+            - [X] Completion logic
         - [ ] Video 2
         - [ ] Post instructions
             - [ ] Completion logic
