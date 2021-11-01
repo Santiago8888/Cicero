@@ -105,7 +105,7 @@ export const lesson: iLesson = {
 
 export const Forum:iForum = { 
     user:defaultUser,
-    title:'Portal de Dudas', 
+    title:'Foro de Dudas', 
     description:'Comparte las dudas y preguntas que quieras que sean respondidas en la sesión semanal.', 
     questions:[{ 
         question: '¿Qué significa cuando el Sol está en Leo?', 
