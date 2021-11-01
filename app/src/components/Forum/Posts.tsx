@@ -174,11 +174,11 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
         setNewPost(emptyPost)
     }
 
-    return <div className='content' style={{maxWidth:720, margin:'auto'}}>
+    return <div className='content' style={{maxWidth:640, margin:'auto'}}>
         <Header 
             title={"Astro Café"} 
-            description={"Interactua con el grupo y comparte lo que haz aprendido."} 
-            buttonText={"Publicar"}
+            description={"Comparte con el grupo lo que has aprendido y celebra los logros de los demás."} 
+            buttonText={"Nueva Publicación"}
             click={() => setActive(true)}
         />
 
