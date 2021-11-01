@@ -176,7 +176,7 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
 
     return <div className='content' style={{maxWidth:720, margin:'auto'}}>
         <Header 
-            title={"AstroChat"} 
+            title={"Astro Café"} 
             description={"Interactua con el grupo y comparte lo que haz aprendido."} 
             buttonText={"Publicar"}
             click={() => setActive(true)}
