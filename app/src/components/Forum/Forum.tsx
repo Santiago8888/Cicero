@@ -113,7 +113,10 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
         
         <hr style={{ backgroundColor:'saddlebrown', margin:'1.5rem auto 3rem', width:midScreen ? 600 : 320 }}/>
 
-        { questions.map((q, i) => <Doubt  {...q} user={user} like={() => like(i)} key={i}/> ) }
+        { 
+            questions.sort(({likes:a}, {likes:b}) => a.length > b.length ? -1 : 1)
+            .map((q, i) => <Doubt  {...q} user={user} like={() => like(i)} key={i}/> ) 
+        }
 
         <Modal 
             user={user}
