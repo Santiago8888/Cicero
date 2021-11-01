@@ -89,11 +89,11 @@ export const Likes = ({user, likes, style, like}: iLikes) => <div style={{width:
             width={20} 
             viewBox="0 0 24 24" 
             xmlns="http://www.w3.org/2000/svg" 
-            style={{fill:likes.includes(user.user_id) ? 'darkblue' : 'goldenrod'}}
+            style={{fill:likes.includes(user.user_id) ? 'saddlebrown' : 'darkolivegreen' }}
         >
             <path d="M0 15.878 l12-11.878 12 11.878-4 4.122-8-8-8 8-4-4.122z" />
         </svg>
     </a><br/>
 
-    <p style={{color:'darkblue', fontSize:24, fontWeight:600, marginTop:-10}}> { likes.length } </p>
+    <p style={{color:'saddlebrown', fontSize:24, fontWeight:600, marginTop:-10}}> { likes.length } </p>
 </div>
