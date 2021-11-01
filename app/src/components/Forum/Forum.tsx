@@ -50,7 +50,7 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
                     <div className="control">
                         <textarea 
                             className="textarea" 
-                            placeholder="e.g. Hello world" 
+                            placeholder="Comparte un poco de contexto o la motivación de tu pregunta." 
                             value={details} 
                             onChange={({target:{value}})=> setDetails(value)}
                         />
