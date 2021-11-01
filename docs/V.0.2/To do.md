@@ -2,4 +2,4 @@
 
 - [ ] Set progress to first lesson after onboarding.
 - [ ] Review placeholder texts.
-- [ ] Sort questions by vote.
+- [X] Sort questions by vote.
