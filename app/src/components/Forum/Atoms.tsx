@@ -61,7 +61,7 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className="modal-background" />
         <div className="modal-card">
-            <header className="modal-card-head" style={{backgroundColor:'darkblue'}}>
+            <header className="modal-card-head" style={{backgroundColor:'darkolivegreen'}}>
                 <p className="modal-card-title" style={{marginBottom:0, color:'white'}}> { title } </p>
                 <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
             </header>
@@ -74,7 +74,7 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
                 <button 
                     className='button is-link' 
                     onClick={submit}
-                    style={{backgroundColor:'darkblue', margin:'auto'}}
+                    style={{backgroundColor:'saddlebrown', margin:'auto'}}
                 >  Siguiente </button>
             </footer>
         </div>
