@@ -73,27 +73,28 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                 <figure className="image is-24x24" style={{margin:'auto 12px'}}>
                     <img src={`signs/${image}.png`} alt="Solar sign" />
                 </figure>
-                <p className="title is-4" style={{ margin:'auto 12px'}}>{ name }</p>
+                <p className="title is-4" style={{ margin:'auto 12px'}}>
+                    { name }
+                </p>
             </header>
 
             <div className="card-content">
+                <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
+                    <p style={{padding:'1rem'}}> 
+                        { detail }
+                    </p>
+                </div>
+
                 <nav className="level">
-                    <div className='level-item' style={{width:160}}>
-                        <div className="media">
-                            <div className="media-left">
-                            </div>
-                        </div>
+                    <div className='level-item'>
+                        Likes
                     </div>
 
-                    <div className="level-item" style={{width:'calc(100% - 160px)', minHeight:100}}>
-                        <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
-                            <p style={{marginTop:'-1rem'}}> 
-                                <DateTime date={new Date()} />
-                                { detail } 
-                            </p>
-                        </div>
+                    <div className="level-item">
+                        Comentarios
                     </div>
                 </nav>
+
             </div>
 
             {
