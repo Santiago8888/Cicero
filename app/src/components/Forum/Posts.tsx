@@ -91,9 +91,9 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                     </div>
 
                     <div className="level-item">
-                        <p style={{width:'100%', textAlign:'right'}}> 
+                        <a style={{width:'100%', textAlign:'right'}} onClick={() => setShowComments(!showComments)}> 
                             { comments.length } Comentario{ comments.length !== 1 ? 's' : '' } 
-                        </p>
+                        </a>
                     </div>
                 </nav>
 
@@ -105,10 +105,9 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                     { !canComment && <a className="card-footer-item" onClick={() => setCanComment(true)}> Comentar </a> }
                     { 
                         !!comments.length &&  
-                        <a 
-                            className="card-footer-item" 
-                            onClick={() => setShowComments(!showComments)} 
-                        >  { !showComments ? 'Mostrar' : 'Ocultar' } Comentarios </a> 
+                        <a className="card-footer-item">  
+                            { !showComments ? 'Mostrar' : 'Ocultar' } Comentarios 
+                        </a> 
                     }
                 </footer>
             }
@@ -121,14 +120,14 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                         <input 
                             type="text" 
                             className="input" 
-                            placeholder="Comentar"
+                            placeholder="Añade tu comentario"
                             onChange={({target:{value}}) => setValue(value)}                        
                             onKeyPress={({ key }) => key === 'Enter' ? comment(value, id) : null}
                         />
                     </div>
 
                     <div className="control" style={{marginRight:20}}>
-                        <a className="button is-info" onClick={() => comment(value, id)}> 
+                        <a className="button" style={{background:'darkolivegreen'}} onClick={() => comment(value, id)}> 
                             <svg 
                                 xmlns="http://www.w3.org/2000/svg" 
                                 viewBox="0 0 24 24" 
