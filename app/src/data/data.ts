@@ -1,10 +1,10 @@
-import { iRecordings } from "../components/Forum/Recordings"
-import { iLesson, iUnit } from "../components/LayOut/Menu"
-import { iQuestion } from "../components/Views/Quiz"
-import { iForum } from "../components/Forum/Forum"
-import { iPost } from "../components/Forum/Posts"
+import { iRecordings } from '../components/Forum/Recordings'
+import { iLesson, iUnit } from '../components/LayOut/Menu'
+import { iQuestion } from '../components/Views/Quiz'
+import { iForum } from '../components/Forum/Forum'
+import { iPost } from '../components/Forum/Posts'
 import { planets, houses } from './chart'
-import { iUser } from "../App"
+import { iUser } from '../App'
 
 
 export const defaultUser:iUser = { 
