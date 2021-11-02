@@ -12,7 +12,7 @@ export const Chart = ({ user:{natalChart:{planets, houses}}, title, description,
 
     useEffect(() => { approve() }, [approve])
 
-    return <div className="content">
+    return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{

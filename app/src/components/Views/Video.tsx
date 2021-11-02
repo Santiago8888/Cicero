@@ -8,7 +8,7 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
-    return <div className="content">
+    return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{

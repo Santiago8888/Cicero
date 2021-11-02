@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { CSSProperties, useEffect, useState } from "react"
-import { Header, Modal } from "./Atoms"
+import { CSSProperties, useEffect, useState } from 'react'
+import { Header, Modal } from './Atoms'
 import { iUser, Sign } from '../../App'
 import { ObjectID } from 'bson'
 
@@ -10,16 +10,16 @@ import { ObjectID } from 'bson'
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
 interface iComment { comment:string, name:string, image?:Sign }
 const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBoxStyle, padding:10, marginBottom:0 }}>
-    <div className="media">
-        <div className="media-left" style={{margin:'auto'}}>
-            <figure className="image is-24x24" style={{marginBottom:'0.5rem'}}>
-                <img src={`signs/${image}.png`} alt="Solar sign" />
+    <div className='media'>
+        <div className='media-left' style={{margin:'auto'}}>
+            <figure className='image is-24x24' style={{marginBottom:'0.5rem'}}>
+                <img src={`signs/${image}.png`} alt='Solar sign' />
             </figure>
-            <p className="title is-6" style={{textAlign:'center'}}> { name } </p>
+            <p className='title is-6' style={{textAlign:'center'}}> { name } </p>
         </div>
 
-        <div className="level-item" style={{width:'calc(100% - 160px)', paddingTop:'0.5rem'}}>
-            <div className="content" style={{ textAlign:'left', width:'100%'}}>
+        <div className='level-item' style={{width:'calc(100% - 160px)', paddingTop:'0.5rem'}}>
+            <div className='content' style={{ textAlign:'left', width:'100%'}}>
                 <p> { comment } </p>
             </div>
         </div>
@@ -65,23 +65,23 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
     }
     
     return <div style={{display:'flex', marginBottom:64}}>
-        <div className="card" style={{textAlign:'left', width:'100%'}}>
-            <header className="card-header" style={{height:48}}>
-                <figure className="image is-24x24" style={{margin:'auto 12px'}}>
-                    <img src={`signs/${image}.png`} alt="Solar sign" />
+        <div className='card' style={{textAlign:'left', width:'100%'}}>
+            <header className='card-header' style={{height:48}}>
+                <figure className='image is-24x24' style={{margin:'auto 12px'}}>
+                    <img src={`signs/${image}.png`} alt='Solar sign' />
                 </figure>
-                <p className="title is-4" style={{ margin:'auto 12px'}}>
+                <p className='title is-4' style={{ margin:'auto 12px'}}>
                     { name }
                 </p>
             </header>
 
-            <div className="card-content" style={{paddingBottom:'0.25rem'}}>
-                <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
+            <div className='card-content' style={{paddingBottom:'0.25rem'}}>
+                <div className='content' style={{minHeight: 100, textAlign:'left', width:'100%'}}>
                     <h5> { title } </h5>
                     <p> { detail } </p>
                 </div>
 
-                <nav className="level">
+                <nav className='level'>
                     <div className='level-item'>
                         <a
                             style={{
@@ -95,7 +95,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                         > { likes.length } Like{likes.length !== 1 ? 's' : '' } </a>
                     </div>
 
-                    <div className="level-item">
+                    <div className='level-item'>
                         <a 
                             style={{width:'100%', textAlign:'right', color:'#4a4a4a', fontSize:'0.9rem' }}
                             onClick={clickComment}
@@ -109,29 +109,29 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
             {
                 canComment && 
-                <div className="field has-addons" style={footerBoxStyle}>
-                    <div className="control" style={{width:'100%', marginLeft:20}}>
+                <div className='field has-addons' style={footerBoxStyle}>
+                    <div className='control' style={{width:'100%', marginLeft:20}}>
                         <input 
-                            type="text" 
-                            className="input" 
-                            placeholder="Añade tu comentario"
+                            type='text' 
+                            className='input' 
+                            placeholder='Añade tu comentario'
                             onChange={({target:{value}}) => setValue(value)}                        
                             onKeyPress={({ key }) => key === 'Enter' ? comment(value, id) : null}
                         />
                     </div>
 
-                    <div className="control" style={{marginRight:20}}>
-                        <a className="button" style={{background:'darkolivegreen'}} onClick={() => comment(value, id)}> 
+                    <div className='control' style={{marginRight:20}}>
+                        <a className='button' style={{background:'darkolivegreen'}} onClick={() => comment(value, id)}> 
                             <svg 
-                                xmlns="http://www.w3.org/2000/svg" 
-                                viewBox="0 0 24 24" 
-                                data-supported-dps="24x24" 
-                                fill="white" 
-                                className="mercado-match" 
-                                width="24" 
-                                height="24" 
-                                focusable="false"
-                            ><path d="M21 3L0 10l7.66 4.26L16 8l-6.26 8.34L14 24l7-21z"></path></svg>
+                                xmlns='http://www.w3.org/2000/svg' 
+                                viewBox='0 0 24 24' 
+                                data-supported-dps='24x24' 
+                                fill='white' 
+                                className='mercado-match' 
+                                width='24' 
+                                height='24' 
+                                focusable='false'
+                            ><path d='M21 3L0 10l7.66 4.26L16 8l-6.26 8.34L14 24l7-21z'></path></svg>
                         </a>
                     </div>
                 </div>
@@ -164,24 +164,24 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
 
     return <div className='content' style={{maxWidth:640, margin:'auto'}}>
         <Header 
-            title={"Astro Café"} 
-            description={"Comparte con el grupo lo que has aprendido y celebra los logros de los demás."} 
-            buttonText={"Nueva Publicación"}
+            title={'Astro Café'} 
+            description={'Comparte con el grupo lo que has aprendido y celebra los logros de los demás.'} 
+            buttonText={'Nueva Publicación'}
             click={() => setActive(true)}
         />
 
         <Modal 
             submit={submit} 
-            title={"Nueva Publicación"} 
+            title={'Nueva Publicación'} 
             isActive={isActive} 
             deactivate={() => setActive(false)}
         >
-            <div className="field">
-                <label className="label"> Título: </label>
-                <div className="control">
+            <div className='field'>
+                <label className='label'> Título: </label>
+                <div className='control'>
                     <input 
-                        type="text" 
-                        className="input" 
+                        type='text' 
+                        className='input' 
                         value={newPost.title} 
                         placeholder={'Selecciona alguna sugerencia de las lecciones.'}
                         onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
@@ -189,12 +189,12 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
                 </div>
             </div>
 
-            <div className="field">
-                <label className="label"> Mensaje: </label>    
-                <div className="control">
+            <div className='field'>
+                <label className='label'> Mensaje: </label>    
+                <div className='control'>
                     <textarea 
-                        className="textarea" 
-                        placeholder="Puedes compartir alguna experiencia, aprendizaje o meta." 
+                        className='textarea' 
+                        placeholder='Puedes compartir alguna experiencia, aprendizaje o meta.' 
                         value={newPost.detail} 
                         onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
                     />

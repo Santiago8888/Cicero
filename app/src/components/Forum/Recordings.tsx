@@ -42,7 +42,7 @@ export const Recordings = ({ title, description, recordings}: iRecordings) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
-    return <div className="content">
+    return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'1.5rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{

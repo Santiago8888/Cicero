@@ -11,7 +11,7 @@ const Welcome = ({ click, }:iWelcome) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
-    return <div className="content" style={{textAlign:'center'}}>
+    return <div className='content' style={{textAlign:'center'}}>
         <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:0, color:'saddlebrown'}}> SATURNO 🪐  </h1>
 
         <div style={{marginBottom:!smallScreen ? '2rem' : 0}}>
