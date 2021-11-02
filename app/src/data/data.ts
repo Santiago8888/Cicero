@@ -158,11 +158,20 @@ export const Posts:iPost[] = [{
 }]
 
 
+const posts11 = [
+    '1. Saturno es un gran guía, comparte la historia de un guía que te haya hecho mejor persona.',
+    '2. ¿Sabes en que eres experto?, Cuentanoslo y como te volviste experto',
+    '3. Menciona una experiencia en la que hayas aprendido a través de la limitación',
+    '4. ¿Para ti que es la humildad y como la vives diariamente?',
+    '5. Saturno nos pide que seamos mejores cada vez ¿Qué estás haciendo actualmente para crecer como persona?',
+    '6. Comparte alguna vez que hayas sido un buen ejemplo para alguien y la satisfacción que te dejo.'
+]
+
 const module11:iLesson[] = [
     { type:'Video', title:'¿Qué es Saturno?', description:'', link:'https://youtu.be/-AEpq9zauQ8'  },
     { type:'Quiz', title:'Quiz 1.1', description:'', questions:quiz11 },
     { type:'Video', title:'La importancia de Saturno', description:'', link:'https://youtu.be/gQarN9nNKdA' },
-    { type:'Reflection', title:'Preguntas de Reflexión', description:'' },
+    { type:'Reflection', title:'Preguntas de Reflexión', description:'', posts:posts11 },
 ]
 
 
