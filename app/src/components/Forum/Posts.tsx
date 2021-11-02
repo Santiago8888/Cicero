@@ -29,7 +29,7 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
 
 export interface iPost { _id?:ObjectID, id?:number, title:string, name:string, image?:Sign, detail:string, likes:string[], comments:iComment[] }
 interface IPost extends iPost { id:number, user:iUser, reply(text:string, postId:number):void, like(postId:number):void }
-const Post = ({ id, title, name, image, detail, likes, comments, reply, like }: IPost) => {
+const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -68,7 +68,13 @@ const Post = ({ id, title, name, image, detail, likes, comments, reply, like }: 
                 <nav className="level">
                     <div className='level-item'>
                         <a
-                            style={{width:'100%', textAlign:'left', color:'#4a4a4a', fontSize:'0.9rem'}}
+                            style={{
+                                width:'100%', 
+                                textAlign:'left', 
+                                fontSize:'0.9rem',
+                                fontWeight: likes.find((u) => u === user.user_id) ? 700 : 400,
+                                color: likes.find((u) => u === user.user_id) ? 'darkolivegreen' : '#4a4a4a'
+                            }}
                             onClick={() => like(id)} 
                         > { likes.length } Like{likes.length !== 1 ? 's' : '' } </a>
                     </div>
