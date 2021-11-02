@@ -11,7 +11,7 @@ const Header = ({ title, midScreen, description }:iHeader) => <>
             fontSize: '1.25em',
             textAlign: 'center',
             fontWeight: 500,
-            width: midScreen ? 800 : 320        
+            width: midScreen ? 900 : 320        
         }}
     > { description } </h3>
 
@@ -26,7 +26,9 @@ export const Reflection = (props:iReflection) => {
         <Header {...props} midScreen={midScreen} />
 
         <div style={{...questionStyle, padding:'0px 24px'}}>
-            { props.posts?.map(post => <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> { post } </p>) }
+            { props.posts?.map((post, i) => 
+                <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> <strong> { i + 1 }. </strong> { post } </p>
+            )}
         </div>
     </div>
 }
