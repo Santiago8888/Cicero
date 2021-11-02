@@ -6,7 +6,7 @@ import { ObjectID } from 'bson'
 
 
 export interface iDoubt { _id?:ObjectID, question:string, details:string, likes:string[] }
-const doubtStyle:CSSProperties = {maxWidth:800, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
+const doubtStyle:CSSProperties = {maxWidth:720, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
 
 interface IDoubt extends iDoubt { user:iUser, like():void } 
 const Doubt = ({ user, question, details, likes, like }:IDoubt) => <div style={doubtStyle}>

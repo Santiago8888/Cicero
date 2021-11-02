@@ -22,15 +22,9 @@ const monthDict = (month:number) => ({
 }[month])
 
 
-const DateTime = ({ date }:{ date:Date }) => <i style={{marginBottom:12, color:'gray'}}>
-    { date.getHours() % 12 }:{ date.getMinutes() } { date.getHours() > 12 ? 'PM - ' : 'AM - ' }  
-    { date.getDate() } { monthDict(date.getMonth()) } { date.getFullYear() } <br/>
-</i>
-
-
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
 interface iComment { comment:string, name:string, image?:Sign }
-const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBoxStyle, padding:10, marginBottom:0, marginTop:'0.5rem'}}>
+const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBoxStyle, padding:10, marginBottom:0 }}>
     <div className="media">
         <div className="media-left" style={{margin:'auto'}}>
             <figure className="image is-24x24" style={{marginBottom:'0.5rem'}}>
@@ -39,12 +33,9 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
             <p className="title is-6" style={{textAlign:'center'}}> { name } </p>
         </div>
 
-        <div className="level-item" style={{width:'calc(100% - 160px)'}}>
+        <div className="level-item" style={{width:'calc(100% - 160px)', paddingTop:'0.5rem'}}>
             <div className="content" style={{ textAlign:'left', width:'100%'}}>
-                <p> 
-                    <DateTime date={new Date()} />
-                    { comment } 
-                </p>
+                <p> { comment } </p>
             </div>
         </div>
     </div>
@@ -73,43 +64,48 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                 <figure className="image is-24x24" style={{margin:'auto 12px'}}>
                     <img src={`signs/${image}.png`} alt="Solar sign" />
                 </figure>
-                <p className="title is-4" style={{ margin:'auto 12px'}}>{ name }</p>
+                <p className="title is-4" style={{ margin:'auto 12px'}}>
+                    { name }
+                </p>
             </header>
 
-            <div className="card-content">
+            <div className="card-content" style={{paddingBottom:'0.25rem'}}>
+                <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
+                    <p> { detail } </p>
+                </div>
+
                 <nav className="level">
-                    <div className='level-item' style={{width:160}}>
-                        <div className="media">
-                            <div className="media-left">
-                            </div>
-                        </div>
+                    <div className='level-item'>
+                        <p style={{width:'100%', textAlign:'left', color:'#4a4a4a', fontSize:'0.9rem'}}> 
+                            { likes.length } Like{likes.length !== 1 ? 's' : '' } 
+                        </p>
                     </div>
 
-                    <div className="level-item" style={{width:'calc(100% - 160px)', minHeight:100}}>
-                        <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
-                            <p style={{marginTop:'-1rem'}}> 
-                                <DateTime date={new Date()} />
-                                { detail } 
-                            </p>
-                        </div>
+                    <div className="level-item">
+                        <a 
+                            style={{width:'100%', textAlign:'right', color:'#4a4a4a', fontSize:'0.9rem', cursor:comments.length ? 'pointer' : 'auto'}} 
+                            onClick={() => setShowComments(!showComments)}
+                        > 
+                            { comments.length } Comentario{ comments.length !== 1 ? 's' : '' } 
+                        </a>
                     </div>
                 </nav>
+
             </div>
 
-            {
-                (!canComment || !!comments.length) &&
-                <footer className="card-footer">
-                    { !canComment && <a className="card-footer-item" onClick={() => setCanComment(true)}> Comentar </a> }
-                    { 
-                        !!comments.length &&  
-                        <a 
-                            className="card-footer-item" 
-                            onClick={() => setShowComments(!showComments)} 
-                        >  { !showComments ? 'Mostrar' : 'Ocultar' } Comentarios </a> 
-                    }
-                </footer>
-            }
+            <footer className="card-footer">
+                <a className="card-footer-item" onClick={() => like(id)} style={{color:'darkolivegreen'}}> 
+                    Like 
+                </a>
 
+                <a 
+                    className="card-footer-item" 
+                    onClick={() => setCanComment(!canComment)} 
+                    style={{color:'darkolivegreen'}}
+                > 
+                    Comentar 
+                </a>
+            </footer>
 
             {
                 canComment && 
@@ -118,14 +114,14 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                         <input 
                             type="text" 
                             className="input" 
-                            placeholder="Comentar"
+                            placeholder="Añade tu comentario"
                             onChange={({target:{value}}) => setValue(value)}                        
                             onKeyPress={({ key }) => key === 'Enter' ? comment(value, id) : null}
                         />
                     </div>
 
                     <div className="control" style={{marginRight:20}}>
-                        <a className="button is-info" onClick={() => comment(value, id)}> 
+                        <a className="button" style={{background:'darkolivegreen'}} onClick={() => comment(value, id)}> 
                             <svg 
                                 xmlns="http://www.w3.org/2000/svg" 
                                 viewBox="0 0 24 24" 
