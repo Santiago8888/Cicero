@@ -19,7 +19,7 @@ interface iReflection { title:string, description:string }
 export const Reflection = (props:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
-    return <div className="content">
+    return <div className='content'>
         <Header {...props} midScreen={midScreen} />
     </div>
 }
