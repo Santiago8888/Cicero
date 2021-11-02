@@ -18,14 +18,15 @@ const Header = ({ title, midScreen, description }:iHeader) => <>
     <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 </>
 
-interface iReflection { title:string, description:string }
+interface iReflection { title:string, description:string, posts?:string[] }
 export const Reflection = (props:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
     return <div className='content'>
         <Header {...props} midScreen={midScreen} />
 
-        <div style={questionStyle}>
+        <div style={{...questionStyle, padding:'0px 24px'}}>
+            { props.posts?.map(post => <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> { post } </p>) }
         </div>
     </div>
 }
