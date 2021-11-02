@@ -27,8 +27,24 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
 </div>
 
 
-export interface iPost { _id?:ObjectID, id?:number, title:string, name:string, image?:Sign, detail:string, likes:string[], comments:iComment[] }
-interface IPost extends iPost { id:number, user:iUser, reply(text:string, postId:number):void, like(postId:number):void }
+export interface iPost { 
+    _id?:ObjectID, 
+    id?:number, 
+    title:string, 
+    name:string, 
+    image?:Sign, 
+    detail:string, 
+    likes:string[], 
+    comments:iComment[] 
+}
+
+interface IPost extends iPost { 
+    id:number, 
+    user:iUser, 
+    reply(text:string, postId:number):void, 
+    like(postId:number):void 
+}
+
 const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
