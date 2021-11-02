@@ -44,7 +44,7 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
 
 export interface iPost { _id?:ObjectID, id?:number, title:string, name:string, image?:Sign, detail:string, likes:string[], comments:iComment[] }
 interface IPost extends iPost { id:number, user:iUser, reply(text:string, postId:number):void, like(postId:number):void }
-const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
+const Post = ({ id, title, name, image, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -76,6 +76,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
             <div className="card-content" style={{paddingBottom:'0.25rem'}}>
                 <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
+                    <h5> { title } </h5>
                     <p> { detail } </p>
                 </div>
 
