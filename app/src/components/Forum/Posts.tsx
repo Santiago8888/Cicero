@@ -78,20 +78,22 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                 </p>
             </header>
 
-            <div className="card-content">
+            <div className="card-content" style={{paddingBottom:'0.25rem'}}>
                 <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
-                    <p style={{padding:'1rem'}}> 
-                        { detail }
-                    </p>
+                    <p> { detail } </p>
                 </div>
 
                 <nav className="level">
                     <div className='level-item'>
-                        Likes
+                        <p style={{width:'100%', textAlign:'left'}}> 
+                            { likes.length } Like{likes.length !== 1 ? 's' : '' } 
+                        </p>
                     </div>
 
                     <div className="level-item">
-                        Comentarios
+                        <p style={{width:'100%', textAlign:'right'}}> 
+                            { comments.length } Comentario{ comments.length !== 1 ? 's' : '' } 
+                        </p>
                     </div>
                 </nav>
 
