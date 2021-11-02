@@ -99,19 +99,10 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
             </div>
 
-            {
-                (!canComment || !!comments.length) &&
-                <footer className="card-footer">
-                    { !canComment && <a className="card-footer-item" onClick={() => setCanComment(true)}> Comentar </a> }
-                    { 
-                        !!comments.length &&  
-                        <a className="card-footer-item">  
-                            { !showComments ? 'Mostrar' : 'Ocultar' } Comentarios 
-                        </a> 
-                    }
-                </footer>
-            }
-
+            <footer className="card-footer">
+                <a className="card-footer-item"> Like </a> 
+                <a className="card-footer-item" onClick={() => setCanComment(!canComment)}> Comentar </a>
+            </footer>
 
             {
                 canComment && 
