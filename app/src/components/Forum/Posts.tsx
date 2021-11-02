@@ -100,7 +100,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
             </div>
 
             <footer className="card-footer">
-                <a className="card-footer-item"> Like </a> 
+                <a className="card-footer-item" onClick={() => like(id)}> Like </a> 
                 <a className="card-footer-item" onClick={() => setCanComment(!canComment)}> Comentar </a>
             </footer>
 
