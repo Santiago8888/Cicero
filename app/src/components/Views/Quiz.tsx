@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
-import { CSSProperties, useState } from "react"
-import { iUser } from "../../App"
+import { CSSProperties, useState } from 'react'
+import { iUser } from '../../App'
 
 
 interface iAnswer { answer:string, value:boolean }
@@ -18,16 +18,16 @@ const questionStyle:CSSProperties = {
 
 interface IQuestion extends iQuestion { index:number, value:number, select(index:number, value:number):void }
 const Question = ({index, question, value, answers, select}:IQuestion) => <div 
-    className="field" 
+    className='field' 
     style={questionStyle}
 >
-    <label className="label" style={{fontSize:'1.25em'}}> { question } </label>
+    <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
     {
         answers.map(({ answer:a }, i) => 
-            <div className="control" key={i}>
-                <label className="radio" style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
+            <div className='control' key={i}>
+                <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
                     <input 
-                        type="radio" 
+                        type='radio' 
                         checked={value === i}
                         name={String(index)}
                         style={{marginRight:12}}
@@ -48,14 +48,14 @@ interface iModal { user:iUser, questions: iQuestion[], score:number, isActive:bo
 const Modal = ({ user, questions, score, isActive, approved, min, deactivate, next }:iModal) => <div 
     className={`modal ${isActive ? 'is-active' : ''}`}
 >
-    <div className="modal-background" />
-    <div className="modal-card">
-        <header className="modal-card-head" style={{backgroundColor:'darkolivegreen'}}>
-            <p className="modal-card-title" style={{marginBottom:0, color:'white'}}>Quiz</p>
-            { approved && <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/> }
+    <div className='modal-background' />
+    <div className='modal-card'>
+        <header className='modal-card-head' style={{backgroundColor:'darkolivegreen'}}>
+            <p className='modal-card-title' style={{marginBottom:0, color:'white'}}>Quiz</p>
+            { approved && <button className='delete' aria-label='close' style={{float:'right'}} onClick={deactivate}/> }
         </header>
 
-        <section className="modal-card-body" style={{minHeight:120, display:'table'}}>
+        <section className='modal-card-body' style={{minHeight:120, display:'table'}}>
             <p style={{display:'table-cell', verticalAlign:'middle'}}>
                 { approved ? <span style={{fontSize:'1.5rem', fontWeight:600}}>¡Felicidades!</span> : <>Lo sentimos.</> } <br/> 
                  Acertaste <strong>{score}</strong> de <strong>{questions.length}</strong> preguntas. <br/>
@@ -69,7 +69,7 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
             </p>
         </section>
 
-        <footer className="modal-card-foot">
+        <footer className='modal-card-foot'>
             <button className='button is-link' onClick={next} style={{backgroundColor:'saddlebrown', margin:'auto'}}> 
                 { approved || user.quizFailures === 0 ? `Continuar` : '' }
                 { !approved && user.quizFailures === 1 ? `Intentar de Nuevo` : '' }
@@ -117,7 +117,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         if(user.quizFailures === 1) setValues(questions.reduce((d, _, idx) => ({...d, [idx]: -1 }), {}))
     }
 
-    return <div className="content">
+    return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
