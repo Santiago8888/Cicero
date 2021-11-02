@@ -1,25 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { CSSProperties, useEffect, useState } from "react"
-import { Header, Modal, Likes } from "./Atoms"
+import { Header, Modal } from "./Atoms"
 import { iUser, Sign } from '../../App'
 import { ObjectID } from 'bson'
 
-
-const monthDict = (month:number) => ({
-    0: 'Enero',
-    1: 'Febrero',
-    2: 'Marzo',
-    3: 'Abril',
-    4: 'Mayo',
-    5: 'Junio',
-    6: 'Julio',
-    7: 'Agosto',
-    8: 'Septiembre',
-    9: 'Octubre',
-    10: 'Noviembre',
-    11: 'Diciembre'
-}[month])
 
 
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
