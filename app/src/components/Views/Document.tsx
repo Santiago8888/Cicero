@@ -24,7 +24,7 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
         setTimeout(() => approve(), 1000*60*(min || 10))
     }
 
-    return <div className="content">
+    return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
