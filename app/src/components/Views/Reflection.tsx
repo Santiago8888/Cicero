@@ -11,7 +11,7 @@ const Header = ({ title, midScreen, description }:iHeader) => <>
             fontSize: '1.25em',
             textAlign: 'center',
             fontWeight: 500,
-            width: midScreen ? 900 : 320        
+            width: midScreen ? 720 : 320        
         }}
     > { description } </h3>
 
