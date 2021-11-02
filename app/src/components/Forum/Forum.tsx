@@ -1,7 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
-import { CSSProperties, useState } from "react"
+import { CSSProperties, useState } from 'react'
 import { iUser } from '../../App'
-import { Likes } from "./Atoms"
+import { Likes } from './Atoms'
 import { ObjectID } from 'bson'
 
 
@@ -31,33 +31,33 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
     }
 
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
-        <div className="modal-background" />
-        <div className="modal-card">
-            <header className="modal-card-head" style={{backgroundColor:'darkolivegreen'}}>
-                <p className="modal-card-title" style={{marginBottom:0, color:'white'}}> Haz una Pregunta </p>
-                <button className="delete" aria-label="close" style={{float:'right'}} onClick={deactivate}/>
+        <div className='modal-background' />
+        <div className='modal-card'>
+            <header className='modal-card-head' style={{backgroundColor:'darkolivegreen'}}>
+                <p className='modal-card-title' style={{marginBottom:0, color:'white'}}> Haz una Pregunta </p>
+                <button className='delete' aria-label='close' style={{float:'right'}} onClick={deactivate}/>
             </header>
 
-            <section className="modal-card-body" style={{minHeight:120, display:'table', textAlign:'left'}}>
-                <div className="field">
-                    <label className="label"> Pregunta </label>
+            <section className='modal-card-body' style={{minHeight:120, display:'table', textAlign:'left'}}>
+                <div className='field'>
+                    <label className='label'> Pregunta </label>
 
-                    <div className="control">
+                    <div className='control'>
                         <input 
-                            className="input" 
-                            type="text" 
+                            className='input' 
+                            type='text' 
                             value={question} 
                             onChange={({target:{value}})=> setQuestion(value)}
                         />
                     </div>
                 </div>
 
-                <div className="field">
-                    <label className="label"> Detalles Adicionales (opcional): </label>    
-                    <div className="control">
+                <div className='field'>
+                    <label className='label'> Detalles Adicionales (opcional): </label>    
+                    <div className='control'>
                         <textarea 
-                            className="textarea" 
-                            placeholder="Comparte un poco de contexto o la motivación de tu pregunta." 
+                            className='textarea' 
+                            placeholder='Comparte un poco de contexto o la motivación de tu pregunta.' 
                             value={details} 
                             onChange={({target:{value}})=> setDetails(value)}
                         />
@@ -65,7 +65,7 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
                 </div>
             </section>
 
-            <footer className="modal-card-foot">
+            <footer className='modal-card-foot'>
                 <button 
                     className='button is-link' 
                     style={{backgroundColor:'saddlebrown', margin:'auto'}}
@@ -88,7 +88,7 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
         submit(doubt)
     }
 
-    return <div className="content">
+    return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <h3 
             style={{
