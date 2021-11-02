@@ -169,11 +169,24 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
             deactivate={() => setActive(false)}
         >
             <div className="field">
+                <label className="label"> Título: </label>
+                <div className="control">
+                    <input 
+                        type="text" 
+                        className="input" 
+                        value={newPost.title} 
+                        placeholder={'Selecciona alguna sugerencia de las lecciones.'}
+                        onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
+                    />
+                </div>
+            </div>
+
+            <div className="field">
                 <label className="label"> Mensaje: </label>    
                 <div className="control">
                     <textarea 
                         className="textarea" 
-                        placeholder="Platica libremente sobre lo que quieras compartir o sigue las sugerencias de cada lección." 
+                        placeholder="Puedes compartir alguna experiencia, aprendizaje o meta." 
                         value={newPost.detail} 
                         onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
                     />
