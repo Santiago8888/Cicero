@@ -9,7 +9,7 @@ export const Login = ({ login }: iLogin) => {
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
 
-    return <div className="content">
+    return <div className='content'>
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
             <div  style={{display:'table-cell', verticalAlign:'middle'}}>
                 <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'saddlebrown'}}> 
@@ -27,10 +27,10 @@ export const Login = ({ login }: iLogin) => {
                     }}
                 >   Curso en línea </h3>
 
-                <div className="field">
+                <div className='field'>
                     <input 
-                        className="input" 
-                        type="email" 
+                        className='input' 
+                        type='email' 
                         value={email} 
                         placeholder='Correo Electrónico'
                         style={{width: !smallScreen ? 360 : 240}}
@@ -45,10 +45,10 @@ export const Login = ({ login }: iLogin) => {
                     />
                 </div>
 
-                <div className="field">
+                <div className='field'>
                     <input 
-                        className="input" 
-                        type="password" 
+                        className='input' 
+                        type='password' 
                         value={password} 
                         placeholder='Contraseña'
                         style={{width: !smallScreen ? 360 : 240}}
