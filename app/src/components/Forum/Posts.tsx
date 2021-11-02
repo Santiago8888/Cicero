@@ -22,12 +22,6 @@ const monthDict = (month:number) => ({
 }[month])
 
 
-const DateTime = ({ date }:{ date:Date }) => <i style={{marginBottom:12, color:'gray'}}>
-    { date.getHours() % 12 }:{ date.getMinutes() } { date.getHours() > 12 ? 'PM - ' : 'AM - ' }  
-    { date.getDate() } { monthDict(date.getMonth()) } { date.getFullYear() } <br/>
-</i>
-
-
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
 interface iComment { comment:string, name:string, image?:Sign }
 const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBoxStyle, padding:10, marginBottom:0 }}>
