@@ -1,4 +1,5 @@
 import { useMediaQuery } from 'react-responsive'
+import { questionStyle } from './Quiz'
 
 interface iHeader extends iReflection { midScreen:boolean }
 const Header = ({ title, midScreen, description }:iHeader) => <>
@@ -13,6 +14,8 @@ const Header = ({ title, midScreen, description }:iHeader) => <>
             width: midScreen ? 800 : 320        
         }}
     > { description } </h3>
+
+    <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 </>
 
 interface iReflection { title:string, description:string }
@@ -21,5 +24,8 @@ export const Reflection = (props:iReflection) => {
 
     return <div className='content'>
         <Header {...props} midScreen={midScreen} />
+
+        <div style={questionStyle}>
+        </div>
     </div>
 }
