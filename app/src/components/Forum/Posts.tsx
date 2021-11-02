@@ -57,6 +57,11 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
         setShowComments(true)
         setValue('')
     }
+
+    const clickComment = () => {
+        setCanComment(showComments ? false : true)
+        setShowComments(!showComments)
+    }
     
     return <div style={{display:'flex', marginBottom:64}}>
         <div className="card" style={{textAlign:'left', width:'100%'}}>
@@ -76,15 +81,16 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
                 <nav className="level">
                     <div className='level-item'>
-                        <p style={{width:'100%', textAlign:'left', color:'#4a4a4a', fontSize:'0.9rem'}}> 
-                            { likes.length } Like{likes.length !== 1 ? 's' : '' } 
-                        </p>
+                        <a
+                            style={{width:'100%', textAlign:'left', color:'#4a4a4a', fontSize:'0.9rem'}}
+                            onClick={() => like(id)} 
+                        > { likes.length } Like{likes.length !== 1 ? 's' : '' } </a>
                     </div>
 
                     <div className="level-item">
                         <a 
-                            style={{width:'100%', textAlign:'right', color:'#4a4a4a', fontSize:'0.9rem', cursor:comments.length ? 'pointer' : 'auto'}} 
-                            onClick={() => setShowComments(!showComments)}
+                            style={{width:'100%', textAlign:'right', color:'#4a4a4a', fontSize:'0.9rem' }}
+                            onClick={clickComment}
                         > 
                             { comments.length } Comentario{ comments.length !== 1 ? 's' : '' } 
                         </a>
@@ -92,20 +98,6 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                 </nav>
 
             </div>
-
-            <footer className="card-footer">
-                <a className="card-footer-item" onClick={() => like(id)} style={{color:'darkolivegreen'}}> 
-                    Like 
-                </a>
-
-                <a 
-                    className="card-footer-item" 
-                    onClick={() => setCanComment(!canComment)} 
-                    style={{color:'darkolivegreen'}}
-                > 
-                    Comentar 
-                </a>
-            </footer>
 
             {
                 canComment && 
