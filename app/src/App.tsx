@@ -291,8 +291,8 @@ export const App = () => {
 
     return <div>
         <NavBar user={user} click={(item) => clickNavbar(item)}/>
-        <div className="container" style={{maxWidth:'100%'}}>
-            <div className="columns" style={{margin:0}}>
+        <div className='container' style={{maxWidth:'100%'}}>
+            <div className='columns' style={{margin:0}}>
                 {
                     largeScreen &&
                         <Menu
@@ -304,7 +304,7 @@ export const App = () => {
                 }
 
                 <div 
-                    className="column is-10" 
+                    className='column is-10' 
                     style={{ 
                         paddingTop:'3rem', 
                         marginLeft:3, 
