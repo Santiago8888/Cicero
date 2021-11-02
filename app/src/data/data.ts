@@ -171,7 +171,7 @@ const module11:iLesson[] = [
     { type:'Video', title:'¿Qué es Saturno?', description:'', link:'https://youtu.be/-AEpq9zauQ8'  },
     { type:'Quiz', title:'Quiz 1.1', description:'', questions:quiz11 },
     { type:'Video', title:'La importancia de Saturno', description:'', link:'https://youtu.be/gQarN9nNKdA' },
-    { type:'Reflection', title:'Preguntas de Reflexión', description:'', posts:posts11 },
+    { type:'Reflection', title:'Preguntas de Reflexión', description:'Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.', posts:posts11 },
 ]
 
 
