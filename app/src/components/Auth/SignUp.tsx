@@ -1,9 +1,9 @@
-import "react-datepicker/dist/react-datepicker.css"
+import 'react-datepicker/dist/react-datepicker.css'
 import { useMediaQuery } from 'react-responsive'
 import DatePicker from 'react-datepicker'
 import { useState } from 'react'
 
-import { iNatalChart } from "../../App"
+import { iNatalChart } from '../../App'
 
 
 export interface iNewUser {name:string, email:string, password:string, date:Date, location:string, natalChart?:iNatalChart }
@@ -21,7 +21,7 @@ export const SignUp = ({ signUp }: iSignUp) => {
         && location && date && name && email.match(/^\S+@\S+\.\S+$/)  && password.length >= 6 
             ? signUp({name, email, password, date, location}) : null
 
-    return <div className="content">
+    return <div className='content'>
         <div style={{display:'table', margin:'auto', minHeight:'calc(100vh - 120px - 6rem)', marginTop:'-3rem'}}>
             <div  style={{display:'table-cell', verticalAlign:'middle'}}>
                 <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:'1rem', color:'darkblue'}}> 
@@ -39,12 +39,12 @@ export const SignUp = ({ signUp }: iSignUp) => {
                     }}
                 >  Curso en línea </h3>
 
-                <div className="field" style={{marginTop:'1.75rem'}}>
+                <div className='field' style={{marginTop:'1.75rem'}}>
                     <input 
-                        type="text" 
+                        type='text' 
                         value={name} 
                         maxLength={16}
-                        className="input" 
+                        className='input' 
                         onKeyPress={keyPress}
                         placeholder={'Nombre'}
                         style={{width: !smallScreen ? 360 : 240}}
@@ -52,11 +52,11 @@ export const SignUp = ({ signUp }: iSignUp) => {
                     />
                 </div>
 
-                <div className="field" style={{marginTop:'1.75rem'}}>
+                <div className='field' style={{marginTop:'1.75rem'}}>
                     <input 
-                        type="email" 
+                        type='email' 
                         value={email} 
-                        className="input" 
+                        className='input' 
                         onKeyPress={keyPress}
                         placeholder={'Correo Electrónico'}
                         style={{width: !smallScreen ? 360 : 240}}
@@ -64,11 +64,11 @@ export const SignUp = ({ signUp }: iSignUp) => {
                     />
                 </div>
 
-                <div className="field" style={{marginTop:'1.75rem', marginBottom:0}}>
+                <div className='field' style={{marginTop:'1.75rem', marginBottom:0}}>
                     <input 
-                        type="password" 
+                        type='password' 
                         value={password} 
-                        className="input" 
+                        className='input' 
                         onKeyPress={keyPress}
                         placeholder={'Contraseña'}
                         style={{width: !smallScreen ? 360 : 240}}
@@ -77,27 +77,27 @@ export const SignUp = ({ signUp }: iSignUp) => {
                 </div>
 
                 <DatePicker
-                    className="input"
+                    className='input'
                     showTimeInput
                     showYearDropdown
                     showMonthDropdown
-                    dropdownMode="select"
+                    dropdownMode='select'
                     selected={date}
                     maxDate={new Date()}
                     yearDropdownItemNumber={15}
-                    timeInputLabel="Time:"
+                    timeInputLabel='Time:'
                     yearItemNumber={130}
                     shouldCloseOnSelect={false}
-                    dateFormat="MM/dd/yyyy h:mm aa"
+                    dateFormat='MM/dd/yyyy h:mm aa'
                     onChange={date => setDate(date as Date)}
                     placeholderText={'Fecha y Hora de Nacimiento'}
                 />                
 
-                <div className="field" style={{marginTop:'1.75rem', marginBottom:0}}>
+                <div className='field' style={{marginTop:'1.75rem', marginBottom:0}}>
                     <input 
-                        type="text" 
+                        type='text' 
                         value={location} 
-                        className="input" 
+                        className='input' 
                         onKeyPress={keyPress}
                         placeholder={'Ciudad y País de Nacimiento'}
                         style={{width: !smallScreen ? 360 : 240}}
