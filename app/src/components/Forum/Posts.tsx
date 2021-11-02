@@ -1,25 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { CSSProperties, useEffect, useState } from "react"
-import { Header, Modal, Likes } from "./Atoms"
+import { Header, Modal } from "./Atoms"
 import { iUser, Sign } from '../../App'
 import { ObjectID } from 'bson'
 
-
-const monthDict = (month:number) => ({
-    0: 'Enero',
-    1: 'Febrero',
-    2: 'Marzo',
-    3: 'Abril',
-    4: 'Mayo',
-    5: 'Junio',
-    6: 'Julio',
-    7: 'Agosto',
-    8: 'Septiembre',
-    9: 'Octubre',
-    10: 'Noviembre',
-    11: 'Diciembre'
-}[month])
 
 
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
@@ -42,8 +27,24 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
 </div>
 
 
-export interface iPost { _id?:ObjectID, id?:number, title:string, name:string, image?:Sign, detail:string, likes:string[], comments:iComment[] }
-interface IPost extends iPost { id:number, user:iUser, reply(text:string, postId:number):void, like(postId:number):void }
+export interface iPost { 
+    _id?:ObjectID, 
+    id?:number, 
+    title:string, 
+    name:string, 
+    image?:Sign, 
+    detail:string, 
+    likes:string[], 
+    comments:iComment[] 
+}
+
+interface IPost extends iPost { 
+    id:number, 
+    user:iUser, 
+    reply(text:string, postId:number):void, 
+    like(postId:number):void 
+}
+
 const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
@@ -56,6 +57,11 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
         setCanComment(false)
         setShowComments(true)
         setValue('')
+    }
+
+    const clickComment = () => {
+        setCanComment(showComments ? false : true)
+        setShowComments(!showComments)
     }
     
     return <div style={{display:'flex', marginBottom:64}}>
@@ -71,20 +77,28 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
             <div className="card-content" style={{paddingBottom:'0.25rem'}}>
                 <div className="content" style={{minHeight: 100, textAlign:'left', width:'100%'}}>
+                    <h5> { title } </h5>
                     <p> { detail } </p>
                 </div>
 
                 <nav className="level">
                     <div className='level-item'>
-                        <p style={{width:'100%', textAlign:'left', color:'#4a4a4a', fontSize:'0.9rem'}}> 
-                            { likes.length } Like{likes.length !== 1 ? 's' : '' } 
-                        </p>
+                        <a
+                            style={{
+                                width:'100%', 
+                                textAlign:'left', 
+                                fontSize:'0.9rem',
+                                fontWeight: likes.find((u) => u === user.user_id) ? 700 : 400,
+                                color: likes.find((u) => u === user.user_id) ? 'darkolivegreen' : '#4a4a4a'
+                            }}
+                            onClick={() => like(id)} 
+                        > { likes.length } Like{likes.length !== 1 ? 's' : '' } </a>
                     </div>
 
                     <div className="level-item">
                         <a 
-                            style={{width:'100%', textAlign:'right', color:'#4a4a4a', fontSize:'0.9rem', cursor:comments.length ? 'pointer' : 'auto'}} 
-                            onClick={() => setShowComments(!showComments)}
+                            style={{width:'100%', textAlign:'right', color:'#4a4a4a', fontSize:'0.9rem' }}
+                            onClick={clickComment}
                         > 
                             { comments.length } Comentario{ comments.length !== 1 ? 's' : '' } 
                         </a>
@@ -92,20 +106,6 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
                 </nav>
 
             </div>
-
-            <footer className="card-footer">
-                <a className="card-footer-item" onClick={() => like(id)} style={{color:'darkolivegreen'}}> 
-                    Like 
-                </a>
-
-                <a 
-                    className="card-footer-item" 
-                    onClick={() => setCanComment(!canComment)} 
-                    style={{color:'darkolivegreen'}}
-                > 
-                    Comentar 
-                </a>
-            </footer>
 
             {
                 canComment && 
@@ -177,11 +177,24 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
             deactivate={() => setActive(false)}
         >
             <div className="field">
+                <label className="label"> Título: </label>
+                <div className="control">
+                    <input 
+                        type="text" 
+                        className="input" 
+                        value={newPost.title} 
+                        placeholder={'Selecciona alguna sugerencia de las lecciones.'}
+                        onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
+                    />
+                </div>
+            </div>
+
+            <div className="field">
                 <label className="label"> Mensaje: </label>    
                 <div className="control">
                     <textarea 
                         className="textarea" 
-                        placeholder="Platica libremente sobre lo que quieras compartir o sigue las sugerencias de cada lección." 
+                        placeholder="Puedes compartir alguna experiencia, aprendizaje o meta." 
                         value={newPost.detail} 
                         onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
                     />

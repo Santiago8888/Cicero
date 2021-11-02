@@ -8,7 +8,7 @@ import { iPost } from "../Forum/Posts"
 import { iUser } from '../../App'
 import { useState } from "react"
 
-type Lesson = 'Video' | 'Quiz' | 'Reading' | 'Chart'
+type Lesson = 'Video' | 'Quiz' | 'Reading' | 'Chart' | 'Reflection'
 export interface iLesson { 
     title:string, 
     type:Lesson, 
