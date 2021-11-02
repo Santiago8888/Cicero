@@ -159,12 +159,12 @@ export const Posts:iPost[] = [{
 
 
 const posts11 = [
-    '1. Saturno es un gran guía, comparte la historia de un guía que te haya hecho mejor persona.',
-    '2. ¿Sabes en que eres experto?, Cuentanoslo y como te volviste experto',
-    '3. Menciona una experiencia en la que hayas aprendido a través de la limitación',
-    '4. ¿Para ti que es la humildad y como la vives diariamente?',
-    '5. Saturno nos pide que seamos mejores cada vez ¿Qué estás haciendo actualmente para crecer como persona?',
-    '6. Comparte alguna vez que hayas sido un buen ejemplo para alguien y la satisfacción que te dejo.'
+    'Saturno es un gran guía. Comparte la historia de un guía que te haya inspirado a ser mejor persona.',
+    '¿Sabes en qué eres experta? Cuentanos en qué y cómo te volviste experta en eso.',
+    'Relata una experiencia en la que hayas aprendido a través de la limitación.',
+    'Para tí, ¿Qué es la humildad y cómo la practicas diariamente?',
+    'Saturno nos pide que cada vez seamos mejores ¿En que te estás esforzando hoy para crecer como persona?',
+    'Comparte una ocasión en la que hayas sido un buen ejemplo para alguien y que sensación te dejo.'
 ]
 
 const module11:iLesson[] = [
