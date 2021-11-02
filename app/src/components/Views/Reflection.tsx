@@ -1,4 +1,6 @@
-interface iHeader { title:string, midScreen:boolean, description:string }
+import { useMediaQuery } from 'react-responsive'
+
+interface iHeader extends iReflection { midScreen:boolean }
 const Header = ({ title, midScreen, description }:iHeader) => <>
     <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
     <h3 
@@ -13,7 +15,11 @@ const Header = ({ title, midScreen, description }:iHeader) => <>
     > { description } </h3>
 </>
 
-interface iReflection extends iHeader {}
-export const Reflection = (props:iReflection) => <div className="content">
-    <Header {...props} />
-</div>
+interface iReflection { title:string, description:string }
+export const Reflection = (props:iReflection) => {
+    const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
+
+    return <div className="content">
+        <Header {...props} midScreen={midScreen} />
+    </div>
+}
