@@ -12,3 +12,8 @@ const Header = ({ title, midScreen, description }:iHeader) => <>
         }}
     > { description } </h3>
 </>
+
+interface iReflection extends iHeader {}
+export const Reflection = (props:iReflection) => <div className="content">
+    <Header {...props} />
+</div>
