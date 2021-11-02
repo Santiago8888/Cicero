@@ -30,7 +30,7 @@ const DateTime = ({ date }:{ date:Date }) => <i style={{marginBottom:12, color:'
 
 const footerBoxStyle:CSSProperties = {marginBottom:10, borderTop: '2px #ededed solid', paddingTop:10}
 interface iComment { comment:string, name:string, image?:Sign }
-const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBoxStyle, padding:10, marginBottom:0, marginTop:'0.5rem'}}>
+const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBoxStyle, padding:10, marginBottom:0 }}>
     <div className="media">
         <div className="media-left" style={{margin:'auto'}}>
             <figure className="image is-24x24" style={{marginBottom:'0.5rem'}}>
@@ -39,12 +39,9 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
             <p className="title is-6" style={{textAlign:'center'}}> { name } </p>
         </div>
 
-        <div className="level-item" style={{width:'calc(100% - 160px)'}}>
+        <div className="level-item" style={{width:'calc(100% - 160px)', paddingTop:'0.5rem'}}>
             <div className="content" style={{ textAlign:'left', width:'100%'}}>
-                <p> 
-                    <DateTime date={new Date()} />
-                    { comment } 
-                </p>
+                <p> { comment } </p>
             </div>
         </div>
     </div>
@@ -85,13 +82,16 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 
                 <nav className="level">
                     <div className='level-item'>
-                        <p style={{width:'100%', textAlign:'left'}}> 
+                        <p style={{width:'100%', textAlign:'left', color:'#4a4a4a', fontSize:'0.9rem'}}> 
                             { likes.length } Like{likes.length !== 1 ? 's' : '' } 
                         </p>
                     </div>
 
                     <div className="level-item">
-                        <a style={{width:'100%', textAlign:'right'}} onClick={() => setShowComments(!showComments)}> 
+                        <a 
+                            style={{width:'100%', textAlign:'right', color:'#4a4a4a', fontSize:'0.9rem', cursor:comments.length ? 'pointer' : 'auto'}} 
+                            onClick={() => setShowComments(!showComments)}
+                        > 
                             { comments.length } Comentario{ comments.length !== 1 ? 's' : '' } 
                         </a>
                     </div>
@@ -100,8 +100,17 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
             </div>
 
             <footer className="card-footer">
-                <a className="card-footer-item" onClick={() => like(id)}> Like </a> 
-                <a className="card-footer-item" onClick={() => setCanComment(!canComment)}> Comentar </a>
+                <a className="card-footer-item" onClick={() => like(id)} style={{color:'darkolivegreen'}}> 
+                    Like 
+                </a>
+
+                <a 
+                    className="card-footer-item" 
+                    onClick={() => setCanComment(!canComment)} 
+                    style={{color:'darkolivegreen'}}
+                > 
+                    Comentar 
+                </a>
             </footer>
 
             {
