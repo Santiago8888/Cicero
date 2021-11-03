@@ -185,6 +185,14 @@ const quiz12:iQuestion[] = [
             { answer:'Salida', value:false }
         ]
     }, { 
+        question:'¿Porqué existe el karma?', 
+        answers:[
+            { answer:'Vivimos en un sistema, no hay acciones aisladas.', value:true },
+            { answer:'Para que nos portemos bien.', value:false },
+            { answer:'Enseñar que nuestros actos tienen consecuencias.', value:false },
+            { answer:'Es una ley universal, no hay que preguntar el porqué sino aceptarla.', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
