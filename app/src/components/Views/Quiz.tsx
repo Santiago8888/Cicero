@@ -82,7 +82,7 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
 
 interface iQuiz { 
     title:string
-    description:string,
+    description?:string[],
     questions?:iQuestion[]
     min?:number,
     next():void
@@ -128,7 +128,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
                 fontWeight: 500,
                 width: midScreen ? 660 : 320        
             }}
-        > { description } </h3>
+        > { description ? description[0] : '' } </h3>
 
         <div style={{ width: midScreen ? 880 : !smallScreen ? 450 : 360, margin:'auto' }}>
             {
