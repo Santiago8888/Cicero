@@ -177,7 +177,7 @@ const module11:iLesson[] = [
 
 const quiz12:iQuestion[] = [
     { 
-        question:'¿Qué significa la palabra karma?', 
+        question:'1. ¿Qué significa la palabra karma?', 
         answers:[
             { answer:'Acción', value:true },
             { answer:'Deuda', value:false },
@@ -185,12 +185,20 @@ const quiz12:iQuestion[] = [
             { answer:'Salida', value:false }
         ]
     }, { 
-        question:'¿Porqué existe el karma?', 
+        question:'2. ¿Porqué existe el karma?', 
         answers:[
             { answer:'Vivimos en un sistema, no hay acciones aisladas.', value:true },
             { answer:'Para que nos portemos bien.', value:false },
             { answer:'Enseñar que nuestros actos tienen consecuencias.', value:false },
             { answer:'Es una ley universal, no hay que preguntar el porqué sino aceptarla.', value:false }
+        ]
+    }, { 
+        question:'3. ¿Cuando empezamos a ver la manifestación del karma?', 
+        answers:[
+            { answer:'Cuando la acción se ha repetido muchas veces.', value:true },
+            { answer:'Depende de la posición de Saturno y nuestra carta astral.', value:false },
+            { answer:'Cuando perjudicarnos a alguien conscientemente.', value:false },
+            { answer:'Cuando vamos en contra de nuestros valores.', value:false }
         ]
     }, { 
         question:'', 
