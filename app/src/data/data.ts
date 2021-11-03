@@ -217,6 +217,14 @@ const quiz12:iQuestion[] = [
             { answer:'Gestación', value:false }
         ]
     }, { 
+        question:'6. ¿Porqué no vemos inmediatamente las consecuencias de nuestros actos?', 
+        answers:[
+            { answer:'Para poder aprender, practicar', value:true },
+            { answer:'Para liberar nuestro poder creador y de manifestación.', value:false },
+            { answer:'Para permitirnos enmendar nuestros errores.', value:false },
+            { answer:'Es una consecuencia de vivir en un mundo físico.', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
