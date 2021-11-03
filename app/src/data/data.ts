@@ -225,6 +225,14 @@ const quiz12:iQuestion[] = [
             { answer:'Es una consecuencia de vivir en un mundo físico.', value:false }
         ]
     }, { 
+        question:'7. ¿Qué acciones se manifiestan más rápido?', 
+        answers:[
+            { answer:'Las positivas', value:true },
+            { answer:'Las negativas', value:false },
+            { answer:'Las intencionales', value:false },
+            { answer:'Las que hacemos en público', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
