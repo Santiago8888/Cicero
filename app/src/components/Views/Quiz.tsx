@@ -6,7 +6,7 @@ import { iUser } from '../../App'
 interface iAnswer { answer:string, value:boolean }
 export interface iQuestion { question:string, answers:iAnswer[] }
 
-const questionStyle:CSSProperties = {
+export const questionStyle:CSSProperties = {
     textAlign:'left', 
     maxWidth:800, 
     margin:'auto auto 3em', 
@@ -147,7 +147,14 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
 
         <button 
             className='button is-link' 
-            style={{borderRadius:12, width:180, fontSize:'1.25rem', fontWeight:600, marginBottom:'4em', backgroundColor:'saddlebrown'}}
+            style={{
+                borderRadius:12, 
+                width:180, 
+                fontSize:'1.25rem', 
+                fontWeight:600, 
+                marginBottom:'4em', 
+                backgroundColor:'saddlebrown'
+            }}
             disabled={Object.values(values).some(a => a === -1)}
             onClick={submit}
         > ENVIAR </button>
