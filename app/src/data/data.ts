@@ -175,9 +175,30 @@ const module11:iLesson[] = [
 ]
 
 
+const quiz12:iQuestion[] = [
+    { 
+        question:'¿Qué significa la palabra karma?', 
+        answers:[
+            { answer:'Acción', value:true },
+            { answer:'Deuda', value:false },
+            { answer:'Pago', value:false },
+            { answer:'Salida', value:false }
+        ]
+    }, { 
+        question:'', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false }
+        ]
+    },
+]
+
+
 const module12:iLesson[] = [
     { type:'Video', title:'El Karma', description:'', link:'https://youtu.be/dNt2saEg8As' },
-    { type:'Quiz', title:'Quiz 1.2', description:'' },
+    { type:'Quiz', title:'Quiz 1.2', description:'', questions:quiz12 },
     { type:'Reading', title:'Saturno en la Astrología', description:'' },
     { type:'Video', title:'Saturno, el maestro', description:'', link:'https://youtu.be/uilBR7op_GY' },
     { type:'Quiz', title:'Ejercicio de Compartir', description:'' },
