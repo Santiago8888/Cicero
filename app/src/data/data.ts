@@ -266,12 +266,12 @@ const quiz12:iQuestion[] = [
             { answer:'Saturno es el Dios del Karma.', value:false }
         ]
     }, { 
-        question:'', 
+        question:'12. ¿Cuál es otra causa de que enfrentamos consecuencias negativas?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false }
+            { answer:'Las responsabilidades que hemos adquirido no las estamos llevando a cabo.', value:true },
+            { answer:'Los pensamientos de las acciones que no llevamos a cabo.', value:false },
+            { answer:'No buscar la espiritualidad.', value:false },
+            { answer:'Empeñarnos en seguir exclusivamente nuestra voluntad.', value:false }
         ]
     },
 ]
