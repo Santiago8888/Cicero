@@ -8,7 +8,7 @@ interface iDocument {
     user:iUser
     title:string
     link?:string
-    description:string
+    description?:string[]
     min?:number
     next():void
     approve():boolean | void 
@@ -34,7 +34,7 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
                 fontWeight: 500,
                 width: midScreen ? 800 : 320        
             }}
-        > { description } </h3>
+        > { description ? description[0] : '' } </h3>
 
 
         <div style={{ width:midScreen ? 800 : 320, margin:'3rem auto 1rem'}}>
