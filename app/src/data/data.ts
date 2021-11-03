@@ -249,6 +249,14 @@ const quiz12:iQuestion[] = [
             { answer:'No existen las acciones negativas', value:false }
         ]
     }, { 
+        question:'10. ¿Cuando empezamos a tener el karma negativo en nuestra vida?', 
+        answers:[
+            { answer:'Cuando Cronos, Saturno nos dice: ¡Ya basta! Necesitas parar, y hacer las cosas de acuerdo a las reglas, al orden.', value:true },
+            { answer:'Cuando nos pasamos 50 altos', value:false },
+            { answer:'Cuando se nos acaba el karma positivo', value:false },
+            { answer:'Cuando Saturno se encuentra en el 6 o 13 de cada signo.', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
