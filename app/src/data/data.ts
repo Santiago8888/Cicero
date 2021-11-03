@@ -280,6 +280,7 @@ const posts12:string[] = [
     '¿Quieres compartir un aviso que te haya dado Saturno?',
     '¿Alguna vez te has sentido limitado o bloqueado? Cuéntanos cómo empezó esa sensación y si recibiste comentarios de personas a tu alrededor.',
     '¿Has recibido mensajes o señales recientemente? Cuéntanos cómo y cuáles:',
+    '¿Tienes alguna experiencia curiosa o divertida de la manifestación de la ley de la causa y efecto?',
     ''
 ]
 
