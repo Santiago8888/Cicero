@@ -257,6 +257,15 @@ const quiz12:iQuestion[] = [
             { answer:'Cuando Saturno se encuentra en el 6 o 13 de cada signo.', value:false }
         ]
     }, { 
+        question:'11. ¿Cuál es la relación entre el karma y Saturno?', 
+        answers:[
+            { answer:'Saturno es el que determina los tiempo y el karma es la acción y la reacción.', value:true },
+            { answer:'No tienen relación actualmente, pero fueron creados al mismo tiempo.', value:false },
+            { answer:'Saturno manifiesta la ley del karma.', value:false },
+            { answer:'Saturno puede llenarnos de gracia y evitar las consecuencias negativas.', value:false },
+            { answer:'Saturno es el Dios del Karma.', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
