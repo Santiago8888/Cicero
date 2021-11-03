@@ -283,6 +283,7 @@ const posts12:string[] = [
     '¿Tienes alguna experiencia curiosa o divertida de la manifestación de la ley de la causa y efecto?',
     '¿Te has aferrado a algo que no te deja crecer, qué pasó?',
     '¿Cómo te comunicas con tu alma?',
+    '¿En qué área crees que puedes crecer actualmente?',
     ''
 ]
 
