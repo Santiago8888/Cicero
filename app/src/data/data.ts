@@ -241,6 +241,14 @@ const quiz12:iQuestion[] = [
             { answer:'Enmendar el daño de nuestras acciones.', value:false }
         ]
     }, { 
+        question:'9. ¿Porqué hay personas que no enfrentan consecuencias por acciones negativas?', 
+        answers:[
+            { answer:'Se está juntando su karma', value:true },
+            { answer:'Tienen suerte', value:false },
+            { answer:'Para enseñar a los demás', value:false },
+            { answer:'No existen las acciones negativas', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
