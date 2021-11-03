@@ -285,7 +285,7 @@ const posts12:string[] = [
     '¿Cómo te comunicas con tu alma?',
     '¿En qué área crees que puedes crecer actualmente?',
     '¿Para tí, qué es el entendimiento?',
-    ''
+    '¿De qué eres responsable, el día de hoy?'
 ]
 
 const module12:iLesson[] = [
