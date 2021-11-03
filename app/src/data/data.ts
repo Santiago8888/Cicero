@@ -276,13 +276,24 @@ const quiz12:iQuestion[] = [
     },
 ]
 
+const posts12:string[] = [
+    '¿Quieres compartir un aviso que te haya dado Saturno?',
+    '¿Alguna vez te has sentido limitado o bloqueado? Cuéntanos cómo empezó esa sensación y si recibiste comentarios de personas a tu alrededor.',
+    '¿Has recibido mensajes o señales recientemente? Cuéntanos cómo y cuáles:',
+    '¿Tienes alguna experiencia curiosa o divertida de la manifestación de la ley de la causa y efecto?',
+    '¿Te has aferrado a algo que no te deja crecer, qué pasó?',
+    '¿Cómo te comunicas con tu alma?',
+    '¿En qué área crees que puedes crecer actualmente?',
+    '¿Para tí, qué es el entendimiento?',
+    '¿De qué eres responsable, el día de hoy?'
+]
 
 const module12:iLesson[] = [
     { type:'Video', title:'El Karma', description:'', link:'https://youtu.be/dNt2saEg8As' },
     { type:'Quiz', title:'Quiz 1.2', description:'', questions:quiz12 },
     { type:'Reading', title:'Saturno en la Astrología', description:'' },
     { type:'Video', title:'Saturno, el maestro', description:'', link:'https://youtu.be/uilBR7op_GY' },
-    { type:'Quiz', title:'Ejercicio de Compartir', description:'' },
+    { type:'Quiz', title:'Ejercicio de Compartir', description:'', posts:posts12 },
 ]
 
 const module13:iLesson[] = [
