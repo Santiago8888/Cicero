@@ -233,6 +233,14 @@ const quiz12:iQuestion[] = [
             { answer:'Las que hacemos en público', value:false }
         ]
     }, { 
+        question:'8. ¿Qué se requiere para tener un karma positivo?', 
+        answers:[
+            { answer:'Hacer acciones positivas y sostener esa frecuencia de amor, alegría o compartir.', value:true },
+            { answer:'Hacer meditación y oración.', value:false },
+            { answer:'Saludar a los demás amablemente.', value:false },
+            { answer:'Enmendar el daño de nuestras acciones.', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
