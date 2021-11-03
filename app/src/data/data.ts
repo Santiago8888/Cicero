@@ -276,13 +276,17 @@ const quiz12:iQuestion[] = [
     },
 ]
 
+const posts12:string[] = [
+    '¿Quieres compartir un aviso que te haya dado Saturno?',
+    '',
+]
 
 const module12:iLesson[] = [
     { type:'Video', title:'El Karma', description:'', link:'https://youtu.be/dNt2saEg8As' },
     { type:'Quiz', title:'Quiz 1.2', description:'', questions:quiz12 },
     { type:'Reading', title:'Saturno en la Astrología', description:'' },
     { type:'Video', title:'Saturno, el maestro', description:'', link:'https://youtu.be/uilBR7op_GY' },
-    { type:'Quiz', title:'Ejercicio de Compartir', description:'' },
+    { type:'Quiz', title:'Ejercicio de Compartir', description:'', posts:posts12 },
 ]
 
 const module13:iLesson[] = [
