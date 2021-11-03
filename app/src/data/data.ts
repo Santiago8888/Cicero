@@ -209,6 +209,14 @@ const quiz12:iQuestion[] = [
             { answer:'No todas nuestros efectos quedan registrados.', value:false }
         ]
     }, { 
+        question:'5. ¿Cómo se llama el periodo entre la causa y el efecto?', 
+        answers:[
+            { answer:'Misericordia', value:true },
+            { answer:'Expectativa', value:false },
+            { answer:'Periodo de Manifestación', value:false },
+            { answer:'Gestación', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
