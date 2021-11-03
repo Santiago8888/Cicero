@@ -201,6 +201,14 @@ const quiz12:iQuestion[] = [
             { answer:'Cuando vamos en contra de nuestros valores.', value:false }
         ]
     }, { 
+        question:'4. ¿En dónde quedan registrados todos los efectos de nuestras acciones?', 
+        answers:[
+            { answer:'En el mundo astral', value:true },
+            { answer:'En nuestra consciencia', value:false },
+            { answer:'En la memoria cósmica', value:false },
+            { answer:'No todas nuestros efectos quedan registrados.', value:false }
+        ]
+    }, { 
         question:'', 
         answers:[
             { answer:'', value:true },
