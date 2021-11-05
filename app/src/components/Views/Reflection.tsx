@@ -50,5 +50,7 @@ export const Reflection = (props:iReflection) => {
                 <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> <strong> { i + 1 }. </strong> { post } </p>
             )}
         </div>
+
+        <CTA midScreen={midScreen} text={'Visitar el foro'} next={() => {}} user={props.user}/>
     </div>
 }
