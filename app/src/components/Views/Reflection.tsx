@@ -22,6 +22,7 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 </>
 
+const styleCta:CSSProperties = { marginTop:'3rem', margin:'auto'}
 interface iCta { midScreen:boolean, user:iUser, text:string, next():void }
 const CTA = ({ midScreen, user, text, next }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
     <button
