@@ -18,6 +18,6 @@ export const Content = ({ user, lesson, next, approve }: iContent) => {
         :   lesson.type === 'Reading' ? <Document user={user} {...lesson} next={next} approve={approve}/>
         :   lesson.type === 'Quiz' ? <Quiz  {...lesson} next={next} approve={approve} user={user}/> 
         :   lesson.type === 'Chart' ? <Chart user={user} {...lesson} next={next} approve={approve} />
-        :   lesson.type === 'Reflection' ? <Reflection user={user} {...lesson} />
+        :   lesson.type === 'Reflection' ? <Reflection user={user} next={next} {...lesson} />
     : <Error/>
 }
