@@ -3,7 +3,16 @@ import ReactPlayer from 'react-player/youtube'
 import { iUser } from '../../App'
 
 
-interface iVideo { user:iUser, title:string, link?:string, description:string, next():void, approve():boolean | void}
+interface iVideo { 
+    user:iUser
+    title:string
+    link?:string
+    description?:string[]
+    next():void
+    approve():boolean | void
+}
+
+
 export const Video = ({ user, title, link='', description, next, approve }: iVideo) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
@@ -19,7 +28,7 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
                 fontWeight: 500,
                 width: midScreen ? 800 : 320        
             }}
-        > { description } </h3>
+        > { description ? description[0] : '' } </h3>
 
         <div style={{margin:'2.5em 0px'}}>
             <ReactPlayer 

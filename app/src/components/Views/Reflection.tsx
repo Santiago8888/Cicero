@@ -2,9 +2,10 @@ import { useMediaQuery } from 'react-responsive'
 import { questionStyle } from './Quiz'
 
 interface iHeader extends iReflection { midScreen:boolean }
-const Header = ({ title, midScreen, description }:iHeader) => <>
+const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
-    <h3 
+    {
+        description.map((sentence) => <h3 
         style={{
             margin:'0rem auto',
             color: '#333',
@@ -13,12 +14,13 @@ const Header = ({ title, midScreen, description }:iHeader) => <>
             fontWeight: 500,
             width: midScreen ? 720 : 320        
         }}
-    > { description } </h3>
+    > { sentence } </h3>
+    )}
 
     <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 </>
 
-interface iReflection { title:string, description:string, posts?:string[] }
+interface iReflection { title:string, description?:string[], posts?:string[] }
 export const Reflection = (props:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 

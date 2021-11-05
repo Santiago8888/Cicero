@@ -5,7 +5,7 @@ import { iUser } from '../../App'
 import { useEffect } from 'react'
 
 
-interface iChart { user:iUser, title:string, description:string, planet?:Planet, approve():boolean | void, next():void }
+interface iChart { user:iUser, title:string, description?:string[], planet?:Planet, approve():boolean | void, next():void }
 export const Chart = ({ user:{natalChart:{planets, houses}}, title, description, planet, next, approve }: iChart) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 680px)' })
@@ -23,7 +23,7 @@ export const Chart = ({ user:{natalChart:{planets, houses}}, title, description,
                 fontWeight: 500,
                 width: midScreen ? 800 : 320        
             }}
-        > { description } </h3>
+        > { description ? description[0] : '' } </h3>
 
         {
             !smallScreen

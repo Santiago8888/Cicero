@@ -83,7 +83,6 @@ const quiz11:iQuestion[] = [
 
 export const lesson: iLesson = { 
     title:'Quiz', 
-    description:'El signo solar indica el caracter, la escencia y misión de la persona.', 
     type:'Quiz', 
     questions:[{
         question:'First Question?', 
@@ -134,15 +133,9 @@ export const Recordings:iRecordings = {
 }
 
 
-const longDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
-
 const lessons:iLesson[] = [
     {...lesson, type:'Video', title:'Video'}, 
-    {...lesson, type:'Reading', title:'Lectura', description:longDescription, link:'sample.pdf'}, 
+    {...lesson, type:'Reading', title:'Lectura', link:'sample.pdf'}, 
     lesson
 ]
 
@@ -168,10 +161,10 @@ const posts11 = [
 ]
 
 const module11:iLesson[] = [
-    { type:'Video', title:'¿Qué es Saturno?', description:'', link:'https://youtu.be/-AEpq9zauQ8'  },
-    { type:'Quiz', title:'Quiz 1.1', description:'', questions:quiz11 },
-    { type:'Video', title:'La importancia de Saturno', description:'', link:'https://youtu.be/gQarN9nNKdA' },
-    { type:'Reflection', title:'Preguntas de Reflexión', description:'Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.', posts:posts11 },
+    { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
+    { type:'Quiz', title:'Quiz 1.1', questions:quiz11 },
+    { type:'Video', title:'La importancia de Saturno', link:'https://youtu.be/gQarN9nNKdA' },
+    { type:'Reflection', title:'Preguntas de Reflexión', description:['Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.'], posts:posts11 },
 ]
 
 
@@ -289,18 +282,18 @@ const posts12:string[] = [
 ]
 
 const module12:iLesson[] = [
-    { type:'Video', title:'El Karma', description:'', link:'https://youtu.be/dNt2saEg8As' },
-    { type:'Quiz', title:'Quiz 1.2', description:'', questions:quiz12 },
-    { type:'Reading', title:'Saturno en la Astrología', description:'' },
-    { type:'Video', title:'Saturno, el maestro', description:'', link:'https://youtu.be/uilBR7op_GY' },
-    { type:'Quiz', title:'Ejercicio de Compartir', description:'', posts:posts12 },
+    { type:'Video', title:'El Karma', link:'https://youtu.be/dNt2saEg8As' },
+    { type:'Quiz', title:'Quiz 1.2', questions:quiz12 },
+    { type:'Reading', title:'Saturno en la Astrología', },
+    { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
+    { type:'Reflection', title:'Ejercicio de Compartir', posts:posts12 },
 ]
 
 const module13:iLesson[] = [
-    { type:'Video', title:'Las lecciones de Saturno', description:'', link:'https://youtu.be/H3xrXhqG5MY' },
-    { type:'Quiz', title:'Quiz 1.3', description:'' },
-    { type:'Video', title:'Escucha las señales', description:'', link:'https://youtu.be/_BqqI3A1SZY' },
-    { type:'Quiz', title:'Ejercicio Final 1', description:'' }
+    { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
+    { type:'Quiz', title:'Quiz 1.3' },
+    { type:'Video', title:'Escucha las señales', link:'https://youtu.be/_BqqI3A1SZY' },
+    { type:'Quiz', title:'Ejercicio Final 1' }
 ]
 
 
@@ -331,7 +324,7 @@ export const Units:iUnit[] = [{
         { 
             title: '4.1 Binah y el inicio de la existencia', 
             lessons:[
-                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'},
+                { title:'Saturno', type:'Chart', description:['El planeta que rige tu responsabilidad'], planet:'Saturn'},
                 ...lessons
             ] 
         },

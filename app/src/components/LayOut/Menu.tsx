@@ -12,7 +12,7 @@ type Lesson = 'Video' | 'Quiz' | 'Reading' | 'Chart' | 'Reflection'
 export interface iLesson { 
     title:string, 
     type:Lesson, 
-    description:string, 
+    description?:string[], 
     link?:string, 
     questions?:iQuestion[] 
     min?:number
