@@ -1,5 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
 import { questionStyle } from './Quiz'
+import { iUser } from '../../App'
+import { CSSProperties } from 'react'
 
 interface iHeader extends iReflection { midScreen:boolean }
 const Header = ({ title, midScreen, description=[] }:iHeader) => <>
@@ -20,7 +22,23 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 </>
 
-interface iReflection { title:string, description?:string[], posts?:string[] }
+const CTA = ({ midScreen, user, text, next }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
+    <button
+        onClick={next} 
+        className='button is-link' 
+        style={{
+            float: !midScreen ? 'inherit' : 'right', 
+            borderRadius:12, 
+            width:180, 
+            fontSize:'1.25rem', 
+            fontWeight:600, 
+            backgroundColor:'saddlebrown'
+        }}
+        disabled={user.current.module === user.progress.module && user.progress.lesson === user.current.lesson}
+    > { text } </button>
+</div>
+
+interface iReflection { title:string, description?:string[], posts?:string[], user:iUser }
 export const Reflection = (props:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
