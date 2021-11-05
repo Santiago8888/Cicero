@@ -281,12 +281,21 @@ const posts12:string[] = [
     '¿De qué eres responsable, el día de hoy?'
 ]
 
+
 const module12:iLesson[] = [
     { type:'Video', title:'El Karma', link:'https://youtu.be/dNt2saEg8As' },
     { type:'Quiz', title:'Quiz 1.2', questions:quiz12 },
     { type:'Reading', title:'Saturno en la Astrología', },
     { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
-    { type:'Reflection', title:'Ejercicio de Compartir', posts:posts12 },
+    { 
+        type:'Reflection', 
+        title:'Ejercicio de Compartir', 
+        posts:posts12, 
+        description:[
+            `Te invitamos a que hagas una segunda pausa y reflexiones cómo se manifiesta el karma en tu vida.
+            Nuevamente ponemos a tu disposición sugerencias para compartir en el foro, por favor, se muy consciente de lo que publicas.`
+        ] 
+    },
 ]
 
 const module13:iLesson[] = [
