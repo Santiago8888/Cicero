@@ -40,7 +40,7 @@ const CTA = ({ midScreen, user, text, next }:iCta) => <div style={{...styleCta, 
     > { text } </button>
 </div>
 
-interface iReflection { title:string, description?:string[], posts?:string[], user:iUser }
+interface iReflection { title:string, description?:string[], posts?:string[], user:iUser, next():void }
 export const Reflection = (props:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
@@ -53,6 +53,6 @@ export const Reflection = (props:iReflection) => {
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Visitar el foro'} next={() => {}} user={props.user}/>
+        <CTA midScreen={midScreen} text={'Visitar el foro'} next={props.next} user={props.user}/>
     </div>
 }
