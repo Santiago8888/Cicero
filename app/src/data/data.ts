@@ -324,12 +324,12 @@ const quiz13:iQuestion[] = [
             { answer:'Actuamos en contra de nuestros valores.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '4. ¿Cuál de estos es un mal consejo cuando pasamos por una lección de Saturno?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Entre más pronto aprendamos la lección mejor.', value:true },
+            { answer:'Adquirir consciencia nos sirve para mejorar las circunstancias.', value:false },
+            { answer:'Procura tener buenas intenciones, emociones, pensamientos y acciones.', value:false },
+            { answer:'Realiza un cambio interno y examen de conciencia.', value:false },
         ]
     },   { 
         question: '', 
