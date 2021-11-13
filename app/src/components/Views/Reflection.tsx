@@ -53,10 +53,16 @@ interface iReflection {
     approve(props:iApprove):void 
 }
 
-export const Reflection = ({posts=[], user, title, description, approve }:iReflection) => {
+export const Reflection = ({posts=[], user, title, description, approve, next }:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [active, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
+
+    const submit = (newPost:iPost) => {
+        setActive(false)
+        approve({newPost})
+        next()
+    }
 
     return <div className='content'>
         <Header title={title} midScreen={midScreen} description={description} />
@@ -73,7 +79,7 @@ export const Reflection = ({posts=[], user, title, description, approve }:iRefle
             isActive={active} 
             title={'Nueva Publicación'} 
             deactivate={() => setActive(false)} 
-            submit={() => approve({newPost})}
+            submit={() => submit(newPost)}
         >
             <div className='field'>
                 <label className='label'> Título: </label>
