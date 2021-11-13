@@ -388,12 +388,12 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando hacemos meditación en la mañana y en la noche.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '12. ¿Cuando termina el proceso de recuperación y regeneración?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Cuando entendemos que no hemos cumplido con los compromisos que adquirimos.', value:true },
+            { answer:'Dos años después del comienzo.', value:false },
+            { answer:'Cuando regresamos a nuestro centro.', value:false },
+            { answer:'Cuando terminamos de pagar el karma.', value:false },
         ]
     },   { 
         question: '', 
