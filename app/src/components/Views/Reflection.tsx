@@ -73,6 +73,17 @@ export const Reflection = ({posts=[], ...props}:iReflection) => {
                     </select>
                 </div>
             </div>
+
+            <div className='field'>
+                <label className='label'> Contenido: </label>    
+                <div className='control'>
+                    <textarea 
+                        className='textarea' 
+                        placeholder='Comparte tu experiencia o aprendizaje...' 
+                        onChange={({target:{value}}) => {}}
+                    />
+                </div>
+            </div>            
         </Modal>
     </div>
 }
