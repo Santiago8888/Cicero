@@ -396,12 +396,12 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando terminamos de pagar el karma.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '13. ¿Que nos indica Saturno en nuestra carta astral?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'El qué y el donde debemos tener un comportamiento impecable.', value:true },
+            { answer:'El cuando y el cómo alcanzar el éxito.', value:false },
+            { answer:'Quiénes se convertirán en nuestros maestros.', value:false },
+            { answer:'Cuál es el camino a nuestra felicidad.', value:false },
         ]
     },   { 
         question: '', 
