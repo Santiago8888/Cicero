@@ -43,7 +43,7 @@ const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta,
 </div>
 
 interface iReflection { title:string, description?:string[], posts?:string[], user:iUser, next():void }
-export const Reflection = (props:iReflection) => {
+export const Reflection = ({posts=[], ...props}:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [active, setActive] = useState(false)
 
@@ -51,7 +51,7 @@ export const Reflection = (props:iReflection) => {
         <Header {...props} midScreen={midScreen} />
 
         <div style={{...questionStyle, padding:'0px 24px'}}>
-            { props.posts?.map((post, i) => 
+            { posts?.map((post, i) => 
                 <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> <strong> { i + 1 }. </strong> { post } </p>
             )}
         </div>
@@ -64,6 +64,15 @@ export const Reflection = (props:iReflection) => {
             deactivate={() => setActive(false)} 
             submit={props.next}
         >
+            <div className='field'>
+                <label className='label'> Título: </label>
+                <div className="select" style={{ maxWidth:600, height:'auto', whiteSpace:'break-spaces' }}>
+                    <select> 
+                        <option />
+                        { posts.map(p => <option> { p }</option>)} 
+                    </select>
+                </div>
+            </div>
         </Modal>
     </div>
 }
