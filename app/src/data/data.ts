@@ -404,20 +404,12 @@ const quiz13:iQuestion[] = [
             { answer:'Cuál es el camino a nuestra felicidad.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '14. ¿Porqué el entendimiento es la antesala de la sabiduría?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
-        ]
-    },   { 
-        question: '', 
-        answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Porque Saturno nos enseña el funcionamiento de nuestra realidad: cosechamos lo que sembramos.', value:true },
+            { answer:'Porque Binah es la tercera esfera del árbol de la vida.', value:false },
+            { answer:'Porque Saturno impone límites y esto causa ignorancia.', value:false },
+            { answer:'Porque Saturno enseña, pero Neptuno ilumina.', value:false },
         ]
     }, 
 ]
