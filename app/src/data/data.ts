@@ -340,12 +340,12 @@ const quiz13:iQuestion[] = [
             { answer:'Cómo me ven los demás y cómo mejorar mis relaciones.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '6. ¿Cómo se transforma una situación desde la raíz?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Cambiar los deseos, pensamientos y sustituirlos por otros más positivos.', value:true },
+            { answer:'Conectarse con tu yo interior y seguir las indicaciones de tu alma.', value:false },
+            { answer:'A través de la meditación y Kabbalah.', value:false },
+            { answer:'Esperando y siendo paciente dejando que las consecuencias tomen su curso.', value:false },
         ]
     },   { 
         question: '', 
