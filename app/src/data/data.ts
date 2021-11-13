@@ -153,7 +153,7 @@ export const Posts:iPost[] = [{
 
 const posts11 = [
     'Saturno es un gran guía. Comparte la historia de un guía que te haya inspirado a ser mejor persona.',
-    '¿Sabes en qué eres experta? Cuentanos en qué y cómo te volviste experta en eso.',
+    '¿Sabes en qué eres expert@? Cuentanos en qué y cómo te volviste expert@ en eso.',
     'Relata una experiencia en la que hayas aprendido a través de la limitación.',
     'Para tí, ¿Qué es la humildad y cómo la practicas diariamente?',
     'Saturno nos pide que cada vez seamos mejores ¿En que te estás esforzando hoy para crecer como persona?',
