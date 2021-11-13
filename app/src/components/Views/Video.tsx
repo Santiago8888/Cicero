@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 import ReactPlayer from 'react-player/youtube'
-import { iUser } from '../../App'
+import { iApprove, iUser } from '../../App'
 
 
 interface iVideo { 
@@ -9,7 +9,7 @@ interface iVideo {
     link?:string
     description?:string[]
     next():void
-    approve():boolean | void
+    approve(props:iApprove):boolean | void
 }
 
 
@@ -34,7 +34,7 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
             <ReactPlayer 
                 url={link} 
                 controls={true}
-                onEnded={approve}
+                onEnded={() => approve({})}
                 style={{margin:'auto'}}
                 width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
                 height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
