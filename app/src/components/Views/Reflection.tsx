@@ -1,7 +1,8 @@
 import { useMediaQuery } from 'react-responsive'
+import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
-import { iUser } from '../../App'
 import { CSSProperties } from 'react'
+import { iUser } from '../../App'
 
 interface iHeader extends iReflection { midScreen:boolean }
 const Header = ({ title, midScreen, description=[] }:iHeader) => <>
@@ -23,10 +24,10 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
 </>
 
 const styleCta:CSSProperties = { marginTop:'3rem' }
-interface iCta { midScreen:boolean, user:iUser, text:string, next():void }
-const CTA = ({ midScreen, user, text, next }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
+interface iCta { midScreen:boolean, user:iUser, text:string, click():void }
+const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
     <button
-        onClick={next} 
+        onClick={click} 
         className='button is-link' 
         style={{
             float: !midScreen ? 'inherit' : 'right', 
@@ -54,6 +55,9 @@ export const Reflection = (props:iReflection) => {
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Visitar el foro'} next={props.next} user={props.user}/>
+        <CTA midScreen={midScreen} text={'Visitar el foro'} click={props.next} user={props.user}/>
+
+        <Modal title={'Nueva Publicación'} isActive={false} deactivate={() => {}} submit={() => {}}>
+        </Modal>
     </div>
 }
