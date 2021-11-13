@@ -1,9 +1,9 @@
 import { emptyPost, iPost } from '../Forum/Posts'
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
+import { iApprove, iUser } from '../../App'
 import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
-import { iApprove, iUser } from '../../App'
 
 
 interface iHeader { title:string, description?:string[], midScreen:boolean }
@@ -32,7 +32,6 @@ const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta,
         onClick={click} 
         className='button is-link' 
         style={{
-            float: !midScreen ? 'inherit' : 'right', 
             borderRadius:12, 
             marginBottom:'3rem',
             width:240, 
@@ -58,9 +57,12 @@ export const Reflection = ({posts=[], user, title, description, approve, next }:
     const [active, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
 
-    const submit = (newPost:iPost) => {
+    const submit = (post:iPost) => {
         setActive(false)
+
+        const newPost = {...post, likes:[user.user_id], image:user.sign, name:user.name }
         approve({newPost})
+
         next()
     }
 
