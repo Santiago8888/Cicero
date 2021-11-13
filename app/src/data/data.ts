@@ -182,7 +182,7 @@ const quiz12:iQuestion[] = [
         answers:[
             { answer:'Vivimos en un sistema, no hay acciones aisladas.', value:true },
             { answer:'Para que nos portemos bien.', value:false },
-            { answer:'Enseñar que nuestros actos tienen consecuencias.', value:false },
+            { answer:'Enseñar que nuestros actos tienen consecuencias.', value:true },
             { answer:'Es una ley universal, no hay que preguntar el porqué sino aceptarla.', value:false }
         ]
     }, { 
@@ -244,7 +244,7 @@ const quiz12:iQuestion[] = [
     }, { 
         question:'10. ¿Cuando empezamos a tener el karma negativo en nuestra vida?', 
         answers:[
-            { answer:'Cuando Cronos, Saturno nos dice: ¡Ya basta! Necesitas parar, y hacer las cosas de acuerdo a las reglas, al orden.', value:true },
+            { answer:'Cuando necesitamos parar, y hacer las cosas de acuerdo a las reglas.', value:true },
             { answer:'Cuando nos pasamos 50 altos', value:false },
             { answer:'Cuando se nos acaba el karma positivo', value:false },
             { answer:'Cuando Saturno se encuentra en el 6 o 13 de cada signo.', value:false }
@@ -252,9 +252,8 @@ const quiz12:iQuestion[] = [
     }, { 
         question:'11. ¿Cuál es la relación entre el karma y Saturno?', 
         answers:[
-            { answer:'Saturno es el que determina los tiempo y el karma es la acción y la reacción.', value:true },
             { answer:'No tienen relación actualmente, pero fueron creados al mismo tiempo.', value:false },
-            { answer:'Saturno manifiesta la ley del karma.', value:false },
+            { answer:'Saturno manifiesta la ley del karma.', value:true },
             { answer:'Saturno puede llenarnos de gracia y evitar las consecuencias negativas.', value:false },
             { answer:'Saturno es el Dios del Karma.', value:false }
         ]
