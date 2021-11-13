@@ -308,12 +308,12 @@ const quiz13:iQuestion[] = [
             { answer:'Observar, buscar y enseñar.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '2. ¿Cómo identificamos si estamos pasando por una lección de Saturno?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Las cosas dejan dejan de fluir, y obtenemos señales de las personas en nuestra vida diaria.', value:true },
+            { answer:'Nos sentimos deprimidos, cansados y sin motivación.', value:false },
+            { answer:'Nos corren del trabajo o tenemos problemas profesionales.', value:false },
+            { answer:'Nuestra salud se resiente y constantemente discutimos con las personas a nuestro alrededor.', value:false },
         ]
     },   { 
         question: '', 
