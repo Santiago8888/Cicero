@@ -380,12 +380,12 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando vencemos a Saturno', value:false },
         ]
     },   { 
-        question: '', 
+        question: '11. ¿Cual es el siguiente paso del proceso de recuperación o regeneración?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Cuando somos capaces de sostener el nuevo nivel de consciencia.', value:true },
+            { answer:'Cuando Saturno se aleja de la posición en la que se encuentra.', value:false },
+            { answer:'Cuando nos arrepentimos de corazón y también perdonamos.', value:false },
+            { answer:'Cuando hacemos meditación en la mañana y en la noche.', value:false },
         ]
     },   { 
         question: '', 
