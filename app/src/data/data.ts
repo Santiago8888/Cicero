@@ -269,7 +269,7 @@ const quiz12:iQuestion[] = [
 ]
 
 const posts12:string[] = [
-    '¿Quieres compartir un aviso que te haya dado Saturno?',
+    '¿Quieres compartir alguna vez en que Saturno te haya dado avisos?',
     '¿Alguna vez te has sentido limitado o bloqueado? Cuéntanos cómo empezó esa sensación y si recibiste comentarios de personas a tu alrededor.',
     '¿Has recibido mensajes o señales recientemente? Cuéntanos cómo y cuáles:',
     '¿Tienes alguna experiencia curiosa o divertida de la manifestación de la ley de la causa y efecto?',
@@ -298,7 +298,129 @@ const module12:iLesson[] = [
 ]
 
 
-const quiz13:iQuestion[] = []
+const quiz13:iQuestion[] = [
+    { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    },   { 
+        question: '', 
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:false },
+            { answer:'', value:false },
+            { answer:'', value:false },
+        ]
+    }, 
+]
 
 const module13:iLesson[] = [
     { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
