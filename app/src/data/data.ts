@@ -300,12 +300,12 @@ const module12:iLesson[] = [
 
 const quiz13:iQuestion[] = [
     { 
-        question: '', 
+        question: '1. ¿Cómo lidiar con las lecciones de Saturno?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Identificar, soltar y entender.', value:true },
+            { answer:'Escuchar, rezar y tomar acción.', value:false },
+            { answer:'Resignarse, aceptar y agradecer.', value:false },
+            { answer:'Observar, buscar y enseñar.', value:false },
         ]
     },   { 
         question: '', 
