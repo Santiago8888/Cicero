@@ -356,12 +356,12 @@ const quiz13:iQuestion[] = [
             { answer:'La fuerza que ejerce Saturno para afectar o premiar nuestra vida.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '8. ¿Qué significa soltar?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Liberarnos de la carga emocional que engendra las circunstancias negativas.', value:true },
+            { answer:'Resignarse y aceptar nuestro propósito y los designios de la conciencia universal.', value:false },
+            { answer:'Permitirnos ser despojados de todo lo que nos está haciendo daño.', value:false },
+            { answer:'Escuchar atentamente pero no involucrarse emocionalmente con vibraciones negativas.', value:false },
         ]
     },   { 
         question: '', 
