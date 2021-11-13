@@ -418,7 +418,7 @@ const module13:iLesson[] = [
     { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
     { type:'Quiz', title:'Quiz 1.3', questions:quiz13 },
     { type:'Video', title:'Escucha las señales', link:'https://youtu.be/_BqqI3A1SZY' },
-    { type:'Quiz', title:'Ejercicio Final 1' }
+    { type:'Quiz', title:'Ejercicio Práctico' }
 ]
 
 
@@ -440,7 +440,7 @@ export const Units:iUnit[] = [{
     title: '3. La Casa de Saturno', 
     modules: [
         { title: '3.1 La casa de tu Saturno', lessons },
-        { title: '3.2 El ciclo de 7 años de Saturno', lessons },
+        { title: '3.2 Los ciclos de Saturno', lessons },
         { title: '3.3 Saturno y la Salud.', lessons }
     ] 
 }, { 
