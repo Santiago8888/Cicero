@@ -1,9 +1,12 @@
+import { emptyPost, iPost } from '../Forum/Posts'
 import { useMediaQuery } from 'react-responsive'
+import { CSSProperties, useState } from 'react'
+import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
-import { iUser } from '../../App'
-import { CSSProperties } from 'react'
+import { iApprove, iUser } from '../../App'
 
-interface iHeader extends iReflection { midScreen:boolean }
+
+interface iHeader { title:string, description?:string[], midScreen:boolean }
 const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
     {
@@ -22,17 +25,17 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 </>
 
-const styleCta:CSSProperties = { marginTop:'3rem' }
-interface iCta { midScreen:boolean, user:iUser, text:string, next():void }
-const CTA = ({ midScreen, user, text, next }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
+const styleCta:CSSProperties = { margin:'auto', marginTop:'3rem' }
+interface iCta { midScreen:boolean, user:iUser, text:string, click():void }
+const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
     <button
-        onClick={next} 
+        onClick={click} 
         className='button is-link' 
         style={{
             float: !midScreen ? 'inherit' : 'right', 
             borderRadius:12, 
             marginBottom:'3rem',
-            width:180, 
+            width:240, 
             fontSize:'1.25rem', 
             fontWeight:600, 
             backgroundColor:'saddlebrown'
@@ -41,19 +44,67 @@ const CTA = ({ midScreen, user, text, next }:iCta) => <div style={{...styleCta, 
     > { text } </button>
 </div>
 
-interface iReflection { title:string, description?:string[], posts?:string[], user:iUser, next():void }
-export const Reflection = (props:iReflection) => {
+interface iReflection { 
+    title:string
+    description?:string[]
+    posts?:string[]
+    user:iUser
+    next():void
+    approve(props:iApprove):void 
+}
+
+export const Reflection = ({posts=[], user, title, description, approve, next }:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
+    const [active, setActive] = useState(false)
+    const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
+
+    const submit = (newPost:iPost) => {
+        setActive(false)
+        approve({newPost})
+        next()
+    }
 
     return <div className='content'>
-        <Header {...props} midScreen={midScreen} />
+        <Header title={title} midScreen={midScreen} description={description} />
 
         <div style={{...questionStyle, padding:'0px 24px'}}>
-            { props.posts?.map((post, i) => 
+            { posts?.map((post, i) => 
                 <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> <strong> { i + 1 }. </strong> { post } </p>
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Visitar el foro'} next={props.next} user={props.user}/>
+        <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/>
+
+        <Modal 
+            isActive={active} 
+            title={'Nueva Publicación'} 
+            deactivate={() => setActive(false)} 
+            submit={() => submit(newPost)}
+        >
+            <div className='field'>
+                <label className='label'> Título: </label>
+                <div className="select" style={{ maxWidth:600, height:'auto' }}>
+                    <select 
+                        style={{height:'auto', whiteSpace:'break-spaces'}}
+                        onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
+                    > 
+                        <option/>
+                        { posts.map(p => <option> { p }</option>)} 
+                    </select>
+                </div>
+            </div>
+
+            <div className='field'>
+                <label className='label'> Contenido: </label>    
+                <div className='control'>
+                    <textarea 
+                        className='textarea' 
+                        value={newPost.detail} 
+                        placeholder='Comparte tu experiencia o aprendizaje...' 
+                        onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
+                    />
+                </div>
+            </div>            
+        </Modal>
     </div>
 }

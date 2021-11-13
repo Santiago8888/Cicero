@@ -7,7 +7,7 @@ import { Interaction } from './Interaction'
 import { Landing } from './Auth/Landing'
 import { Units } from '../data/data'
 import { Content } from './Content'
-import { iUser } from '../App'
+import { iApprove, iUser } from '../App'
 
 
 
@@ -21,7 +21,7 @@ interface iHome {
 
     next():void
     setLogin():void
-    approve(score?:number):boolean | void
+    approve(props:iApprove):boolean | void
     login(loginInput:iLoginInput):void
     submit(doubt:iDoubt):void
 

@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive'
-import { iUser } from '../../App'
+import { iApprove, iUser } from '../../App'
 import { useState } from 'react'
 
 const defaultDoc = ''
@@ -11,7 +11,7 @@ interface iDocument {
     description?:string[]
     min?:number
     next():void
-    approve():boolean | void 
+    approve(props:iApprove):boolean | void 
 }
 
 
@@ -21,7 +21,7 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
     const [ isCounting, setCounting ] = useState(false)
     const initCountdown = () => {
         setCounting(true)
-        setTimeout(() => approve(), 1000*60*(min || 10))
+        setTimeout(() => approve({}), 1000*60*(min || 10))
     }
 
     return <div className='content'>

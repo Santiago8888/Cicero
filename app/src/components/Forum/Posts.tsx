@@ -143,7 +143,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
 }
 
 
-interface iPosts { 
+export interface iPosts { 
     user:iUser
     posts:iPost[]
     post(post:iPost):void
@@ -151,7 +151,7 @@ interface iPosts {
     reply(text:string, id:number):void
 }
 
-const emptyPost = { title:'', name:'', detail:'', likes:[], comments:[] }
+export const emptyPost = { title:'', name:'', detail:'', likes:[], comments:[] }
 export const Posts = ({user, posts, post, reply, like}: iPosts) => {
     const [ isActive, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)

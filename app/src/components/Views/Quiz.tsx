@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
-import { iUser } from '../../App'
+import { iApprove, iUser } from '../../App'
 
 
 interface iAnswer { answer:string, value:boolean }
@@ -86,7 +86,7 @@ interface iQuiz {
     questions?:iQuestion[]
     min?:number,
     next():void
-    approve(score:number):boolean|void
+    approve(props:iApprove):boolean|void
     user:iUser
 }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
@@ -105,7 +105,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         const score = answers.filter(a=>a).length
         setScore(score)
 
-        const isApproved = approve(score) || false
+        const isApproved = approve({score}) || false
         setApproved(isApproved)
 
         setActive(true)

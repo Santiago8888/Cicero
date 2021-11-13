@@ -1,16 +1,24 @@
 import { AstralChart, Planet } from '../Astral/AstralChart'
 import { useMediaQuery } from 'react-responsive'
 import { MiniChart } from '../Astral/MiniChart'
-import { iUser } from '../../App'
+import { iApprove, iUser } from '../../App'
 import { useEffect } from 'react'
 
 
-interface iChart { user:iUser, title:string, description?:string[], planet?:Planet, approve():boolean | void, next():void }
+interface iChart { 
+    user:iUser
+    title:string
+    description?:string[]
+    planet?:Planet
+    approve(props:iApprove):boolean | void
+    next():void 
+}
+
 export const Chart = ({ user:{natalChart:{planets, houses}}, title, description, planet, next, approve }: iChart) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 680px)' })
 
-    useEffect(() => { approve() }, [approve])
+    useEffect(() => { approve({}) }, [approve])
 
     return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
