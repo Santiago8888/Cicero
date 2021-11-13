@@ -3,10 +3,10 @@ import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
 import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
-import { iUser } from '../../App'
+import { iApprove, iUser } from '../../App'
 
 
-interface iHeader extends iReflection { midScreen:boolean }
+interface iHeader { title:string, description?:string[], midScreen:boolean }
 const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
     {
@@ -44,14 +44,22 @@ const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta,
     > { text } </button>
 </div>
 
-interface iReflection { title:string, description?:string[], posts?:string[], user:iUser, next():void }
-export const Reflection = ({posts=[], ...props}:iReflection) => {
+interface iReflection { 
+    title:string
+    description?:string[]
+    posts?:string[]
+    user:iUser
+    next():void
+    approve(props:iApprove):void 
+}
+
+export const Reflection = ({posts=[], user, title, description, approve }:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [active, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
 
     return <div className='content'>
-        <Header {...props} midScreen={midScreen} />
+        <Header title={title} midScreen={midScreen} description={description} />
 
         <div style={{...questionStyle, padding:'0px 24px'}}>
             { posts?.map((post, i) => 
@@ -59,13 +67,13 @@ export const Reflection = ({posts=[], ...props}:iReflection) => {
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Visitar el foro'} click={() => setActive(true)} user={props.user}/>
+        <CTA midScreen={midScreen} text={'Visitar el foro'} click={() => setActive(true)} user={user}/>
 
         <Modal 
             isActive={active} 
             title={'Nueva Publicación'} 
             deactivate={() => setActive(false)} 
-            submit={() => console.log(newPost)}
+            submit={() => approve({newPost})}
         >
             <div className='field'>
                 <label className='label'> Título: </label>
