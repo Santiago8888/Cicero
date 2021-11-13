@@ -390,7 +390,7 @@ const quiz13:iQuestion[] = [
     },   { 
         question: '12. ¿Cuando termina el proceso de recuperación y regeneración?', 
         answers:[
-            { answer:'Cuando entendemos que no hemos cumplido con los compromisos que adquirimos.', value:true },
+            { answer:'Cuando entendemos que no hemos cumplido los compromisos que adquirimos.', value:true },
             { answer:'Dos años después del comienzo.', value:false },
             { answer:'Cuando regresamos a nuestro centro.', value:false },
             { answer:'Cuando terminamos de pagar el karma.', value:false },
@@ -416,7 +416,7 @@ const quiz13:iQuestion[] = [
 
 const module13:iLesson[] = [
     { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
-    { type:'Quiz', title:'Quiz 1.3' },
+    { type:'Quiz', title:'Quiz 1.3', questions:quiz13 },
     { type:'Video', title:'Escucha las señales', link:'https://youtu.be/_BqqI3A1SZY' },
     { type:'Quiz', title:'Ejercicio Final 1' }
 ]
