@@ -74,7 +74,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                             className={'navbar-item'}
                             style={{textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}}
                         > 
-                            <strong> Dudas </strong> 
+                            <strong> Preguntas </strong> 
                         </a>                    
                     </div>
                 }
