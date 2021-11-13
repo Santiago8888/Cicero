@@ -1,7 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
 import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
-import { CSSProperties } from 'react'
+import { CSSProperties, useState } from 'react'
 import { iUser } from '../../App'
 
 interface iHeader extends iReflection { midScreen:boolean }
@@ -45,6 +45,7 @@ const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta,
 interface iReflection { title:string, description?:string[], posts?:string[], user:iUser, next():void }
 export const Reflection = (props:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
+    const [active, setActive] = useState(false)
 
     return <div className='content'>
         <Header {...props} midScreen={midScreen} />
@@ -55,9 +56,14 @@ export const Reflection = (props:iReflection) => {
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Visitar el foro'} click={props.next} user={props.user}/>
+        <CTA midScreen={midScreen} text={'Visitar el foro'} click={() => setActive(true)} user={props.user}/>
 
-        <Modal title={'Nueva Publicación'} isActive={false} deactivate={() => {}} submit={() => {}}>
+        <Modal 
+            isActive={active} 
+            title={'Nueva Publicación'} 
+            deactivate={() => setActive(false)} 
+            submit={props.next}
+        >
         </Modal>
     </div>
 }
