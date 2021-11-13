@@ -212,7 +212,7 @@ const quiz12:iQuestion[] = [
     }, { 
         question:'6. ¿Porqué no vemos inmediatamente las consecuencias de nuestros actos?', 
         answers:[
-            { answer:'Para poder aprender, practicar', value:true },
+            { answer:'Para poder practicar y aprender', value:true },
             { answer:'Para liberar nuestro poder creador y de manifestación.', value:false },
             { answer:'Para permitirnos enmendar nuestros errores.', value:false },
             { answer:'Es una consecuencia de vivir en un mundo físico.', value:false }
@@ -236,7 +236,7 @@ const quiz12:iQuestion[] = [
     }, { 
         question:'9. ¿Porqué hay personas que no enfrentan consecuencias por acciones negativas?', 
         answers:[
-            { answer:'Se está juntando su karma', value:true },
+            { answer:'Se está acumulando su karma', value:true },
             { answer:'Tienen suerte', value:false },
             { answer:'Para enseñar a los demás', value:false },
             { answer:'No existen las acciones negativas', value:false }
