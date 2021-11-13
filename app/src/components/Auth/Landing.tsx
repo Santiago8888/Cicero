@@ -14,7 +14,7 @@ const Welcome = ({ click, }:iWelcome) => {
     return <div className='content' style={{textAlign:'center'}}>
         <h1 style={{fontSize:!smallScreen ? '3rem' : '2rem', marginBottom:0, color:'saddlebrown'}}> SATURNO 🪐  </h1>
 
-        <div style={{marginBottom:!smallScreen ? '2rem' : 0}}>
+        <div style={{marginBottom:!smallScreen ? '1rem' : 0}}>
             {
                 !smallScreen 
                     ?   <h2 style={{marginBottom:'1.5rem', marginRight:'auto', marginLeft:'auto', width:760, color:'saddlebrown'}}>
@@ -34,29 +34,19 @@ const Welcome = ({ click, }:iWelcome) => {
             </div>
         </div>
 
-        <div style={{marginTop:!smallScreen ? '2rem' : 0}}>
-            {
-                !smallScreen 
-                    ?   <h2 style={{marginBottom:'0rem', marginRight:'auto', marginLeft:'auto', width:760, color:'saddlebrown'}}>
-                            Descubre que es lo que has venido a enseñar
-                        </h2>
-                    :   <h2 style={{marginBottom:'1.5rem', marginRight:'auto', marginLeft:'auto', color:'navy', fontSize:'1.25rem', marginTop:'1rem'}}>
-                            Escucha el llamado de tu alma.
-                        </h2>
-            }
-
+        <div style={{marginTop:!smallScreen ? '1rem' : 0}}>
             <a
                 onClick={click}
                 className='button is-link'
                 style={{ 
-                    width:!smallScreen ? 320 : 260 , 
+                    width:320, 
                     fontSize: !smallScreen ? '1.5rem' : '1.25rem', 
                     fontWeight:900, 
-                    marginTop:'1.25rem',
+                    marginTop:'1rem',
                     backgroundColor:'saddlebrown', 
                     borderRadius:20 
                 }}
-            > INICIA TU CAMNINO </a>
+            > Descubre tu misión </a>
         </div>
     </div>
 }
