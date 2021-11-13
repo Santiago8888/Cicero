@@ -348,12 +348,12 @@ const quiz13:iQuestion[] = [
             { answer:'Esperando y siendo paciente dejando que las consecuencias tomen su curso.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '7. ¿Qué es inercia?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Eventos que siguen ocurriendo pero ya están transcendidos y no nos afectan.', value:true },
+            { answer:'La resistencia que tenemos a cambiar hábitos negativos.', value:false },
+            { answer:'El karma familiar que heredamos de nuestros padres y antepasados.', value:false },
+            { answer:'La fuerza que ejerce Saturno para afectar o premiar nuestra vida.', value:false },
         ]
     },   { 
         question: '', 
