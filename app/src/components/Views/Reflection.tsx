@@ -1,8 +1,10 @@
+import { emptyPost, iPost } from '../Forum/Posts'
 import { useMediaQuery } from 'react-responsive'
+import { CSSProperties, useState } from 'react'
 import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
-import { CSSProperties, useState } from 'react'
 import { iUser } from '../../App'
+
 
 interface iHeader extends iReflection { midScreen:boolean }
 const Header = ({ title, midScreen, description=[] }:iHeader) => <>
@@ -46,6 +48,7 @@ interface iReflection { title:string, description?:string[], posts?:string[], us
 export const Reflection = ({posts=[], ...props}:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [active, setActive] = useState(false)
+    const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
 
     return <div className='content'>
         <Header {...props} midScreen={midScreen} />
@@ -62,13 +65,16 @@ export const Reflection = ({posts=[], ...props}:iReflection) => {
             isActive={active} 
             title={'Nueva Publicación'} 
             deactivate={() => setActive(false)} 
-            submit={props.next}
+            submit={() => console.log(newPost)}
         >
             <div className='field'>
                 <label className='label'> Título: </label>
-                <div className="select" style={{ maxWidth:600, height:'auto', whiteSpace:'break-spaces' }}>
-                    <select> 
-                        <option />
+                <div className="select" style={{ maxWidth:600, height:'auto' }}>
+                    <select 
+                        style={{height:'auto', whiteSpace:'break-spaces'}}
+                        onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
+                    > 
+                        <option/>
                         { posts.map(p => <option> { p }</option>)} 
                     </select>
                 </div>
@@ -79,8 +85,9 @@ export const Reflection = ({posts=[], ...props}:iReflection) => {
                 <div className='control'>
                     <textarea 
                         className='textarea' 
+                        value={newPost.detail} 
                         placeholder='Comparte tu experiencia o aprendizaje...' 
-                        onChange={({target:{value}}) => {}}
+                        onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
                     />
                 </div>
             </div>            
