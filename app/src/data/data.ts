@@ -364,12 +364,12 @@ const quiz13:iQuestion[] = [
             { answer:'Escuchar atentamente pero no involucrarse emocionalmente con vibraciones negativas.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '9. ¿Cuál es el último recurso que tiene nuestro ser interior para hacernos cambiar?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'La salud', value:true },
+            { answer:'La pareja', value:false },
+            { answer:'Un milagro', value:false },
+            { answer:'Las emociones', value:false },
         ]
     },   { 
         question: '', 
