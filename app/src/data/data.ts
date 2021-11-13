@@ -316,12 +316,12 @@ const quiz13:iQuestion[] = [
             { answer:'Nuestra salud se resiente y constantemente discutimos con las personas a nuestro alrededor.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '3. ¿Cuales son las causas de que nos alejemos de nuestro centro?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Estar muy dispersos o sin falta de ritmo.', value:true },
+            { answer:'No escuchamos a los demás y hablamos mucho.', value:false },
+            { answer:'Olvidamos el cuidado de nuestro y alma.', value:false },
+            { answer:'Actuamos en contra de nuestros valores.', value:false },
         ]
     },   { 
         question: '', 
