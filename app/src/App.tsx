@@ -43,6 +43,7 @@ const initialData:iHomeData = {
 }
 
 
+export interface iApprove { score?:number, newPost?:iPost }
 
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
@@ -205,12 +206,13 @@ export const App = () => {
         else return false
     }
 
-    const approve = (score?:number) => {
+    const approve = ({score, newPost}:iApprove) => {
         if(!user) return
 
         const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
+        if(lesson.type === 'Reflection' && newPost !== undefined) return post(newPost)
 
         if(current.unit !== progress.unit) return
         if(current.module !== progress.module) return
