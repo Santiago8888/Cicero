@@ -434,7 +434,7 @@ export const Units:iUnit[] = [{
     title: '1. Saturno y el Karma', 
     modules: [
         { title: '1.1 La importancia de Saturno', lessons:module11 },
-        { title: '1.2 El Karma y Saturno', lessons:module12 },
+        { title: '1.2 Saturno y el Karma', lessons:module12 },
         { title: '1.3 Las lecciones de Saturno', lessons:module13 }
     ]
 }, { 
