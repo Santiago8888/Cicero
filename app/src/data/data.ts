@@ -332,12 +332,12 @@ const quiz13:iQuestion[] = [
             { answer:'Realiza un cambio interno y examen de conciencia.', value:false },
         ]
     },   { 
-        question: '', 
+        question: '5. ¿Para lidiar con una lección, que necesito saber?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Donde estoy sembrando estas acciones.', value:true },
+            { answer:'Cuál es el signo y casa de mi Saturno.', value:false },
+            { answer:'Qué es lo que Saturno está tratando de enseñarme.', value:false },
+            { answer:'Cómo me ven los demás y cómo mejorar mis relaciones.', value:false },
         ]
     },   { 
         question: '', 
