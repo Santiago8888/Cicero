@@ -269,7 +269,7 @@ const quiz12:iQuestion[] = [
 ]
 
 const posts12:string[] = [
-    '¿Quieres compartir un aviso que te haya dado Saturno?',
+    '¿Quieres compartir alguna vez en que Saturno te haya dado avisos?',
     '¿Alguna vez te has sentido limitado o bloqueado? Cuéntanos cómo empezó esa sensación y si recibiste comentarios de personas a tu alrededor.',
     '¿Has recibido mensajes o señales recientemente? Cuéntanos cómo y cuáles:',
     '¿Tienes alguna experiencia curiosa o divertida de la manifestación de la ley de la causa y efecto?',
@@ -298,7 +298,121 @@ const module12:iLesson[] = [
 ]
 
 
-const quiz13:iQuestion[] = []
+const quiz13:iQuestion[] = [
+    { 
+        question: '1. ¿Cómo lidiar con las lecciones de Saturno?', 
+        answers:[
+            { answer:'Identificar, soltar y entender.', value:true },
+            { answer:'Escuchar, rezar y tomar acción.', value:false },
+            { answer:'Resignarse, aceptar y agradecer.', value:false },
+            { answer:'Observar, buscar y enseñar.', value:false },
+        ]
+    },   { 
+        question: '2. ¿Cómo identificamos si estamos pasando por una lección de Saturno?', 
+        answers:[
+            { answer:'Las cosas dejan dejan de fluir, y obtenemos señales de las personas en nuestra vida diaria.', value:true },
+            { answer:'Nos sentimos deprimidos, cansados y sin motivación.', value:false },
+            { answer:'Nos corren del trabajo o tenemos problemas profesionales.', value:false },
+            { answer:'Nuestra salud se resiente y constantemente discutimos con las personas a nuestro alrededor.', value:false },
+        ]
+    },   { 
+        question: '3. ¿Cuales son las causas de que nos alejemos de nuestro centro?', 
+        answers:[
+            { answer:'Estar muy dispersos o sin falta de ritmo.', value:true },
+            { answer:'No escuchamos a los demás y hablamos mucho.', value:false },
+            { answer:'Olvidamos el cuidado de nuestro y alma.', value:false },
+            { answer:'Actuamos en contra de nuestros valores.', value:false },
+        ]
+    },   { 
+        question: '4. ¿Cuál de estos es un mal consejo cuando pasamos por una lección de Saturno?', 
+        answers:[
+            { answer:'Entre más pronto aprendamos la lección mejor.', value:true },
+            { answer:'Adquirir consciencia nos sirve para mejorar las circunstancias.', value:false },
+            { answer:'Procura tener buenas intenciones, emociones, pensamientos y acciones.', value:false },
+            { answer:'Realiza un cambio interno y examen de conciencia.', value:false },
+        ]
+    },   { 
+        question: '5. ¿Para lidiar con una lección, que necesito saber?', 
+        answers:[
+            { answer:'Donde estoy sembrando estas acciones.', value:true },
+            { answer:'Cuál es el signo y casa de mi Saturno.', value:false },
+            { answer:'Qué es lo que Saturno está tratando de enseñarme.', value:false },
+            { answer:'Cómo me ven los demás y cómo mejorar mis relaciones.', value:false },
+        ]
+    },   { 
+        question: '6. ¿Cómo se transforma una situación desde la raíz?', 
+        answers:[
+            { answer:'Cambiar los deseos, pensamientos y sustituirlos por otros más positivos.', value:true },
+            { answer:'Conectarse con tu yo interior y seguir las indicaciones de tu alma.', value:false },
+            { answer:'A través de la meditación y Kabbalah.', value:false },
+            { answer:'Esperando y siendo paciente dejando que las consecuencias tomen su curso.', value:false },
+        ]
+    },   { 
+        question: '7. ¿Qué es inercia?', 
+        answers:[
+            { answer:'Eventos que siguen ocurriendo pero ya están transcendidos y no nos afectan.', value:true },
+            { answer:'La resistencia que tenemos a cambiar hábitos negativos.', value:false },
+            { answer:'El karma familiar que heredamos de nuestros padres y antepasados.', value:false },
+            { answer:'La fuerza que ejerce Saturno para afectar o premiar nuestra vida.', value:false },
+        ]
+    },   { 
+        question: '8. ¿Qué significa soltar?', 
+        answers:[
+            { answer:'Liberarnos de la carga emocional que engendra las circunstancias negativas.', value:true },
+            { answer:'Resignarse y aceptar nuestro propósito y los designios de la conciencia universal.', value:false },
+            { answer:'Permitirnos ser despojados de todo lo que nos está haciendo daño.', value:false },
+            { answer:'Escuchar atentamente pero no involucrarse emocionalmente con vibraciones negativas.', value:false },
+        ]
+    },   { 
+        question: '9. ¿Cuál es el último recurso que tiene nuestro ser interior para hacernos cambiar?', 
+        answers:[
+            { answer:'La salud', value:true },
+            { answer:'La pareja', value:false },
+            { answer:'Un milagro', value:false },
+            { answer:'Las emociones', value:false },
+        ]
+    },   { 
+        question: '10. ¿Cuando comienza el proceso de recuperación o regeneración?', 
+        answers:[
+            { answer:'Cuando soltamos', value:true },
+            { answer:'Cuando nos conectamos con nuestro ser interior', value:false },
+            { answer:'Cuando nos liberamos del ego', value:false },
+            { answer:'Cuando vencemos a Saturno', value:false },
+        ]
+    },   { 
+        question: '11. ¿Cual es el siguiente paso del proceso de recuperación o regeneración?', 
+        answers:[
+            { answer:'Cuando somos capaces de sostener el nuevo nivel de consciencia.', value:true },
+            { answer:'Cuando Saturno se aleja de la posición en la que se encuentra.', value:false },
+            { answer:'Cuando nos arrepentimos de corazón y también perdonamos.', value:false },
+            { answer:'Cuando hacemos meditación en la mañana y en la noche.', value:false },
+        ]
+    },   { 
+        question: '12. ¿Cuando termina el proceso de recuperación y regeneración?', 
+        answers:[
+            { answer:'Cuando entendemos que no hemos cumplido con los compromisos que adquirimos.', value:true },
+            { answer:'Dos años después del comienzo.', value:false },
+            { answer:'Cuando regresamos a nuestro centro.', value:false },
+            { answer:'Cuando terminamos de pagar el karma.', value:false },
+        ]
+    },   { 
+        question: '13. ¿Que nos indica Saturno en nuestra carta astral?', 
+        answers:[
+            { answer:'El qué y el donde debemos tener un comportamiento impecable.', value:true },
+            { answer:'El cuando y el cómo alcanzar el éxito.', value:false },
+            { answer:'Quiénes se convertirán en nuestros maestros.', value:false },
+            { answer:'Cuál es el camino a nuestra felicidad.', value:false },
+        ]
+    },   { 
+        question: '14. ¿Porqué el entendimiento es la antesala de la sabiduría?', 
+        answers:[
+            { answer:'Porque Saturno nos enseña el funcionamiento de nuestra realidad: cosechamos lo que sembramos.', value:true },
+            { answer:'Porque Binah es la tercera esfera del árbol de la vida.', value:false },
+            { answer:'Porque Saturno impone límites y esto causa ignorancia.', value:false },
+            { answer:'Porque Saturno enseña, pero Neptuno ilumina.', value:false },
+        ]
+    }, 
+]
 
 const module13:iLesson[] = [
     { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
