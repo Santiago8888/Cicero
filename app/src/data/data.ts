@@ -372,12 +372,12 @@ const quiz13:iQuestion[] = [
             { answer:'Las emociones', value:false },
         ]
     },   { 
-        question: '', 
+        question: '10. ¿Cuando comienza el proceso de recuperación o regeneración?', 
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:false },
-            { answer:'', value:false },
-            { answer:'', value:false },
+            { answer:'Cuando soltamos', value:true },
+            { answer:'Cuando nos conectamos con nuestro ser interior', value:false },
+            { answer:'Cuando nos liberamos del ego', value:false },
+            { answer:'Cuando vencemos a Saturno', value:false },
         ]
     },   { 
         question: '', 
