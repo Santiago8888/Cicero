@@ -25,7 +25,7 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 </>
 
-const styleCta:CSSProperties = { marginTop:'3rem' }
+const styleCta:CSSProperties = { margin:'auto', marginTop:'3rem' }
 interface iCta { midScreen:boolean, user:iUser, text:string, click():void }
 const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
     <button
@@ -35,7 +35,7 @@ const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta,
             float: !midScreen ? 'inherit' : 'right', 
             borderRadius:12, 
             marginBottom:'3rem',
-            width:180, 
+            width:240, 
             fontSize:'1.25rem', 
             fontWeight:600, 
             backgroundColor:'saddlebrown'
@@ -73,7 +73,7 @@ export const Reflection = ({posts=[], user, title, description, approve, next }:
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Visitar el foro'} click={() => setActive(true)} user={user}/>
+        <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/>
 
         <Modal 
             isActive={active} 
