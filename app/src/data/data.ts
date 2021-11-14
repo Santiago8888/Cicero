@@ -72,6 +72,7 @@ const posts11 = [
 ]
 
 const module11:iLesson[] = [
+    { type:'Video', title:'Introducción', link:'https://youtu.be/-AEpq9zauQ8', description:['¡Hola! En este vídeo te voy a mostrar como funciona la plataforma:']  },
     { 
         type:'Reading', 
         title:'Saturno en la Astrología', 
