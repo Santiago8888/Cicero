@@ -147,7 +147,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
             }}
         > { description ? description[0] : '' } </h3>
 
-        <div style={{ width: midScreen ? 880 : !smallScreen ? 450 : 360, margin:'auto' }}>
+        <div style={{ width: midScreen ? 880 : 'auto', margin:'auto' }}>
             {
                 questions.map((q, i) => 
                     <Question 
