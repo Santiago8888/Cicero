@@ -1,6 +1,6 @@
 # Launch Checklist
 
- 1. [ ] Practical Excercise View
+ 1. [X] Practical Excercise View
  2. [ ] Create User Script
  3. [ ] Review Ortography
  4. [ ] Reading on Intro
