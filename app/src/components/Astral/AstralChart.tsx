@@ -278,10 +278,6 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
             const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + (asc % 30))
             signs.map((d, i) => draw_arc(svg, {startAngle: d, endAngle: signs[i+1], innerRadius: 260, outerRadius: 300, fill:'' }))
 
-            console.log('Asc:', asc)
-            console.log('Idx:', Math.ceil(asc/30) + 1)
-            console.log('colors', colors)
-
             // ['yellow', 'red', 'green', 'blue']
             signs.map((d, i) => draw_arc(svg, {
                 startAngle: d, 
