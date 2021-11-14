@@ -8,7 +8,7 @@ import { iUser } from '../../App'
 const tabStyle:CSSProperties = { fontSize: '1.2em', backgroundColor:'darkolivegreen' }
 const navTextStyle:CSSProperties = {textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}
 
-export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts' | 'Back'
+export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts' | 'Back' | 'Next'
 interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 
 const Back = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
