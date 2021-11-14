@@ -2,7 +2,7 @@
 
  1. [X] Practical Excercise View
  2. [X] Create User Script
- 3. [ ] Review Ortography
+ 3. [X] Review Ortography
  4. [ ] Reading on Intro
  5. [ ] Mobile Styling
  6. [ ] Mobile Navigation
