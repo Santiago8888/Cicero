@@ -77,7 +77,7 @@ const module11:iLesson[] = [
         type:'Reading', 
         title:'Saturno en la Astrología', 
         link:'docs/Introduccion-a-Saturno-en-la-Astrología.pdf', 
-        min:5,
+        min:3,
         description:[
             'En esta primera lectura encontraras las bases para iniciar el curso.',
             ' ',
