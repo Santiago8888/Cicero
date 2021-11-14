@@ -26,6 +26,8 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
 
     return <div className='content'>
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
+        <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
+
         <h3 
             style={{
                 margin:'0rem auto',
