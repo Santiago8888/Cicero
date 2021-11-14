@@ -83,7 +83,7 @@ const module11:iLesson[] = [
             ' ',
             'La lectura trata sobre los fundamentos de la Astrología, las carácterisiticas de Saturno, su simbolismo y algo de mitología.',
             ' ',
-            'Después de dar click en "Leer" y una vez hayan transcurrido los 3 minutos sugeridos de tiempo de lectura podras continuar a ver el primer vídeo.'
+            'Después de dar click en "Leer" y una vez hayan transcurrido los 3 minutos sugeridos de lectura podras continuar a ver el primer vídeo.'
         ] 
     },
     { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
