@@ -313,11 +313,11 @@ const quiz13:iQuestion[] = [
         answers:[
             { answer:'Nos sentimos deprimidos, cansados y sin motivación.', value:false },
             { answer:'Nos corren del trabajo o tenemos problemas profesionales.', value:false },
-            { answer:'Las cosas dejan dejan de fluir, y obtenemos señales de las personas en nuestra vida diaria.', value:true },
+            { answer:'Las cosas dejan de fluir, y obtenemos señales de las personas en nuestra vida diaria.', value:true },
             { answer:'Nuestra salud se resiente y constantemente discutimos con las personas a nuestro alrededor.', value:false },
         ]
     },   { 
-        question: '3. ¿Cuales son las causas de que nos alejemos de nuestro centro?', 
+        question: '3. ¿Cuáles son las causas de que nos alejemos de nuestro centro?', 
         answers:[
             { answer:'No escuchamos a los demás y hablamos mucho.', value:false },
             { answer:'Estar muy dispersos o sin falta de ritmo.', value:true },
@@ -333,7 +333,7 @@ const quiz13:iQuestion[] = [
             { answer:'Entre más pronto aprendamos la lección mejor.', value:true },
         ]
     },   { 
-        question: '5. ¿Para lidiar con una lección, que necesito saber?', 
+        question: '5. ¿Para lidiar con una lección, qué necesito saber?', 
         answers:[
             { answer:'Donde estoy sembrando estas acciones.', value:true },
             { answer:'Cuál es el signo y casa de mi Saturno.', value:false },
@@ -354,7 +354,7 @@ const quiz13:iQuestion[] = [
             { answer:'La resistencia que tenemos a cambiar hábitos negativos.', value:false },
             { answer:'El karma familiar que heredamos de nuestros padres y antepasados.', value:false },
             { answer:'La fuerza que ejerce Saturno para afectar o premiar nuestra vida.', value:false },
-            { answer:'Eventos que siguen ocurriendo pero ya están transcendidos y no nos afectan.', value:true },
+            { answer:'Eventos que siguen ocurriendo pero ya están trascendidos y no nos afectan.', value:true },
         ]
     },   { 
         question: '8. ¿Qué significa soltar?', 
@@ -373,7 +373,7 @@ const quiz13:iQuestion[] = [
             { answer:'Las emociones', value:false },
         ]
     },   { 
-        question: '10. ¿Cuando comienza el proceso de recuperación o regeneración?', 
+        question: '10. ¿Cuándo comienza el proceso de recuperación o regeneración?', 
         answers:[
             { answer:'Cuando nos conectamos con nuestro ser interior', value:false },
             { answer:'Cuando nos liberamos del ego', value:false },
@@ -381,7 +381,7 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando soltamos', value:true },
         ]
     },   { 
-        question: '11. ¿Cual es el siguiente paso del proceso de recuperación o regeneración?', 
+        question: '11. ¿Cuál es el siguiente paso del proceso de recuperación o regeneración?', 
         answers:[
             { answer:'Cuando somos capaces de sostener el nuevo nivel de consciencia.', value:true },
             { answer:'Cuando Saturno se aleja de la posición en la que se encuentra.', value:false },
@@ -389,7 +389,7 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando hacemos meditación en la mañana y en la noche.', value:false },
         ]
     },   { 
-        question: '12. ¿Cuando termina el proceso de recuperación y regeneración?', 
+        question: '12. ¿Cuándo termina el proceso de recuperación y regeneración?', 
         answers:[
             { answer:'Dos años después del comienzo.', value:false },
             { answer:'Cuando regresamos a nuestro centro.', value:false },
@@ -397,15 +397,15 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando entendemos que no hemos cumplido los compromisos que adquirimos.', value:true },
         ]
     },   { 
-        question: '13. ¿Que nos indica Saturno en nuestra carta astral?', 
+        question: '13. ¿Qué nos indica Saturno en nuestra carta astral?', 
         answers:[
-            { answer:'El cuando y el cómo alcanzar el éxito.', value:false },
+            { answer:'El cuándo y el cómo alcanzar el éxito.', value:false },
             { answer:'Quiénes se convertirán en nuestros maestros.', value:false },
             { answer:'El qué y el donde debemos tener un comportamiento impecable.', value:true },
             { answer:'Cuál es el camino a nuestra felicidad.', value:false },
         ]
     },   { 
-        question: '14. ¿Porqué el entendimiento es la antesala de la sabiduría?', 
+        question: '14. ¿Por qué el entendimiento es la antesala de la sabiduría?', 
         answers:[
             { answer:'Porque Saturno enseña, pero Neptuno ilumina.', value:false },
             { answer:'Porque Binah es la tercera esfera del árbol de la vida.', value:false },
