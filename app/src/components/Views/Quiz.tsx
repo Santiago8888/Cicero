@@ -9,7 +9,7 @@ export interface iQuestion { question:string, answers:iAnswer[] }
 export const questionStyle:CSSProperties = {
     textAlign:'left', 
     maxWidth:800, 
-    margin:'auto auto 3em', 
+    margin:'auto auto 1.5em', 
     border:'1px solid', 
     borderRadius:25, 
     padding:20, 
