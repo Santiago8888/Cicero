@@ -26,8 +26,21 @@ export const Document = ({ user, title, link='', description, min, next, approve
     }
 
     return <div className='content'>
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
-        <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
+        <h1 
+            style={{
+                fontSize: midScreen ? '3rem' : '2rem', 
+                marginBottom: midScreen ? '2rem' : '1rem', 
+                color:'saddlebrown'
+            }}
+        > { title } </h1>
+
+        <hr 
+            style={{ 
+                backgroundColor:'darkolivegreen', 
+                margin: midScreen ?  '3rem auto' : '1.5rem auto', 
+                width:midScreen ? 600 : 280 
+            }}
+        />
 
         <div style={{...questionStyle, padding:'0px 24px', maxWidth:720}}>
             { description?.map((p) => 
@@ -35,7 +48,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
             )}
         </div>
 
-        <div style={{ width:midScreen ? 800 : 320, margin:'3rem auto 1rem'}}>
+        <div style={{ width:midScreen ? 800 : 280, margin:midScreen ? '3rem auto' : '1.5rem auto'}}>
             {
                 user.current.module < user.progress.module 
                 || (user.progress.lesson < user.current.lesson && user.current.module === user.progress.module)
