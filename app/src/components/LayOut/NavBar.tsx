@@ -11,6 +11,10 @@ const navTextStyle:CSSProperties = {textAlign:'center', color:'white', backgroun
 export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts'
 interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 
+const Back = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+</svg>
+
 export const NavBar = ({ click, user }: iNavBar) => {
     const midScreen = useMediaQuery({ query: '(min-width: 1024px)' })
     const [ isActive, setActive ] = useState(false)
@@ -31,17 +35,23 @@ export const NavBar = ({ click, user }: iNavBar) => {
         >
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
-                    <img 
-                        src='planets/Saturn_terra.png' 
-                        style={{ 
-                            height:midScreen ? 56 : 44, 
-                            maxHeight:'none', 
-                            background:'white', 
-                            borderRadius:'50%', 
-                            padding:6
-                        }} 
-                        alt={'Saturn logo'}
-                    />
+                    {
+                        midScreen 
+                        ?   <img 
+                                src='planets/Saturn_terra.png' 
+                                style={{ 
+                                    height:midScreen ? 56 : 44, 
+                                    maxHeight:'none', 
+                                    background:'white', 
+                                    borderRadius:'50%', 
+                                    padding:6
+                                }} 
+                                alt={'Saturn logo'}
+                            />
+
+                        :   <Back />
+                    }
+
                     <p 
                         className='navbar-item' 
                         style={{ fontSize: '2em', color:'white', marginLeft: midScreen ? 24 : 6 }} 
