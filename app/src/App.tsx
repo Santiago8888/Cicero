@@ -158,7 +158,7 @@ export const App = () => {
 
         if (hasNextLesson) return { unit, module, lesson:lesson+1 }
         else if (hasNextModule) return { unit, module:module+1, lesson:0 }
-        else if (hasNextUnit) return { unit, module:module+1, lesson:0 }
+        else if (hasNextUnit) return { unit:unit+1, module:0, lesson:0 }
         else return { unit, module, lesson }
     }
 
