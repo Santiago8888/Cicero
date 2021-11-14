@@ -19,7 +19,11 @@ export const NavBar = ({ click, user }: iNavBar) => {
         className='navbar is-link' 
         role='navigation' 
         aria-label='main navigation' 
-        style={{borderBottom: '2px solid #ccc', backgroundColor:'darkolivegreen', padding:'0px 2.5rem'}}
+        style={{
+            borderBottom: '2px solid #ccc', 
+            backgroundColor:'darkolivegreen', 
+            padding: midScreen ? '0px 2.5rem' : '0px 8px 0px 0px'
+        }}
     >
         <div 
             className='container' 
@@ -32,7 +36,10 @@ export const NavBar = ({ click, user }: iNavBar) => {
                         style={{ height:56, maxHeight:'none', background:'white', borderRadius:'50%', padding:6}} 
                         alt={'Saturn logo'}
                     />
-                    <p className='navbar-item' style={{ fontSize: '2em', color:'white', marginLeft:24 }} > 
+                    <p 
+                        className='navbar-item' 
+                        style={{ fontSize: '2em', color:'white', marginLeft: midScreen ? 24 : 12 }} 
+                    > 
                         { midScreen ? 'Manejo y Liberación del Karma' : 'Saturno' } 
                     </p>
                 </a>
