@@ -153,11 +153,11 @@ export const Posts:iPost[] = [{
 
 const posts11 = [
     'Saturno es un gran guía. Comparte la historia de un guía que te haya inspirado a ser mejor persona.',
-    '¿Sabes en qué eres expert@? Cuentanos en qué y cómo te volviste expert@ en eso.',
+    '¿Sabes en qué eres expert@? Cuéntanos en qué y cómo te volviste expert@ en eso.',
     'Relata una experiencia en la que hayas aprendido a través de la limitación.',
     'Para tí, ¿Qué es la humildad y cómo la practicas diariamente?',
     'Saturno nos pide que cada vez seamos mejores ¿En que te estás esforzando hoy para crecer como persona?',
-    'Comparte una ocasión en la que hayas sido un buen ejemplo para alguien y que sensación te dejo.'
+    'Comparte una ocasión en la que hayas sido un buen ejemplo para alguien y que sensación te dejó.'
 ]
 
 const module11:iLesson[] = [
@@ -178,7 +178,7 @@ const quiz12:iQuestion[] = [
             { answer:'Salida', value:false }
         ]
     }, { 
-        question:'2. ¿Porqué existe el karma?', 
+        question:'2. ¿Por qué existe el karma?', 
         answers:[
             { answer:'Para que nos portemos bien.', value:false },
             { answer:'Enseñar que nuestros actos tienen consecuencias.', value:true },
@@ -186,10 +186,10 @@ const quiz12:iQuestion[] = [
             { answer:'Es una ley universal, no hay que preguntar el porqué sino aceptarla.', value:false }
         ]
     }, { 
-        question:'3. ¿Cuando empezamos a ver la manifestación del karma?', 
+        question:'3. ¿Cuándo empezamos a ver la manifestación del karma?', 
         answers:[
             { answer:'Depende de la posición de Saturno y nuestra carta astral.', value:false },
-            { answer:'Cuando perjudicarnos a alguien conscientemente.', value:false },
+            { answer:'Cuando perjudicamos a alguien conscientemente.', value:false },
             { answer:'Cuando vamos en contra de nuestros valores.', value:false },
             { answer:'Cuando la acción se ha repetido muchas veces.', value:true }
         ]
@@ -210,7 +210,7 @@ const quiz12:iQuestion[] = [
             { answer:'Gestación', value:false }
         ]
     }, { 
-        question:'6. ¿Porqué no vemos inmediatamente las consecuencias de nuestros actos?', 
+        question:'6. ¿Por qué no vemos inmediatamente las consecuencias de nuestros actos?', 
         answers:[
             { answer:'Para poder practicar y aprender', value:true },
             { answer:'Para liberar nuestro poder creador y de manifestación.', value:false },
@@ -234,7 +234,7 @@ const quiz12:iQuestion[] = [
             { answer:'Hacer acciones positivas y sostener esa frecuencia de amor, alegría o compartir.', value:true }
         ]
     }, { 
-        question:'9. ¿Porqué hay personas que no enfrentan consecuencias por acciones negativas?', 
+        question:'9. ¿Por qué hay personas que no enfrentan consecuencias por acciones negativas?', 
         answers:[
             { answer:'Tienen suerte', value:false },
             { answer:'Para enseñar a los demás', value:false },
@@ -242,7 +242,7 @@ const quiz12:iQuestion[] = [
             { answer:'No existen las acciones negativas', value:false }
         ]
     }, { 
-        question:'10. ¿Cuando empezamos a tener el karma negativo en nuestra vida?', 
+        question:'10. ¿Cuándo empezamos a tener el karma negativo en nuestra vida?', 
         answers:[
             { answer:'Cuando nos pasamos 50 altos', value:false },
             { answer:'Cuando se nos acaba el karma positivo', value:false },
@@ -277,7 +277,7 @@ const posts12:string[] = [
     '¿Cómo te comunicas con tu alma?',
     '¿En qué área crees que puedes crecer actualmente?',
     '¿Para tí, qué es el entendimiento?',
-    '¿De qué eres responsable, el día de hoy?'
+    '¿De qué eres responsable el día de hoy?'
 ]
 
 
@@ -293,7 +293,7 @@ const module12:iLesson[] = [
         posts:posts12, 
         description:[
             `Te invitamos a que hagas una segunda pausa y reflexiones cómo se manifiesta el karma en tu vida.
-            Nuevamente ponemos a tu disposición sugerencias para compartir en el foro, por favor, se muy consciente de lo que publicas.`
+            Nuevamente ponemos a tu disposición sugerencias para compartir en el foro, por favor, sé muy consciente de lo que publicas.`
         ] 
     },
 ]
@@ -313,11 +313,11 @@ const quiz13:iQuestion[] = [
         answers:[
             { answer:'Nos sentimos deprimidos, cansados y sin motivación.', value:false },
             { answer:'Nos corren del trabajo o tenemos problemas profesionales.', value:false },
-            { answer:'Las cosas dejan dejan de fluir, y obtenemos señales de las personas en nuestra vida diaria.', value:true },
+            { answer:'Las cosas dejan de fluir, y obtenemos señales de las personas en nuestra vida diaria.', value:true },
             { answer:'Nuestra salud se resiente y constantemente discutimos con las personas a nuestro alrededor.', value:false },
         ]
     },   { 
-        question: '3. ¿Cuales son las causas de que nos alejemos de nuestro centro?', 
+        question: '3. ¿Cuáles son las causas de que nos alejemos de nuestro centro?', 
         answers:[
             { answer:'No escuchamos a los demás y hablamos mucho.', value:false },
             { answer:'Estar muy dispersos o sin falta de ritmo.', value:true },
@@ -333,7 +333,7 @@ const quiz13:iQuestion[] = [
             { answer:'Entre más pronto aprendamos la lección mejor.', value:true },
         ]
     },   { 
-        question: '5. ¿Para lidiar con una lección, que necesito saber?', 
+        question: '5. ¿Para lidiar con una lección, qué necesito saber?', 
         answers:[
             { answer:'Donde estoy sembrando estas acciones.', value:true },
             { answer:'Cuál es el signo y casa de mi Saturno.', value:false },
@@ -354,7 +354,7 @@ const quiz13:iQuestion[] = [
             { answer:'La resistencia que tenemos a cambiar hábitos negativos.', value:false },
             { answer:'El karma familiar que heredamos de nuestros padres y antepasados.', value:false },
             { answer:'La fuerza que ejerce Saturno para afectar o premiar nuestra vida.', value:false },
-            { answer:'Eventos que siguen ocurriendo pero ya están transcendidos y no nos afectan.', value:true },
+            { answer:'Eventos que siguen ocurriendo pero ya están trascendidos y no nos afectan.', value:true },
         ]
     },   { 
         question: '8. ¿Qué significa soltar?', 
@@ -373,7 +373,7 @@ const quiz13:iQuestion[] = [
             { answer:'Las emociones', value:false },
         ]
     },   { 
-        question: '10. ¿Cuando comienza el proceso de recuperación o regeneración?', 
+        question: '10. ¿Cuándo comienza el proceso de recuperación o regeneración?', 
         answers:[
             { answer:'Cuando nos conectamos con nuestro ser interior', value:false },
             { answer:'Cuando nos liberamos del ego', value:false },
@@ -381,7 +381,7 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando soltamos', value:true },
         ]
     },   { 
-        question: '11. ¿Cual es el siguiente paso del proceso de recuperación o regeneración?', 
+        question: '11. ¿Cuál es el siguiente paso del proceso de recuperación o regeneración?', 
         answers:[
             { answer:'Cuando somos capaces de sostener el nuevo nivel de consciencia.', value:true },
             { answer:'Cuando Saturno se aleja de la posición en la que se encuentra.', value:false },
@@ -389,7 +389,7 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando hacemos meditación en la mañana y en la noche.', value:false },
         ]
     },   { 
-        question: '12. ¿Cuando termina el proceso de recuperación y regeneración?', 
+        question: '12. ¿Cuándo termina el proceso de recuperación y regeneración?', 
         answers:[
             { answer:'Dos años después del comienzo.', value:false },
             { answer:'Cuando regresamos a nuestro centro.', value:false },
@@ -397,15 +397,15 @@ const quiz13:iQuestion[] = [
             { answer:'Cuando entendemos que no hemos cumplido los compromisos que adquirimos.', value:true },
         ]
     },   { 
-        question: '13. ¿Que nos indica Saturno en nuestra carta astral?', 
+        question: '13. ¿Qué nos indica Saturno en nuestra carta astral?', 
         answers:[
-            { answer:'El cuando y el cómo alcanzar el éxito.', value:false },
+            { answer:'El cuándo y el cómo alcanzar el éxito.', value:false },
             { answer:'Quiénes se convertirán en nuestros maestros.', value:false },
             { answer:'El qué y el donde debemos tener un comportamiento impecable.', value:true },
             { answer:'Cuál es el camino a nuestra felicidad.', value:false },
         ]
     },   { 
-        question: '14. ¿Porqué el entendimiento es la antesala de la sabiduría?', 
+        question: '14. ¿Por qué el entendimiento es la antesala de la sabiduría?', 
         answers:[
             { answer:'Porque Saturno enseña, pero Neptuno ilumina.', value:false },
             { answer:'Porque Binah es la tercera esfera del árbol de la vida.', value:false },
@@ -417,10 +417,10 @@ const quiz13:iQuestion[] = [
 
 const posts13:string[] = [
     'Abre una nueva nota en tu celular, y cada día escribe 3 a 5 momentos en los que te hayas sentido limitad@ o bloquead@. Al final del día trata de:',
-    '1. Identificar: la acción que ocasiono ese bloqueo, donde contribuiste a esa sensación de limitación.',
-    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones. Procura evitar incurrir nuevamente en aquello que esta sembrando la limitación.',
-    '3. Entiende: solo cuando aceptas, tomas responsabilidad de tus acciones y reconoces que somos la causa de sentirnos limitados podemos alinearnos con nuestra misión.',
-    'Te invitamos a que realizes el ejercicio durante una semana para identificar el mensaje te está dando Saturno actualmente.'
+    '1. Identificar: la acción que ocasionó ese bloqueo, donde contribuiste a esa sensación de limitación.',
+    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones. Procura evitar incurrir nuevamente en aquello que está sembrando la limitación.',
+    '3. Entiende: solo cuando aceptas, tomas responsabilidad de tus acciones y reconocemos que somos la causa de sentirnos limitados podemos alinearnos con nuestra misión.',
+    'Te invitamos a que realices el ejercicio durante una semana para identificar el mensaje te está dando Saturno actualmente.'
 ]
 
 const module13:iLesson[] = [
@@ -433,9 +433,9 @@ const module13:iLesson[] = [
         posts:posts13, 
         end:true,
         description:[
-            '¡Felicidades! Haz completado la primera lección.',
+            '¡Felicidades! Has completado la primera lección.',
             `La segunda lección estará disponible el Jueves a partir de las 9pm (CDMX) después del primer live.
-            Por lo pronto, te invitamos a que realizes este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
+            Por lo pronto, te invitamos a que realices este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
         ] 
     }
 ]
