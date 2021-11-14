@@ -61,7 +61,10 @@ export const NavBar = ({ user, click }: iNavBar) => {
 
                     { 
                         !midScreen && isAdvanced(user) 
-                        ?   <Next/> 
+                        ?   <div 
+                                style={{cursor:'pointer', height:32 }} 
+                                onClick={() => click('Next')}
+                            > <Next/> </div> 
                         :   <img 
                                 src='planets/Saturn_terra.png' 
                                 style={{ 
