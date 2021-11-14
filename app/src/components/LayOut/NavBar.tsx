@@ -33,12 +33,18 @@ export const NavBar = ({ click, user }: iNavBar) => {
                 <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
                     <img 
                         src='planets/Saturn_terra.png' 
-                        style={{ height:56, maxHeight:'none', background:'white', borderRadius:'50%', padding:6}} 
+                        style={{ 
+                            height:midScreen ? 56 : 44, 
+                            maxHeight:'none', 
+                            background:'white', 
+                            borderRadius:'50%', 
+                            padding:6
+                        }} 
                         alt={'Saturn logo'}
                     />
                     <p 
                         className='navbar-item' 
-                        style={{ fontSize: '2em', color:'white', marginLeft: midScreen ? 24 : 12 }} 
+                        style={{ fontSize: '2em', color:'white', marginLeft: midScreen ? 24 : 6 }} 
                     > 
                         { midScreen ? 'Manejo y Liberación del Karma' : 'Saturno' } 
                     </p>
