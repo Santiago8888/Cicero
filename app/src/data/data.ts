@@ -47,30 +47,14 @@ export const Forum:iForum = {
     user:defaultUser,
     title:'Foro de Dudas', 
     description:'Comparte las dudas y preguntas que quieras que sean respondidas en la sesión semanal.', 
-    questions:[{ 
-        question: '¿Qué significa cuando el Sol está en Leo?', 
-        details: 'Mi carta tiene el Sol en Leo y no se que significa.',
-        likes: []
-    }, { 
-        question: 'Cómo afecta la Luna en Cancer mis emociones?', 
-        details: 'Mi carta tiene la Luna en Cancer cual es el efecto en mis emociones.',
-        likes: []
-    }] 
+    questions:[] 
 }
 
 
 export const Recordings:iRecordings = { 
     title:'Grabaciones Semanales', 
     description:'Todos los Jueves nos reunimos por Zoom para resolver tus dudas, estás son las grabaciones de la anteriores.', 
-    recordings:[{ 
-        title: 'Marzo 28: El Sol y los Signos', 
-        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
-        description: 'Aclaramos lo que signfica tu signo solar, la casa y como trabajar las energias.' 
-    },  { 
-        title: 'Abril 3: La Luna y el Karma', 
-        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
-        description: 'Como puedes utilizar el poder de manifestación de las emociones para materializar un presente abundante.' 
-    }] 
+    recordings:[]
 }
 
 
@@ -80,16 +64,7 @@ const lessons:iLesson[] = [
     lesson
 ]
 
-export const Posts:iPost[] = [{
-    name:'Alice',
-    title:'Title', 
-    image:'Pis',
-    detail:'Detail', 
-    comments:[
-        {name:'Beth', image:'Aqu', comment:'Test'} 
-    ],
-    likes: []
-}]
+export const Posts:iPost[] = []
 
 
 const posts11 = [
