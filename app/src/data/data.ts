@@ -77,6 +77,7 @@ const posts11 = [
 ]
 
 const module11:iLesson[] = [
+    { type:'Reading', title:'Introducción', link:'docs/Introduccion-a-Saturno-en-la-Astrología.pdf' },
     { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
     { type:'Quiz', title:'Quiz 1.1', questions:quiz11 },
     { type:'Video', title:'La importancia de Saturno', link:'https://youtu.be/gQarN9nNKdA' },
@@ -100,7 +101,6 @@ const posts12:string[] = [
 const module12:iLesson[] = [
     { type:'Video', title:'El Karma', link:'https://youtu.be/dNt2saEg8As' },
     { type:'Quiz', title:'Quiz 1.2', questions:quiz12 },
-    { type:'Reading', title:'Saturno en la Astrología', },
     { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
     { 
         type:'Reflection', 
