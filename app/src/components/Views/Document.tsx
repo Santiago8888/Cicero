@@ -15,7 +15,7 @@ interface iDocument {
 }
 
 interface iDivider { midScreen:boolean }
-const Divider = ({ midScreen }:iDivider) => <hr 
+export const Divider = ({ midScreen }:iDivider) => <hr 
     style={{ 
         backgroundColor:'darkolivegreen', 
         margin: midScreen ?  '3rem auto' : '1.5rem auto', 
