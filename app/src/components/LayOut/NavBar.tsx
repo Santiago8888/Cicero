@@ -8,7 +8,7 @@ import { iUser } from '../../App'
 const tabStyle:CSSProperties = { fontSize: '1.2em', backgroundColor:'darkolivegreen' }
 const navTextStyle:CSSProperties = {textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}
 
-export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts'
+export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts' | 'Back'
 interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 
 const Back = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -19,7 +19,7 @@ const Next = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32
     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
 </svg>
 
-export const NavBar = ({ click, user }: iNavBar) => {
+export const NavBar = ({ user, click }: iNavBar) => {
     const midScreen = useMediaQuery({ query: '(min-width: 1024px)' })
     const [ isActive, setActive ] = useState(false)
 
@@ -39,7 +39,14 @@ export const NavBar = ({ click, user }: iNavBar) => {
         >
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
-                    { !midScreen && <Back /> }
+                    { 
+                        !midScreen &&  
+                        <div 
+                            style={{cursor:'pointer', height:32 }} 
+                            onClick={() => click('Back')}
+                        > <Back /> </div> 
+                    }
+
                     { !midScreen && <Next/> }
 
                     <img 
