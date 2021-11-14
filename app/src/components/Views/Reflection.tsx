@@ -48,11 +48,12 @@ interface iReflection {
     description?:string[]
     posts?:string[]
     user:iUser
+    numbered?:boolean
     next():void
     approve(props:iApprove):void 
 }
 
-export const Reflection = ({posts=[], user, title, description, approve, next }:iReflection) => {
+export const Reflection = ({posts=[], user, title, description, numbered, approve, next }:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [active, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
@@ -71,7 +72,10 @@ export const Reflection = ({posts=[], user, title, description, approve, next }:
 
         <div style={{...questionStyle, padding:'0px 24px'}}>
             { posts?.map((post, i) => 
-                <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> <strong> { i + 1 }. </strong> { post } </p>
+                <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> 
+                    {numbered &&  <strong> { i + 1 }. </strong> } 
+                    { post } 
+                </p>
             )}
         </div>
 
