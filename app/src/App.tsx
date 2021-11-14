@@ -212,7 +212,7 @@ export const App = () => {
         const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
-        if(lesson.type === 'Reflection' && newPost !== undefined) return post(newPost)
+        if(lesson.type === 'Reflection' && newPost !== undefined) return dbPost(newPost)
 
         if(current.unit !== progress.unit) return
         if(current.module !== progress.module) return
@@ -249,14 +249,17 @@ export const App = () => {
         db.collection('doubts').updateOne({_id:question._id}, {...question})
     }
 
-    const post = (newPost:iPost) => {
+    const dbPost = (newPost:iPost) => {
         if(!user || !db) return 
+        db.collection('posts').insertOne(newPost)
+    }
+
+    const post = (newPost:iPost) => {
+        dbPost(newPost)
         const newPosts:iPost[] = [newPost, ...posts]
  
         setPosts(newPosts)
-        setHomeData({...homeData, posts:newPosts})
- 
-        db.collection('posts').insertOne(newPost)
+        setHomeData({...homeData, posts:newPosts}) 
     }
 
     const likePost = (id:number) => {

@@ -183,7 +183,7 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
                         type='text' 
                         className='input' 
                         value={newPost.title} 
-                        placeholder={'Selecciona alguna sugerencia de las lecciones.'}
+                        placeholder={'Elige el título de tu publicación.'}
                         onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
                     />
                 </div>

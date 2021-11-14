@@ -1,9 +1,9 @@
 import { emptyPost, iPost } from '../Forum/Posts'
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
+import { iApprove, iUser } from '../../App'
 import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
-import { iApprove, iUser } from '../../App'
 
 
 interface iHeader { title:string, description?:string[], midScreen:boolean }
@@ -32,7 +32,6 @@ const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta,
         onClick={click} 
         className='button is-link' 
         style={{
-            float: !midScreen ? 'inherit' : 'right', 
             borderRadius:12, 
             marginBottom:'3rem',
             width:240, 
@@ -49,18 +48,23 @@ interface iReflection {
     description?:string[]
     posts?:string[]
     user:iUser
+    numbered?:boolean
+    end?:boolean
     next():void
     approve(props:iApprove):void 
 }
 
-export const Reflection = ({posts=[], user, title, description, approve, next }:iReflection) => {
+export const Reflection = ({posts=[], user, title, description, numbered, end, approve, next }:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [active, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
 
-    const submit = (newPost:iPost) => {
+    const submit = (post:iPost) => {
         setActive(false)
+
+        const newPost = {...post, likes:[user.user_id], image:user.sign, name:user.name }
         approve({newPost})
+
         next()
     }
 
@@ -69,11 +73,14 @@ export const Reflection = ({posts=[], user, title, description, approve, next }:
 
         <div style={{...questionStyle, padding:'0px 24px'}}>
             { posts?.map((post, i) => 
-                <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> <strong> { i + 1 }. </strong> { post } </p>
+                <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> 
+                    {numbered &&  <strong> { i + 1 }. </strong> } 
+                    { post } 
+                </p>
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/>
+        { !end && <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/> }
 
         <Modal 
             isActive={active} 

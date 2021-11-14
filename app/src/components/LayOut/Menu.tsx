@@ -18,6 +18,8 @@ export interface iLesson {
     min?:number
     planet?:Planet
     posts?:string[]
+    numbered?:boolean
+    end?:boolean
 }
 
 

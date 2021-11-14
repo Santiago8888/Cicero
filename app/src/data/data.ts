@@ -164,7 +164,7 @@ const module11:iLesson[] = [
     { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
     { type:'Quiz', title:'Quiz 1.1', questions:quiz11 },
     { type:'Video', title:'La importancia de Saturno', link:'https://youtu.be/gQarN9nNKdA' },
-    { type:'Reflection', title:'Preguntas de Reflexión', description:['Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.'], posts:posts11 },
+    { type:'Reflection', title:'Preguntas de Reflexión', numbered:true, description:['Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.'], posts:posts11 },
 ]
 
 
@@ -288,6 +288,7 @@ const module12:iLesson[] = [
     { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
     { 
         type:'Reflection', 
+        numbered:true,
         title:'Ejercicio de Compartir', 
         posts:posts12, 
         description:[
@@ -416,17 +417,27 @@ const quiz13:iQuestion[] = [
 
 const posts13:string[] = [
     'Abre una nueva nota en tu celular, y cada día escribe 3 a 5 momentos en los que te hayas sentido limitad@ o bloquead@. Al final del día trata de:',
-    '1. Identificar: tu acción que ocasiono ese bloqueo, donde contribuiste a esa sensación de limitación.',
-    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones.',
-    '3. Entiende: solo cuando aceptas y tomas responsabilidad de tus acciones puedes alinearte con tu misión y empezar a erradicar esa limitación.',
-    'Te invitamos a que realizes el ejercicio durante una semana para identificar que mensaje te está dando Saturno actualmente.'
+    '1. Identificar: la acción que ocasiono ese bloqueo, donde contribuiste a esa sensación de limitación.',
+    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones. Procura evitar incurrir nuevamente en aquello que esta sembrando la limitación.',
+    '3. Entiende: solo cuando aceptas, tomas responsabilidad de tus acciones y reconoces que somos la causa de sentirnos limitados podemos alinearnos con nuestra misión.',
+    'Te invitamos a que realizes el ejercicio durante una semana para identificar el mensaje te está dando Saturno actualmente.'
 ]
 
 const module13:iLesson[] = [
     { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
     { type:'Quiz', title:'Quiz 1.3', questions:quiz13 },
     { type:'Video', title:'Escucha las señales', link:'https://youtu.be/_BqqI3A1SZY' },
-    { type:'Reflection', title:'Ejercicio Práctico', posts:posts13 }
+    { 
+        type:'Reflection', 
+        title:'Ejercicio Práctico', 
+        posts:posts13, 
+        end:true,
+        description:[
+            '¡Felicidades! Haz completado la primera lección.',
+            `La segunda lección estará disponible el Jueves a partir de las 9pm (CDMX) después del primer live.
+            Por lo pronto, te invitamos a que realizes este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
+        ] 
+    }
 ]
 
 
@@ -434,7 +445,7 @@ export const Units:iUnit[] = [{
     title: '1. Saturno y el Karma', 
     modules: [
         { title: '1.1 La importancia de Saturno', lessons:module11 },
-        { title: '1.2 El Karma y Saturno', lessons:module12 },
+        { title: '1.2 Saturno y el Karma', lessons:module12 },
         { title: '1.3 Las lecciones de Saturno', lessons:module13 }
     ]
 }, { 
