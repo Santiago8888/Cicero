@@ -433,9 +433,9 @@ const module13:iLesson[] = [
         posts:posts13, 
         end:true,
         description:[
-            '¡Felicidades! Haz completado la primera lección.',
+            '¡Felicidades! Has completado la primera lección.',
             `La segunda lección estará disponible el Jueves a partir de las 9pm (CDMX) después del primer live.
-            Por lo pronto, te invitamos a que realizes este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
+            Por lo pronto, te invitamos a que realices este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
         ] 
     }
 ]
