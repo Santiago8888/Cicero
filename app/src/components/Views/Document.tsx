@@ -42,7 +42,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
             }}
         />
 
-        <div style={{...questionStyle, padding:'0px 24px', maxWidth:720}}>
+        <div style={{...questionStyle, padding:'0px 24px', maxWidth:720, marginBottom:'1.5rem'}}>
             { description?.map((p) => 
                 <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> { p }  </p>
             )}
