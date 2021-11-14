@@ -63,16 +63,25 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
             units.map(({ title, modules }, u) => <div style={{marginTop:24}} key={u}>
                 { 
                     user && u <= user.progress.unit 
-                    ? <a className='menu-label' onClick={() => setSelected(u !== selectedUnit ? u : undefined)}> { title } </a> 
-                    : <p className='menu-label'> { title } </p> 
+                    ? 
+                        <a 
+                            className='menu-label' 
+                            onClick={() => setSelected(u !== selectedUnit ? u : undefined)}
+                        > { title } </a> 
+                    :   <p className='menu-label'> { title } </p> 
                 }
 
                 <ul className='menu-list'>
-                    { (user?.current.unit  === u || selectedUnit === u || (!user && u === 0)) && modules.map(({ title, lessons }, m) => 
-                        <li style={{lineHeight:2}} key={m}>
+                    { 
+                        (user?.current.unit  === u || selectedUnit === u || (!user && u === 0)) 
+                        && modules.map(({ title, lessons }, m) => <li style={{lineHeight:2}} key={m}>
                             <a 
                                 onClick={() => expand(u, m)} 
-                                style={!user || (user.progress.unit === u && user.progress.module < m) ? {cursor:'initial'} : {}}
+                                style={
+                                    !user || (user.progress.unit === u && user.progress.module < m) 
+                                    ? {cursor:'initial'} 
+                                    : {}
+                                }
                             >
                                 { (!user || (user.progress.unit === u && user.progress.module < m)) && <Lock/> }
                                 { title } 
@@ -91,7 +100,9 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                                                         && user?.current.lesson === l
                                                         && user?.current.module === m 
                                                             ?   {
-                                                                    backgroundColor: !forum && !recordings && !posts ? 'darkolivegreen' : 'darkseagreen', 
+                                                                    backgroundColor: !forum && !recordings && !posts 
+                                                                        ? 'darkolivegreen' 
+                                                                        : 'darkseagreen', 
                                                                     borderRadius:8
                                                                 }
                                                             : !user || (
