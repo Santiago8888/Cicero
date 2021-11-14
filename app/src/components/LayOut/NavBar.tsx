@@ -11,8 +11,12 @@ const navTextStyle:CSSProperties = {textAlign:'center', color:'white', backgroun
 export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts'
 interface iNavBar { user?:iUser, click(item:NavbarItem):void }
 
-const Back = () => <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+const Back = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
     <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+</svg>
+
+const Next = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
 </svg>
 
 export const NavBar = ({ click, user }: iNavBar) => {
@@ -35,22 +39,20 @@ export const NavBar = ({ click, user }: iNavBar) => {
         >
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
-                    {
-                        midScreen 
-                        ?   <img 
-                                src='planets/Saturn_terra.png' 
-                                style={{ 
-                                    height:midScreen ? 56 : 44, 
-                                    maxHeight:'none', 
-                                    background:'white', 
-                                    borderRadius:'50%', 
-                                    padding:6
-                                }} 
-                                alt={'Saturn logo'}
-                            />
+                    { !midScreen && <Back /> }
+                    { !midScreen && <Next/> }
 
-                        :   <Back />
-                    }
+                    <img 
+                        src='planets/Saturn_terra.png' 
+                        style={{ 
+                            height:midScreen ? 56 : 44, 
+                            maxHeight:'none', 
+                            background:'white', 
+                            borderRadius:'50%', 
+                            padding:6
+                        }} 
+                        alt={'Saturn logo'}
+                    />
 
                     <p 
                         className='navbar-item' 
@@ -58,6 +60,7 @@ export const NavBar = ({ click, user }: iNavBar) => {
                     > 
                         { midScreen ? 'Manejo y Liberación del Karma' : 'Saturno' } 
                     </p>
+
                 </a>
 
                 <a 
