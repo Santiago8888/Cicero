@@ -19,6 +19,18 @@ const Next = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32
     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
 </svg>
 
+const isAdvanced = (user:iUser | undefined) => {
+    if(!user) return false
+
+    const { current, progress } = user
+
+    if(current.unit < progress.unit) return true
+    if(current.module < progress.module) return true
+    if(current.lesson < progress.lesson) return true
+
+    return false
+}
+
 export const NavBar = ({ user, click }: iNavBar) => {
     const midScreen = useMediaQuery({ query: '(min-width: 1024px)' })
     const [ isActive, setActive ] = useState(false)
@@ -47,19 +59,21 @@ export const NavBar = ({ user, click }: iNavBar) => {
                         > <Back /> </div> 
                     }
 
-                    { !midScreen && <Next/> }
-
-                    <img 
-                        src='planets/Saturn_terra.png' 
-                        style={{ 
-                            height:midScreen ? 56 : 44, 
-                            maxHeight:'none', 
-                            background:'white', 
-                            borderRadius:'50%', 
-                            padding:6
-                        }} 
-                        alt={'Saturn logo'}
-                    />
+                    { 
+                        !midScreen && isAdvanced(user) 
+                        ?   <Next/> 
+                        :   <img 
+                                src='planets/Saturn_terra.png' 
+                                style={{ 
+                                    height:midScreen ? 56 : 44, 
+                                    maxHeight:'none', 
+                                    background:'white', 
+                                    borderRadius:'50%', 
+                                    padding:6
+                                }} 
+                                alt={'Saturn logo'}
+                            />
+                    }
 
                     <p 
                         className='navbar-item' 
