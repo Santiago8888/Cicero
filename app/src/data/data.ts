@@ -2,7 +2,6 @@ import { iRecordings } from '../components/Forum/Recordings'
 import { iLesson, iUnit } from '../components/LayOut/Menu'
 import { quiz11, quiz12, quiz13 } from './module-1'
 import { iForum } from '../components/Forum/Forum'
-import { iPost } from '../components/Forum/Posts'
 import { planets, houses } from './chart'
 import { iUser } from '../App'
 
@@ -18,8 +17,6 @@ export const defaultUser:iUser = {
     current:{unit:3, module:0, lesson:1}, 
     progress:{unit:3, module:0, lesson:5}, 
 }
-
-
 
 
 export const lesson: iLesson = { 
@@ -63,8 +60,6 @@ const lessons:iLesson[] = [
     {...lesson, type:'Reading', title:'Lectura', link:'sample.pdf'}, 
     lesson
 ]
-
-export const Posts:iPost[] = []
 
 
 const posts11 = [
