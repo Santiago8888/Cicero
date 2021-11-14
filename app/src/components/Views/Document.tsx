@@ -4,7 +4,6 @@ import { questionStyle } from './Quiz'
 import { useState } from 'react'
 
 
-
 interface iDocument { 
     user:iUser
     title:string
@@ -15,6 +14,14 @@ interface iDocument {
     approve(props:iApprove):boolean | void 
 }
 
+interface iDivider { midScreen:boolean }
+const Divider = ({ midScreen }:iDivider) => <hr 
+    style={{ 
+        backgroundColor:'darkolivegreen', 
+        margin: midScreen ?  '3rem auto' : '1.5rem auto', 
+        width:midScreen ? 600 : 280 
+    }}
+/>
 
 export const Document = ({ user, title, link='', description, min, next, approve }:iDocument) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
@@ -34,13 +41,8 @@ export const Document = ({ user, title, link='', description, min, next, approve
             }}
         > { title } </h1>
 
-        <hr 
-            style={{ 
-                backgroundColor:'darkolivegreen', 
-                margin: midScreen ?  '3rem auto' : '1.5rem auto', 
-                width:midScreen ? 600 : 280 
-            }}
-        />
+
+        <Divider midScreen={midScreen} />
 
         <div style={{...questionStyle, padding:'0px 24px', maxWidth:720, marginBottom:'1.5rem'}}>
             { description?.map((p) => 
