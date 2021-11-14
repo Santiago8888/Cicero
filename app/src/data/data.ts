@@ -427,7 +427,7 @@ const module13:iLesson[] = [
     { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
     { type:'Quiz', title:'Quiz 1.3', questions:quiz13 },
     { type:'Video', title:'Escucha las señales', link:'https://youtu.be/_BqqI3A1SZY' },
-    { type:'Reflection', title:'Ejercicio Práctico', posts:posts13 }
+    { type:'Reflection', title:'Ejercicio Práctico', posts:posts13, end:true }
 ]
 
 
