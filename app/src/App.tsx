@@ -113,6 +113,8 @@ export const App = () => {
     const clickNavbar = async(item:NavbarItem) => {
         if(item === 'Home') reset()
         if (item === 'Login') return setLogin(true)
+        if(item === 'Back') return back()
+
         if(!db) return
 
         if (item === 'Forum') {
@@ -176,6 +178,24 @@ export const App = () => {
             })
 
         } else updateUser({...user, current:nextLesson(current)})
+    }
+
+    const back = () => {
+        if(!user) return
+        const { current } = user 
+        const previousLesson = {...current }
+
+        if(current.lesson > 0) previousLesson.lesson -= 1 
+        else if(current.module > 0) {
+            previousLesson.module -= 1 
+            previousLesson.lesson = Units[current.unit].modules[previousLesson.module].lessons.length - 1
+        } else if(current.unit > 0) {
+            previousLesson.unit -= 1
+            previousLesson.module = Units[previousLesson.unit].modules.length - 1
+            previousLesson.lesson = Units[previousLesson.unit].modules[previousLesson.module].lessons.length - 1
+        } else return
+
+        updateUser({...user, current:previousLesson })
     }
 
     const navigate = ({unit, module, lesson}:iPosition) => {
