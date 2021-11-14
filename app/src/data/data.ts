@@ -176,7 +176,12 @@ export const Units:iUnit[] = [{
         { 
             title: '4.1 Binah y el inicio de la existencia', 
             lessons:[
-                { title:'Saturno', type:'Chart', description:['El planeta que rige tu responsabilidad'], planet:'Saturn'},
+                { 
+                    title:'Saturno', 
+                    type:'Chart', 
+                    description:['El planeta que rige tu responsabilidad'], 
+                    planet:'Saturn'
+                },
                 ...lessons
             ] 
         },
