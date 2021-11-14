@@ -23,7 +23,7 @@ const Welcome = ({ click, }:iWelcome) => {
         <div style={{marginBottom:!smallScreen ? '1rem' : 0}}>
             <h2 
                 style={{
-                    margin:`0.5rem auto 1.5rem`,
+                    margin:`${!smallScreen ? '0.5' : '0' }rem auto ${!smallScreen ? '1.5' : '1' }rem`,
                     width:!smallScreen ? 760 : 300, 
                     fontSize:!smallScreen ? '2rem' : '1.5rem',
                     color:'navy'
