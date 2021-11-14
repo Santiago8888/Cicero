@@ -108,7 +108,6 @@ interface iQuiz {
 }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
-    const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [isActive, setActive] = useState(false)
     const [values, setValues] = useState<{[idx:number]:number}>(
