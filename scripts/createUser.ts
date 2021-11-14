@@ -1,3 +1,5 @@
+// npx ts-node createUser
+
 import { iPlanet } from '../app/src/components/Astral/AstralChart'
 import { iPosition } from '../app/src/components/LayOut/Menu'
 import { iNewUser } from '../app/src/components/Auth/SignUp'
@@ -43,7 +45,8 @@ const createUser = async({ name, email, password, date, location }:iNewUser) => 
         date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
     }`
 
-    const { data: { houses, planets } } =  await axios.get(`/.netlify/functions/astro-chart${chartParams}`)
+    const url = `https://astroconsciencia.gq/.netlify/functions/astro-chart${chartParams}`
+    const { data: { houses, planets } } =  await axios.get(url)
     console.log(houses, planets)
 
     const sun = planets.find(({name}:{name:string}) => name === 'Sun')
@@ -52,3 +55,13 @@ const createUser = async({ name, email, password, date, location }:iNewUser) => 
 
     db.collection('users').updateOne({ user_id }, {...fullUser, user_id})
 }
+
+const Santiago:iNewUser = {
+    date:new Date(1988, 7, 17, 18, 37),
+    name:'Santiago Test Create',
+    email:'santiago1@test.mail',
+    password:'A23451',
+    location:'Mexico City'
+}
+
+createUser(Santiago).catch(console.log)
