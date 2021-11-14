@@ -1,8 +1,9 @@
 import { useMediaQuery } from 'react-responsive'
 import { iApprove, iUser } from '../../App'
+import { questionStyle } from './Quiz'
 import { useState } from 'react'
 
-const defaultDoc = ''
+
 
 interface iDocument { 
     user:iUser
@@ -15,7 +16,7 @@ interface iDocument {
 }
 
 
-export const Document = ({ user, title, link=defaultDoc, description, min, next, approve }:iDocument) => {
+export const Document = ({ user, title, link='', description, min, next, approve }:iDocument) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     
     const [ isCounting, setCounting ] = useState(false)
@@ -28,16 +29,11 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
         <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
         <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 
-        <h3 
-            style={{
-                margin:'0rem auto',
-                color: '#444',
-                fontSize: '1.25em',
-                fontWeight: 500,
-                width: midScreen ? 640 : 320        
-            }}
-        > { description?.map((p) => <> { p } <br/></>) } </h3>
-
+        <div style={{...questionStyle, padding:'0px 24px', maxWidth:720}}>
+            { description?.map((p) => 
+                <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> { p }  </p>
+            )}
+        </div>
 
         <div style={{ width:midScreen ? 800 : 320, margin:'3rem auto 1rem'}}>
             {
