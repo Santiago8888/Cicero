@@ -11,3 +11,5 @@
  9. [ ] Domain & Deploy 
 10. [ ] Create Users
 11. [ ] Testing
+12. [ ] Delete data
+13. [ ] Share with Gaby
