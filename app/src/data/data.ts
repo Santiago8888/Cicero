@@ -117,7 +117,7 @@ const module12:iLesson[] = [
         posts:posts12, 
         description:[
             `Te invitamos a que hagas una segunda pausa y reflexiones cómo se manifiesta el karma en tu vida.
-            Nuevamente ponemos a tu disposición sugerencias para compartir en el foro, por favor, sé muy consciente de lo que publicas.`
+            Nuevamente ponemos a tu disposición sugerencias para compartir en el chat.`
         ] 
     },
 ]
