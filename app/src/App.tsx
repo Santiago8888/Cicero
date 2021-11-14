@@ -4,8 +4,8 @@ import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { iPost } from './components/Forum/Posts'
 
-import { Recordings, Forum, Posts, Units } from './data/data'
 import { iPlanet } from './components/Astral/AstralChart'
+import { Recordings, Forum, Units } from './data/data'
 import { iLoginInput } from './components/Auth/Login'
 import { Home } from './components/Home'
 
@@ -55,7 +55,7 @@ export const App = () => {
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
 
-    const [ posts, setPosts ] = useState(Posts)
+    const [ posts, setPosts ] = useState<iPost[]>([])
     const [ forum, setForum ] = useState(Forum)
     const [ recordings, setRecordings ] = useState(Recordings)
 
