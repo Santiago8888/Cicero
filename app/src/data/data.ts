@@ -277,7 +277,7 @@ const posts12:string[] = [
     '¿Cómo te comunicas con tu alma?',
     '¿En qué área crees que puedes crecer actualmente?',
     '¿Para tí, qué es el entendimiento?',
-    '¿De qué eres responsable, el día de hoy?'
+    '¿De qué eres responsable el día de hoy?'
 ]
 
 
@@ -293,7 +293,7 @@ const module12:iLesson[] = [
         posts:posts12, 
         description:[
             `Te invitamos a que hagas una segunda pausa y reflexiones cómo se manifiesta el karma en tu vida.
-            Nuevamente ponemos a tu disposición sugerencias para compartir en el foro, por favor, se muy consciente de lo que publicas.`
+            Nuevamente ponemos a tu disposición sugerencias para compartir en el foro, por favor, sé muy consciente de lo que publicas.`
         ] 
     },
 ]
