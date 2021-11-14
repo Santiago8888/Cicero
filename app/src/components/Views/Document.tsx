@@ -32,7 +32,7 @@ export const Document = ({ user, title, link=defaultDoc, description, min, next,
                 color: '#444',
                 fontSize: '1.25em',
                 fontWeight: 500,
-                width: midScreen ? 800 : 320        
+                width: midScreen ? 640 : 320        
             }}
         > { description?.map((p) => <> { p } <br/></>) } </h3>
 
