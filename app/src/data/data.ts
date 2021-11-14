@@ -417,10 +417,10 @@ const quiz13:iQuestion[] = [
 
 const posts13:string[] = [
     'Abre una nueva nota en tu celular, y cada día escribe 3 a 5 momentos en los que te hayas sentido limitad@ o bloquead@. Al final del día trata de:',
-    '1. Identificar: la acción que ocasiono ese bloqueo, donde contribuiste a esa sensación de limitación.',
-    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones. Procura evitar incurrir nuevamente en aquello que esta sembrando la limitación.',
-    '3. Entiende: solo cuando aceptas, tomas responsabilidad de tus acciones y reconoces que somos la causa de sentirnos limitados podemos alinearnos con nuestra misión.',
-    'Te invitamos a que realizes el ejercicio durante una semana para identificar el mensaje te está dando Saturno actualmente.'
+    '1. Identificar: la acción que ocasionó ese bloqueo, donde contribuiste a esa sensación de limitación.',
+    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones. Procura evitar incurrir nuevamente en aquello que está sembrando la limitación.',
+    '3. Entiende: solo cuando aceptas, tomas responsabilidad de tus acciones y reconocemos que somos la causa de sentirnos limitados podemos alinearnos con nuestra misión.',
+    'Te invitamos a que realices el ejercicio durante una semana para identificar el mensaje te está dando Saturno actualmente.'
 ]
 
 const module13:iLesson[] = [
