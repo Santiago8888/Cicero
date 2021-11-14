@@ -49,11 +49,12 @@ interface iReflection {
     posts?:string[]
     user:iUser
     numbered?:boolean
+    end?:boolean
     next():void
     approve(props:iApprove):void 
 }
 
-export const Reflection = ({posts=[], user, title, description, numbered, approve, next }:iReflection) => {
+export const Reflection = ({posts=[], user, title, description, numbered, end, approve, next }:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [active, setActive] = useState(false)
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
@@ -79,7 +80,7 @@ export const Reflection = ({posts=[], user, title, description, numbered, approv
             )}
         </div>
 
-        <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/>
+        { !end && <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/> }
 
         <Modal 
             isActive={active} 
