@@ -114,6 +114,7 @@ export const App = () => {
         if(item === 'Home') reset()
         if (item === 'Login') return setLogin(true)
         if(item === 'Back') return back()
+        if(item === 'Next') return next()
 
         if(!db) return
 
