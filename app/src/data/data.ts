@@ -417,17 +417,27 @@ const quiz13:iQuestion[] = [
 
 const posts13:string[] = [
     'Abre una nueva nota en tu celular, y cada día escribe 3 a 5 momentos en los que te hayas sentido limitad@ o bloquead@. Al final del día trata de:',
-    '1. Identificar: tu acción que ocasiono ese bloqueo, donde contribuiste a esa sensación de limitación.',
-    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones.',
-    '3. Entiende: solo cuando aceptas y tomas responsabilidad de tus acciones puedes alinearte con tu misión y empezar a erradicar esa limitación.',
-    'Te invitamos a que realizes el ejercicio durante una semana para identificar que mensaje te está dando Saturno actualmente.'
+    '1. Identificar: la acción que ocasiono ese bloqueo, donde contribuiste a esa sensación de limitación.',
+    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones. Procura evitar incurrir nuevamente en aquello que esta sembrando la limitación.',
+    '3. Entiende: solo cuando aceptas, tomas responsabilidad de tus acciones y reconoces que somos la causa de sentirnos limitados podemos alinearnos con nuestra misión.',
+    'Te invitamos a que realizes el ejercicio durante una semana para identificar el mensaje te está dando Saturno actualmente.'
 ]
 
 const module13:iLesson[] = [
     { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
     { type:'Quiz', title:'Quiz 1.3', questions:quiz13 },
     { type:'Video', title:'Escucha las señales', link:'https://youtu.be/_BqqI3A1SZY' },
-    { type:'Reflection', title:'Ejercicio Práctico', posts:posts13, end:true }
+    { 
+        type:'Reflection', 
+        title:'Ejercicio Práctico', 
+        posts:posts13, 
+        end:true,
+        description:[
+            '¡Felicidades! Haz completado la primera lección.',
+            `La segunda lección estará disponible el Jueves a partir de las 9pm (CDMX) después del primer live.
+            Por lo pronto, te invitamos a que realizes este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
+        ] 
+    }
 ]
 
 
