@@ -1,7 +1,7 @@
 # Launch Checklist
 
- 1. [ ] Practical Excercise View
- 2. [ ] Create User Script
+ 1. [X] Practical Excercise View
+ 2. [X] Create User Script
  3. [ ] Review Ortography
  4. [ ] Reading on Intro
  5. [ ] Mobile Styling

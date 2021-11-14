@@ -69,7 +69,7 @@ exports.handler = async ({ queryStringParameters }, context) => {
     const planets = planets_position.map((p, i) => {
         const degrees = p % 30
         const minutes = 0|(0|(degrees%1)*60e7)/1e7 // https://stackoverflow.com/a/5786281/6823310
-        const text = `${Math.floor(degrees)}° ${String(minutes).length == 2 ? minutes : `0${minutes}`}'`
+        const text = `${Math.floor(degrees)}° ${String(minutes).length === 2 ? minutes : `0${minutes}`}'`
         return {
             name: planet_names[i],
             house: Math.ceil(p/30),
