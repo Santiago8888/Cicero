@@ -19,6 +19,7 @@ export interface iLesson {
     planet?:Planet
     posts?:string[]
     numbered?:boolean
+    end?:boolean
 }
 
 
