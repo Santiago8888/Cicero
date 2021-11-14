@@ -5,7 +5,7 @@ import { iForum } from '../components/Forum/Forum'
 import { planets, houses } from './chart'
 import { iUser } from '../App'
 
-export const defaultUser:iUser = { 
+const defaultUser:iUser = { 
     sign:'Leo',
     user_id:'0',
     quizFailures:0,
