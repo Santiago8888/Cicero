@@ -18,19 +18,26 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     return <div className='content'>
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
+        <h1 
+            style={{
+                fontSize:!smallScreen ? '3rem' : '2rem', 
+                marginBottom:!smallScreen ? '2rem' : '0.5rem', 
+                color:'saddlebrown'
+            }}
+        > { title } </h1>
+
         <h3 
             style={{
                 margin:'0rem auto',
                 color: '#333',
-                fontSize: '1.25em',
+                fontSize: midScreen ? '1.25em' : '1.15em',
                 textAlign: 'center',
                 fontWeight: 500,
-                width: midScreen ? 800 : 320        
+                width: midScreen ? 800 : 300        
             }}
         > { description ? description[0] : '' } </h3>
 
-        <div style={{margin:'2.5em 0px'}}>
+        <div style={{margin:midScreen ? '2.5em 0px' : '1rem 0px 1.5rem'}}>
             <ReactPlayer 
                 url={link} 
                 controls={true}

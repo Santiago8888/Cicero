@@ -44,7 +44,17 @@ const Question = ({index, question, value, answers, select}:IQuestion) => <div
 
 const encouragementMsg = `¡Ánimo aún tienes otra oportunidad!`
 const retryMsg = 'Te invitamos a reiniciar el módulo.'
-interface iModal { user:iUser, questions: iQuestion[], score:number, isActive:boolean, approved:boolean, min:number, deactivate():void, next():void }
+interface iModal { 
+    user:iUser
+    questions: iQuestion[]
+    score:number
+    isActive:boolean
+    approved:boolean
+    min:number
+    deactivate():void
+    next():void 
+}
+
 const Modal = ({ user, questions, score, isActive, approved, min, deactivate, next }:iModal) => <div 
     className={`modal ${isActive ? 'is-active' : ''}`}
 >
@@ -57,13 +67,20 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
 
         <section className='modal-card-body' style={{minHeight:120, display:'table'}}>
             <p style={{display:'table-cell', verticalAlign:'middle'}}>
-                { approved ? <span style={{fontSize:'1.5rem', fontWeight:600}}>¡Felicidades!</span> : <>Lo sentimos.</> } <br/> 
+                { 
+                    approved 
+                    ?   <span style={{fontSize:'1.5rem', fontWeight:600}}>¡Felicidades!</span> 
+                    :   <>Lo sentimos.</> 
+                } <br/>
+
                  Acertaste <strong>{score}</strong> de <strong>{questions.length}</strong> preguntas. <br/>
+
                 { 
                     !approved && user.quizFailures === 1 
                     ? <>Necesitas {min} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
                     : '' 
                 }
+
                 { !approved && user.quizFailures === 1 ? <><br/>{encouragementMsg}</> : '' }
                 { !approved && user.quizFailures === 2 ? <><br/>{ retryMsg }</> : '' }
             </p>
@@ -91,7 +108,6 @@ interface iQuiz {
 }
 export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
-    const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
     const [isActive, setActive] = useState(false)
     const [values, setValues] = useState<{[idx:number]:number}>(
@@ -130,7 +146,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
             }}
         > { description ? description[0] : '' } </h3>
 
-        <div style={{ width: midScreen ? 880 : !smallScreen ? 450 : 360, margin:'auto' }}>
+        <div style={{ width: midScreen ? 880 : 'auto', margin:'auto' }}>
             {
                 questions.map((q, i) => 
                     <Question 

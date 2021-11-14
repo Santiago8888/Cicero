@@ -311,7 +311,7 @@ export const App = () => {
                 <div 
                     className='column is-10' 
                     style={{ 
-                        paddingTop:'3rem', 
+                        paddingTop:largeScreen ? '3rem' : '1rem', 
                         marginLeft:3, 
                         marginRight:0, 
                         margin:'0px auto', 

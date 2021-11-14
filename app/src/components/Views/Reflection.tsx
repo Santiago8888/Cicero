@@ -4,6 +4,7 @@ import { CSSProperties, useState } from 'react'
 import { iApprove, iUser } from '../../App'
 import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
+import { Divider } from './Document'
 
 
 interface iHeader { title:string, description?:string[], midScreen:boolean }
@@ -22,7 +23,7 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
     > { sentence } </h3>
     )}
 
-    <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
+    <Divider midScreen={midScreen} />
 </>
 
 const styleCta:CSSProperties = { margin:'auto', marginTop:'3rem' }

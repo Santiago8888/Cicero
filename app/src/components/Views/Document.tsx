@@ -4,7 +4,6 @@ import { questionStyle } from './Quiz'
 import { useState } from 'react'
 
 
-
 interface iDocument { 
     user:iUser
     title:string
@@ -15,6 +14,14 @@ interface iDocument {
     approve(props:iApprove):boolean | void 
 }
 
+interface iDivider { midScreen:boolean }
+export const Divider = ({ midScreen }:iDivider) => <hr 
+    style={{ 
+        backgroundColor:'darkolivegreen', 
+        margin: midScreen ?  '3rem auto' : '1.5rem auto', 
+        width:midScreen ? 600 : 280 
+    }}
+/>
 
 export const Document = ({ user, title, link='', description, min, next, approve }:iDocument) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
@@ -26,16 +33,24 @@ export const Document = ({ user, title, link='', description, min, next, approve
     }
 
     return <div className='content'>
-        <h1 style={{fontSize:'3rem', marginBottom:'2rem', color:'saddlebrown'}}> { title } </h1>
-        <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
+        <h1 
+            style={{
+                fontSize: midScreen ? '3rem' : '2rem', 
+                marginBottom: midScreen ? '2rem' : '1rem', 
+                color:'saddlebrown'
+            }}
+        > { title } </h1>
 
-        <div style={{...questionStyle, padding:'0px 24px', maxWidth:720}}>
+
+        <Divider midScreen={midScreen} />
+
+        <div style={{...questionStyle, padding:'0px 24px', maxWidth:720, marginBottom:'1.5rem'}}>
             { description?.map((p) => 
                 <p style={{fontSize:'1.25rem', margin:'2rem auto'}}> { p }  </p>
             )}
         </div>
 
-        <div style={{ width:midScreen ? 800 : 320, margin:'3rem auto 1rem'}}>
+        <div style={{ width:midScreen ? 800 : 280, margin:midScreen ? '3rem auto' : '1.5rem auto'}}>
             {
                 user.current.module < user.progress.module 
                 || (user.progress.lesson < user.current.lesson && user.current.module === user.progress.module)
@@ -66,7 +81,10 @@ export const Document = ({ user, title, link='', description, min, next, approve
                             fontWeight:600, 
                             backgroundColor:'saddlebrown'
                         }}
-                        disabled={user.current.module === user.progress.module && user.progress.lesson === user.current.lesson}
+                        disabled={
+                            user.current.module === user.progress.module 
+                            && user.progress.lesson === user.current.lesson
+                        }
                     > CONTINUAR </button>
             }
         </div>
