@@ -6,7 +6,15 @@ import { useState } from 'react'
 import { iNatalChart } from '../../App'
 
 
-export interface iNewUser {name:string, email:string, password:string, date:Date, location:string, natalChart?:iNatalChart }
+export interface iNewUser {
+    name:string
+    email:string
+    password:string
+    date:Date
+    location:string
+    natalChart?:iNatalChart 
+}
+
 export interface iSignUp { signUp(newUser:iNewUser):void }
 export const SignUp = ({ signUp }: iSignUp) => {
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
