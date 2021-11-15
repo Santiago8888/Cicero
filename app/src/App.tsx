@@ -34,7 +34,7 @@ export interface iUser {
 }
 
 
-interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
+export interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
