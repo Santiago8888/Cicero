@@ -316,7 +316,7 @@ export const App = () => {
     }
 
     return <div>
-        <NavBar user={user} click={(item) => clickNavbar(item)}/>
+        <NavBar user={user} homeData={homeData} click={(item) => clickNavbar(item)}/>
         <div className='container' style={{maxWidth:'100%'}}>
             <div className='columns' style={{margin:0}}>
                 {
