@@ -31,7 +31,7 @@ const isAdvanced = (user:iUser | undefined) => {
     return false
 }
 
-export const NavBar = ({ user, homeData, click }: iNavBar) => {
+export const NavBar = ({ user, homeData:{ recordings, posts, forum }, click }: iNavBar) => {
     const midScreen = useMediaQuery({ query: '(min-width: 1024px)' })
     const [ isActive, setActive ] = useState(false)
 
@@ -52,7 +52,7 @@ export const NavBar = ({ user, homeData, click }: iNavBar) => {
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
                     { 
-                        !midScreen &&  
+                        !midScreen && (!recordings && !forum && !posts) &&
                         <div 
                             style={{cursor:'pointer', height:32 }} 
                             onClick={() => click('Back')}
@@ -60,7 +60,7 @@ export const NavBar = ({ user, homeData, click }: iNavBar) => {
                     }
 
                     { 
-                        !midScreen && isAdvanced(user) 
+                        !midScreen && (!recordings && !forum && !posts) && isAdvanced(user) 
                         ?   <div 
                                 style={{cursor:'pointer', height:32 }} 
                                 onClick={() => click('Next')}
