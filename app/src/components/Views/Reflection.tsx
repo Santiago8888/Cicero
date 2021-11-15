@@ -18,7 +18,7 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
             fontSize: '1.25em',
             textAlign: 'center',
             fontWeight: 500,
-            width: midScreen ? 720 : 320        
+            width: midScreen ? 720 : 'auto'        
         }}
     > { sentence } </h3>
     )}
@@ -28,7 +28,7 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
 
 const styleCta:CSSProperties = { margin:'auto', marginTop:'3rem' }
 interface iCta { midScreen:boolean, user:iUser, text:string, click():void }
-const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 320}}>
+const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 'auto'}}>
     <button
         onClick={click} 
         className='button is-link' 
@@ -91,9 +91,9 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
         >
             <div className='field'>
                 <label className='label'> Título: </label>
-                <div className="select" style={{ maxWidth:600, height:'auto' }}>
+                <div className="select" style={{ maxWidth:600, width:'auto', height:'auto' }}>
                     <select 
-                        style={{height:'auto', whiteSpace:'break-spaces'}}
+                        style={{height:'auto', whiteSpace:'break-spaces', width:'100%'}}
                         onChange={({target:{value}})=> setNewPost({...newPost, title:value})}
                     > 
                         <option/>

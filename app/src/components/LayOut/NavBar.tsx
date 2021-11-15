@@ -1,17 +1,37 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import { CSSProperties, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { iUser } from '../../App'
+import { CSSProperties, useState } from 'react'
+import { iHomeData, iUser } from '../../App'
 
 
 const tabStyle:CSSProperties = { fontSize: '1.2em', backgroundColor:'darkolivegreen' }
 const navTextStyle:CSSProperties = {textAlign:'center', color:'white', backgroundColor:'darkolivegreen'}
 
-export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts'
-interface iNavBar { user?:iUser, click(item:NavbarItem):void }
+export type NavbarItem =  'Login' | 'Recordings' | 'Forum' | 'Home' | 'Posts' | 'Back' | 'Next'
+interface iNavBar { user?:iUser, homeData:iHomeData, click(item:NavbarItem):void }
 
-export const NavBar = ({ click, user }: iNavBar) => {
+const Back = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"></path>
+</svg>
+
+const Next = () => <svg xmlns="http://www.w3.org/2000/svg" width="56" height="32" fill="currentColor" className="bi bi-arrow-right" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
+</svg>
+
+const isAdvanced = (user:iUser | undefined) => {
+    if(!user) return false
+
+    const { current, progress } = user
+
+    if(current.unit < progress.unit) return true
+    if(current.module < progress.module) return true
+    if(current.lesson < progress.lesson) return true
+
+    return false
+}
+
+export const NavBar = ({ user, homeData:{ recordings, posts, forum }, click }: iNavBar) => {
     const midScreen = useMediaQuery({ query: '(min-width: 1024px)' })
     const [ isActive, setActive ] = useState(false)
 
@@ -31,23 +51,40 @@ export const NavBar = ({ click, user }: iNavBar) => {
         >
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
-                    <img 
-                        src='planets/Saturn_terra.png' 
-                        style={{ 
-                            height:midScreen ? 56 : 44, 
-                            maxHeight:'none', 
-                            background:'white', 
-                            borderRadius:'50%', 
-                            padding:6
-                        }} 
-                        alt={'Saturn logo'}
-                    />
+                    { 
+                        !midScreen && (!recordings && !forum && !posts) &&
+                        <div 
+                            style={{cursor:'pointer', height:32 }} 
+                            onClick={() => click('Back')}
+                        > <Back /> </div> 
+                    }
+
+                    { 
+                        !midScreen && (!recordings && !forum && !posts) && isAdvanced(user) 
+                        ?   <div 
+                                style={{cursor:'pointer', height:32 }} 
+                                onClick={() => click('Next')}
+                            > <Next/> </div> 
+                        :   <img 
+                                src='planets/Saturn_terra.png' 
+                                style={{ 
+                                    height:midScreen ? 56 : 44, 
+                                    maxHeight:'none', 
+                                    background:'white', 
+                                    borderRadius:'50%', 
+                                    padding:6
+                                }} 
+                                alt={'Saturn logo'}
+                            />
+                    }
+
                     <p 
                         className='navbar-item' 
                         style={{ fontSize: '2em', color:'white', marginLeft: midScreen ? 24 : 6 }} 
                     > 
                         { midScreen ? 'Manejo y Liberación del Karma' : 'Saturno' } 
                     </p>
+
                 </a>
 
                 <a 

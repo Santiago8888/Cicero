@@ -34,7 +34,7 @@ export interface iUser {
 }
 
 
-interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
+export interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
@@ -113,6 +113,9 @@ export const App = () => {
     const clickNavbar = async(item:NavbarItem) => {
         if(item === 'Home') reset()
         if (item === 'Login') return setLogin(true)
+        if(item === 'Back') return back()
+        if(item === 'Next') return next()
+
         if(!db) return
 
         if (item === 'Forum') {
@@ -155,7 +158,7 @@ export const App = () => {
 
         if (hasNextLesson) return { unit, module, lesson:lesson+1 }
         else if (hasNextModule) return { unit, module:module+1, lesson:0 }
-        else if (hasNextUnit) return { unit, module:module+1, lesson:0 }
+        else if (hasNextUnit) return { unit:unit+1, module:0, lesson:0 }
         else return { unit, module, lesson }
     }
 
@@ -176,6 +179,24 @@ export const App = () => {
             })
 
         } else updateUser({...user, current:nextLesson(current)})
+    }
+
+    const back = () => {
+        if(!user) return
+        const { current } = user 
+        const previousLesson = {...current }
+
+        if(current.lesson > 0) previousLesson.lesson -= 1 
+        else if(current.module > 0) {
+            previousLesson.module -= 1 
+            previousLesson.lesson = Units[current.unit].modules[previousLesson.module].lessons.length - 1
+        } else if(current.unit > 0) {
+            previousLesson.unit -= 1
+            previousLesson.module = Units[previousLesson.unit].modules.length - 1
+            previousLesson.lesson = Units[previousLesson.unit].modules[previousLesson.module].lessons.length - 1
+        } else return
+
+        updateUser({...user, current:previousLesson })
     }
 
     const navigate = ({unit, module, lesson}:iPosition) => {
@@ -295,7 +316,7 @@ export const App = () => {
     }
 
     return <div>
-        <NavBar user={user} click={(item) => clickNavbar(item)}/>
+        <NavBar user={user} homeData={homeData} click={(item) => clickNavbar(item)}/>
         <div className='container' style={{maxWidth:'100%'}}>
             <div className='columns' style={{margin:0}}>
                 {

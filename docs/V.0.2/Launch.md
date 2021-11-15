@@ -4,8 +4,8 @@
  2. [X] Create User Script
  3. [X] Review Ortography
  4. [X] Reading on Intro
- 5. [ ] Mobile Styling
- 6. [ ] Mobile Navigation
+ 5. [X] Mobile Styling
+ 6. [X] Mobile Navigation
  7. [ ] Cover on videos
  8. [ ] Intro Video
  9. [ ] Domain & Deploy 

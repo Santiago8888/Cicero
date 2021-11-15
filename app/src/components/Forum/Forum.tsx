@@ -8,10 +8,10 @@ import { ObjectID } from 'bson'
 export interface iDoubt { _id?:ObjectID, question:string, details:string, likes:string[] }
 const doubtStyle:CSSProperties = {maxWidth:720, textAlign:'left', margin:'auto', marginBottom:'1.5em', display:'flex'}
 
-interface IDoubt extends iDoubt { user:iUser, like():void } 
-const Doubt = ({ user, question, details, likes, like }:IDoubt) => <div style={doubtStyle}>
+interface IDoubt extends iDoubt { user:iUser, midScreen:boolean, like():void } 
+const Doubt = ({ user, question, details, likes, midScreen, like }:IDoubt) => <div style={doubtStyle}>
     <Likes user={user} likes={likes} like={like} style={{textAlign:'center'}}/>
-    <div>
+    <div style={{maxWidth: midScreen ? 600 : 240 }}>
         <p style={{color:'saddlebrown', fontSize:'1.25rem', fontWeight:600, marginBottom:0}}> { question } </p>
         <p style={{color:'#363636'}}> { details } </p>
     </div>
@@ -122,7 +122,7 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
 
         { 
             questions.sort(({likes:a}, {likes:b}) => a.length > b.length ? -1 : 1)
-            .map((q, i) => <Doubt  {...q} user={user} like={() => like(i)} key={i}/> ) 
+            .map((q, i) => <Doubt midScreen={midScreen} {...q} user={user} like={() => like(i)} key={i}/> ) 
         }
 
         <Modal 
