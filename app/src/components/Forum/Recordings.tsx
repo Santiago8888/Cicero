@@ -62,7 +62,11 @@ export const Recordings = ({ title, description, recordings}: iRecordings) => {
                 fontWeight: 500,
                 width: midScreen ? 640 : !smallScreen ? 540 : 320
             }}
-        > { description } </h3>
+        >
+            En este espacio encontraras las grabaciones de los lives de resolución de dudas. <span style={{fontWeight:400}}> 
+                Los lives son cada Jueves a las 7:30 pm (CDMX) del 25 de Noviembre al 16 de Diciembre. 
+            </span> 
+        </h3>
 
         <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 
