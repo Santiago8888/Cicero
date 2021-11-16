@@ -26,7 +26,7 @@ const Welcome = ({ click, }:iWelcome) => {
                     margin:`${!smallScreen ? '0.5' : '0' }rem auto ${!smallScreen ? '1.5' : '1' }rem`,
                     width:!smallScreen ? 760 : 300, 
                     fontSize:!smallScreen ? '2rem' : '1.5rem',
-                    color:'navy'
+                    color:'#b08f5c'
                 }}
             >
                 El señor del Karma
