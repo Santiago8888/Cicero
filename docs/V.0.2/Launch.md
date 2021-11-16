@@ -26,8 +26,8 @@
 	c. [X] Upload Karma Document
 	d. [X] Review Texts
 	e. [ ] Amplitude Events
-		I. [ ] Quiz
-		II. [ ] Post
+		I. [X] Quiz
+		II. [X] Post
 		III. [ ] Excercise
 		IV. [ ] Doubt
 		V. [ ] Navigate
