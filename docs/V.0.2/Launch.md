@@ -17,5 +17,19 @@
 13. [ ] Delete data
 
 
-## 
+## Release
 
+1. [X] Edit Promo Vídeo 
+2. [ ] Last Updates
+	a. [X] Promo
+	b. [ ] Font - Landing
+	c. [ ] Upload Second Document
+	d. [ ] Review Texts
+	e. [ ] Amplitude Events
+	f. [ ] Handle Loading and Error on Sign in
+	g. [ ] Test Quiz Logic
+    h. [ ] Intro
+3. [ ] Delete data
+4. [ ] Record video
+5. [ ] Create users
+6. [ ] Email Gaby
