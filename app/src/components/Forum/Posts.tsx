@@ -165,7 +165,7 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
     return <div className='content' style={{maxWidth:640, margin:'auto'}}>
         <Header 
             title={'Astro Café'} 
-            description={'Comparte con el grupo lo que has aprendido y celebra los logros de los demás.'} 
+            description={'Este es un espacio para compartir y aprender, todo el contendio relacionado con Saturno y el curso es bienvenido. Nuestra esperanza es que al aprender juntos se nos facilite aplicar los conocimientos en la vida diaria.'} 
             buttonText={'Nueva Publicación'}
             click={() => setActive(true)}
         />
