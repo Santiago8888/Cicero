@@ -140,7 +140,7 @@ export const NavBar = ({ user, homeData:{ recordings, posts, forum }, click }: i
                             className={'navbar-item'}
                             style={navTextStyle}
                         > 
-                            <strong> Preguntas </strong> 
+                            <strong> Dudas </strong> 
                         </a>                    
                     </div>
                 }
