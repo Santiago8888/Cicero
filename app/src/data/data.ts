@@ -110,6 +110,7 @@ const module12:iLesson[] = [
     { type:'Video', title:'El Karma', link:'https://youtu.be/dNt2saEg8As' },
     { type:'Quiz', title:'Quiz 1.2', questions:quiz12 },
     { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
+    { type:'Reading', title:'El Señor del Karma', link:'docs/Saturno-Señor-del-Karma.pdf', description:[]},
     { 
         type:'Reflection', 
         numbered:true,
