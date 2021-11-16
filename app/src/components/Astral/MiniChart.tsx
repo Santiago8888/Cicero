@@ -1,6 +1,6 @@
-import { select, Selection, ValueFn } from "d3-selection"
+import { select, Selection, ValueFn } from 'd3-selection'
 import { arc, Arc, DefaultArcObject } from 'd3-shape'
-import { useEffect } from "react"
+import { useEffect } from 'react'
 
 type SVG = Selection<SVGSVGElement, unknown, HTMLElement, any>
 export type HouseNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |12
@@ -220,12 +220,12 @@ export const MiniChart = ({ planets, houses }: iMiniChart) => {
             .attr('y', get_y(idx, y))
 
         const draw_line = (svg:SVG, {x1, y1, x2, y2}:{x1:number, y1:number, x2:number, y2:number}, color:string) =>  svg
-            .append("line")
-            .style("stroke", color) 
-            .attr("x1", x1)
-            .attr("y1", y1)
-            .attr("x2", x2)
-            .attr("y2", y2)
+            .append('line')
+            .style('stroke', color) 
+            .attr('x1', x1)
+            .attr('y1', y1)
+            .attr('x2', x2)
+            .attr('y2', y2)
 
         const draw_aspect = (svg:SVG, [{x:x1, y:y1, color}, {x:x2, y:y2}]:DrawAspect) => draw_line(svg, {x1: x1, x2: x2, y1: y1, y2: y2}, color)
 
@@ -235,7 +235,7 @@ export const MiniChart = ({ planets, houses }: iMiniChart) => {
             .text(text)
             .attr('transform', `translate(${ x }, ${ y }) rotate(${rotation})`)
             .style('fill', color)
-            .style("font-size", pixels)
+            .style('font-size', pixels)
 
         const draw_planet =(svg:SVG, planet:iMappedPlanet) => { 
             const { x, y } = get_dynamic_coords({degree: planet.degree, color:''}, 85)
@@ -265,7 +265,7 @@ export const MiniChart = ({ planets, houses }: iMiniChart) => {
 
         const draw_chart = (planets:iMappedPlanet[], houses:number[]) => {
             const lastSVG = select('#viz')
-            lastSVG.selectAll("*").remove()
+            lastSVG.selectAll('*').remove()
 
             const svg = select('#viz').append('svg').attr('id', '#AstralChart').attr('width', 300).attr('height', 300)
             circles.map(r => draw_circle(svg, r))
@@ -273,10 +273,6 @@ export const MiniChart = ({ planets, houses }: iMiniChart) => {
             const asc = houses[0]
             const signs:number[] = [...new Array(12)].map((_, i) => (i * 30) + 270 + (asc % 30))
             signs.map((d, i) => draw_arc(svg, {startAngle: d, endAngle: signs[i+1], innerRadius: 130, outerRadius: 150, fill:'' }))
-
-            console.log('Asc:', asc)
-            console.log('Idx:', Math.ceil(asc/30) + 1)
-            console.log('colors', colors)
 
             // ['yellow', 'red', 'green', 'blue']
             signs.map((d, i) => draw_arc(svg, {
@@ -328,7 +324,7 @@ export const MiniChart = ({ planets, houses }: iMiniChart) => {
     }, [planets, houses])
 
 
-    return <div className="App" style={{margin:'50px 25px'}}>
+    return <div className='App' style={{margin:'50px 25px'}}>
         <div id='viz'/>
     </div>
 }

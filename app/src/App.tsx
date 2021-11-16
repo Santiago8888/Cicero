@@ -4,10 +4,9 @@ import { iRecordings } from './components/Forum/Recordings'
 import { iDoubt, iForum } from './components/Forum/Forum'
 import { iPost } from './components/Forum/Posts'
 
-import { Recordings, Forum, Posts, Units } from './data/data'
 import { iPlanet } from './components/Astral/AstralChart'
+import { Recordings, Forum, Units } from './data/data'
 import { iLoginInput } from './components/Auth/Login'
-import { iNewUser } from './components/Auth/SignUp'
 import { Home } from './components/Home'
 
 import { App as RealmApp, Credentials } from 'realm-web'
@@ -16,7 +15,6 @@ import { useState, useEffect } from 'react'
 import amplitude from 'amplitude-js'
 
 import 'bulma/css/bulma.css'
-import axios from 'axios'
 import './App.css'
 
 
@@ -35,14 +33,8 @@ export interface iUser {
     natalChart:iNatalChart
 }
 
-const mapSign = (sun:iPlanet):Sign => {
-    const signs:Sign[] = ['Ari', 'Tau', 'Gem', 'Can', 'Leo', 'Vir', 'Lib', 'Sco', 'Sag', 'Cap', 'Aqu', 'Pis' ]
-    const sign = signs[sun.house - 1]
-    return sign
-}
 
-
-interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
+export interface iHomeData { forum?:iForum, recordings?:iRecordings, posts?:iPost[], lesson:iLesson}
 const initialData:iHomeData = { 
     forum:undefined, 
     recordings:undefined, 
@@ -51,19 +43,19 @@ const initialData:iHomeData = {
 }
 
 
+export interface iApprove { score?:number, newPost?:iPost }
 
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
     const largeScreen = useMediaQuery({ query: '(min-width: 1200px)' })
 
     const [ isLogin, setLogin ] = useState(false)
-    const [ isWelcome, setWelcome ] = useState(true)
 
     const [ user, setUser ] = useState<iUser>()
     const [ db, setDB ] = useState<Realm.Services.MongoDBDatabase>()
     const [ app, setApp ] = useState<RealmApp<Realm.DefaultFunctionsFactory, any>>()
 
-    const [ posts, setPosts ] = useState(Posts)
+    const [ posts, setPosts ] = useState<iPost[]>([])
     const [ forum, setForum ] = useState(Forum)
     const [ recordings, setRecordings ] = useState(Recordings)
 
@@ -93,43 +85,6 @@ export const App = () => {
 
 
     /**************************        Auth            ***************************/
-    const createUser = async({ name, email, password, date, location }:iNewUser) => {
-        if(!app) return
-
-        try{
-            await app.emailPasswordAuth.registerUser(email, password)
-            await app.logIn(Credentials.emailPassword(email, password))    
-        } catch(e){ return } // TODO: Handle on UI
-
-        if(!app.currentUser) return
-        const { id:user_id } = app.currentUser
-
-        const mongo = app.currentUser.mongoClient('mongodb-atlas')
-        const db = mongo.db('Cicero')
-        setDB(db)
-
-        const current: iPosition = { unit:0, module:0, lesson:0 }
-        const progress: iPosition = {unit:3, module:0, lesson:5}
-        const natalChart = {planets:[], houses:[]}
-        const user:iUser = { user_id, name, email, date, location, quizFailures:0, current, progress, natalChart }
-        setUser(user)
-
-        await db.collection('users').insertOne(user)        
-        const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
-            date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
-        }`
-
-        const { data: { houses, planets } } =  await axios.get(`/.netlify/functions/astro-chart${chartParams}`)
-        console.log(houses, planets)
-
-        const sun = planets.find(({name}:{name:string}) => name === 'Sun')
-        const sign = mapSign(sun)
-        const fullUser = {...user, sign, natalChart:{planets, houses}}
-        setUser(fullUser)
-
-        db.collection('users').updateOne({ user_id }, {...fullUser, user_id})
-    } 
-
     const updateUser = (user:iUser) => {
         if(!app?.currentUser || !db) return
 
@@ -158,6 +113,9 @@ export const App = () => {
     const clickNavbar = async(item:NavbarItem) => {
         if(item === 'Home') reset()
         if (item === 'Login') return setLogin(true)
+        if(item === 'Back') return back()
+        if(item === 'Next') return next()
+
         if(!db) return
 
         if (item === 'Forum') {
@@ -188,7 +146,6 @@ export const App = () => {
 
     const reset = () => {
         setLogin(false)
-        setWelcome(true)
         setHomeData({...homeData, forum:undefined, recordings:undefined, posts:undefined})
     }
     
@@ -201,7 +158,7 @@ export const App = () => {
 
         if (hasNextLesson) return { unit, module, lesson:lesson+1 }
         else if (hasNextModule) return { unit, module:module+1, lesson:0 }
-        else if (hasNextUnit) return { unit, module:module+1, lesson:0 }
+        else if (hasNextUnit) return { unit:unit+1, module:0, lesson:0 }
         else return { unit, module, lesson }
     }
 
@@ -222,6 +179,24 @@ export const App = () => {
             })
 
         } else updateUser({...user, current:nextLesson(current)})
+    }
+
+    const back = () => {
+        if(!user) return
+        const { current } = user 
+        const previousLesson = {...current }
+
+        if(current.lesson > 0) previousLesson.lesson -= 1 
+        else if(current.module > 0) {
+            previousLesson.module -= 1 
+            previousLesson.lesson = Units[current.unit].modules[previousLesson.module].lessons.length - 1
+        } else if(current.unit > 0) {
+            previousLesson.unit -= 1
+            previousLesson.module = Units[previousLesson.unit].modules.length - 1
+            previousLesson.lesson = Units[previousLesson.unit].modules[previousLesson.module].lessons.length - 1
+        } else return
+
+        updateUser({...user, current:previousLesson })
     }
 
     const navigate = ({unit, module, lesson}:iPosition) => {
@@ -252,12 +227,13 @@ export const App = () => {
         else return false
     }
 
-    const approve = (score?:number) => {
+    const approve = ({score, newPost}:iApprove) => {
         if(!user) return
 
         const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
+        if(lesson.type === 'Reflection' && newPost !== undefined) return dbPost(newPost)
 
         if(current.unit !== progress.unit) return
         if(current.module !== progress.module) return
@@ -294,14 +270,17 @@ export const App = () => {
         db.collection('doubts').updateOne({_id:question._id}, {...question})
     }
 
-    const post = (newPost:iPost) => {
+    const dbPost = (newPost:iPost) => {
         if(!user || !db) return 
+        db.collection('posts').insertOne(newPost)
+    }
+
+    const post = (newPost:iPost) => {
+        dbPost(newPost)
         const newPosts:iPost[] = [newPost, ...posts]
  
         setPosts(newPosts)
-        setHomeData({...homeData, posts:newPosts})
- 
-        db.collection('posts').insertOne(newPost)
+        setHomeData({...homeData, posts:newPosts}) 
     }
 
     const likePost = (id:number) => {
@@ -337,9 +316,9 @@ export const App = () => {
     }
 
     return <div>
-        <NavBar user={user} click={(item) => clickNavbar(item)}/>
-        <div className="container" style={{maxWidth:'100%'}}>
-            <div className="columns" style={{margin:0}}>
+        <NavBar user={user} homeData={homeData} click={(item) => clickNavbar(item)}/>
+        <div className='container' style={{maxWidth:'100%'}}>
+            <div className='columns' style={{margin:0}}>
                 {
                     largeScreen &&
                         <Menu
@@ -351,13 +330,13 @@ export const App = () => {
                 }
 
                 <div 
-                    className="column is-10" 
+                    className='column is-10' 
                     style={{ 
-                        paddingTop:'3rem', 
+                        paddingTop:largeScreen ? '3rem' : '1rem', 
                         marginLeft:3, 
                         marginRight:0, 
                         margin:'0px auto', 
-                        backgroundColor: 'aliceblue', 
+                        backgroundColor: '#EEEEEE', 
                         width: largeScreen ? 'calc(100vw - 253px)' : '100%',
                         minHeight:'calc(100vh - 82px)',
                         textAlign:'center'
@@ -366,18 +345,16 @@ export const App = () => {
                     <Home 
                         user={user}
                         {...homeData} 
-                        isLogin={isLogin} 
-                        isWelcome={isWelcome}
-                        setWelcome={() => setWelcome(false)}
-                        createUser={createUser}
-                        likePost={likePost}
-                        approve={approve} 
-                        submit={submit}
-                        login={login} 
-                        reply={reply}
                         post={post}
                         like={like}
                         next={next}
+                        login={login} 
+                        reply={reply}
+                        submit={submit}
+                        approve={approve} 
+                        isLogin={isLogin} 
+                        likePost={likePost}
+                        setLogin={() => setLogin(true)}
                     />
                 </div>
             </div>

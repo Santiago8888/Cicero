@@ -1,12 +1,11 @@
-import { iRecordings } from "../components/Forum/Recordings"
-import { iLesson, iUnit } from "../components/LayOut/Menu"
-import { iForum } from "../components/Forum/Forum"
-import { iPost } from "../components/Forum/Posts"
+import { iRecordings } from '../components/Forum/Recordings'
+import { iLesson, iUnit } from '../components/LayOut/Menu'
+import { quiz11, quiz12, quiz13 } from './module-1'
+import { iForum } from '../components/Forum/Forum'
 import { planets, houses } from './chart'
-import { iUser } from "../App"
+import { iUser } from '../App'
 
-
-export const defaultUser:iUser = { 
+const defaultUser:iUser = { 
     sign:'Leo',
     user_id:'0',
     quizFailures:0,
@@ -22,7 +21,6 @@ export const defaultUser:iUser = {
 
 export const lesson: iLesson = { 
     title:'Quiz', 
-    description:'El signo solar indica el caracter, la escencia y misión de la persona.', 
     type:'Quiz', 
     questions:[{
         question:'First Question?', 
@@ -44,117 +42,163 @@ export const lesson: iLesson = {
 
 export const Forum:iForum = { 
     user:defaultUser,
-    title:'Portal de Dudas', 
-    description:'Comparte las dudas y preguntas que quieras que sean respondidas en la sesión semanal.', 
-    questions:[{ 
-        question: '¿Qué significa cuando el Sol está en Leo?', 
-        details: 'Mi carta tiene el Sol en Leo y no se que significa.',
-        likes: []
-    }, { 
-        question: 'Cómo afecta la Luna en Cancer mis emociones?', 
-        details: 'Mi carta tiene la Luna en Cancer cual es el efecto en mis emociones.',
-        likes: []
-    }] 
+    title:'Foro de Dudas', 
+    description:'', 
+    questions:[] 
 }
 
 
 export const Recordings:iRecordings = { 
     title:'Grabaciones Semanales', 
-    description:'Todos los Miércoles nos reunimos por Zoom para resolver sus dudas, estás son las grabaciones de la anteriores.', 
-    recordings:[{ 
-        title: 'Marzo 28: El Sol y los Signos', 
-        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
-        description: 'Aclaramos lo que signfica tu signo solar, la casa y como trabajar las energias.' 
-    },  { 
-        title: 'Abril 3: La Luna y el Karma', 
-        link:'https://www.youtube.com/watch?v=BPwn_iCi7BQ', 
-        description: 'Como puedes utilizar el poder de manifestación de las emociones para materializar un presente abundante.' 
-    }] 
+    description:'', 
+    recordings:[]
 }
 
 
-const longDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`
-
 const lessons:iLesson[] = [
     {...lesson, type:'Video', title:'Video'}, 
-    {...lesson, type:'Reading', title:'Lectura', description:longDescription, link:'sample.pdf'}, 
+    {...lesson, type:'Reading', title:'Lectura', link:'sample.pdf'}, 
     lesson
 ]
 
-export const Posts:iPost[] = [{
-    name:'Alice',
-    title:'Title', 
-    image:'Pis',
-    detail:'Detail', 
-    comments:[
-        {name:'Beth', image:'Aqu', comment:'Test'} 
-    ],
-    likes: []
-}]
+
+const posts11 = [
+    'Saturno es un gran guía. Comparte la historia de un guía que te haya inspirado a ser mejor persona.',
+    '¿Sabes en qué eres expert@? Cuéntanos en qué y cómo te volviste expert@ en eso.',
+    'Relata una experiencia en la que hayas aprendido a través de la limitación.',
+    'Para tí, ¿Qué es la humildad y cómo la practicas diariamente?',
+    'Saturno nos pide que cada vez seamos mejores ¿En que te estás esforzando hoy para crecer como persona?',
+    'Comparte una ocasión en la que hayas sido un buen ejemplo para alguien y que sensación te dejó.'
+]
+
+const module11:iLesson[] = [
+    { type:'Video', title:'Introducción', link:'https://youtu.be/-AEpq9zauQ8', description:['¡Hola! En este vídeo te voy a mostrar cómo funciona la plataforma:']  },
+    { 
+        type:'Reading', 
+        title:'Saturno en la Astrología', 
+        link:'docs/Introduccion-a-Saturno-en-la-Astrología.pdf', 
+        min:3,
+        description:[
+            'En esta primera lectura encontrarás todo lo que requieres saber para iniciar el curso.',
+            ' ',
+            'La lectura trata sobre los fundamentos de la Astrología, las características de Saturno, su simbolismo y algo de mitología.',
+            ' ',
+            'Después de dar click en "Leer" y una vez hayan transcurrido los 3 minutos sugeridos de lectura podrás continuar a ver el primer vídeo.'
+        ] 
+    },
+    { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
+    { type:'Quiz', title:'Quiz 1.1', questions:quiz11 },
+    { type:'Video', title:'La importancia de Saturno', link:'https://youtu.be/gQarN9nNKdA' },
+    { type:'Reflection', title:'Preguntas de Reflexión', numbered:true, description:['Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.'], posts:posts11 },
+]
+
+
+const posts12:string[] = [
+    '¿Quieres compartir alguna vez en que Saturno te haya dado avisos?',
+    '¿Alguna vez te has sentido limitado o bloqueado? Cuéntanos cómo empezó esa sensación y si recibiste comentarios de personas a tu alrededor.',
+    '¿Has recibido mensajes o señales recientemente? Cuéntanos cómo y cuáles:',
+    '¿Tienes alguna experiencia curiosa o divertida de la manifestación de la ley de la causa y efecto?',
+    '¿Te has aferrado a algo que no te deja crecer, qué pasó?',
+    '¿Cómo te comunicas con tu alma?',
+    '¿En qué área crees que puedes crecer actualmente?',
+    '¿Para tí, qué es el entendimiento?',
+    '¿De qué eres responsable el día de hoy?'
+]
+
+
+const module12:iLesson[] = [
+    { type:'Video', title:'El Karma', link:'https://youtu.be/dNt2saEg8As' },
+    { type:'Quiz', title:'Quiz 1.2', questions:quiz12 },
+    { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
+    { 
+        type:'Reading', 
+        title:'El Señor del Karma', 
+        link:'docs/Saturno-Señor-del-Karma.pdf', 
+        description:[
+            'Esta lectura, profundiza en algunos conceptos del Karma',
+            ' ',
+            'En particular, explica el origen del karma, el rol que juega Saturno y el proceso de manifestación de las acciones.',
+            ' ',
+            'La lectura introduce los primeros de Kabbalah, que nos brindará conocimiento para trascender la influencia de los astros y no ser víctimas del destino.',
+            ' ',
+            'Tiempo mínimo sugerido: 5 minutos'
+        ]
+    }, { 
+        type:'Reflection', 
+        numbered:true,
+        title:'Ejercicio de Compartir', 
+        posts:posts12, 
+        description:[
+            `Te invitamos a que hagas una segunda pausa y reflexiones cómo se manifiesta el karma en tu vida.
+            Nuevamente ponemos a tu disposición sugerencias para compartir en el chat.`
+        ] 
+    },
+]
+
+
+const posts13:string[] = [
+    'Abre una nueva nota en tu celular, y cada día escribe 3 a 5 momentos en los que te hayas sentido limitad@ o bloquead@. Al final del día trata de:',
+    '1. Identificar: la acción que ocasionó ese bloqueo, donde contribuiste a esa sensación de limitación.',
+    '2. Suelta: regresa a tu centro, revisa tus pensamientos, emociones, intenciones y acciones. Procura evitar incurrir nuevamente en aquello que está sembrando la limitación.',
+    '3. Entiende: solo cuando aceptas, tomas responsabilidad de tus acciones y reconocemos que somos la causa de sentirnos limitados podemos alinearnos con nuestra misión.',
+    'Te invitamos a que realices el ejercicio durante una semana para identificar el mensaje te está dando Saturno actualmente.'
+]
+
+const module13:iLesson[] = [
+    { type:'Video', title:'Las lecciones de Saturno', link:'https://youtu.be/H3xrXhqG5MY' },
+    { type:'Quiz', title:'Quiz 1.3', questions:quiz13 },
+    { type:'Video', title:'Escucha las señales', link:'https://youtu.be/_BqqI3A1SZY' },
+    { 
+        type:'Reflection', 
+        title:'Ejercicio Práctico', 
+        posts:posts13, 
+        end:true,
+        description:[
+            '¡Felicidades! Has completado la primera lección.',
+            `La segunda lección estará disponible el Jueves 25 a partir de las 9pm (CDMX) después del primer live.
+            Por lo pronto, te invitamos a que realices este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
+        ] 
+    }
+]
 
 
 export const Units:iUnit[] = [{ 
-    title: '1. ASTROCONCIENCIA', 
+    title: '1. Saturno y el Karma', 
     modules: [
-        { title: '1.1 Introducción a la astroconsciencia', lessons },
-        { title: '1.2 Historia de la astrología', lessons },
-        { title: '1.3 Proposito de vida', lessons }
+        { title: '1.1 La importancia de Saturno', lessons:module11 },
+        { title: '1.2 Saturno y el Karma', lessons:module12 },
+        { title: '1.3 Las lecciones de Saturno', lessons:module13 }
     ]
 }, { 
-    title: '2. LOS 12 SIGNOS DEL ZODIACO', 
+    title: '2. El Signo de Saturno', 
     modules: [
-        { title: '2.1 Características, elementos y cualidades de los signos', lessons },
-        { title: '2.2 Los 12 signos', lessons }
+        { title: '2.1 El significado del signo de tu Saturno', lessons },
+        { title: '2.2 La misión de tu Saturno', lessons },
+        { title: '2.3 Tus vidas pasadas', lessons }
     ] 
 }, { 
-    title: '3. LAS 12 CASAS DE LA CARTA ASTRAL', 
+    title: '3. La Casa de Saturno', 
     modules: [
-        { title: '3.1 Estructura de la carta astral', lessons },
-        { title: '3.2 Casas en la carta astral', lessons },
-        { title: '3.3 Ascendentes', lessons },
-        { title: '3.4 Signos en las casas', lessons }
+        { title: '3.1 La casa de tu Saturno', lessons },
+        { title: '3.2 Los ciclos de Saturno', lessons },
+        { title: '3.3 Saturno y la Salud.', lessons }
     ] 
 }, { 
-    title: '4. ASTROCONCIENCIA PLANETARIA', 
+    title: '4. Saturno y la Kabbalah', 
     modules: [
         { 
-            title: '4.1 Planetas', 
+            title: '4.1 Binah y el inicio de la existencia', 
             lessons:[
-                { title:'Sol', type:'Chart', description:'El sol representa quien eres', planet:'Sun'},
-                { title:'Luna', type:'Chart', description:'La Luna rige tus emociones', planet:'Moon'},
-                { title:'Mercurio', type:'Chart', description:'El planeta que rige la mente', planet:'Mercury'},
-                { title:'Venus', type:'Chart', description:'El planeta que rige el amor', planet:'Venus'},
-                { title:'Marte', type:'Chart', description:'El planeta que rige la energía', planet:'Mars'},
-                { title:'Jupiter', type:'Chart', description:'El planeta que rige la suerte', planet:'Jupiter'},
-                { title:'Saturno', type:'Chart', description:'El planeta que rige tu responsabilidad', planet:'Saturn'},
-                { title:'Urano', type:'Chart', description:'El planeta de la creatividad', planet:'Uranus'},
-                { title:'Neptuno', type:'Chart', description:'El planeta de la imaginación y espiritualidad', planet:'Neptune'},
-                { title:'Pluto', type:'Chart', description:'El planeta del subconsciente', planet:'Pluto'},
+                { 
+                    title:'Saturno', 
+                    type:'Chart', 
+                    description:['El planeta que rige tu responsabilidad'], 
+                    planet:'Saturn'
+                },
+                ...lessons
             ] 
         },
-        { title: '4.2 Regencia/ Dignidad', lessons },
-        { title: '4.3 Planetas en signos y casas', lessons }
-    ] 
-}, { 
-    title: '5. ASTROCONCIENCIA KARMICA', 
-    modules: [
-        { title: '5.1 Consciencia karmica', lessons },
-        { title: '5.2 Luna', lessons },
-        { title: '5.3 Saturno y Kirón', lessons },
-        { title: '5.4 Casa 12', lessons },
-        { title: '5.5 Nodos lunares', lessons }
-    ] 
-}, { 
-    title: '6. MISIONES', 
-    modules: [
-        { title: '6.1 Nuestras misiones', lessons },
-        { title: '6.2 Misión personal', lessons },
-        { title: '6.3 Misión conciente', lessons },
-        { title: '6.4 Misión transpersonal', lessons },
-        { title: '6.5 Dones divinos', lessons },
+        { title: '4.2 Saturno desde la Kabbalah', lessons },
+        { title: '4.3 El COVID y Saturno en Acuario', lessons }
     ] 
 }]

@@ -50,18 +50,13 @@ exports.handler = async ({ queryStringParameters }, context) => {
 	const minute = Number(queryStringParameters.minute)
   
     const { lat, lng } = await getCoordinates(query)
-    console.log(lat, lng)
-
     const unixTime = Math.round(new Date(year, month - 1, day, hour, minute)/1000)
-    console.log(unixTime)
 
     const offset = await getTimeZone({ lat, lng, time:unixTime })
-    console.log(offset)
 
     const minutes = minute/60
     const time = (hour + minutes - offset/3600) 
     const jul_day = swisseph.swe_julday(year, month, day, time, swisseph.SE_GREG_CAL)
-    console.log(jul_day)
 
     const get_position = ({planet, day}) => swisseph.swe_calc_ut(day, planet, flag)
 
@@ -69,7 +64,7 @@ exports.handler = async ({ queryStringParameters }, context) => {
     const planets = planets_position.map((p, i) => {
         const degrees = p % 30
         const minutes = 0|(0|(degrees%1)*60e7)/1e7 // https://stackoverflow.com/a/5786281/6823310
-        const text = `${Math.floor(degrees)}° ${String(minutes).length == 2 ? minutes : `0${minutes}`}'`
+        const text = `${Math.floor(degrees)}° ${String(minutes).length === 2 ? minutes : `0${minutes}`}'`
         return {
             name: planet_names[i],
             house: Math.ceil(p/30),

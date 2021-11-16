@@ -4,29 +4,26 @@ import { iPost } from './Forum/Posts'
 
 import { iLoginInput, Login } from './Auth/Login'
 import { Interaction } from './Interaction'
-import { iNewUser } from './Auth/SignUp'
 import { Landing } from './Auth/Landing'
 import { Units } from '../data/data'
 import { Content } from './Content'
-import { iUser } from '../App'
+import { iApprove, iUser } from '../App'
 
 
 
 interface iHome { 
     user?:iUser
     isLogin:boolean
-    isWelcome:boolean
 
     forum?:iForum
     posts?:iPost[]
     recordings?:iRecordings 
 
     next():void
-    createUser(newUser:iNewUser):void
-    approve(score?:number):boolean | void
+    setLogin():void
+    approve(props:iApprove):boolean | void
     login(loginInput:iLoginInput):void
     submit(doubt:iDoubt):void
-    setWelcome():void
 
     like(id:number):void
     post(post:iPost):void
@@ -37,16 +34,14 @@ interface iHome {
 export const Home = ({
     user, 
     isLogin,
-    isWelcome,
 
     forum, 
     posts,
     recordings, 
 
     next,
+    setLogin,
     approve,
-    setWelcome,
-    createUser,
     login,
     submit,
 
@@ -76,5 +71,5 @@ export const Home = ({
                 />
         :   isLogin 
             ?  <Login login={login}/>
-            :   <Landing isWelcome={isWelcome} setWelcome={setWelcome} createUser={createUser}/>
+            :  <Landing setLogin={setLogin}/>
 }
