@@ -24,7 +24,7 @@
 	a. [X] Promo
 	b. [X] Font - Landing
 	c. [X] Upload Karma Document
-	d. [ ] Review Texts
+	d. [X] Review Texts
 	e. [ ] Amplitude Events
 	f. [ ] Handle Loading and Error on Sign in
 	g. [ ] Test Quiz Logic
