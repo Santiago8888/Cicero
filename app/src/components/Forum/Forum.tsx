@@ -79,7 +79,7 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
 
 export interface iForum { user:iUser, title:string, description:string, questions:iDoubt[] }
 interface IForum extends iForum { submit(question:iDoubt):void, like(id:number):void }
-export const Forum = ({ user, title, description, questions, submit, like }: IForum) => {
+export const Forum = ({ user, title, questions, submit, like }: IForum) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [isActive, setActive] = useState(false)
 
@@ -100,7 +100,7 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
                 width: midScreen ? 640 : 320        
             }}
         > 
-            Aquí podras hacer todas tus preguntas sobre lo que no te haya quedado del material curso. Las preguntas serán respondidas cada Jueves a las 7:30pm (CDMX) en un live que será grabado. <br/><br/>
+            Aquí podrás hacer todas tus preguntas sobre lo que no te haya quedado del material curso. Las preguntas serán respondidas cada Jueves a las 7:30pm (CDMX) en un live que será grabado. <br/><br/>
             <span style={{fontWeight:400}}>Si te interesa la respuesta a una duda puedes "votar" por ella utilizando la flecha que se encuentra a la izquierda. Las dudas con más votos serán respondidas primero y con mayor profundidad.</span> 
          </h3>
 
