@@ -50,7 +50,7 @@ export const Forum:iForum = {
 
 export const Recordings:iRecordings = { 
     title:'Grabaciones Semanales', 
-    description:'Todos los Jueves nos reunimos por Zoom para resolver tus dudas, estás son las grabaciones de la anteriores.', 
+    description:'', 
     recordings:[]
 }
 
