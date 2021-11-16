@@ -23,7 +23,7 @@
 2. [ ] Last Updates
 	a. [X] Promo
 	b. [X] Font - Landing
-	c. [ ] Upload Karma Document
+	c. [X] Upload Karma Document
 	d. [ ] Review Texts
 	e. [ ] Amplitude Events
 	f. [ ] Handle Loading and Error on Sign in
