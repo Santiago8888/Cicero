@@ -29,7 +29,8 @@
 		I. [ ] Quiz
 		II. [ ] Post
 		III. [ ] Excercise
-		IV. [ ] Doubt 
+		IV. [ ] Doubt
+		V. [ ] Navigate
 	f. [ ] Handle Loading and Error on Sign in
 	g. [ ] Test Quiz Logic
 	h. [ ] Privacy Notice
