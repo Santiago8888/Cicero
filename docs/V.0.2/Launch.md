@@ -22,13 +22,14 @@
 1. [X] Edit Promo Vídeo 
 2. [ ] Last Updates
 	a. [X] Promo
-	b. [ ] Font - Landing
+	b. [X] Font - Landing
 	c. [ ] Upload Karma Document
 	d. [ ] Review Texts
 	e. [ ] Amplitude Events
 	f. [ ] Handle Loading and Error on Sign in
 	g. [ ] Test Quiz Logic
-    h. [ ] Intro
+	h. [ ] Privacy Notice
+    i. [ ] Intro
 3. [ ] Delete data
 4. [ ] Record video
 5. [ ] Create users
