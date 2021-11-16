@@ -90,6 +90,8 @@ export const App = () => {
 
         setUser(user)
         db.collection('users').updateOne({ user_id:app.currentUser.id }, {...user, user_id:app.currentUser.id})
+
+        try { amplitude.getInstance().logEvent('NAVIGATE', { current:user.current }) } catch(e) { }
     } 
 
     const login = async({ email, password }:iLoginInput) => {
