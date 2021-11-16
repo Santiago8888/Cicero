@@ -43,7 +43,7 @@ export const lesson: iLesson = {
 export const Forum:iForum = { 
     user:defaultUser,
     title:'Foro de Dudas', 
-    description:'Comparte las dudas y preguntas que quieras que sean respondidas en la sesión semanal.', 
+    description:'', 
     questions:[] 
 }
 
