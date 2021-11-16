@@ -79,11 +79,11 @@ const module11:iLesson[] = [
         link:'docs/Introduccion-a-Saturno-en-la-Astrología.pdf', 
         min:3,
         description:[
-            'En esta primera lectura encontraras todo lo que requieres saber para iniciar el curso.',
+            'En esta primera lectura encontrarás todo lo que requieres saber para iniciar el curso.',
             ' ',
-            'La lectura trata sobre los fundamentos de la Astrología, las carácterisiticas de Saturno, su simbolismo y algo de mitología.',
+            'La lectura trata sobre los fundamentos de la Astrología, las características de Saturno, su simbolismo y algo de mitología.',
             ' ',
-            'Después de dar click en "Leer" y una vez hayan transcurrido los 3 minutos sugeridos de lectura podras continuar a ver el primer vídeo.'
+            'Después de dar click en "Leer" y una vez hayan transcurrido los 3 minutos sugeridos de lectura podrás continuar a ver el primer vídeo.'
         ] 
     },
     { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
