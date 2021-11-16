@@ -26,6 +26,10 @@
 	c. [X] Upload Karma Document
 	d. [X] Review Texts
 	e. [ ] Amplitude Events
+		I. [ ] Quiz
+		II. [ ] Post
+		III. [ ] Excercise
+		IV. [ ] Doubt 
 	f. [ ] Handle Loading and Error on Sign in
 	g. [ ] Test Quiz Logic
 	h. [ ] Privacy Notice
