@@ -110,8 +110,20 @@ const module12:iLesson[] = [
     { type:'Video', title:'El Karma', link:'https://youtu.be/dNt2saEg8As' },
     { type:'Quiz', title:'Quiz 1.2', questions:quiz12 },
     { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
-    { type:'Reading', title:'El Señor del Karma', link:'docs/Saturno-Señor-del-Karma.pdf', description:[]},
     { 
+        type:'Reading', 
+        title:'El Señor del Karma', 
+        link:'docs/Saturno-Señor-del-Karma.pdf', 
+        description:[
+            'Esta lectura, profundiza en algunos conceptos del Karma',
+            ' ',
+            'En particular, explica el origen del karma, el rol que juega Saturno y el proceso de manifestación de las acciones.',
+            ' ',
+            'La lectura introduce los primeros de Kabbalah, que nos brindará conocimiento para trascender la influencia de los astros y no ser víctimas del destino.',
+            ' ',
+            'Tiempo mínimo sugerido: 5 minutos'
+        ]
+    }, { 
         type:'Reflection', 
         numbered:true,
         title:'Ejercicio de Compartir', 
