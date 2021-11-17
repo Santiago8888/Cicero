@@ -60,7 +60,8 @@ export const App = () => {
     const [ forum, setForum ] = useState(Forum)
     const [ recordings, setRecordings ] = useState(Recordings)
 
-    const [ modal, setModal ] = useState({ active:false, text:'', cta:'' })
+    const defaultModal = { active:false, text:'', cta:'', title:'' }
+    const [ modal, setModal ] = useState(defaultModal)
 
 
     useEffect(() => { 
@@ -104,10 +105,15 @@ export const App = () => {
 
         try {
             await app.logIn(Credentials.emailPassword(email, password))
-            setModal({active:true, text:'Iniciando Sesión...', cta:'Cerrar'})
+            setModal({ active:true, text:'Iniciando Sesión...', cta:'Cerrar', title:'Bienvenid@' })
 
         } catch(e){ 
-            setModal({active:true, text:'Lo sentimos, usuario o contraseña incorrecta.', cta:'Volver a intenar'})
+            setModal({
+                active:true, 
+                text:'Lo sentimos, usuario o contraseña incorrecta.', 
+                cta:'Volver a intenar',
+                title:'Error'
+            })
             return 
         }
 
@@ -122,7 +128,7 @@ export const App = () => {
         const user = await db.collection('users').findOne({ user_id:app.currentUser.id })
         setUser(user)
 
-        setModal({ active:false, text:'', cta:'' })
+        setModal(defaultModal)
     }
 
 
@@ -378,7 +384,7 @@ export const App = () => {
         </div>
 
         <Modal 
-            title="Aviso" 
+            title={modal.title} 
             isActive={modal.active} 
             cta={modal.cta}
             deactivate={() => setModal({...modal, active:false})} 
