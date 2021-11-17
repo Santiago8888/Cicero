@@ -26,7 +26,7 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
 
     const click = () => {
         submit({ question, details, likes:[user.user_id] })
-        try { amplitude.getInstance().logEvent('DOUBT', { question, details }) } catch(e) { }
+        try { amplitude.getInstance().logEvent('ASTRO_DOUBT', { question, details }) } catch(e) { }
 
         
         setQuestion('')
