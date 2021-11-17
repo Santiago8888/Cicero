@@ -387,7 +387,7 @@ export const App = () => {
             deactivate={() => setModal(false)} 
             submit={() => setModal(false)} 
         >
-            <h3 style={{textAlign:'center', fontSize:'1.2rem'}}> 
+            <h3 style={{textAlign:'center', fontSize:'1.2rem', marginTop:20}}> 
                 { alertText }
             </h3>
         </Modal>
