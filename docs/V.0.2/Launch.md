@@ -34,9 +34,9 @@
 	f. [X] Privacy Notice
 	g. [ ] Handle Loading and Error on Sign in
 	h. [ ] Test Quiz Logic
-    i. [ ] Intro
+	i. [ ] Saturn Image
+    j. [ ] Intro
 3. [ ] Delete data
 4. [ ] Record video
 5. [ ] Create users
-6. [ ] Email Gaby
-7. [ ] Review Sign Documents
+6. [ ] Reupload Documents
