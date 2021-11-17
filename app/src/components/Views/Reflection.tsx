@@ -71,7 +71,7 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
 
         try { 
             const lesson = `${user.current.unit}.${user.current.module}.${user.current.lesson}`
-            amplitude.getInstance().logEvent('MEDITATION', {lesson }) 
+            amplitude.getInstance().logEvent('ASTRO_MEDITATION', { lesson, ...post }) 
         } catch(e) {}
     }
 
