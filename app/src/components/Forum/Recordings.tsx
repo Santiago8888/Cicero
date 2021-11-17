@@ -47,7 +47,7 @@ const Recording = ({ title, link, description }: iRecording) => {
 
 
 export interface iRecordings { title:string, description:string, recordings:iRecording[] }
-export const Recordings = ({ title, description, recordings}: iRecordings) => {
+export const Recordings = ({ title, recordings}: iRecordings) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 600px)' })
 
@@ -62,7 +62,11 @@ export const Recordings = ({ title, description, recordings}: iRecordings) => {
                 fontWeight: 500,
                 width: midScreen ? 640 : !smallScreen ? 540 : 320
             }}
-        > { description } </h3>
+        >
+            En este espacio encontrarás las grabaciones para resolver las dudas. <span style={{fontWeight:400}}> 
+            Recuerda que puedes asistir a los <i>lives</i> cada Jueves a las 7:30 pm (CDMX), del 25 de Noviembre al 16 de Diciembre. 
+            </span> 
+        </h3>
 
         <hr style={{ backgroundColor:'darkolivegreen', margin:' 3rem auto', width:midScreen ? 600 : 320 }}/>
 

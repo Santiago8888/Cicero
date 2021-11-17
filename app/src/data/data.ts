@@ -43,14 +43,14 @@ export const lesson: iLesson = {
 export const Forum:iForum = { 
     user:defaultUser,
     title:'Foro de Dudas', 
-    description:'Comparte las dudas y preguntas que quieras que sean respondidas en la sesión semanal.', 
+    description:'', 
     questions:[] 
 }
 
 
 export const Recordings:iRecordings = { 
     title:'Grabaciones Semanales', 
-    description:'Todos los Jueves nos reunimos por Zoom para resolver tus dudas, estás son las grabaciones de la anteriores.', 
+    description:'', 
     recordings:[]
 }
 
@@ -72,18 +72,18 @@ const posts11 = [
 ]
 
 const module11:iLesson[] = [
-    { type:'Video', title:'Introducción', link:'https://youtu.be/-AEpq9zauQ8', description:['¡Hola! En este vídeo te voy a mostrar como funciona la plataforma:']  },
+    { type:'Video', title:'Introducción', link:'https://youtu.be/-AEpq9zauQ8', description:['¡Hola! En este vídeo te voy a mostrar cómo funciona la plataforma:']  },
     { 
         type:'Reading', 
         title:'Saturno en la Astrología', 
         link:'docs/Introduccion-a-Saturno-en-la-Astrología.pdf', 
         min:3,
         description:[
-            'En esta primera lectura encontraras todo lo que requieres saber para iniciar el curso.',
+            'En esta primera lectura encontrarás todo lo que requieres saber para iniciar el curso.',
             ' ',
-            'La lectura trata sobre los fundamentos de la Astrología, las carácterisiticas de Saturno, su simbolismo y algo de mitología.',
+            'La lectura trata sobre los fundamentos de la Astrología, las características de Saturno, su simbolismo y algo de mitología.',
             ' ',
-            'Después de dar click en "Leer" y una vez hayan transcurrido los 3 minutos sugeridos de lectura podras continuar a ver el primer vídeo.'
+            'Después de dar click en "Leer" y una vez hayan transcurrido los 3 minutos sugeridos de lectura podrás continuar a ver el primer vídeo.'
         ] 
     },
     { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
@@ -155,7 +155,7 @@ const module13:iLesson[] = [
         end:true,
         description:[
             '¡Felicidades! Has completado la primera lección.',
-            `La segunda lección estará disponible el Jueves a partir de las 9pm (CDMX) después del primer live.
+            `La segunda lección estará disponible el Jueves 25 a partir de las 9pm (CDMX) después del primer live.
             Por lo pronto, te invitamos a que realices este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
         ] 
     }

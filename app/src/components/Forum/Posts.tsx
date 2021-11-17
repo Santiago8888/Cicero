@@ -3,6 +3,7 @@
 import { CSSProperties, useEffect, useState } from 'react'
 import { Header, Modal } from './Atoms'
 import { iUser, Sign } from '../../App'
+import amplitude from 'amplitude-js'
 import { ObjectID } from 'bson'
 
 
@@ -160,12 +161,13 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
         post({...newPost, likes:[user.user_id], image:user.sign, name:user.name })
         setActive(false)
         setNewPost(emptyPost)
+        try { amplitude.getInstance().logEvent('ASTRO_POST', { newPost }) } catch(e) { }
     }
 
     return <div className='content' style={{maxWidth:640, margin:'auto'}}>
         <Header 
             title={'Astro Café'} 
-            description={'Comparte con el grupo lo que has aprendido y celebra los logros de los demás.'} 
+            description={'Este es un espacio para compartir y aprender, todo el contenido relacionado con Saturno y el curso es bienvenido. Nuestra esperanza es que al aprender juntos se nos facilite aplicar los conocimientos en la vida diaria.'} 
             buttonText={'Nueva Publicación'}
             click={() => setActive(true)}
         />

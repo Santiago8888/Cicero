@@ -1,5 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
+import amplitude from 'amplitude-js'
 import { iUser } from '../../App'
 import { Likes } from './Atoms'
 import { ObjectID } from 'bson'
@@ -25,6 +26,8 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
 
     const click = () => {
         submit({ question, details, likes:[user.user_id] })
+        try { amplitude.getInstance().logEvent('ASTRO_DOUBT', { question, details }) } catch(e) { }
+
         
         setQuestion('')
         setDetails('')
@@ -79,7 +82,7 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
 
 export interface iForum { user:iUser, title:string, description:string, questions:iDoubt[] }
 interface IForum extends iForum { submit(question:iDoubt):void, like(id:number):void }
-export const Forum = ({ user, title, description, questions, submit, like }: IForum) => {
+export const Forum = ({ user, title, questions, submit, like }: IForum) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const [isActive, setActive] = useState(false)
 
@@ -99,7 +102,10 @@ export const Forum = ({ user, title, description, questions, submit, like }: IFo
                 fontWeight: 500,
                 width: midScreen ? 640 : 320        
             }}
-        > { description } </h3>
+        > 
+            Aquí podrás hacer todas tus preguntas sobre lo que no te haya quedado del material curso. Las preguntas serán respondidas cada Jueves a las 7:30pm (CDMX) en un live que será grabado. <br/><br/>
+            <span style={{fontWeight:400}}>Si te interesa la respuesta a una duda puedes "votar" por ella utilizando la flecha que se encuentra a la izquierda. Las dudas con más votos serán respondidas primero y con mayor profundidad.</span> 
+         </h3>
 
 
         <div style={{maxWidth:800, margin:'auto'}}>
