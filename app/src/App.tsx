@@ -7,6 +7,7 @@ import { iPost } from './components/Forum/Posts'
 import { iPlanet } from './components/Astral/AstralChart'
 import { Recordings, Forum, Units } from './data/data'
 import { iLoginInput } from './components/Auth/Login'
+import { Modal } from './components/Forum/Atoms'
 import { Home } from './components/Home'
 
 import { App as RealmApp, Credentials } from 'realm-web'
@@ -59,6 +60,8 @@ export const App = () => {
     const [ forum, setForum ] = useState(Forum)
     const [ recordings, setRecordings ] = useState(Recordings)
 
+    const [ modal, setModal ] = useState(false)
+
 
     useEffect(() => { 
         const connectMongo = async() => {
@@ -82,7 +85,7 @@ export const App = () => {
         try {
             amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
             amplitude.getInstance().logEvent('VISIT_ASTRO')    
-        } catch(e) {}
+        } catch(e) { }
     }, [])
 
 
@@ -98,7 +101,13 @@ export const App = () => {
 
     const login = async({ email, password }:iLoginInput) => {
         if(!app) return
-        await app.logIn(Credentials.emailPassword(email, password))
+
+        try {
+            await app.logIn(Credentials.emailPassword(email, password))
+        } catch(e){ 
+            setModal(true)
+            return 
+        }
 
         if(!app.currentUser) return
         await app.currentUser.refreshCustomData()
@@ -363,5 +372,17 @@ export const App = () => {
                 </div>
             </div>
         </div>
+
+        <Modal 
+            title="Error" 
+            isActive={modal} 
+            cta={"Volver a Intentar"}
+            deactivate={() => setModal(false)} 
+            submit={() => setModal(false)} 
+        >
+            <h3 style={{textAlign:'center', fontSize:'1.2rem'}}> 
+                Lo sentimos, usuario o contraseña incorrecta.
+            </h3>
+        </Modal>
     </div>
 }
