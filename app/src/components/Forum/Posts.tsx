@@ -3,6 +3,7 @@
 import { CSSProperties, useEffect, useState } from 'react'
 import { Header, Modal } from './Atoms'
 import { iUser, Sign } from '../../App'
+import amplitude from 'amplitude-js'
 import { ObjectID } from 'bson'
 
 
@@ -160,6 +161,7 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
         post({...newPost, likes:[user.user_id], image:user.sign, name:user.name })
         setActive(false)
         setNewPost(emptyPost)
+        try { amplitude.getInstance().logEvent('ASTRO_POST', { newPost }) } catch(e) { }
     }
 
     return <div className='content' style={{maxWidth:640, margin:'auto'}}>

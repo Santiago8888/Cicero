@@ -5,6 +5,7 @@ import { iApprove, iUser } from '../../App'
 import { Modal } from '../Forum/Atoms'
 import { questionStyle } from './Quiz'
 import { Divider } from './Document'
+import amplitude from 'amplitude-js'
 
 
 interface iHeader { title:string, description?:string[], midScreen:boolean }
@@ -67,6 +68,11 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
         approve({newPost})
 
         next()
+
+        try { 
+            const lesson = `${user.current.unit}.${user.current.module}.${user.current.lesson}`
+            amplitude.getInstance().logEvent('ASTRO_MEDITATION', { lesson, ...post }) 
+        } catch(e) {}
     }
 
     return <div className='content'>

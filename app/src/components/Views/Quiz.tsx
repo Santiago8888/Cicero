@@ -1,6 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
 import { iApprove, iUser } from '../../App'
+import amplitude from 'amplitude-js'
 
 
 interface iAnswer { answer:string, value:boolean }
@@ -117,6 +118,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
     const [score, setScore] = useState<number>() 
     const [approved, setApproved] = useState<boolean>()
     const submit = () => {
+
         const answers = Object.entries(values).map(([k, v]) => questions[k as unknown as number].answers[v].value)
         const score = answers.filter(a=>a).length
         setScore(score)
@@ -125,6 +127,8 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
         setApproved(isApproved)
 
         setActive(true)
+
+        try { amplitude.getInstance().logEvent('ASTRO_QUIZ', {title, answers, score, isApproved}) } catch(e) {}
     }
 
     const modalClick = () => {

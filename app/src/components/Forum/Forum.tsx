@@ -1,5 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
+import amplitude from 'amplitude-js'
 import { iUser } from '../../App'
 import { Likes } from './Atoms'
 import { ObjectID } from 'bson'
@@ -25,6 +26,8 @@ const Modal = ({ user, isActive, deactivate, submit }:iModal) => {
 
     const click = () => {
         submit({ question, details, likes:[user.user_id] })
+        try { amplitude.getInstance().logEvent('ASTRO_DOUBT', { question, details }) } catch(e) { }
+
         
         setQuestion('')
         setDetails('')

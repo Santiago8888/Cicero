@@ -25,7 +25,12 @@
 	b. [X] Font - Landing
 	c. [X] Upload Karma Document
 	d. [X] Review Texts
-	e. [ ] Amplitude Events
+	e. [X] Amplitude Events
+		I. [X] Quiz
+		II. [X] Post
+		III. [X] Excercise
+		IV. [X] Doubt
+		V. [X] Navigate
 	f. [ ] Handle Loading and Error on Sign in
 	g. [ ] Test Quiz Logic
 	h. [ ] Privacy Notice
