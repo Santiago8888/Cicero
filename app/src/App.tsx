@@ -105,6 +105,7 @@ export const App = () => {
 
         try {
             await app.logIn(Credentials.emailPassword(email, password))
+            setModal(true)
             setAlert('Iniciando Sesión...')
 
         } catch(e){ 
@@ -123,6 +124,8 @@ export const App = () => {
 
         const user = await db.collection('users').findOne({ user_id:app.currentUser.id })
         setUser(user)
+
+        setModal(false)
     }
 
 
@@ -378,7 +381,7 @@ export const App = () => {
         </div>
 
         <Modal 
-            title="Error" 
+            title="Aviso" 
             isActive={modal} 
             cta={"Volver a Intentar"}
             deactivate={() => setModal(false)} 
