@@ -32,9 +32,9 @@
 		IV. [X] Doubt
 		V. [X] Navigate
 	f. [X] Privacy Notice
-	g. [ ] Handle Loading and Error on Sign in
-	h. [ ] Test Quiz Logic
-	i. [ ] Saturn Image
+	g. [X] Handle Loading and Error on Sign In
+	h. [X] Saturn Image
+	i. [ ] Test Quiz Logic
     j. [ ] Intro
 3. [ ] Delete data
 4. [ ] Record video
