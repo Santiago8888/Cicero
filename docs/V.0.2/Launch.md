@@ -31,9 +31,9 @@
 		III. [X] Excercise
 		IV. [X] Doubt
 		V. [X] Navigate
-	f. [ ] Handle Loading and Error on Sign in
-	g. [ ] Test Quiz Logic
-	h. [ ] Privacy Notice
+	f. [X] Privacy Notice
+	g. [ ] Handle Loading and Error on Sign in
+	h. [ ] Test Quiz Logic
     i. [ ] Intro
 3. [ ] Delete data
 4. [ ] Record video
