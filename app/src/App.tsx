@@ -61,6 +61,7 @@ export const App = () => {
     const [ recordings, setRecordings ] = useState(Recordings)
 
     const [ modal, setModal ] = useState(false)
+    const [ alertText, setAlert ] = useState<string>()
 
 
     useEffect(() => { 
@@ -104,8 +105,11 @@ export const App = () => {
 
         try {
             await app.logIn(Credentials.emailPassword(email, password))
+            setAlert('Iniciando Sesión...')
+
         } catch(e){ 
             setModal(true)
+            setAlert('Lo sentimos, usuario o contraseña incorrecta.')
             return 
         }
 
@@ -381,7 +385,7 @@ export const App = () => {
             submit={() => setModal(false)} 
         >
             <h3 style={{textAlign:'center', fontSize:'1.2rem'}}> 
-                Lo sentimos, usuario o contraseña incorrecta.
+                { alertText }
             </h3>
         </Modal>
     </div>
