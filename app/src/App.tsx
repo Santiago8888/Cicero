@@ -79,8 +79,10 @@ export const App = () => {
 
         connectMongo()
 
-        amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
-        amplitude.getInstance().logEvent('VISIT_ASTRO')
+        try {
+            amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
+            amplitude.getInstance().logEvent('VISIT_ASTRO')    
+        } catch(e) {}
     }, [])
 
 
