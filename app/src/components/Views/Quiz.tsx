@@ -128,7 +128,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
 
         setActive(true)
 
-        try { amplitude.getInstance().logEvent('QUIZ', {title, answers}) } catch(e) {}
+        try { amplitude.getInstance().logEvent('ASTRO_QUIZ', {title, answers}) } catch(e) {}
     }
 
     const modalClick = () => {
