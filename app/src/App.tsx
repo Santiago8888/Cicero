@@ -60,8 +60,7 @@ export const App = () => {
     const [ forum, setForum ] = useState(Forum)
     const [ recordings, setRecordings ] = useState(Recordings)
 
-    const [ modal, setModal ] = useState(false)
-    const [ alertText, setAlert ] = useState<string>()
+    const [ modal, setModal ] = useState({ active:false, text:'', cta:'' })
 
 
     useEffect(() => { 
@@ -105,12 +104,10 @@ export const App = () => {
 
         try {
             await app.logIn(Credentials.emailPassword(email, password))
-            setModal(true)
-            setAlert('Iniciando Sesión...')
+            setModal({active:true, text:'Iniciando Sesión...', cta:'Cerrar'})
 
         } catch(e){ 
-            setModal(true)
-            setAlert('Lo sentimos, usuario o contraseña incorrecta.')
+            setModal({active:true, text:'Lo sentimos, usuario o contraseña incorrecta.', cta:'Volver a intenar'})
             return 
         }
 
@@ -125,7 +122,7 @@ export const App = () => {
         const user = await db.collection('users').findOne({ user_id:app.currentUser.id })
         setUser(user)
 
-        setModal(false)
+        setModal({ active:false, text:'', cta:'' })
     }
 
 
@@ -382,13 +379,13 @@ export const App = () => {
 
         <Modal 
             title="Aviso" 
-            isActive={modal} 
-            cta={"Volver a Intentar"}
-            deactivate={() => setModal(false)} 
-            submit={() => setModal(false)} 
+            isActive={modal.active} 
+            cta={modal.cta}
+            deactivate={() => setModal({...modal, active:false})} 
+            submit={() => setModal({...modal, active:false})} 
         >
             <h3 style={{textAlign:'center', fontSize:'1.2rem', marginTop:20}}> 
-                { alertText }
+                { modal.text }
             </h3>
         </Modal>
     </div>
