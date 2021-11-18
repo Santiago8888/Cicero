@@ -19,6 +19,21 @@ const mapSign = (sun:iPlanet):Sign => {
     return sign
 }
 
+const getChart = async(date:Date, location:string) => {
+    const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
+        date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
+    }`
+
+    const url = `https://astroconsciencia.gq/.netlify/functions/astro-chart${chartParams}`
+    const { data: { houses, planets } } =  await axios.get(url)
+    console.log(houses, planets)
+
+    const sun = planets.find(({name}:{name:string}) => name === 'Sun')
+    const sign = mapSign(sun)
+    return { sign, natalChart:{planets, houses}}
+}
+
+
 interface iCreateUser  { name:string, email:string, password:string, date?:Date, location?:string }
 const createUser = async({ name, email, password, date, location }:iCreateUser) => {
     const REALM_APP_ID = process.env.REACT_APP_REALM_ID as string
@@ -40,29 +55,29 @@ const createUser = async({ name, email, password, date, location }:iCreateUser) 
     const progress: iPosition = initialPosition
 
     const natalChart = { planets:[], houses:[] }
-    const user = { user_id, name, email, quizFailures:0, current, progress, natalChart, location, date:new Date() }
-
-    if(date && location){
-        const user:iUser = { user_id, name, email, date, location, quizFailures:0, current, progress, natalChart }
-
-        await db.collection('users').insertOne(user)        
-        const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
-            date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
-        }`
-    
-        const url = `https://astroconsciencia.gq/.netlify/functions/astro-chart${chartParams}`
-        const { data: { houses, planets } } =  await axios.get(url)
-        console.log(houses, planets)
-    
-        const sun = planets.find(({name}:{name:string}) => name === 'Sun')
-        const sign = mapSign(sun)
-        const fullUser = {...user, sign, natalChart:{planets, houses}}
-
-        db.collection('users').updateOne({ user_id }, {...fullUser, user_id})
-        return
+    const user:iUser = { 
+        user_id, 
+        name, 
+        email, 
+        current, 
+        progress, 
+        natalChart, 
+        quizFailures:0, 
+        date: date || new Date(),
+        location: location || ''
     }
 
-    db.collection('users').updateOne({ user_id }, {...user, user_id})
+    if(date && location)
+    try { 
+        const { sign, natalChart } = await getChart(date, location)
+
+        user.sign = sign
+        user.natalChart = natalChart
+
+    } catch(e){ }
+
+
+    await db.collection('users').insertOne(user)
 }
 
 const Santiago:iNewUser = {
