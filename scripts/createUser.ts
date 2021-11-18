@@ -74,3 +74,27 @@ const createUsers = async(users:iCreateUser[], index:number) => {
     createUsers(users, index + 1)
 }
 
+const init = async() => {
+    const newUsers:iCreateUser[] = users.map(user => { 
+        const newUser:iCreateUser = {
+            name:user.Name,
+            email:user.Email,
+            password:user.Password,
+        }
+
+        if(user.Location) newUser.location = user.Location
+        if(user.Year) {
+            newUser.date = new Date(
+                Number(user.Year), 
+                Number(user.Month), 
+                Number(user.Day), 
+                Number(user.Hour), 
+                Number(user.Minute)
+            )
+        }
+
+        return newUser
+    })
+
+    await createUsers(newUsers, 0)
+}
