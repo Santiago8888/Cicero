@@ -26,7 +26,7 @@ const Welcome = ({ click, }:iWelcome) => {
                     margin:`${!smallScreen ? '0.5' : '0' }rem auto ${!smallScreen ? '1.5' : '1' }rem`,
                     width:!smallScreen ? 760 : 300, 
                     fontSize:!smallScreen ? '2rem' : '1.5rem',
-                    color:'navy'
+                    color:'#b08f5c'
                 }}
             >
                 El señor del Karma
@@ -37,7 +37,7 @@ const Welcome = ({ click, }:iWelcome) => {
                     style={{margin:'auto'}}
                     width={midScreen ? 800 : !smallScreen ? 400 : 300 } 
                     height={midScreen ? 450 : !smallScreen ? 225 : 170 } 
-                    url='https://youtu.be/-AEpq9zauQ8' 
+                    url='https://youtu.be/HKm47Cbbdxk' 
                 />
             </div>
         </div>

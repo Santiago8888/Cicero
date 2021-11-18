@@ -5,5 +5,5 @@ node_modules
 # Local Netlify folder
 .netlify
 
-
-firebase 
+# Local data
+scripts/data

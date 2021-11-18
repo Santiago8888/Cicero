@@ -52,7 +52,7 @@ export const NavBar = ({ user, homeData:{ recordings, posts, forum }, click }: i
             <div className='navbar-brand'>
                 <a className='navbar-item' onClick={() => click('Home')} style={{backgroundColor:'darkolivegreen'}}>
                     { 
-                        !midScreen && (!recordings && !forum && !posts) &&
+                        !midScreen && (!recordings && !forum && !posts) && user && 
                         <div 
                             style={{cursor:'pointer', height:32 }} 
                             onClick={() => click('Back')}
@@ -140,7 +140,7 @@ export const NavBar = ({ user, homeData:{ recordings, posts, forum }, click }: i
                             className={'navbar-item'}
                             style={navTextStyle}
                         > 
-                            <strong> Preguntas </strong> 
+                            <strong> Dudas </strong> 
                         </a>                    
                     </div>
                 }

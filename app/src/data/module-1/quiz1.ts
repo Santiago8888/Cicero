@@ -2,10 +2,10 @@ import { iQuestion } from '../../components/Views/Quiz'
 
 export const quiz11:iQuestion[] = [
     { 
-        question:'1. ¿Qué indica Saturno en la carta astral?', 
+        question:'1. ¿Qué nos dice Saturno?', 
         answers:[
             { answer:'Cómo encontrar abundancia', value: false },
-            { answer:'Si tienes tiempo o ya se te acabó', value: true },
+            { answer:'Cuanto tiempo tenemos', value: true },
             { answer:'Nuestra espiritualidad y conexión con la fuente divina', value: false },
             { answer:'Lo que amamos y nos hace felices', value: false }
         ] 
