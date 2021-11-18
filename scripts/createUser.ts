@@ -68,3 +68,9 @@ const Santiago:iNewUser = {
     location:'Mexico City'
 }
 
+const createUsers = async(users:iCreateUser[], index:number) => {
+    if(index + 1 === users.length) return
+    await createUser(users[index])
+    createUsers(users, index + 1)
+}
+
