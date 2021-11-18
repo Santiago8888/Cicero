@@ -67,14 +67,15 @@ const createUser = async({ name, email, password, date, location }:iCreateUser) 
         location: location || ''
     }
 
-    if(date && location)
-    try { 
-        const { sign, natalChart } = await getChart(date, location)
-
-        user.sign = sign
-        user.natalChart = natalChart
-
-    } catch(e){ }
+    if(date && location){
+        try { 
+            const { sign, natalChart } = await getChart(date, location)
+    
+            user.sign = sign
+            user.natalChart = natalChart
+    
+        } catch(e){ }    
+    }
 
 
     await db.collection('users').insertOne(user)
