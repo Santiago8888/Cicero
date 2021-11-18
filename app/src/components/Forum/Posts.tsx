@@ -14,7 +14,7 @@ const Comment = ({ comment, name, image }:iComment) => <div style={{...footerBox
     <div className='media'>
         <div className='media-left' style={{margin:'auto'}}>
             <figure className='image is-24x24' style={{marginBottom:'0.5rem'}}>
-                <img src={`signs/${image}.png`} alt='Solar sign' />
+                <img src={image ? `signs/${image}.png` : `planets/Saturn_terra.png`} alt='Solar sign' />
             </figure>
             <p className='title is-6' style={{textAlign:'center'}}> { name } </p>
         </div>
@@ -69,7 +69,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
         <div className='card' style={{textAlign:'left', width:'100%'}}>
             <header className='card-header' style={{height:48}}>
                 <figure className='image is-24x24' style={{margin:'auto 12px'}}>
-                    <img src={`signs/${image}.png`} alt='Solar sign' />
+                    <img src={image ? `signs/${image}.png` : 'planets/Saturn_terra.png'} alt='Solar sign' />
                 </figure>
                 <p className='title is-4' style={{ margin:'auto 12px'}}>
                     { name }

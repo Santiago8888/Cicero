@@ -7,6 +7,7 @@ import { iPost } from './components/Forum/Posts'
 import { iPlanet } from './components/Astral/AstralChart'
 import { Recordings, Forum, Units } from './data/data'
 import { iLoginInput } from './components/Auth/Login'
+import { Modal } from './components/Forum/Atoms'
 import { Home } from './components/Home'
 
 import { App as RealmApp, Credentials } from 'realm-web'
@@ -59,6 +60,9 @@ export const App = () => {
     const [ forum, setForum ] = useState(Forum)
     const [ recordings, setRecordings ] = useState(Recordings)
 
+    const defaultModal = { active:false, text:'', cta:'', title:'' }
+    const [ modal, setModal ] = useState(defaultModal)
+
 
     useEffect(() => { 
         const connectMongo = async() => {
@@ -79,8 +83,10 @@ export const App = () => {
 
         connectMongo()
 
-        amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
-        amplitude.getInstance().logEvent('VISIT_ASTRO')
+        try {
+            amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
+            amplitude.getInstance().logEvent('VISIT_ASTRO')    
+        } catch(e) { }
     }, [])
 
 
@@ -96,7 +102,20 @@ export const App = () => {
 
     const login = async({ email, password }:iLoginInput) => {
         if(!app) return
-        await app.logIn(Credentials.emailPassword(email, password))
+
+        try {
+            await app.logIn(Credentials.emailPassword(email, password))
+            setModal({ active:true, text:'Iniciando Sesión...', cta:'Cerrar', title:'Bienvenid@' })
+
+        } catch(e){ 
+            setModal({
+                active:true, 
+                text:'Lo sentimos, usuario o contraseña incorrecta.', 
+                cta:'Volver a intenar',
+                title:'Error'
+            })
+            return 
+        }
 
         if(!app.currentUser) return
         await app.currentUser.refreshCustomData()
@@ -108,6 +127,8 @@ export const App = () => {
 
         const user = await db.collection('users').findOne({ user_id:app.currentUser.id })
         setUser(user)
+
+        setModal(defaultModal)
     }
 
 
@@ -361,5 +382,17 @@ export const App = () => {
                 </div>
             </div>
         </div>
+
+        <Modal 
+            title={modal.title} 
+            isActive={modal.active} 
+            cta={modal.cta}
+            deactivate={() => setModal({...modal, active:false})} 
+            submit={() => setModal({...modal, active:false})} 
+        >
+            <h3 style={{textAlign:'center', fontSize:'1.2rem', marginTop:20}}> 
+                { modal.text }
+            </h3>
+        </Modal>
     </div>
 }

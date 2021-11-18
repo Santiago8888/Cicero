@@ -31,12 +31,12 @@
 		III. [X] Excercise
 		IV. [X] Doubt
 		V. [X] Navigate
-	f. [ ] Handle Loading and Error on Sign in
-	g. [ ] Test Quiz Logic
-	h. [ ] Privacy Notice
-    i. [ ] Intro
+	f. [X] Privacy Notice
+	g. [X] Handle Loading and Error on Sign In
+	h. [X] Saturn Image
+	i. [ ] Test Quiz Logic
+    j. [ ] Intro
 3. [ ] Delete data
 4. [ ] Record video
 5. [ ] Create users
-6. [ ] Email Gaby
-7. [ ] Review Sign Documents
+6. [ ] Reupload Documents
