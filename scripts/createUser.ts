@@ -39,7 +39,9 @@ const createUser = async({ name, email, password, date, location }:iCreateUser) 
     const current: iPosition = initialPosition
     const progress: iPosition = initialPosition
 
-    const natalChart = {planets:[], houses:[]}
+    const natalChart = { planets:[], houses:[] }
+    const user = { user_id, name, email, quizFailures:0, current, progress, natalChart, location, date:new Date() }
+
     if(date && location){
         const user:iUser = { user_id, name, email, date, location, quizFailures:0, current, progress, natalChart }
 
@@ -57,7 +59,10 @@ const createUser = async({ name, email, password, date, location }:iCreateUser) 
         const fullUser = {...user, sign, natalChart:{planets, houses}}
 
         db.collection('users').updateOne({ user_id }, {...fullUser, user_id})
+        return
     }
+
+    db.collection('users').updateOne({ user_id }, {...user, user_id})
 }
 
 const Santiago:iNewUser = {
