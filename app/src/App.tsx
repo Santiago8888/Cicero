@@ -240,7 +240,7 @@ export const App = () => {
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
-        const needsApproval = progress.lesson === current.lesson && progress.module === current.module
+        const needsApproval = progress.lesson === current.lesson && progress.module === current.module && progress.unit === current.unit
 
         if(needsApproval && score >= minScore) updateUser({...user, progress:nextLesson(progress), quizFailures:0})
         else if(needsApproval && user.quizFailures === 1) updateUser({...user, quizFailures:2 })
