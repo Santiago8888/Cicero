@@ -7,6 +7,7 @@ import { iPost } from './components/Forum/Posts'
 import { iPlanet } from './components/Astral/AstralChart'
 import { Recordings, Forum, Units } from './data/data'
 import { iLoginInput } from './components/Auth/Login'
+import { Modal } from './components/Forum/Atoms'
 import { Home } from './components/Home'
 
 import { App as RealmApp, Credentials } from 'realm-web'
@@ -59,6 +60,9 @@ export const App = () => {
     const [ forum, setForum ] = useState(Forum)
     const [ recordings, setRecordings ] = useState(Recordings)
 
+    const defaultModal = { active:false, text:'', cta:'', title:'' }
+    const [ modal, setModal ] = useState(defaultModal)
+
 
     useEffect(() => { 
         const connectMongo = async() => {
@@ -79,8 +83,10 @@ export const App = () => {
 
         connectMongo()
 
-        amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
-        amplitude.getInstance().logEvent('VISIT_ASTRO')
+        try {
+            amplitude.getInstance().init(process.env.REACT_APP_AMPLITUDE_TOKEN as string)
+            amplitude.getInstance().logEvent('VISIT_ASTRO')    
+        } catch(e) { }
     }, [])
 
 
@@ -96,7 +102,20 @@ export const App = () => {
 
     const login = async({ email, password }:iLoginInput) => {
         if(!app) return
-        await app.logIn(Credentials.emailPassword(email, password))
+
+        try {
+            await app.logIn(Credentials.emailPassword(email, password))
+            setModal({ active:true, text:'Iniciando Sesión...', cta:'Cerrar', title:'Bienvenid@' })
+
+        } catch(e){ 
+            setModal({
+                active:true, 
+                text:'Lo sentimos, usuario o contraseña incorrecta.', 
+                cta:'Volver a intenar',
+                title:'Error'
+            })
+            return 
+        }
 
         if(!app.currentUser) return
         await app.currentUser.refreshCustomData()
@@ -108,6 +127,8 @@ export const App = () => {
 
         const user = await db.collection('users').findOne({ user_id:app.currentUser.id })
         setUser(user)
+
+        setModal(defaultModal)
     }
 
 
@@ -176,8 +197,8 @@ export const App = () => {
             if(user.quizFailures === 2) return updateUser({
                 ...user, 
                 quizFailures:0, 
-                progress:{...current, lesson:0}, 
-                current: {...current, lesson:0}
+                progress:{...current, lesson:user.current.lesson-1}, 
+                current: {...current, lesson:user.current.lesson-1}
             })
 
         } else updateUser({...user, current:nextLesson(current)})
@@ -219,7 +240,7 @@ export const App = () => {
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
-        const needsApproval = progress.lesson === current.lesson && progress.module === current.module
+        const needsApproval = progress.lesson === current.lesson && progress.module === current.module && progress.unit === current.unit
 
         if(needsApproval && score >= minScore) updateUser({...user, progress:nextLesson(progress), quizFailures:0})
         else if(needsApproval && user.quizFailures === 1) updateUser({...user, quizFailures:2 })
@@ -235,12 +256,27 @@ export const App = () => {
         const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
-        if(lesson.type === 'Reflection' && newPost !== undefined) return dbPost(newPost)
+        if(lesson.type === 'Reflection' && newPost !== undefined) return approveReflection(newPost)
 
         if(current.unit !== progress.unit) return
         if(current.module !== progress.module) return
         if(current.lesson !== progress.lesson) return
+
         return updateUser({...user, progress:nextLesson(progress)})
+    }
+
+    const approveReflection = (newPost:iPost) => {
+        dbPost(newPost)
+
+        if(!user) return
+        const { current:c, progress:p } = user 
+        const needsProgress = c.unit === p.unit && c.module === p.module && c.lesson === p.lesson
+
+        return updateUser({
+            ...user, 
+            progress: needsProgress ? nextLesson(p) : p,
+            current: nextLesson(c)
+        })
     }
 
 
@@ -361,5 +397,17 @@ export const App = () => {
                 </div>
             </div>
         </div>
+
+        <Modal 
+            title={modal.title} 
+            isActive={modal.active} 
+            cta={modal.cta}
+            deactivate={() => setModal({...modal, active:false})} 
+            submit={() => setModal({...modal, active:false})} 
+        >
+            <h3 style={{textAlign:'center', fontSize:'1.2rem', marginTop:20}}> 
+                { modal.text }
+            </h3>
+        </Modal>
     </div>
 }

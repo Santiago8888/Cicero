@@ -52,9 +52,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
 
         <div style={{ width:midScreen ? 800 : 280, margin:midScreen ? '3rem auto' : '1.5rem auto'}}>
             {
-                user.current.module < user.progress.module 
-                || (user.progress.lesson < user.current.lesson && user.current.module === user.progress.module)
-                || !isCounting
+                !isCounting
                 ?
                     <a 
                         onClick={initCountdown}
@@ -83,6 +81,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
                         }}
                         disabled={
                             user.current.module === user.progress.module 
+                            && user.progress.unit === user.current.unit
                             && user.progress.lesson === user.current.lesson
                         }
                     > CONTINUAR </button>

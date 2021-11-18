@@ -53,11 +53,12 @@ interface iModal {
     title: string
     isActive: boolean
     children: JSX.Element | JSX.Element[]
+    cta?:string
     deactivate(): void
     submit(): void 
 }
 
-export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) => {
+export const Modal = ({ title, isActive, children, cta="Publicar", deactivate, submit }:iModal) => {
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className='modal-background' />
         <div className='modal-card'>
@@ -75,7 +76,7 @@ export const Modal = ({ title, isActive, children, deactivate, submit }:iModal) 
                     className='button is-link' 
                     onClick={submit}
                     style={{backgroundColor:'saddlebrown', margin:'auto'}}
-                >  Publicar </button>
+                >  { cta } </button>
             </footer>
         </div>
     </div>

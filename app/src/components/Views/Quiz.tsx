@@ -44,7 +44,7 @@ const Question = ({index, question, value, answers, select}:IQuestion) => <div
 
 
 const encouragementMsg = `¡Ánimo aún tienes otra oportunidad!`
-const retryMsg = 'Te invitamos a reiniciar el módulo.'
+const retryMsg = 'Te invitamos a volver a ver el vídeo :)'
 interface iModal { 
     user:iUser
     questions: iQuestion[]
@@ -78,11 +78,11 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
 
                 { 
                     !approved && user.quizFailures === 1 
-                    ? <>Necesitas {min} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
+                    ? <>Necesitas {Math.round(min)} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
                     : '' 
                 }
 
-                { !approved && user.quizFailures === 1 ? <><br/>{encouragementMsg}</> : '' }
+                { !approved && user.quizFailures === 1 ? <><br/>{ encouragementMsg }</> : '' }
                 { !approved && user.quizFailures === 2 ? <><br/>{ retryMsg }</> : '' }
             </p>
         </section>
@@ -107,7 +107,7 @@ interface iQuiz {
     approve(props:iApprove):boolean|void
     user:iUser
 }
-export const Quiz = ({ title, description, questions=[], min, next, approve, user }: iQuiz) =>  {
+export const Quiz = ({ title, description, questions=[], min=questions.length*.7, next, approve, user }: iQuiz) =>  {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
     const [isActive, setActive] = useState(false)
@@ -186,7 +186,7 @@ export const Quiz = ({ title, description, questions=[], min, next, approve, use
 
             score={score as number}
             approved={approved as boolean}
-            min={min as number}
+            min={min}
             user={user}
 
             next={modalClick}
