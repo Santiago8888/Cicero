@@ -197,8 +197,8 @@ export const App = () => {
             if(user.quizFailures === 2) return updateUser({
                 ...user, 
                 quizFailures:0, 
-                progress:{...current, lesson:0}, 
-                current: {...current, lesson:0}
+                progress:{...current, lesson:user.current.lesson-1}, 
+                current: {...current, lesson:user.current.lesson-1}
             })
 
         } else updateUser({...user, current:nextLesson(current)})
@@ -240,7 +240,7 @@ export const App = () => {
         if(!lesson.questions?.length) return false 
 
         const minScore = lesson.min || lesson.questions.length*.7
-        const needsApproval = progress.lesson === current.lesson && progress.module === current.module
+        const needsApproval = progress.lesson === current.lesson && progress.module === current.module && progress.unit === current.unit
 
         if(needsApproval && score >= minScore) updateUser({...user, progress:nextLesson(progress), quizFailures:0})
         else if(needsApproval && user.quizFailures === 1) updateUser({...user, quizFailures:2 })
@@ -256,7 +256,14 @@ export const App = () => {
         const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
-        if(lesson.type === 'Reflection' && newPost !== undefined) return dbPost(newPost)
+        if(lesson.type === 'Reflection' && newPost !== undefined) {
+            dbPost(newPost)
+            updateUser({
+                ...user, 
+                progress:nextLesson(progress), 
+                current:nextLesson(progress)
+            })
+        }
 
         if(current.unit !== progress.unit) return
         if(current.module !== progress.module) return
