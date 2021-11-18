@@ -75,7 +75,10 @@ const Santiago:iNewUser = {
 
 const createUsers = async(users:iCreateUser[], index:number) => {
     if(index + 1 === users.length) return
-    await createUser(users[index])
+
+    try { await createUser(users[index]) }
+    catch(e) { console.log(`Error creating: ${users[index].name}`)}
+    
     createUsers(users, index + 1)
 }
 
