@@ -2,7 +2,6 @@
 
 import { iPlanet } from '../app/src/components/Astral/AstralChart'
 import { iPosition } from '../app/src/components/LayOut/Menu'
-import { iNewUser } from '../app/src/components/Auth/SignUp'
 import { iUser } from '../app/src/App'
 import users from './data/users.json'
 
@@ -26,7 +25,6 @@ const getChart = async(date:Date, location:string) => {
 
     const url = `https://astroconsciencia.gq/.netlify/functions/astro-chart${chartParams}`
     const { data: { houses, planets } } =  await axios.get(url)
-    console.log(houses, planets)
 
     const sun = planets.find(({name}:{name:string}) => name === 'Sun')
     const sign = mapSign(sun)
@@ -39,12 +37,10 @@ const createUser = async({ name, email, password, date, location }:iCreateUser) 
     const REALM_APP_ID = process.env.REACT_APP_REALM_ID as string
     const app = new RealmApp({ id: REALM_APP_ID })
 
-    try{
-        await app.emailPasswordAuth.registerUser(email, password)
-        await app.logIn(Credentials.emailPassword(email, password))    
-    } catch(e){ return }
+    await app.emailPasswordAuth.registerUser({ email, password })
+    await app.logIn(Credentials.emailPassword(email, password))    
 
-    if(!app.currentUser) return
+    if(!app.currentUser) throw('No current user.')
     const { id:user_id } = app.currentUser
 
     const mongo = app.currentUser.mongoClient('mongodb-atlas')
@@ -78,23 +74,16 @@ const createUser = async({ name, email, password, date, location }:iCreateUser) 
     }
 
 
+    console.log(user.name, user.sign)
     await db.collection('users').insertOne(user)
 }
 
-const Santiago:iNewUser = {
-    date:new Date(1988, 7, 17, 18, 37),
-    name:'Santiago Test Create',
-    email:'santiago1@test.mail',
-    password:'A23451',
-    location:'Mexico City'
-}
 
 const createUsers = async(users:iCreateUser[], index:number) => {
-    if(index + 1 === users.length) return
-
     try { await createUser(users[index]) }
-    catch(e) { console.log(`Error creating: ${users[index].name}`)}
+    catch(e) { console.log(`Error creating: ${users[index].name}. ${e}`)}
     
+    if(index + 1 === users.length) return
     createUsers(users, index + 1)
 }
 
@@ -107,13 +96,13 @@ const init = async() => {
         }
 
         if(user.Location) newUser.location = user.Location
-        if(user.Year) {
+        if(user.Year && user.Month && user.Day) {
             newUser.date = new Date(
                 Number(user.Year), 
                 Number(user.Month), 
                 Number(user.Day), 
-                Number(user.Hour), 
-                Number(user.Minute)
+                Number(user.Hour || 0), 
+                Number(user.Minute || 0)
             )
         }
 
@@ -122,3 +111,6 @@ const init = async() => {
 
     await createUsers(newUsers, 0)
 }
+
+
+init().catch(console.log)
