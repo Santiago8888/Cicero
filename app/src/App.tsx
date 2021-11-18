@@ -197,8 +197,8 @@ export const App = () => {
             if(user.quizFailures === 2) return updateUser({
                 ...user, 
                 quizFailures:0, 
-                progress:{...current, lesson:0}, 
-                current: {...current, lesson:0}
+                progress:{...current, lesson:user.current.lesson-1}, 
+                current: {...current, lesson:user.current.lesson-1}
             })
 
         } else updateUser({...user, current:nextLesson(current)})
