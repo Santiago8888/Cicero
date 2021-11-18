@@ -256,7 +256,14 @@ export const App = () => {
         const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
-        if(lesson.type === 'Reflection' && newPost !== undefined) return dbPost(newPost)
+        if(lesson.type === 'Reflection' && newPost !== undefined) {
+            dbPost(newPost)
+            updateUser({
+                ...user, 
+                progress:nextLesson(progress), 
+                current:nextLesson(progress)
+            })
+        }
 
         if(current.unit !== progress.unit) return
         if(current.module !== progress.module) return
