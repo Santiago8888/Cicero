@@ -73,5 +73,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Sanar y permitirle a los demás expresar sus emociones.', value:false }, 
             { answer:'Utilizar las emociones para manipular o controlar a los demás.', value:false }, 
         ]
+    }, {
+        question:'10. ¿Cuál NO es una consecuencia de cumplir con nuestra responsabilidad?',
+        answers:[
+            { answer:'Permitirnos llegar a más personas.', value:true }, 
+            { answer:'Darnos aún más responsabilidad.', value:false }, 
+            { answer:'Tener que sostener y mantener lo que hemos logrado.', value:false }, 
+            { answer:'Paz y descanso como premio.', value:false }, 
+        ]
     }
 ]
