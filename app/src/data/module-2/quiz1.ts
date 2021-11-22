@@ -81,5 +81,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Tener que sostener y mantener lo que hemos logrado.', value:false }, 
             { answer:'Paz y descanso como premio.', value:false }, 
         ]
+    }, {
+        question:'11. ¿Somos seres evolutivos, contra que estamos luchando de acuerdo al signo de nuestro Saturno?',
+        answers:[
+            { answer:'La negatividad de las características de ese signo.', value:true }, 
+            { answer:'Las características negativas del signo opuesto.', value:false }, 
+            { answer:'Todos los que no son impecables u honorables de ese signo.', value:false }, 
+            { answer:'Contra aquellos que también busquen ser mejor ejemplo que nosotros. ', value:false }, 
+        ]
     }
 ]
