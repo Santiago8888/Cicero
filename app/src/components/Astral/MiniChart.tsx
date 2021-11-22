@@ -1,6 +1,8 @@
 import { select, Selection, ValueFn } from 'd3-selection'
 import { arc, Arc, DefaultArcObject } from 'd3-shape'
+import { iAstralChart } from './AstralChart'
 import { useEffect } from 'react'
+
 
 type SVG = Selection<SVGSVGElement, unknown, HTMLElement, any>
 export type HouseNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |12
@@ -172,8 +174,7 @@ const are_planets_close = (planets:iMappedPlanet[]) => !!planets.find(({ degree 
 )
 
 
-interface iMiniChart { planets:iPlanet[], houses:number[]}
-export const MiniChart = ({ planets, houses }: iMiniChart) => {
+export const MiniChart = ({ planets, houses, drawHouses=true }: iAstralChart) => {
 
     useEffect(() => { 
         const draw_circle = (svg:SVG, r:number) => svg
@@ -306,7 +307,9 @@ export const MiniChart = ({ planets, houses }: iMiniChart) => {
 
             chartHouses.filter((_, i) => i < 12).map((d, i) => {
                 const arc = {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 52, outerRadius: 60, fill: house_colors[(15-i) % 4]}
-                draw_arc(svg, arc)
+
+                if(drawHouses) draw_arc(svg, arc)
+                else return draw_arc(svg, arc)
 
                 const { x, y } = get_arc_middle({grade_one: d, grade_two: chartHouses[i + 1], depth: 55})
                 create_text(svg, { x, y}, i + 1, deep_colors[(i+4)%4])
