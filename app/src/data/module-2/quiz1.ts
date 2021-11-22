@@ -57,5 +57,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Que sean extremadamente responsables con la administración de su tiempo. ', value:false }, 
             { answer:'Que no derrochen o despilfarren los recursos materiales.', value:false }, 
         ]
+    }, {
+        question:'8. ¿Qué le pide Saturno a los signos de Aire?',
+        answers:[
+            { answer:'Que el pensamiento y la palabra sean congruentes y coherentes. ', value:true }, 
+            { answer:'Ser los más inteligentes y sabios para enseñar a los demás.', value:false }, 
+            { answer:'Que tengan el don de la palabra, sean interesantes y graciosos.', value:false }, 
+            { answer:'Aprender a guardar silencio y sólo ofrecer su palabra cuando se las pregunten.', value:false }, 
+        ]
     }
 ]
