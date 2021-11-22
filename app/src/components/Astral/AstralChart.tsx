@@ -172,7 +172,7 @@ const are_planets_close = (planets:iMappedPlanet[]) => !!planets.find(({ degree 
 )
 
 
-interface iAstralChart { planets:iPlanet[], houses:number[], drawHouses?:boolean }
+export interface iAstralChart { planets:iPlanet[], houses:number[], drawHouses?:boolean }
 export const AstralChart = ({ planets, houses, drawHouses=true }: iAstralChart) => {
 
     useEffect(() => { 
