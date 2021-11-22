@@ -25,5 +25,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Saturno nos reclarmará a través de nuestra voz interior.', value:false }, 
             { answer:'Se nos otorgará más responsabilidad.', value:false }, 
         ]
+    }, {
+        question:'4. ¿Cuál de estas NO es una diferencia entre nuestro signo de Saturno y los demás?',
+        answers:[
+            { answer:'No gozamos de mucha misericordia para aprender y equivocarnos.', value:true }, 
+            { answer:'No basta con suficiencia, requerimos desempeñarnos a un de nivel de excelencia.', value:false }, 
+            { answer:'Hicimos el compromiso de ser impecables, y enseñar a otros a ser así en ese signo.', value:false }, 
+            { answer:'Seremos reconocidos cuando exhibamos las cualidades del signo.', value:false }, 
+        ]
     }
 ]
