@@ -49,5 +49,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Estar sumamente al pendiente de las acciones de los demás.', value:false }, 
             { answer:'Pensar conciensudamente antes de actuar o tomar una decisión.', value:false }, 
         ]
+    }, {
+        question:'7. ¿Qué le pide Saturno a los signos de Fuego?',
+        answers:[
+            { answer:'Ser sumamente estables y no movernos de lo que es correcto.', value:true }, 
+            { answer:'Compartir su abundancia con los demás y dar mucho a la caridad.', value:false }, 
+            { answer:'Que sean extremadamente responsables con la administración de su tiempo. ', value:false }, 
+            { answer:'Que no derrochen o despilfarren los recursos materiales.', value:false }, 
+        ]
     }
 ]
