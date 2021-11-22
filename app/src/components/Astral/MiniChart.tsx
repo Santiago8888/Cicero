@@ -324,7 +324,7 @@ export const MiniChart = ({ planets, houses, drawHouses=true }: iAstralChart) =>
 
         const mappedPlanets = map_planets(planets, houses[0])
         draw_chart(mappedPlanets, [...houses])
-    }, [planets, houses])
+    }, [planets, houses, drawHouses])
 
 
     return <div className='App' style={{margin:'50px 25px'}}>
