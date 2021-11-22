@@ -6,6 +6,10 @@ const lessons1:iLesson[] = [
         type:'Video', 
         title:'El significado del signo', 
         link:'https://youtu.be/uJP6kRJq9Qs', 
+    }, {
+        type:'Video',
+        title:'Tus vidas pasadas',
+        link:'https://youtu.be/qR1KmIG5Fl0'
     }
 ]
 
