@@ -2,14 +2,14 @@ import { iLesson } from "../../components/LayOut/Menu"
 
 
 const lessons1:iLesson[] = [
+    { type:'Video', title:'El significado del signo', link:'https://youtu.be/uJP6kRJq9Qs' }, 
+    { type:'Video', title:'Tus vidas pasadas', link:'https://youtu.be/qR1KmIG5Fl0' },
     { 
         title:'El signo de tu Saturno',
         type:'Chart',
-        description:['El planeta que rige tu responsabilidad'],
-        planet:'Saturn'
+        planet:'Saturn',
+        drawHouses:false
     },
-    { type:'Video', title:'El significado del signo', link:'https://youtu.be/uJP6kRJq9Qs' }, 
-    { type:'Video', title:'Tus vidas pasadas', link:'https://youtu.be/qR1KmIG5Fl0' }
 ]
 
 
