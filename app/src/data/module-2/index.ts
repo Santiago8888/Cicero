@@ -2,6 +2,12 @@ import { iLesson } from "../../components/LayOut/Menu"
 
 
 const lessons1:iLesson[] = [
+    { 
+        title:'El signo de tu Saturno',
+        type:'Chart',
+        description:['El planeta que rige tu responsabilidad'],
+        planet:'Saturn'
+    },
     { type:'Video', title:'El significado del signo', link:'https://youtu.be/uJP6kRJq9Qs' }, 
     { type:'Video', title:'Tus vidas pasadas', link:'https://youtu.be/qR1KmIG5Fl0' }
 ]
