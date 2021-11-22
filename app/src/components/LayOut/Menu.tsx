@@ -20,6 +20,7 @@ export interface iLesson {
     posts?:string[]
     numbered?:boolean
     end?:boolean
+    drawHouses?:boolean
 }
 
 
