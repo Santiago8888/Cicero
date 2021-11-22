@@ -10,13 +10,22 @@ interface iChart {
     title:string
     description?:string[]
     planet?:Planet
+    drawHouses?:boolean
     approve(props:iApprove):boolean | void
     next():void 
 }
 
-export const Chart = ({ user:{natalChart:{planets, houses}}, title, description, planet, next, approve }: iChart) => {
+const NatalData = ({ date, location }:iUser) => <span>
+    Fecha de Nacimiento: {`${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`} <br/>
+    Lugar de Nacimiento: { location }
+</span>
+
+export const Chart = ({ user, title, description, planet, drawHouses, next, approve }: iChart) => {
+    const { natalChart: { planets, houses } } = user 
+
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
     const smallScreen = useMediaQuery({ query: '(max-width: 680px)' })
+
 
     useEffect(() => { approve({}) }, [approve])
 
@@ -31,12 +40,20 @@ export const Chart = ({ user:{natalChart:{planets, houses}}, title, description,
                 fontWeight: 500,
                 width: midScreen ? 800 : 320        
             }}
-        > { description ? description[0] : '' } </h3>
+        > { description ? description[0] : <NatalData {...user} /> } </h3>
 
         {
             !smallScreen
-            ?   <AstralChart planets={planet ? planets.filter(({ name }) => name === planet) : planets} houses={houses}/>
-            :   <MiniChart planets={planet ? planets.filter(({ name }) => name === planet) : planets} houses={houses}/>            
+            ?   <AstralChart 
+                    planets={planet ? planets.filter(({ name }) => name === planet) : planets} 
+                    houses={houses}
+                    drawHouses={drawHouses}
+                />
+            :   <MiniChart 
+                    planets={planet ? planets.filter(({ name }) => name === planet) : planets} 
+                    houses={houses}
+                    drawHouses={drawHouses}
+                />            
         }
 
         <div style={{ marginTop:'3rem', width: midScreen ? 800 : 320, margin:'auto'}}>

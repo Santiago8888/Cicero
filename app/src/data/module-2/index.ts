@@ -1,9 +1,17 @@
-import { iLesson } from "../../components/LayOut/Menu"
+import { iLesson } from '../../components/LayOut/Menu'
+import { quiz1 } from './quiz1'
 
 
 const lessons1:iLesson[] = [
     { type:'Video', title:'El significado del signo', link:'https://youtu.be/uJP6kRJq9Qs' }, 
-    { type:'Video', title:'Tus vidas pasadas', link:'https://youtu.be/qR1KmIG5Fl0' }
+    { type:'Quiz', title:'Quiz 2.1', questions:quiz1 }, 
+    { type:'Video', title:'Tus vidas pasadas', link:'https://youtu.be/qR1KmIG5Fl0' },
+    { 
+        title:'El signo de tu Saturno',
+        type:'Chart',
+        planet:'Saturn',
+        drawHouses:false
+    },
 ]
 
 
