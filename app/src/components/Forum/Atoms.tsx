@@ -58,7 +58,7 @@ interface iModal {
     submit(): void 
 }
 
-export const Modal = ({ title, isActive, children, cta="Publicar", deactivate, submit }:iModal) => {
+export const Modal = ({ title, isActive, children, cta='Publicar', deactivate, submit }:iModal) => {
     return <div className={`modal ${isActive ? 'is-active' : ''}`}>
         <div className='modal-background' />
         <div className='modal-card'>

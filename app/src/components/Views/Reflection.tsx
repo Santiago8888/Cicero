@@ -94,7 +94,7 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
         >
             <div className='field'>
                 <label className='label'> Título: </label>
-                <div className="select" style={{ maxWidth:600, width:'auto', height:'auto' }}>
+                <div className='select' style={{ maxWidth:600, width:'auto', height:'auto' }}>
                     <select 
                         style={{height:'auto', whiteSpace:'break-spaces', width:'100%'}}
                         onChange={({target:{value}})=> setNewPost({...newPost, title:value})}

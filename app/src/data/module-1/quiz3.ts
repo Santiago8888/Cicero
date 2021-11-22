@@ -15,7 +15,7 @@ export const quiz13:iQuestion[] = [
         answers:[
             { answer:'Nos sentimos deprimidos, cansados y sin motivación.', value:false },
             { answer:'Nos corren del trabajo o tenemos problemas profesionales.', value:false },
-            { answer:'Las cosas dejan de fluir, y obtenemos señales de las personas en nuestra vida diaria.', value:true },
+            { answer:'Las cosas dejan de fluir y obtenemos señales de las personas en nuestra vida diaria.', value:true },
             { answer:'Nuestra salud se resiente y constantemente discutimos con las personas a nuestro alrededor.', value:false },
         ]
     },   { 
