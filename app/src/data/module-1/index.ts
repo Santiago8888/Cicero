@@ -6,8 +6,12 @@ import { quiz13 } from './quiz3'
 
 
 const module11:iLesson[] = [
-    { type:'Video', title:'Introducción', link:'https://youtu.be/3OgHuaqYYWk', description:['¡Hola! En este vídeo te voy a mostrar cómo funciona la plataforma:']  },
     { 
+        type:'Video', 
+        title:'Introducción', 
+        link:'https://youtu.be/3OgHuaqYYWk', 
+        description:['¡Hola! En este vídeo te voy a mostrar cómo funciona la plataforma:']  
+    }, { 
         type:'Reading', 
         title:'Saturno en la Astrología', 
         link:'docs/Introduccion-a-Saturno-en-la-Astrología.pdf', 
@@ -23,7 +27,13 @@ const module11:iLesson[] = [
     { type:'Video', title:'¿Qué es Saturno?', link:'https://youtu.be/-AEpq9zauQ8'  },
     { type:'Quiz', title:'Quiz 1.1', questions:quiz11 },
     { type:'Video', title:'La importancia de Saturno', link:'https://youtu.be/gQarN9nNKdA' },
-    { type:'Reflection', title:'Preguntas de Reflexión', numbered:true, description:['Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.'], posts:posts11 },
+    { 
+        type:'Reflection', 
+        title:'Preguntas de Reflexión', 
+        numbered:true, 
+        description:['Te invitamos a que realices una pausa y reflexiones sobre alguna de estás preguntas. Si gustas puedes visitar el Chat y compartir tu experiencia en base a alguno de estos temas.'], 
+        posts:posts11 
+    },
 ]
 
 const module12:iLesson[] = [
