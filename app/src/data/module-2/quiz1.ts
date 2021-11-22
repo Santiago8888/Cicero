@@ -17,5 +17,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Disminuir la inercia de vidas pasadas de ese signo.', value:false }, 
             { answer:'Guiar responsablemente a las personas que tengan ese signo.', value:false }, 
         ]
+    }, {
+        question:'3. ¿Cuál de estas NO es una consecuencia de no cumplir nuestro compromiso con Saturno?',
+        answers:[
+            { answer:'Las consecuencias negativas serán inmediatas.', value:true }, 
+            { answer:'Los demás aprenderán a través nuestro mal ejemplo.', value:false }, 
+            { answer:'Saturno nos reclarmará a través de nuestra voz interior.', value:false }, 
+            { answer:'Se nos otorgará más responsabilidad.', value:false }, 
+        ]
     }
 ]
