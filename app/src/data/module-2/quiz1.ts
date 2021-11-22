@@ -41,5 +41,13 @@ export const quiz1:iQuestion[] = [
             { answer:'El miedo es una emoción dañina que no tiene ningún beneficio en nuestra vida.', value:false }, 
             { answer:'Porque karma significa acción y al no hacer nada no estamos pagando nuestro karma.', value:false }, 
         ]
+    }, {
+        question:'6. ¿Qué le pide Saturno a los signos de Fuego?',
+        answers:[
+            { answer:'Ser la mejor versión del impulso, de la actividad, de la voluntad.', value:true }, 
+            { answer:'Que siempre tengan energía y no ser perezosos.', value:false }, 
+            { answer:'Estar sumamente al pendiente de las acciones de los demás.', value:false }, 
+            { answer:'Pensar conciensudamente antes de actuar o tomar una decisión.', value:false }, 
+        ]
     }
 ]
