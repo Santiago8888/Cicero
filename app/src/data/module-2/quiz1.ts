@@ -33,5 +33,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Hicimos el compromiso de ser impecables, y enseñar a otros a ser así en ese signo.', value:false }, 
             { answer:'Seremos reconocidos cuando exhibamos las cualidades del signo.', value:false }, 
         ]
+    }, {
+        question:'5. ¿Por qué tener miedo y no hacer nada también es incumplimiento de nuestra responsabilidad?',
+        answers:[
+            { answer:'Debemos dar un ejemplo a otros y el no actuar tampoco es buen ejemplo. ', value:true }, 
+            { answer:'Saturno es malvado y busca hacernos daño, aún si es injusto.', value:false }, 
+            { answer:'El miedo es una emoción dañina que no tiene ningún beneficio en nuestra vida.', value:false }, 
+            { answer:'Porque karma significa acción y al no hacer nada no estamos pagando nuestro karma.', value:false }, 
+        ]
     }
 ]
