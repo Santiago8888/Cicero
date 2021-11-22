@@ -65,5 +65,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Que tengan el don de la palabra, sean interesantes y graciosos.', value:false }, 
             { answer:'Aprender a guardar silencio y sólo ofrecer su palabra cuando se las pregunten.', value:false }, 
         ]
+    }, {
+        question:'9. ¿Qué le pide Saturno a los signos de Agua?',
+        answers:[
+            { answer:'Que las emociones, intuición y amor sea congruente con nuestro comportamiento.', value:true }, 
+            { answer:'Controlar sus emociones y no sentir enojo, tristeza o miedo.', value:false }, 
+            { answer:'Sanar y permitirle a los demás expresar sus emociones.', value:false }, 
+            { answer:'Utilizar las emociones para manipular o controlar a los demás.', value:false }, 
+        ]
     }
 ]
