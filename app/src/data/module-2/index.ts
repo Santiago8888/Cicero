@@ -15,6 +15,7 @@ const lessons1:iLesson[] = [
 
 const lessons2:iLesson[] = [
     { type:'Video', title:'La influencia de tu signo', link:'https://youtu.be/k5oxhnHwYWQ' }, 
+    { type:'Reading', title:'Karma de DYNAMIC_SIGN', link:'' },
     { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' }
 ]
 
