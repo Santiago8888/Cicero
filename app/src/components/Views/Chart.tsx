@@ -35,6 +35,24 @@ const mapSign = (planet:iPlanet) => {
     return sign
 }
 
+const mapMonth = (n:Number) => {
+    if(n === 0) return 'Enero'
+    if(n === 1) return 'Febrero'
+    if(n === 2) return 'Marzo'
+
+    if(n === 3) return 'Abril'
+    if(n === 4) return 'Mayo'
+    if(n === 5) return 'Junio'
+
+    if(n === 6) return 'Julio'
+    if(n === 7) return 'Agosto'
+    if(n === 8) return 'Septiembre'
+
+    if(n === 9) return 'Octubre'
+    if(n === 10) return 'Noviembre'
+    if(n === 11) return 'Diciembre'
+}
+
 const NatalData = ({ natalChart: { planets } }:iUser) => <span>
     Tu Saturno está en  { mapSign(planets.find(({ name }) => name === 'Saturn' ) as iPlanet) }
 </span>
@@ -84,7 +102,7 @@ export const Chart = ({ user, title, description, planet, drawHouses, next, appr
                 fontWeight: 500,
                 width: midScreen ? 800 : 320        
             }}
-        >  Fecha de Nacimiento: {user.date.getMonth()}/{user.date.getDate()}/{user.date.getFullYear()} </h3>
+        >  Fecha de Nacimiento: {user.date.getDate()}/{mapMonth(user.date.getMonth())}/{user.date.getFullYear()} </h3>
         
         
         <div style={{ marginTop:'3rem', width: midScreen ? 800 : 320, margin:'auto'}}>
