@@ -9,12 +9,13 @@ const lessons1:iLesson[] = [
 
 const lessons2:iLesson[] = [
     { type:'Video', title:'La influencia de tu signo', link:'https://youtu.be/k5oxhnHwYWQ' }, 
-    { type:'Video', title:'La misión de Saturno', link:'iLpqbBzRIvk' }
+    { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' }
 ]
 
 
 const lessons3:iLesson[] = [
-    { type:'Video', title:'Ser un buen ejemplo', link:'MjU_S2C_cqc' },
+    { type:'Video', title:'Ser un buen ejemplo', link:'https://youtu.be/MjU_S2C_cqc' },
+    { type:'Video', title:'El camino de retorno', link:'https://youtu.be/_XjOhM-i9NA' }
 ]
 
 export const module2 = [
