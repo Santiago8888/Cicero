@@ -1,9 +1,12 @@
 import { iRecordings } from '../components/Forum/Recordings'
 import { iLesson, iUnit } from '../components/LayOut/Menu'
 import { iForum } from '../components/Forum/Forum'
-import { module1 } from './module-1/index'
+
 import { planets, houses } from './chart'
+import { module1 } from './module-1'
+import { module2 } from './module-2'
 import { iUser } from '../App'
+
 
 const defaultUser:iUser = { 
     sign:'Leo',
@@ -62,39 +65,33 @@ const lessons:iLesson[] = [
 ]
 
 
-export const Units:iUnit[] = [{ 
-    title: '1. Saturno y el Karma', 
-    modules: module1
-}, { 
-    title: '2. El Signo de Saturno', 
-    modules: [
-        { title: '2.1 El significado del signo de tu Saturno', lessons },
-        { title: '2.2 La misión de tu Saturno', lessons },
-        { title: '2.3 Tus vidas pasadas', lessons }
-    ] 
-}, { 
-    title: '3. La Casa de Saturno', 
-    modules: [
-        { title: '3.1 La casa de tu Saturno', lessons },
-        { title: '3.2 Los ciclos de Saturno', lessons },
-        { title: '3.3 Saturno y la Salud.', lessons }
-    ] 
-}, { 
-    title: '4. Saturno y la Kabbalah', 
-    modules: [
-        { 
-            title: '4.1 Binah y el inicio de la existencia', 
-            lessons:[
-                { 
-                    title:'Saturno', 
-                    type:'Chart', 
-                    description:['El planeta que rige tu responsabilidad'], 
-                    planet:'Saturn'
-                },
-                ...lessons
-            ] 
-        },
-        { title: '4.2 Saturno desde la Kabbalah', lessons },
-        { title: '4.3 El COVID y Saturno en Acuario', lessons }
-    ] 
-}]
+export const Units:iUnit[] = [
+    { title: '1. Saturno y el Karma', modules: module1 }, 
+    { title: '2. El Signo de Saturno', modules: module2 }, 
+    { 
+        title: '3. La Casa de Saturno', 
+        modules: [
+            { title: '3.1 La casa de tu Saturno', lessons },
+            { title: '3.2 Los ciclos de Saturno', lessons },
+            { title: '3.3 Saturno y la Salud.', lessons }
+        ] 
+    }, { 
+        title: '4. Saturno y la Kabbalah', 
+        modules: [
+            { 
+                title: '4.1 Binah y el inicio de la existencia', 
+                lessons:[
+                    { 
+                        title:'Saturno', 
+                        type:'Chart', 
+                        description:['El planeta que rige tu responsabilidad'], 
+                        planet:'Saturn'
+                    },
+                    ...lessons
+                ] 
+            },
+            { title: '4.2 Saturno desde la Kabbalah', lessons },
+            { title: '4.3 El COVID y Saturno en Acuario', lessons }
+        ] 
+    }
+]
