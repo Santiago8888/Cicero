@@ -8,7 +8,7 @@ import { module2 } from './module-2'
 import { iUser } from '../App'
 
 
-const defaultUser:iUser = { 
+const defaultUser:iUser = {
     sign:'Leo',
     user_id:'0',
     quizFailures:0,
@@ -17,12 +17,12 @@ const defaultUser:iUser = {
     email:'test@branding.gq', 
     date:new Date(1988,7,17,12,37),
     natalChart:{ planets, houses },
-    current:{unit:3, module:0, lesson:1}, 
-    progress:{unit:3, module:0, lesson:5}, 
+    current:{unit:3, module:0, lesson:1},
+    progress:{unit:3, module:0, lesson:5},
 }
 
 
-export const lesson: iLesson = { 
+export const lesson: iLesson = {
     title:'Quiz', 
     type:'Quiz', 
     questions:[{
@@ -43,31 +43,31 @@ export const lesson: iLesson = {
 }
 
 
-export const Forum:iForum = { 
+export const Forum:iForum = {
     user:defaultUser,
-    title:'Foro de Dudas', 
-    description:'', 
-    questions:[] 
+    title:'Foro de Dudas',
+    description:'',
+    questions:[]
 }
 
 
-export const Recordings:iRecordings = { 
-    title:'Grabaciones Semanales', 
-    description:'', 
+export const Recordings:iRecordings = {
+    title:'Grabaciones Semanales',
+    description:'',
     recordings:[]
 }
 
 
 const lessons:iLesson[] = [
-    {...lesson, type:'Video', title:'Video'}, 
-    {...lesson, type:'Reading', title:'Lectura', link:'sample.pdf'}, 
+    {...lesson, type:'Video', title:'Video'},
+    {...lesson, type:'Reading', title:'Lectura', link:'sample.pdf'},
     lesson
 ]
 
 
 export const Units:iUnit[] = [
-    { title: '1. Saturno y el Karma', modules: module1 }, 
-    { title: '2. El Signo de Saturno', modules: module2 }, 
+    { title: '1. Saturno y el Karma', modules: module1 },
+    { title: '2. El Signo de Saturno', modules: module2 },
     { 
         title: '3. La Casa de Saturno', 
         modules: [
@@ -79,12 +79,12 @@ export const Units:iUnit[] = [
         title: '4. Saturno y la Kabbalah', 
         modules: [
             { 
-                title: '4.1 Binah y el inicio de la existencia', 
+                title: '4.1 Binah y el inicio de la existencia',
                 lessons:[
                     { 
-                        title:'Saturno', 
-                        type:'Chart', 
-                        description:['El planeta que rige tu responsabilidad'], 
+                        title:'Saturno',
+                        type:'Chart',
+                        description:['El planeta que rige tu responsabilidad'],
                         planet:'Saturn'
                     },
                     ...lessons
