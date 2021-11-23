@@ -71,27 +71,16 @@ export const Units:iUnit[] = [
     { 
         title: '3. La Casa de Saturno', 
         modules: [
-            { title: '3.1 La casa de tu Saturno', lessons },
-            { title: '3.2 Los ciclos de Saturno', lessons },
-            { title: '3.3 Saturno y la Salud.', lessons }
+            { title: '3.1 La casa de tu Saturno', lessons:[] },
+            { title: '3.2 Los ciclos de Saturno', lessons:[] },
+            { title: '3.3 Saturno y la Salud.', lessons:[] }
         ] 
     }, { 
         title: '4. Saturno y la Kabbalah', 
         modules: [
-            { 
-                title: '4.1 Binah y el inicio de la existencia',
-                lessons:[
-                    { 
-                        title:'Saturno',
-                        type:'Chart',
-                        description:['El planeta que rige tu responsabilidad'],
-                        planet:'Saturn'
-                    },
-                    ...lessons
-                ] 
-            },
-            { title: '4.2 Saturno desde la Kabbalah', lessons },
-            { title: '4.3 El COVID y Saturno en Acuario', lessons }
+            { title: '4.1 Binah y el inicio de la existencia', lessons:[] },
+            { title: '4.2 Saturno desde la Kabbalah', lessons:[] },
+            { title: '4.3 El COVID y Saturno en Acuario', lessons:[] }
         ] 
     }
 ]
