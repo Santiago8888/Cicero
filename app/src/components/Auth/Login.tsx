@@ -78,7 +78,7 @@ export const Login = ({ login }: iLogin) => {
                     > Iniciar Sesión </button>
                 </div>
 
-                <a style={{color:'rgb(176, 143, 92)'}} href="/privacy.html"> Aviso de Privacidad </a>
+                <a style={{color:'rgb(176, 143, 92)'}} href='/privacy.html'> Aviso de Privacidad </a>
             </div>
         </div>
     </div>

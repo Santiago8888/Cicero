@@ -20,6 +20,7 @@ export interface iLesson {
     posts?:string[]
     numbered?:boolean
     end?:boolean
+    drawHouses?:boolean
 }
 
 
@@ -126,7 +127,11 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                                                             && m === user?.progress.module 
                                                             && l > user?.progress.lesson
                                                         ) && <Lock/> 
-                                                    }   { title }
+                                                    }   { 
+                                                            user 
+                                                            ?   title.replace('DYNAMIC_SIGN', user.sign || '') 
+                                                            :   title
+                                                    }
                                                 </a>
                                             </li>
                                         )}

@@ -3,7 +3,7 @@
 import { iPlanet } from '../app/src/components/Astral/AstralChart'
 import { iPosition } from '../app/src/components/LayOut/Menu'
 import { iUser } from '../app/src/App'
-import users from './data/users.json'
+// import users from './data/users.json'
 
 import { App as RealmApp, Credentials } from 'realm-web'
 import axios from 'axios'
@@ -87,10 +87,27 @@ const createUsers = async(users:iCreateUser[], index:number) => {
     createUsers(users, index + 1)
 }
 
-const init = async() => {
-    const newUsers:iCreateUser[] = users.map(user => { 
+
+
+export interface csvUser {
+    Name?: string
+    User: string
+    Email: string
+    Password: string
+    Year?: string
+    Month?: string
+    Day?: string
+    Hour?: string
+    Minute?: string
+    Location?: string
+}
+
+
+
+const init = async(csvUsers:csvUser[]) => {
+    const newUsers:iCreateUser[] = csvUsers.map(user => { 
         const newUser:iCreateUser = {
-            name:user.Name,
+            name:user.User,
             email:user.Email,
             password:user.Password,
         }
@@ -113,4 +130,4 @@ const init = async() => {
 }
 
 
-init().catch(console.log)
+init([])
