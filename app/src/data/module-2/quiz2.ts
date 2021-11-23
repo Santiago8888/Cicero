@@ -34,11 +34,11 @@ export const quiz2:iQuestion[] = [
             { answer:'', sign:'Can', value:true },
         ]
     }, {
-        question:'5. ¿Qué es lo principal que debes hacer ahora?',
+        question:'5. ¿Qué es lo que ahora debes corregir?',
         answers: [
-            { answer:'Corregir mi personalidad.', sign:'Ari', value:true },
-            { answer:'Ser leal a un sistema de valores.', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
+            { answer:'Mi personalidad.', sign:'Ari', value:true },
+            { answer:'Mi sistema de valores.', sign:'Tau', value:true },
+            { answer:'Mi comunicación', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
@@ -46,7 +46,7 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
             { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro.', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
+            { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
@@ -54,7 +54,7 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
             { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
+            { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
@@ -62,7 +62,7 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
             { answer:'Una fuerte necesidad de seguridad.', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
+            { answer:'Gran habilidad de comunicación', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
@@ -70,7 +70,7 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
             { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
+            { answer:'La necesidad de saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
