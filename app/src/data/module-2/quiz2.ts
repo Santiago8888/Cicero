@@ -77,9 +77,9 @@ export const quiz2:iQuestion[] = [
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
         answers: [
             { answer:'Jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
-            { answer:'', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
-            { answer:'', sign:'Can', value:true },
+            { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
+            { answer:'Una persona conocida conocida luchabas por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
+            { answer:'Creías que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
         ]
     }, {
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
