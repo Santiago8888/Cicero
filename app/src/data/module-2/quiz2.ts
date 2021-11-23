@@ -16,6 +16,11 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Detener mi agresividad, para pensar antes de actuar y reconocer que mis acciones tienen consecuencias', sign:'Ari', value:true },
         ]
+    }, {
+        question:'4. ¿Qué es importante que aprendas en esta vida?',
+        answers: [
+            { answer:'Tacto y cooperación con los demás', sign:'Ari', value:true },
+        ]
     }
 
 ]
