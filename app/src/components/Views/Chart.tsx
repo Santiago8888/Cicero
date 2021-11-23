@@ -1,7 +1,7 @@
-import { AstralChart, Planet } from '../Astral/AstralChart'
+import { AstralChart, iPlanet, Planet } from '../Astral/AstralChart'
+import { iApprove, iUser } from '../../App'
 import { useMediaQuery } from 'react-responsive'
 import { MiniChart } from '../Astral/MiniChart'
-import { iApprove, iUser } from '../../App'
 import { useEffect } from 'react'
 
 
@@ -15,9 +15,46 @@ interface iChart {
     next():void 
 }
 
-const NatalData = ({ date, location }:iUser) => <span>
-    Fecha de Nacimiento: {`${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`} <br/>
-    Lugar de Nacimiento: { location }
+const mapSign = (planet:iPlanet) => {
+    const signs = [
+        'Aries', 
+        'Tauro', 
+        'Géminis', 
+        'Cancer', 
+        'Leo', 
+        'Virgo', 
+        'Libra', 
+        'Scorpio', 
+        'Sagitario', 
+        'Capricornio', 
+        'Aquario', 
+        'Piscis' 
+    ]
+
+    const sign = signs[planet.house - 1]
+    return sign
+}
+
+const mapMonth = (n:Number) => {
+    if(n === 0) return 'Enero'
+    if(n === 1) return 'Febrero'
+    if(n === 2) return 'Marzo'
+
+    if(n === 3) return 'Abril'
+    if(n === 4) return 'Mayo'
+    if(n === 5) return 'Junio'
+
+    if(n === 6) return 'Julio'
+    if(n === 7) return 'Agosto'
+    if(n === 8) return 'Septiembre'
+
+    if(n === 9) return 'Octubre'
+    if(n === 10) return 'Noviembre'
+    if(n === 11) return 'Diciembre'
+}
+
+const NatalData = ({ natalChart: { planets } }:iUser) => <span>
+    Tu Saturno está en  { mapSign(planets.find(({ name }) => name === 'Saturn' ) as iPlanet) }
 </span>
 
 export const Chart = ({ user, title, description, planet, drawHouses, next, approve }: iChart) => {
@@ -40,7 +77,7 @@ export const Chart = ({ user, title, description, planet, drawHouses, next, appr
                 fontWeight: 500,
                 width: midScreen ? 800 : 320        
             }}
-        > { description ? description[0] : <NatalData {...user} /> } </h3>
+        >  <NatalData {...user} /> </h3>
 
         {
             !smallScreen
@@ -56,6 +93,18 @@ export const Chart = ({ user, title, description, planet, drawHouses, next, appr
                 />            
         }
 
+        <h3 
+            style={{
+                margin:'auto',
+                color: '#333',
+                fontSize: '1.25em',
+                textAlign: 'center',
+                fontWeight: 500,
+                width: midScreen ? 800 : 320        
+            }}
+        >  Fecha de Nacimiento: {user.date.getDate()}/{mapMonth(user.date.getMonth())}/{user.date.getFullYear()} </h3>
+        
+        
         <div style={{ marginTop:'3rem', width: midScreen ? 800 : 320, margin:'auto'}}>
             <button
                 onClick={next} 
@@ -65,6 +114,7 @@ export const Chart = ({ user, title, description, planet, drawHouses, next, appr
                     width:180, 
                     fontSize:'1.25rem', 
                     fontWeight:600, 
+                    margin:'2rem',
                     backgroundColor:'saddlebrown'
                 }}
             > CONTINUAR </button>

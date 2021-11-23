@@ -39,7 +39,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
                 marginBottom: midScreen ? '2rem' : '1rem', 
                 color:'saddlebrown'
             }}
-        > { title } </h1>
+        > { title.replace('DYNAMIC_SIGN', user.sign || '') } </h1>
 
 
         <Divider midScreen={midScreen} />

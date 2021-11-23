@@ -1,22 +1,21 @@
 import { iLesson } from '../../components/LayOut/Menu'
+import { posts1 } from './posts'
 import { quiz1 } from './quiz1'
 
 
+const posts1Description = ['Nuevamente, te invitamos a que compartas tu experiencia con los demás, también puedes dar like y comentar en la experiencia de los otros.']
 const lessons1:iLesson[] = [
+    { title:'El signo de tu Saturno', type:'Chart', planet:'Saturn', drawHouses:false },
     { type:'Video', title:'El significado del signo', link:'https://youtu.be/uJP6kRJq9Qs' }, 
     { type:'Quiz', title:'Quiz 2.1', questions:quiz1 }, 
     { type:'Video', title:'Tus vidas pasadas', link:'https://youtu.be/qR1KmIG5Fl0' },
-    { 
-        title:'El signo de tu Saturno',
-        type:'Chart',
-        planet:'Saturn',
-        drawHouses:false
-    },
+    { type:'Reflection', title:'Ejercicio de Compartir', posts:posts1, numbered:true, description:posts1Description }
 ]
 
 
 const lessons2:iLesson[] = [
     { type:'Video', title:'La influencia de tu signo', link:'https://youtu.be/k5oxhnHwYWQ' }, 
+    { type:'Reading', title:'Karma de DYNAMIC_SIGN', link:'' },
     { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' }
 ]
 
