@@ -46,5 +46,10 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Necesidad de sobrevivir', sign:'Ari', value:true },
         ]
+    }, {
+        question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
+        answers: [
+            { answer:'Jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
+        ]
     }
 ]
