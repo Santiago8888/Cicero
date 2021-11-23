@@ -22,7 +22,7 @@ export const quiz13:iQuestion[] = [
         question: '3. ¿Cuáles son las causas de que nos alejemos de nuestro centro?', 
         answers:[
             { answer:'No escuchamos a los demás y hablamos mucho.', value:false },
-            { answer:'Estar muy dispersos o sin falta de ritmo.', value:true },
+            { answer:'Estar muy dispersos o hemos perdido el ritmo.', value:true },
             { answer:'Olvidamos el cuidado de nuestro cuerpo y alma.', value:false },
             { answer:'Actuamos en contra de nuestros valores.', value:false },
         ]
