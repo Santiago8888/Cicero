@@ -24,19 +24,19 @@ export const quiz3:iQuestion[] = [
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
         answers:[
             { answer:'Humildad, valentía, dignidad y paciencia.', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
+            { answer:'Honestidad, perseverancia y confianza', value:true, sign:'Tau' },
         ]
     }, { 
-        question:'5. ¿Qué te sentirás mientras NO hayas aprendido esas cualidades?', 
+        question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
         answers:[
             { answer:'Impaciente, vulnerable, desafiado, ofendido y no reconocido.', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
+            { answer:'Desconfiado, abusado, robado y temeroso de perder', value:true, sign:'Tau' },
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
         answers:[
             { answer:'Segur@ y satisfech@ de mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
+            { answer:'Confianza y tranquilidad de que soy una persona valiosa', value:true, sign:'Tau' },
         ]
     }, { 
         question:'7. ¿Generalmente, en que resiente más autoridad tu karma durante la infancia?', 
