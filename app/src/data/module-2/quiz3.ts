@@ -53,17 +53,17 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'11. ¿Cuales actitudes debes evitar?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'12. ¿De qué forma tiendes a causar daño?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'13. ¿Cuál de estas lecciones no te corresponde enseñar?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
