@@ -96,7 +96,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Las agresivas.', value:true, sign:'Ari' },
             { answer:'Deshonestas.', value:true, sign:'Tau' },
             { answer:'La falsedad.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'De control o víctima', value:true, sign:'Can' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
@@ -104,7 +104,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Actuando sin pensar, o de lo contrario, por no actuar.', value:true, sign:'Ari' },
             { answer:'Atesorar demasiado y acumular innecesariamente.', value:true, sign:'Tau' },
             { answer:'Mentir, manipular o ser incongruente.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Ayudar indebidamente o hacer sentir culpa.', value:true, sign:'Can' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
@@ -112,7 +112,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Asertivas y con entusiasmo.', value:false, sign:'Ari' },
             { answer:'En base a mis valores.', value:true, sign:'Tau' },
             { answer:'En base a la verdad.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Compasión y amor', value:true, sign:'Can' },
         ]
     }, 
 ]
