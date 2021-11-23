@@ -42,31 +42,31 @@ export const quiz3:iQuestion[] = [
         question:'7. ¿Generalmente, en que resiente más autoridad tu karma durante la infancia?', 
         answers:[
             { answer:'No poder ser como quería y mi comportamiento era corregido constantemente.', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
+            { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera tuyo.', value:true, sign:'Tau' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
-            { answer:'', value:true, sign:'Tau' },
             { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' },
+            { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia', value:true, sign:'Tau' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
         answers:[
-            { answer:'', value:true, sign:'Tau' },
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
+            { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
         answers:[
-            { answer:'', value:true, sign:'Tau' },
+            { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios. irreales para que puedas regresar a tomar conciencia de la honestidad y rectitud', value:true, sign:'Tau' },
             { answer:'Que traten de exceder los límites para intentar hacerme perder la dignidad y me provocarán para que aprenda paciencia.', value:true, sign:'Ari' },
         ]
     }, { 
         question:'11. ¿Cuales actitudes debes evitar?', 
         answers:[
-            { answer:'Agresivas.', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
+            { answer:'Las agresivas.', value:true, sign:'Ari' },
+            { answer:'Atesorar demasiado y acumular innecesariamente', value:true, sign:'Tau' },
         ]
     }, { 
         question:'12. ¿De qué forma tiendes a causar daño?', 
