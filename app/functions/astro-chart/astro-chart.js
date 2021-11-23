@@ -2,8 +2,8 @@ const swisseph = require('swisseph')
 const axios = require('axios')
 require('dotenv').config()
 
-const { location_key } = process.env;
-const { timezone_key } = process.env;
+const { location_key } = process.env
+const { timezone_key } = process.env
 
 swisseph.swe_set_ephe_path (__dirname + './../../ephe')
 const flag = swisseph.SEFLG_SPEED
@@ -82,5 +82,5 @@ exports.handler = async ({ queryStringParameters }, context) => {
             planets,
             houses 
         }),
-    };
-};
+    }
+}

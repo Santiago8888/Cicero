@@ -60,7 +60,7 @@ export const Video = ({ user, title, link='', description, next, approve }: iVid
                     fontWeight:600, 
                     backgroundColor:'saddlebrown'
                 }}
-                disabled={user.current.module === user.progress.module && user.progress.lesson === user.current.lesson}
+                disabled={user.current.unit === user.progress.unit && user.current.module === user.progress.module && user.progress.lesson === user.current.lesson}
             > CONTINUAR </button>
         </div>
     </div>
