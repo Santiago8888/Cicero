@@ -5,33 +5,33 @@ export const quiz3:iQuestion[] = [
     { 
         question:'1. ¿De que debes ser un ejemplo hoy?', 
         answers:[
-            { answer:'De valentía, liderazgo y autenticidad.', value:true, sign:'Ari' },
-            { answer:'De un sistema de valores inquebrantable.', value:true, sign:'Tau' },
-            { answer:'De una persona sincera y auténtica', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Valentía, liderazgo y autenticidad.', value:true, sign:'Ari' },
+            { answer:'Un sistema de valores inquebrantable.', value:true, sign:'Tau' },
+            { answer:'Una persona sincera y auténtica', value:true, sign:'Gem' },
+            { answer:'Amor incondicional, apoyo, aceptación y manejo emocional', value:true, sign:'Can' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
         answers:[
-            { answer:'A salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
-            { answer:'A desarrollar autovaloración, a salir de sus problemas financieros, a tomar decisiones en base a buenos valores, y a mostrar honestidad y confiabilidad.', value:true, sign:'Tau' },
-            { answer:'a comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
+            { answer:'Desarrollar autovaloración, a salir de sus problemas financieros, a tomar decisiones en base a buenos valores, y a mostrar honestidad y confiabilidad.', value:true, sign:'Tau' },
+            { answer:'Comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
+            { answer:'Hacer equipo, ser cariños@, just@, evitar el chantaje, hacer lo correcto y siempre ser amoros@', value:true, sign:'Can' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
         answers:[
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo autosuficiente, mostrando dignidad e independencia.', value:true, sign:'Ari' },
-            { answer:'A disfrutar de tus bienes y dinero, del resultado de tus esfuerzos, compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
-            { answer:'A hacer valer tu palabra, responsabilizarte de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Disfrutar de tus bienes y dinero, del resultado de tus esfuerzos, compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
+            { answer:'Hacer valer tu palabra, responsabilizarte de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
+            { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo paciente y compasivo', value:true, sign:'Can' },
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
         answers:[
             { answer:'Humildad, valentía, dignidad y paciencia.', value:true, sign:'Ari' },
             { answer:'Honestidad, perseverancia y confianza', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Sinceridad, autenticidad y congruencia.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
@@ -39,7 +39,7 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Impaciente, vulnerable, desafiado, ofendido y no reconocido.', value:true, sign:'Ari' },
             { answer:'Desconfiado, abusado, robado y temeroso de perder', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Deshonesto, nervioso, descubierto o fuera de contexto', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
@@ -47,15 +47,15 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Segur@ y satisfech@ de mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
             { answer:'Confianza y tranquilidad de que soy una persona valiosa', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Segur@ y satisfech@ de tus ideas, tus palabras y tus relaciones.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
-        question:'7. ¿Generalmente, en que resiente más autoridad tu karma durante la infancia?', 
+        question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
         answers:[
-            { answer:'No poder ser como quería y mi comportamiento era corregido constantemente.', value:true, sign:'Ari' },
-            { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera tuyo.', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'No poder ser como quería y un comportamiento constantemente corregido.', value:true, sign:'Ari' },
+            { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
+            { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
