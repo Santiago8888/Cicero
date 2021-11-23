@@ -33,22 +33,22 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'7. ¿Generalmente, en que resiente más autoridad tu karma durante la infancia?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'10. ¿Qué personas atraerás a tu vida?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
