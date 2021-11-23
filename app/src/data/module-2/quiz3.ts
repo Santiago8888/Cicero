@@ -5,32 +5,32 @@ export const quiz3:iQuestion[] = [
     { 
         question:'1. ¿De que debes ser un ejemplo hoy?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'De valentía, liderazgo y autenticidad', value:true, sign:'Ari' }
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'A salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' }
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo autosuficiente, mostrando dignidad e independencia. ', value:true, sign:'Ari' }
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Humildad, valentía, dignidad y paciencia', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'5. ¿Qué emociones te provocarán tus figuras de autoridad?', 
+        question:'5. ¿Qué te sentirás mientras NO hayas aprendido esas cualidades?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Impaciente, vulnerable, desafiado, ofendido y no reconocido', value:true, sign:'Ari' }
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Segur@ y satisfech@ de mi nueva identidad y liderazgo.', value:true, sign:'Ari' }
         ]
     }, { 
         question:'7. ¿Generalmente, en que resiente más autoridad tu karma durante la infancia?', 
