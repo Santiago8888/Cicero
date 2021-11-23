@@ -6,5 +6,6 @@ export const posts1 = [
     'De acuerdo a lista de cualidades del signo de tu Saturno, cuentanos una experiencia en la que hayas visto a alguien actuar impecablemente:',
     '¿En qué actitudes te acuerdas que tus padres hayan sido particularmente exigentes?',
     '¿Cómo te imaginas que haya sido alguna de tus vidas pasadas?',
-    '¿Cuáles actitudes o comportamientos has notado que son aceptables para los demás pero no para ti?'
+    '¿Cuáles actitudes o comportamientos has notado que son aceptables para los demás pero no para ti?',
+    '¿Cuál de las cualidades del signo de tu Saturno te gustaría mostrar más?, ¿Por qué?'
 ]
