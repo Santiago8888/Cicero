@@ -59,23 +59,29 @@ export const quiz3:iQuestion[] = [
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
         answers:[
-            { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios. irreales para que puedas regresar a tomar conciencia de la honestidad y rectitud', value:true, sign:'Tau' },
-            { answer:'Que traten de exceder los límites para intentar hacerme perder la dignidad y me provocarán para que aprenda paciencia.', value:true, sign:'Ari' },
+            { answer:'Que traten de exceder los límites y provocarán para intentar hacerme perder la dignidad.', value:true, sign:'Ari' },
+            { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
         ]
     }, { 
-        question:'11. ¿Cuales actitudes debes evitar?', 
+        question:'11. ¿Por qué atrae esas personas a tu vida?', 
+        answers:[
+            { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
+            { answer:'Regresar a tomar conciencia de la honestidad y rectitud', value:true, sign:'Tau' },
+        ]
+    }, { 
+        question:'12. ¿Cuales actitudes debes evitar?', 
         answers:[
             { answer:'Las agresivas.', value:true, sign:'Ari' },
             { answer:'Atesorar demasiado y acumular innecesariamente', value:true, sign:'Tau' },
         ]
     }, { 
-        question:'12. ¿De qué forma tiendes a causar daño?', 
+        question:'13. ¿De qué forma tiendes a causar daño?', 
         answers:[
             { answer:'Actuando sin pensar, o de lo contrario, por no actuar.', value:true, sign:'Ari' },
             { answer:'', value:true, sign:'Tau' },
         ]
     }, { 
-        question:'13. ¿Cuál de estas lecciones no te corresponde enseñar?', 
+        question:'14. ¿Cuál de estas lecciones no te corresponde enseñar?', 
         answers:[
             { answer:'Cómo convertirse en un ejemplo de valentía.', value:false, sign:'Ari' },
             { answer:'Tomar decisiones asertivas con entusiasmo.', value:false, sign:'Ari' },
