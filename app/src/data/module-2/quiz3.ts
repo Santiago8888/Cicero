@@ -7,21 +7,21 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'De valentía, liderazgo y autenticidad.', value:true, sign:'Ari' },
             { answer:'De un sistema de valores inquebrantable.', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'De una persona sincera y auténtica', value:true, sign:'Gem' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
         answers:[
             { answer:'A salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
             { answer:'A desarrollar autovaloración, a salir de sus problemas financieros, a tomar decisiones en base a buenos valores, y a mostrar honestidad y confiabilidad.', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'a comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
         answers:[
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo autosuficiente, mostrando dignidad e independencia.', value:true, sign:'Ari' },
             { answer:'A disfrutar de tus bienes y dinero, del resultado de tus esfuerzos, compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'A hacer valer tu palabra, responsabilizarte de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
