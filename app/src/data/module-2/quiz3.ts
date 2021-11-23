@@ -55,15 +55,15 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'No poder ser como quería y un comportamiento constantemente corregido.', value:true, sign:'Ari' },
             { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
-            { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
+            { answer:'Que sintieras que la forma de exigirte o educarte no era del todo congruente.', value:true, sign:'Can' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
             { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' },
             { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
@@ -71,7 +71,7 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
             { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
@@ -79,7 +79,7 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Que traten de exceder los límites y provocarán para intentar hacerme perder la dignidad.', value:true, sign:'Ari' },
             { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
@@ -87,7 +87,7 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
             { answer:'Regresar a tomar conciencia de la honestidad y rectitud', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Reconocer que solo se gana cuando se es verdadero', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
