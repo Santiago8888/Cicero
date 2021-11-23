@@ -1,6 +1,6 @@
 import { iRecordings } from '../components/Forum/Recordings'
-import { iLesson, iUnit } from '../components/LayOut/Menu'
 import { iForum } from '../components/Forum/Forum'
+import { iUnit } from '../components/LayOut/Menu'
 
 import { planets, houses } from './chart'
 import { module1 } from './module-1'
@@ -22,27 +22,6 @@ const defaultUser:iUser = {
 }
 
 
-export const lesson: iLesson = {
-    title:'Quiz', 
-    type:'Quiz', 
-    questions:[{
-        question:'First Question?', 
-        answers:[
-            { answer:'Answer a', value:false },
-            { answer:'Answer b', value:true }
-        ]
-    }, {
-        question:'Second Question?', 
-        answers:[
-            { answer:'Answer a', value:false },
-            { answer:'Answer b', value:true }
-        ]
-    }],
-    min:1,
-    link:'https://www.youtube.com/watch?v=8u9sRggTos8'
-}
-
-
 export const Forum:iForum = {
     user:defaultUser,
     title:'Foro de Dudas',
@@ -56,13 +35,6 @@ export const Recordings:iRecordings = {
     description:'',
     recordings:[]
 }
-
-
-const lessons:iLesson[] = [
-    {...lesson, type:'Video', title:'Video'},
-    {...lesson, type:'Reading', title:'Lectura', link:'sample.pdf'},
-    lesson
-]
 
 
 export const Units:iUnit[] = [
