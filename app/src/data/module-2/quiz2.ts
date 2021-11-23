@@ -39,7 +39,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi personalidad.', sign:'Ari', value:true },
             { answer:'Mi sistema de valores.', sign:'Tau', value:true },
             { answer:'Mi comunicación', sign:'Gem', value:true },
-            { answer:'', sign:'Can', value:true },
+            { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
         ]
     }, {
         question:'6. ¿En que consiste tu trabajo en esta vida?',
@@ -47,7 +47,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
             { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro.', sign:'Tau', value:true },
             { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
-            { answer:'', sign:'Can', value:true },
+            { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
         ]
     }, {
         question:'7. ¿Qué debes saber en esta vida?',
@@ -55,7 +55,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
             { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
             { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
-            { answer:'', sign:'Can', value:true },
+            { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
         ]
     }, {
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
