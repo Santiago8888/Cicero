@@ -25,8 +25,8 @@ export const posts2 = [
 
 
 export const posts3 = [
-    'Después de haber hecho el ejercicio de la primera semana, es posible que ya sepas distinguir en que situaciones te sientes bloqueado o limitado y que te está tratando de enseñar Saturno en estos momentos.',
-    'En este segundo ejercicio nos concentraremos en la manejar y liberar esa limitación para transformarla en incentivo para cumplir con nuestra misión de servicio. Te invito a que está semana:',    
+    'Después de haber hecho el ejercicio práctico de la primera semana, es posible que ya sepas distinguir en que situaciones te sientes bloqueado o limitado y que te está tratando de enseñar Saturno en estos momentos.',
+    'En este segundo ejercicio nos concentraremos en como manejar y liberar esa limitación para transformarla en incentivo para cumplir con nuestra misión de servicio. Te invito a que está semana:',    
     '1. Identifiques 3 cualidades de el signo de tu Saturno que quieras demostrar más, y también una de las negativas que gustes disminuir.',    
     '2. Cuando identifiques que estás en un momento de bloqueo o limitación, hazte la pregunta: ¿Cómo actuaría alguien que tenga mucha ______ (y elije una de las cualidades de tu signo)? O bien haz lo opuesto una de las actitud negativas.',
     '3. Si lograste actuar de acuerdo a la mejor versión de tu signo (de Saturno), abre nuevamente en tu celular y el bloc de notas y escribe como cambio tu sentimiento de limitación o bloqueo.',
