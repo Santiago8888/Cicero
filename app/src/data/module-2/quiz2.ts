@@ -63,7 +63,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
             { answer:'Una fuerte necesidad de seguridad.', sign:'Tau', value:true },
             { answer:'Gran habilidad de comunicación', sign:'Gem', value:true },
-            { answer:'', sign:'Can', value:true },
+            { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
         ]
     }, {
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
@@ -71,7 +71,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
             { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
             { answer:'La necesidad de saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
-            { answer:'', sign:'Can', value:true },
+            { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
         ]
     }, {
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
