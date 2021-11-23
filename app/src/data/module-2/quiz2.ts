@@ -36,5 +36,10 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Que puedo lograr cualquier meta y vencer cualquier reto', sign:'Ari', value:true },
         ]
+    }, {
+        question:'8. ¿Qué desarrollaste en vidas pasadas?',
+        answers: [
+            { answer:'Una fuerte personalidad, enfrentando grandes desafíos', sign:'Ari', value:true },
+        ]
     }
 ]
