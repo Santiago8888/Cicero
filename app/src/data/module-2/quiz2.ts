@@ -6,7 +6,7 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'El impulso y la energía', sign:'Ari', value:true },
             { answer:'Poder ahorrar grandes cantidades de dinero', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
+            { answer:'La habilidad para comunicarme con los demás', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
@@ -14,7 +14,7 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Poder medir mi fuerza, canalizarla correctamente, dejar de insistir tantas veces para lograr algo y aprender de tus resultados', sign:'Ari', value:true },
             { answer:'Deshacerme de los bienes a los que me apego: aquellos que solo me están haciendo la vida más difícil o pesada', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
+            { answer:'Aprender a hacerlo de manera clara, sincera y abierta, verbalizar mis ideas, dejar de manipular y mantener una postura adecuada y congruente', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
