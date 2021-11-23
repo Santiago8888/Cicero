@@ -1,5 +1,5 @@
 import { iLesson } from '../../components/LayOut/Menu'
-import { posts1, posts2 } from './posts'
+import { posts1, posts2, posts3 } from './posts'
 import { quiz3 } from './quiz3'
 import { quiz2 } from './quiz2'
 import { quiz1 } from './quiz1'
@@ -59,6 +59,7 @@ const lessons3:iLesson[] = [
     },
     { type:'Quiz', title:'Quiz 2.3', questions:quiz3 }, 
     { type:'Video', title:'El camino de retorno', link:'https://youtu.be/_XjOhM-i9NA', description:returnDescription },
+    { type:'Reflection', title:'Ejercicio Práctico', posts:posts3, end:true }
 ]
 
 export const module2 = [
