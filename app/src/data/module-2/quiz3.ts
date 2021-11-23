@@ -62,8 +62,8 @@ export const quiz3:iQuestion[] = [
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
             { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' },
-            { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia', value:true, sign:'Tau' },
-            { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad', value:true, sign:'Gem' },
+            { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia.', value:true, sign:'Tau' },
+            { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
@@ -71,7 +71,7 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
             { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
-            { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia', value:true, sign:'Gem' },
+            { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
@@ -79,39 +79,39 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Que traten de exceder los límites y provocarán para intentar hacerme perder la dignidad.', value:true, sign:'Ari' },
             { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
-            { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles', value:true, sign:'Gem' },
+            { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
         answers:[
             { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
-            { answer:'Regresar a tomar conciencia de la honestidad y rectitud', value:true, sign:'Tau' },
-            { answer:'Reconocer que solo se gana cuando se es verdadero', value:true, sign:'Gem' },
+            { answer:'Regresar a tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
+            { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
         answers:[
             { answer:'Las agresivas.', value:true, sign:'Ari' },
-            { answer:'Deshonestas', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Deshonestas.', value:true, sign:'Tau' },
+            { answer:'La falsedad.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
         answers:[
             { answer:'Actuando sin pensar, o de lo contrario, por no actuar.', value:true, sign:'Ari' },
-            { answer:'Atesorar demasiado y acumular innecesariamente', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'Atesorar demasiado y acumular innecesariamente.', value:true, sign:'Tau' },
+            { answer:'Mentir, manipular o ser incongruente.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
         answers:[
             { answer:'Asertivas y con entusiasmo.', value:false, sign:'Ari' },
-            { answer:'En base a mis valores', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
+            { answer:'En base a mis valores.', value:true, sign:'Tau' },
+            { answer:'En base a la verdad.', value:true, sign:'Gem' },
             { answer:'', value:true, sign:'Can' },
         ]
     }, 
