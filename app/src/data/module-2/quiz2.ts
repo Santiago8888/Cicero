@@ -13,7 +13,7 @@ export const quiz2:iQuestion[] = [
         question:'2. ¿Para qué te restringe eso Saturno?',
         answers: [
             { answer:'Poder medir mi fuerza, canalizarla correctamente, dejar de insistir tantas veces para lograr algo y aprender de tus resultados', sign:'Ari', value:true },
-            { answer:'Deshacerte de los bienes a los que te apegas: aquellos que solo te están haciendo la vida más difícil o pesada', sign:'Tau', value:true },
+            { answer:'Deshacerme de los bienes a los que me apego: aquellos que solo me están haciendo la vida más difícil o pesada', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
@@ -21,7 +21,7 @@ export const quiz2:iQuestion[] = [
         question:'3. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
         answers: [
             { answer:'Detener mi agresividad, para pensar antes de actuar y reconocer que mis acciones tienen consecuencias', sign:'Ari', value:true },
-            { answer:'', sign:'Tau', value:true },
+            { answer:'No poder invertir en demasiados negocios, para que no endeudarme, evitar apostar o especular y para que no busquar oportunidades de acumulación', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
@@ -29,7 +29,7 @@ export const quiz2:iQuestion[] = [
         question:'4. ¿Qué es importante que aprendas en esta vida?',
         answers: [
             { answer:'Tacto y cooperación con los demás', sign:'Ari', value:true },
-            { answer:'', sign:'Tau', value:true },
+            { answer:'Valorar los recursos y a las personas', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
