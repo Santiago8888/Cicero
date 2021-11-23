@@ -18,17 +18,17 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'5. ¿Qué emociones te provocarán tus figuras de autoridad?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
     }, { 
-        question:'', 
+        question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
         answers:[
             { answer:'', value:true, sign:'Ari' }
         ]
