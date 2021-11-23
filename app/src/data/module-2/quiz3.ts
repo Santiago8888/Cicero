@@ -32,7 +32,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Humildad, valentía, dignidad y paciencia.', value:true, sign:'Ari' },
             { answer:'Honestidad, perseverancia y confianza', value:true, sign:'Tau' },
             { answer:'Sinceridad, autenticidad y congruencia.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Responsabilidad, apoyo, respeto y amor incondicional.', value:true, sign:'Can' },
         ]
     }, { 
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
@@ -40,7 +40,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Impaciente, vulnerable, desafiado, ofendido y no reconocido.', value:true, sign:'Ari' },
             { answer:'Desconfiado, abusado, robado y temeroso de perder', value:true, sign:'Tau' },
             { answer:'Deshonesto, nervioso, descubierto o fuera de contexto', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Impaciente, controlador@ y víctima', value:true, sign:'Can' },
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
@@ -48,7 +48,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Segur@ y satisfech@ de mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
             { answer:'Confianza y tranquilidad de que soy una persona valiosa', value:true, sign:'Tau' },
             { answer:'Segur@ y satisfech@ de tus ideas, tus palabras y tus relaciones.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Segur@ y satisfech@ de tu papel en la familia, la armonía y bienestar', value:true, sign:'Can' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
