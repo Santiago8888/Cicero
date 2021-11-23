@@ -76,7 +76,7 @@ export const quiz2:iQuestion[] = [
     }, {
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
         answers: [
-            { answer:'Jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
+            { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
             { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
             { answer:'Una persona conocida conocida luchabas por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
             { answer:'Creías que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
@@ -85,9 +85,9 @@ export const quiz2:iQuestion[] = [
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
         answers: [
             { answer:'Haber buscado la supervivencia en ambientes inhóspitos, en situaciones de mucho riesgo o peligro y actividades que requieren de mucha energía.', sign:'Ari', value:true },
-            { answer:'', sign:'Tau', value:true },
-            { answer:'', sign:'Gem', value:true },
-            { answer:'', sign:'Can', value:true },
+            { answer:'Trabajar en bancos o empresas financieras, ser aficionado a los juegos de azar, la especulación, comerciante, empresario y hasta inversionista', sign:'Tau', value:true },
+            { answer:'Informante, locutor, periodista, transportista, comerciante, vendedor, presentador o cómico.', sign:'Gem', value:true },
+            { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
         ]
     }
 ]
