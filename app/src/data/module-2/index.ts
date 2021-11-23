@@ -25,7 +25,7 @@ const karmaDescription = [
 
 const lessons2:iLesson[] = [
     { type:'Video', title:'La influencia de tu signo', link:'https://youtu.be/k5oxhnHwYWQ' }, 
-    { type:'Reading', title:'Saturno en DYNAMIC_SIGN', link:'docs/Karma-de-Saturno-en-Aries.pdf', description:karmaDescription },
+    { type:'Reading', title:'Saturno en DYNAMIC_SIGN', link:'docs/Karma-de-Saturno-en-Aries.pdf', description:karmaDescription, min:4 },
     { type:'Quiz', title:'Quiz 2.2', questions:quiz2 }, 
     { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' },
     { type:'Reflection', title:'Preguntas de Reflexión', posts:posts2, numbered:true, description:posts2Description }
@@ -34,6 +34,7 @@ const lessons2:iLesson[] = [
 
 const lessons3:iLesson[] = [
     { type:'Video', title:'Ser un buen ejemplo', link:'https://youtu.be/MjU_S2C_cqc' },
+    { type:'Reading', title:'Misión de DYNAMIC_SIGN', link:'docs/Misión-de-Saturno-en-Aries.pdf', min:4 },
     { type:'Video', title:'El camino de retorno', link:'https://youtu.be/_XjOhM-i9NA' },
 ]
 
