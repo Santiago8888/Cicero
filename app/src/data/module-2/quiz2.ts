@@ -26,6 +26,10 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Mi personalidad', sign:'Ari', value:true },
         ]
+    }, {
+        question:'6. ¿En que consiste tu trabajo en esta vida?',
+        answers: [
+            { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo', sign:'Ari', value:true },
+        ]
     }
-
 ]
