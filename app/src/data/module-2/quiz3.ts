@@ -72,23 +72,19 @@ export const quiz3:iQuestion[] = [
         question:'12. ¿Cuales actitudes debes evitar?', 
         answers:[
             { answer:'Las agresivas.', value:true, sign:'Ari' },
-            { answer:'Atesorar demasiado y acumular innecesariamente', value:true, sign:'Tau' },
+            { answer:'Deshonestas', value:true, sign:'Tau' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
         answers:[
             { answer:'Actuando sin pensar, o de lo contrario, por no actuar.', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
+            { answer:'Atesorar demasiado y acumular innecesariamente', value:true, sign:'Tau' },
         ]
     }, { 
-        question:'14. ¿Cuál de estas lecciones no te corresponde enseñar?', 
+        question:'14. ¿Cómo debes tomar tus decisiones?', 
         answers:[
-            { answer:'Cómo convertirse en un ejemplo de valentía.', value:false, sign:'Ari' },
-            { answer:'Tomar decisiones asertivas con entusiasmo.', value:false, sign:'Ari' },
-            { answer:'Levantarse de cualquier caída aprendiendo de la experiencia.', value:false, sign:'Ari' },
-            { answer:'', value:false, sign:'Tau' },
-            { answer:'', value:false, sign:'Tau' },
-            { answer:'', value:false, sign:'Tau' },
+            { answer:'Asertivas y con entusiasmo.', value:false, sign:'Ari' },
+            { answer:'En base a mis valores', value:true, sign:'Tau' },
         ]
     }, 
 ]
