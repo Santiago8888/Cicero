@@ -35,27 +35,27 @@ export const quiz3:iQuestion[] = [
     }, { 
         question:'7. ¿Generalmente, en que resiente más autoridad tu karma durante la infancia?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'No poder ser como quería y mi comportamiento era corregido constantemente', value:true, sign:'Ari' }
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' }
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver', value:true, sign:'Ari' }
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Que traten de exceder los límites para intentar hacerme perder la dignidad y me provocarán para que aprenda paciencia', value:true, sign:'Ari' }
         ]
     }, { 
         question:'11. ¿Cuales actitudes debes evitar?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Agresivas', value:true, sign:'Ari' }
         ]
     }, { 
         question:'12. ¿De qué forma tiendes a causar daño?', 
