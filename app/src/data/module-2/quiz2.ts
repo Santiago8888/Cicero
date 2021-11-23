@@ -31,5 +31,10 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo', sign:'Ari', value:true },
         ]
+    }, {
+        question:'7. ¿Qué debes saber en esta vida?',
+        answers: [
+            { answer:'Que puedo lograr cualquier meta y vencer cualquier reto', sign:'Ari', value:true },
+        ]
     }
 ]
