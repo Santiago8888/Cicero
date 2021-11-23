@@ -172,8 +172,8 @@ const are_planets_close = (planets:iMappedPlanet[]) => !!planets.find(({ degree 
 )
 
 
-interface iAstralChart { planets:iPlanet[], houses:number[]}
-export const AstralChart = ({ planets, houses }: iAstralChart) => {
+export interface iAstralChart { planets:iPlanet[], houses:number[], drawHouses?:boolean }
+export const AstralChart = ({ planets, houses, drawHouses=true }: iAstralChart) => {
 
     useEffect(() => { 
         const draw_circle = (svg:SVG, r:number) => svg
@@ -310,12 +310,15 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
 
             chartHouses.filter((_, i) => i < 12).map((d, i) => {
                 const arc = {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 103, outerRadius: 120, fill: house_colors[(15-i) % 4]}
-                draw_arc(svg, arc)
+
+                if(drawHouses) draw_arc(svg, arc)
+                else return draw_arc(svg, arc)
+                
 
                 const { x, y } = get_arc_middle({grade_one: d, grade_two: chartHouses[i + 1], depth: 113})
                 create_text(svg, { x, y}, i + 1, deep_colors[(i+4)%4])
 
-                return draw_arc(svg, {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 100, outerRadius: 260, fill:''})
+                return draw_arc(svg, {startAngle: d, endAngle: chartHouses[i+1], innerRadius: 100, outerRadius: 260, fill:''})                
             })
 
             const aspects = get_all_aspects(planets)
@@ -325,7 +328,7 @@ export const AstralChart = ({ planets, houses }: iAstralChart) => {
 
         const mappedPlanets = map_planets(planets, houses[0])
         draw_chart(mappedPlanets, [...houses])
-    }, [planets, houses])
+    }, [planets, houses, drawHouses])
 
 
     return <div className='App' style={{margin:'50px 25px'}}>

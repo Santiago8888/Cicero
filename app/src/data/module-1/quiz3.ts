@@ -23,11 +23,11 @@ export const quiz13:iQuestion[] = [
         answers:[
             { answer:'No escuchamos a los demás y hablamos mucho.', value:false },
             { answer:'Estar muy dispersos o sin falta de ritmo.', value:true },
-            { answer:'Olvidamos el cuidado de nuestro y alma.', value:false },
+            { answer:'Olvidamos el cuidado de nuestro cuerpo y alma.', value:false },
             { answer:'Actuamos en contra de nuestros valores.', value:false },
         ]
     },   { 
-        question: '4. ¿Cuál de estos es un mal consejo cuando pasamos por una lección de Saturno?', 
+        question: '4. ¿Cuál de estos sería un MAL consejo cuando pasamos por una lección de Saturno?', 
         answers:[
             { answer:'Adquirir consciencia nos sirve para mejorar las circunstancias.', value:false },
             { answer:'Procura tener buenas intenciones, emociones, pensamientos y acciones.', value:false },

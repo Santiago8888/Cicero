@@ -1,10 +1,10 @@
 import { useMediaQuery } from 'react-responsive'
+import { iApprove, iUser, Sign } from '../../App'
 import { CSSProperties, useState } from 'react'
-import { iApprove, iUser } from '../../App'
 import amplitude from 'amplitude-js'
 
 
-interface iAnswer { answer:string, value:boolean }
+interface iAnswer { answer:string, value:boolean, sign?:Sign }
 export interface iQuestion { question:string, answers:iAnswer[] }
 
 export const questionStyle:CSSProperties = {
