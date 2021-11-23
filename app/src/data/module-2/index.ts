@@ -57,7 +57,12 @@ const lessons3:iLesson[] = [
         min:4
     },
     { type:'Quiz', title:'Quiz 2.3', questions:quiz3 }, 
-    { type:'Video', title:'El camino de retorno', link:'https://youtu.be/_XjOhM-i9NA' },
+    { 
+        type:'Video', 
+        title:'El camino de retorno', 
+        link:'https://youtu.be/_XjOhM-i9NA', 
+        description:['En está primer lección de Kabbalah, empezamos a ver como liberar el Karma desde una consciencia espiritual alineada a nuestro ser superior.'] 
+    }
 ]
 
 export const module2 = [
