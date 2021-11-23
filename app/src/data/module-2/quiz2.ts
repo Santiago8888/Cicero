@@ -5,7 +5,7 @@ export const quiz2:iQuestion[] = [
         question: '1. ¿Qué te restringe Saturno en esta vida?', 
         answers: [
             { answer:'El impulso y la energía', sign:'Ari', value:true },
-            { answer:'', sign:'Tau', value:true },
+            { answer:'Poder ahorrar grandes cantidades de dinero', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
@@ -13,7 +13,7 @@ export const quiz2:iQuestion[] = [
         question:'2. ¿Para qué te restringe eso Saturno?',
         answers: [
             { answer:'Poder medir mi fuerza, canalizarla correctamente, dejar de insistir tantas veces para lograr algo y aprender de tus resultados', sign:'Ari', value:true },
-            { answer:'', sign:'Tau', value:true },
+            { answer:'Deshacerte de los bienes a los que te apegas: aquellos que solo te están haciendo la vida más difícil o pesada', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
