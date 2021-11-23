@@ -47,6 +47,7 @@ const misionDescription = [
     'Tiempo mínimo sugerido: 4 minutos'
 ]
 
+const returnDescription = ['En está primer lección de Kabbalah, empezamos a ver como liberar el Karma desde una consciencia espiritual alineada a nuestro ser superior.']
 const lessons3:iLesson[] = [
     { type:'Video', title:'Ser un buen ejemplo', link:'https://youtu.be/MjU_S2C_cqc' },
     { 
@@ -57,12 +58,7 @@ const lessons3:iLesson[] = [
         min:4
     },
     { type:'Quiz', title:'Quiz 2.3', questions:quiz3 }, 
-    { 
-        type:'Video', 
-        title:'El camino de retorno', 
-        link:'https://youtu.be/_XjOhM-i9NA', 
-        description:['En está primer lección de Kabbalah, empezamos a ver como liberar el Karma desde una consciencia espiritual alineada a nuestro ser superior.'] 
-    }
+    { type:'Video', title:'El camino de retorno', link:'https://youtu.be/_XjOhM-i9NA', description:returnDescription },
 ]
 
 export const module2 = [
