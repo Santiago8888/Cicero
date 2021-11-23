@@ -60,12 +60,14 @@ export const quiz3:iQuestion[] = [
     }, { 
         question:'12. ¿De qué forma tiendes a causar daño?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Actuando sin pensar, o de lo contrario, por no actuar', value:true, sign:'Ari' }
         ]
     }, { 
         question:'13. ¿Cuál de estas lecciones no te corresponde enseñar?', 
         answers:[
-            { answer:'', value:true, sign:'Ari' }
+            { answer:'Cómo convertirse en un ejemplo de valentía', value:false, sign:'Ari' },
+            { answer:'Tomar decisiones asertivas con entusiasmo', value:false, sign:'Ari' },
+            { answer:'Levantarse de cualquier caída aprendiendo de la experiencia', value:false, sign:'Ari' }
         ]
     }, 
 ]
