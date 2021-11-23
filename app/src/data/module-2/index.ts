@@ -15,7 +15,18 @@ const lessons1:iLesson[] = [
 
 const lessons2:iLesson[] = [
     { type:'Video', title:'La influencia de tu signo', link:'https://youtu.be/k5oxhnHwYWQ' }, 
-    { type:'Reading', title:'Karma de DYNAMIC_SIGN', link:'' },
+    { 
+        type:'Reading', 
+        title:'Saturno en DYNAMIC_SIGN', 
+        link:'docs/Karma-de-Saturno-en-Aries.pdf',
+        description:[
+            'En esta lectura conoceras a profundidad tu karma de Saturno, lo que te esta restringiendo y que vienes a aprender.',
+            '',
+            'Obtendrás un vistazo a tus vidas pasadas de acuerdo al signo de Saturno y algunas de las circunstancias que te hicieron desarrollar tu karma.',
+            '',
+            'Tiempo mínimo sugerido: 4 minutos',
+        ]
+    },
     { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' }
 ]
 
