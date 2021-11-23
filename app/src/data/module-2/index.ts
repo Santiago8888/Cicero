@@ -1,5 +1,5 @@
 import { iLesson } from '../../components/LayOut/Menu'
-import { posts1 } from './posts'
+import { posts1, posts2 } from './posts'
 import { quiz2 } from './quiz2'
 import { quiz1 } from './quiz1'
 
@@ -14,6 +14,7 @@ const lessons1:iLesson[] = [
 ]
 
 
+const posts2Description = ['En base al vídeo "La Misión de Saturno" toma un tiempo para reflexionar y encontrar o reafirmar tu misión de servicio:']
 const lessons2:iLesson[] = [
     { type:'Video', title:'La influencia de tu signo', link:'https://youtu.be/k5oxhnHwYWQ' }, 
     { 
@@ -29,7 +30,8 @@ const lessons2:iLesson[] = [
         ]
     },
     { type:'Quiz', title:'Quiz 2.2', questions:quiz2 }, 
-    { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' }
+    { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' },
+    { type:'Reflection', title:'Preguntas de Reflexión', posts:posts2, numbered:true, description:posts2Description }
 ]
 
 
