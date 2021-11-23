@@ -51,5 +51,10 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
         ]
+    }, {
+        question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
+        answers: [
+            { answer:'Haber buscado la supervivencia en ambientes inhóspitos, en situaciones de mucho riesgo o peligro y actividades que requieren de mucha energía.', sign:'Ari', value:true },
+        ]
     }
 ]
