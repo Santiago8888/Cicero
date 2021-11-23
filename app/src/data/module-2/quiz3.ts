@@ -64,7 +64,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' },
             { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia.', value:true, sign:'Tau' },
             { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Consciencia de tu lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les toca', value:true, sign:'Can' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
@@ -72,7 +72,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
             { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'A ayudar indebidamente y situaciones situaciones donde caiga y reaccione inconscientemente tomando un papel de víctima.', value:true, sign:'Can' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -80,7 +80,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Que traten de exceder los límites y provocarán para intentar hacerme perder la dignidad.', value:true, sign:'Ari' },
             { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
             { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Que muestren falta de responsabilidad o visión.', value:true, sign:'Can' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -88,7 +88,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
             { answer:'Regresar a tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
             { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
+            { answer:'Aprender a dar y amar incondicionalmente y ser consciente de que controlar a las personas o los resultado no ayuda', value:true, sign:'Can' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
