@@ -36,40 +36,40 @@ export const quiz2:iQuestion[] = [
     }, {
         question:'5. ¿Qué es lo principal que debes hacer ahora?',
         answers: [
-            { answer:'Corregir mi personalidad', sign:'Ari', value:true },
-            { answer:'Ser leal a un sistema de valores', sign:'Tau', value:true },
+            { answer:'Corregir mi personalidad.', sign:'Ari', value:true },
+            { answer:'Ser leal a un sistema de valores.', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
         question:'6. ¿En que consiste tu trabajo en esta vida?',
         answers: [
-            { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo', sign:'Ari', value:true },
-            { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro', sign:'Tau', value:true },
+            { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
+            { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro.', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
         question:'7. ¿Qué debes saber en esta vida?',
         answers: [
-            { answer:'Que puedo lograr cualquier meta y vencer cualquier reto', sign:'Ari', value:true },
-            { answer:'Al ser honesto, la vida me traerá personas honestas', sign:'Tau', value:true },
+            { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
+            { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
         answers: [
-            { answer:'Una fuerte personalidad', sign:'Ari', value:true },
-            { answer:'Una fuerte necesidad de seguridad', sign:'Tau', value:true },
+            { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
+            { answer:'Una fuerte necesidad de seguridad.', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
     }, {
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
         answers: [
-            { answer:'Necesidad de sobrevivir', sign:'Ari', value:true },
-            { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero', sign:'Tau', value:true },
+            { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
+            { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
             { answer:'', sign:'Gem', value:true },
             { answer:'', sign:'Can', value:true },
         ]
