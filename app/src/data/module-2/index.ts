@@ -1,5 +1,6 @@
 import { iLesson } from '../../components/LayOut/Menu'
 import { posts1 } from './posts'
+import { quiz2 } from './quiz2'
 import { quiz1 } from './quiz1'
 
 
@@ -27,6 +28,7 @@ const lessons2:iLesson[] = [
             'Tiempo mínimo sugerido: 4 minutos',
         ]
     },
+    { type:'Quiz', title:'Quiz 2.2', questions:quiz2 }, 
     { type:'Video', title:'La misión de Saturno', link:'https://youtu.be/iLpqbBzRIvk' }
 ]
 
