@@ -21,6 +21,11 @@ export const quiz2:iQuestion[] = [
         answers: [
             { answer:'Tacto y cooperación con los demás', sign:'Ari', value:true },
         ]
+    }, {
+        question:'5. ¿Qué debes corregir ahora?',
+        answers: [
+            { answer:'Mi personalidad', sign:'Ari', value:true },
+        ]
     }
 
 ]
