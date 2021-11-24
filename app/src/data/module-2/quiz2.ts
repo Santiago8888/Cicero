@@ -49,7 +49,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi comunicación', sign:'Gem', value:true },
             { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
             { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
-            { answer:'.', sign:'Vir', value:true },
+            { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
         ]
     }, {
         question:'6. ¿En que consiste tu trabajo en esta vida?',
@@ -59,7 +59,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
             { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
             { answer:'Relajarte, mostrarte como eres, dejar de tratar de controlar lo que el mundo piensa de tí.', sign:'Leo', value:true },
-            { answer:'.', sign:'Vir', value:true },
+            { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
         ]
     }, {
         question:'7. ¿Qué debes saber en esta vida?',
@@ -69,7 +69,7 @@ export const quiz2:iQuestion[] = [
             { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
             { answer:'Como ser verdaderamente agradecido.', sign:'Leo', value:true },
-            { answer:'.', sign:'Vir', value:true },
+            { answer:'Voy a estar san@ y me sientas tranquil@.', sign:'Vir', value:true },
         ]
     }, {
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
@@ -78,8 +78,8 @@ export const quiz2:iQuestion[] = [
             { answer:'Una fuerte necesidad de seguridad.', sign:'Tau', value:true },
             { answer:'Gran habilidad de comunicación', sign:'Gem', value:true },
             { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
-            { answer:'un fuerte liderazgo.', sign:'Leo', value:true },
-            { answer:'.', sign:'Vir', value:true },
+            { answer:'Un fuerte liderazgo.', sign:'Leo', value:true },
+            { answer:'Una fuerte necesidad de servir.', sign:'Vir', value:true },
         ]
     }, {
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
