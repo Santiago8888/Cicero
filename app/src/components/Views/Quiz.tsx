@@ -1,3 +1,4 @@
+import { sign_names } from '../Astral/AstralChart'
 import { iApprove, iUser, Sign } from '../../App'
 import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
@@ -17,6 +18,14 @@ export const questionStyle:CSSProperties = {
     borderColor:'#AAA'
 }
 
+const getRandomSign = (signs:Sign[]) => sign_names.filter(sign => !signs.includes(sign))[Math.round(Math.random()*10)]
+const getRandomSigns = (signs:Sign[]):Sign[] => {
+    if(signs.length === 4) return signs
+    
+    const newSign = getRandomSign(signs)
+    return getRandomSigns([...signs, newSign])
+}
+
 interface IQuestion extends iQuestion { 
     index:number
     value:number
@@ -24,14 +33,17 @@ interface IQuestion extends iQuestion {
     select(index:number, value:number):void 
 }
 
-
 const Question = ({index, question, value, answers, sign, user, select}:IQuestion) => <div 
     className='field' 
     style={questionStyle}
 >
     <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
     {
-        (sign ? answers.filter(({ sign }) => sign === user.sign) : answers).map(({ answer:a }, i) => 
+        (
+            sign && user.sign
+            ? answers.filter(({ sign }) => getRandomSigns([user.sign as unknown as Sign]).includes(sign as Sign)) 
+            : answers
+        ).map(({ answer:a }, i) => 
             <div className='control' key={i}>
                 <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
                     <input 
@@ -77,15 +89,15 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
             <p style={{display:'table-cell', verticalAlign:'middle'}}>
                 { 
                     approved 
-                    ?   <span style={{fontSize:'1.5rem', fontWeight:600}}>¡Felicidades!</span> 
+                    ?   <span style={{fontSize:'1.5rem', fontWeight:600}}> ¡Felicidades! </span> 
                     :   <>Lo sentimos.</> 
                 } <br/>
 
-                 Acertaste <strong>{score}</strong> de <strong>{questions.length}</strong> preguntas. <br/>
+                 Acertaste <strong> {score} </strong> de <strong> {questions.length} </strong> preguntas. <br/>
 
                 { 
                     !approved && user.quizFailures === 1 
-                    ? <>Necesitas {Math.round(min)} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
+                    ? <> Necesitas {Math.round(min)} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
                     : '' 
                 }
 
