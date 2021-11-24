@@ -1,11 +1,11 @@
-import { useMediaQuery } from 'react-responsive'
 import { iApprove, iUser, Sign } from '../../App'
+import { useMediaQuery } from 'react-responsive'
 import { CSSProperties, useState } from 'react'
 import amplitude from 'amplitude-js'
 
 
 interface iAnswer { answer:string, value:boolean, sign?:Sign }
-export interface iQuestion { question:string, answers:iAnswer[] }
+export interface iQuestion { question:string, answers:iAnswer[], sign?:boolean }
 
 export const questionStyle:CSSProperties = {
     textAlign:'left', 
@@ -17,14 +17,21 @@ export const questionStyle:CSSProperties = {
     borderColor:'#AAA'
 }
 
-interface IQuestion extends iQuestion { index:number, value:number, select(index:number, value:number):void }
-const Question = ({index, question, value, answers, select}:IQuestion) => <div 
+interface IQuestion extends iQuestion { 
+    index:number
+    value:number
+    user:iUser 
+    select(index:number, value:number):void 
+}
+
+
+const Question = ({index, question, value, answers, sign, user, select}:IQuestion) => <div 
     className='field' 
     style={questionStyle}
 >
     <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
     {
-        answers.map(({ answer:a }, i) => 
+        (sign ? answers.filter(({ sign }) => sign === user.sign) : answers).map(({ answer:a }, i) => 
             <div className='control' key={i}>
                 <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
                     <input 
@@ -157,6 +164,7 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
                         {...q}
                         key={i} 
                         index={i}
+                        user={user}
                         value={values[i]}
                         select={(idx, i) => setValues({...values, [idx]:i})}
                     />
