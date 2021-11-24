@@ -54,7 +54,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
             { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
             { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
-            { answer:'.', sign:'Lib', value:true },
+            { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
         ]
     }, {
         question:'6. ¿En que consiste tu trabajo en esta vida?',
@@ -65,7 +65,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
             { answer:'Relajarte, mostrarte como eres, dejar de tratar de controlar lo que el mundo piensa de tí.', sign:'Leo', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
-            { answer:'.', sign:'Lib', value:true },
+            { answer:'Ser justo, equilibrado, diplomático, comprender que tu socio o pareja te da lo que te corresponde  y no esperar a que cambie.', sign:'Lib', value:true },
         ]
     }, {
         question:'7. ¿Qué debes saber en esta vida?',
@@ -76,7 +76,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
             { answer:'Como ser verdaderamente agradecido.', sign:'Leo', value:true },
             { answer:'Voy a estar san@ y me sientas tranquil@.', sign:'Vir', value:true },
-            { answer:'.', sign:'Lib', value:true },
+            { answer:'Las relaciones solo funcionan cuando hay equilibrio en el dar y recibir.', sign:'Lib', value:true },
         ]
     }, {
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
@@ -87,7 +87,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
             { answer:'Un fuerte liderazgo.', sign:'Leo', value:true },
             { answer:'Una fuerte necesidad de servir.', sign:'Vir', value:true },
-            { answer:'.', sign:'Lib', value:true },
+            { answer:'Una fuerte necesidad de estar acompañad@, de compartir tu tiempo, tus experiencias y tu vida.', sign:'Lib', value:true },
         ]
     }, {
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
@@ -98,7 +98,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
             { answer:'Tener que hacer un buen papel.', sign:'Leo', value:true },
             { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
-            { answer:'.', sign:'Lib', value:true },
+            { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
         ]
     }, {
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
@@ -109,7 +109,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Creía que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
             { answer:'De forma rígida y deje de permitir que mi espíritu lúdico se expresara.', sign:'Leo', value:true },
             { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
-            { answer:'.', sign:'Lib', value:true },
+            { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
         ]
     }, {
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
@@ -120,7 +120,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
             { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante, o cualquier tipo de líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
             { answer:'Enfermer@, trabajador social, investigador@, administrador y encargado de cualquier área de salud o donde el servicio era lo más importante.', sign:'Vir', value:true },
-            { answer:'.', sign:'Lib', value:true },
+            { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde excluí mi identidad personal a favor de una sociedad.', sign:'Lib', value:true },
         ]
     }
 ]
