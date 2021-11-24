@@ -10,6 +10,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Una persona sincera y auténtica.', value:true, sign:'Gem' },
             { answer:'Amor incondicional, apoyo, aceptación y manejo emocional.', value:true, sign:'Can' },
             { answer:'Un líder que disfruta su triunfo y su vida.', value:true, sign:'Leo' },
+            { answer:'Ser una persona práctica, cuidadosa, con actitud moral y trabajadora.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
@@ -19,6 +20,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
             { answer:'Hacer equipo, ser cariños@, just@, evitar el chantaje, hacer lo correcto y siempre ser amoros@.', value:true, sign:'Can' },
             { answer:'Como ser alguien que puedas llegar a muchos pero no te olvidas de conectarte con los pocos o con el uno a uno.', value:true, sign:'Leo' },
+            { answer:'Realizar las tareas bien hechas, a cuidar de su cuerpo y a servir a otros.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
@@ -28,6 +30,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Hacer valer tu palabra, responsabilizarte de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo paciente y compasivo.', value:true, sign:'Can' },
             { answer:'Brillar, a elevar tu amor propio, a gozar tu vida, a hablar en público y aceptar la crítica como una oportunidad de mejora.', value:true, sign:'Leo' },
+            { answer:'Mantener un equilibrio entre tu trabajo y tu salud, mostrando dignidad, cumpliendo tus necesidades, los horarios y los acuerdos.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
@@ -37,6 +40,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Sinceridad, autenticidad y congruencia.', value:true, sign:'Gem' },
             { answer:'Responsabilidad, apoyo, respeto y amor incondicional.', value:true, sign:'Can' },
             { answer:'Humildad, amor propio, gozo y apreciación.', value:true, sign:'Leo' },
+            { answer:'Discernimiento, confianza, dignidad y compasión.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
@@ -46,6 +50,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Deshonesto, nervioso, descubierto o fuera de contexto.', value:true, sign:'Gem' },
             { answer:'Impaciente, controlador@ y víctima.', value:true, sign:'Can' },
             { answer:'Juzgado, criticado y no admirado.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
@@ -54,7 +59,8 @@ export const quiz3:iQuestion[] = [
             { answer:'Confianza y tranquilidad de que soy una persona valiosa.', value:true, sign:'Tau' },
             { answer:'Segur@ y satisfech@ de tus ideas, tus palabras y tus relaciones.', value:true, sign:'Gem' },
             { answer:'Segur@ y satisfech@ de tu papel en la familia, la armonía y bienestar.', value:true, sign:'Can' },
-            { answer:'egur@ y satisfech@ de tu nuevo papel ante el mundo.', value:true, sign:'Leo' },
+            { answer:'Segur@ y satisfech@ de tu nuevo papel ante el mundo.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
@@ -64,6 +70,7 @@ export const quiz3:iQuestion[] = [
             { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
             { answer:'Que sintieras que la forma de exigirte o educarte no era del todo congruente.', value:true, sign:'Can' },
             { answer:'Sentías que no te daban el reconocimiento que merecías.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
@@ -73,6 +80,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
             { answer:'Consciencia de tu lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les toca.', value:true, sign:'Can' },
             { answer:'Deberás desarrollar un amor auténtico y sin expectativas hacia tí y los demás.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
@@ -82,6 +90,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
             { answer:'A ayudar indebidamente y situaciones situaciones donde caiga y reaccione inconscientemente tomando un papel de víctima.', value:true, sign:'Can' },
             { answer:'Demostrar mi autenticidad ante los demás, y seré expuesto cuando quiera dar una cara diferente a quien soy.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -91,6 +100,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
             { answer:'Que muestren falta de responsabilidad o visión.', value:true, sign:'Can' },
             { answer:'Que me juzguen o ignoren.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -100,6 +110,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
             { answer:'Aprender a dar y amar incondicionalmente y ser consciente de que controlar a las personas o los resultado no ayuda.', value:true, sign:'Can' },
             { answer:'Aprender que puedo no ser perfecto, que eso está bien y que no tengo que ser siempre el centro de atención.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
@@ -109,6 +120,7 @@ export const quiz3:iQuestion[] = [
             { answer:'La falsedad.', value:true, sign:'Gem' },
             { answer:'De control o víctima.', value:true, sign:'Can' },
             { answer:'Egocéntricas.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
@@ -118,6 +130,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mentir, manipular o ser incongruente.', value:true, sign:'Gem' },
             { answer:'Ayudar indebidamente o hacer sentir culpa.', value:true, sign:'Can' },
             { answer:'Siendo controlador y obligando a otros a ponerme atención o sintiendome ofendido por no recibir la atención y admiración.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
@@ -127,6 +140,7 @@ export const quiz3:iQuestion[] = [
             { answer:'En base a la verdad.', value:true, sign:'Gem' },
             { answer:'Compasión y amor.', value:true, sign:'Can' },
             { answer:'Amor propio y seguridad.', value:true, sign:'Leo' },
+            { answer:'.', value:true, sign:'Vir' },            
         ]
     }, 
 ]
