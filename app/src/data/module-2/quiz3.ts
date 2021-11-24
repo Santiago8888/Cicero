@@ -63,7 +63,7 @@ export const quiz3:iQuestion[] = [
             { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
             { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
             { answer:'Que sintieras que la forma de exigirte o educarte no era del todo congruente.', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
+            { answer:'Sentías que no te daban el reconocimiento que merecías', value:true, sign:'Leo' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
@@ -72,7 +72,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia.', value:true, sign:'Tau' },
             { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
             { answer:'Consciencia de tu lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les toca', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
+            { answer:'Deberás desarrollar un amor auténtico y sin expectativas hacia tí y los demás', value:true, sign:'Leo' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
@@ -81,7 +81,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
             { answer:'A ayudar indebidamente y situaciones situaciones donde caiga y reaccione inconscientemente tomando un papel de víctima.', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
+            { answer:'Demostrar mi autenticidad ante los demás, y seré expuesto cuando quiera dar una cara diferente a quien soy', value:true, sign:'Leo' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -90,7 +90,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
             { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
             { answer:'Que muestren falta de responsabilidad o visión.', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
+            { answer:'Que me juzguen o ignoren', value:true, sign:'Leo' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -99,7 +99,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Regresar a tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
             { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
             { answer:'Aprender a dar y amar incondicionalmente y ser consciente de que controlar a las personas o los resultado no ayuda', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
+            { answer:'Aprender que puedo no ser perfecto, que eso está bien y que no tengo que ser siempre el centro de atención', value:true, sign:'Leo' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
