@@ -9,6 +9,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Un sistema de valores inquebrantable.', value:true, sign:'Tau' },
             { answer:'Una persona sincera y auténtica', value:true, sign:'Gem' },
             { answer:'Amor incondicional, apoyo, aceptación y manejo emocional', value:true, sign:'Can' },
+            { answer:'Un líder que disfruta su triunfo y su vida', value:true, sign:'Leo' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
@@ -17,6 +18,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Desarrollar autovaloración, a salir de sus problemas financieros, a tomar decisiones en base a buenos valores, y a mostrar honestidad y confiabilidad.', value:true, sign:'Tau' },
             { answer:'Comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
             { answer:'Hacer equipo, ser cariños@, just@, evitar el chantaje, hacer lo correcto y siempre ser amoros@', value:true, sign:'Can' },
+            { answer:'Como ser alguien que puedas llegar a muchos pero no te olvidas de conectarte con los pocos o con el uno a uno', value:true, sign:'Leo' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
@@ -25,6 +27,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Disfrutar de tus bienes y dinero, del resultado de tus esfuerzos, compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
             { answer:'Hacer valer tu palabra, responsabilizarte de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo paciente y compasivo', value:true, sign:'Can' },
+            { answer:'Brillar, a elevar tu amor propio, a gozar tu vida, a hablar en público y aceptar la crítica como una oportunidad de mejora.', value:true, sign:'Leo' },
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
@@ -33,6 +36,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Honestidad, perseverancia y confianza', value:true, sign:'Tau' },
             { answer:'Sinceridad, autenticidad y congruencia.', value:true, sign:'Gem' },
             { answer:'Responsabilidad, apoyo, respeto y amor incondicional.', value:true, sign:'Can' },
+            { answer:'Humildad, amor propio, gozo y apreciación', value:true, sign:'Leo' },
         ]
     }, { 
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
@@ -41,6 +45,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Desconfiado, abusado, robado y temeroso de perder', value:true, sign:'Tau' },
             { answer:'Deshonesto, nervioso, descubierto o fuera de contexto', value:true, sign:'Gem' },
             { answer:'Impaciente, controlador@ y víctima', value:true, sign:'Can' },
+            { answer:'Juzgado, criticado y no admirado', value:true, sign:'Leo' },
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
@@ -49,6 +54,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Confianza y tranquilidad de que soy una persona valiosa', value:true, sign:'Tau' },
             { answer:'Segur@ y satisfech@ de tus ideas, tus palabras y tus relaciones.', value:true, sign:'Gem' },
             { answer:'Segur@ y satisfech@ de tu papel en la familia, la armonía y bienestar', value:true, sign:'Can' },
+            { answer:'egur@ y satisfech@ de tu nuevo papel ante el mundo', value:true, sign:'Leo' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
@@ -57,6 +63,7 @@ export const quiz3:iQuestion[] = [
             { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
             { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
             { answer:'Que sintieras que la forma de exigirte o educarte no era del todo congruente.', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
@@ -65,6 +72,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia.', value:true, sign:'Tau' },
             { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
             { answer:'Consciencia de tu lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les toca', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
@@ -73,6 +81,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
             { answer:'A ayudar indebidamente y situaciones situaciones donde caiga y reaccione inconscientemente tomando un papel de víctima.', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -81,6 +90,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
             { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
             { answer:'Que muestren falta de responsabilidad o visión.', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -89,6 +99,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Regresar a tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
             { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
             { answer:'Aprender a dar y amar incondicionalmente y ser consciente de que controlar a las personas o los resultado no ayuda', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
@@ -97,6 +108,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Deshonestas.', value:true, sign:'Tau' },
             { answer:'La falsedad.', value:true, sign:'Gem' },
             { answer:'De control o víctima', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
@@ -105,6 +117,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Atesorar demasiado y acumular innecesariamente.', value:true, sign:'Tau' },
             { answer:'Mentir, manipular o ser incongruente.', value:true, sign:'Gem' },
             { answer:'Ayudar indebidamente o hacer sentir culpa.', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
@@ -113,6 +126,8 @@ export const quiz3:iQuestion[] = [
             { answer:'En base a mis valores.', value:true, sign:'Tau' },
             { answer:'En base a la verdad.', value:true, sign:'Gem' },
             { answer:'Compasión y amor', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
         ]
     }, 
 ]
+
