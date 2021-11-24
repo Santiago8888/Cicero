@@ -90,7 +90,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
             { answer:'A ayudar indebidamente y situaciones situaciones donde caiga y reaccione inconscientemente tomando un papel de víctima.', value:true, sign:'Can' },
             { answer:'Demostrar mi autenticidad ante los demás, y seré expuesto cuando quiera dar una cara diferente a quien soy.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Demuestres que puedes servir a otros sin dejarte al final, te harán creer que eres la única persona que puede hacer algo bien hecho y acabarás haciendo todo.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -100,7 +100,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
             { answer:'Que muestren falta de responsabilidad o visión.', value:true, sign:'Can' },
             { answer:'Que me juzguen o ignoren.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Traten de usarte para que hagas lo que ellos deberían hacer.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -110,7 +110,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
             { answer:'Aprender a dar y amar incondicionalmente y ser consciente de que controlar a las personas o los resultado no ayuda.', value:true, sign:'Can' },
             { answer:'Aprender que puedo no ser perfecto, que eso está bien y que no tengo que ser siempre el centro de atención.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Poner límites demostrando dignidad.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
@@ -120,7 +120,7 @@ export const quiz3:iQuestion[] = [
             { answer:'La falsedad.', value:true, sign:'Gem' },
             { answer:'De control o víctima.', value:true, sign:'Can' },
             { answer:'Egocéntricas.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Servilismo.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
