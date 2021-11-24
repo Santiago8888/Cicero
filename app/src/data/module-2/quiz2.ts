@@ -8,7 +8,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Poder ahorrar grandes cantidades de dinero.', sign:'Tau', value:true },
             { answer:'La habilidad para comunicarme con los demás.', sign:'Gem', value:true },
             { answer:'La capacidad de sentir armonía y protección de tu familia.', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
         ]
     }, {
         question:'2. ¿Para qué te restringe eso Saturno?',
@@ -17,7 +17,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Deshacerme de los bienes a los que me apego: aquellos que solo me están haciendo la vida más difícil o pesada.', sign:'Tau', value:true },
             { answer:'Aprender a hacerlo de manera clara, sincera y abierta, verbalizar mis ideas, dejar de manipular y mantener una postura adecuada y congruente.', sign:'Gem', value:true },
             { answer:'Encuentre afinidad, acoplamiento y verdadero bienestar, que aprenda a manejar mis emociones, respetar la jerarquía de mis padres y regresar la responsabilidad a cada integrante de la familia.', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Desarrollar una mejor actitud hacia el amor, evitar la rigidez y disfrutar del momento.', sign:'Leo', value:true },
         ]
     }, {
         question:'3. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
@@ -26,7 +26,7 @@ export const quiz2:iQuestion[] = [
             { answer:'No poder invertir en demasiados negocios, para que no endeudarme, evitar apostar o especular y para que no busquar oportunidades de acumulación.', sign:'Tau', value:true },
             { answer:'No convencer a los demás, pensar antes de hablar, no caer en chismes y no esforzarme demasiado en caer bien o hacer reír a los demás.', sign:'Gem', value:true },
             { answer:'Dejar de controlar la dinámica, desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Desarrollar humildad y saber que no es necesario controlar tu audiencia.', sign:'Leo', value:true },
         ]
     }, {
         question:'4. ¿Qué es importante que aprendas en esta vida?',
@@ -35,7 +35,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Valorar los recursos y a las personas.', sign:'Tau', value:true },
             { answer:'Decir que no.', sign:'Gem', value:true },
             { answer:'Respeto, obediencia y aceptación de la forma de ser de cada miembro de la familia', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'La autoaceptación, el sentido del humor y la apreciación..', sign:'Leo', value:true },
         ]
     }, {
         question:'5. ¿Qué es lo que ahora debes corregir?',
@@ -44,7 +44,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi sistema de valores.', sign:'Tau', value:true },
             { answer:'Mi comunicación', sign:'Gem', value:true },
             { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
         ]
     }, {
         question:'6. ¿En que consiste tu trabajo en esta vida?',
