@@ -89,7 +89,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La necesidad de saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
             { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
             { answer:'Tener que hacer un buen papel.', sign:'Leo', value:true },
-            { answer:'.', sign:'Vir', value:true },
+            { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
         ]
     }, {
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
@@ -99,7 +99,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Una persona conocida conocida luchabas por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
             { answer:'Creía que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
             { answer:'De forma rígida y deje de permitir que mi espíritu lúdico se expresara.', sign:'Leo', value:true },
-            { answer:'.', sign:'Vir', value:true },
+            { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
         ]
     }, {
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
@@ -109,7 +109,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Informante, locutor, periodista, transportista, comerciante, vendedor, presentador o cómico.', sign:'Gem', value:true },
             { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
             { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante, o cualquier tipo de líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
-            { answer:'.', sign:'Vir', value:true },
+            { answer:'Enfermer@, trabajador social, investigador@, administrador y encargado de cualquier área de salud o donde el servicio era lo más importante.', sign:'Vir', value:true },
         ]
     }
 ]
