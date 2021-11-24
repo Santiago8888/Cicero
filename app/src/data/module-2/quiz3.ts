@@ -50,7 +50,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Deshonesto, nervioso, descubierto o fuera de contexto.', value:true, sign:'Gem' },
             { answer:'Impaciente, controlador@ y víctima.', value:true, sign:'Can' },
             { answer:'Juzgado, criticado y no admirado.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Preocupado, abusado, juzgado y nervioso.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
@@ -60,7 +60,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Segur@ y satisfech@ de tus ideas, tus palabras y tus relaciones.', value:true, sign:'Gem' },
             { answer:'Segur@ y satisfech@ de tu papel en la familia, la armonía y bienestar.', value:true, sign:'Can' },
             { answer:'Segur@ y satisfech@ de tu nuevo papel ante el mundo.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Segur@ y satisfech@ de tu nueva manera de ser y trabajar.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
@@ -70,7 +70,7 @@ export const quiz3:iQuestion[] = [
             { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
             { answer:'Que sintieras que la forma de exigirte o educarte no era del todo congruente.', value:true, sign:'Can' },
             { answer:'Sentías que no te daban el reconocimiento que merecías.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Mucha exigencia de los deberes en el hogar.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
@@ -80,7 +80,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
             { answer:'Consciencia de tu lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les toca.', value:true, sign:'Can' },
             { answer:'Deberás desarrollar un amor auténtico y sin expectativas hacia tí y los demás.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Mi capacidad de análisis, pero siempre con autoestima, dignidad y objetividad.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
