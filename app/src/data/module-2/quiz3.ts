@@ -130,7 +130,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mentir, manipular o ser incongruente.', value:true, sign:'Gem' },
             { answer:'Ayudar indebidamente o hacer sentir culpa.', value:true, sign:'Can' },
             { answer:'Siendo controlador y obligando a otros a ponerme atención o sintiendome ofendido por no recibir la atención y admiración.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Hacer de más o haciendo lo que otros deben hacer por sí mismos.', value:true, sign:'Vir' },            
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
@@ -140,7 +140,7 @@ export const quiz3:iQuestion[] = [
             { answer:'En base a la verdad.', value:true, sign:'Gem' },
             { answer:'Compasión y amor.', value:true, sign:'Can' },
             { answer:'Amor propio y seguridad.', value:true, sign:'Leo' },
-            { answer:'.', value:true, sign:'Vir' },            
+            { answer:'Equilibrio y de manera integral.', value:true, sign:'Vir' },            
         ]
     }, 
 ]
