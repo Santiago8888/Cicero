@@ -2,6 +2,7 @@ import { iQuestion } from '../../components/Views/Quiz'
 
 export const quiz2:iQuestion[] = [
     { 
+        sign:true,
         question: '1. ¿Qué te restringe Saturno en esta vida?', 
         answers: [
             { answer:'El impulso y la energía.', sign:'Ari', value:true },
@@ -13,6 +14,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'2. ¿Para qué te restringe eso Saturno?',
         answers: [
             { answer:'Poder medir mi fuerza, canalizarla correctamente, dejar de insistir tantas veces para lograr algo y aprender de tus resultados.', sign:'Ari', value:true },
@@ -24,6 +26,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'3. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
         answers: [
             { answer:'Detener mi agresividad, para pensar antes de actuar y reconocer que mis acciones tienen consecuencias.', sign:'Ari', value:true },
@@ -35,6 +38,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Lograr tomar decisiones y saber cuándo ceder.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'4. ¿Qué es importante que aprendas en esta vida?',
         answers: [
             { answer:'Tacto y cooperación con los demás.', sign:'Ari', value:true },
@@ -46,6 +50,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Considerar lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'5. ¿Qué es lo que ahora debes corregir?',
         answers: [
             { answer:'Mi personalidad.', sign:'Ari', value:true },
@@ -57,6 +62,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'6. ¿En que consiste tu trabajo en esta vida?',
         answers: [
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
@@ -68,6 +74,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Ser justo, equilibrado, diplomático, comprender que tu socio o pareja te da lo que te corresponde  y no esperar a que cambie.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'7. ¿Qué debes saber en esta vida?',
         answers: [
             { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
@@ -79,6 +86,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Las relaciones solo funcionan cuando hay equilibrio en el dar y recibir.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
         answers: [
             { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
@@ -90,6 +98,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Una fuerte necesidad de estar acompañad@, de compartir tu tiempo, tus experiencias y tu vida.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
         answers: [
             { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
@@ -101,6 +110,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
         answers: [
             { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
@@ -112,6 +122,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
         answers: [
             { answer:'Haber buscado la supervivencia en ambientes inhóspitos, en situaciones de mucho riesgo o peligro y actividades que requieren de mucha energía.', sign:'Ari', value:true },
