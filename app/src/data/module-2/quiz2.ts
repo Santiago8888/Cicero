@@ -53,7 +53,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro.', sign:'Tau', value:true },
             { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
             { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Relajarte, mostrarte como eres, dejar de tratar de controlar lo que el mundo piensa de tí.', sign:'Leo', value:true },
         ]
     }, {
         question:'7. ¿Qué debes saber en esta vida?',
@@ -62,7 +62,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
             { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Como ser verdaderamente agradecido.', sign:'Leo', value:true },
         ]
     }, {
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
