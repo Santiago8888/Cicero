@@ -10,6 +10,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La capacidad de sentir armonía y protección de tu familia.', sign:'Can', value:true },
             { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
             { answer:'La salud cuando hay desequilibrio entre mi mente y cuerpo.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'2. ¿Para qué te restringe eso Saturno?',
@@ -20,6 +21,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Encuentre afinidad, acoplamiento y verdadero bienestar, que aprenda a manejar mis emociones, respetar la jerarquía de mis padres y regresar la responsabilidad a cada integrante de la familia.', sign:'Can', value:true },
             { answer:'Desarrollar una mejor actitud hacia el amor, evitar la rigidez y disfrutar del momento.', sign:'Leo', value:true },
             { answer:'Poder vivir de manera integral, trabajar sin estrés, dejar de ser tan perfeccionista, obsesionarme por los detalles, soltar y confiar al terminar las tareas.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'3. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
@@ -30,6 +32,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Dejar de controlar la dinámica, desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
             { answer:'Desarrollar humildad y saber que no es necesario controlar tu audiencia.', sign:'Leo', value:true },
             { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'4. ¿Qué es importante que aprendas en esta vida?',
@@ -40,6 +43,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Respeto, obediencia y aceptación de la forma de ser de cada miembro de la familia', sign:'Can', value:true },
             { answer:'La autoaceptación, el sentido del humor y la apreciación..', sign:'Leo', value:true },
             { answer:'Liberarme de la tensión y concentrarme en manifestar mi visión abstracta de las cosas.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'5. ¿Qué es lo que ahora debes corregir?',
@@ -50,6 +54,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
             { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
             { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'6. ¿En que consiste tu trabajo en esta vida?',
@@ -60,6 +65,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
             { answer:'Relajarte, mostrarte como eres, dejar de tratar de controlar lo que el mundo piensa de tí.', sign:'Leo', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'7. ¿Qué debes saber en esta vida?',
@@ -70,6 +76,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
             { answer:'Como ser verdaderamente agradecido.', sign:'Leo', value:true },
             { answer:'Voy a estar san@ y me sientas tranquil@.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
@@ -80,6 +87,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
             { answer:'Un fuerte liderazgo.', sign:'Leo', value:true },
             { answer:'Una fuerte necesidad de servir.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
@@ -90,6 +98,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
             { answer:'Tener que hacer un buen papel.', sign:'Leo', value:true },
             { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
@@ -100,6 +109,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Creía que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
             { answer:'De forma rígida y deje de permitir que mi espíritu lúdico se expresara.', sign:'Leo', value:true },
             { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }, {
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
@@ -110,6 +120,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
             { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante, o cualquier tipo de líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
             { answer:'Enfermer@, trabajador social, investigador@, administrador y encargado de cualquier área de salud o donde el servicio era lo más importante.', sign:'Vir', value:true },
+            { answer:'.', sign:'Lib', value:true },
         ]
     }
 ]

@@ -140,7 +140,7 @@ export const quiz3:iQuestion[] = [
             { answer:'En base a la verdad.', value:true, sign:'Gem' },
             { answer:'Compasión y amor.', value:true, sign:'Can' },
             { answer:'Amor propio y seguridad.', value:true, sign:'Leo' },
-            { answer:'Equilibrio y de manera integral.', value:true, sign:'Vir' },            
+            { answer:'Con dignidad y de manera integral.', value:true, sign:'Vir' },            
         ]
     }, 
 ]
