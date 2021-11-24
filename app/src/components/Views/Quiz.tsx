@@ -1,7 +1,7 @@
 import { sign_names } from '../Astral/AstralChart'
 import { iApprove, iUser, Sign } from '../../App'
 import { useMediaQuery } from 'react-responsive'
-import { CSSProperties, useState } from 'react'
+import { CSSProperties, useEffect, useState } from 'react'
 import amplitude from 'amplitude-js'
 
 
@@ -33,33 +33,43 @@ interface IQuestion extends iQuestion {
     select(index:number, value:number):void 
 }
 
-const Question = ({index, question, value, answers, sign, user, select}:IQuestion) => <div 
-    className='field' 
-    style={questionStyle}
->
-    <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
-    {
-        (
-            sign && user.sign
-            ? answers.filter(({ sign }) => getRandomSigns([user.sign as unknown as Sign]).includes(sign as Sign)) 
-            : answers
-        ).map(({ answer:a }, i) => 
-            <div className='control' key={i}>
-                <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
-                    <input 
-                        type='radio' 
-                        checked={value === i}
-                        name={String(index)}
-                        style={{marginRight:12}}
-                        onChange={() => select(index, i)}
-                    />
-                    { a }
-                </label>
-            </div>
-        )
-    }
-</div>
+const Question = ({index, question, value, answers, sign, user, select}:IQuestion) => {
+    const [filteredAnswers, setFilteredAnswers] = useState(answers)
 
+    useEffect(() => {
+        if(!sign) return 
+        if(!user.sign) return
+        
+        const signAnswers = answers.filter(({ sign }) => 
+            getRandomSigns([user.sign as unknown as Sign]).includes(sign as Sign)
+        )
+
+        setFilteredAnswers(signAnswers)
+    }, [answers, sign, user])
+
+    return <div 
+        className='field' 
+        style={questionStyle}
+    >
+        <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
+        {
+            filteredAnswers.map(({ answer:a }, i) => 
+                <div className='control' key={i}>
+                    <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
+                        <input 
+                            type='radio' 
+                            checked={value === i}
+                            name={String(index)}
+                            style={{marginRight:12}}
+                            onChange={() => select(index, i)}
+                        />
+                        { a }
+                    </label>
+                </div>
+            )
+        }
+    </div>
+}
 
 
 const encouragementMsg = `¡Ánimo aún tienes otra oportunidad!`
@@ -138,7 +148,12 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
     const [approved, setApproved] = useState<boolean>()
     const submit = () => {
 
-        const answers = Object.entries(values).map(([k, v]) => questions[k as unknown as number].answers[v].value)
+        const answers = Object.entries(values).map(([k, v]) => 
+            !questions[k as unknown as number].sign
+                ?   questions[k as unknown as number].answers[v].value
+                :   questions[k as unknown as number].answers[v].sign === user.sign
+        )
+    
         const score = answers.filter(a=>a).length
         setScore(score)
 
