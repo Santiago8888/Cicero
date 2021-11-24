@@ -71,7 +71,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Una fuerte necesidad de seguridad.', sign:'Tau', value:true },
             { answer:'Gran habilidad de comunicación', sign:'Gem', value:true },
             { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'un fuerte liderazgo.', sign:'Leo', value:true },
         ]
     }, {
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
@@ -80,7 +80,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
             { answer:'La necesidad de saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
             { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Tener que hacer un buen papel.', sign:'Leo', value:true },
         ]
     }, {
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
@@ -88,8 +88,8 @@ export const quiz2:iQuestion[] = [
             { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
             { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
             { answer:'Una persona conocida conocida luchabas por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
-            { answer:'Creías que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Creía que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
+            { answer:'De forma rígida y deje de permitir que mi espíritu lúdico se expresara.', sign:'Leo', value:true },
         ]
     }, {
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
@@ -98,7 +98,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Trabajar en bancos o empresas financieras, ser aficionado a los juegos de azar, la especulación, comerciante, empresario y hasta inversionista', sign:'Tau', value:true },
             { answer:'Informante, locutor, periodista, transportista, comerciante, vendedor, presentador o cómico.', sign:'Gem', value:true },
             { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
-            { answer:'.', sign:'Leo', value:true },
+            { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante, o cualquier tipo de líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
         ]
     }
 ]
