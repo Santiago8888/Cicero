@@ -11,7 +11,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Amor incondicional, apoyo, aceptación y manejo emocional.', value:true, sign:'Can' },
             { answer:'Un líder que disfruta su triunfo y su vida.', value:true, sign:'Leo' },
             { answer:'Ser una persona práctica, cuidadosa, con actitud moral y trabajadora.', value:true, sign:'Vir' },            
-            { answer:'.', value:true, sign:'Lib' },
+            { answer:'Justa, equilibrada, que ve por sí mism@ y de igual manera por los demás.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
@@ -22,7 +22,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Hacer equipo, ser cariños@, just@, evitar el chantaje, hacer lo correcto y siempre ser amoros@.', value:true, sign:'Can' },
             { answer:'Como ser alguien que puedas llegar a muchos pero no te olvidas de conectarte con los pocos o con el uno a uno.', value:true, sign:'Leo' },
             { answer:'Realizar las tareas bien hechas, a cuidar de su cuerpo y a servir a otros.', value:true, sign:'Vir' },            
-            { answer:'.', value:true, sign:'Lib' },
+            { answer:'A ver las dos caras de la moneda, a no pensar sólo en sí mismo, a saber que solo se avanza cuando se da y se recibe equitativamente.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
@@ -33,7 +33,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo paciente y compasivo.', value:true, sign:'Can' },
             { answer:'Brillar, a elevar tu amor propio, a gozar tu vida, a hablar en público y aceptar la crítica como una oportunidad de mejora.', value:true, sign:'Leo' },
             { answer:'Mantener un equilibrio entre tu trabajo y tu salud, mostrando dignidad, cumpliendo tus necesidades, los horarios y los acuerdos.', value:true, sign:'Vir' },            
-            { answer:'.', value:true, sign:'Lib' },
+            { answer:'Convertir tu dependencia e independencia en interdependencia.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
@@ -44,7 +44,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Responsabilidad, apoyo, respeto y amor incondicional.', value:true, sign:'Can' },
             { answer:'Humildad, amor propio, gozo y apreciación.', value:true, sign:'Leo' },
             { answer:'Discernimiento, confianza, dignidad y compasión.', value:true, sign:'Vir' },            
-            { answer:'.', value:true, sign:'Lib' },
+            { answer:'Cooperación, justicia, equilibrio y paz.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
@@ -55,7 +55,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Impaciente, controlador@ y víctima.', value:true, sign:'Can' },
             { answer:'Juzgado, criticado y no admirado.', value:true, sign:'Leo' },
             { answer:'Preocupado, abusado, juzgado y nervioso.', value:true, sign:'Vir' },            
-            { answer:'.', value:true, sign:'Lib' },
+            { answer:'Solo abusado, resentido y en ocasiones egoísta.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
@@ -66,7 +66,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Segur@ y satisfech@ de tu papel en la familia, la armonía y bienestar.', value:true, sign:'Can' },
             { answer:'Segur@ y satisfech@ de tu nuevo papel ante el mundo.', value:true, sign:'Leo' },
             { answer:'Segur@ y satisfech@ de tu nueva manera de ser y trabajar.', value:true, sign:'Vir' },            
-            { answer:'.', value:true, sign:'Lib' },
+            { answer:'Segur@ y satisfech@ de tus relaciones, en especial de pareja.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
