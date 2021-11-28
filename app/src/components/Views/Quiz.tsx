@@ -1,7 +1,7 @@
+import { CSSProperties, useEffect, useState } from 'react'
 import { sign_names } from '../Astral/AstralChart'
 import { iApprove, iUser, Sign } from '../../App'
 import { useMediaQuery } from 'react-responsive'
-import { CSSProperties, useEffect, useState } from 'react'
 import amplitude from 'amplitude-js'
 
 
@@ -25,6 +25,7 @@ const getRandomSigns = (signs:Sign[]):Sign[] => {
     const newSign = getRandomSign(signs)
     return getRandomSigns([...signs, newSign])
 }
+
 
 interface IQuestion extends iQuestion { 
     index:number
@@ -53,8 +54,12 @@ const Question = ({index, question, value, answers, sign, user, select}:IQuestio
     >
         <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
         {
-            filteredAnswers.map(({ answer:a }, i) => 
-                <div className='control' key={i}>
+            answers.map(({ answer:a, sign:s }, i) => 
+                <div 
+                key={i} 
+                className='control' 
+                    style={{display:filteredAnswers.map(({ sign }) => sign).includes(s) ? 'auto' : 'none'}}
+                >
                     <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
                         <input 
                             type='radio' 
@@ -148,12 +153,8 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
     const [approved, setApproved] = useState<boolean>()
     const submit = () => {
 
-        const answers = Object.entries(values).map(([k, v]) => 
-            !questions[k as unknown as number].sign
-                ?   questions[k as unknown as number].answers[v].value
-                :   questions[k as unknown as number].answers[v].sign === user.sign
-        )
-    
+        const answers = Object.entries(values).map(([k, v]) => questions[k as unknown as number].answers[v].value)
+
         const score = answers.filter(a=>a).length
         setScore(score)
 
