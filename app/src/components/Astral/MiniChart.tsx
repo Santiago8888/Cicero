@@ -1,6 +1,6 @@
 import { select, Selection, ValueFn } from 'd3-selection'
 import { arc, Arc, DefaultArcObject } from 'd3-shape'
-import { iAstralChart } from './AstralChart'
+import { iAstralChart, sign_names } from './AstralChart'
 import { useEffect } from 'react'
 
 
@@ -36,7 +36,6 @@ const house_colors = ['#E0FCDF', '#DFFFF9', '#FFFEDD', '#FDEDF6']
 
 type DeepColor = '#950193' | '#B16148' | '#1528B2' | '#054D1B'
 const deep_colors = ['#950193', '#B16148', '#1528B2', '#054D1B'] // fire , earth , air , water
-const sign_names = [ 'Cap', 'Sag', 'Sco', 'Lib', 'Vir', 'Leo', 'Can', 'Gem', 'Tau', 'Ari', 'Pis', 'Aqu' ]
 const sign_imgs = sign_names.map(sign => `/signs/${sign}.png`) 
 
 const planet_names = [ 

@@ -1,11 +1,12 @@
-import { useMediaQuery } from 'react-responsive'
+import { CSSProperties, useEffect, useState } from 'react'
+import { sign_names } from '../Astral/AstralChart'
 import { iApprove, iUser, Sign } from '../../App'
-import { CSSProperties, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import amplitude from 'amplitude-js'
 
 
 interface iAnswer { answer:string, value:boolean, sign?:Sign }
-export interface iQuestion { question:string, answers:iAnswer[] }
+export interface iQuestion { question:string, answers:iAnswer[], sign?:boolean }
 
 export const questionStyle:CSSProperties = {
     textAlign:'left', 
@@ -17,30 +18,63 @@ export const questionStyle:CSSProperties = {
     borderColor:'#AAA'
 }
 
-interface IQuestion extends iQuestion { index:number, value:number, select(index:number, value:number):void }
-const Question = ({index, question, value, answers, select}:IQuestion) => <div 
-    className='field' 
-    style={questionStyle}
->
-    <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
-    {
-        answers.map(({ answer:a }, i) => 
-            <div className='control' key={i}>
-                <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
-                    <input 
-                        type='radio' 
-                        checked={value === i}
-                        name={String(index)}
-                        style={{marginRight:12}}
-                        onChange={() => select(index, i)}
-                    />
-                    { a }
-                </label>
-            </div>
-        )
-    }
-</div>
+const getRandomSign = (signs:Sign[]) => sign_names.filter(sign => !signs.includes(sign))[Math.round(Math.random()*10)]
+const getRandomSigns = (signs:Sign[]):Sign[] => {
+    if(signs.length === 4) return signs
+    
+    const newSign = getRandomSign(signs)
+    return getRandomSigns([...signs, newSign])
+}
 
+
+interface IQuestion extends iQuestion { 
+    index:number
+    value:number
+    user:iUser 
+    select(index:number, value:number):void 
+}
+
+const Question = ({index, question, value, answers, sign, user, select}:IQuestion) => {
+    const [filteredAnswers, setFilteredAnswers] = useState(answers)
+
+    useEffect(() => {
+        if(!sign) return 
+        if(!user.sign) return
+        
+        const signAnswers = answers.filter(({ sign }) => 
+            getRandomSigns([user.sign as unknown as Sign]).includes(sign as Sign)
+        )
+
+        setFilteredAnswers(signAnswers)
+    }, [answers, sign, user])
+
+    return <div 
+        className='field' 
+        style={questionStyle}
+    >
+        <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
+        {
+            answers.map(({ answer:a, sign:s }, i) => 
+                <div 
+                key={i} 
+                className='control' 
+                    style={{display:filteredAnswers.map(({ sign }) => sign).includes(s) ? 'auto' : 'none'}}
+                >
+                    <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
+                        <input 
+                            type='radio' 
+                            checked={value === i}
+                            name={String(index)}
+                            style={{marginRight:12}}
+                            onChange={() => select(index, i)}
+                        />
+                        { a }
+                    </label>
+                </div>
+            )
+        }
+    </div>
+}
 
 
 const encouragementMsg = `¡Ánimo aún tienes otra oportunidad!`
@@ -70,15 +104,15 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
             <p style={{display:'table-cell', verticalAlign:'middle'}}>
                 { 
                     approved 
-                    ?   <span style={{fontSize:'1.5rem', fontWeight:600}}>¡Felicidades!</span> 
+                    ?   <span style={{fontSize:'1.5rem', fontWeight:600}}> ¡Felicidades! </span> 
                     :   <>Lo sentimos.</> 
                 } <br/>
 
-                 Acertaste <strong>{score}</strong> de <strong>{questions.length}</strong> preguntas. <br/>
+                 Acertaste <strong> {score} </strong> de <strong> {questions.length} </strong> preguntas. <br/>
 
                 { 
                     !approved && user.quizFailures === 1 
-                    ? <>Necesitas {Math.round(min)} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
+                    ? <> Necesitas {Math.round(min)} pregunta{min > 1 ? 's' : ''} correcta para aprobar. <br/></>
                     : '' 
                 }
 
@@ -120,6 +154,7 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
     const submit = () => {
 
         const answers = Object.entries(values).map(([k, v]) => questions[k as unknown as number].answers[v].value)
+
         const score = answers.filter(a=>a).length
         setScore(score)
 
@@ -157,6 +192,7 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
                         {...q}
                         key={i} 
                         index={i}
+                        user={user}
                         value={values[i]}
                         select={(idx, i) => setValues({...values, [idx]:i})}
                     />

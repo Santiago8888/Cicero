@@ -2,6 +2,7 @@ import { iQuestion } from '../../components/Views/Quiz'
 
 export const quiz2:iQuestion[] = [
     { 
+        sign:true,
         question: '1. ¿Qué te restringe Saturno en esta vida?', 
         answers: [
             { answer:'El impulso y la energía.', sign:'Ari', value:true },
@@ -10,8 +11,10 @@ export const quiz2:iQuestion[] = [
             { answer:'La capacidad de sentir armonía y protección de tu familia.', sign:'Can', value:true },
             { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
             { answer:'La salud cuando hay desequilibrio entre mi mente y cuerpo.', sign:'Vir', value:true },
+            { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'2. ¿Para qué te restringe eso Saturno?',
         answers: [
             { answer:'Poder medir mi fuerza, canalizarla correctamente, dejar de insistir tantas veces para lograr algo y aprender de tus resultados.', sign:'Ari', value:true },
@@ -20,18 +23,22 @@ export const quiz2:iQuestion[] = [
             { answer:'Encuentre afinidad, acoplamiento y verdadero bienestar, que aprenda a manejar mis emociones, respetar la jerarquía de mis padres y regresar la responsabilidad a cada integrante de la familia.', sign:'Can', value:true },
             { answer:'Desarrollar una mejor actitud hacia el amor, evitar la rigidez y disfrutar del momento.', sign:'Leo', value:true },
             { answer:'Poder vivir de manera integral, trabajar sin estrés, dejar de ser tan perfeccionista, obsesionarme por los detalles, soltar y confiar al terminar las tareas.', sign:'Vir', value:true },
+            { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'3. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
         answers: [
             { answer:'Detener mi agresividad, para pensar antes de actuar y reconocer que mis acciones tienen consecuencias.', sign:'Ari', value:true },
             { answer:'No poder invertir en demasiados negocios, para que no endeudarme, evitar apostar o especular y para que no busquar oportunidades de acumulación.', sign:'Tau', value:true },
-            { answer:'No convencer a los demás, pensar antes de hablar, no caer en chismes y no esforzarme demasiado en caer bien o hacer reír a los demás.', sign:'Gem', value:true },
-            { answer:'Dejar de controlar la dinámica, desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
-            { answer:'Desarrollar humildad y saber que no es necesario controlar tu audiencia.', sign:'Leo', value:true },
+            { answer:'No tratar de convencer a los demás, pensar antes de hablar, evitar caer en chismes y no esforzarme demasiado en caer bien o hacer reír a los demás.', sign:'Gem', value:true },
+            { answer:'Dejar de controlar la dinámica familiar, desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
+            { answer:'Desarrollar humildad y saber que no es necesario controlar mi audiencia.', sign:'Leo', value:true },
             { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
+            { answer:'Lograr tomar decisiones y saber cuándo ceder.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'4. ¿Qué es importante que aprendas en esta vida?',
         answers: [
             { answer:'Tacto y cooperación con los demás.', sign:'Ari', value:true },
@@ -40,8 +47,10 @@ export const quiz2:iQuestion[] = [
             { answer:'Respeto, obediencia y aceptación de la forma de ser de cada miembro de la familia', sign:'Can', value:true },
             { answer:'La autoaceptación, el sentido del humor y la apreciación..', sign:'Leo', value:true },
             { answer:'Liberarme de la tensión y concentrarme en manifestar mi visión abstracta de las cosas.', sign:'Vir', value:true },
+            { answer:'Considerar lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'5. ¿Qué es lo que ahora debes corregir?',
         answers: [
             { answer:'Mi personalidad.', sign:'Ari', value:true },
@@ -50,8 +59,10 @@ export const quiz2:iQuestion[] = [
             { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
             { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
             { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
+            { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'6. ¿En que consiste tu trabajo en esta vida?',
         answers: [
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
@@ -60,8 +71,10 @@ export const quiz2:iQuestion[] = [
             { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
             { answer:'Relajarte, mostrarte como eres, dejar de tratar de controlar lo que el mundo piensa de tí.', sign:'Leo', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
+            { answer:'Ser justo, equilibrado, diplomático, comprender que tu socio o pareja te da lo que te corresponde  y no esperar a que cambie.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'7. ¿Qué debes saber en esta vida?',
         answers: [
             { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
@@ -70,8 +83,10 @@ export const quiz2:iQuestion[] = [
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
             { answer:'Como ser verdaderamente agradecido.', sign:'Leo', value:true },
             { answer:'Voy a estar san@ y me sientas tranquil@.', sign:'Vir', value:true },
+            { answer:'Las relaciones solo funcionan cuando hay equilibrio en el dar y recibir.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'8. ¿Qué desarrollaste en vidas pasadas?',
         answers: [
             { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
@@ -80,8 +95,10 @@ export const quiz2:iQuestion[] = [
             { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
             { answer:'Un fuerte liderazgo.', sign:'Leo', value:true },
             { answer:'Una fuerte necesidad de servir.', sign:'Vir', value:true },
+            { answer:'Una fuerte necesidad de estar acompañad@, de compartir tu tiempo, tus experiencias y tu vida.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
         answers: [
             { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
@@ -90,8 +107,10 @@ export const quiz2:iQuestion[] = [
             { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
             { answer:'Tener que hacer un buen papel.', sign:'Leo', value:true },
             { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
+            { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
         answers: [
             { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
@@ -100,8 +119,10 @@ export const quiz2:iQuestion[] = [
             { answer:'Creía que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
             { answer:'De forma rígida y deje de permitir que mi espíritu lúdico se expresara.', sign:'Leo', value:true },
             { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
+            { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
         ]
     }, {
+        sign:true,
         question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
         answers: [
             { answer:'Haber buscado la supervivencia en ambientes inhóspitos, en situaciones de mucho riesgo o peligro y actividades que requieren de mucha energía.', sign:'Ari', value:true },
@@ -110,6 +131,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
             { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante, o cualquier tipo de líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
             { answer:'Enfermer@, trabajador social, investigador@, administrador y encargado de cualquier área de salud o donde el servicio era lo más importante.', sign:'Vir', value:true },
+            { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde excluí mi identidad personal a favor de una sociedad.', sign:'Lib', value:true },
         ]
     }
 ]
