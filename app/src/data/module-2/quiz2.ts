@@ -115,8 +115,8 @@ export const quiz2:iQuestion[] = [{
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
             { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro.', sign:'Tau', value:true },
             { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
-            { answer:'Soltar, aceptar que cada quien madure a su ritmo y amar a toda mi familia incondicionalmente', sign:'Can', value:true },
-            { answer:'Relajarme, mostrarme como soy, dejar de tratar de controlar lo que el mundo piensa de mí.', sign:'Leo', value:true },
+            { answer:'Soltar, dejar que las cosas lleven su proceso y amar a toda mi familia incondicionalmente', sign:'Can', value:true },
+            { answer:'Expresarme con amor, dirigir a los demás con humildad, amarme sin vanidad ni egocentrismo y ser auténtico, agradecido y apreciativo.', sign:'Leo', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
             { answer:'Ser justo, equilibrado, reconocer la aportación de mi socio o pareja a la relación y no esperar a que cambie.', sign:'Lib', value:true },
         ]
@@ -128,9 +128,9 @@ export const quiz2:iQuestion[] = [{
             { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
             { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
-            { answer:'Como ser verdaderamente agradecido.', sign:'Leo', value:true },
-            { answer:'Voy a estar san@ y me sientas tranquil@.', sign:'Vir', value:true },
-            { answer:'Las relaciones solo funcionan cuando hay equilibrio en el dar y recibir.', sign:'Lib', value:true },
+            { answer:'No es necesario controlar mi audiencia.', sign:'Leo', value:true },
+            { answer:'Voy a estar san@ y puedo sentir tranquilidad.', sign:'Vir', value:true },
+            { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
         ]
     }
 ]
