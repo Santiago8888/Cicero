@@ -28,11 +28,11 @@ export const quiz2:iQuestion[] = [{
             { answer:'Tener que hacer un buen "papel".', sign:'Leo', value:true },
             { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
             { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
-            { answer:'.', sign:'Sco', value:true },
-            { answer:'.', sign:'Sag', value:true },
-            { answer:'.', sign:'Cap', value:true },
-            { answer:'.', sign:'Aqu', value:true },
-            { answer:'.', sign:'Pis', value:true },
+            { answer:'Placer.', sign:'Sco', value:true },
+            { answer:'Obediencia a una autoridad exterior.', sign:'Sag', value:true },
+            { answer:'Ambición, siempre querer llegar más alto.', sign:'Cap', value:true },
+            { answer:'Impaciencia, en especial con las personas.', sign:'Aqu', value:true },
+            { answer:'Impotencia ante el sufrimiento de otros y depresión.', sign:'Pis', value:true },
         ]
     }, {
         sign:true,
