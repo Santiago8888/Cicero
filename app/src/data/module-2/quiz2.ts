@@ -14,13 +14,13 @@ export const quiz2:iQuestion[] = [{
         ]
     }, {
         sign:true,
-        question:'2. ¿Qué sentimiento constante tuviste en vidas pasadas?',
+        question:'2. ¿Qué sentimiento o sensación tuviste constantemente en vidas pasadas?',
         answers: [
             { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
             { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
-            { answer:'La necesidad de saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
+            { answer:'Saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
             { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
-            { answer:'Tener que hacer un buen papel.', sign:'Leo', value:true },
+            { answer:'Tener que hacer un buen "papel".', sign:'Leo', value:true },
             { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
             { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
         ]
