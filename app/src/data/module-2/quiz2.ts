@@ -5,12 +5,12 @@ export const quiz2:iQuestion[] = [{
         question:'1. ¿Qué desarrollaste en vidas pasadas?',
         answers: [
             { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
-            { answer:'Una fuerte necesidad de seguridad.', sign:'Tau', value:true },
+            { answer:'Necesidad de seguridad.', sign:'Tau', value:true },
             { answer:'Gran habilidad de comunicación', sign:'Gem', value:true },
-            { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
-            { answer:'Un fuerte liderazgo.', sign:'Leo', value:true },
-            { answer:'Una fuerte necesidad de servir.', sign:'Vir', value:true },
-            { answer:'Una fuerte necesidad de estar acompañad@, de compartir tu tiempo, tus experiencias y tu vida.', sign:'Lib', value:true },
+            { answer:'Responsabilidad familiar', sign:'Can', value:true },
+            { answer:'Liderazgo.', sign:'Leo', value:true },
+            { answer:'Necesidad de servir.', sign:'Vir', value:true },
+            { answer:'Una fuerte necesidad de estar acompañad@.', sign:'Lib', value:true },
         ]
     }, {
         sign:true,
