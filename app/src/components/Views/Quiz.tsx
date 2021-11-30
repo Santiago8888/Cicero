@@ -18,7 +18,10 @@ export const questionStyle:CSSProperties = {
     borderColor:'#AAA'
 }
 
-const getRandomSign = (signs:Sign[]) => sign_names.filter(sign => !signs.includes(sign))[Math.round(Math.random()*10)]
+const getRandomSign = (signs:Sign[]) => sign_names.filter(sign => 
+    !signs.includes(sign)
+)[Math.floor(Math.random()*(12-signs.length))]
+
 const getRandomSigns = (signs:Sign[]):Sign[] => {
     if(signs.length === 4) return signs
     
@@ -40,10 +43,9 @@ const Question = ({index, question, value, answers, sign, user, select}:IQuestio
     useEffect(() => {
         if(!sign) return 
         if(!user.sign) return
-        
-        const signAnswers = answers.filter(({ sign }) => 
-            getRandomSigns([user.sign as unknown as Sign]).includes(sign as Sign)
-        )
+
+        const randomSigns = getRandomSigns([user.sign as unknown as Sign])        
+        const signAnswers = answers.filter(({ sign }) => randomSigns.includes(sign as Sign))
 
         setFilteredAnswers(signAnswers)
     }, [answers, sign, user])
@@ -56,8 +58,8 @@ const Question = ({index, question, value, answers, sign, user, select}:IQuestio
         {
             answers.map(({ answer:a, sign:s }, i) => 
                 <div 
-                key={i} 
-                className='control' 
+                    key={i} 
+                    className='control' 
                     style={{display:filteredAnswers.map(({ sign }) => sign).includes(s) ? 'auto' : 'none'}}
                 >
                     <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
