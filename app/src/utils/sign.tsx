@@ -1,6 +1,7 @@
 import { iUser, Sign } from '../App'
 
 
+// On change: review public doc names as well (PDFs).
 const mapSigns = (sign:Sign)  => ({
     Ari: 'Aries',
     Tau: 'Tauro',
