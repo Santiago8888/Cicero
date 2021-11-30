@@ -115,10 +115,10 @@ export const quiz2:iQuestion[] = [{
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
             { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro.', sign:'Tau', value:true },
             { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
-            { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
-            { answer:'Relajarte, mostrarte como eres, dejar de tratar de controlar lo que el mundo piensa de tí.', sign:'Leo', value:true },
+            { answer:'Soltar, aceptar que cada quien madure a su ritmo y amar a toda mi familia incondicionalmente', sign:'Can', value:true },
+            { answer:'Relajarme, mostrarme como soy, dejar de tratar de controlar lo que el mundo piensa de mí.', sign:'Leo', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
-            { answer:'Ser justo, equilibrado, diplomático, comprender que tu socio o pareja te da lo que te corresponde  y no esperar a que cambie.', sign:'Lib', value:true },
+            { answer:'Ser justo, equilibrado, reconocer la aportación de mi socio o pareja a la relación y no esperar a que cambie.', sign:'Lib', value:true },
         ]
     }, {
         sign:true,
