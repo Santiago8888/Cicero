@@ -76,11 +76,11 @@ export const quiz2:iQuestion[] = [{
         sign:true,
         question:'7. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
         answers: [
-            { answer:'Detener mi agresividad, para pensar antes de actuar y reconocer que mis acciones tienen consecuencias.', sign:'Ari', value:true },
-            { answer:'No poder invertir en demasiados negocios, para que no endeudarme, evitar apostar o especular y para que no busquar oportunidades de acumulación.', sign:'Tau', value:true },
-            { answer:'No tratar de convencer a los demás, pensar antes de hablar, evitar caer en chismes y no esforzarme demasiado en caer bien o hacer reír a los demás.', sign:'Gem', value:true },
-            { answer:'Dejar de controlar la dinámica familiar, desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
-            { answer:'Desarrollar humildad y saber que no es necesario controlar mi audiencia.', sign:'Leo', value:true },
+            { answer:'Detener mi agresividad y pensar antes de actuar.', sign:'Ari', value:true },
+            { answer:'No poder invertir en demasiados negocios, endeudarme o apostar.', sign:'Tau', value:true },
+            { answer:'No tratar de convencer a los demás, pensar antes de hablar y evitar caer en chismes o esforzarme demasiado en caer bien o hacer reír a los demás.', sign:'Gem', value:true },
+            { answer:'Dejar de controlar la dinámica familiar y desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
+            { answer:'Ser humilde, auténtico, dejar pedir aplauso, de ser autoritario y controlador.', sign:'Leo', value:true },
             { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
             { answer:'Lograr tomar decisiones y saber cuándo ceder.', sign:'Lib', value:true },
         ]
