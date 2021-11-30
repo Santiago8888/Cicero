@@ -30,9 +30,9 @@ export const quiz2:iQuestion[] = [{
         answers: [
             { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
             { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
-            { answer:'Una persona conocida conocida luchabas por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
-            { answer:'Creía que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
-            { answer:'De forma rígida y deje de permitir que mi espíritu lúdico se expresara.', sign:'Leo', value:true },
+            { answer:'Siendo una persona muy conocida, luchando por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
+            { answer:'Creía que al hacer todo por las personas que amaba era la manera de demostrar mi amor', sign:'Can', value:true },
+            { answer:'De forma rígida y sin permitir que mi espontaneidad se expresara.', sign:'Leo', value:true },
             { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
             { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
         ]
