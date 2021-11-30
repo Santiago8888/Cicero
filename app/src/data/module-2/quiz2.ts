@@ -38,15 +38,15 @@ export const quiz2:iQuestion[] = [{
         ]
     }, {
         sign:true,
-        question:'4. ¿Qué otras actividades tuviste en vidas pasdas?',
+        question:'4. ¿Qué actividades tuviste en vidas pasdas?',
         answers: [
-            { answer:'Haber buscado la supervivencia en ambientes inhóspitos, en situaciones de mucho riesgo o peligro y actividades que requieren de mucha energía.', sign:'Ari', value:true },
-            { answer:'Trabajar en bancos o empresas financieras, ser aficionado a los juegos de azar, la especulación, comerciante, empresario y hasta inversionista', sign:'Tau', value:true },
-            { answer:'Informante, locutor, periodista, transportista, comerciante, vendedor, presentador o cómico.', sign:'Gem', value:true },
-            { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
-            { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante, o cualquier tipo de líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
-            { answer:'Enfermer@, trabajador social, investigador@, administrador y encargado de cualquier área de salud o donde el servicio era lo más importante.', sign:'Vir', value:true },
-            { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde excluí mi identidad personal a favor de una sociedad.', sign:'Lib', value:true },
+            { answer:'Situaciones de mucho riesgo o peligro y actividades que requieren de mucha energía.', sign:'Ari', value:true },
+            { answer:'Trabajé en bancos, empresas financieras o aficionado a los juegos de azar, la especulación y las inversiones', sign:'Tau', value:true },
+            { answer:'Informante, locutor, periodista, transportista, vendedor o cómico.', sign:'Gem', value:true },
+            { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@ o jefe o administrador de casa hogar, asilo o restaurante', sign:'Can', value:true },
+            { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante o líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
+            { answer:'Enfermer@, trabajador social, investigador@, administrador u otras actividades en donde el servicio era lo más importante.', sign:'Vir', value:true },
+            { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde mi identidad personal era excluida a favor de una sociedad o pareja.', sign:'Lib', value:true },
         ]
     }, { 
         sign:true,
@@ -55,9 +55,9 @@ export const quiz2:iQuestion[] = [{
             { answer:'El impulso y la energía.', sign:'Ari', value:true },
             { answer:'Poder ahorrar grandes cantidades de dinero.', sign:'Tau', value:true },
             { answer:'La habilidad para comunicarme con los demás.', sign:'Gem', value:true },
-            { answer:'La capacidad de sentir armonía y protección de tu familia.', sign:'Can', value:true },
+            { answer:'Sentir armonía y protección de la familia.', sign:'Can', value:true },
             { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
-            { answer:'La salud cuando hay desequilibrio entre mi mente y cuerpo.', sign:'Vir', value:true },
+            { answer:'La salud cuando hay desequilibrio entre la mente y cuerpo.', sign:'Vir', value:true },
             { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
         ]
     }, {
