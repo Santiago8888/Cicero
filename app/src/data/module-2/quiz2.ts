@@ -89,12 +89,12 @@ export const quiz2:iQuestion[] = [{
         question:'8. ¿Qué es importante que aprendas en esta vida?',
         answers: [
             { answer:'Tacto y cooperación con los demás.', sign:'Ari', value:true },
-            { answer:'Valorar los recursos y a las personas.', sign:'Tau', value:true },
-            { answer:'Decir que no.', sign:'Gem', value:true },
+            { answer:'Valorar justamente a las personas y los recursos materiales.', sign:'Tau', value:true },
+            { answer:'A decir que no.', sign:'Gem', value:true },
             { answer:'Respeto, obediencia y aceptación de la forma de ser de cada miembro de la familia', sign:'Can', value:true },
-            { answer:'La autoaceptación, el sentido del humor y la apreciación..', sign:'Leo', value:true },
+            { answer:'A amar, desarrollar apreciación, aceptación, sentido del humor y a disfrutar el momento presente.', sign:'Leo', value:true },
             { answer:'Liberarme de la tensión y concentrarme en manifestar mi visión abstracta de las cosas.', sign:'Vir', value:true },
-            { answer:'Considerar lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
+            { answer:'Reconocer lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
         ]
     }, {
         sign:true,
