@@ -1,5 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 import { iApprove, iUser } from '../../App'
+import { mapSign } from '../../utils/sign'
 import { questionStyle } from './Quiz'
 import { useState } from 'react'
 
@@ -39,7 +40,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
                 marginBottom: midScreen ? '2rem' : '1rem', 
                 color:'saddlebrown'
             }}
-        > { title.replace('DYNAMIC_SIGN', user.sign || '') } </h1>
+        > { mapSign(title, user) } </h1>
 
 
         <Divider midScreen={midScreen} />
@@ -58,7 +59,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
                         onClick={initCountdown}
                         target='_blank'
                         rel='noreferrer'
-                        href={link}
+                        href={mapSign(link, user)}
                         className='button is-link'
                         style={{
                             borderRadius:12,
