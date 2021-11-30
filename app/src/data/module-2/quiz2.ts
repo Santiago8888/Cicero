@@ -14,6 +14,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -29,6 +30,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -44,6 +46,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -59,6 +62,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, { 
         sign:true,
@@ -74,6 +78,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -89,6 +94,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -104,6 +110,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -119,6 +126,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -134,6 +142,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -149,6 +158,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
@@ -164,6 +174,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
             { answer:'.', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
         ]
     }
 ]
