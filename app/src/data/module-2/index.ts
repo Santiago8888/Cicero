@@ -29,7 +29,7 @@ const lessons2:iLesson[] = [
     { 
         type:'Reading', 
         title:'Saturno en DYNAMIC_SIGN', 
-        link:'docs/Karma-de-Saturno-en-Aries.pdf', 
+        link:'docs/karma/Karma-de-Saturno-en-DYNAMIC_SIGN.pdf', 
         description:karmaDescription, 
         min:4 
     },
