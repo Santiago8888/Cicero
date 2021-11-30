@@ -59,7 +59,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
                         onClick={initCountdown}
                         target='_blank'
                         rel='noreferrer'
-                        href={link}
+                        href={mapSign(link, user)}
                         className='button is-link'
                         style={{
                             borderRadius:12,
