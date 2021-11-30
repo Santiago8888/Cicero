@@ -64,12 +64,12 @@ export const quiz2:iQuestion[] = [{
         sign:true,
         question:'6. ¿Para qué te restringe eso Saturno?',
         answers: [
-            { answer:'Poder medir mi fuerza, canalizarla correctamente, dejar de insistir tantas veces para lograr algo y aprender de tus resultados.', sign:'Ari', value:true },
-            { answer:'Deshacerme de los bienes a los que me apego: aquellos que solo me están haciendo la vida más difícil o pesada.', sign:'Tau', value:true },
-            { answer:'Aprender a hacerlo de manera clara, sincera y abierta, verbalizar mis ideas, dejar de manipular y mantener una postura adecuada y congruente.', sign:'Gem', value:true },
-            { answer:'Encuentre afinidad, acoplamiento y verdadero bienestar, que aprenda a manejar mis emociones, respetar la jerarquía de mis padres y regresar la responsabilidad a cada integrante de la familia.', sign:'Can', value:true },
+            { answer:'Poder medir mi fuerza y canalizarla correctamente.', sign:'Ari', value:true },
+            { answer:'Deshacerme de los bienes a los que me apego o pesada.', sign:'Tau', value:true },
+            { answer:'Aprender a comunicarme de manera clara, sincera y abierta.', sign:'Gem', value:true },
+            { answer:'Que aprenda a manejar mis emociones y regresar la responsabilidad a cada integrante de la familia.', sign:'Can', value:true },
             { answer:'Desarrollar una mejor actitud hacia el amor, evitar la rigidez y disfrutar del momento.', sign:'Leo', value:true },
-            { answer:'Poder vivir de manera integral, trabajar sin estrés, dejar de ser tan perfeccionista, obsesionarme por los detalles, soltar y confiar al terminar las tareas.', sign:'Vir', value:true },
+            { answer:'Poder vivir de manera integral, trabajar sin estrés y dejar de ser tan perfeccionista.', sign:'Vir', value:true },
             { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
         ]
     }, {
