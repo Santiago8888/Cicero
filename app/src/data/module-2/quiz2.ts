@@ -11,6 +11,8 @@ export const quiz2:iQuestion[] = [{
             { answer:'Liderazgo.', sign:'Leo', value:true },
             { answer:'Necesidad de servir.', sign:'Vir', value:true },
             { answer:'Una fuerte necesidad de estar acompañad@.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
+
         ]
     }, {
         sign:true,
@@ -23,6 +25,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Tener que hacer un buen "papel".', sign:'Leo', value:true },
             { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
             { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -35,6 +38,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'De forma rígida y sin permitir que mi espontaneidad se expresara.', sign:'Leo', value:true },
             { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
             { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -47,6 +51,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante o líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
             { answer:'Enfermer@, trabajador social, investigador@, administrador u otras actividades en donde el servicio era lo más importante.', sign:'Vir', value:true },
             { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde mi identidad personal era excluida a favor de una sociedad o pareja.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, { 
         sign:true,
@@ -59,6 +64,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
             { answer:'La salud cuando hay desequilibrio entre la mente y cuerpo.', sign:'Vir', value:true },
             { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -71,6 +77,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Desarrollar una mejor actitud hacia el amor, evitar la rigidez y disfrutar del momento.', sign:'Leo', value:true },
             { answer:'Poder vivir de manera integral, trabajar sin estrés y dejar de ser tan perfeccionista.', sign:'Vir', value:true },
             { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -83,6 +90,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Ser humilde, auténtico, dejar pedir aplauso, de ser autoritario y controlador.', sign:'Leo', value:true },
             { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
             { answer:'Lograr tomar decisiones y saber cuándo ceder.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -95,6 +103,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'A amar, desarrollar apreciación, aceptación, sentido del humor y a disfrutar el momento presente.', sign:'Leo', value:true },
             { answer:'Liberarme de la tensión y concentrarme en manifestar mi visión abstracta de las cosas.', sign:'Vir', value:true },
             { answer:'Reconocer lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -107,6 +116,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
             { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
             { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -119,6 +129,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Expresarme con amor, dirigir a los demás con humildad, amarme sin vanidad ni egocentrismo y ser auténtico, agradecido y apreciativo.', sign:'Leo', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
             { answer:'Ser justo, equilibrado, reconocer la aportación de mi socio o pareja a la relación y no esperar a que cambie.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }, {
         sign:true,
@@ -131,6 +142,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'No es necesario controlar mi audiencia.', sign:'Leo', value:true },
             { answer:'Voy a estar san@ y puedo sentir tranquilidad.', sign:'Vir', value:true },
             { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
+            { answer:'.', sign:'Sco', value:true },
         ]
     }
 ]
