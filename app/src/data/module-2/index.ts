@@ -19,7 +19,7 @@ const posts2Description = ['En base al vídeo "La Misión de Saturno" toma un ti
 const karmaDescription = [
     'En esta lectura conocerás a profundidad tu karma de Saturno, lo que te esta restringiendo y que vienes a aprender.',
     '',
-    'Obtendrás un vistazo a tus vidas pasadas de acuerdo al signo de Saturno y algunas de las circunstancias que te hicieron desarrollar tu karma.',
+    'Obtendrás un vistazo a tus vidas pasadas y algunas de las circunstancias que te hicieron desarrollar tu karma.',
     '',
     'Tiempo mínimo sugerido: 4 minutos'
 ]
