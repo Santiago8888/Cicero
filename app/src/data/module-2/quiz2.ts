@@ -12,7 +12,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Necesidad de servir.', sign:'Vir', value:true },
             { answer:'Una fuerte necesidad de estar acompañad@.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
-
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -26,6 +26,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
             { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -39,6 +40,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
             { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -52,6 +54,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Enfermer@, trabajador social, investigador@, administrador u otras actividades en donde el servicio era lo más importante.', sign:'Vir', value:true },
             { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde mi identidad personal era excluida a favor de una sociedad o pareja.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, { 
         sign:true,
@@ -65,6 +68,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'La salud cuando hay desequilibrio entre la mente y cuerpo.', sign:'Vir', value:true },
             { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -78,6 +82,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Poder vivir de manera integral, trabajar sin estrés y dejar de ser tan perfeccionista.', sign:'Vir', value:true },
             { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -91,6 +96,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
             { answer:'Lograr tomar decisiones y saber cuándo ceder.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -104,6 +110,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Liberarme de la tensión y concentrarme en manifestar mi visión abstracta de las cosas.', sign:'Vir', value:true },
             { answer:'Reconocer lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -117,6 +124,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
             { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -130,6 +138,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
             { answer:'Ser justo, equilibrado, reconocer la aportación de mi socio o pareja a la relación y no esperar a que cambie.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }, {
         sign:true,
@@ -143,6 +152,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Voy a estar san@ y puedo sentir tranquilidad.', sign:'Vir', value:true },
             { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
+            { answer:'.', sign:'Sag', value:true },
         ]
     }
 ]
