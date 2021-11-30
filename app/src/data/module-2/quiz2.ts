@@ -13,6 +13,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Una fuerte necesidad de estar acompañad@.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -27,6 +28,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -41,6 +43,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -55,6 +58,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde mi identidad personal era excluida a favor de una sociedad o pareja.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, { 
         sign:true,
@@ -69,6 +73,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -83,6 +88,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -97,6 +103,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Lograr tomar decisiones y saber cuándo ceder.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -111,6 +118,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Reconocer lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -125,6 +133,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -139,6 +148,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Ser justo, equilibrado, reconocer la aportación de mi socio o pareja a la relación y no esperar a que cambie.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }, {
         sign:true,
@@ -153,6 +163,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
             { answer:'.', sign:'Sco', value:true },
             { answer:'.', sign:'Sag', value:true },
+            { answer:'.', sign:'Cap', value:true },
         ]
     }
 ]
