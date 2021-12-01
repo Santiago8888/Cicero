@@ -62,11 +62,11 @@ export const quiz2:iQuestion[] = [{
             { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante o líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
             { answer:'Enfermer@, trabajador social, investigador@, administrador u otras actividades en donde el servicio era lo más importante.', sign:'Vir', value:true },
             { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde mi identidad personal era excluida a favor de una sociedad o pareja.', sign:'Lib', value:true },
-            { answer:'.', sign:'Sco', value:true },
-            { answer:'.', sign:'Sag', value:true },
-            { answer:'.', sign:'Cap', value:true },
-            { answer:'.', sign:'Aqu', value:true },
-            { answer:'.', sign:'Pis', value:true },
+            { answer:'Financier@, abogad@, investigador, médico, cirujano, psicólog@, alquimista, bruj@ y cualquier profesión que se relacione con las ciencias ocultas y/o el mundo astral.', sign:'Sco', value:true },
+            { answer:'Participante de instituciones religiosas, políticas, multinacionales o incluso filosóficas.', sign:'Sag', value:true },
+            { answer:'Figura pública, jefe, gerente, director o líder de grupos sociales o políticos.', sign:'Cap', value:true },
+            { answer:'Científico, inventor, pensador, humanista, haberte involucrado con la tecnología o desempeñado actividades ecológicas y relacionadas con animales.', sign:'Aqu', value:true },
+            { answer:'Líder religioso, trabajado en un hospital, clínica, asilo o casa hogar, hacer servicio religioso-espiritual predicando o ayudando a comunidades de escasos recursos.', sign:'Pis', value:true },
         ]
     }, { 
         sign:true,
