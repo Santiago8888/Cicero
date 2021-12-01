@@ -159,7 +159,7 @@ export const quiz2:iQuestion[] = [{
         answers: [
             { answer:'Engrandecer mi aceptación para llegar a la sabiduría.', sign:'Sag', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
-            { answer:'Liderar desde una conciencia de servicio y no privilegio.', sign:'Cap', value:true },
+            { answer:'Construir un liderazgo firme y honorable, que genere confianza.', sign:'Cap', value:true },
             { answer:'Servir desde el corazón, conectando con el alma de las personas.', sign:'Pis', value:true },
             { answer:'Soltar, dejar que las cosas lleven su proceso y amar a toda mi familia incondicionalmente', sign:'Can', value:true },
             { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
@@ -181,11 +181,11 @@ export const quiz2:iQuestion[] = [{
             { answer:'No es necesario controlar mi audiencia.', sign:'Leo', value:true },
             { answer:'Voy a estar san@ y puedo sentir tranquilidad.', sign:'Vir', value:true },
             { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
-            { answer:'.', sign:'Sco', value:true },
-            { answer:'.', sign:'Sag', value:true },
-            { answer:'.', sign:'Cap', value:true },
-            { answer:'.', sign:'Aqu', value:true },
-            { answer:'.', sign:'Pis', value:true },
+            { answer:'Conocer a profundidad las emociones y deseos de las personas conlleva un gran poder y por consecuencia una gran responsabilidad.', sign:'Sco', value:true },
+            { answer:'Buscar la verdad y el proposito de mi vida es un proceso que nunca concluye.', sign:'Sag', value:true },
+            { answer:'Liderear es un servicio, no un privilegio.', sign:'Cap', value:true },
+            { answer:'El que es sabio habla poco.', sign:'Aqu', value:true },
+            { answer:'Sufrir con las personas que necesitan ayuda no es ser servir.', sign:'Pis', value:true },
         ]
     }
 ]
