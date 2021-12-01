@@ -147,11 +147,11 @@ export const quiz2:iQuestion[] = [{
             { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
             { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
             { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
-            { answer:'.', sign:'Sco', value:true },
-            { answer:'.', sign:'Sag', value:true },
-            { answer:'.', sign:'Cap', value:true },
-            { answer:'.', sign:'Aqu', value:true },
-            { answer:'.', sign:'Pis', value:true },
+            { answer:'Mis deseos, pensamientos, juicios y emociones negativas.', sign:'Sco', value:true },
+            { answer:'Juicios hacia las creencias de otros y el deseo de profesar las mías.', sign:'Sag', value:true },
+            { answer:'Autoritarismo, frialdad, rigidez y orgullo.', sign:'Cap', value:true },
+            { answer:'La creencia que me dice que soy más inteligente que los demás y soy el que más sabe.', sign:'Aqu', value:true },
+            { answer:'Actitudes de religiosidad, idealismo, desorganización, procrastinación y depresión.', sign:'Pis', value:true },
         ]
     }, {
         sign:true,
