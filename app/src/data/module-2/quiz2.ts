@@ -106,8 +106,8 @@ export const quiz2:iQuestion[] = [{
         sign:true,
         question:'7. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
         answers: [
-            { answer:'Lograr tomar decisiones y saber cuándo ceder.', sign:'Lib', value:true },
             { answer:'Detener mi agresividad y pensar antes de actuar.', sign:'Ari', value:true },
+            { answer:'Tomar decisiones y saber cuándo ceder y cuando no.', sign:'Lib', value:true },
             { answer:'No poder invertir en demasiados negocios, endeudarme o apostar.', sign:'Tau', value:true },
             { answer:'No imponerme una doctrina externa hasta entender de donde nace la verdad.', sign:'Sag', value:true },
             { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
@@ -124,17 +124,17 @@ export const quiz2:iQuestion[] = [{
         question:'8. ¿Qué es importante que aprendas en esta vida?',
         answers: [
             { answer:'Tacto y cooperación con los demás.', sign:'Ari', value:true },
-            { answer:'Valorar justamente a las personas y los recursos materiales.', sign:'Tau', value:true },
+            { answer:'Valorar a las personas y los recursos materiales en su justa dimensión.', sign:'Tau', value:true },
             { answer:'A decir que no.', sign:'Gem', value:true },
             { answer:'Respeto, obediencia y aceptación de la forma de ser de cada miembro de la familia', sign:'Can', value:true },
             { answer:'A amar, desarrollar apreciación, aceptación, sentido del humor y a disfrutar el momento presente.', sign:'Leo', value:true },
             { answer:'Liberarme de la tensión y concentrarme en manifestar mi visión abstracta de las cosas.', sign:'Vir', value:true },
             { answer:'Reconocer lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
-            { answer:'.', sign:'Sco', value:true },
-            { answer:'.', sign:'Sag', value:true },
-            { answer:'.', sign:'Cap', value:true },
-            { answer:'.', sign:'Aqu', value:true },
-            { answer:'.', sign:'Pis', value:true },
+            { answer:'Paciencia, fuerza de voluntad, a sostener lo que he creado y a valorar a las personas.', sign:'Sco', value:true },
+            { answer:'Humildad, a respetar las creencias de otros, a observar más y hablar menos, a compartir tu visión, y a balancear la alegría con la sabiduría.', sign:'Sag', value:true },
+            { answer:'A relajarme mientras me desempeño y que no es suficiente tan sólo hacer bien las cosas, hay que hacerlas por las razones correctas.', sign:'Cap', value:true },
+            { answer:'Humildad, paciencia, comprensión y tolerancia hacia los demás.', sign:'Aqu', value:true },
+            { answer:'Servir a los demás ordenadamente, ser disciplinad@, realista y llevar una vida material y espiritual equilibrada.', sign:'Pis', value:true },
         ]
     }, {
         sign:true,
