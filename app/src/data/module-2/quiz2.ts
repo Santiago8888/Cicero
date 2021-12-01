@@ -164,11 +164,11 @@ export const quiz2:iQuestion[] = [{
             { answer:'Expresarme con amor, dirigir a los demás con humildad, amarme sin vanidad ni egocentrismo y ser auténtico, agradecido y apreciativo.', sign:'Leo', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
             { answer:'Ser justo, equilibrado, reconocer la aportación de mi socio o pareja a la relación y no esperar a que cambie.', sign:'Lib', value:true },
-            { answer:'.', sign:'Sco', value:true },
-            { answer:'.', sign:'Sag', value:true },
-            { answer:'.', sign:'Cap', value:true },
-            { answer:'.', sign:'Aqu', value:true },
-            { answer:'.', sign:'Pis', value:true },
+            { answer:'Dejar de querer controlarlo todo y utilizar conscientemente mi intuición y poder de manifestación.', sign:'Sco', value:true },
+            { answer:'Engrandecer mi aceptación para llegar a la sabiduría.', sign:'Sag', value:true },
+            { answer:'Liderar desde una conciencia de servicio y no privilegio.', sign:'Cap', value:true },
+            { answer:'Innovar, romper con ideas convencionales obsoletas, ver a los demás iguales a ti y aportar nuevas ideas.', sign:'Aqu', value:true },
+            { answer:'Servir desde el corazón, conectando con el alma de las personas.', sign:'Pis', value:true },
         ]
     }, {
         sign:true,
