@@ -73,17 +73,17 @@ export const quiz2:iQuestion[] = [{
         question: '5. ¿Qué te restringe Saturno en esta vida?', 
         answers: [
             { answer:'El impulso y la energía.', sign:'Ari', value:true },
+            { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
+            { answer:'El autoritarismo y reconocimiento.', sign:'Cap', value:true },
+            { answer:'Sentir armonía y protección de la familia.', sign:'Can', value:true },
             { answer:'Poder ahorrar grandes cantidades de dinero.', sign:'Tau', value:true },
             { answer:'La habilidad para comunicarme con los demás.', sign:'Gem', value:true },
-            { answer:'Sentir armonía y protección de la familia.', sign:'Can', value:true },
-            { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
-            { answer:'La salud cuando hay desequilibrio entre la mente y cuerpo.', sign:'Vir', value:true },
-            { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
             { answer:'La capacidad de atraer a tu vida lo que deseas.', sign:'Sco', value:true },
+            { answer:'La capacidad de predicar sin fe y entendimiento.', sign:'Pis', value:true },
+            { answer:'La salud cuando hay desequilibrio entre la mente y cuerpo.', sign:'Vir', value:true },
             { answer:'La alegría y capacidad de encontrar el propósito de la vida.', sign:'Sag', value:true },
-            { answer:'El autoritarismo y reconocimiento.', sign:'Cap', value:true },
             { answer:'La capacidad de ser original, inventivo, libre e independiente.', sign:'Aqu', value:true },
-            { answer:'La capacidad de predicar sin fe, tu entendimiento, concretar, materializar tus sueños.', sign:'Pis', value:true },
+            { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
         ]
     }, {
         sign:true,
