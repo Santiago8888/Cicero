@@ -31,7 +31,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Ambición, siempre querer llegar más alto.', sign:'Cap', value:true },
             { answer:'Saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
             { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
-            { answer:'Impotencia ante el sufrimiento de otros y depresión.', sign:'Pis', value:true },
+            { answer:'Depresión e impotencia ante el sufrimiento de otros.', sign:'Pis', value:true },
             { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
         ]
     }, {
@@ -47,9 +47,9 @@ export const quiz2:iQuestion[] = [{
             { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
             { answer:'Evitando ser controlad@, ni siquiera por mis propios deseos, quería ser fuerte.', sign:'Sco', value:true },
             { answer:'Dogmátic@ perdiendo la capacidad de cuestionar y pensar diferente.', sign:'Sag', value:true },
-            { answer:'Con algo resentimiento y siendo una persona fría, orgullosa, solitaria, egoísta e incluso dictatorial', sign:'Cap', value:true },
-            { answer:'.', sign:'Aqu', value:true },
-            { answer:'.', sign:'Pis', value:true },
+            { answer:'Con algo de resentimiento pudiendo ser una persona fría, orgullosa, egoísta e incluso dictatorial', sign:'Cap', value:true },
+            { answer:'Desapegad@, indiferente, e inaccesible emocionalmente, sintiendo más conexión con los animales y la naturaleza que con los humanos.', sign:'Aqu', value:true },
+            { answer:'Usaba la religión o espiritualidad como esperanza pero triste por no recibir la ayuda que pedías al rezar.', sign:'Pis', value:true },
         ]
     }, {
         sign:true,
