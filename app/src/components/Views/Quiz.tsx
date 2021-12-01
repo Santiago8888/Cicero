@@ -155,7 +155,13 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
     const [approved, setApproved] = useState<boolean>()
     const submit = () => {
 
-        const answers = Object.entries(values).map(([k, v]) => questions[k as unknown as number].answers[v].value)
+        const answers = Object.entries(values).map(([k, v]) => 
+            !questions[k as unknown as number].answers[v].sign
+            ?   questions[k as unknown as number].answers[v].value
+            :   questions[k as unknown as number].answers[v].sign === user.sign
+        )
+
+        console.log('answers', answers)
 
         const score = answers.filter(a=>a).length
         setScore(score)
