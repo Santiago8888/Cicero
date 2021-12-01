@@ -140,18 +140,18 @@ export const quiz2:iQuestion[] = [{
         sign:true,
         question:'9. ¿Qué es lo que ahora debes corregir?',
         answers: [
-            { answer:'Mi personalidad.', sign:'Ari', value:true },
-            { answer:'Mi sistema de valores.', sign:'Tau', value:true },
             { answer:'Mi comunicación', sign:'Gem', value:true },
-            { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
+            { answer:'Mi personalidad.', sign:'Ari', value:true },
             { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
+            { answer:'Mi sistema de valores.', sign:'Tau', value:true },
             { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
+            { answer:'Autoritarismo, frialdad, rigidez y orgullo.', sign:'Cap', value:true },
+            { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
             { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
             { answer:'Mis deseos, pensamientos, juicios y emociones negativas.', sign:'Sco', value:true },
             { answer:'Juicios hacia las creencias de otros y el deseo de profesar las mías.', sign:'Sag', value:true },
-            { answer:'Autoritarismo, frialdad, rigidez y orgullo.', sign:'Cap', value:true },
-            { answer:'La creencia que me dice que soy más inteligente que los demás y soy el que más sabe.', sign:'Aqu', value:true },
             { answer:'Actitudes de religiosidad, idealismo, desorganización, procrastinación y depresión.', sign:'Pis', value:true },
+            { answer:'La creencia que me dice que soy más inteligente que los demás y soy el que más sabe.', sign:'Aqu', value:true },
         ]
     }, {
         sign:true,
