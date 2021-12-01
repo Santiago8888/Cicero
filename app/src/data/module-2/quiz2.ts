@@ -36,7 +36,7 @@ export const quiz2:iQuestion[] = [{
         ]
     }, {
         sign:true,
-        question:'3. ¿Cómo actuabas generalmente en vidas pasadas?',
+        question:'3. ¿Qué cualidades o experiencias positivas experimentaste en vidas pasadas?',
         answers: [
             { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
             { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
@@ -45,9 +45,26 @@ export const quiz2:iQuestion[] = [{
             { answer:'De forma rígida y sin permitir que mi espontaneidad se expresara.', sign:'Leo', value:true },
             { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
             { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
-            { answer:'.', sign:'Sco', value:true },
-            { answer:'.', sign:'Sag', value:true },
-            { answer:'.', sign:'Cap', value:true },
+            { answer:'Evitando ser controlad@, ni siquiera por mis propios deseos, quería ser fuerte.', sign:'Sco', value:true },
+            { answer:'Dogmátic@ perdiendo la capacidad de cuestionar y pensar diferente.', sign:'Sag', value:true },
+            { answer:'Con algo resentimiento y siendo una persona fría, orgullosa, solitaria, egoísta e incluso dictatorial', sign:'Cap', value:true },
+            { answer:'.', sign:'Aqu', value:true },
+            { answer:'.', sign:'Pis', value:true },
+        ]
+    }, {
+        sign:true,
+        question:'4. ¿Qué tendencias te hicieron daño o afectaron en vidas pasadas?',
+        answers: [
+            { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
+            { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
+            { answer:'Siendo una persona muy conocida, luchando por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
+            { answer:'Creía que al hacer todo por las personas que amaba era la manera de demostrar mi amor', sign:'Can', value:true },
+            { answer:'De forma rígida y sin permitir que mi espontaneidad se expresara.', sign:'Leo', value:true },
+            { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
+            { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
+            { answer:'Evitando ser controlad@, ni siquiera por mis propios deseos, quería ser fuerte.', sign:'Sco', value:true },
+            { answer:'Dogmátic@ perdiendo la capacidad de cuestionar y pensar diferente.', sign:'Sag', value:true },
+            { answer:'Con algo resentimiento y siendo una persona fría, orgullosa, solitaria, egoísta e incluso dictatorial', sign:'Cap', value:true },
             { answer:'.', sign:'Aqu', value:true },
             { answer:'.', sign:'Pis', value:true },
         ]
