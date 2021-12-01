@@ -174,18 +174,18 @@ export const quiz2:iQuestion[] = [{
         sign:true,
         question:'11. ¿Qué debes saber en esta vida?',
         answers: [
-            { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
-            { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
-            { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
+            { answer:'El que es sabio habla poco.', sign:'Aqu', value:true },
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
             { answer:'No es necesario controlar mi audiencia.', sign:'Leo', value:true },
+            { answer:'Liderear es un servicio, no un privilegio.', sign:'Cap', value:true },
             { answer:'Voy a estar san@ y puedo sentir tranquilidad.', sign:'Vir', value:true },
+            { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
+            { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
+            { answer:'Sufrir con las personas que necesitan ayuda no es ser servir.', sign:'Pis', value:true },
+            { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
+            { answer:'Buscar la verdad y el proposito de mi vida es un proceso que nunca concluye.', sign:'Sag', value:true },
             { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
             { answer:'Conocer a profundidad las emociones y deseos de las personas conlleva un gran poder y por consecuencia una gran responsabilidad.', sign:'Sco', value:true },
-            { answer:'Buscar la verdad y el proposito de mi vida es un proceso que nunca concluye.', sign:'Sag', value:true },
-            { answer:'Liderear es un servicio, no un privilegio.', sign:'Cap', value:true },
-            { answer:'El que es sabio habla poco.', sign:'Aqu', value:true },
-            { answer:'Sufrir con las personas que necesitan ayuda no es ser servir.', sign:'Pis', value:true },
         ]
     }
 ]
