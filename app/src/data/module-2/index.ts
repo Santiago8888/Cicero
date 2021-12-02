@@ -54,7 +54,7 @@ const lessons3:iLesson[] = [
     { 
         type:'Reading', 
         title:'Misión de DYNAMIC_SIGN', 
-        link:'docs/Misión-de-Saturno-en-Aries.pdf', 
+        link:'docs/mission/Misión-de-Saturno-en-DYNAMIC_SIGN.pdf', 
         description:misionDescription,
         min:4
     },
