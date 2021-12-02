@@ -42,7 +42,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Honestidad, perseverancia y confianza.', value:true, sign:'Tau' },
             { answer:'Sinceridad, autenticidad y congruencia.', value:true, sign:'Gem' },
             { answer:'Responsabilidad, apoyo, respeto y amor incondicional.', value:true, sign:'Can' },
-            { answer:'Humildad, amor propio, gozo y apreciación.', value:true, sign:'Leo' },
+            { answer:'Humildad, gozo, apreciación y generosidad.', value:true, sign:'Leo' },
             { answer:'Discernimiento, confianza, dignidad y compasión.', value:true, sign:'Vir' },            
             { answer:'Cooperación, justicia, equilibrio y paz.', value:true, sign:'Lib' },
         ]
