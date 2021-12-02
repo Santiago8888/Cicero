@@ -94,12 +94,12 @@ export const quiz3:iQuestion[] = [
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
         answers:[
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
-            { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
+            { answer:'Demostrar mi valor personal ante los demás y tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
-            { answer:'A ayudar indebidamente y situaciones situaciones donde caiga y reaccione inconscientemente tomando un papel de víctima.', value:true, sign:'Can' },
-            { answer:'Demostrar mi autenticidad ante los demás, y seré expuesto cuando quiera dar una cara diferente a quien soy.', value:true, sign:'Leo' },
-            { answer:'Demuestres que puedes servir a otros sin dejarte al final, te harán creer que eres la única persona que puede hacer algo bien hecho y acabarás haciendo todo.', value:true, sign:'Vir' },            
-            { answer:'Situaciones para luchar por lo mío sin reclamar.', value:true, sign:'Lib' },
+            { answer:'Posibilidades de ayudar indebidamente o situaciones donde reaccione inconscientemente con un papel de víctima.', value:true, sign:'Can' },
+            { answer:'Ser atento y considerado con los demás cuando actúe, y seré ignorado para que de su lugar y atención a otros.', value:true, sign:'Leo' },
+            { answer:'Demuestre que puedo servir a otros sin dejarme al final, me harán creer que soy la única persona que puede hacer algo bien hecho y acabaré haciendolo todo.', value:true, sign:'Vir' },            
+            { answer:'Poner límites y luchar por lo mío sin reclamar.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
