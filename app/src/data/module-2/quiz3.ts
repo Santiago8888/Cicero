@@ -58,15 +58,15 @@ export const quiz3:iQuestion[] = [
             { answer:'sol@, abusado, egoísta y resentido.', value:true, sign:'Lib' },
         ]
     }, { 
-        question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
+        question:'6. ¿De que te sentiras satisfech@ cuando hayas aprendido esas cualidades?', 
         answers:[
-            { answer:'Segur@ y satisfech@ de mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
-            { answer:'Confianza y tranquilidad de que soy una persona valiosa.', value:true, sign:'Tau' },
-            { answer:'Segur@ y satisfech@ de tus ideas, tus palabras y tus relaciones.', value:true, sign:'Gem' },
-            { answer:'Segur@ y satisfech@ de tu papel en la familia, la armonía y bienestar.', value:true, sign:'Can' },
-            { answer:'Segur@ y satisfech@ de tu nuevo papel ante el mundo.', value:true, sign:'Leo' },
-            { answer:'Segur@ y satisfech@ de tu nueva manera de ser y trabajar.', value:true, sign:'Vir' },            
-            { answer:'Segur@ y satisfech@ de tus relaciones, en especial de pareja.', value:true, sign:'Lib' },
+            { answer:'De mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
+            { answer:'De que soy una persona valiosa.', value:true, sign:'Tau' },
+            { answer:'Mis ideas, palabras y relaciones.', value:true, sign:'Gem' },
+            { answer:'Mi papel en la familia, la armonía y bienestar en la que convivimos.', value:true, sign:'Can' },
+            { answer:'De mi nuevo papel ante el mundo.', value:true, sign:'Leo' },
+            { answer:'De mi nueva manera de ser y trabajar.', value:true, sign:'Vir' },            
+            { answer:'Mis relaciones, en especial la de pareja.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
