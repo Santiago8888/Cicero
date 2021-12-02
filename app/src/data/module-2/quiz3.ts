@@ -28,10 +28,10 @@ export const quiz3:iQuestion[] = [
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
         answers:[
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo autosuficiente, mostrando dignidad e independencia.', value:true, sign:'Ari' },
-            { answer:'Disfrutar de tus bienes y dinero, del resultado de tus esfuerzos, compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
+            { answer:'Disfrutar de tus bienes y dinero, del resultado de tus esfuerzos y compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
             { answer:'Hacer valer tu palabra, responsabilizarte de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo paciente y compasivo.', value:true, sign:'Can' },
-            { answer:'Brillar, a elevar tu amor propio, a gozar tu vida, a hablar en público y aceptar la crítica como una oportunidad de mejora.', value:true, sign:'Leo' },
+            { answer:'a valorar a todos, no haciendo diferencia por su color, educación ni clase social, te ganarás su cariño por ser sencill@, atento, compartido y generoso.', value:true, sign:'Leo' },
             { answer:'Mantener un equilibrio entre tu trabajo y tu salud, mostrando dignidad, cumpliendo tus necesidades, los horarios y los acuerdos.', value:true, sign:'Vir' },            
             { answer:'Convertir tu dependencia e independencia en interdependencia.', value:true, sign:'Lib' },
         ]
