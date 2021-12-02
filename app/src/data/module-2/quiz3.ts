@@ -156,6 +156,12 @@ export const quiz3:iQuestion[] = [
             { answer:'Con dignidad y de manera integral.', value:true, sign:'Vir' },            
             { answer:'Justicia y buscando siempre la paz.', value:true, sign:'Lib' },
         ]
-    }, 
+    }, {
+        question:'15. ¿Cómo sabre que voy por el camino correcto?',
+        answers:[]
+    }, {
+        question:'16. ¿Cúal es mi mayor don?',
+        answers:[]
+    }
 ]
 
