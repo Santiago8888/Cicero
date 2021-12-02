@@ -15,6 +15,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
@@ -29,6 +31,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
@@ -43,6 +47,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
@@ -57,6 +63,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
@@ -71,6 +79,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'6. ¿De que te sentiras satisfech@ cuando hayas aprendido esas cualidades?', 
@@ -85,6 +95,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma durante la infancia?', 
@@ -99,6 +111,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
@@ -113,6 +127,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
@@ -127,6 +143,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -141,6 +159,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -155,6 +175,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
@@ -169,6 +191,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
@@ -183,6 +207,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
@@ -197,6 +223,8 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
             { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
         ]
     }, {
         question:'15. ¿Cómo sabre que voy por el camino correcto?',
