@@ -116,12 +116,12 @@ export const quiz3:iQuestion[] = [
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
         answers:[
             { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
-            { answer:'Regresar a tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
+            { answer:'Tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
             { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
-            { answer:'Aprender a dar y amar incondicionalmente y ser consciente de que controlar a las personas o los resultado no ayuda.', value:true, sign:'Can' },
-            { answer:'Aprender que puedo no ser perfecto, que eso está bien y que no tengo que ser siempre el centro de atención.', value:true, sign:'Leo' },
+            { answer:'Aprender a dar y amar incondicionalmente y que controlar a las personas o los resultado no ayuda.', value:true, sign:'Can' },
+            { answer:'Recordar que no todos están pensando siempre en mí y que está bien no gustarle a todos,', value:true, sign:'Leo' },
             { answer:'Poner límites demostrando dignidad.', value:true, sign:'Vir' },            
-            { answer:'Aprender a comparir y convivir en pareja, sin acabar dando de más, evitando abusos o generar codependencias .', value:true, sign:'Lib' },
+            { answer:'Aprender a comparir y convivir en pareja, sin acabar dando de más, evitando abusos o generar codependencias.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
@@ -148,7 +148,7 @@ export const quiz3:iQuestion[] = [
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
         answers:[
-            { answer:'Asertivas y con entusiasmo.', value:false, sign:'Ari' },
+            { answer:'Con asertividad y entusiasmo.', value:false, sign:'Ari' },
             { answer:'En base a mis valores.', value:true, sign:'Tau' },
             { answer:'En base a la verdad.', value:true, sign:'Gem' },
             { answer:'Compasión y amor.', value:true, sign:'Can' },
