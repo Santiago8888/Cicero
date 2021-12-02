@@ -11,27 +11,27 @@ export const quiz3:iQuestion[] = [
             { answer:'Amor incondicional, apoyo, aceptación y manejo emocional.', value:true, sign:'Can' },
             { answer:'Un líder que disfruta su triunfo y su vida.', value:true, sign:'Leo' },
             { answer:'Ser una persona práctica, cuidadosa, con actitud moral y trabajadora.', value:true, sign:'Vir' },            
-            { answer:'Justa, equilibrada, que ve por sí mism@ y de igual manera por los demás.', value:true, sign:'Lib' },
+            { answer:'Justicia, equilibrio, que ve por sí mism@ y los demás de igual manera.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
         answers:[
             { answer:'Salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
-            { answer:'Desarrollar autovaloración, a salir de sus problemas financieros, a tomar decisiones en base a buenos valores, y a mostrar honestidad y confiabilidad.', value:true, sign:'Tau' },
+            { answer:'Desarrollar autovaloración, a resolver sus problemas financieros, tomar decisiones en base a buenos valores y mostrar honestidad, confiabilidad y lealtad.', value:true, sign:'Tau' },
             { answer:'Comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
             { answer:'Hacer equipo, ser cariños@, just@, evitar el chantaje, hacer lo correcto y siempre ser amoros@.', value:true, sign:'Can' },
-            { answer:'Como ser alguien que puedas llegar a muchos pero no te olvidas de conectarte con los pocos o con el uno a uno.', value:true, sign:'Leo' },
-            { answer:'Realizar las tareas bien hechas, a cuidar de su cuerpo y a servir a otros.', value:true, sign:'Vir' },            
+            { answer:'Como ser alguien que puedas llegar a muchos pero también conectar a nivel personal en el uno a uno.', value:true, sign:'Leo' },
+            { answer:'Realizar las tareas bien hechas, a cuidar de su cuerpo y el goze de servir a otros.', value:true, sign:'Vir' },            
             { answer:'A ver las dos caras de la moneda, a no pensar sólo en sí mismo, a saber que solo se avanza cuando se da y se recibe equitativamente.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
         answers:[
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo autosuficiente, mostrando dignidad e independencia.', value:true, sign:'Ari' },
-            { answer:'Disfrutar de tus bienes y dinero, del resultado de tus esfuerzos, compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
+            { answer:'Disfrutar de tus bienes y dinero, del resultado de tus esfuerzos y compartir tus recursos con tus seres queridos.', value:true, sign:'Tau' },
             { answer:'Hacer valer tu palabra, responsabilizarte de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo paciente y compasivo.', value:true, sign:'Can' },
-            { answer:'Brillar, a elevar tu amor propio, a gozar tu vida, a hablar en público y aceptar la crítica como una oportunidad de mejora.', value:true, sign:'Leo' },
+            { answer:'a valorar a todos, no haciendo diferencia por su color, educación ni clase social, te ganarás su cariño por ser sencill@, atento, compartido y generoso.', value:true, sign:'Leo' },
             { answer:'Mantener un equilibrio entre tu trabajo y tu salud, mostrando dignidad, cumpliendo tus necesidades, los horarios y los acuerdos.', value:true, sign:'Vir' },            
             { answer:'Convertir tu dependencia e independencia en interdependencia.', value:true, sign:'Lib' },
         ]
@@ -42,7 +42,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Honestidad, perseverancia y confianza.', value:true, sign:'Tau' },
             { answer:'Sinceridad, autenticidad y congruencia.', value:true, sign:'Gem' },
             { answer:'Responsabilidad, apoyo, respeto y amor incondicional.', value:true, sign:'Can' },
-            { answer:'Humildad, amor propio, gozo y apreciación.', value:true, sign:'Leo' },
+            { answer:'Humildad, gozo, apreciación y generosidad.', value:true, sign:'Leo' },
             { answer:'Discernimiento, confianza, dignidad y compasión.', value:true, sign:'Vir' },            
             { answer:'Cooperación, justicia, equilibrio y paz.', value:true, sign:'Lib' },
         ]
@@ -53,20 +53,20 @@ export const quiz3:iQuestion[] = [
             { answer:'Desconfiado, abusado, robado y temeroso de perder.', value:true, sign:'Tau' },
             { answer:'Deshonesto, nervioso, descubierto o fuera de contexto.', value:true, sign:'Gem' },
             { answer:'Impaciente, controlador@ y víctima.', value:true, sign:'Can' },
-            { answer:'Juzgado, criticado y no admirado.', value:true, sign:'Leo' },
+            { answer:'Enojad@, criticad@ , ignorad@ y fe@.', value:true, sign:'Leo' },
             { answer:'Preocupado, abusado, juzgado y nervioso.', value:true, sign:'Vir' },            
-            { answer:'Solo abusado, resentido y en ocasiones egoísta.', value:true, sign:'Lib' },
+            { answer:'sol@, abusado, egoísta y resentido.', value:true, sign:'Lib' },
         ]
     }, { 
-        question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
+        question:'6. ¿De que te sentiras satisfech@ cuando hayas aprendido esas cualidades?', 
         answers:[
-            { answer:'Segur@ y satisfech@ de mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
-            { answer:'Confianza y tranquilidad de que soy una persona valiosa.', value:true, sign:'Tau' },
-            { answer:'Segur@ y satisfech@ de tus ideas, tus palabras y tus relaciones.', value:true, sign:'Gem' },
-            { answer:'Segur@ y satisfech@ de tu papel en la familia, la armonía y bienestar.', value:true, sign:'Can' },
-            { answer:'Segur@ y satisfech@ de tu nuevo papel ante el mundo.', value:true, sign:'Leo' },
-            { answer:'Segur@ y satisfech@ de tu nueva manera de ser y trabajar.', value:true, sign:'Vir' },            
-            { answer:'Segur@ y satisfech@ de tus relaciones, en especial de pareja.', value:true, sign:'Lib' },
+            { answer:'De mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
+            { answer:'De que soy una persona valiosa.', value:true, sign:'Tau' },
+            { answer:'Mis ideas, palabras y relaciones.', value:true, sign:'Gem' },
+            { answer:'Mi papel en la familia, la armonía y bienestar en la que convivimos.', value:true, sign:'Can' },
+            { answer:'De mi nuevo papel ante el mundo.', value:true, sign:'Leo' },
+            { answer:'De mi nueva manera de ser y trabajar.', value:true, sign:'Vir' },            
+            { answer:'Mis relaciones, en especial la de pareja.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
