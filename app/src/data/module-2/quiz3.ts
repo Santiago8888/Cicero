@@ -140,10 +140,10 @@ export const quiz3:iQuestion[] = [
             { answer:'Actuando sin pensar, o de lo contrario, por no actuar.', value:true, sign:'Ari' },
             { answer:'Atesorar demasiado y acumular innecesariamente.', value:true, sign:'Tau' },
             { answer:'Mentir, manipular o ser incongruente.', value:true, sign:'Gem' },
-            { answer:'Ayudar indebidamente o hacer sentir culpa.', value:true, sign:'Can' },
-            { answer:'Siendo controlador y obligando a otros a ponerme atención o sintiendome ofendido por no recibir la atención y admiración.', value:true, sign:'Leo' },
+            { answer:'Ayudar indebidamente o provocar culpa.', value:true, sign:'Can' },
+            { answer:'Exigiendo atención.', value:true, sign:'Leo' },
             { answer:'Hacer de más o haciendo lo que otros deben hacer por sí mismos.', value:true, sign:'Vir' },            
-            { answer:'Dar más de lo necesario o de lo justo.', value:true, sign:'Lib' },
+            { answer:'Dar más de lo que es justo.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
