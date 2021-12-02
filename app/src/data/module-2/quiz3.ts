@@ -17,11 +17,11 @@ export const quiz3:iQuestion[] = [
         question:'2. ¿Qué vas a enseñar a otros?', 
         answers:[
             { answer:'Salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
-            { answer:'Desarrollar autovaloración, a salir de sus problemas financieros, a tomar decisiones en base a buenos valores, y a mostrar honestidad y confiabilidad.', value:true, sign:'Tau' },
+            { answer:'Desarrollar autovaloración, a resolver sus problemas financieros, tomar decisiones en base a buenos valores y mostrar honestidad, confiabilidad y lealtad.', value:true, sign:'Tau' },
             { answer:'Comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
             { answer:'Hacer equipo, ser cariños@, just@, evitar el chantaje, hacer lo correcto y siempre ser amoros@.', value:true, sign:'Can' },
-            { answer:'Como ser alguien que puedas llegar a muchos pero no te olvidas de conectarte con los pocos o con el uno a uno.', value:true, sign:'Leo' },
-            { answer:'Realizar las tareas bien hechas, a cuidar de su cuerpo y a servir a otros.', value:true, sign:'Vir' },            
+            { answer:'Como ser alguien que puedas llegar a muchos pero también conectar a nivel personal en el uno a uno.', value:true, sign:'Leo' },
+            { answer:'Realizar las tareas bien hechas, a cuidar de su cuerpo y el goze de servir a otros.', value:true, sign:'Vir' },            
             { answer:'A ver las dos caras de la moneda, a no pensar sólo en sí mismo, a saber que solo se avanza cuando se da y se recibe equitativamente.', value:true, sign:'Lib' },
         ]
     }, { 
