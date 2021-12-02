@@ -53,9 +53,9 @@ export const quiz3:iQuestion[] = [
             { answer:'Desconfiado, abusado, robado y temeroso de perder.', value:true, sign:'Tau' },
             { answer:'Deshonesto, nervioso, descubierto o fuera de contexto.', value:true, sign:'Gem' },
             { answer:'Impaciente, controlador@ y víctima.', value:true, sign:'Can' },
-            { answer:'Juzgado, criticado y no admirado.', value:true, sign:'Leo' },
+            { answer:'Enojad@, criticad@ , ignorad@ y fe@.', value:true, sign:'Leo' },
             { answer:'Preocupado, abusado, juzgado y nervioso.', value:true, sign:'Vir' },            
-            { answer:'Solo abusado, resentido y en ocasiones egoísta.', value:true, sign:'Lib' },
+            { answer:'sol@, abusado, egoísta y resentido.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'6. ¿Como te sentirás cuando hayas aprendido esas cualidades?', 
