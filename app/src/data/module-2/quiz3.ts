@@ -104,13 +104,13 @@ export const quiz3:iQuestion[] = [
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
         answers:[
-            { answer:'Que traten de exceder los límites y provocarán para intentar hacerme perder la dignidad.', value:true, sign:'Ari' },
-            { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
+            { answer:'Que traten de exceder los límites y provocarme.', value:true, sign:'Ari' },
+            { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y me prometan negocios irreales.', value:true, sign:'Tau' },
             { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
-            { answer:'Que muestren falta de responsabilidad o visión.', value:true, sign:'Can' },
-            { answer:'Que me juzguen o ignoren.', value:true, sign:'Leo' },
-            { answer:'Traten de usarme para que hagas lo que ellos deberían hacer.', value:true, sign:'Vir' },            
-            { answer:'Traten de abusar haciéndome sentir mal por no ayudarles o tomando lo que es mío.', value:true, sign:'Lib' },
+            { answer:'Que muestren falta de responsabilidad para cuidarse a si mismos.', value:true, sign:'Can' },
+            { answer:'Que me hagan sentir menos, engañen o jueguen con mis sentimientos y amor propio.', value:true, sign:'Leo' },
+            { answer:'Traten de usarme para hacer lo que ellos deberían hacer.', value:true, sign:'Vir' },            
+            { answer:'Ventajosas, buscando hacerme sentir culpable para ayudarlos.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
