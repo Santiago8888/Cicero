@@ -243,7 +243,23 @@ export const quiz3:iQuestion[] = [
             { answer:'', value:true, sign:'Pis' },
         ]
     }, {
-        question:'16. ¿Cúal es mi mayor don?',
+        question:'16. ¿Qué admirarán en mi las personas?',
+        answers:[
+            { answer:'', value:true, sign:'Ari' },
+            { answer:'', value:true, sign:'Tau' },
+            { answer:'', value:true, sign:'Gem' },
+            { answer:'', value:true, sign:'Can' },
+            { answer:'', value:true, sign:'Leo' },
+            { answer:'', value:true, sign:'Vir' },
+            { answer:'', value:true, sign:'Lib' },
+            { answer:'', value:true, sign:'Sco' },
+            { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
+            { answer:'', value:true, sign:'Aqu' },
+            { answer:'', value:true, sign:'Pis' },
+        ]
+    }, {
+        question:'17. ¿Cúal es mi mayor don?',
         answers:[
             { answer:'', value:true, sign:'Ari' },
             { answer:'', value:true, sign:'Tau' },
