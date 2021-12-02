@@ -20,7 +20,7 @@ const mapSign = (planet:iPlanet) => {
         'Aries', 
         'Tauro', 
         'Géminis', 
-        'Cancer', 
+        'Cáncer', 
         'Leo', 
         'Virgo', 
         'Libra', 

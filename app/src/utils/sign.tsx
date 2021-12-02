@@ -6,7 +6,7 @@ const mapSigns = (sign:Sign)  => ({
     Ari: 'Aries',
     Tau: 'Tauro',
     Gem: 'Géminis',
-    Can: 'Cancer',
+    Can: 'Cáncer',
     Leo: 'Leo',
     Vir: 'Virgo',
     Lib: 'Libra',
