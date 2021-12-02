@@ -127,12 +127,12 @@ export const quiz3:iQuestion[] = [
         question:'12. ¿Cuales actitudes debes evitar?', 
         answers:[
             { answer:'Las agresivas.', value:true, sign:'Ari' },
-            { answer:'Deshonestas.', value:true, sign:'Tau' },
+            { answer:'Deshonestas y aváras.', value:true, sign:'Tau' },
             { answer:'La falsedad.', value:true, sign:'Gem' },
-            { answer:'De control o víctima.', value:true, sign:'Can' },
-            { answer:'Egocéntricas.', value:true, sign:'Leo' },
+            { answer:'De control o víctimización.', value:true, sign:'Can' },
+            { answer:'Egocéntricas o vanidosas.', value:true, sign:'Leo' },
             { answer:'Servilismo.', value:true, sign:'Vir' },            
-            { answer:'El abuso, la queja, la complacencia y el resentimiento.', value:true, sign:'Lib' },
+            { answer:'Queja, la complacencia y resentimiento.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
