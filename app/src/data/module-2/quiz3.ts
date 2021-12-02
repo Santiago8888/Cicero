@@ -14,6 +14,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Justicia, equilibrio, que ve por sí mism@ y los demás de igual manera.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
@@ -27,6 +28,7 @@ export const quiz3:iQuestion[] = [
             { answer:'A ver las dos caras de la moneda, a no pensar sólo en sí mismo, a saber que solo se avanza cuando se da y se recibe equitativamente.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
@@ -40,6 +42,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Convertir tu dependencia e independencia en interdependencia.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
@@ -53,6 +56,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Cooperación, justicia, equilibrio y paz.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
@@ -66,6 +70,7 @@ export const quiz3:iQuestion[] = [
             { answer:'sol@, abusado, egoísta y resentido.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'6. ¿De que te sentiras satisfech@ cuando hayas aprendido esas cualidades?', 
@@ -79,6 +84,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mis relaciones, en especial la de pareja.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma durante la infancia?', 
@@ -92,6 +98,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mucha exigencia para cooperar y algunas dinámicas que parecían injustas.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
@@ -105,6 +112,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mi sentido de justicia siempre evaluando las dos caras de la moneda.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
@@ -118,6 +126,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Poner límites y luchar por lo mío sin reclamar.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -131,6 +140,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Ventajosas, buscando hacerme sentir culpable para ayudarlos.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -144,6 +154,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Aprender a comparir y convivir en pareja, sin acabar dando de más, evitando abusos o generar codependencias.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
@@ -157,6 +168,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Queja, la complacencia y resentimiento.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
@@ -170,6 +182,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Dar más de lo que es justo.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
@@ -183,6 +196,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Justicia y buscando la paz.', value:true, sign:'Lib' },
             { answer:'', value:true, sign:'Sco' },
             { answer:'', value:true, sign:'Sag' },
+            { answer:'', value:true, sign:'Cap' },
         ]
     }, {
         question:'15. ¿Cómo sabre que voy por el camino correcto?',
