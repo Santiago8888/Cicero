@@ -83,12 +83,12 @@ export const quiz3:iQuestion[] = [
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
             { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' },
-            { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia.', value:true, sign:'Tau' },
-            { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
-            { answer:'Consciencia de tu lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les toca.', value:true, sign:'Can' },
-            { answer:'Deberás desarrollar un amor auténtico y sin expectativas hacia tí y los demás.', value:true, sign:'Leo' },
+            { answer:'Autovaloración y un sistema de valores basado en la confianza y lealtad.', value:true, sign:'Tau' },
+            { answer:'Discernimiento y confianza para expresar mis ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
+            { answer:'Consciencia de mi lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les corresponde.', value:true, sign:'Can' },
+            { answer:'Consciencia de que no puedo ser siempre el centro de atención, que también debo dar atención a los demás', value:true, sign:'Leo' },
             { answer:'Mi capacidad de análisis, pero siempre con autoestima, dignidad y objetividad.', value:true, sign:'Vir' },            
-            { answer:'Mi capacidad de ser justo siempre evaluando las dos caras de la moneda.', value:true, sign:'Lib' },
+            { answer:'Mi sentido de justicia siempre evaluando las dos caras de la moneda.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
