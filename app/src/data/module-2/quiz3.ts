@@ -150,11 +150,11 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Con asertividad y entusiasmo.', value:false, sign:'Ari' },
             { answer:'En base a mis valores.', value:true, sign:'Tau' },
-            { answer:'En base a la verdad.', value:true, sign:'Gem' },
+            { answer:'Con autenticidad y verdad.', value:true, sign:'Gem' },
             { answer:'Compasión y amor.', value:true, sign:'Can' },
-            { answer:'Amor propio y seguridad.', value:true, sign:'Leo' },
+            { answer:'Generosidad y seguridad.', value:true, sign:'Leo' },
             { answer:'Con dignidad y de manera integral.', value:true, sign:'Vir' },            
-            { answer:'Justicia y buscando siempre la paz.', value:true, sign:'Lib' },
+            { answer:'Justicia y buscando la paz.', value:true, sign:'Lib' },
         ]
     }, {
         question:'15. ¿Cómo sabre que voy por el camino correcto?',
