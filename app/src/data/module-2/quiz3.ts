@@ -69,70 +69,70 @@ export const quiz3:iQuestion[] = [
             { answer:'Mis relaciones, en especial la de pareja.', value:true, sign:'Lib' },
         ]
     }, { 
-        question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
+        question:'7. ¿Generalmente, que ocasiona tu karma durante la infancia?', 
         answers:[
-            { answer:'No poder ser como quería y un comportamiento constantemente corregido.', value:true, sign:'Ari' },
-            { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
+            { answer:'No poder ser como quería y constantemente corregido por mi comportamiento.', value:true, sign:'Ari' },
+            { answer:'No tener permitido mentir, ser deshonesto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
             { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
-            { answer:'Que sintieras que la forma de exigirte o educarte no era del todo congruente.', value:true, sign:'Can' },
-            { answer:'Sentías que no te daban el reconocimiento que merecías.', value:true, sign:'Leo' },
+            { answer:'La forma de exigirme o educarme no era del todo congruente.', value:true, sign:'Can' },
+            { answer:'Que me falto atención y era limitad@ al expresar mi personalidad.', value:true, sign:'Leo' },
             { answer:'Mucha exigencia de los deberes en el hogar.', value:true, sign:'Vir' },            
-            { answer:'Mucha exigencia para cooperar y te haya parecido injusto con personas ventajosas.', value:true, sign:'Lib' },
+            { answer:'Mucha exigencia para cooperar y algunas dinámicas que parecían injustas.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
             { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' },
-            { answer:'Autovaloración y un sistema de valores basado en la confianza y justicia.', value:true, sign:'Tau' },
-            { answer:'Discernimiento y confianza para expresar tus ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
-            { answer:'Consciencia de tu lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les toca.', value:true, sign:'Can' },
-            { answer:'Deberás desarrollar un amor auténtico y sin expectativas hacia tí y los demás.', value:true, sign:'Leo' },
+            { answer:'Autovaloración y un sistema de valores basado en la confianza y lealtad.', value:true, sign:'Tau' },
+            { answer:'Discernimiento y confianza para expresar mis ideas, con asertividad, autenticidad y sinceridad.', value:true, sign:'Gem' },
+            { answer:'Consciencia de mi lugar en la dinámica familiar, reconocer que puedes apoyarlos mucho pero que ellos tienen que resolver lo que les corresponde.', value:true, sign:'Can' },
+            { answer:'Consciencia de que no puedo ser siempre el centro de atención, que también debo dar atención a los demás', value:true, sign:'Leo' },
             { answer:'Mi capacidad de análisis, pero siempre con autoestima, dignidad y objetividad.', value:true, sign:'Vir' },            
-            { answer:'Mi capacidad de ser justo siempre evaluando las dos caras de la moneda.', value:true, sign:'Lib' },
+            { answer:'Mi sentido de justicia siempre evaluando las dos caras de la moneda.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
         answers:[
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
-            { answer:'Demostrar mi valor personal ante los demás y tener tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
+            { answer:'Demostrar mi valor personal ante los demás y tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
-            { answer:'A ayudar indebidamente y situaciones situaciones donde caiga y reaccione inconscientemente tomando un papel de víctima.', value:true, sign:'Can' },
-            { answer:'Demostrar mi autenticidad ante los demás, y seré expuesto cuando quiera dar una cara diferente a quien soy.', value:true, sign:'Leo' },
-            { answer:'Demuestres que puedes servir a otros sin dejarte al final, te harán creer que eres la única persona que puede hacer algo bien hecho y acabarás haciendo todo.', value:true, sign:'Vir' },            
-            { answer:'Situaciones para luchar por lo mío sin reclamar.', value:true, sign:'Lib' },
+            { answer:'Posibilidades de ayudar indebidamente o situaciones donde reaccione inconscientemente con un papel de víctima.', value:true, sign:'Can' },
+            { answer:'Ser atento y considerado con los demás cuando actúe, y seré ignorado para que de su lugar y atención a otros.', value:true, sign:'Leo' },
+            { answer:'Demuestre que puedo servir a otros sin dejarme al final, me harán creer que soy la única persona que puede hacer algo bien hecho y acabaré haciendolo todo.', value:true, sign:'Vir' },            
+            { answer:'Poner límites y luchar por lo mío sin reclamar.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
         answers:[
-            { answer:'Que traten de exceder los límites y provocarán para intentar hacerme perder la dignidad.', value:true, sign:'Ari' },
-            { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y que me prometan negocios irreales.', value:true, sign:'Tau' },
+            { answer:'Que traten de exceder los límites y provocarme.', value:true, sign:'Ari' },
+            { answer:'Traten de hacerme caer, de ganar mi confianza a cambio de promesas y me prometan negocios irreales.', value:true, sign:'Tau' },
             { answer:'Que tengan algo que me interese de ellos y que parezca que solo lo puedo obtener complaciéndoles o mintiéndoles.', value:true, sign:'Gem' },
-            { answer:'Que muestren falta de responsabilidad o visión.', value:true, sign:'Can' },
-            { answer:'Que me juzguen o ignoren.', value:true, sign:'Leo' },
-            { answer:'Traten de usarme para que hagas lo que ellos deberían hacer.', value:true, sign:'Vir' },            
-            { answer:'Traten de abusar haciéndome sentir mal por no ayudarles o tomando lo que es mío.', value:true, sign:'Lib' },
+            { answer:'Que muestren falta de responsabilidad para cuidarse a si mismos.', value:true, sign:'Can' },
+            { answer:'Que me hagan sentir menos, engañen o jueguen con mis sentimientos y amor propio.', value:true, sign:'Leo' },
+            { answer:'Traten de usarme para hacer lo que ellos deberían hacer.', value:true, sign:'Vir' },            
+            { answer:'Ventajosas, buscando hacerme sentir culpable para ayudarlos.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
         answers:[
             { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
-            { answer:'Regresar a tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
+            { answer:'Tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
             { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
-            { answer:'Aprender a dar y amar incondicionalmente y ser consciente de que controlar a las personas o los resultado no ayuda.', value:true, sign:'Can' },
-            { answer:'Aprender que puedo no ser perfecto, que eso está bien y que no tengo que ser siempre el centro de atención.', value:true, sign:'Leo' },
+            { answer:'Aprender a dar y amar incondicionalmente y que controlar a las personas o los resultado no ayuda.', value:true, sign:'Can' },
+            { answer:'Recordar que no todos están pensando siempre en mí y que está bien no gustarle a todos,', value:true, sign:'Leo' },
             { answer:'Poner límites demostrando dignidad.', value:true, sign:'Vir' },            
-            { answer:'Aprender a comparir y convivir en pareja, sin acabar dando de más, evitando abusos o generar codependencias .', value:true, sign:'Lib' },
+            { answer:'Aprender a comparir y convivir en pareja, sin acabar dando de más, evitando abusos o generar codependencias.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
         answers:[
             { answer:'Las agresivas.', value:true, sign:'Ari' },
-            { answer:'Deshonestas.', value:true, sign:'Tau' },
+            { answer:'Deshonestas y aváras.', value:true, sign:'Tau' },
             { answer:'La falsedad.', value:true, sign:'Gem' },
-            { answer:'De control o víctima.', value:true, sign:'Can' },
-            { answer:'Egocéntricas.', value:true, sign:'Leo' },
+            { answer:'De control o víctimización.', value:true, sign:'Can' },
+            { answer:'Egocéntricas o vanidosas.', value:true, sign:'Leo' },
             { answer:'Servilismo.', value:true, sign:'Vir' },            
-            { answer:'El abuso, la queja, la complacencia y el resentimiento.', value:true, sign:'Lib' },
+            { answer:'Queja, la complacencia y resentimiento.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
@@ -140,22 +140,28 @@ export const quiz3:iQuestion[] = [
             { answer:'Actuando sin pensar, o de lo contrario, por no actuar.', value:true, sign:'Ari' },
             { answer:'Atesorar demasiado y acumular innecesariamente.', value:true, sign:'Tau' },
             { answer:'Mentir, manipular o ser incongruente.', value:true, sign:'Gem' },
-            { answer:'Ayudar indebidamente o hacer sentir culpa.', value:true, sign:'Can' },
-            { answer:'Siendo controlador y obligando a otros a ponerme atención o sintiendome ofendido por no recibir la atención y admiración.', value:true, sign:'Leo' },
+            { answer:'Ayudar indebidamente o provocar culpa.', value:true, sign:'Can' },
+            { answer:'Exigiendo atención.', value:true, sign:'Leo' },
             { answer:'Hacer de más o haciendo lo que otros deben hacer por sí mismos.', value:true, sign:'Vir' },            
-            { answer:'Dar más de lo necesario o de lo justo.', value:true, sign:'Lib' },
+            { answer:'Dar más de lo que es justo.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
         answers:[
-            { answer:'Asertivas y con entusiasmo.', value:false, sign:'Ari' },
+            { answer:'Con asertividad y entusiasmo.', value:false, sign:'Ari' },
             { answer:'En base a mis valores.', value:true, sign:'Tau' },
-            { answer:'En base a la verdad.', value:true, sign:'Gem' },
+            { answer:'Con autenticidad y verdad.', value:true, sign:'Gem' },
             { answer:'Compasión y amor.', value:true, sign:'Can' },
-            { answer:'Amor propio y seguridad.', value:true, sign:'Leo' },
+            { answer:'Generosidad y seguridad.', value:true, sign:'Leo' },
             { answer:'Con dignidad y de manera integral.', value:true, sign:'Vir' },            
-            { answer:'Justicia y buscando siempre la paz.', value:true, sign:'Lib' },
+            { answer:'Justicia y buscando la paz.', value:true, sign:'Lib' },
         ]
-    }, 
+    }, {
+        question:'15. ¿Cómo sabre que voy por el camino correcto?',
+        answers:[]
+    }, {
+        question:'16. ¿Cúal es mi mayor don?',
+        answers:[]
+    }
 ]
 
