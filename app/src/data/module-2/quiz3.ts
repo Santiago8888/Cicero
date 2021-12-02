@@ -69,15 +69,15 @@ export const quiz3:iQuestion[] = [
             { answer:'Mis relaciones, en especial la de pareja.', value:true, sign:'Lib' },
         ]
     }, { 
-        question:'7. ¿Generalmente, que ocasiona tu karma en la infancia?', 
+        question:'7. ¿Generalmente, que ocasiona tu karma durante la infancia?', 
         answers:[
-            { answer:'No poder ser como quería y un comportamiento constantemente corregido.', value:true, sign:'Ari' },
-            { answer:'No tener permitido mentir, ser deshonesto o injusto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
+            { answer:'No poder ser como quería y constantemente corregido por mi comportamiento.', value:true, sign:'Ari' },
+            { answer:'No tener permitido mentir, ser deshonesto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
             { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
-            { answer:'Que sintieras que la forma de exigirte o educarte no era del todo congruente.', value:true, sign:'Can' },
-            { answer:'Sentías que no te daban el reconocimiento que merecías.', value:true, sign:'Leo' },
+            { answer:'La forma de exigirme o educarme no era del todo congruente.', value:true, sign:'Can' },
+            { answer:'Que me falto atención y era limitad@ al expresar mi personalidad.', value:true, sign:'Leo' },
             { answer:'Mucha exigencia de los deberes en el hogar.', value:true, sign:'Vir' },            
-            { answer:'Mucha exigencia para cooperar y te haya parecido injusto con personas ventajosas.', value:true, sign:'Lib' },
+            { answer:'Mucha exigencia para cooperar y algunas dinámicas que parecían injustas.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
