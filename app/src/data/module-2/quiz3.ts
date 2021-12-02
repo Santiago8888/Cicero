@@ -11,7 +11,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Amor incondicional, apoyo, aceptación y manejo emocional.', value:true, sign:'Can' },
             { answer:'Un líder que disfruta su triunfo y su vida.', value:true, sign:'Leo' },
             { answer:'Ser una persona práctica, cuidadosa, con actitud moral y trabajadora.', value:true, sign:'Vir' },            
-            { answer:'Justa, equilibrada, que ve por sí mism@ y de igual manera por los demás.', value:true, sign:'Lib' },
+            { answer:'Justicia, equilibrio, que ve por sí mism@ y los demás de igual manera.', value:true, sign:'Lib' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
