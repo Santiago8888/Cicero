@@ -3,6 +3,7 @@ import { iQuestion } from '../../components/Views/Quiz'
 
 export const quiz3:iQuestion[] = [
     { 
+        sign:true,
         question:'1. ¿De que debes ser un ejemplo hoy?', 
         answers:[
             { answer:'Valentía, liderazgo y autenticidad.', value:true, sign:'Ari' },
@@ -19,6 +20,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Persona espiritual, amorosa, compasiva y comprensiva.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'2. ¿Qué vas a enseñar a otros?', 
         answers:[
             { answer:'Salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
@@ -35,6 +37,7 @@ export const quiz3:iQuestion[] = [
             { answer:'A desarrollar su compasión, misericordia y humildad, a perdonar a los demás, a vivir con el corazón.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
         answers:[
             { answer:'Respetar y ganarte el respeto sin tener que exigir, siendo autosuficiente, mostrando dignidad e independencia.', value:true, sign:'Ari' },
@@ -51,6 +54,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Servir con amor pero también objetividad, disciplina y organización.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
         answers:[
             { answer:'Humildad, valentía, dignidad y paciencia.', value:true, sign:'Ari' },
@@ -67,6 +71,7 @@ export const quiz3:iQuestion[] = [
             { answer:'dignidad, organización, disciplina y amor incondicional.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
         answers:[
             { answer:'Impaciente, vulnerable, desafiado, ofendido y no reconocido.', value:true, sign:'Ari' },
@@ -83,6 +88,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Incapaz, desorganizado, procrastinador y religioso.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'6. ¿De que te sentiras satisfech@ cuando hayas aprendido esas cualidades?', 
         answers:[
             { answer:'De mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
@@ -99,6 +105,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mi servicio a los demás.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'7. ¿Generalmente, que ocasiona tu karma durante la infancia?', 
         answers:[
             { answer:'No poder ser como quería y constantemente corregido por mi comportamiento.', value:true, sign:'Ari' },
@@ -115,6 +122,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Muchas preguntas, confusión, tristeza y soledad.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
         answers:[
             { answer:'Mi autoestima, amor propio y nueva identidad pero con una actitud de humildad.', value:true, sign:'Ari' },
@@ -131,6 +139,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Ser espiritual dentro de tu vida cotidiana.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
         answers:[
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
@@ -147,6 +156,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Demostrar ser organizado o disciplinado cuando alguien necesite algo de mi.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'10. ¿Qué personas atraerás a tu vida?', 
         answers:[
             { answer:'Que traten de exceder los límites y provocarme.', value:true, sign:'Ari' },
@@ -163,6 +173,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Que necesiten ayuda incondicional.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
         answers:[
             { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
@@ -179,6 +190,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Muestre lo mejor de ti no importando que tan difícil sea la situación.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'12. ¿Cuales actitudes debes evitar?', 
         answers:[
             { answer:'Las agresivas.', value:true, sign:'Ari' },
@@ -195,6 +207,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Depresión, desorganización, religiosidad, idealismo o ser fantasios@.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'13. ¿De qué forma tiendes a causar daño?', 
         answers:[
             { answer:'Actuando sin pensar, o de lo contrario, por no actuar.', value:true, sign:'Ari' },
@@ -211,6 +224,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Predicar sin ejemplo, prometer lo que no puedas cumplir, procrastinar u olvidarte de tus compromisos.', value:true, sign:'Pis' },
         ]
     }, { 
+        sign:true,
         question:'14. ¿Cómo debes tomar tus decisiones?', 
         answers:[
             { answer:'Con asertividad y entusiasmo.', value:true, sign:'Ari' },
@@ -225,54 +239,6 @@ export const quiz3:iQuestion[] = [
             { answer:'Responsabilidad.', value:true, sign:'Cap' },
             { answer:'Sabiduria.', value:true, sign:'Aqu' },
             { answer:'Fe.', value:true, sign:'Pis' },
-        ]
-    }, {
-        question:'15. ¿Cómo sabre que voy por el camino correcto?',
-        answers:[
-            { answer:'', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
-            { answer:'', value:true, sign:'Vir' },
-            { answer:'', value:true, sign:'Lib' },
-            { answer:'', value:true, sign:'Sco' },
-            { answer:'', value:true, sign:'Sag' },
-            { answer:'', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
-            { answer:'', value:true, sign:'Pis' },
-        ]
-    }, {
-        question:'16. ¿Qué admirarán en mi las personas?',
-        answers:[
-            { answer:'', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
-            { answer:'', value:true, sign:'Vir' },
-            { answer:'', value:true, sign:'Lib' },
-            { answer:'', value:true, sign:'Sco' },
-            { answer:'', value:true, sign:'Sag' },
-            { answer:'', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
-            { answer:'', value:true, sign:'Pis' },
-        ]
-    }, {
-        question:'17. ¿Cúal es mi mayor don?',
-        answers:[
-            { answer:'', value:true, sign:'Ari' },
-            { answer:'', value:true, sign:'Tau' },
-            { answer:'', value:true, sign:'Gem' },
-            { answer:'', value:true, sign:'Can' },
-            { answer:'', value:true, sign:'Leo' },
-            { answer:'', value:true, sign:'Vir' },
-            { answer:'', value:true, sign:'Lib' },
-            { answer:'', value:true, sign:'Sco' },
-            { answer:'', value:true, sign:'Sag' },
-            { answer:'', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
-            { answer:'', value:true, sign:'Pis' },
         ]
     }
 ]
