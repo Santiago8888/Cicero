@@ -16,7 +16,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Ser una persona práctica, cuidadosa, con actitud moral y trabajadora.', value:true, sign:'Vir' },
             { answer:'Justicia, equilibrio, que ve por sí mism@ y los demás de igual manera.', value:true, sign:'Lib' },
             { answer:'Humildad, responsabilidad, liderazgo, honorabilidad y crecimiento sostenido.', value:true, sign:'Cap' },
-            { answer:'Un buen amigo, interesado por el bien común que reconoce su inteligencia con humildad.', value:true, sign:'Aqu' },
+            { answer:'Un buen amig@, interesado por el bien común que reconoce su inteligencia con humildad.', value:true, sign:'Aqu' },
             { answer:'Libertad, alegría y sabiduría, donde las personas a mí alrededor se sientan expandidas.', value:true, sign:'Sag' },
         ]
     }, { 
@@ -33,7 +33,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
             { answer:'Comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
             { answer:'Hacerse responsables, enfocarse en su desarrollo profesional, lograr sus metas y tener una actitud madura hacia la sociedad.', value:true, sign:'Cap' },
-            { answer:'A ver las dos caras de la moneda, a no pensar sólo en sí mismo, a saber que solo se avanza cuando se da y se recibe equitativamente.', value:true, sign:'Lib' },
+            { answer:'A ver las dos caras de la moneda, no pensar sólo en mi y a saber que solo se avanza cuando se da y se recibe equitativamente.', value:true, sign:'Lib' },
             { answer:'Desarrollar autovaloración, a resolver sus problemas financieros, tomar decisiones en base a buenos valores y mostrar honestidad, confiabilidad y lealtad.', value:true, sign:'Tau' },
         ]
     }, { 
@@ -41,7 +41,7 @@ export const quiz3:iQuestion[] = [
         question:'3. ¿Qué aprenderás a través de cumplir tu misión?', 
         answers:[
             { answer:'Evitar la soberbia, siendo humilde y tolerante.', value:true, sign:'Aqu' },
-            { answer:'Respetar y ganarme el respeto siendo paciente y compasivo.', value:true, sign:'Can' },
+            { answer:'Respetar y ganarme el respeto siendo paciente y compasiv@.', value:true, sign:'Can' },
             { answer:'Construir mi vida y relaciones con valores verdaderos.', value:true, sign:'Sco' },
             { answer:'Convertir mi dependencia o independencia en interdependencia.', value:true, sign:'Lib' },
             { answer:'Servir con amor pero también objetividad, disciplina y organización.', value:true, sign:'Pis' },
@@ -51,7 +51,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Disfrutar de mis bienes y dinero, del resultado de mis esfuerzos y compartir los recursos con mis seres queridos.', value:true, sign:'Tau' },
             { answer:'Mantener un equilibrio entre mi trabajo y salud, mostrando dignidad, cumpliendo mis necesidades, los horarios y los acuerdos.', value:true, sign:'Vir' },
             { answer:'Hacer valer mi palabra, responsabilizarme de ella, sin necesidad de convencer sino siendo congruente, amable, honest@ y alegre.', value:true, sign:'Gem' },
-            { answer:'A valorar a todos, no haciendo diferencia por su color, educación ni clase social, me ganarás su cariño por ser sencill@, atento, compartido y generoso.', value:true, sign:'Leo' },
+            { answer:'A valorar a todos, no haciendo diferencia por su color, educación ni clase social, me ganarás su cariño por ser sencill@, atent@, compartido y generos@.', value:true, sign:'Leo' },
         ]
     }, { 
         sign:true,
@@ -75,14 +75,14 @@ export const quiz3:iQuestion[] = [
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
         answers:[
             { answer:'Impaciente, controlador@ y víctima.', value:true, sign:'Can' },
-            { answer:'Sol@, abusad@, egoísta y resentido.', value:true, sign:'Lib' },
+            { answer:'Sol@, abusad@, egoísta y resentid@.', value:true, sign:'Lib' },
             { answer:'Enojad@, criticad@ , ignorad@ y fe@.', value:true, sign:'Leo' },
             { answer:'Preocupad@, abusad@, juzgad@ y nervios@.', value:true, sign:'Vir' },
             { answer:'Desesperad@, juicioso@, deprimd@ y limitad@.', value:true, sign:'Sag' },
-            { answer:'Desesperad@, enojado, controlad@ y rencoros@.', value:true, sign:'Sco' },
+            { answer:'Desesperad@, enojad@, controlad@ y rencoros@.', value:true, sign:'Sco' },
             { answer:'Presionad@, exigid@, controlad@ y no reconocid@.', value:true, sign:'Cap' },
             { answer:'Desconfiad@, abusad@, robad@ y temeros@ de perder.', value:true, sign:'Tau' },
-            { answer:'Incapaz, desorganizado, procrastinador y religioso.', value:true, sign:'Pis' },
+            { answer:'Incapaz, desorganizad@, procrastinador y religios@.', value:true, sign:'Pis' },
             { answer:'Deshonest@, nervios@, descubiert@ o fuera de contexto.', value:true, sign:'Gem' },
             { answer:'Impaciente, vulnerable, desafiad@, ofendid@ y no reconocid@.', value:true, sign:'Ari' },
             { answer:'Impaciente, intolerante, no reconocid@ y no tomado en cuenta.', value:true, sign:'Aqu' },
@@ -108,16 +108,16 @@ export const quiz3:iQuestion[] = [
         sign:true,
         question:'7. ¿Generalmente, que ocasiona tu karma durante la infancia?', 
         answers:[
+            { answer:'Preguntas, confusión, tristeza y soledad.', value:true, sign:'Pis' },
             { answer:'Mucha exigencia de los deberes en el hogar.', value:true, sign:'Vir' },
-            { answer:'Muchas preguntas, confusión, tristeza y soledad.', value:true, sign:'Pis' },
-            { answer:'Autoritarismo, exigencia y exceso de responsabilidades.', value:true, sign:'Cap' },
-            { answer:'Falta de reconocimiento de mi inteligencia u originalidad.', value:true, sign:'Aqu' },
-            { answer:'La forma de exigirme o educarme no era del todo congruente.', value:true, sign:'Can' },
-            { answer:'Que me faltó atención y era limitad@ al expresar mi personalidad.', value:true, sign:'Leo' },
-            { answer:'Mucha exigencia para cooperar y algunas dinámicas que parecían injustas.', value:true, sign:'Lib' },
-            { answer:'No tener permitido mentir, ser deshonesto, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
-            { answer:'No poder ser como quería y constantemente corregido por mi comportamiento.', value:true, sign:'Ari' },
-            { answer:'La forma de tratarme ocasionalmente parecía que llevaba carga emocional negativa.', value:true, sign:'Sco' },
+            { answer:'Incongruencia en la forma de exigirme o educarme.', value:true, sign:'Can' },
+            { answer:'Exigencia, autoritarismo y exceso de responsabilidades.', value:true, sign:'Cap' },
+            { answer:'Falta de reconocimiento por mi inteligencia u originalidad.', value:true, sign:'Aqu' },
+            { answer:'Mucha exigencia para cooperar y algunas dinámicas injustas.', value:true, sign:'Lib' },
+            { answer:'Que me faltó atención y limitaciones al expresar mi personalidad.', value:true, sign:'Leo' },
+            { answer:'No tener permitido mentir, ser deshonest@, o tomar algo que no fuera mío.', value:true, sign:'Tau' },
+            { answer:'No poder ser como quería y ser constantemente corregido por mi comportamiento.', value:true, sign:'Ari' },
+            { answer:'La forma en que era tratad@ ocasionalmente parecía que llevaba carga emocional negativa.', value:true, sign:'Sco' },
             { answer:'No tener confianza para relacionarme y sentir que me corregían constantemente al hablar.', value:true, sign:'Gem' },
             { answer:'Códigos morales estrictos, juicio, dogma o total desentendimiento de parte de alguno de tus padres y/o figuras de autoridad.', value:true, sign:'Sag' },
         ]
@@ -146,7 +146,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Muchas responsabilidades que habrán de desempeñar con excelencia.', value:true, sign:'Cap' },
             { answer:'Demostrar ser organizad@ o disciplinado cuando alguien necesite algo de mi.', value:true, sign:'Pis' },
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
-            { answer:'Cuando actúes incongruentemente te expondrá y parecerás hipócrita o avergonzado.', value:true, sign:'Sag' },
+            { answer:'Cuando actúes incongruentemente te expondrá y parecerás hipócrita o avergonzad@.', value:true, sign:'Sag' },
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
             { answer:'Desesperarme con la agilidad mental de los demás y ser obligado a trabajar en equipo.', value:true, sign:'Aqu' },
             { answer:'Demostrar mi valor personal ante los demás y tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
