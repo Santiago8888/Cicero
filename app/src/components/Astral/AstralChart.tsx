@@ -1,6 +1,7 @@
 import { select, Selection, ValueFn } from 'd3-selection'
 import { arc, Arc, DefaultArcObject } from 'd3-shape'
 import { useEffect } from 'react'
+import { Sign } from '../../App'
 
 type SVG = Selection<SVGSVGElement, unknown, HTMLElement, any>
 export type HouseNumber = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |12
@@ -34,7 +35,7 @@ const house_colors = ['#E0FCDF', '#DFFFF9', '#FFFEDD', '#FDEDF6']
 
 type DeepColor = '#950193' | '#B16148' | '#1528B2' | '#054D1B'
 const deep_colors = ['#950193', '#B16148', '#1528B2', '#054D1B'] // fire , earth , air , water
-const sign_names = [ 'Cap', 'Sag', 'Sco', 'Lib', 'Vir', 'Leo', 'Can', 'Gem', 'Tau', 'Ari', 'Pis', 'Aqu' ]
+export const sign_names:Sign[] = [ 'Cap', 'Sag', 'Sco', 'Lib', 'Vir', 'Leo', 'Can', 'Gem', 'Tau', 'Ari', 'Pis', 'Aqu' ]
 const sign_imgs = sign_names.map(sign => `/signs/${sign}.png`) 
 
 const planet_names = [ 

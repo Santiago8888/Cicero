@@ -2,6 +2,7 @@
 
 import { iRecordings } from '../Forum/Recordings'
 import { Planet } from '../Astral/AstralChart'
+import { mapSign } from '../../utils/sign'
 import { iQuestion } from '../Views/Quiz'
 import { iForum } from '../Forum/Forum'
 import { iPost } from '../Forum/Posts'
@@ -129,7 +130,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                                                         ) && <Lock/> 
                                                     }   { 
                                                             user 
-                                                            ?   title.replace('DYNAMIC_SIGN', user.sign || '') 
+                                                            ?   mapSign(title, user) 
                                                             :   title
                                                     }
                                                 </a>
