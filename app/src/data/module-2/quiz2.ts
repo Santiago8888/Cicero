@@ -13,8 +13,8 @@ export const quiz2:iQuestion[] = [{
             { answer:'Una noble necesidad de servir.', sign:'Vir', value:true },
             { answer:'Intuición y poder de atracción.', sign:'Sco', value:true },
             { answer:'Gran sentido común e inteligencia.', sign:'Aqu', value:true },
+            { answer:'Una aguda visión del mundo y la realidad.', sign:'Sag', value:true },
             { answer:'Una fuerte necesidad de estar acompañad@.', sign:'Lib', value:true },
-            { answer:'Una aguda visión del mundo a partir de una ideología .', sign:'Sag', value:true },
             { answer:'Éxito profesional, autoridad y un buen lugar en la sociedad .', sign:'Cap', value:true },
         ]
     }, {
