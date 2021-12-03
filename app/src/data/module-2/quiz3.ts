@@ -47,10 +47,10 @@ export const quiz3:iQuestion[] = [
             { answer:'Servir con amor pero también objetividad, disciplina y organización.', value:true, sign:'Pis' },
             { answer:'No exigir reconocimiento, aceptar que no todos tienen que estar de acuerdo conmigo.', value:true, sign:'Cap' },
             { answer:'Respetar y ganarme el respeto sin exigir, siendo autosuficiente, mostrando dignidad e independencia.', value:true, sign:'Ari' },
-            { answer:'Respetar a personas de otras ideologías y a ganarte su respeto siendo congruente, tolerante, sabio y generoso.', value:true, sign:'Sag' },
+            { answer:'Respetar a personas de otras ideologías y a ganarte su respeto siendo congruente, tolerante, sabi@ y generos@.', value:true, sign:'Sag' },
             { answer:'Disfrutar de mis bienes y dinero, del resultado de mis esfuerzos y compartir los recursos con mis seres queridos.', value:true, sign:'Tau' },
             { answer:'Mantener un equilibrio entre mi trabajo y salud, mostrando dignidad, cumpliendo mis necesidades, los horarios y los acuerdos.', value:true, sign:'Vir' },
-            { answer:'Hacer valer mi palabra, responsabilizarme de ella, sin necesidad de convencer sino siendo congruente, amable, honesto y alegre.', value:true, sign:'Gem' },
+            { answer:'Hacer valer mi palabra, responsabilizarme de ella, sin necesidad de convencer sino siendo congruente, amable, honest@ y alegre.', value:true, sign:'Gem' },
             { answer:'A valorar a todos, no haciendo diferencia por su color, educación ni clase social, me ganarás su cariño por ser sencill@, atento, compartido y generoso.', value:true, sign:'Leo' },
         ]
     }, { 
@@ -85,7 +85,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Incapaz, desorganizado, procrastinador y religioso.', value:true, sign:'Pis' },
             { answer:'Deshonest@, nervios@, descubiert@ o fuera de contexto.', value:true, sign:'Gem' },
             { answer:'Impaciente, vulnerable, desafiad@, ofendid@ y no reconocid@.', value:true, sign:'Ari' },
-            { answer:'Impaciente, intolerante, no reconocido y no tomado en cuenta.', value:true, sign:'Aqu' },
+            { answer:'Impaciente, intolerante, no reconocid@ y no tomado en cuenta.', value:true, sign:'Aqu' },
         ]
     }, { 
         sign:true,
@@ -101,7 +101,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mis relaciones, en especial la de pareja.', value:true, sign:'Lib' },
             { answer:'La razón o propósito de mi vida y acciones.', value:true, sign:'Sag' },
             { answer:'Mis logros profesionales y mi papel en la sociedad.', value:true, sign:'Cap' },
-            { answer:'Mis emociones y relación conmigo mismo y con los demás.', value:true, sign:'Sco' },
+            { answer:'Mis emociones y relación conmigo mism@ y con los demás.', value:true, sign:'Sco' },
             { answer:'Mi papel en la familia, la armonía y bienestar en la que convivimos.', value:true, sign:'Can' },
         ]
     }, { 
@@ -144,16 +144,16 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Poner límites y luchar por lo mío sin reclamar.', value:true, sign:'Lib' },
             { answer:'Muchas responsabilidades que habrán de desempeñar con excelencia.', value:true, sign:'Cap' },
-            { answer:'Demostrar ser organizado o disciplinado cuando alguien necesite algo de mi.', value:true, sign:'Pis' },
+            { answer:'Demostrar ser organizad@ o disciplinado cuando alguien necesite algo de mi.', value:true, sign:'Pis' },
             { answer:'Ser verdadero ante los demás, y expuesto cuando debas demostrar congruencia.', value:true, sign:'Gem' },
             { answer:'Cuando actúes incongruentemente te expondrá y parecerás hipócrita o avergonzado.', value:true, sign:'Sag' },
             { answer:'Demostrar mi valentía ante los demás y quedarme solo cuando tenga algo que resolver.', value:true, sign:'Ari' },
             { answer:'Desesperarme con la agilidad mental de los demás y ser obligado a trabajar en equipo.', value:true, sign:'Aqu' },
             { answer:'Demostrar mi valor personal ante los demás y tentaciones de tomar más de lo que te corresponde.', value:true, sign:'Tau' },
             { answer:'Posibilidades de ayudar indebidamente o situaciones donde reaccione inconscientemente con un papel de víctima.', value:true, sign:'Can' },
-            { answer:'Ser atento y considerado con los demás cuando actúe, y seré ignorado para que de su lugar y atención a otros.', value:true, sign:'Leo' },
-            { answer:'Demuestre que puedo servir a otros sin dejarme al final, me harán creer que soy la única persona que puede hacer algo bien hecho y acabaré haciéndolo todo.', value:true, sign:'Vir' },
+            { answer:'Ser atent@ y considerad@ con los demás cuando actúe, y seré ignorad@ para que de su lugar y atención a otros.', value:true, sign:'Leo' },
             { answer:'Intuyas algo negativo evites el juicio y reacciones impulsivas, encuentres la bondad dentro de ti logrando una transmutación espiritual.', value:true, sign:'Sco' },
+            { answer:'Demuestre que puedo servir a otros sin dejarme al final, me harán creer que soy la única persona que puede hacer algo bien hecho y acabaré haciéndolo todo.', value:true, sign:'Vir' },
         ]
     }, { 
         sign:true,
@@ -204,7 +204,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Queja, complacencia y resentimiento.', value:true, sign:'Lib' },
             { answer:'De orgullo, frialdad, rigidez y autoritarismo.', value:true, sign:'Cap' },
             { answer:'Soberbia, impaciencia, intolerancia y orgullo.', value:true, sign:'Aqu' },
-            { answer:'Depresión, desorganización, religiosidad, idealismo o ser fantasios@.', value:true, sign:'Pis' },
+            { answer:'Depresión, desorganización, religiosidad, idealismo o fantasia.', value:true, sign:'Pis' },
         ]
     }, { 
         sign:true,
