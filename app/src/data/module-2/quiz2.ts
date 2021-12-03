@@ -1,93 +1,191 @@
 import { iQuestion } from '../../components/Views/Quiz'
 
-export const quiz2:iQuestion[] = [
-    { 
-        question: '1. ¿Qué te restringe Saturno en esta vida?', 
+export const quiz2:iQuestion[] = [{
+        sign:true,
+        question:'1. ¿Qué desarrollaste en vidas pasadas?',
+        answers: [
+            { answer:'Liderazgo.', sign:'Leo', value:true },
+            { answer:'Necesidad de seguridad.', sign:'Tau', value:true },
+            { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
+            { answer:'Responsabilidad familiar', sign:'Can', value:true },
+            { answer:'Conexión con mi ser interior.', sign:'Pis', value:true },
+            { answer:'Gran habilidad de comunicación', sign:'Gem', value:true },
+            { answer:'Una noble necesidad de servir.', sign:'Vir', value:true },
+            { answer:'Intuición y poder de atracción.', sign:'Sco', value:true },
+            { answer:'Gran sentido común e inteligencia.', sign:'Aqu', value:true },
+            { answer:'Una aguda visión del mundo y la realidad.', sign:'Sag', value:true },
+            { answer:'Una fuerte necesidad de estar acompañad@.', sign:'Lib', value:true },
+            { answer:'Éxito profesional, autoridad y un buen lugar en la sociedad .', sign:'Cap', value:true },
+        ]
+    }, {
+        sign:true,
+        question:'2. ¿Qué sentimiento o sensación tuviste constantemente en vidas pasadas?',
+        answers: [
+            { answer:'Placer.', sign:'Sco', value:true },
+            { answer:'Deseo de ser necesitado.', sign:'Vir', value:true },
+            { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
+            { answer:'Tener que hacer un buen "papel".', sign:'Leo', value:true },
+            { answer:'Necesidad de equilibrar las cosas.', sign:'Lib', value:true },
+            { answer:'Obediencia a una autoridad exterior.', sign:'Sag', value:true },
+            { answer:'Impaciencia, en especial con las personas.', sign:'Aqu', value:true },
+            { answer:'Ambición, siempre querer llegar más alto.', sign:'Cap', value:true },
+            { answer:'Saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
+            { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
+            { answer:'Depresión e impotencia ante el sufrimiento de otros.', sign:'Pis', value:true },
+            { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
+        ]
+    }, {
+        sign:true,
+        question:'3. ¿Cómo actuaste en vidas pasadas?',
+        answers: [
+            { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
+            { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
+            { answer:'De forma rígida y sin permitir que mi espontaneidad se expresara.', sign:'Leo', value:true },
+            { answer:'Dogmátic@ perdiendo la capacidad de cuestionar y pensar diferente.', sign:'Sag', value:true },
+            { answer:'Midiendo, checando si lo que recibía era equivalente a lo que daba.', sign:'Lib', value:true },
+            { answer:'Evitando ser controlad@, ni siquiera por mis propios deseos, quería ser fuerte.', sign:'Sco', value:true },
+            { answer:'Creía que al hacer todo por las personas que amaba era la manera de demostrar mi amor', sign:'Can', value:true },
+            { answer:'Siendo una persona muy conocida, luchando por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
+            { answer:'Con algo de resentimiento pudiendo ser una persona fría, orgullosa, egoísta e incluso dictatorial', sign:'Cap', value:true },
+            { answer:'Como un excelente asistente, buscando hacerme indispensable y resolviendo cualquier situación eficientemente.', sign:'Vir', value:true },
+            { answer:'Usaba la religión o espiritualidad como esperanza pero triste por no recibir la ayuda que pedías al rezar.', sign:'Pis', value:true },
+            { answer:'Desapegad@, indiferente, e inaccesible emocionalmente, sintiendo más conexión con los animales y la naturaleza que con los humanos.', sign:'Aqu', value:true },
+        ]
+    }, {
+        sign:true,
+        question:'4. ¿Qué actividades realizaste en vidas pasadas?',
+        answers: [
+            { answer:'Informante, locutor, periodista, transportista, vendedor o cómico.', sign:'Gem', value:true },
+            { answer:'Figura pública, jefe, gerente, director o líder de grupos sociales o políticos.', sign:'Cap', value:true },
+            { answer:'Situaciones de mucho riesgo o peligro y actividades que requerían de mucha energía.', sign:'Ari', value:true },
+            { answer:'Participante de instituciones religiosas, políticas, multinacionales o incluso filosóficas.', sign:'Sag', value:true },
+            { answer:'Actor, artista, cantante, maestr@ de ceremonias, gobernante o líder profesional, empresarial o de sociedad.', sign:'Leo', value:true },
+            { answer:'Trabajé en bancos, empresas financieras o aficionado a los juegos de azar, la especulación y las inversiones', sign:'Tau', value:true },
+            { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@ o jefe o administrador de casa hogar, asilo o restaurante', sign:'Can', value:true },
+            { answer:'Enfermer@, trabajador social, investigador@, administrador u otras actividades en donde el servicio era lo más importante.', sign:'Vir', value:true },
+            { answer:'Líder religioso, trabajando en un hospital, clínica, asilo o casa hogar, predicando o ayudando a comunidades de escasos recursos.', sign:'Pis', value:true },
+            { answer:'Científico, inventor, pensador, humanista, haberte involucrado con la tecnología o desempeñado actividades ecológicas y relacionadas con animales.', sign:'Aqu', value:true },
+            { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde mi identidad personal era excluida a favor de una sociedad o pareja.', sign:'Lib', value:true },
+            { answer:'Financier@, abogad@, investigador, médico, cirujano, psicólog@, alquimista, bruj@ y cualquier profesión que se relacione con las ciencias ocultas y/o el mundo astral.', sign:'Sco', value:true },
+        ]
+    }, { 
+        sign:true,
+        question: '5. ¿Qué te restringe Saturno en esta vida?', 
         answers: [
             { answer:'El impulso y la energía.', sign:'Ari', value:true },
+            { answer:'La fama personal y el liderazgo.', sign:'Leo', value:true },
+            { answer:'El autoritarismo y reconocimiento.', sign:'Cap', value:true },
+            { answer:'Sentir armonía y protección de la familia.', sign:'Can', value:true },
             { answer:'Poder ahorrar grandes cantidades de dinero.', sign:'Tau', value:true },
             { answer:'La habilidad para comunicarme con los demás.', sign:'Gem', value:true },
-            { answer:'La capacidad de sentir armonía y protección de tu familia.', sign:'Can', value:true },
+            { answer:'La capacidad de atraer a tu vida lo que deseas.', sign:'Sco', value:true },
+            { answer:'La capacidad de predicar sin fe y entendimiento.', sign:'Pis', value:true },
+            { answer:'La salud cuando hay desequilibrio entre la mente y cuerpo.', sign:'Vir', value:true },
+            { answer:'La alegría y capacidad de encontrar el propósito de la vida.', sign:'Sag', value:true },
+            { answer:'La capacidad de ser original, inventivo, libre e independiente.', sign:'Aqu', value:true },
+            { answer:'La armonía y el equilibrio para establecer una sociedad o matrimonio.', sign:'Lib', value:true },
         ]
     }, {
-        question:'2. ¿Para qué te restringe eso Saturno?',
+        sign:true,
+        question:'6. ¿Para qué te restringe eso Saturno?',
         answers: [
-            { answer:'Poder medir mi fuerza, canalizarla correctamente, dejar de insistir tantas veces para lograr algo y aprender de tus resultados.', sign:'Ari', value:true },
-            { answer:'Deshacerme de los bienes a los que me apego: aquellos que solo me están haciendo la vida más difícil o pesada.', sign:'Tau', value:true },
-            { answer:'Aprender a hacerlo de manera clara, sincera y abierta, verbalizar mis ideas, dejar de manipular y mantener una postura adecuada y congruente.', sign:'Gem', value:true },
-            { answer:'Encuentre afinidad, acoplamiento y verdadero bienestar, que aprenda a manejar mis emociones, respetar la jerarquía de mis padres y regresar la responsabilidad a cada integrante de la familia.', sign:'Can', value:true },
+            { answer:'Conectar con mi ser interior.', sign:'Pis', value:true },
+            { answer:'Transformar y purificar mis deseos.', sign:'Sco', value:true },
+            { answer:'Corregir la motivación de mis esfuerzos.', sign:'Cap', value:true },
+            { answer:'Poder medir mi fuerza y canalizarla correctamente.', sign:'Ari', value:true },
+            { answer:'Deshacerme de los bienes a los que me apego o pesada.', sign:'Tau', value:true },
+            { answer:'Liberarme de creencias obsoletas y encontrar la verdad.', sign:'Sag', value:true },
+            { answer:'Aprender a comunicarme de manera clara, sincera y abierta.', sign:'Gem', value:true },
+            { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
+            { answer:'Desarrollar una mejor actitud hacia el amor, evitar la rigidez y disfrutar del momento.', sign:'Leo', value:true },
+            { answer:'Poder vivir de manera integral, trabajar sin estrés y dejar de ser tan perfeccionista.', sign:'Vir', value:true },
+            { answer:'Mis ideales sean enfocados a llevar a la humanidad a un estado de libertad y amor universal.', sign:'Aqu', value:true },
+            { answer:'Que aprenda a manejar mis emociones y regresar la responsabilidad a cada integrante de la familia.', sign:'Can', value:true },
         ]
     }, {
-        question:'3. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
+        sign:true,
+        question:'7. ¿Para qué sirven los miedos subconscientes que te genera Saturno?',
         answers: [
-            { answer:'Detener mi agresividad, para pensar antes de actuar y reconocer que mis acciones tienen consecuencias.', sign:'Ari', value:true },
-            { answer:'No poder invertir en demasiados negocios, para que no endeudarme, evitar apostar o especular y para que no busquar oportunidades de acumulación.', sign:'Tau', value:true },
-            { answer:'No convencer a los demás, pensar antes de hablar, no caer en chismes y no esforzarme demasiado en caer bien o hacer reír a los demás.', sign:'Gem', value:true },
-            { answer:'Dejar de controlar la dinámica, desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
+            { answer:'Detener mi agresividad y pensar antes de actuar.', sign:'Ari', value:true },
+            { answer:'Tomar decisiones y saber cuándo ceder y cuándo no.', sign:'Lib', value:true },
+            { answer:'No poder invertir en demasiados negocios, endeudarme o apostar.', sign:'Tau', value:true },
+            { answer:'No imponerme una doctrina externa hasta entender de donde nace la verdad.', sign:'Sag', value:true },
+            { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
+            { answer:'Ser humilde, auténtico y dejar pedir aplauso, de ser autoritario y controlador.', sign:'Leo', value:true },
+            { answer:'Aceptar las órdenes de superiores y desarrollar un liderazgo basado en humildad.', sign:'Cap', value:true },
+            { answer:'Dejar de ser destructivo, controlar a los demás y tomar responsabilidad de mis deseos.', sign:'Sco', value:true },
+            { answer:'Evitar las fantasías, idealismos y promesas de aquello que no está en mis manos cumplir.', sign:'Pis', value:true },
+            { answer:'Dejar de buscar el reconocimiento público y evitar el orgullo, la soberbia y aislamiento.', sign:'Aqu', value:true },
+            { answer:'Dejar de controlar la dinámica familiar y desempeñar solo el papel que me corresponde sin victimizarme, chantajear o manipular.', sign:'Can', value:true },
+            { answer:'No tratar de convencer a los demás, pensar antes de hablar y evitar caer en chismes o esforzarme demasiado en caer bien o hacer reír a los demás.', sign:'Gem', value:true },
         ]
     }, {
-        question:'4. ¿Qué es importante que aprendas en esta vida?',
+        sign:true,
+        question:'8. ¿Qué es importante que aprendas en esta vida?',
         answers: [
+            { answer:'A decir que no.', sign:'Gem', value:true },
             { answer:'Tacto y cooperación con los demás.', sign:'Ari', value:true },
-            { answer:'Valorar los recursos y a las personas.', sign:'Tau', value:true },
-            { answer:'Decir que no.', sign:'Gem', value:true },
+            { answer:'Humildad, paciencia, comprensión y tolerancia hacia los demás.', sign:'Aqu', value:true },
+            { answer:'Valorar a las personas y los recursos materiales en su justa dimensión.', sign:'Tau', value:true },
             { answer:'Respeto, obediencia y aceptación de la forma de ser de cada miembro de la familia', sign:'Can', value:true },
+            { answer:'Reconocer lo que mi pareja o socio aporta a la relación antes de quejarme o reclamar.', sign:'Lib', value:true },
+            { answer:'Paciencia, fuerza de voluntad, a sostener lo que he creado y a valorar a las personas.', sign:'Sco', value:true },
+            { answer:'Liberarme de la tensión y concentrarme en manifestar mi visión abstracta de las cosas.', sign:'Vir', value:true },
+            { answer:'A amar, desarrollar apreciación, aceptación, sentido del humor y a disfrutar el momento presente.', sign:'Leo', value:true },
+            { answer:'Servir a los demás ordenadamente, ser disciplinad@, realista y llevar una vida material y espiritual equilibrada.', sign:'Pis', value:true },
+            { answer:'A relajarme mientras me desempeño y que no es suficiente tan sólo hacer bien las cosas, hay que hacerlas por las razones correctas.', sign:'Cap', value:true },
+            { answer:'Humildad, a respetar las creencias de otros, a observar más y hablar menos, a compartir tu visión, y a balancear la alegría con la sabiduría.', sign:'Sag', value:true },
         ]
     }, {
-        question:'5. ¿Qué es lo que ahora debes corregir?',
+        sign:true,
+        question:'9. ¿Qué es lo que ahora debes corregir?',
         answers: [
-            { answer:'Mi personalidad.', sign:'Ari', value:true },
-            { answer:'Mi sistema de valores.', sign:'Tau', value:true },
             { answer:'Mi comunicación', sign:'Gem', value:true },
+            { answer:'Mi personalidad.', sign:'Ari', value:true },
+            { answer:'Mi capacidad de gozar.', sign:'Leo', value:true },
+            { answer:'Mi sistema de valores.', sign:'Tau', value:true },
+            { answer:'Mi nerviosismo y exceso de preocupación.', sign:'Vir', value:true },
+            { answer:'Autoritarismo, frialdad, rigidez y orgullo.', sign:'Cap', value:true },
             { answer:'Mis emociones, inhibiciones y necesidad de control', sign:'Can', value:true },
+            { answer:'Mi sentimiento de injusticia, abuso y tu dependencia.', sign:'Lib', value:true },
+            { answer:'Mis deseos, pensamientos, juicios y emociones negativas.', sign:'Sco', value:true },
+            { answer:'Juicios hacia las creencias de otros y el deseo de profesar las mías.', sign:'Sag', value:true },
+            { answer:'Actitudes de religiosidad, idealismo, desorganización, procrastinación y depresión.', sign:'Pis', value:true },
+            { answer:'La creencia que me dice que soy más inteligente que los demás y soy el que más sabe.', sign:'Aqu', value:true },
         ]
     }, {
-        question:'6. ¿En que consiste tu trabajo en esta vida?',
+        sign:true,
+        question:'10. ¿En qué consiste tu trabajo en esta vida?',
         answers: [
+            { answer:'Engrandecer mi aceptación para llegar a la sabiduría.', sign:'Sag', value:true },
+            { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
+            { answer:'Construir un liderazgo firme y honorable, que genere confianza.', sign:'Cap', value:true },
+            { answer:'Servir desde el corazón, conectando con el alma de las personas.', sign:'Pis', value:true },
+            { answer:'Soltar, dejar que las cosas lleven su proceso y amar a toda mi familia incondicionalmente', sign:'Can', value:true },
+            { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
+            { answer:'Dejar de querer controlarlo todo y utilizar conscientemente mi intuición y poder de manifestación.', sign:'Sco', value:true },
+            { answer:'Innovar, romper con ideas convencionales obsoletas, ver a los demás iguales a ti y aportar nuevas ideas.', sign:'Aqu', value:true },
+            { answer:'Ser justo, equilibrado, reconocer la aportación de mi socio o pareja a la relación y no esperar a que cambie.', sign:'Lib', value:true },
             { answer:'Hacerme de una nueva identidad en donde me sientas verdaderamente valiente y poderoso sin necesidad de demostrarlo.', sign:'Ari', value:true },
             { answer:'Confiar en que mis capacidades me darán siempre todo lo que necesito, sin necesidad de acumular excesivamente para el futuro.', sign:'Tau', value:true },
-            { answer:'Ser auténtico, poder expresar mis ideas congruentemente sin necesidad de ser aceptado o querido', sign:'Gem', value:true },
-            { answer:'Soltar y dejar que las cosas lleven su proceso, aceptar que los que mandan son tus padres', sign:'Can', value:true },
+            { answer:'Expresarme con amor, dirigir a los demás con humildad, amarme sin vanidad ni egocentrismo y ser auténtico, agradecido y apreciativo.', sign:'Leo', value:true },
         ]
     }, {
-        question:'7. ¿Qué debes saber en esta vida?',
+        sign:true,
+        question:'11. ¿Qué debes saber en esta vida?',
         answers: [
-            { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
-            { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
-            { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
+            { answer:'El que es sabio habla poco.', sign:'Aqu', value:true },
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
-        ]
-    }, {
-        question:'8. ¿Qué desarrollaste en vidas pasadas?',
-        answers: [
-            { answer:'Una fuerte personalidad.', sign:'Ari', value:true },
-            { answer:'Una fuerte necesidad de seguridad.', sign:'Tau', value:true },
-            { answer:'Gran habilidad de comunicación', sign:'Gem', value:true },
-            { answer:'Una fuerte responsabilidad familiar', sign:'Can', value:true },
-        ]
-    }, {
-        question:'9. ¿Qué sentimiento constante tuviste en vidas pasadas?',
-        answers: [
-            { answer:'Necesidad de sobrevivir.', sign:'Ari', value:true },
-            { answer:'Que la sociedad valoraba solo a quienes tenían bienes y dinero.', sign:'Tau', value:true },
-            { answer:'La necesidad de saber todo lo que sucedía en todo momento', sign:'Gem', value:true },
-            { answer:'Falta de madurez de parte de tus familiares', sign:'Can', value:true },
-        ]
-    }, {
-        question:'10. ¿Cómo actuabas generalmente en vidas pasadas?',
-        answers: [
-            { answer:'Como jefe militar, buscando hacerme respetar a toda costa.', sign:'Ari', value:true },
-            { answer:'Con gran habilidad financiera y administrativa.', sign:'Tau', value:true },
-            { answer:'Una persona conocida conocida luchabas por caerle bien a todos, ser simpátic@ y complaciente.', sign:'Gem', value:true },
-            { answer:'Creías que al hacer todo por las personas que amabas era la manera de demostrar tu amor', sign:'Can', value:true },
-        ]
-    }, {
-        question:'11. ¿Qué otras actividades tuviste en vidas pasdas?',
-        answers: [
-            { answer:'Haber buscado la supervivencia en ambientes inhóspitos, en situaciones de mucho riesgo o peligro y actividades que requieren de mucha energía.', sign:'Ari', value:true },
-            { answer:'Trabajar en bancos o empresas financieras, ser aficionado a los juegos de azar, la especulación, comerciante, empresario y hasta inversionista', sign:'Tau', value:true },
-            { answer:'Informante, locutor, periodista, transportista, comerciante, vendedor, presentador o cómico.', sign:'Gem', value:true },
-            { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@, jefe o administrador de empresa, industria, escuela, hospital, casa hogar, asilo, restaurante o desempeñado alguna actividad ecológica o relacionada con animales', sign:'Can', value:true },
+            { answer:'No es necesario controlar mi audiencia.', sign:'Leo', value:true },
+            { answer:'Liderar es un servicio, no un privilegio.', sign:'Cap', value:true },
+            { answer:'Voy a estar san@ y puedo sentir tranquilidad.', sign:'Vir', value:true },
+            { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
+            { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
+            { answer:'Sufrir con las personas que necesitan ayuda no es servir.', sign:'Pis', value:true },
+            { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
+            { answer:'Buscar la verdad y el propósito de mi vida es un proceso que nunca concluye.', sign:'Sag', value:true },
+            { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
+            { answer:'Conocer a profundidad las emociones y deseos de las personas conlleva un gran poder y por consecuencia una gran responsabilidad.', sign:'Sco', value:true },
         ]
     }
 ]
