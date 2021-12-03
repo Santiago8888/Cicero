@@ -6,10 +6,25 @@ import { quiz1 } from './quiz1'
 
 
 const posts1Description = ['Nuevamente, te invitamos a que compartas tu experiencia con los demás, también puedes dar like y comentar en la experiencia de los otros.']
+const signsDescription = [
+    'En el vídeo anterior, Gaby habló sobre la lucha contra la negatividad de las características del signo de tu Saturno.',
+    '',
+    'Ahora, entra en todas las características y palomea cuales de las positivas si tienes desarrolladas y cuales de las negativas te hace falta corregir.',
+    '',
+    'Tiempo mínimo sugerido: 3 minutos'
+]
+
 const lessons1:iLesson[] = [
     { type:'Video', title:'La carta astral', link:'https://www.youtu.be/QSWYfSnHUHo' },
     { type:'Chart', title:'El signo de tu Saturno', planet:'Saturn', drawHouses:false },
-    { type:'Video', title:'El significado del signo', link:'https://youtu.be/uJP6kRJq9Qs' }, 
+    { type:'Video', title:'El significado del signo', link:'https://youtu.be/uJP6kRJq9Qs' },
+    { 
+        type:'Reading', 
+        title:'Caracteristicas de los Signos', 
+        link:'docs/Caracteristicas-de-los-Signos.pdf', 
+        description:signsDescription, 
+        min:3
+    },
     { type:'Quiz', title:'Quiz 2.1', questions:quiz1 }, 
     { type:'Video', title:'Tus vidas pasadas', link:'https://youtu.be/qR1KmIG5Fl0' },
     { type:'Reflection', title:'Ejercicio de Compartir', posts:posts1, numbered:true, description:posts1Description }
@@ -22,7 +37,7 @@ const posts2Description = [
 
 
 const karmaDescription = [
-    'En esta lectura conocerás a profundidad tu karma de Saturno, lo que te esta restringiendo y que vienes a aprender.',
+    'En esta lectura conocerás a profundidad tu karma de Saturno, lo que te está restringiendo y que vienes a aprender.',
     '',
     'Obtendrás un vistazo a tus vidas pasadas y algunas de las circunstancias que te hicieron desarrollar tu karma.',
     '',
