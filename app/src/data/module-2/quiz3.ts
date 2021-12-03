@@ -9,15 +9,15 @@ export const quiz3:iQuestion[] = [
             { answer:'Una persona sincera y auténtica.', value:true, sign:'Gem' },
             { answer:'Valentía, liderazgo y autenticidad.', value:true, sign:'Ari' },
             { answer:'Un sistema de valores inquebrantable.', value:true, sign:'Tau' },
-            { answer:'Un líder que disfruta su triunfo y su vida.', value:true, sign:'Leo' },
-            { answer:'Persona espiritual, amorosa, compasiva y comprensiva.', value:true, sign:'Pis' },
+            { answer:'Un líder que disfruta su triunfo y vida.', value:true, sign:'Leo' },
+            { answer:'Una persona espiritual, amorosa, compasiva y comprensiva.', value:true, sign:'Pis' },
             { answer:'Amor incondicional, apoyo, aceptación y manejo emocional.', value:true, sign:'Can' },
             { answer:'Transformación, resolución, intuición y transmutación espiritual.', value:true, sign:'Sco' },
             { answer:'Ser una persona práctica, cuidadosa, con actitud moral y trabajadora.', value:true, sign:'Vir' },
             { answer:'Justicia, equilibrio, que ve por sí mism@ y los demás de igual manera.', value:true, sign:'Lib' },
             { answer:'Humildad, responsabilidad, liderazgo, honorabilidad y crecimiento sostenido.', value:true, sign:'Cap' },
-            { answer:'Libertad, alegría y sabiduría, donde las personas a tu alrededor se sientan expandidas.', value:true, sign:'Sag' },
             { answer:'Un buen amigo, interesado por el bien común que reconoce su inteligencia con humildad.', value:true, sign:'Aqu' },
+            { answer:'Libertad, alegría y sabiduría, donde las personas a tu alrededor se sientan expandidas.', value:true, sign:'Sag' },
         ]
     }, { 
         sign:true,
@@ -32,7 +32,7 @@ export const quiz3:iQuestion[] = [
             { answer:'A desarrollar su compasión, misericordia y humildad, a perdonar a los demás, a vivir con el corazón.', value:true, sign:'Pis' },
             { answer:'Salir adelante por sus propios medios, a levantarse de cualquier caída y tomar decisiones asertivas.', value:true, sign:'Ari' },
             { answer:'Comunicarse y relacionarse, a tener confianza en sí mismos, pedir lo que necesitan o hablar en público.', value:true, sign:'Gem' },
-            { answer:'Hacerse responsables, enfocarse en su desarrollo profesional, lograr sus metas y de tener una actitud madura hacia la sociedad.', value:true, sign:'Cap' },
+            { answer:'Hacerse responsables, enfocarse en su desarrollo profesional, lograr sus metas y tener una actitud madura hacia la sociedad.', value:true, sign:'Cap' },
             { answer:'A ver las dos caras de la moneda, a no pensar sólo en sí mismo, a saber que solo se avanza cuando se da y se recibe equitativamente.', value:true, sign:'Lib' },
             { answer:'Desarrollar autovaloración, a resolver sus problemas financieros, tomar decisiones en base a buenos valores y mostrar honestidad, confiabilidad y lealtad.', value:true, sign:'Tau' },
         ]
