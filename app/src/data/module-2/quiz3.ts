@@ -16,7 +16,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Libertad, alegría y sabiduría, donde las personas a tu alrededor se sientan expandidas.', value:true, sign:'Sag' },
             { answer:'Humildad, responsabilidad, liderazgo, honorabilidad y crecimiento sostenido.', value:true, sign:'Cap' },
             { answer:'Un buen amigo, interesado por el bien común que reconoce su inteligencia con humildad.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Persona espiritual, amorosa, compasiva y comprensiva.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'2. ¿Qué vas a enseñar a otros?', 
@@ -32,7 +32,7 @@ export const quiz3:iQuestion[] = [
             { answer:'A buscar la verdad y a ser libres e independientes.', value:true, sign:'Sag' },
             { answer:'Hacerse responsables, enfocarse en su desarrollo profesional, lograr de sus metas y de tener una actitud madura hacia la sociedad.', value:true, sign:'Cap' },
             { answer:'A ver las cosas desde una perspectiva a futuro.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'A desarrollar su compasión, misericordia y humildad, a perdonar a los demás, a vivir con el corazón.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'3. ¿Qué aprenderás a traves de cumplir tu misión?', 
@@ -48,7 +48,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Respetar a personas de otras ideologías y a ganarte su respeto.', value:true, sign:'Sag' },
             { answer:'Ganar el respeto sin exigir reconocimiento, aceptando que no todos tienen que estar de acuerdo conmigo.', value:true, sign:'Cap' },
             { answer:'Respetar y ganarte el respeto evitando la soberbia, siendo humilde y tolerante.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Servir con amor pero también objetividad, disciplina y organización.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'4. ¿Cuáles cualidades aprenderas a través de las figuras de autoridad?', 
@@ -64,7 +64,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Aceptación, optimismo, tolerancia y justicia.', value:true, sign:'Sag' },
             { answer:'Responsabilidad, liderazgo, honorabilidad y ambición.', value:true, sign:'Cap' },
             { answer:'Humildad, respeto, paciencia y tolerancia.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'dignidad, organización, disciplina y amor incondicional.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'5. ¿Cómo te sentirás mientras NO hayas aprendido esas cualidades?', 
@@ -80,7 +80,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Desesperad@, juicioso@, deprimd@ y limitad@.', value:true, sign:'Sag' },
             { answer:'Presionad@, exigid@, controlad@ y no reconocid@.', value:true, sign:'Cap' },
             { answer:'Impaciente, intolerante, no reconocido y no tomado en cuenta.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Incapaz, desorganizado, procrastinador y religioso.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'6. ¿De que te sentiras satisfech@ cuando hayas aprendido esas cualidades?', 
@@ -96,7 +96,7 @@ export const quiz3:iQuestion[] = [
             { answer:'La razón o propósito de mi vida y acciones.', value:true, sign:'Sag' },
             { answer:'Mis logros profesionales y mi papel en la sociedad.', value:true, sign:'Cap' },
             { answer:'Contribución para el mundo y la sociedad.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Mi servicio a los demás.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'7. ¿Generalmente, que ocasiona tu karma durante la infancia?', 
@@ -112,7 +112,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Códigos morales estrictos, juicio, dogma o total desentendimiento de parte de alguno de tus padres y/o figuras de autoridad.', value:true, sign:'Sag' },
             { answer:'Autoritarismo, exigencia y exceso de responsabilidades.', value:true, sign:'Cap' },
             { answer:'Falta de reconocimiento de tu inteligencia y originalidad.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Muchas preguntas, confusión, tristeza y soledad.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'8. ¿Qué debes desarrollar para lograr tu misión?', 
@@ -128,7 +128,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Consciencia de que no tengo toda la verdad.', value:true, sign:'Sag' },
             { answer:'Consciencia de mi comportamiento profesional y social.', value:true, sign:'Cap' },
             { answer:'Ideas innovadoras para el beneficio colectivo.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Ser espiritual dentro de tu vida cotidiana.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'9. ¿A qué tipo de desafíos te enfrentarás?', 
@@ -144,7 +144,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Cuando actúes incongruentemente te expondrá y parecerás hipócrita o avergonzado.', value:true, sign:'Sag' },
             { answer:'Muchas responsabilidades que habrán de desempeñar con excelencia.', value:true, sign:'Cap' },
             { answer:'Desesperarme con la agilidad mental de los demás y ser obligado a trabajar en equipo.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Demostrar ser organizado o disciplinado cuando alguien necesite algo de mi.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'10. ¿Qué personas atraerás a tu vida?', 
@@ -160,7 +160,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Personas con creencias muy arraigadas.', value:true, sign:'Sag' },
             { answer:'Que no reconezcan tus logros o les falte ambición.', value:true, sign:'Cap' },
             { answer:'Personas con orientación tecnológica.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Que necesiten ayuda incondicional.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'11. ¿Por qué atrae esas personas a tu vida?', 
@@ -176,7 +176,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Recordarán a no apegarte demasiado a una ideología.', value:true, sign:'Sag' },
             { answer:'Gozar de los resultados sin condicionarlos al reconocimiento.', value:true, sign:'Cap' },
             { answer:'Recordar que siempre hay alguien más inteligente que yo.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Muestre lo mejor de ti no importando que tan difícil sea la situación.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'12. ¿Cuales actitudes debes evitar?', 
@@ -192,7 +192,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Religiosidad o rigidez.', value:true, sign:'Sag' },
             { answer:'De orgullo, frialdad, rigidez y autoritarismo.', value:true, sign:'Cap' },
             { answer:'Soberbia, impaciencia, intolerancia y orgullo.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Depresión, desorganización, religiosidad, idealismo o ser fantasios@.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'13. ¿De qué forma tiendes a causar daño?', 
@@ -208,7 +208,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Presionar a los demás a aceptar tus creencias o siendo incongruente.', value:true, sign:'Sag' },
             { answer:'Excesivamente autoritarias, o exigiendo reconocimiento.', value:true, sign:'Cap' },
             { answer:'Humillando a los demás, en especial por su inteligencia.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Predicar sin ejemplo, prometer lo que no puedas cumplir, procrastinar u olvidarte de tus compromisos.', value:true, sign:'Pis' },
         ]
     }, { 
         question:'14. ¿Cómo debes tomar tus decisiones?', 
@@ -224,7 +224,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Con un proposito.', value:true, sign:'Sag' },
             { answer:'Responsabilidad.', value:true, sign:'Cap' },
             { answer:'Sabiduria.', value:true, sign:'Aqu' },
-            { answer:'.', value:true, sign:'Pis' },
+            { answer:'Fe.', value:true, sign:'Pis' },
         ]
     }, {
         question:'15. ¿Cómo sabre que voy por el camino correcto?',
