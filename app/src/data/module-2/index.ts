@@ -9,7 +9,7 @@ const posts1Description = ['Nuevamente, te invitamos a que compartas tu experien
 const signsDescription = [
     'En el vídeo anterior, Gaby habló sobre la lucha contra la negatividad de las características del signo de tu Saturno.',
     '',
-    'Ahora, entra en todas las caracteristicas y palomea cuales de las positivas si tienes desarrolladas y cuales de las negativas te hace falta corregir.',
+    'Ahora, entra en todas las características y palomea cuales de las positivas si tienes desarrolladas y cuales de las negativas te hace falta corregir.',
     '',
     'Tiempo mínimo sugerido: 3 minutos'
 ]
