@@ -63,12 +63,12 @@ export const quiz3:iQuestion[] = [
             { answer:'Humildad, valentía, dignidad y paciencia.', value:true, sign:'Ari' },
             { answer:'Humildad, respeto, paciencia y tolerancia.', value:true, sign:'Aqu' },
             { answer:'Humildad, gozo, apreciación y generosidad.', value:true, sign:'Leo' },
-            { answer:'Aceptación, optimismo, tolerancia y justicia.', value:true, sign:'Sag' },
+            { answer:'Humildad, aceptación, optimismo y tolerancia.', value:true, sign:'Sag' },
             { answer:'Discernimiento, confianza, dignidad y compasión.', value:true, sign:'Vir' },
             { answer:'Responsabilidad, apoyo, respeto y amor incondicional.', value:true, sign:'Can' },
             { answer:'Responsabilidad, liderazgo, honorabilidad y ambición.', value:true, sign:'Cap' },
             { answer:'Transformación, resolución, intuición e inteligencia.', value:true, sign:'Sco' },
-            { answer:'dignidad, organización, disciplina y amor incondicional.', value:true, sign:'Pis' },
+            { answer:'Dignidad, organización, disciplina y amor incondicional.', value:true, sign:'Pis' },
         ]
     }, { 
         sign:true,
