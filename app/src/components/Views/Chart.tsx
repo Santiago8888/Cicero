@@ -1,7 +1,8 @@
-import { AstralChart, iPlanet, Planet } from '../Astral/AstralChart'
+import { AstralChart, Planet } from '../Astral/AstralChart'
 import { iApprove, iUser } from '../../App'
 import { useMediaQuery } from 'react-responsive'
 import { MiniChart } from '../Astral/MiniChart'
+import { mapSigns } from '../../utils/sign'
 import { useEffect } from 'react'
 
 
@@ -15,25 +16,6 @@ interface iChart {
     next():void 
 }
 
-const mapSign = (planet:iPlanet) => {
-    const signs = [
-        'Aries', 
-        'Tauro', 
-        'Géminis', 
-        'Cáncer', 
-        'Leo', 
-        'Virgo', 
-        'Libra', 
-        'Scorpio', 
-        'Sagitario', 
-        'Capricornio', 
-        'Aquario', 
-        'Piscis' 
-    ]
-
-    const sign = signs[planet.house - 1]
-    return sign
-}
 
 const mapMonth = (n:Number) => {
     if(n === 0) return 'Enero'
@@ -53,9 +35,14 @@ const mapMonth = (n:Number) => {
     if(n === 11) return 'Diciembre'
 }
 
-const NatalData = ({ natalChart: { planets } }:iUser) => <span>
-    Tu Saturno está en  { mapSign(planets.find(({ name }) => name === 'Saturn' ) as iPlanet) }
-</span>
+const NatalData = ({ sign }:iUser) => sign ?
+    <span>
+        Tu Saturno está en  { mapSigns(sign) }
+    </span>
+    :
+        <span>
+            Favor de escribit y solicitar tu signo.
+        </span>
 
 export const Chart = ({ user, title, description, planet, drawHouses, next, approve }: iChart) => {
     const { natalChart: { planets, houses } } = user 
