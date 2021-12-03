@@ -178,16 +178,16 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer:'Para que aprenda paciencia.', value:true, sign:'Ari' },
             { answer:'Poner límites demostrando dignidad.', value:true, sign:'Vir' },
-            { answer:'Tomar conciencia de la honestidad y rectitud.', value:true, sign:'Tau' },
-            { answer:'Reconocer que solo se gana cuando se es verdadero.', value:true, sign:'Gem' },
-            { answer:'Recordarán a no apegarme demasiado a una ideología.', value:true, sign:'Sag' },
-            { answer:'Recordar que siempre hay alguien más inteligente que yo.', value:true, sign:'Aqu' },
+            { answer:'Tomar conciencia de honestidad y rectitud.', value:true, sign:'Tau' },
+            { answer:'Reconocer que solo se gano cuando soy verdadero.', value:true, sign:'Gem' },
+            { answer:'Recordarme a no apegarme demasiado a una ideología.', value:true, sign:'Sag' },
+            { answer:'Recordarme que siempre hay alguien más inteligente que yo.', value:true, sign:'Aqu' },
             { answer:'Gozar de los resultados sin condicionarlos al reconocimiento.', value:true, sign:'Cap' },
             { answer:'Muestre lo mejor de ti no importando que tan difícil sea la situación.', value:true, sign:'Pis' },
             { answer:'Recordar que no todos están pensando siempre en mí y que está bien no gustarle a todos.', value:true, sign:'Leo' },
-            { answer:'Aprender a dar y amar incondicionalmente y que controlar a las personas o los resultados no ayuda.', value:true, sign:'Can' },
-            { answer:'Ayudarlos y sostenerlos con mi fuerza para que realicen la purificación de sus deseos y conductas.', value:true, sign:'Sco' },
-            { answer:'Aprender a compartir y convivir en pareja, sin acabar dando de más, evitando abusos o generar codependencias.', value:true, sign:'Lib' },
+            { answer:'Aprender a dar y amar incondicionalmente, que controlar a las personas o los resultados no ayuda.', value:true, sign:'Can' },
+            { answer:'Compartir y convivir en pareja, sin acabar dando de más, evitando abusos o generarando codependencias.', value:true, sign:'Lib' },
+            { answer:'Ayudarlos y sostenerlos con mi fuerza para que realicen la purificación de sus deseos, conductas y emociones.', value:true, sign:'Sco' },
         ]
     }, { 
         sign:true,
