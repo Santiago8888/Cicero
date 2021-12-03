@@ -53,7 +53,7 @@ export const quiz2:iQuestion[] = [{
         ]
     }, {
         sign:true,
-        question:'4. ¿Qué actividades realizaste en vidas pasdas?',
+        question:'4. ¿Qué actividades realizaste en vidas pasadas?',
         answers: [
             { answer:'Informante, locutor, periodista, transportista, vendedor o cómico.', sign:'Gem', value:true },
             { answer:'Figura pública, jefe, gerente, director o líder de grupos sociales o políticos.', sign:'Cap', value:true },
@@ -63,7 +63,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Trabajé en bancos, empresas financieras o aficionado a los juegos de azar, la especulación y las inversiones', sign:'Tau', value:true },
             { answer:'Madre o padre de familia, abuel@ progenitor poderos@ o adinerad@ o jefe o administrador de casa hogar, asilo o restaurante', sign:'Can', value:true },
             { answer:'Enfermer@, trabajador social, investigador@, administrador u otras actividades en donde el servicio era lo más importante.', sign:'Vir', value:true },
-            { answer:'Líder religioso, trabajado en un hospital, clínica, asilo o casa hogar, predicando o ayudando a comunidades de escasos recursos.', sign:'Pis', value:true },
+            { answer:'Líder religioso, trabajando en un hospital, clínica, asilo o casa hogar, predicando o ayudando a comunidades de escasos recursos.', sign:'Pis', value:true },
             { answer:'Científico, inventor, pensador, humanista, haberte involucrado con la tecnología o desempeñado actividades ecológicas y relacionadas con animales.', sign:'Aqu', value:true },
             { answer:'Juez, abogado, cónsul, consejero, diplomático, o cualquier tipo de mediador donde mi identidad personal era excluida a favor de una sociedad o pareja.', sign:'Lib', value:true },
             { answer:'Financier@, abogad@, investigador, médico, cirujano, psicólog@, alquimista, bruj@ y cualquier profesión que se relacione con las ciencias ocultas y/o el mundo astral.', sign:'Sco', value:true },
@@ -73,7 +73,7 @@ export const quiz2:iQuestion[] = [{
         question: '5. ¿Qué te restringe Saturno en esta vida?', 
         answers: [
             { answer:'El impulso y la energía.', sign:'Ari', value:true },
-            { answer:'La fama personal y liderazgo.', sign:'Leo', value:true },
+            { answer:'La fama personal y el liderazgo.', sign:'Leo', value:true },
             { answer:'El autoritarismo y reconocimiento.', sign:'Cap', value:true },
             { answer:'Sentir armonía y protección de la familia.', sign:'Can', value:true },
             { answer:'Poder ahorrar grandes cantidades de dinero.', sign:'Tau', value:true },
@@ -94,7 +94,7 @@ export const quiz2:iQuestion[] = [{
             { answer:'Corregir la motivación de mis esfuerzos.', sign:'Cap', value:true },
             { answer:'Poder medir mi fuerza y canalizarla correctamente.', sign:'Ari', value:true },
             { answer:'Deshacerme de los bienes a los que me apego o pesada.', sign:'Tau', value:true },
-            { answer:'Liberarme de creencias obsoletas y encuentre la verdad.', sign:'Sag', value:true },
+            { answer:'Liberarme de creencias obsoletas y encontrar la verdad.', sign:'Sag', value:true },
             { answer:'Aprender a comunicarme de manera clara, sincera y abierta.', sign:'Gem', value:true },
             { answer:'Aprender a cooperar y compartir sin perder mi identidad e independencia.', sign:'Lib', value:true },
             { answer:'Desarrollar una mejor actitud hacia el amor, evitar la rigidez y disfrutar del momento.', sign:'Leo', value:true },
@@ -104,14 +104,14 @@ export const quiz2:iQuestion[] = [{
         ]
     }, {
         sign:true,
-        question:'7. ¿Para que sirven los miedos subconscientes que te genera Saturno?',
+        question:'7. ¿Para qué sirven los miedos subconscientes que te genera Saturno?',
         answers: [
             { answer:'Detener mi agresividad y pensar antes de actuar.', sign:'Ari', value:true },
-            { answer:'Tomar decisiones y saber cuándo ceder y cuando no.', sign:'Lib', value:true },
+            { answer:'Tomar decisiones y saber cuándo ceder y cuándo no.', sign:'Lib', value:true },
             { answer:'No poder invertir en demasiados negocios, endeudarme o apostar.', sign:'Tau', value:true },
             { answer:'No imponerme una doctrina externa hasta entender de donde nace la verdad.', sign:'Sag', value:true },
             { answer:'Aceptar que no puedo controlarlo todo, y trabajar la fe y la espiritualidad.', sign:'Vir', value:true },
-            { answer:'Ser humilde, auténtico, dejar pedir aplauso, de ser autoritario y controlador.', sign:'Leo', value:true },
+            { answer:'Ser humilde, auténtico y dejar pedir aplauso, de ser autoritario y controlador.', sign:'Leo', value:true },
             { answer:'Aceptar las órdenes de superiores y desarrollar un liderazgo basado en humildad.', sign:'Cap', value:true },
             { answer:'Dejar de ser destructivo, controlar a los demás y tomar responsabilidad de mis deseos.', sign:'Sco', value:true },
             { answer:'Evitar las fantasías, idealismos y promesas de aquello que no está en mis manos cumplir.', sign:'Pis', value:true },
@@ -155,7 +155,7 @@ export const quiz2:iQuestion[] = [{
         ]
     }, {
         sign:true,
-        question:'10. ¿En que consiste tu trabajo en esta vida?',
+        question:'10. ¿En qué consiste tu trabajo en esta vida?',
         answers: [
             { answer:'Engrandecer mi aceptación para llegar a la sabiduría.', sign:'Sag', value:true },
             { answer:'Encargarme de mi salud y dejar de somatizar mis miedos.', sign:'Vir', value:true },
@@ -177,13 +177,13 @@ export const quiz2:iQuestion[] = [{
             { answer:'El que es sabio habla poco.', sign:'Aqu', value:true },
             { answer:'Cada quien madure a su ritmo', sign:'Can', value:true },
             { answer:'No es necesario controlar mi audiencia.', sign:'Leo', value:true },
-            { answer:'Liderear es un servicio, no un privilegio.', sign:'Cap', value:true },
+            { answer:'Liderar es un servicio, no un privilegio.', sign:'Cap', value:true },
             { answer:'Voy a estar san@ y puedo sentir tranquilidad.', sign:'Vir', value:true },
             { answer:'Al ser honesto, la vida me traerá personas honestas.', sign:'Tau', value:true },
             { answer:'Que puedo lograr cualquier meta y vencer cualquier reto.', sign:'Ari', value:true },
-            { answer:'Sufrir con las personas que necesitan ayuda no es ser servir.', sign:'Pis', value:true },
+            { answer:'Sufrir con las personas que necesitan ayuda no es servir.', sign:'Pis', value:true },
             { answer:'No tengo que pensar como los demás ni discutir para convencerlos', sign:'Gem', value:true },
-            { answer:'Buscar la verdad y el proposito de mi vida es un proceso que nunca concluye.', sign:'Sag', value:true },
+            { answer:'Buscar la verdad y el propósito de mi vida es un proceso que nunca concluye.', sign:'Sag', value:true },
             { answer:'Las relaciones solo funcionan cuando hay un verdadero equilibrio en el dar y recibir.', sign:'Lib', value:true },
             { answer:'Conocer a profundidad las emociones y deseos de las personas conlleva un gran poder y por consecuencia una gran responsabilidad.', sign:'Sco', value:true },
         ]
