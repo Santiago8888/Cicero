@@ -20,7 +20,7 @@ export const posts2 = [
     '¿Cuándo ha sido alguna vez que hayas sido un "mal Saturno", exagerando las cualidades de su signo hasta caer en los defectos?',
     'Cuenta una experiencia en la que los resultados no fluyeron hasta que no quitaste tu "agenda personal":',
     '¿En qué persona te estás convirtiendo a través de tu misión de servicio?',
-    'Saturno también tiene que ver con el reconomocimiento. ¿Cuál te gustaría que fuera tu legado?'
+    'Saturno también tiene que ver con el reconocimiento. ¿Cuál te gustaría que fuera tu legado?'
 ]
 
 
