@@ -92,17 +92,17 @@ export const quiz3:iQuestion[] = [
         question:'6. ¿De que te sentirás satisfech@ cuando hayas aprendido esas cualidades?', 
         answers:[
             { answer:'Mi servicio a los demás.', value:true, sign:'Pis' },
-            { answer:'De mi nuevo papel ante el mundo.', value:true, sign:'Leo' },
+            { answer:'Mi nuevo papel ante el mundo.', value:true, sign:'Leo' },
             { answer:'De que soy una persona valiosa.', value:true, sign:'Tau' },
             { answer:'Mis ideas, palabras y relaciones.', value:true, sign:'Gem' },
             { answer:'De mi nueva identidad y liderazgo.', value:true, sign:'Ari' },
             { answer:'De mi nueva manera de ser y trabajar.', value:true, sign:'Vir' },
-            { answer:'Contribución para el mundo y la sociedad.', value:true, sign:'Aqu' },
+            { answer:'Mis emociones y relación conmigo mism@.', value:true, sign:'Sco' },
             { answer:'Mis relaciones, en especial la de pareja.', value:true, sign:'Lib' },
+            { answer:'Mi contribución en el mundo y la sociedad.', value:true, sign:'Aqu' },
             { answer:'La razón o propósito de mi vida y acciones.', value:true, sign:'Sag' },
-            { answer:'Mis logros profesionales y mi papel en la sociedad.', value:true, sign:'Cap' },
-            { answer:'Mis emociones y relación conmigo mism@ y con los demás.', value:true, sign:'Sco' },
-            { answer:'Mi papel en la familia, la armonía y bienestar en la que convivimos.', value:true, sign:'Can' },
+            { answer:'Mis logros profesionales y mi rol en la sociedad.', value:true, sign:'Cap' },
+            { answer:'Mi papel en la familia, la armonía y bienestar con la que convivimos.', value:true, sign:'Can' },
         ]
     }, { 
         sign:true,
