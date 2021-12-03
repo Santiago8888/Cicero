@@ -15,7 +15,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Transformación, resolución, intuición y transmutación espiritual', value:true, sign:'Sco' },
             { answer:'Libertad, alegría y sabiduría, donde las personas a tu alrededor se sientan expandidas.', value:true, sign:'Sag' },
             { answer:'Humildad, responsabilidad, liderazgo, honorabilidad y crecimiento sostenido', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Un buen amigo, interesado por el bien común que reconoce su inteligencia con humildad.', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -31,7 +31,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Conectar con su intuición, su mundo astral o interior y a transformar sus emociones y pensamientos.', value:true, sign:'Sco' },
             { answer:'A buscar la verdad y a ser libres e independientes.', value:true, sign:'Sag' },
             { answer:'Hacerse responsables, enfocarse en su desarrollo profesional, lograr de sus metas y de tener una actitud madura hacia la sociedad', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'A ver las cosas desde una perspectiva a futuro., ', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -47,7 +47,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Construir tu vida y tus relaciones con valores verdaderos.', value:true, sign:'Sco' },
             { answer:'Respetar a personas de otras ideologías y a ganarte su respeto.', value:true, sign:'Sag' },
             { answer:'Ganar el respeto sin exigir reconocimiento, aceptando que no todos tienen que estar de acuerdo conmigo.', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Respetar y ganarte el respeto evitando la soberbia, siendo humilde y tolerante', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -63,7 +63,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Transformación, resolución, intuición e inteligencia.', value:true, sign:'Sco' },
             { answer:'Aceptación, optimismo, tolerancia y justicia', value:true, sign:'Sag' },
             { answer:'Responsabilidad, liderazgo, honorabilidad y ambición', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Humildad, respeto, paciencia y tolerancia', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -79,7 +79,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Desesperad@, enojado, controlad@ y rencoros@.', value:true, sign:'Sco' },
             { answer:'Desesperad@, juicioso@, deprimd@ y limitad@.', value:true, sign:'Sag' },
             { answer:'Presionad@, exigid@, controlad@ y no reconocid@.', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Impaciente, intolerante, no reconocido y no tomado en cuenta', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -95,7 +95,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Mis emociones y relación conmigo mismo y con los demás.', value:true, sign:'Sco' },
             { answer:'La razón o propósito de mi vida y acciones.', value:true, sign:'Sag' },
             { answer:'Mis logros profesionales y mi papel en la sociedad', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Contribución para el mundo y la sociedad', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -111,7 +111,7 @@ export const quiz3:iQuestion[] = [
             { answer:'La forma de tratarme ocasionalmente parecía que llevaba carga emocional negativa.', value:true, sign:'Sco' },
             { answer:'Códigos morales estrictos, juicio, dogma o total desentendimiento de parte de alguno de tus padres y/o figuras de autoridad ', value:true, sign:'Sag' },
             { answer:'Autoritarismo, exigencia y exceso de responsabilidades', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Falta de reconocimiento de tu inteligencia y originalidad.', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -127,7 +127,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Desarrollar consciencia de lo que atraes a tu vida y eliminar mi negatividad interior.', value:true, sign:'Sco' },
             { answer:'Consciencia de que no tengo toda la verdad', value:true, sign:'Sag' },
             { answer:'Consciencia de mi comportamiento profesional y social', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Ideas innovadoras para el beneficio colectivo.', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -143,7 +143,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Intuyas algo negativo evites el juicio y reacciones impulsivas, encuentres la bondad dentro de ti logrando una transmutación espiritual.', value:true, sign:'Sco' },
             { answer:'Cuando actúes incongruentemente te expondrá y parecerás hipócrita o avergonzado', value:true, sign:'Sag' },
             { answer:'Muchas responsabilidades que habrán de desempeñar con excelencia', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Desesperarme con la agilidad mental de los demás y ser obligado a trabajar en equipo.', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -156,10 +156,10 @@ export const quiz3:iQuestion[] = [
             { answer:'Que me hagan sentir menos, engañen o jueguen con mis sentimientos y amor propio.', value:true, sign:'Leo' },
             { answer:'Traten de usarme para hacer lo que ellos deberían hacer.', value:true, sign:'Vir' },
             { answer:'Ventajosas, buscando hacerme sentir culpable para ayudarlos.', value:true, sign:'Lib' },
-            { answer:'Ingenuos, irresponsables, víctimas, conformistas ', value:true, sign:'Sco' },
-            { answer:'Personas con creencias muy arraigadas', value:true, sign:'Sag' },
+            { answer:'Ingenuos, irresponsables, víctimas, conformistas.', value:true, sign:'Sco' },
+            { answer:'Personas con creencias muy arraigadas.', value:true, sign:'Sag' },
             { answer:'Que no reconezcan tus logros o les falte ambición.', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Recordar que siempre hay alguien más inteligente que yo.', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -191,7 +191,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Desesperación, enojo y destrucción', value:true, sign:'Sco' },
             { answer:'Religiosidad o rigidez', value:true, sign:'Sag' },
             { answer:'De orgullo, frialdad, rigidez y autoritarismo.', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Soberbia, impaciencia, intolerancia y orgullo', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -206,8 +206,8 @@ export const quiz3:iQuestion[] = [
             { answer:'Dar más de lo que es justo.', value:true, sign:'Lib' },
             { answer:'Reaccionar impulsiva o destructivamente y herir a los demás.', value:true, sign:'Sco' },
             { answer:'Presionar a los demás a aceptar tus creencias o siendo incongruente.', value:true, sign:'Sag' },
-            { answer:'Excesivamente autoritarias, o exigiendo reconocimiento', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Excesivamente autoritarias, o exigiendo reconocimiento.', value:true, sign:'Cap' },
+            { answer:'Humillando a los demás, en especial por su inteligencia.', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, { 
@@ -223,7 +223,7 @@ export const quiz3:iQuestion[] = [
             { answer:'Con inteligencia.', value:true, sign:'Sco' },
             { answer:'Con un proposito.', value:true, sign:'Sag' },
             { answer:'Responsabilidad', value:true, sign:'Cap' },
-            { answer:'', value:true, sign:'Aqu' },
+            { answer:'Sabiduria.', value:true, sign:'Aqu' },
             { answer:'', value:true, sign:'Pis' },
         ]
     }, {
