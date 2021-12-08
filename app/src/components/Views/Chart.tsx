@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive'
 import { MiniChart } from '../Astral/MiniChart'
 import { mapSigns } from '../../utils/sign'
 import { useEffect } from 'react'
+import { Approve } from '../Home'
 
 
 interface iChart { 
@@ -12,7 +13,7 @@ interface iChart {
     description?:string[]
     planet?:Planet
     drawHouses?:boolean
-    approve(props:iApprove):boolean | void
+    approve(props:iApprove):Approve
     next():void 
 }
 
@@ -44,7 +45,7 @@ const NatalData = ({ sign }:iUser) => sign ?
             Favor de escribit y solicitar tu signo.
         </span>
 
-export const Chart = ({ user, title, description, planet, drawHouses, next, approve }: iChart) => {
+export const Chart = ({ user, title, planet, drawHouses, next, approve }: iChart) => {
     const { natalChart: { planets, houses } } = user 
 
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })

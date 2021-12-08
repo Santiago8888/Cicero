@@ -1,5 +1,5 @@
-import { App as RealmApp, Credentials } from 'realm-web'
 import { iPlanet } from '../app/src/components/Astral/AstralChart'
+import { App as RealmApp, Credentials } from 'realm-web'
 import axios from 'axios'
 
 require('dotenv').config()
@@ -38,16 +38,17 @@ const fetchUser = async() => {
     const mongo = app.currentUser.mongoClient('mongodb-atlas')
     const db = mongo.db('Cicero')
 
-    const user = await db.collection('users').findOne({email:'gabgomra@gmail.com'})
-    console.log(user.name, user.date, user.location)
+    const user = await db.collection('users').findOne({ email:"san@astro.mail" })
+    console.log(user)
 
     if(!user.date || !user.location) return
 
-    const { sign } = await getChart(user.date, user.location)
+    const { sign, natalChart } = await getChart(user.date, user.location)
     user.sign = sign
+    user.natalChart = natalChart
 
-    user.progress = { unit:1, module:0, lesson:0 }
-    user.current = { unit:1, module:0, lesson:0 }
+    // user.progress = { unit:1, module:0, lesson:0 }
+    // user.current = { unit:1, module:0, lesson:0 }
     
     console.log(user.email, user.sign)
     await db.collection('users').updateOne({ email:user.email }, user)

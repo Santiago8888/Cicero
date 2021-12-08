@@ -8,6 +8,7 @@ import { iPlanet } from './components/Astral/AstralChart'
 import { Recordings, Forum, Units } from './data/data'
 import { iLoginInput } from './components/Auth/Login'
 import { Modal } from './components/Forum/Atoms'
+import { maxProgress } from './utils/user'
 import { Home } from './components/Home'
 
 import { App as RealmApp, Credentials } from 'realm-web'
@@ -91,11 +92,16 @@ export const App = () => {
 
 
     /**************************        Auth            ***************************/
-    const updateUser = (user:iUser) => {
+    const updateUser = async(user:iUser) => {
         if(!app?.currentUser || !db) return
 
         setUser(user)
+
+        const { progress }:iUser = await db.collection('users').findOne({ user_id:app.currentUser.id })
+        user.progress = maxProgress(user.progress, progress)
+
         db.collection('users').updateOne({ user_id:app.currentUser.id }, {...user, user_id:app.currentUser.id})
+        setUser(user)
 
         try { amplitude.getInstance().logEvent('ASTRO_NAVIGATE', { ...user.current }) } catch(e) { }
     } 

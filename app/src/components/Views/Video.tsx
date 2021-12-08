@@ -1,6 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
 import ReactPlayer from 'react-player/youtube'
 import { iApprove, iUser } from '../../App'
+import { Approve } from '../Home'
 
 
 interface iVideo { 
@@ -9,7 +10,7 @@ interface iVideo {
     link?:string
     description?:string[]
     next():void
-    approve(props:iApprove):boolean | void
+    approve(props:iApprove):Approve
 }
 
 

@@ -10,7 +10,7 @@ import { Content } from './Content'
 import { iApprove, iUser } from '../App'
 
 
-
+export type Approve = boolean | void | Promise<void>
 interface iHome { 
     user?:iUser
     isLogin:boolean
@@ -21,7 +21,7 @@ interface iHome {
 
     next():void
     setLogin():void
-    approve(props:iApprove):boolean | void
+    approve(props:iApprove):Approve
     login(loginInput:iLoginInput):void
     submit(doubt:iDoubt):void
 
