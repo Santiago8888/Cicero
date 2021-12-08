@@ -3,6 +3,7 @@ import { sign_names } from '../Astral/AstralChart'
 import { iApprove, iUser, Sign } from '../../App'
 import { useMediaQuery } from 'react-responsive'
 import amplitude from 'amplitude-js'
+import { Approve } from '../Home'
 
 
 interface iAnswer { answer:string, value:boolean, sign?:Sign }
@@ -136,11 +137,11 @@ const Modal = ({ user, questions, score, isActive, approved, min, deactivate, ne
 
 interface iQuiz { 
     title:string
-    description?:string[],
+    description?:string[]
     questions?:iQuestion[]
-    min?:number,
+    min?:number
     next():void
-    approve(props:iApprove):boolean|void
+    approve(props:iApprove):Approve
     user:iUser
 }
 export const Quiz = ({ title, description, questions=[], min=questions.length*.7, next, approve, user }: iQuiz) =>  {
@@ -153,7 +154,7 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
 
     const [score, setScore] = useState<number>() 
     const [approved, setApproved] = useState<boolean>()
-    const submit = () => {
+    const submit = async() => {
 
         const answers = Object.entries(values).map(([k, v]) => 
             !questions[k as unknown as number].answers[v].sign
@@ -166,7 +167,7 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
         const score = answers.filter(a=>a).length
         setScore(score)
 
-        const isApproved = approve({score}) || false
+        const isApproved = await approve({score}) || false
         setApproved(isApproved)
 
         setActive(true)

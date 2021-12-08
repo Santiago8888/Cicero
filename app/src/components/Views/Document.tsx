@@ -2,6 +2,7 @@ import { useMediaQuery } from 'react-responsive'
 import { iApprove, iUser } from '../../App'
 import { mapSign } from '../../utils/sign'
 import { questionStyle } from './Quiz'
+import { Approve } from '../Home'
 import { useState } from 'react'
 
 
@@ -12,7 +13,7 @@ interface iDocument {
     description?:string[]
     min?:number
     next():void
-    approve(props:iApprove):boolean | void 
+    approve(props:iApprove):Approve 
 }
 
 interface iDivider { midScreen:boolean }
