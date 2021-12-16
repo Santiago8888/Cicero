@@ -76,7 +76,7 @@ const module13:iLesson[] = [
         end:true,
         description:[
             '¡Felicidades! Has completado el primer módulo.',
-            `La segunda lección estará disponible el Jueves 25 a partir de las 9pm (CDMX) después del primer live.
+            `Podrás acceder al segundo módulo el próximo Jueves a partir las 9pm (CDMX) al terminar el live por Zoom.
             Por lo pronto, te invitamos a que realices este ejercicio práctico para trasladar tus nuevos conocimientos a tu vida diaria.`
         ] 
     }
