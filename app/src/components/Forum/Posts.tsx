@@ -42,11 +42,12 @@ export interface iPost {
 interface IPost extends iPost { 
     id:number, 
     user:iUser, 
+    isAnnouncement?:boolean
     reply(text:string, postId:number):void, 
     like(postId:number):void 
 }
 
-const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
+const Post = ({ id, user, title, name, image, detail, likes, comments, isAnnouncement, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -67,11 +68,11 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
     
     return <div style={{display:'flex', marginBottom:64}}>
         <div className='card' style={{textAlign:'left', width:'100%'}}>
-            <header className='card-header' style={{height:48}}>
+            <header className='card-header' style={{height:48, backgroundColor: isAnnouncement ? 'darkolivegreen' : 'white'}}>
                 <figure className='image is-24x24' style={{margin:'auto 12px'}}>
                     <img src={image ? `signs/${image}.png` : 'planets/Saturn_terra.png'} alt='Solar sign' />
                 </figure>
-                <p className='title is-4' style={{ margin:'auto 12px'}}>
+                <p className='title is-4' style={{ margin:'auto 12px', color: !isAnnouncement ? '#363636' : 'white'}}>
                     { name }
                 </p>
             </header>
@@ -79,7 +80,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
             <div className='card-content' style={{paddingBottom:'0.25rem'}}>
                 <div className='content' style={{minHeight: 100, textAlign:'left', width:'100%'}}>
                     <h5> { title } </h5>
-                    <p> { detail } </p>
+                    { detail.split('\\n').map((p, i) => <p key={i}> { p } </p>) }
                 </div>
 
                 <nav className='level'>
