@@ -37,7 +37,7 @@ const posts2Description = [
 
 
 const karmaDescription = [
-    'En esta lectura conocerás a profundidad tu karma de Saturno, lo que te está restringiendo y que vienes a aprender.',
+    'En esta lectura conocerás a profundidad tu karma de Saturno, lo que te está restringiendo y lo que vienes a aprender.',
     '',
     'Obtendrás un vistazo a tus vidas pasadas y algunas de las circunstancias que te hicieron desarrollar tu karma.',
     '',
