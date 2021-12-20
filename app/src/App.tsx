@@ -140,10 +140,13 @@ export const App = () => {
 
     /*******************        Navigation            *******************/
     const clickNavbar = async(item:NavbarItem) => {
+        try { amplitude.getInstance().logEvent('ASTRO_CLICK', { tab:item }) } catch (e) { }
+
         if(item === 'Home') reset()
         if (item === 'Login') return setLogin(true)
         if(item === 'Back') return back()
         if(item === 'Next') return next()
+        
 
         if(!db) return
 
