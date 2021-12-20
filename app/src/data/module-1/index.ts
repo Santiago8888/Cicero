@@ -41,6 +41,7 @@ const module12:iLesson[] = [
     { type:'Quiz', title:'Quiz 1.2', questions:quiz12 },
     { type:'Video', title:'Saturno, el maestro', link:'https://youtu.be/uilBR7op_GY' },
     { 
+        min:5,
         type:'Reading', 
         title:'El Señor del Karma', 
         link:'docs/Saturno-Señor-del-Karma.pdf', 
