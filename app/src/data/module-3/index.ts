@@ -1,9 +1,14 @@
 import { iLesson } from '../../components/LayOut/Menu'
 import { quiz1 } from './quiz1'
 
+const quiz31Description = [
+    'Después de escuchar las explicaciones de las casas, te invitamos a que hagas una pausa y reflexiones sobre el estado actual de tu vida.',
+    'No hay respuestas incorrectas, este es un ejercicio para que adquieras más consciencia sobre lo que te gusta y lo que te gustaría mejorar de tu vida presente.'
+]
+
 const lessons1:iLesson[] = [
     { type:'Video', title:'Las casas en la astrología', link:'https://youtu.be/bvQh_9PCos8' },
-    { type:'Quiz', title:'Auto Diagnóstico', description:[''], questions:quiz1 },
+    { type:'Quiz', title:'Auto Diagnóstico', description:quiz31Description, questions:quiz1 },
     { type:'Video', title:'La influencia de Saturno', link:'https://youtu.be/JtfC2DSLxVE' }
 ]
 
