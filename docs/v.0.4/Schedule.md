@@ -11,3 +11,9 @@
 * [ ] Post 3.2
 * [ ] Quiz 3.3
 * [ ] First six readings
+
+## Monday 
+* [ ] Finalize readings
+* [ ] Quiz 3.2 (questions)
+* [ ] Practical Excercise
+* [ ] Chart setup
