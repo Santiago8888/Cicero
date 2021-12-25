@@ -1,8 +1,9 @@
 import { iLesson } from '../../components/LayOut/Menu'
-
+import { quiz1 } from './quiz1'
 
 const lessons1:iLesson[] = [
     { type:'Video', title:'Las casas astrológicas', link:'https://youtu.be/bvQh_9PCos8' },
+    { type:'Quiz', title:'Quiz 3.1: Autodiagnóstico', description:[''], questions:quiz1 },
     { type:'Video', title:'La influencia de Saturno', link:'https://youtu.be/JtfC2DSLxVE' }
 ]
 
