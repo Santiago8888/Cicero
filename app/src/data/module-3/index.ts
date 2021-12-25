@@ -23,7 +23,7 @@ const lessons3:iLesson[] = [
 ]
 
 export const module3 = [
-    { title: '3.1 Las áreas de tu vida', lessons:lessons1 },
+    { title: '3.1 Saturno en tu vida', lessons:lessons1 },
     { title: '3.2 Armonizando a Saturno', lessons:lessons2 },
     { title: '3.3 Saturno y el tiempo', lessons:lessons3 }
 ]
