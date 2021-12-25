@@ -31,15 +31,15 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 4: el hogar.', value:true },
             { answer:'Casa 8: momentos de instrospección)', value:true },
             { answer:'Casa 7: la pareja.', value:true },
-            { answer:'Casa 10: tu profesión.', value:true }
+            { answer:'Casa 10: mi profesión.', value:true }
         ]
     }, {
         question:'5. ¿Qué casa quieres llevar a la excelencia?',
         answers:[
-            { answer:'Casa 1: tu yo personal.', value:true },
-            { answer:'Casa 9: tu sabiduria y conocimiento.', value:true },
-            { answer:'Casa 11: tu ayuda a la comunidad.', value:true },
-            { answer:'Casa 12: tu espiritualidad.', value:true }
+            { answer:'Casa 1: mi yo personal.', value:true },
+            { answer:'Casa 9: mi sabiduria y conocimiento.', value:true },
+            { answer:'Casa 11: mi ayuda a la comunidad.', value:true },
+            { answer:'Casa 12: mi espiritualidad.', value:true }
         ]
     }, {
         question:'6. ¿En que área quieres mejorar?',
@@ -47,7 +47,7 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 6: la salud.', value:true },
             { answer:'Casa 7: la pareja.', value:true },
             { answer:'Casa 2 el dinero.', value:true },
-            { answer:'Casa 8: tu yo interno.', value:true }
+            { answer:'Casa 8: mi yo interno.', value:true }
         ]
     }, {
         question:'7. ¿En que área te conectas más, recibes más luz?',
