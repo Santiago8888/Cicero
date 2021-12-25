@@ -17,3 +17,8 @@
 * [ ] Quiz 3.2 (questions)
 * [ ] Practical Excercise
 * [ ] Chart setup
+
+## Tuesday
+* [ ] Chart debugging
+* [ ] Doubt to finalize module
+* [ ] Redirect on chat
