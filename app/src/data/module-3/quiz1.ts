@@ -44,18 +44,18 @@ export const quiz1:iQuestion[] = [
     }, {
         question:'6. ¿En que área quieres mejorar?',
         answers:[
-            { answer:'Casa 6: la salud.', value:true },
-            { answer:'Casa 7:, la pareja.', value:true },
             { answer:'Casa 2: el dinero.', value:true },
+            { answer:'Casa 6: la salud.', value:true },
+            { answer:'Casa 7: la pareja.', value:true },
             { answer:'Casa 8: mi yo interno.', value:true }
         ]
     }, {
         question:'7. ¿En que área te conectas más, recibes más luz?',
         answers:[
-            { answer:'Casas 4, 5 o 7: la familia, mis hijos o pareja.', value:true },
             { answer:'Casas 1 u 8: estando conmigo mism@.', value:true },
+            { answer:'Casas 4, 5 o 7: la familia, mis hijos o pareja.', value:true },
+            { answer:'Casas 6 o 10: mi trabajo o profesión.', value:true },
             { answer:'Casas 9 u 12: mi filosofía o espiritualidad.', value:true },
-            { answer:'Casas 6 o 10: mi trabajo o profesión.', value:true }
         ]
     }
 ]
