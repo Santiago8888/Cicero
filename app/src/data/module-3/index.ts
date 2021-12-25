@@ -11,7 +11,10 @@ const lessons2:iLesson[] = [
     { type:'Video', title:'Los ciclos de Saturno', link:'https://youtu.be/Pu4X1ECLSjY' }
 ]
 
-const lessons3:iLesson[] = []
+const lessons3:iLesson[] = [
+    { type:'Video', title:'Los tránsitos de Saturno', link:'https://youtu.be/7sRKVAHorco' },
+    { type:'Video', title:'Saturno y la Salud', link:'https://youtu.be/zenrgnOxS1A' },
+]
 
 export const module3 = [
     { title: '3.1 Las áreas de tu vida', lessons:lessons1 },
