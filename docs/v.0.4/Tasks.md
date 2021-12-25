@@ -8,6 +8,7 @@
 - [ ] 2 Meditations
 - [ ] 1 Practical Excersice
 - [ ] Record Introductory Video 
+- [ ] Add paying lock on user object.
 
 
 ## Lives
@@ -24,4 +25,10 @@
 - [ ] Change progress & current to next lesson.
 
 
-## Charts 
+## Charts
+
+- [ ] Add house property on user object.
+- [ ] Test Chart with 5 examples in Mexico.
+- [ ] Proceed to international users.
+- [ ] Final random sample of 3 - 10 users.
+- [ ] Add chart lesson on Module 3.
