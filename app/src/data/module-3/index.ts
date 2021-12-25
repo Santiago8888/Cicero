@@ -1,3 +1,4 @@
+import { posts1 } from './posts'
 import { iLesson } from '../../components/LayOut/Menu'
 import { quiz1 } from './quiz1'
 
@@ -9,7 +10,8 @@ const quiz31Description = [
 const lessons1:iLesson[] = [
     { type:'Video', title:'Las casas en la astrología', link:'https://youtu.be/bvQh_9PCos8' },
     { type:'Quiz', title:'Auto Diagnóstico', description:quiz31Description, questions:quiz1 },
-    { type:'Video', title:'La influencia de Saturno', link:'https://youtu.be/JtfC2DSLxVE' }
+    { type:'Video', title:'La influencia de Saturno', link:'https://youtu.be/JtfC2DSLxVE' },
+    { type:'Reflection', title:'Ejercicio de Compartir', posts:posts1, numbered:true }
 ]
 
 const lessons2:iLesson[] = [
