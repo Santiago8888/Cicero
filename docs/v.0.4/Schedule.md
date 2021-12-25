@@ -22,3 +22,8 @@
 * [ ] Chart debugging
 * [ ] Doubt to finalize module
 * [ ] Redirect on chat
+
+## Wednesday
+* [ ] Test Chart
+* [ ] Record Video
+* [ ] Finalize Details
