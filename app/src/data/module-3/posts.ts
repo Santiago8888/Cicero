@@ -4,4 +4,5 @@ export const posts1 = [
     '¿Cuándo tuviste que luchar mucho por conseguir algo, producto de la limitación de Saturno?',
     '¿Qué estructura tienes en la casa en la que se encuentra Saturno?',
     '¿Qué le estás enseñando a los demás en la casa que tienes a Saturno?',
+    '¿Alguna vez no se te "perdono nada" en la casa de tu Saturno?'
 ]
