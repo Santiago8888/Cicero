@@ -42,6 +42,14 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 12: tu espiritualidad.', value:true }
         ]
     }, {
+        question:'6. ¿En que área quieres mejorar?',
+        answers:[
+            { answer:'Casa 6: la salud.', value:true },
+            { answer:'Casa 7: la pareja.', value:true },
+            { answer:'Casa 2 el dinero.', value:true },
+            { answer:'Casa 8: tu yo interno.', value:true }
+        ]
+    }, {
         question:'',
         answers:[
             { answer:'', value:true },
