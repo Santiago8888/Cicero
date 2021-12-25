@@ -188,11 +188,11 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
                 margin:'0rem auto 2rem',
                 color: '#333',
                 fontSize: '1.25em',
-                textAlign: 'left',
+                textAlign: 'center',
                 fontWeight: 500,
                 width: midScreen ? 660 : 320        
             }}
-        > { description ? description[0] : '' } </h3>
+        > { description ? description.map(p => <span> { p } <br/><br/> </span>) : '' } </h3>
 
         <div style={{ width: midScreen ? 880 : 'auto', margin:'auto' }}>
             {
