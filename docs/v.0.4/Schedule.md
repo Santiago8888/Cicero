@@ -27,3 +27,7 @@
 * [ ] Test Chart
 * [ ] Record Video
 * [ ] Finalize Details
+
+## Thursday
+* [ ] Testing
+* [ ] Deploy
