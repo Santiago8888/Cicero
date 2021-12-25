@@ -15,7 +15,15 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 4: la familia.', value:true },
             { answer:'Casa 1: tu yo personal.', value:true },
             { answer:'Casa 5: el gozo.', value:true },
-            { answer:'Casa 11: ayuda desinteresada, servicio.', value:true },
+            { answer:'Casa 11: ayuda desinteresada.', value:true },
+        ]
+    }, {
+        question:'3. ¿Qué es aquello que crees que puedes dar u obsequiar más a los demas?',
+        answers:[
+            { answer:'Casa 3: comunicación e información.', value:true },
+            { answer:'Casa 2: dinero y valores.', value:true },
+            { answer:'Casa 12: tu servicio y tiempo.', value:true },
+            { answer:'Casa 9: tu conocimiento y visión.', value:true }
         ]
     }, {
         question:'',
@@ -25,5 +33,5 @@ export const quiz1:iQuestion[] = [
             { answer:'', value:true },
             { answer:'', value:true }
         ]
-    }, 
+    }
 ]
