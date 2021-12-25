@@ -34,7 +34,7 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 10: mi profesión.', value:true }
         ]
     }, {
-        question:'5. ¿Qué casa quieres llevar a la excelencia?',
+        question:'5. ¿Cuál de las siguientes casas te gustaría llevar a la excelencia?',
         answers:[
             { answer:'Casa 1: mi yo personal.', value:true },
             { answer:'Casa 9: mi sabiduria y conocimiento.', value:true },

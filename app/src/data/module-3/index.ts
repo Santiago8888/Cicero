@@ -1,5 +1,8 @@
+import { posts1 } from './posts'
 import { iLesson } from '../../components/LayOut/Menu'
 import { quiz1 } from './quiz1'
+
+const posts1Description = ['Después de haber escuchado algunos ejemplos y características de la influencia de Saturno en las casas. Comparte tu experiencia con alguna de las siguientes preguntas sobre como ha influido Saturno en tu vida.']
 
 const quiz31Description = [
     'Después de escuchar las explicaciones de las casas, te invitamos a que hagas una pausa y reflexiones sobre el estado actual de tu vida.',
@@ -9,7 +12,8 @@ const quiz31Description = [
 const lessons1:iLesson[] = [
     { type:'Video', title:'Las casas en la astrología', link:'https://youtu.be/bvQh_9PCos8' },
     { type:'Quiz', title:'Auto Diagnóstico', description:quiz31Description, questions:quiz1 },
-    { type:'Video', title:'La influencia de Saturno', link:'https://youtu.be/JtfC2DSLxVE' }
+    { type:'Video', title:'La influencia de Saturno', link:'https://youtu.be/JtfC2DSLxVE' },
+    { type:'Reflection', title:'Ejercicio de Compartir', posts:posts1, numbered:true, description:posts1Description }
 ]
 
 const lessons2:iLesson[] = [
@@ -23,7 +27,7 @@ const lessons3:iLesson[] = [
 ]
 
 export const module3 = [
-    { title: '3.1 Las áreas de tu vida', lessons:lessons1 },
+    { title: '3.1 Saturno en tu vida', lessons:lessons1 },
     { title: '3.2 Armonizando a Saturno', lessons:lessons2 },
     { title: '3.3 Saturno y el tiempo', lessons:lessons3 }
 ]
