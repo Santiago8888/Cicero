@@ -50,12 +50,12 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 8: tu yo interno.', value:true }
         ]
     }, {
-        question:'',
+        question:'7. ¿En que área te conectas más, recibes más luz?',
         answers:[
-            { answer:'', value:true },
-            { answer:'', value:true },
-            { answer:'', value:true },
-            { answer:'', value:true }
+            { answer:'Casas 4 o 7: el hogar, la familia o pareja.', value:true },
+            { answer:'Casas 1 u 8: estando conmigo mism@.', value:true },
+            { answer:'Casas 9 u 12: mi filosofía o espiritualidad.', value:true },
+            { answer:'Casas 6 o 10: mi trabajo o profesión.', value:true }
         ]
     }
 ]
