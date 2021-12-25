@@ -7,6 +7,7 @@
 - [ ] 1 Lecture
 - [ ] 2 Meditations
 - [ ] 1 Practical Excersice
+- [ ] Record Introductory Video 
 
 
 ## Lives
@@ -21,3 +22,6 @@
 
 - [ ] Redirect to chat after post.
 - [ ] Change progress & current to next lesson.
+
+
+## Charts 
