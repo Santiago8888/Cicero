@@ -20,10 +20,10 @@ export const quiz1:iQuestion[] = [
     }, {
         question:'3. ¿Cuál de estas estas consecuencias NO ocurre al incumplir nuestro compromiso con Saturno?',
         answers:[
-            { answer:'Las consecuencias negativas serán inmediatas.', value:true }, 
+            { answer:'Las consecuencias negativas serán inmediatas.', value:false }, 
             { answer:'Los demás aprenderán a través nuestro mal ejemplo.', value:false }, 
             { answer:'Saturno nos guiará a través de nuestra voz interior.', value:false }, 
-            { answer:'Nos dará todavía más responsabilidad.', value:false }, 
+            { answer:'Nos dará todavía más responsabilidad.', value:true }, 
         ]
     }, {
         question:'4. El signo en el que se encuentra Saturno esta restringido, ¿Cuál de estas NO es una consecuencia de ello?',

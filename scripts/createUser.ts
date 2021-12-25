@@ -25,6 +25,7 @@ const getChart = async(date:Date, location:string) => {
 
     const url = `https://astroconsciencia.gq/.netlify/functions/astro-chart${chartParams}`
     const { data: { houses, planets } } =  await axios.get(url)
+    console.log(houses, planets)
 
     const sun = planets.find(({name}:{name:string}) => name === 'Sun')
     const sign = mapSign(sun)

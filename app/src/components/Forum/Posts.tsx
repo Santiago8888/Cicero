@@ -37,6 +37,7 @@ export interface iPost {
     detail:string, 
     likes:string[], 
     comments:iComment[] 
+    announcement?:boolean
 }
 
 interface IPost extends iPost { 
@@ -46,7 +47,7 @@ interface IPost extends iPost {
     like(postId:number):void 
 }
 
-const Post = ({ id, user, title, name, image, detail, likes, comments, reply, like }: IPost) => {
+const Post = ({ id, user, title, name, image, detail, likes, comments, announcement, reply, like }: IPost) => {
     const [ canComment, setCanComment ] = useState(false) 
     const [ showComments, setShowComments ] = useState(false)
     const [ value, setValue ] = useState('')
@@ -65,13 +66,26 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
         setShowComments(!showComments)
     }
     
+    const announcementStyle:{[key:string]:CSSProperties} = {
+        header: { backgroundColor:'darkolivegreen' },
+        figure:{ margin:6, height:36, width:36, borderRadius:'50%', backgroundColor:'white' },
+        image:{ padding:8, marginTop:-1 }
+    }    
+
     return <div style={{display:'flex', marginBottom:64}}>
         <div className='card' style={{textAlign:'left', width:'100%'}}>
-            <header className='card-header' style={{height:48}}>
-                <figure className='image is-24x24' style={{margin:'auto 12px'}}>
-                    <img src={image ? `signs/${image}.png` : 'planets/Saturn_terra.png'} alt='Solar sign' />
+            <header className='card-header' style={{height:48, ...announcement ? announcementStyle.header : {}}}>
+                <figure 
+                    className='image is-24x24' 
+                    style={ announcement ? announcementStyle.figure : {margin:'auto 12px'} }
+                >
+                    <img 
+                        src={image ? `signs/${image}.png` : 'planets/Saturn_terra.png'} 
+                        style={announcement ? announcementStyle.image : {}}
+                        alt='Solar sign' 
+                    />
                 </figure>
-                <p className='title is-4' style={{ margin:'auto 12px'}}>
+                <p className='title is-4' style={{ margin:'auto 12px', color: !announcement ? '#363636' : 'white'}}>
                     { name }
                 </p>
             </header>
@@ -79,7 +93,7 @@ const Post = ({ id, user, title, name, image, detail, likes, comments, reply, li
             <div className='card-content' style={{paddingBottom:'0.25rem'}}>
                 <div className='content' style={{minHeight: 100, textAlign:'left', width:'100%'}}>
                     <h5> { title } </h5>
-                    <p> { detail } </p>
+                    { detail.split('\\n').map((p, i) => <p key={i}> { p } </p>) }
                 </div>
 
                 <nav className='level'>
@@ -204,6 +218,9 @@ export const Posts = ({user, posts, post, reply, like}: iPosts) => {
             </div>
         </Modal>
 
-        { posts.map((post, i) => <Post id={i} user={user} {...post} reply={reply} like={like} key={i}/>) } 
+        { 
+            posts.sort(({announcement:a},{announcement:b}) => a && !b ? -1 : 1)
+            .map((post, i) => <Post id={i} user={user} {...post} reply={reply} like={like} key={i}/> )
+        } 
     </div>
 }
