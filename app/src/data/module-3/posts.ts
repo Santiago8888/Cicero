@@ -3,4 +3,5 @@ export const posts1 = [
     'Saturno trae mucha conciencia a la casa en la que se encuentra. ¿De que eres consciente en esa área de tu vida?',
     '¿Cuándo tuviste que luchar mucho por conseguir algo, producto de la limitación de Saturno?',
     '¿Qué estructura tienes en la casa en la que se encuentra Saturno?',
+    '¿Qué le estás enseñando a los demás en la casa que tienes a Saturno?',
 ]
