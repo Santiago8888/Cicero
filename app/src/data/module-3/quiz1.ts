@@ -34,6 +34,14 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 10: tu profesión.', value:true }
         ]
     }, {
+        question:'5. ¿Qué casa quieres llevar a la excelencia?',
+        answers:[
+            { answer:'Casa 1: tu yo personal.', value:true },
+            { answer:'Casa 9: tu sabiduria y conocimiento.', value:true },
+            { answer:'Casa 11: tu ayuda a la comunidad.', value:true },
+            { answer:'Casa 12: tu espiritualidad.', value:true }
+        ]
+    }, {
         question:'',
         answers:[
             { answer:'', value:true },
