@@ -17,5 +17,13 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 5: el gozo.', value:true },
             { answer:'Casa 11: ayuda desinteresada, servicio.', value:true },
         ]
-    }
+    }, {
+        question:'',
+        answers:[
+            { answer:'', value:true },
+            { answer:'', value:true },
+            { answer:'', value:true },
+            { answer:'', value:true }
+        ]
+    }, 
 ]
