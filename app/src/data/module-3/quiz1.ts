@@ -12,9 +12,9 @@ export const quiz1:iQuestion[] = [
     }, {
         question:'2. ¿Cuál es la casa a la que sientes que le necesitas dedicar más tiempo o atención??',
         answers:[
-            { answer:'Casa 4, a la familia.', value:true },
             { answer:'Casa 1, mi yo personal.', value:true },
             { answer:'Casa 5, el gozo y la creatividad.', value:true },
+            { answer:'Casa 10, mi profesión.', value:true },
             { answer:'Casa 11, la ayuda desinteresada.', value:true },
         ]
     }, {
@@ -52,7 +52,7 @@ export const quiz1:iQuestion[] = [
     }, {
         question:'7. ¿En que área te conectas más, recibes más luz?',
         answers:[
-            { answer:'Casas 4 o 7: el hogar, la familia o pareja.', value:true },
+            { answer:'Casas 4, 5 o 7: la familia, mis hijos o pareja.', value:true },
             { answer:'Casas 1 u 8: estando conmigo mism@.', value:true },
             { answer:'Casas 9 u 12: mi filosofía o espiritualidad.', value:true },
             { answer:'Casas 6 o 10: mi trabajo o profesión.', value:true }
