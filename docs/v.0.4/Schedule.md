@@ -3,7 +3,7 @@
 ## Saturday
 * [X] Index
 * [X] Videos
-* [ ] Quiz 3.1
+* [X] Quiz 3.1
 * [ ] Post 3.1
 * [ ] Saggitarius reading edit 
 
