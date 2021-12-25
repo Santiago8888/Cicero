@@ -22,8 +22,16 @@ export const quiz1:iQuestion[] = [
         answers:[
             { answer:'Casa 3: comunicación e información.', value:true },
             { answer:'Casa 2: dinero y valores.', value:true },
-            { answer:'Casa 12: tu servicio y tiempo.', value:true },
-            { answer:'Casa 9: tu conocimiento y visión.', value:true }
+            { answer:'Casa 12: servicio y tiempo.', value:true },
+            { answer:'Casa 9: conocimiento y visión.', value:true }
+        ]
+    }, {
+        question:'4. ¿Qué area de la vida disfrutas más?',
+        answers:[
+            { answer:'Casa 4: el hogar.', value:true },
+            { answer:'Casa 8: momentos de instrospección)', value:true },
+            { answer:'Casa 7: la pareja.', value:true },
+            { answer:'Casa 10: tu profesión.', value:true }
         ]
     }, {
         question:'',
