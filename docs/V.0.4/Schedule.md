@@ -8,7 +8,7 @@
 * [X] House 11 reading edit 
 
 ## Sunday
-* [ ] Post 3.2
+* [X] Post 3.2
 * [ ] Quiz 3.2 (questions)
 * [ ] First six readings
 
