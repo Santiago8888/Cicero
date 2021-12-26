@@ -1,6 +1,6 @@
 import { iQuestion } from "../../components/Views/Quiz"
 
-export const quiz1:iQuestion[] = [
+export const quiz2:iQuestion[] = [
     {
         question:'1. ¿Cuál NO debe ser un objetivo de la casa en que se encuentra Saturno?',
         answers:[
