@@ -9,5 +9,9 @@ export const quiz1:iQuestion[] = [
             { answer:'Liberarnos de la influencia astrológica de Saturno.', value:true },
             { answer:'Desarrollar una estructura conforme adquiramos experiencia.', value:false }
         ]
+    }, {
+        question:'',
+        answers:[],
+        sign:true
     }
 ]
