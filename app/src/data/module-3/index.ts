@@ -1,4 +1,4 @@
-import { posts1 } from './posts'
+import { posts1, posts2 } from './posts'
 import { iLesson } from '../../components/LayOut/Menu'
 import { quiz1 } from './quiz1'
 
@@ -25,7 +25,8 @@ const reading2Description = [
 const lessons2:iLesson[] = [
     { type:'Video', title:'La casa de Saturno', link:'https://youtu.be/nPZtv_lKmKM' },
     { type:'Reading', title:'Saturno en la Casa XI', link:'docs/casas/Saturno-en-Casa-XI.pdf', description:reading2Description },
-    { type:'Video', title:'Los ciclos de Saturno', link:'https://youtu.be/Pu4X1ECLSjY' }
+    { type:'Video', title:'Los ciclos de Saturno', link:'https://youtu.be/Pu4X1ECLSjY' },
+    { type:'Reflection', title:'Ejercicio de Reflexión', posts:posts2, numbered:true, description:[] }
 ]
 
 const lessons3:iLesson[] = [
