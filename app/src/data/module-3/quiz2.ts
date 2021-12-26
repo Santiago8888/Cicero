@@ -81,16 +81,47 @@ export const quiz1:iQuestion[] = [
         answers:[
             { answer:'Mi compromiso hacia el grupo, y la causa a la que que dedico mi servicio.', value:true }
         ]
+    }, {
+        sign:true,
+        question:'14. ¿Qué ejemplo debes proyectar?',
+        answers:[
+            { answer:'Una persona que devuelve generosamente a la sociedad.', value:true }
+        ]
+    }, {
+        sign:true,
+        question:'15. ¿Qué sabes mejor que nadie?',
+        answers:[
+            { answer:'Que la comunidad en la que vivimos no es perfecta, y requiere de nuestra participación para mejorarla.', value:true }
+        ]
+    }, {
+        sign:true,
+        question:'16. ¿Qué te admirarán al obedecer tu vocación de servicio?',
+        answers:[
+            { answer:'Mi altruismo, y ayuda desinteresada.', value:true }
+        ]
+    }, {
+        sign:true,
+        question:'17. ¿Qué pasará conforme avances en tu misión de servicio?',
+        answers:[
+            { answer:'Lo que considero mi comunidad se expandirá y cada vez involucrará a más personas.', value:true }
+        ]
+    }, {
+        sign:true,
+        question:'18. ¿Qué es recomendable de acuerdo a tu Saturno?',
+        answers:[
+            { answer:'Elegir una causa inclusiva, independiente de cualquier asociación o afiliación política, religiosa o social.', value:true }
+        ]
+    }, {
+        sign:true,
+        question:'19. ¿Cuáles son excelentes ejemplos de tu vocación de servicio?',
+        answers:[
+            { answer:'Preservación del medio ambiente, la lucha contra la pobreza o el servicio a los más necesitados.', value:true }
+        ]
+    }, {
+        sign:true,
+        question:'20. ¿Para qué te presiona Saturno?',
+        answers:[
+            { answer:'Convertirme en un lider sabio y visionario que puede dar respuestas a los demás y ayudarlos a lograr sus ideales y aspiraciones.', value:true }
+        ]
     }
 ]
-
-
-
-
-
-
-
-
-
-
-
