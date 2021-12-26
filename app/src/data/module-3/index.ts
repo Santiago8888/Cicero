@@ -16,8 +16,15 @@ const lessons1:iLesson[] = [
     { type:'Reflection', title:'Ejercicio de Compartir', posts:posts1, numbered:true, description:posts1Description }
 ]
 
+const reading2Description = [
+    'Ahora, recibirás información precisa sobre como armonizar Saturno en tu vida de acuerdo a tu carta astral.',
+    'Conoceras que implica tener una actitud impecable de acuerdo a la casa que se encuentra y que ejemplo debes mostrar ante los demás.',
+    'Tiempo mínimo sugerido: 4 minutos'
+]
+
 const lessons2:iLesson[] = [
     { type:'Video', title:'La casa de Saturno', link:'https://youtu.be/nPZtv_lKmKM' },
+    { type:'Reading', title:'Saturno en la Casa XI', link:'docs/casas/Saturno-en-Casa-XI.pdf', description:reading2Description },
     { type:'Video', title:'Los ciclos de Saturno', link:'https://youtu.be/Pu4X1ECLSjY' }
 ]
 
