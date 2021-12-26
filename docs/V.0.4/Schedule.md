@@ -9,25 +9,29 @@
 
 ## Sunday
 * [ ] Post 3.2
-* [ ] Quiz 3.3
+* [ ] Quiz 3.2 (questions)
 * [ ] First six readings
 
 ## Monday 
 * [ ] Finalize readings
-* [ ] Quiz 3.2 (questions)
-* [ ] Practical Excercise
-* [ ] Chart setup
+* [ ] Quiz 3.3
+* [ ] Practical Excercise.
+* [ ] Chart setup.
 
 ## Tuesday
-* [ ] Chart debugging
-* [ ] Doubt to finalize module
-* [ ] Redirect on chat
+* [ ] Chart debugging.
+* [ ] Doubt to finalize module.
+* [ ] Redirect on chat.
+* [ ] Quiz 3.2 (answers).
 
 ## Wednesday
 * [ ] Test Chart
 * [ ] Record Video
 * [ ] Finalize Details
+* [ ] Avoid empty posts
+* [ ] Limit posts to last 100.
 
 ## Thursday
+* [ ] Last questions on second reading from Module 2. 
 * [ ] Testing
 * [ ] Deploy
