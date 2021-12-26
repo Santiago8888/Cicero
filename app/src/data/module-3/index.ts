@@ -18,6 +18,7 @@ const lessons1:iLesson[] = [
 
 const lessons2:iLesson[] = [
     { type:'Video', title:'La casa de Saturno', link:'https://youtu.be/nPZtv_lKmKM' },
+    { type:'Reading', title:'Saturno en la Casa XI', link:'docs/casas/Saturno-en-Casa-XI.pdf' },
     { type:'Video', title:'Los ciclos de Saturno', link:'https://youtu.be/Pu4X1ECLSjY' }
 ]
 
