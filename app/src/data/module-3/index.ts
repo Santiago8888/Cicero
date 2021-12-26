@@ -1,6 +1,7 @@
-import { posts1, posts2 } from './posts'
 import { iLesson } from '../../components/LayOut/Menu'
+import { posts1, posts2 } from './posts'
 import { quiz1 } from './quiz1'
+import { quiz2 } from './quiz2'
 
 const posts1Description = ['Después de haber escuchado algunos ejemplos y características de la influencia de Saturno en las casas. Comparte tu experiencia con alguna de las siguientes preguntas sobre como ha influido Saturno en tu vida.']
 
@@ -27,6 +28,7 @@ const posts2Description = ['Tras escuchar sobre los ciclos de Saturno, haz una p
 const lessons2:iLesson[] = [
     { type:'Video', title:'La casa de Saturno', link:'https://youtu.be/nPZtv_lKmKM' },
     { type:'Reading', title:'Saturno en la Casa XI', link:'docs/casas/Saturno-en-Casa-XI.pdf', description:reading2Description },
+    { type:'Quiz', title:'Quiz 3.2', description:[], questions:quiz2 },
     { type:'Video', title:'Los ciclos de Saturno', link:'https://youtu.be/Pu4X1ECLSjY' },
     { type:'Reflection', title:'Ejercicio de Reflexión', posts:posts2, numbered:true, description:posts2Description }
 ]
