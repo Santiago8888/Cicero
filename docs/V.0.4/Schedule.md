@@ -32,6 +32,7 @@
 * [ ] Limit posts to last 100.
 
 ## Thursday
+* [ ] Last reading the Wisdom of Saturn.
 * [ ] Last questions on second reading from Module 2. 
 * [ ] Testing
 * [ ] Deploy
