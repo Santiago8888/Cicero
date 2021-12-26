@@ -5,7 +5,7 @@
 - [X] 6 Videos
 - [ ] 3 Quizes
 - [ ] 1 Lecture
-- [ ] 2 Meditations
+- [X] 2 Meditations
 - [ ] 1 Practical Excersice
 - [ ] Record Introductory Video 
 - [ ] Add paying lock on user object.
