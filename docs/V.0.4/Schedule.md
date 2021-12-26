@@ -5,7 +5,7 @@
 * [X] Videos
 * [X] Quiz 3.1
 * [X] Post 3.1
-* [ ] Saggitarius reading edit 
+* [X] House 11 reading edit 
 
 ## Sunday
 * [ ] Post 3.2
