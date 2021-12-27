@@ -9,7 +9,7 @@
 
 ## Sunday
 * [X] Post 3.2
-* [ ] Quiz 3.2 (questions)
+* [X] Quiz 3.2 (questions)
 * [ ] First six readings
 
 ## Monday 
