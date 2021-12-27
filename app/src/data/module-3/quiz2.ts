@@ -21,7 +21,7 @@ export const quiz2:iQuestion[] = [
             { answer:'El romance, los amoríos, el gozo, la “suerte”, los hijos, y mis creaciones.', value:true, house:5 },
             { answer:'La salud, los hábitos, el medio ambiente de trabajo, el trabajo en equipo  y el servicio.', value:true, house:6 },
             { answer:'El matrimonio, pareja, sociedades, compromisos, contratos, abuelos y la conciencia de “nosotros”.', value:true, house:7 },
-            { answer:'', value:true, house:8 },
+            { answer:'El yo interno, subconsciente, la intuición, regeneración, sexualidad y los bienes ajenos.', value:true, house:8 },
             { answer:'', value:true, house:9 },
         ],
     }, {
@@ -36,7 +36,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mis hijos o la creatividad.', value:true, house:5 },
             { answer:'En el trabajo en equipo.', value:true, house:6 },
             { answer:'La pareja y mis sociedades.', value:true, house:7 },
-            { answer:'', value:true, house:8 },
+            { answer:'En los asuntos ajenos, las personas deben poder confiar en mi.', value:true, house:8 },
         ],
     }, {
         sign:true,
@@ -49,8 +49,8 @@ export const quiz2:iQuestion[] = [
             { answer:'Ser muy sensible ante las crisis familiares.', value:true, house:4 },
             { answer:'Evitar especulaciones, actividades o juegos irresponsables.', value:true, house:5 },
             { answer:'Ser más vulnerable a sintomas y afecciones físicas.', value:true, house:6 },
-            { answer:'Necesitas coperar con otros para alcanzar reconocimiento.', value:true, house:7 },
-            { answer:'', value:true, house:8 },
+            { answer:'Necesito coperar con otros para alcanzar reconocimiento.', value:true, house:7 },
+            { answer:'Un subconsciente, o consciencia interna muy rigurosa.', value:true, house:8 },
         ],
     }, {
         sign:true,
@@ -63,8 +63,8 @@ export const quiz2:iQuestion[] = [
             { answer:'Mostrar respeto y honrar a mis padres.', value:true, house:4 },
             { answer:'Tener planeación y organización para desarrollar mi expresión creativa.', value:true, house:5 },
             { answer:'Desarrollar hábitos saludables.', value:true, house:6 },
-            { answer:'Entablar relaciones justas, en donde ambas partes reciban algo positivo.', value:true, house:7 },
-            { answer:'', value:true, house:8 },
+            { answer:'Entablar relaciones justas, en donde ambas partes recibamos algo positivo del otr@.', value:true, house:7 },
+            { answer:'Encontrar una práctica para estar bien conmigo mism@', value:true, house:8 },
         ],
     }, {
         sign:true,
@@ -78,7 +78,7 @@ export const quiz2:iQuestion[] = [
             { answer:'A que le estoy dedicando mi tiempo.', value:true, house:5 },
             { answer:'Mi alimentación.', value:true, house:6 },
             { answer:'Cuando ceda debe ser por el bien de ambas partas.', value:true, house:7 },
-            { answer:'', value:true, house:8 },
+            { answer:'La sexualidad y los secretos de los demás.', value:true, house:8 },
         ],
     }, {
         sign:true,
@@ -92,7 +92,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mis romances durarán muy poco si no conducen a una buena relación.', value:true, house:5 },
             { answer:'Si te cuidas bien, podrás vivir una larga vida.', value:true, house:6 },
             { answer:'Es posible que en mis relaciones de pareja exista diferencia de edad.', value:true, house:7 },
-            { answer:'', value:true, house:8 },
+            { answer:'Podré desarrollar intuición y saber lo que pasará.', value:true, house:8 },
         ],
     }, {
         sign:true,
@@ -105,8 +105,8 @@ export const quiz2:iQuestion[] = [
             { answer:'El amor y respeto que tienes por tu familia.', value:true, house:4 },
             { answer:'Ser muy consciente del trato que doy a mis hij@s o creatividad.', value:true, house:5 },
             { answer:'El respeto que tengo por mi cuerpo y hábitos.', value:true, house:6 },
-            { answer:'Mis relaciones de pareja y sociedades.', value:true, house:7 },
-            { answer:'', value:true, house:8 },
+            { answer:'La solidez de mis relaciones de pareja y sociedades.', value:true, house:7 },
+            { answer:'Mi capacidad de transformar lo negativo en positivo.', value:true, house:8 },
         ],
     }, {
         sign:true,
