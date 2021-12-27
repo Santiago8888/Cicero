@@ -15,7 +15,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Las metas a largo plazo, intereses humanitarios, contribución al mundo y los amigos.', value:true, house:11 },
             { answer:'La personalidad, el “yo”, la apariencia, los modales, la actitud ante la vida.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Los valores, bienes materiales, propiedades, dinero y la autovaloración.', value:true, house:2 },
         ],
     }, {
         sign:true,
@@ -23,7 +23,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Con los amigos.', value:true, house:11 },
             { answer:'En todos, ser líder es parte de mi personalidad.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'En los negocios y asuntos financieros.', value:true, house:2 },
         ],
     }, {
         sign:true,
@@ -31,7 +31,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Ser muy selectivo con los amigos.', value:true, house:11 },
             { answer:'Las inseguridades que enfrenté durante mi infancia.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Crecer percibiendo restricciones económicas.', value:true, house:2 },
         ],
     }, {
         sign:true,
@@ -39,7 +39,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Formar amistades con personas extraordinarias.', value:true, house:11 },
             { answer:'Conocer muy bien mis limitaciones y fortalezas.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Elegir negocios y fuentes de dinero alineados con mis valores.', value:true, house:2 },
         ],
     }, {
         sign:true,
@@ -47,7 +47,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'La convivencia y diversión con amigos.', value:true, house:11 },
             { answer:'Los compromisos que acepto.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Las personas con las que entablo negocios.', value:true, house:2 },
         ],
     }, {
         sign:true,
@@ -55,7 +55,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Tener amig@s de diferentes edades a la mía, ya sea mayores o menores.', value:true, house:11 },
             { answer:'Mi madurez, especialmente comparad@ a las personas de mi edad.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Si mis inversiones son honorables, con el tiempo y paciencia florecerán.', value:true, house:2 },
         ],
     }, {
         sign:true,
@@ -63,7 +63,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'La dedicación y aprecio que tienes por mis amig@s.', value:true, house:11 },
             { answer:'Mi actitud ante la vida.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Mis valores, especialmente lealtad y honestidad.', value:true, house:2 },
         ],
     }, {
         sign:true,
