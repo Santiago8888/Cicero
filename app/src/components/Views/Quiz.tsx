@@ -6,7 +6,7 @@ import amplitude from 'amplitude-js'
 import { Approve } from '../Home'
 
 
-interface iAnswer { answer:string, value:boolean, sign?:Sign }
+interface iAnswer { answer:string, value:boolean, sign?:Sign, house?:number }
 export interface iQuestion { question:string, answers:iAnswer[], sign?:boolean }
 
 export const questionStyle:CSSProperties = {
