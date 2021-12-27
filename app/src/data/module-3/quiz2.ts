@@ -23,6 +23,7 @@ export const quiz2:iQuestion[] = [
             { answer:'El matrimonio, pareja, sociedades, compromisos, contratos, abuelos y la conciencia de “nosotros”.', value:true, house:7 },
             { answer:'El yo interno, subconsciente, la intuición, regeneración, sexualidad y los bienes ajenos.', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ],
     }, {
         sign:true,
@@ -37,6 +38,7 @@ export const quiz2:iQuestion[] = [
             { answer:'En el trabajo en equipo.', value:true, house:6 },
             { answer:'La pareja y mis sociedades.', value:true, house:7 },
             { answer:'En los asuntos ajenos, las personas deben poder confiar en mi.', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ],
     }, {
         sign:true,
@@ -51,6 +53,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Ser más vulnerable a sintomas y afecciones físicas.', value:true, house:6 },
             { answer:'Necesito coperar con otros para alcanzar reconocimiento.', value:true, house:7 },
             { answer:'Un subconsciente, o consciencia interna muy rigurosa.', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ],
     }, {
         sign:true,
@@ -65,6 +68,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Desarrollar hábitos saludables.', value:true, house:6 },
             { answer:'Entablar relaciones justas, en donde ambas partes recibamos algo positivo del otr@.', value:true, house:7 },
             { answer:'Encontrar una práctica para estar bien conmigo mism@', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ],
     }, {
         sign:true,
@@ -79,6 +83,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi alimentación.', value:true, house:6 },
             { answer:'Cuando ceda debe ser por el bien de ambas partas.', value:true, house:7 },
             { answer:'La sexualidad y los secretos de los demás.', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ],
     }, {
         sign:true,
@@ -93,6 +98,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Si te cuidas bien, podrás vivir una larga vida.', value:true, house:6 },
             { answer:'Es posible que en mis relaciones de pareja exista diferencia de edad.', value:true, house:7 },
             { answer:'Podré desarrollar intuición y saber lo que pasará.', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ],
     }, {
         sign:true,
@@ -107,6 +113,7 @@ export const quiz2:iQuestion[] = [
             { answer:'El respeto que tengo por mi cuerpo y hábitos.', value:true, house:6 },
             { answer:'La solidez de mis relaciones de pareja y sociedades.', value:true, house:7 },
             { answer:'Mi capacidad de transformar lo negativo en positivo.', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ],
     }, {
         sign:true,
@@ -121,6 +128,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -135,6 +143,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -149,6 +158,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -163,6 +173,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -177,6 +188,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -191,6 +203,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -205,6 +218,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -219,6 +233,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -233,6 +248,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -247,6 +263,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -261,6 +278,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }, {
         sign:true,
@@ -275,6 +293,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:6 },
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
+            { answer:'', value:true, house:9 },
         ]
     }
 ]
