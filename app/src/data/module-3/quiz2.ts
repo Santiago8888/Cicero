@@ -24,6 +24,7 @@ export const quiz2:iQuestion[] = [
             { answer:'El yo interno, subconsciente, la intuición, regeneración, sexualidad y los bienes ajenos.', value:true, house:8 },
             { answer:'La mente superior, la filosofía, ideales, visión, el yo superconsciente y los viajes.', value:true, house:9 },
             { answer:'', value:true, house:10 },
+            { answer:'', value:true, house:11 },
         ],
     }, {
         sign:true,
@@ -39,6 +40,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La pareja y mis sociedades.', value:true, house:7 },
             { answer:'En los asuntos ajenos, las personas deben poder confiar en mi.', value:true, house:8 },
             { answer:'En alguna filosofía de vida o cultura extranjera.', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ],
     }, {
         sign:true,
@@ -54,6 +56,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Necesito coperar con otros para alcanzar reconocimiento.', value:true, house:7 },
             { answer:'Un subconsciente, o consciencia interna muy estricta.', value:true, house:8 },
             { answer:'Ser muy riguros@ antes de aceptar alguna creencia como verdadera.', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ],
     }, {
         sign:true,
@@ -69,6 +72,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Entablar relaciones justas, en donde ambas partes recibamos algo positivo del otr@.', value:true, house:7 },
             { answer:'Encontrar una práctica para estar bien conmigo mism@', value:true, house:8 },
             { answer:'Tener una filosofía que le de sentido a mi vida.', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ],
     }, {
         sign:true,
@@ -84,6 +88,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Cuando ceda debe ser por el bien de ambas partas.', value:true, house:7 },
             { answer:'La sexualidad y los secretos de los demás.', value:true, house:8 },
             { answer:'No conformarme con lo seguro, tomar riesgos con sabiduría.', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ],
     }, {
         sign:true,
@@ -99,6 +104,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Es posible que en mis relaciones de pareja exista diferencia de edad.', value:true, house:7 },
             { answer:'Desarrollando mi intuición podré saber lo que pasará en un futuro.', value:true, house:8 },
             { answer:'Puedo contribuir a actualizar o corregir ideologías, creencias o líneas de pensamiento antiguas.', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ],
     }, {
         sign:true,
@@ -114,6 +120,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La solidez de mis relaciones de pareja y sociedades.', value:true, house:7 },
             { answer:'Mi capacidad de transformar lo negativo en positivo.', value:true, house:8 },
             { answer:'La profundidad de mi pensamiento y convicciones.', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ],
     }, {
         sign:true,
@@ -129,6 +136,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -144,6 +152,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -159,6 +168,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -174,6 +184,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -189,6 +200,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -204,6 +216,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -219,6 +232,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -234,6 +248,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -249,6 +264,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -264,6 +280,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -279,6 +296,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }, {
         sign:true,
@@ -294,6 +312,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:7 },
             { answer:'', value:true, house:8 },
             { answer:'', value:true, house:9 },
+            { answer:'', value:true, house:10 },
         ]
     }
 ]
