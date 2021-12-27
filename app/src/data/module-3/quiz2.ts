@@ -11,9 +11,9 @@ export const quiz2:iQuestion[] = [
         ]
     }, {
         sign:true,
-        question:'2. ¿En qué casa tienes a Saturno?',
+        question:'2. ¿En qué areas de la vida tienes a Saturno?',
         answers:[
-            { answer:'Casa Once: Las metas a largo plazo, intereses humanitarios, contribución al mundo y los amigos.', value:true, house:11 },
+            { answer:'Las metas a largo plazo, intereses humanitarios, contribución al mundo y los amigos.', value:true, house:11 },
             { answer:'', value:true, house:1 },
         ],
     }, {
