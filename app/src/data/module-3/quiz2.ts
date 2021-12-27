@@ -14,49 +14,49 @@ export const quiz2:iQuestion[] = [
         question:'2. ¿En qué areas de la vida tienes a Saturno?',
         answers:[
             { answer:'Las metas a largo plazo, intereses humanitarios, contribución al mundo y los amigos.', value:true, house:11 },
-            { answer:'', value:true, house:1 },
+            { answer:'La personalidad, el “yo”, la apariencia, los modales, la actitud ante la vida.', value:true, house:1 },
         ],
     }, {
         sign:true,
         question:'3. ¿En qué entorno te convierte Saturno en líder?',
         answers:[
             { answer:'Con los amigos.', value:true, house:11 },
-            { answer:'', value:true, house:1 },
+            { answer:'En todos, ser líder es parte de mi personalidad.', value:true, house:1 },
         ],
     }, {
         sign:true,
         question:'4. ¿Cuál es una manifestación de la limitación de Saturno?',
         answers:[
             { answer:'Ser muy selectivo con los amigos.', value:true, house:11 },
-            { answer:'', value:true, house:1 },
+            { answer:'Las inseguridades que enfrenté durante mi infancia.', value:true, house:1 },
         ],
     }, {
         sign:true,
         question:'5. ¿Cuál es un ejemplo de una buena estructura de tu Saturno?',
         answers:[
             { answer:'Formar amistades con personas extraordinarias.', value:true, house:11 },
-            { answer:'', value:true, house:1 },
+            { answer:'Conocer muy bien mis limitaciones y fortalezas.', value:true, house:1 },
         ],
     }, {
         sign:true,
         question:'6. ¿En dónde debes ser muy responsable de acuerdo a tu Saturno?',
         answers:[
             { answer:'La convivencia y diversión con amigos.', value:true, house:11 },
-            { answer:'', value:true, house:1 },
+            { answer:'Los compromisos que acepto.', value:true, house:1 },
         ],
     }, {
         sign:true,
         question:'7. ¿Cuál es una consecuencia en tu carta de que Saturno sea el Dios del tiempo?',
         answers:[
             { answer:'Tener amig@s de diferentes edades a la mía, ya sea mayores o menores.', value:true, house:11 },
-            { answer:'', value:true, house:1 },
+            { answer:'Mi madurez, especialmente comparad@ a las personas de mi edad.', value:true, house:1 },
         ],
     }, {
         sign:true,
         question:'8. ¿Qué deben admirar las personas más cercanas a tí?',
         answers:[
             { answer:'La dedicación y aprecio que tienes por mis amig@s.', value:true, house:11 },
-            { answer:'', value:true, house:1 },
+            { answer:'Mi actitud ante la vida.', value:true, house:1 },
         ],
     }, {
         sign:true,
