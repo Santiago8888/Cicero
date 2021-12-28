@@ -226,7 +226,7 @@ export const quiz2:iQuestion[] = [
             { answer:'De alguien que siempre toma en cuenta a los demás para tomar sus decisiones.', value:true, house:7 },
             { answer:'El de alguien que tiene completo conocimiento de las intenciones de las personas, pero elige ver el lado bueno.', value:true, house:8 },
             { answer:'El de una persona que siempre busca una nueva meta o desafio.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'De una persona sobria, responsable, práctica, centrada y que sabe lo que quiere.', value:true, house:10 },
             { answer:'Una persona que devuelve generosamente a la sociedad.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -243,7 +243,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Uno más uno no siempre es dos, dos personas apoyandose y coperando pueden lograr resultados asombrosos.', value:true, house:7 },
             { answer:'Que el poder nace a partir de la conexión con uno mismo.', value:true, house:8 },
             { answer:'La limitación proviene de no tener un propósito de vida.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'La enorme influencia que tienen los líderes en los demás.', value:true, house:10 },
             { answer:'Que la comunidad en la que vivimos no es perfecta, y requiere de nuestra participación para mejorarla.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -260,7 +260,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi compromiso, como no permito que detalles pasajeros obscurezcan el proposito de mis sociedades o relaciones.', value:true, house:7 },
             { answer:'Mi desapego a los resultados materiales, entendiendo que el verdadero valor es la transformación en uno mismo.', value:true, house:8 },
             { answer:'La sabiduria que me ha dejado el estudio de mis ideologías, religión o filosofía.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Mi sentido de responsabilidad, siempre hacer las cosas de forma correcta, en tiempo correcto y por las razones correctas.', value:true, house:10 },
             { answer:'Mi altruismo, y ayuda desinteresada a la comunidad.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -277,7 +277,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi capacidad de formar relaciones y sociedades estables se extenderá más allá de los ambitos emocionales y laborales.', value:true, house:7 },
             { answer:'Administrare grandes cantidades de recursos y dinero pues las personas confiaran en mi impecable conducta.', value:true, house:8 },
             { answer:'Me tocará agrandar la causa a la que contribuyo y llevarla a otros lugares y paises.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Se me solicitará que acepte gradualmente más responsabilidades con el reconocimiento apropiado.', value:true, house:10 },
             { answer:'Lo que considero mi comunidad se expandirá y cada vez involucrará a más personas.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -294,7 +294,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Ser muy consciente de cuando soy yo quien estoy cediendo, incluso llevar por escrito para asegurarme que la relación es justa y no hay abusos.', value:true, house:7 },
             { answer:'Explorar diferentes ciencias ocultas, además de la astrología, para desarrollar mi intuición.', value:true, house:8 },
             { answer:'Mantenerme en contacto con personas de distintas ideologías para no caer en la estrechez mental.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Que me aseguré de pasar suficiente tiempo con mi familia, para no volverme excesivamente frio.', value:true, house:10 },
             { answer:'Elegir una causa inclusiva, independiente de cualquier asociación o afiliación política, religiosa o social.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -311,7 +311,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Crear una sociedad para ayudar a otros, o tener responsabilidades en pareja dedicada al servicio de los demás.', value:true, house:7 },
             { answer:'Ser investigador@, profundizar en los secretos de la mente y cualquier actividad en que las personas requieran de una profunda transformación.', value:true, house:8 },
             { answer:'Embajador@, emplead@ o representante de una organización internacional con un objetivo muy noble.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Directivo de gran organización, autoridad en instituciones políticas, sociales, morales o éticas.', value:true, house:10 },
             { answer:'Preservación del medio ambiente, la lucha contra la pobreza o el servicio a los más necesitados.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -328,7 +328,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Ser coperador, compartid@, considerad@ para que puedas descubrir la belleza de una relación de pareja.', value:true, house:7 },
             { answer:'Encontrar el elemento sagrado dentro de la espiritualidad.', value:true, house:8 },
             { answer:'Continuamente expandir mi visión al contemplar el panorama completo y no sólo mi propio punto de vista.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Conocer el lado dulce del honor, la fama, el prestigio y el éxito.', value:true, house:10 },
             { answer:'Convertirme en un lider sabio y visionario que puede dar respuestas a los demás y ayudarlos a lograr sus ideales y aspiraciones.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
