@@ -219,7 +219,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Una persona que toma su apariencia con absoluta seriedad.', value:true, house:1 },
             { answer:'La de una persona prospera, capaz de aprovechar las oportunidades económicas.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'De una persona estudiosa en constante preparación y capacitación.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -236,7 +236,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Que la seguridad en uno mismo, es un trabajo de todos los días.', value:true, house:1 },
             { answer:'Los buenos negocios parten del valor que aportamos a la sociedad.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Lo responsable que hay que ser con la información, pues puede hacer mucho daño.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -253,7 +253,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Tu seguridad y confianza en ti mism@.', value:true, house:1 },
             { answer:'La honorabilidad de mis negocios.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Que acelero el cumplimiento de cada proyecto en el que me involucro.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -270,7 +270,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Alcanzaré el reconocimiento de cada vez más personas.', value:true, house:1 },
             { answer:'Tendré oportunidad de ayudar a muchas personas, y muchas otras veces tendré que decir NO.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Estaré involucrado paralelamente en una gran cantidad de proyectos diferentes entre sí.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -287,7 +287,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Evitar que mi liderazgo se vuelva autoritario, ceder ocasionalmente la iniciativa.', value:true, house:1 },
             { answer:'Que no me endeude, que mis negocios provengan de ahorros y reinversión de utilidades.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Que comprenda las consecuencias que pueden ocasionar mis palabras antes de hablar.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -304,7 +304,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Fígura pública, líder de la comunidad o puestos que requieran de mucha responsabilidad e impecabilidad.', value:true, house:1 },
             { answer:'Empresari@, banquer@, inversionista o cualquier persona que utiliza el dinero para materializar los sueños de las personas.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Locutor, influencer o vocero de alguna causa.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -321,7 +321,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Ser ese líder responsable, seguro de su identidad y lo que proyecta a los demás.', value:true, house:1 },
             { answer:'Constantemente aumentar mi autovaloración.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Desarrollar relaciones estrechas con mis herman@s, primos o un grupo cercano de personas que me conozcan y recuerden quien soy.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
