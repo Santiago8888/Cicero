@@ -143,7 +143,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Adoptar una filosofía, ideología o cultura extranjera que de proposito a mis acciones.', value:true, house:9 },
             { answer:'Aceptar que mi vida está enfocada al servicio.', value:true, house:10 },
             { answer:'Encontrar una causa y un grupo de personas con las cuales colaborar.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Hallar una espiritualidad que me permita conectar con la fuente dívina en mí.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -160,7 +160,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Amplitud de mente, conciencia y ambiciones.', value:true, house:9 },
             { answer:'La responsabilidad de lograr lo que nos comprometemos.', value:true, house:10 },
             { answer:'Orden y organización al grupo con el que colaboro.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Unión: diseminar las diferencias, reconociendo que todos somos parte de lo mismo.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -177,7 +177,7 @@ export const quiz2:iQuestion[] = [
             { answer:'El delicioso conocimiento de sentirme libre, sin ataduras o necesidad de imponer una autoridad.', value:true, house:9 },
             { answer:'De todos los buenos y malos líderes que he tenido en el pasado.', value:true, house:10 },
             { answer:'Del beneficio común que se obtiene a partir de la cauasa por la que trabajamos en equipo.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Del genuino deseo de buscar el bien de los demás.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -194,7 +194,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Encontrando que existe la verdad más alla de mis creencias.', value:true, house:9 },
             { answer:'Reconociendo que mi propio éxito solo será posible a partir del esfuerzo de las personas que lidero.', value:true, house:10 },
             { answer:'Siendo consciente que la causa por la que lucho no la puedo alcanzar sólo y requiero de la coperación de los demás.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Entendiendo que en está vida no me toca experimentar el reconociento.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -211,7 +211,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Lo bien que se sienten al estar conmigo, se sienten expandid@s, engrandecid@s.', value:true, house:9 },
             { answer:'Mi don de mando, la capacidad de organizar a las personas de forma natural.', value:true, house:10 },
             { answer:'Mi compromiso hacia el grupo, y la causa a la que que dedico mi servicio.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Por mi obra, las personas sabrán lo que he hecho pero no sabrán de mí.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -228,7 +228,7 @@ export const quiz2:iQuestion[] = [
             { answer:'El de una persona que siempre busca una nueva meta o desafio.', value:true, house:9 },
             { answer:'De una persona sobria, responsable, práctica, centrada y que sabe lo que quiere.', value:true, house:10 },
             { answer:'Una persona que devuelve generosamente a la sociedad.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'De un líder espritual, que está consciente en todo momento de lo maravilloso del presente.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -245,7 +245,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La limitación proviene de no tener un propósito de vida.', value:true, house:9 },
             { answer:'La enorme influencia que tienen los líderes en los demás.', value:true, house:10 },
             { answer:'Que la comunidad en la que vivimos no es perfecta, y requiere de nuestra participación para mejorarla.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Existe algo, a veces llamado Díos, que sostiene nuestra realidad y su creación', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -262,7 +262,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La sabiduria que me ha dejado el estudio de mis ideologías, religión o filosofía.', value:true, house:9 },
             { answer:'Mi sentido de responsabilidad, siempre hacer las cosas de forma correcta, en tiempo correcto y por las razones correctas.', value:true, house:10 },
             { answer:'Mi altruismo, y ayuda desinteresada a la comunidad.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Mi empatía, la capacidad de comprender a las personas que sirvo.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -279,7 +279,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Me tocará agrandar la causa a la que contribuyo y llevarla a otros lugares y paises.', value:true, house:9 },
             { answer:'Se me solicitará que acepte gradualmente más responsabilidades con el reconocimiento apropiado.', value:true, house:10 },
             { answer:'Lo que considero mi comunidad se expandirá y cada vez involucrará a más personas.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Las personas buscaran mi consejo, pues reconocerán en mí la sabiduría que quien no busca nada pues ya es feliz.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -296,7 +296,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mantenerme en contacto con personas de distintas ideologías para no caer en la estrechez mental.', value:true, house:9 },
             { answer:'Que me aseguré de pasar suficiente tiempo con mi familia, para no volverme excesivamente frio.', value:true, house:10 },
             { answer:'Elegir una causa inclusiva, independiente de cualquier asociación o afiliación política, religiosa o social.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Saber obedecer, dejarme guiar aunque sea para que los demás aprendan a hacerlo honorablemente.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -313,7 +313,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Embajador@, emplead@ o representante de una organización internacional con un objetivo muy noble.', value:true, house:9 },
             { answer:'Directivo de gran organización, autoridad en instituciones políticas, sociales, morales o éticas.', value:true, house:10 },
             { answer:'Preservación del medio ambiente, la lucha contra la pobreza o el servicio a los más necesitados.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Víctimas, presos, hospitales y en general personas que requieran de perdón, compasión y misericordia.', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -330,7 +330,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Continuamente expandir mi visión al contemplar el panorama completo y no sólo mi propio punto de vista.', value:true, house:9 },
             { answer:'Conocer el lado dulce del honor, la fama, el prestigio y el éxito.', value:true, house:10 },
             { answer:'Convertirme en un lider sabio y visionario que puede dar respuestas a los demás y ayudarlos a lograr sus ideales y aspiraciones.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Vivir en aceptación, reconciliando las diferencias y encontrando la unidad.', value:true, house:12 },
         ]
     }
 ]
