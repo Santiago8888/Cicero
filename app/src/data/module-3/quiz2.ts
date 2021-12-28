@@ -133,7 +133,7 @@ export const quiz2:iQuestion[] = [
         question:'9. ¿Cuál es el primer paso ser reconocido en la casa de tu Saturno?',
         answers:[
             { answer:'Tener clara cual es mi identidad y personalidad.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Comenzar a ahorrar por el menos el 10% de mi ingreso.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -150,7 +150,7 @@ export const quiz2:iQuestion[] = [
         question:'10. ¿Qué estructura deberás aportar a través de tu Saturno?',
         answers:[
             { answer:'Brindar importancia a cada momento en el que estoy presente.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Solvencia y estabilidad ecónomica.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -167,7 +167,7 @@ export const quiz2:iQuestion[] = [
         question:'11. ¿De donde obtendras la motivación para liderear honorablemente?',
         answers:[
             { answer:'Quere ser la mejor versión de mi mism@', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'El miedo a la pobreza.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -184,7 +184,7 @@ export const quiz2:iQuestion[] = [
         question:'12. ¿Cómo mantendrás la humildad en la casa de Saturno?',
         answers:[
             { answer:'Permaneciendo consciente de lo que puede salir mal a traves de mis miedos e inseguridades.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Aceptando que la riqueza es producto del trabajo constante durante muchos años, incluso decadas.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -201,7 +201,7 @@ export const quiz2:iQuestion[] = [
         question:'13. ¿Por que serás reconocido por las personas que te conozcan?',
         answers:[
             { answer:'Mi capacidad de comportarme a la altura en cada situación que participo.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Lo responsable que soy con el dinero, los recursos materiales y mi tiempo.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
