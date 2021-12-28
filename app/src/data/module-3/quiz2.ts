@@ -141,7 +141,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Estar en paz conmigo mism@ para poder compartir con alguien más.', value:true, house:7 },
             { answer:'Encontrar una forma de conectar con mi centro.', value:true, house:8 },
             { answer:'Adoptar una filosofía, ideología o cultura extranjera que de proposito a mis acciones.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Aceptar que mi vida está enfocada al servicio.', value:true, house:10 },
             { answer:'Encontrar una causa y un grupo de personas con las cuales colaborar.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -158,7 +158,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Justicia, recordar y verbalizar lo que cada persona aporta a la relación.', value:true, house:7 },
             { answer:'La conciencia de que la razón por la que hacemos las cosas afecta el resultado.', value:true, house:8 },
             { answer:'Amplitud de mente, conciencia y ambiciones.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'La responsabilidad de lograr lo que nos comprometemos.', value:true, house:10 },
             { answer:'Orden y organización al grupo con el que colaboro.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -175,7 +175,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La felicidad que causa poder amar, acompañar y compartir tu vida con alguien más.', value:true, house:7 },
             { answer:'De la fuerza y rectitud de mi voz interior.', value:true, house:8 },
             { answer:'El delicioso conocimiento de sentirme libre, sin ataduras o necesidad de imponer una autoridad.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'De todos los buenos y malos líderes que he tenido en el pasado.', value:true, house:10 },
             { answer:'Del beneficio común que se obtiene a partir de la cauasa por la que trabajamos en equipo.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -192,7 +192,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Manteniendo el compromison y reconociendo que el amor no siempre es suficiente para manter una relación.', value:true, house:7 },
             { answer:'Siendo consciente de la enorme responsabilidad que implica tener poder.', value:true, house:8 },
             { answer:'Encontrando que existe la verdad más alla de mis creencias.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Reconociendo que mi propio éxito solo será posible a partir del esfuerzo de las personas que lidero.', value:true, house:10 },
             { answer:'Siendo consciente que la causa por la que lucho no la puedo alcanzar sólo y requiero de la coperación de los demás.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
@@ -209,7 +209,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi relación de pareja, lo mucho que disfrutamos estar juntos.', value:true, house:7 },
             { answer:'Porque pueden confiar en mí.', value:true, house:8 },
             { answer:'Lo bien que se sienten al estar conmigo, se sienten expandid@s, engrandecid@s.', value:true, house:9 },
-            { answer:'', value:true, house:10 },
+            { answer:'Mi don de mando, la capacidad de organizar a las personas de forma natural.', value:true, house:10 },
             { answer:'Mi compromiso hacia el grupo, y la causa a la que que dedico mi servicio.', value:true, house:11 },
             { answer:'', value:true, house:12 },
         ]
