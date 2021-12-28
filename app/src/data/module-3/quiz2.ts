@@ -132,7 +132,7 @@ export const quiz2:iQuestion[] = [
         sign:true,
         question:'9. ¿Cuál es el primer paso ser reconocido en la casa de tu Saturno?',
         answers:[
-            { answer:'', value:true, house:1 },
+            { answer:'Tener clara cual es mi identidad y personalidad.', value:true, house:1 },
             { answer:'', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
@@ -149,7 +149,7 @@ export const quiz2:iQuestion[] = [
         sign:true,
         question:'10. ¿Qué estructura deberás aportar a través de tu Saturno?',
         answers:[
-            { answer:'', value:true, house:1 },
+            { answer:'Brindar importancia a cada momento en el que estoy presente.', value:true, house:1 },
             { answer:'', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
@@ -166,7 +166,7 @@ export const quiz2:iQuestion[] = [
         sign:true,
         question:'11. ¿De donde obtendras la motivación para liderear honorablemente?',
         answers:[
-            { answer:'', value:true, house:1 },
+            { answer:'Quere ser la mejor versión de mi mism@', value:true, house:1 },
             { answer:'', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
@@ -183,7 +183,7 @@ export const quiz2:iQuestion[] = [
         sign:true,
         question:'12. ¿Cómo mantendrás la humildad en la casa de Saturno?',
         answers:[
-            { answer:'', value:true, house:1 },
+            { answer:'Permaneciendo consciente de lo que puede salir mal a traves de mis miedos e inseguridades.', value:true, house:1 },
             { answer:'', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
@@ -200,7 +200,7 @@ export const quiz2:iQuestion[] = [
         sign:true,
         question:'13. ¿Por que serás reconocido por las personas que te conozcan?',
         answers:[
-            { answer:'', value:true, house:1 },
+            { answer:'Mi capacidad de comportarme a la altura en cada situación que participo.', value:true, house:1 },
             { answer:'', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
