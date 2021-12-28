@@ -20,11 +20,11 @@ export const quiz2:iQuestion[] = [
             { answer:'El romance, los amoríos, el gozo, la “suerte”, los hijos, y mis creaciones.', value:true, house:5 },
             { answer:'La salud, los hábitos, el medio ambiente de trabajo, el trabajo en equipo  y el servicio.', value:true, house:6 },
             { answer:'El matrimonio, pareja, sociedades, compromisos, contratos, abuelos y la conciencia de “nosotros”.', value:true, house:7 },
-            { answer:'El yo interno, subconsciente, la intuición, regeneración, sexualidad y los bienes ajenos.', value:true, house:8 },
+            { answer:'El yo interno, la intuición, regeneración, sexualidad y los bienes ajenos.', value:true, house:8 },
             { answer:'La mente superior, la filosofía, ideales, visión, el yo superconsciente y los viajes.', value:true, house:9 },
             { answer:'La profesión, ambiciones, negocios, capacidad de dirigir y la sociedad.', value:true, house:10 },
             { answer:'Las metas a largo plazo, intereses humanitarios, contribución al mundo y los amigos.', value:true, house:11 },
-            { answer:'', value:true, house:12 },
+            { answer:'Espiritualidad, fuerzas y debilidades ocultas, lo que no controlamos, deudas kármicas.', value:true, house:12 },
         ],
     }, {
         sign:true,
@@ -41,6 +41,7 @@ export const quiz2:iQuestion[] = [
             { answer:'En alguna filosofía de vida o cultura extranjera.', value:true, house:9 },
             { answer:'Situaciones muy públicas y de mucha responsabilidad.', value:true, house:10 },
             { answer:'Con los amigos.', value:true, house:11 },
+            { answer:'Un líder espiritual.', value:true, house:12 },
         ],
     }, {
         sign:true,
@@ -57,6 +58,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Ser muy riguros@ antes de aceptar alguna creencia como verdadera.', value:true, house:9 },
             { answer:'Expectativas muy altas difíciles de satisfacer.', value:true, house:10 },
             { answer:'Ser muy selectivo con los amigos.', value:true, house:11 },
+            { answer:'No percibir el reconocimiento por mis logros.', value:true, house:12 },
         ],
     }, {
         sign:true,
@@ -73,6 +75,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Tener una filosofía que le de sentido a mi vida.', value:true, house:9 },
             { answer:'Una profesión que te permite ascender socialmente.', value:true, house:10 },
             { answer:'Formar amistades con personas extraordinarias.', value:true, house:11 },
+            { answer:'Poner mis éxitos al servicio de los demás.', value:true, house:12 },
         ],
     }, {
         sign:true,
@@ -87,8 +90,9 @@ export const quiz2:iQuestion[] = [
             { answer:'Cuando ceda debe ser por el bien de ambas partas.', value:true, house:7 },
             { answer:'La sexualidad y los secretos de los demás.', value:true, house:8 },
             { answer:'No conformarme con lo seguro, tomar riesgos con sabiduría.', value:true, house:9 },
-            { answer:'El ejemplo que das estando en posiciones de autoridad.', value:true, house:10 },
+            { answer:'El ejemplo que doy estando en posiciones de autoridad.', value:true, house:10 },
             { answer:'La convivencia y diversión con amigos.', value:true, house:11 },
+            { answer:'Mi actitud, que debe ser humilde y compasiva.', value:true, house:12 },
         ],
     }, {
         sign:true,
@@ -105,6 +109,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Puedo contribuir a actualizar o corregir ideologías, creencias o líneas de pensamiento antiguas.', value:true, house:9 },
             { answer:'Se espera que deje un legado o contribución a la sociedad.', value:true, house:10 },
             { answer:'Tener amig@s de diferentes edades a la mía, ya sea mayores o menores.', value:true, house:11 },
+            { answer:'Deudas kármicas se evidenciaron durante mi etapa prentatal.', value:true, house:12 },
         ],
     }, {
         sign:true,
@@ -121,6 +126,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La profundidad de mi pensamiento y convicciones.', value:true, house:9 },
             { answer:'Como mantienes la humildad a pesar de tu éxito.', value:true, house:10 },
             { answer:'La dedicación y aprecio que tienes por mis amig@s.', value:true, house:11 },
+            { answer:'Mi capacidad de perdonar y misercordia.', value:true, house:12 },
         ],
     }, {
         sign:true,
@@ -137,6 +143,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Encontrar una causa y un grupo de personas con las cuales colaborar.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -153,6 +160,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Orden y organización al grupo con el que colaboro.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -169,6 +177,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Del beneficio común que se obtiene a partir de la cauasa por la que trabajamos en equipo.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -185,6 +194,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Siendo consciente que la causa por la que lucho no la puedo alcanzar sólo y requiero de la coperación de los demás.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -201,6 +211,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Mi compromiso hacia el grupo, y la causa a la que que dedico mi servicio.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -217,6 +228,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Una persona que devuelve generosamente a la sociedad.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -233,6 +245,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Que la comunidad en la que vivimos no es perfecta, y requiere de nuestra participación para mejorarla.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -249,6 +262,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Mi altruismo, y ayuda desinteresada.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -265,6 +279,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Lo que considero mi comunidad se expandirá y cada vez involucrará a más personas.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -281,6 +296,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Elegir una causa inclusiva, independiente de cualquier asociación o afiliación política, religiosa o social.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -297,6 +313,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Preservación del medio ambiente, la lucha contra la pobreza o el servicio a los más necesitados.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -313,6 +330,7 @@ export const quiz2:iQuestion[] = [
             { answer:'', value:true, house:9 },
             { answer:'', value:true, house:10 },
             { answer:'Convertirme en un lider sabio y visionario que puede dar respuestas a los demás y ayudarlos a lograr sus ideales y aspiraciones.', value:true, house:11 },
+            { answer:'', value:true, house:12 },
         ]
     }
 ]
