@@ -22,7 +22,7 @@
 * [ ] Chart debugging.
 * [ ] Doubt to finalize module.
 * [ ] Redirect on chat.
-* [ ] Quiz 3.2 (answers).
+* [X] Quiz 3.2 (answers).
 
 ## Wednesday
 * [ ] Test Chart
