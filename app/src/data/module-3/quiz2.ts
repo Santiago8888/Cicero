@@ -134,7 +134,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Tener clara cual es mi identidad y personalidad.', value:true, house:1 },
             { answer:'Comenzar a ahorrar por el menos el 10% de mi ingreso.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Aprender a relacionarme exitosamente con todas las personas.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -151,7 +151,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Brindar importancia a cada momento en el que estoy presente.', value:true, house:1 },
             { answer:'Solvencia y estabilidad ecónomica.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Conectar personas, hacer que la información positiva fluya.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -168,7 +168,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Quere ser la mejor versión de mi mism@', value:true, house:1 },
             { answer:'El miedo a la pobreza.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'La satisfacción de resolver problemas de las personas a mi alrededor.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -185,7 +185,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Permaneciendo consciente de lo que puede salir mal a traves de mis miedos e inseguridades.', value:true, house:1 },
             { answer:'Aceptando que la riqueza es producto del trabajo constante durante muchos años, incluso decadas.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Reconociendo que mi valor en la sociedad proviene de las personas que conozco, no solo de quien soy.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
@@ -202,7 +202,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Mi capacidad de comportarme a la altura en cada situación que participo.', value:true, house:1 },
             { answer:'Lo responsable que soy con el dinero, los recursos materiales y mi tiempo.', value:true, house:2 },
-            { answer:'', value:true, house:3 },
+            { answer:'Lo mucho que se sobre una gran cantidad de temas.', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
             { answer:'', value:true, house:6 },
