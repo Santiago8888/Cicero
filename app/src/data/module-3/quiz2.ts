@@ -218,7 +218,7 @@ export const quiz2:iQuestion[] = [
         question:'14. ¿Qué ejemplo debes proyectar?',
         answers:[
             { answer:'Una persona que toma su apariencia con absoluta seriedad.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'La de una persona prospera, capaz de aprovechar las oportunidades económicas.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -235,7 +235,7 @@ export const quiz2:iQuestion[] = [
         question:'15. ¿Qué sabes mejor que nadie?',
         answers:[
             { answer:'Que la seguridad en uno mismo, es un trabajo de todos los días.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Los buenos negocios parten del valor que aportamos a la sociedad.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -252,7 +252,7 @@ export const quiz2:iQuestion[] = [
         question:'16. ¿Qué te admirarán al perseguir tu vocación de servicio?',
         answers:[
             { answer:'Tu seguridad y confianza en ti mism@.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'La honorabilidad de mis negocios.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -269,7 +269,7 @@ export const quiz2:iQuestion[] = [
         question:'17. ¿Qué pasará conforme avances en tu misión de servicio?',
         answers:[
             { answer:'Alcanzaré el reconocimiento de cada vez más personas.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Tendré oportunidad de ayudar a muchas personas, y muchas otras veces tendré que decir NO.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -286,7 +286,7 @@ export const quiz2:iQuestion[] = [
         question:'18. ¿Qué es recomendable de acuerdo a tu Saturno?',
         answers:[
             { answer:'Evitar que mi liderazgo se vuelva autoritario, ceder ocasionalmente la iniciativa.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Que no me endeude, que mis negocios provengan de ahorros y reinversión de utilidades.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -303,7 +303,7 @@ export const quiz2:iQuestion[] = [
         question:'19. ¿Cuáles son excelentes ejemplos de tu vocación de servicio?',
         answers:[
             { answer:'Fígura pública, líder de la comunidad o puestos que requieran de mucha responsabilidad e impecabilidad.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Empresari@, banquer@, inversionista o cualquier persona que utiliza el dinero para materializar los sueños de las personas.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
@@ -320,7 +320,7 @@ export const quiz2:iQuestion[] = [
         question:'20. ¿Para qué te presiona Saturno?',
         answers:[
             { answer:'Ser ese líder responsable, seguro de su identidad y lo que proyecta a los demás.', value:true, house:1 },
-            { answer:'', value:true, house:2 },
+            { answer:'Constantemente aumentar mi autovaloración.', value:true, house:2 },
             { answer:'', value:true, house:3 },
             { answer:'', value:true, house:4 },
             { answer:'', value:true, house:5 },
