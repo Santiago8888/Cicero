@@ -302,7 +302,7 @@ export const quiz2:iQuestion[] = [
         sign:true,
         question:'19. ¿Cuáles son excelentes ejemplos de tu vocación de servicio?',
         answers:[
-            { answer:'Fígura pública, líder de la comunidad o puestos que requieran de mucha responsabilidad e impecabilidad.', value:true, house:1 },
+            { answer:'Fígura pública, líder de la comunidad o puestos que requieran de mucha responsabilidad y honorabilidad.', value:true, house:1 },
             { answer:'Empresari@, banquer@, inversionista o cualquier persona que utiliza el dinero para materializar los sueños de las personas.', value:true, house:2 },
             { answer:'Locutor, influencer o vocero de alguna causa.', value:true, house:3 },
             { answer:'Luchar por derechos de la mujer, de la familia o líder en materia de educación u otros asuntos familiar', value:true, house:4 },
