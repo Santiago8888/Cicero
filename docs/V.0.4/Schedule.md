@@ -21,8 +21,8 @@
 * [ ] Quiz 3.3
 
 ## Wednesday
+* [X] Readings.
 * [ ] Practical Excercise.
-* [ ] Copy answers on readings.
 * [ ] Dynamic house logic. 
 * [ ] Record Video
 
