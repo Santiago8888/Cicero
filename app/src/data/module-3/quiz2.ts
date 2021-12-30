@@ -245,7 +245,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La limitación y miedo proviene de no tener definido un propósito de vida.', value:true, house:9 },
             { answer:'La enorme influencia que tienen los líderes en los demás.', value:true, house:10 },
             { answer:'Que la comunidad en la que vivimos no es perfecta, y requiere de nuestra participación para mejorarla.', value:true, house:11 },
-            { answer:'Existe algo, a veces llamado Díos, que sostiene nuestra realidad y su creación', value:true, house:12 },
+            { answer:'Existe algo divino en nosotros que sostiene nuestra realidad y creación', value:true, house:12 },
         ]
     }, {
         sign:true,
@@ -329,7 +329,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Encontrar lo sagrado en la sexualidad.', value:true, house:8 },
             { answer:'Convertirme en un lider sabio y visionario que puede dar respuestas a los demás.', value:true, house:9 },
             { answer:'Conocer el lado dulce del honor, la fama, el prestigio y el éxito.', value:true, house:10 },
-            { answer:'.', value:true, house:11 },
+            { answer:'Ser es@ líder de consciencia socialmente responsable.', value:true, house:11 },
             { answer:'Vivir en aceptación, reconciliando las diferencias y encontrando la unidad.', value:true, house:12 },
         ]
     }
