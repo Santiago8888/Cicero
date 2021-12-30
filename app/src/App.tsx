@@ -33,6 +33,14 @@ export interface iUser {
     progress:iPosition
     quizFailures:number
     natalChart:iNatalChart
+    birth?:{
+        day:number,
+        month:number,
+        year:number,
+        hour:number,
+        minute:number,
+    },
+    house?:number
 }
 
 
