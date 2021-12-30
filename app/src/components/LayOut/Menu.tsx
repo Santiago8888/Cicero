@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 import { iRecordings } from '../Forum/Recordings'
+import { mapAstroText } from '../../utils/sign'
 import { Planet } from '../Astral/AstralChart'
-import { mapSign } from '../../utils/sign'
 import { iQuestion } from '../Views/Quiz'
 import { iForum } from '../Forum/Forum'
 import { iPost } from '../Forum/Posts'
@@ -130,7 +130,7 @@ export const Menu = ({ units, navigate, user, forum, posts, recordings }: iMenu)
                                                         ) && <Lock/> 
                                                     }   { 
                                                             user 
-                                                            ?   mapSign(title, user) 
+                                                            ?   mapAstroText(title, user) 
                                                             :   title
                                                     }
                                                 </a>
