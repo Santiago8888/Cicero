@@ -28,7 +28,7 @@
 ## Thursday
 * [ ] Redirect on chat.
 * [ ] Doubt to finalize module.
-* [ ] Last reading the Wisdom of Saturn.
+* [X] Last reading the Wisdom of Saturn.
 * [ ] Last questions on second reading from Module 2. 
 * [ ] Limit posts to last 100.
 * [ ] Avoid empty posts
