@@ -51,7 +51,7 @@ interface IQuestion extends iQuestion {
 }
 
 const Question = ({index, question, value, answers, sign, user, house, select}:IQuestion) => {
-    const [filteredAnswers, setFilteredAnswers] = useState(answers)
+    const [filteredAnswers, setFilteredAnswers] = useState<iAnswer[]>(answers)
 
     useEffect(() => {
         if (sign) {
@@ -71,6 +71,7 @@ const Question = ({index, question, value, answers, sign, user, house, select}:I
     
             setFilteredAnswers(houseAnswers)    
         }
+
     }, [answers, sign, user, house])
 
     return <div 
@@ -79,11 +80,13 @@ const Question = ({index, question, value, answers, sign, user, house, select}:I
     >
         <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
         {
-            answers.map(({ answer:a, sign:s }, i) => 
+            filteredAnswers?.length && answers.map(({ answer:a, sign:s, house:h }, i) => 
                 <div 
                     key={i} 
                     className='control' 
-                    style={{display:filteredAnswers.map(({ sign }) => sign).includes(s) ? 'auto' : 'none'}}
+                    style={{
+                        display:(filteredAnswers || []).map(({ sign, house }) => sign || house).includes(s || h) ? 'auto' : 'none'
+                    }}
                 >
                     <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
                         <input 
