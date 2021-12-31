@@ -50,6 +50,7 @@ interface IQuestion extends iQuestion {
     select(index:number, value:number):void 
 }
 
+
 const Question = ({index, question, value, answers, sign, user, house, select}:IQuestion) => {
     const [filteredAnswers, setFilteredAnswers] = useState<iAnswer[]>(answers)
 
@@ -69,7 +70,7 @@ const Question = ({index, question, value, answers, sign, user, house, select}:I
             const randomHouses = getRandomHouses([user.house])        
             const houseAnswers = answers.filter(({ house }) => randomHouses.includes(house as number))
     
-            setFilteredAnswers(houseAnswers)    
+            setFilteredAnswers(houseAnswers)
         }
 
     }, [answers, sign, user, house])
@@ -80,12 +81,12 @@ const Question = ({index, question, value, answers, sign, user, house, select}:I
     >
         <label className='label' style={{fontSize:'1.25em'}}> { question } </label>
         {
-            filteredAnswers?.length && answers.map(({ answer:a, sign:s, house:h }, i) => 
+            answers.map(({ answer:a, sign:s, house:h }, i) => 
                 <div 
                     key={i} 
                     className='control' 
                     style={{
-                        display:(filteredAnswers || []).map(({ sign, house }) => sign || house).includes(s || h) ? 'auto' : 'none'
+                        display: filteredAnswers.map(({ sign, house }) => sign || house).includes(s || h) ? 'auto' : 'none'
                     }}
                 >
                     <label className='radio' style={{fontSize:'1.25em', marginBottom:'0.25em'}}>
