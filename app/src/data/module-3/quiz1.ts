@@ -18,7 +18,7 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 11: la ayuda desinteresada.', value:true },
         ]
     }, {
-        question:'3. ¿Qué es aquello que crees que puedes dar u obsequiar más a los demas?',
+        question:'3. ¿Qué es aquello que crees que puedes dar u obsequiar más a los demás?',
         answers:[
             { answer:'Casa 2: dinero y valores.', value:true },
             { answer:'Casa 3: información y comunicación.', value:true },
@@ -26,18 +26,18 @@ export const quiz1:iQuestion[] = [
             { answer:'Casa 12: entendimiento, comprensión y tiempo.', value:true },
         ]
     }, {
-        question:'4. ¿Qué area de la vida disfrutas más?',
+        question:'4. ¿Qué área de la vida disfrutas más?',
         answers:[
             { answer:'Casa 4: el hogar.', value:true },
             { answer:'Casa 7: la pareja.', value:true },
-            { answer:'Casa 8: mis momentos de instrospección.', value:true },
+            { answer:'Casa 8: mis momentos de introspección.', value:true },
             { answer:'Casa 10: mi profesión.', value:true }
         ]
     }, {
         question:'5. ¿Cuál de las siguientes casas te gustaría llevar a la excelencia?',
         answers:[
             { answer:'Casa 1: mi yo personal.', value:true },
-            { answer:'Casa 9: mi sabiduria y conocimiento.', value:true },
+            { answer:'Casa 9: mi sabiduría y conocimiento.', value:true },
             { answer:'Casa 11: mi ayuda a la comunidad.', value:true },
             { answer:'Casa 12: mi espiritualidad.', value:true }
         ]
