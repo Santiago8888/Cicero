@@ -2,6 +2,7 @@ import { iLesson } from '../../components/LayOut/Menu'
 import { posts1, posts2 } from './posts'
 import { quiz1 } from './quiz1'
 import { quiz2 } from './quiz2'
+import { quiz3 } from './quiz3'
 
 const posts1Description = ['Después de haber escuchado algunos ejemplos y características de la influencia de Saturno en las casas. Comparte tu experiencia con alguna de las siguientes preguntas sobre como ha influido Saturno en tu vida.']
 
@@ -37,6 +38,7 @@ const lessons2:iLesson[] = [
 
 const lessons3:iLesson[] = [
     { type:'Video', title:'Los tránsitos de Saturno', link:'https://youtu.be/7sRKVAHorco' },
+    { type:'Quiz', title:'Quiz 3.3', questions:quiz3 },
     { type:'Video', title:'Saturno y la Salud', link:'https://youtu.be/zenrgnOxS1A' },
 ]
 
