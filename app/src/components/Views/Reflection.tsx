@@ -29,7 +29,36 @@ const Header = ({ title, midScreen, description=[] }:iHeader) => <>
 
 const styleCta:CSSProperties = { margin:'auto', marginTop:'3rem' }
 interface iCta { midScreen:boolean, user:iUser, text:string, click():void }
-const CTA = ({ midScreen, user, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 'auto'}}>
+const CTA = ({ midScreen, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 'auto'}}>
+    <button
+        onClick={click} 
+        className='button is-link' 
+        style={{
+            borderRadius:12, 
+            marginBottom:'3rem',
+            width:240, 
+            fontSize:'1.25rem', 
+            fontWeight:600, 
+            backgroundColor:'saddlebrown'
+        }}
+    > { text } </button>
+</div>
+
+
+const END = ({ midScreen, text, click }:iCta) => <div style={{...styleCta, width:midScreen ? 800 : 'auto'}}>
+    <h3
+        style={{
+            margin:'auto',
+            marginBottom:'2rem',
+            color: '#333',
+            fontSize: '1.25em',
+            textAlign: 'center',
+            fontWeight: 500,
+            width: midScreen ? 640 : 'auto'        
+        }}
+    >
+        Para avanzar, al siguiente módulo te invitamos a hacer una pregunta que será contestada en el siguiente Live de Zoom. 
+    </h3>
     <button
         onClick={click} 
         className='button is-link' 
@@ -85,6 +114,7 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
         </div>
 
         { !end && <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/> }
+        { end && <END midScreen={midScreen} text={'Haz una pregunta'} click={() => setActive(true)} user={user}/> }
 
         <Modal 
             isActive={active} 
