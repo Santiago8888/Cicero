@@ -10,15 +10,15 @@ export const quiz2:iQuestion[] = [
             { answer:'Desarrollar una estructura conforme adquiramos experiencia.', value:false }
         ]
     }, {
-        sign:true,
-        question:'2. ¿En qué areas de la vida tienes a Saturno?',
+        house:true,
+        question:'2. ¿En qué áreas de la vida tienes a Saturno?',
         answers:[
             { answer:'La personalidad, el “yo”, la apariencia, los modales, la actitud ante la vida.', value:true, house:1 },
             { answer:'Los valores, bienes materiales, propiedades, dinero y la autovaloración.', value:true, house:2 },
             { answer:'La comunicación, pensamiento y palabra, la capacidad para relacionarte y herman@s.', value:true, house:3 },
             { answer:'El hogar, los padres, la familia, las raíces y herencia biológica.', value:true, house:4 },
             { answer:'El romance, los amoríos, el gozo, la “suerte”, los hijos, y mis creaciones.', value:true, house:5 },
-            { answer:'La salud, los hábitos, el medio ambiente de trabajo, el trabajo en equipo  y el servicio.', value:true, house:6 },
+            { answer:'La salud, los hábitos, el medio ambiente de trabajo, el trabajo en equipo y el servicio.', value:true, house:6 },
             { answer:'El matrimonio, pareja, sociedades, compromisos, contratos, abuelos y la conciencia de “nosotros”.', value:true, house:7 },
             { answer:'El yo interno, la intuición, regeneración, sexualidad y los bienes ajenos.', value:true, house:8 },
             { answer:'La mente superior, la filosofía, ideales, visión, el yo superconsciente y los viajes.', value:true, house:9 },
@@ -27,7 +27,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Espiritualidad, fuerzas y debilidades ocultas, lo que no controlamos, deudas kármicas.', value:true, house:12 },
         ],
     }, {
-        sign:true,
+        house:true,
         question:'3. ¿En qué entorno te convierte Saturno en líder?',
         answers:[
             { answer:'En todos, ser líder es parte de mi personalidad.', value:true, house:1 },
@@ -44,7 +44,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Un líder espiritual.', value:true, house:12 },
         ],
     }, {
-        sign:true,
+        house:true,
         question:'4. ¿Cuál es una manifestación de la limitación de Saturno?',
         answers:[
             { answer:'Las inseguridades sobre mi personalidad.', value:true, house:1 },
@@ -61,7 +61,7 @@ export const quiz2:iQuestion[] = [
             { answer:'No percibir el reconocimiento por mis logros.', value:true, house:12 },
         ],
     }, {
-        sign:true,
+        house:true,
         question:'5. ¿Cuál es un ejemplo de una buena estructura de tu Saturno?',
         answers:[
             { answer:'Conocer muy bien mis limitaciones y fortalezas.', value:true, house:1 },
@@ -78,7 +78,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Poner mis éxitos al servicio de los demás.', value:true, house:12 },
         ],
     }, {
-        sign:true,
+        house:true,
         question:'6. ¿En dónde debes ser muy responsable de acuerdo a tu Saturno?',
         answers:[
             { answer:'Los compromisos que acepto.', value:true, house:1 },
@@ -95,7 +95,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi actitud, que debe ser humilde y compasiva.', value:true, house:12 },
         ],
     }, {
-        sign:true,
+        house:true,
         question:'7. ¿Cuál es una consecuencia en tu carta astral de que Saturno sea el Dios del tiempo?',
         answers:[
             { answer:'Mi madurez, especialmente comparad@ a las personas de mi edad.', value:true, house:1 },
@@ -112,7 +112,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Deudas kármicas se evidenciaron durante mi etapa prentatal.', value:true, house:12 },
         ],
     }, {
-        sign:true,
+        house:true,
         question:'8. ¿Qué deben admirar las personas más cercanas a tí?',
         answers:[
             { answer:'Mi actitud ante la vida.', value:true, house:1 },
@@ -129,7 +129,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi capacidad de perdonar y misercordia.', value:true, house:12 },
         ],
     }, {
-        sign:true,
+        house:true,
         question:'9. ¿Cuál es el primer paso ser reconocido en la casa de tu Saturno?',
         answers:[
             { answer:'Tener clara cual es mi identidad y personalidad.', value:true, house:1 },
@@ -146,7 +146,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Hallar una espiritualidad que me permita conectar con la fuente dívina en mí.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'10. ¿Qué estructura deberás aportar a través de tu Saturno?',
         answers:[
             { answer:'Brindar importancia a cada momento en el que estoy presente.', value:true, house:1 },
@@ -163,7 +163,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Unión: diseminar las diferencias, reconociendo que todos somos parte de lo mismo.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'11. ¿De donde obtendras la motivación para liderear honorablemente?',
         answers:[
             { answer:'Quere ser la mejor versión de mi mism@', value:true, house:1 },
@@ -180,7 +180,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Del genuino deseo de buscar el bien de los demás.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'12. ¿Cómo mantendrás la humildad en la casa de Saturno?',
         answers:[
             { answer:'Permaneciendo consciente de lo que puede salir mal a traves de mis miedos e inseguridades.', value:true, house:1 },
@@ -197,7 +197,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Entendiendo que en está vida no me toca experimentar el reconociento.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'13. ¿Por que serás reconocido por las personas que te conozcan?',
         answers:[
             { answer:'Mi capacidad de comportarme a la altura en cada situación que participo.', value:true, house:1 },
@@ -214,7 +214,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Por mi obra, las personas sabrán lo que he hecho pero no sabrán de mí.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'14. ¿Qué ejemplo debes proyectar?',
         answers:[
             { answer:'Una persona que toma su apariencia con absoluta seriedad.', value:true, house:1 },
@@ -231,7 +231,7 @@ export const quiz2:iQuestion[] = [
             { answer:'De un líder espritual, que está consciente en todo momento de lo maravilloso del presente.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'15. ¿Qué sabes mejor que nadie?',
         answers:[
             { answer:'Que la seguridad en uno mismo, es un trabajo de todos los días.', value:true, house:1 },
@@ -248,7 +248,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Existe algo divino en nosotros que sostiene nuestra realidad y creación', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'16. ¿Qué te admirarán al perseguir tu vocación de servicio?',
         answers:[
             { answer:'Tu seguridad y confianza en ti mism@.', value:true, house:1 },
@@ -265,7 +265,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Mi empatía, la capacidad de comprender a las personas que sirvo.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'17. ¿Qué pasará conforme avances en tu misión de servicio?',
         answers:[
             { answer:'Alcanzaré el reconocimiento de cada vez más personas.', value:true, house:1 },
@@ -282,7 +282,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Las personas buscaran mi consejo, pues reconocerán en mí la sabiduría que quien no busca nada pues ya es feliz.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'18. ¿Qué es recomendable de acuerdo a tu Saturno?',
         answers:[
             { answer:'Evitar que mi liderazgo se vuelva autoritario, ceder ocasionalmente la iniciativa.', value:true, house:1 },
@@ -299,7 +299,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Saber obedecer, dejarme guiar aunque sea para que los demás aprendan a hacerlo honorablemente.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'19. ¿Cuáles son excelentes ejemplos de tu vocación de servicio?',
         answers:[
             { answer:'Fígura pública, líder de la comunidad o puestos que requieran de mucha responsabilidad y honorabilidad.', value:true, house:1 },
@@ -316,7 +316,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Víctimas, presos, hospitales y en general personas que requieran de perdón, compasión y misericordia.', value:true, house:12 },
         ]
     }, {
-        sign:true,
+        house:true,
         question:'20. ¿Para qué te presiona Saturno?',
         answers:[
             { answer:'Ser ese líder responsable, seguro de su identidad y lo que proyecta a los demás.', value:true, house:1 },
