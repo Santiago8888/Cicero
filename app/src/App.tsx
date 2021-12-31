@@ -53,7 +53,7 @@ const initialData:iHomeData = {
 }
 
 
-export interface iApprove { score?:number, newPost?:iPost }
+export interface iApprove { score?:number, newPost?:iPost, doubt?:iDoubt }
 
 export const App = () => {
     const [ homeData, setHomeData ] = useState<iHomeData>(initialData)
@@ -267,13 +267,14 @@ export const App = () => {
         else return false
     }
 
-    const approve = ({score, newPost}:iApprove) => {
+    const approve = ({score, newPost, doubt}:iApprove) => {
         if(!user) return
 
         const { current, progress } = user 
         const lesson = Units[current.unit].modules[current.module].lessons[current.lesson]
         if(lesson.type === 'Quiz' && score !== undefined) return approveQuiz(score)
         if(lesson.type === 'Reflection' && newPost !== undefined) return approveReflection(newPost)
+        if(lesson.type === 'Reflection' && doubt !== undefined) return approveDoubt(doubt)
 
         if(current.unit !== progress.unit) return
         if(current.module !== progress.module) return
@@ -283,12 +284,26 @@ export const App = () => {
     }
 
     const approveReflection = (newPost:iPost) => {
-        dbPost(newPost)
-
+        post(newPost)
         if(!user) return
+
         const { current:c, progress:p } = user 
         const needsProgress = c.unit === p.unit && c.module === p.module && c.lesson === p.lesson
+ 
+        return updateUser({
+            ...user, 
+            progress: needsProgress ? nextLesson(p) : p,
+            current: nextLesson(c)
+        })
+    }
 
+    const approveDoubt = (doubt:iDoubt) => {
+        submit(doubt)
+        if(!user) return
+
+        const { current:c, progress:p } = user 
+        const needsProgress = c.unit === p.unit && c.module === p.module && c.lesson === p.lesson
+ 
         return updateUser({
             ...user, 
             progress: needsProgress ? nextLesson(p) : p,
@@ -298,10 +313,11 @@ export const App = () => {
 
 
     /*******************        DB Methods            *******************/
-    const submit = (doubt:iDoubt) => {
+    const submit = async(doubt:iDoubt) => {
         if(!user || !db) return
 
-        const questions:iDoubt[] = [{...doubt, likes:[user.user_id as string]}, ...forum.questions]
+        const doubts = await db.collection('doubts').find({})
+        const questions:iDoubt[] = [{...doubt, likes:[user.user_id as string]}, ...doubts.sort(() => -1)]
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
@@ -325,17 +341,17 @@ export const App = () => {
         db.collection('doubts').updateOne({_id:question._id}, {...question})
     }
 
-    const dbPost = (newPost:iPost) => {
-        if(!user || !db) return 
-        db.collection('posts').insertOne(newPost)
-    }
 
-    const post = (newPost:iPost) => {
-        dbPost(newPost)
-        const newPosts:iPost[] = [newPost, ...posts]
+    const post = async(newPost:iPost) => {
+        if(!user || !db) return 
+        if(!homeData.posts) setHomeData({...homeData, posts:[]}) 
+
+        db.collection('posts').insertOne(newPost)
+        const newPosts = await db.collection('posts').find({})
+        const sortedPosts = newPosts.sort(() => -1)
  
-        setPosts(newPosts)
-        setHomeData({...homeData, posts:newPosts}) 
+        setPosts(sortedPosts)
+        setHomeData({...homeData, posts:sortedPosts}) 
     }
 
     const likePost = (id:number) => {

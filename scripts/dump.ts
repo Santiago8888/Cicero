@@ -30,7 +30,7 @@ const dumpUsers = async() => {
     }))
 
     const usersData = JSON.stringify(mappedUsers)
-    await fs.writeFile('./data/users.json', usersData)
+    await fs.writeFile('./data/dump.json', usersData)
 }
 
 dumpUsers().catch(console.log)

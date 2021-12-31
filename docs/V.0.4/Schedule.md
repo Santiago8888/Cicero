@@ -22,14 +22,13 @@
 
 ## Wednesday
 * [X] Readings.
-* [ ] Practical Excercise.
-* [ ] Dynamic house logic. 
-* [ ] Record Video
+* [X] Practical Excercise.
+* [X] Dynamic house logic. 
 
 ## Thursday
 * [ ] Redirect on chat.
 * [ ] Doubt to finalize module.
-* [ ] Last reading the Wisdom of Saturn.
+* [X] Last reading the Wisdom of Saturn.
 * [ ] Last questions on second reading from Module 2. 
 * [ ] Limit posts to last 100.
 * [ ] Avoid empty posts

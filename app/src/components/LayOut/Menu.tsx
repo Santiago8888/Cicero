@@ -22,6 +22,7 @@ export interface iLesson {
     numbered?:boolean
     end?:boolean
     drawHouses?:boolean
+    disabled?:boolean
 }
 
 
