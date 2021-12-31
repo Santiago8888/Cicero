@@ -1,5 +1,5 @@
 import { iLesson } from '../../components/LayOut/Menu'
-import { posts1, posts2 } from './posts'
+import { posts1, posts2, posts3 } from './posts'
 import { quiz1 } from './quiz1'
 import { quiz2 } from './quiz2'
 import { quiz3 } from './quiz3'
@@ -36,10 +36,16 @@ const lessons2:iLesson[] = [
     { type:'Reflection', title:'Ejercicio de Reflexión', posts:posts2, numbered:true, description:posts2Description }
 ]
 
+const excersiceDescription = [
+    '¡Felicidades! Has completado el tercer módulo.', 
+    'El siguiente ejercicio, es para que comiences a integrar los conocimientos en tu misión de servicio en la casa de tu Saturno.'
+]
+
 const lessons3:iLesson[] = [
     { type:'Video', title:'Los tránsitos de Saturno', link:'https://youtu.be/7sRKVAHorco' },
     { type:'Quiz', title:'Quiz 3.3', questions:quiz3 },
     { type:'Video', title:'Saturno y la Salud', link:'https://youtu.be/zenrgnOxS1A' },
+    { type:'Reflection', title:'Ejercicio Práctico', posts:posts3, end:true, description:excersiceDescription, numbered:true }
 ]
 
 export const module3 = [
