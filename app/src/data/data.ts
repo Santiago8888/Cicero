@@ -5,6 +5,7 @@ import { iUnit } from '../components/LayOut/Menu'
 import { planets, houses } from './chart'
 import { module1 } from './module-1'
 import { module2 } from './module-2'
+import { module3 } from './module-3'
 import { iUser } from '../App'
 
 
@@ -40,14 +41,8 @@ export const Recordings:iRecordings = {
 export const Units:iUnit[] = [
     { title: '1. Saturno y el Karma', modules: module1 },
     { title: '2. El Signo de Saturno', modules: module2 },
+    { title: '3. La Casa de Saturno', modules: module3 },
     { 
-        title: '3. La Casa de Saturno', 
-        modules: [
-            { title: '3.1 La casa de tu Saturno', lessons:[] },
-            { title: '3.2 Los ciclos de Saturno', lessons:[] },
-            { title: '3.3 Saturno y la Salud.', lessons:[] }
-        ] 
-    }, { 
         title: '4. Saturno y la Kabbalah', 
         modules: [
             { title: '4.1 Binah y el inicio de la existencia', lessons:[] },
