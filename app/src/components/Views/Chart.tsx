@@ -94,7 +94,7 @@ export const Chart = ({ user, title, planet, drawHouses, next, approve }: iChart
             }}
         >  {
                 user.birth
-                    ? `Fecha de Nacimiento: ${user.birth.day} de ${mapMonth(user.birth.month)} de ${user.birth.year} a las ${user.birth.hour}:${user.birth.minute} pm.`
+                    ? `Fecha de Nacimiento: ${user.birth.day} de ${mapMonth(user.birth.month)} de ${user.birth.year} a las ${user.birth.hour}:${user.birth.minute}.`
                     : ''
             }
         </h3>
