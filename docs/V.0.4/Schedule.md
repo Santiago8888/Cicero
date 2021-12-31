@@ -22,7 +22,7 @@
 
 ## Wednesday
 * [X] Readings.
-* [ ] Practical Excercise.
+* [X] Practical Excercise.
 * [X] Dynamic house logic. 
 
 ## Thursday
