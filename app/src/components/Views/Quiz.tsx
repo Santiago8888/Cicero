@@ -7,7 +7,7 @@ import { Approve } from '../Home'
 
 
 interface iAnswer { answer:string, value:boolean, sign?:Sign, house?:number }
-export interface iQuestion { question:string, answers:iAnswer[], sign?:boolean }
+export interface iQuestion { question:string, answers:iAnswer[], sign?:boolean, house?:boolean }
 
 export const questionStyle:CSSProperties = {
     textAlign:'left', 
@@ -30,6 +30,18 @@ const getRandomSigns = (signs:Sign[]):Sign[] => {
     return getRandomSigns([...signs, newSign])
 }
 
+export const houseNumbers:number[] = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+const getRandomHouse = (houses:number[]) => houseNumbers.filter(house => 
+    !houses.includes(house)
+)[Math.floor(Math.random()*(12-houses.length))]
+
+const getRandomHouses = (houses:number[]):number[] => {
+    if(houses.length === 4) return houses
+    
+    const newHouse = getRandomHouse(houses)
+    return getRandomHouses([...houses, newHouse])
+}
+
 
 interface IQuestion extends iQuestion { 
     index:number
@@ -38,18 +50,28 @@ interface IQuestion extends iQuestion {
     select(index:number, value:number):void 
 }
 
-const Question = ({index, question, value, answers, sign, user, select}:IQuestion) => {
+const Question = ({index, question, value, answers, sign, user, house, select}:IQuestion) => {
     const [filteredAnswers, setFilteredAnswers] = useState(answers)
 
     useEffect(() => {
-        if(!sign) return 
-        if(!user.sign) return
+        if (sign) {
+            if(!user.sign) return
+    
+            const randomSigns = getRandomSigns([user.sign as unknown as Sign])        
+            const signAnswers = answers.filter(({ sign }) => randomSigns.includes(sign as Sign))
+    
+            setFilteredAnswers(signAnswers)    
+        }
 
-        const randomSigns = getRandomSigns([user.sign as unknown as Sign])        
-        const signAnswers = answers.filter(({ sign }) => randomSigns.includes(sign as Sign))
-
-        setFilteredAnswers(signAnswers)
-    }, [answers, sign, user])
+        if (house) {
+            if(!user.house) return
+    
+            const randomHouses = getRandomHouses([user.house])        
+            const houseAnswers = answers.filter(({ house }) => randomHouses.includes(house as number))
+    
+            setFilteredAnswers(houseAnswers)    
+        }
+    }, [answers, sign, user, house])
 
     return <div 
         className='field' 
@@ -157,9 +179,11 @@ export const Quiz = ({ title, description, questions=[], min=questions.length*.7
     const submit = async() => {
 
         const answers = Object.entries(values).map(([k, v]) => 
-            !questions[k as unknown as number].answers[v].sign
+            !questions[k as unknown as number].answers[v].sign && !questions[k as unknown as number].answers[v].house
             ?   questions[k as unknown as number].answers[v].value
-            :   questions[k as unknown as number].answers[v].sign === user.sign
+            :   questions[k as unknown as number].answers[v].sign
+                ?   questions[k as unknown as number].answers[v].sign === user.sign
+                :   questions[k as unknown as number].answers[v].house === user.house
         )
 
         console.log('answers', answers)
