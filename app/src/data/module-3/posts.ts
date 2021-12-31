@@ -23,3 +23,12 @@ export const posts2 = [
     '¿Qué sueño tienes para tu esa última etapa de vejez o entrega absoluta?',
     '¿Qué te gustaría experimentar en tu próxima vida?'    
 ]
+
+export const posts3 = [
+    'Regresa a la lectura de Saturno en tu casa y escribe de 5 a 7 acciones que te gustaría hacer como servicio en esa casa durante la siguiente semana.',
+    'Agenda las acciones durante la siguiente semana en tu celular y ponles notificaciones para que no se te olvide.',
+    'Durante la semana, ve marcando las acciones que realizaste y los resultados obtuviste.',
+    'Al finalizar la semana, medita sobre como te fue y como te gustaría estar en tu casa de Saturno dentro de 1 año.',
+    'Escribe tus metas para la casa de tu Saturno en un correo electrónico y prográmalo para que te llegue el próximo año.',
+    'Cuando termines, puedes compartir tus experiencias y aprendizajes en el chat.'
+]
