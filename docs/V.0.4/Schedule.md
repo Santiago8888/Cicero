@@ -23,8 +23,7 @@
 ## Wednesday
 * [X] Readings.
 * [ ] Practical Excercise.
-* [ ] Dynamic house logic. 
-* [ ] Record Video
+* [X] Dynamic house logic. 
 
 ## Thursday
 * [ ] Redirect on chat.
