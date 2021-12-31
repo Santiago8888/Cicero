@@ -86,7 +86,10 @@ interface iReflection {
 
 export const Reflection = ({posts=[], user, title, description, numbered, end, approve, next }:iReflection) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
-    const [active, setActive] = useState(false)
+
+    const [ active, setActive ] = useState(false)
+    const [ asking, setAsking ] = useState(false)
+    const [ question, setQuestion ] = useState<string>('')
     const [ newPost, setNewPost ] = useState<iPost>(emptyPost)
 
     const submit = (post:iPost) => {
@@ -99,6 +102,13 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
             const lesson = `${user.current.unit}.${user.current.module}.${user.current.lesson}`
             amplitude.getInstance().logEvent('ASTRO_MEDITATION', { lesson, ...post }) 
         } catch(e) {}
+    }
+
+    const ask = () => {
+        setAsking(false)
+
+        approve({ doubt:{ question, details:newPost.detail, likes:[user.user_id] } })
+        try { amplitude.getInstance().logEvent('ASTRO_DOUBT', { question, detail:newPost.detail }) } catch(e) { }
     }
 
     return <div className='content'>
@@ -114,7 +124,7 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
         </div>
 
         { !end && <CTA midScreen={midScreen} text={'Haz una publicación'} click={() => setActive(true)} user={user}/> }
-        { end && <END midScreen={midScreen} text={'Haz una pregunta'} click={() => setActive(true)} user={user}/> }
+        { end && <END midScreen={midScreen} text={'Haz una pregunta'} click={() => setAsking(true)} user={user}/> }
 
         <Modal 
             isActive={active} 
@@ -142,6 +152,38 @@ export const Reflection = ({posts=[], user, title, description, numbered, end, a
                         className='textarea' 
                         value={newPost.detail} 
                         placeholder='Comparte tu experiencia o aprendizaje...' 
+                        onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
+                    />
+                </div>
+            </div>            
+        </Modal>
+
+        <Modal 
+            cta={'Preguntar'}
+            isActive={asking} 
+            submit={() => ask()}
+            title={'Haz una Pregunta'} 
+            deactivate={() => setAsking(false)} 
+        >
+            <div className='field'>
+                <label className='label'> Pregunta: </label>
+                <div className='control'>
+                    <input 
+                        className='input' 
+                        type='text' 
+                        value={question} 
+                        onChange={({target:{value}})=> setQuestion(value)}
+                    />
+                </div>
+            </div>
+
+            <div className='field'>
+                <label className='label'> Detalles Adicionales (opcional): </label>    
+                <div className='control'>
+                    <textarea 
+                        className='textarea' 
+                        value={newPost.detail} 
+                        placeholder='Comparte un poco de contexto o la motivación de tu pregunta.' 
                         onChange={({target:{value}})=> setNewPost({...newPost, detail:value})}
                     />
                 </div>
