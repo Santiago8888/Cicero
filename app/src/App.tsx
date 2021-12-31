@@ -287,24 +287,37 @@ export const App = () => {
         post(newPost)
         if(!user) return
 
-        const { current, progress } = user 
-        return updateUser({...user, current:nextLesson(current), progress:nextLesson(progress)})
+        const { current:c, progress:p } = user 
+        const needsProgress = c.unit === p.unit && c.module === p.module && c.lesson === p.lesson
+ 
+        return updateUser({
+            ...user, 
+            progress: needsProgress ? nextLesson(p) : p,
+            current: nextLesson(c)
+        })
     }
 
     const approveDoubt = (doubt:iDoubt) => {
         submit(doubt)
         if(!user) return
 
-        const { current, progress } = user 
-        return updateUser({...user, current:nextLesson(current), progress:nextLesson(progress)})
+        const { current:c, progress:p } = user 
+        const needsProgress = c.unit === p.unit && c.module === p.module && c.lesson === p.lesson
+ 
+        return updateUser({
+            ...user, 
+            progress: needsProgress ? nextLesson(p) : p,
+            current: nextLesson(c)
+        })
     }
 
 
     /*******************        DB Methods            *******************/
-    const submit = (doubt:iDoubt) => {
+    const submit = async(doubt:iDoubt) => {
         if(!user || !db) return
 
-        const questions:iDoubt[] = [{...doubt, likes:[user.user_id as string]}, ...forum.questions]
+        const doubts = await db.collection('doubts').find({})
+        const questions:iDoubt[] = [{...doubt, likes:[user.user_id as string]}, ...doubts.sort(() => -1)]
 
         setForum({...forum, questions})
         setHomeData({...homeData, forum:{...forum, questions}})
@@ -329,14 +342,16 @@ export const App = () => {
     }
 
 
-    const post = (newPost:iPost) => {
+    const post = async(newPost:iPost) => {
         if(!user || !db) return 
-        db.collection('posts').insertOne(newPost)
+        if(!homeData.posts) setHomeData({...homeData, posts:[]}) 
 
-        const newPosts:iPost[] = [newPost, ...posts]
+        db.collection('posts').insertOne(newPost)
+        const newPosts = await db.collection('posts').find({})
+        const sortedPosts = newPosts.sort(() => -1)
  
-        setPosts(newPosts)
-        setHomeData({...homeData, posts:newPosts}) 
+        setPosts(sortedPosts)
+        setHomeData({...homeData, posts:sortedPosts}) 
     }
 
     const likePost = (id:number) => {
