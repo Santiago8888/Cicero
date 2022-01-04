@@ -62,8 +62,8 @@ export const quiz3:iQuestion[] = [
         answers:[
             { answer: 'Por nuestro karma y de lo que hemos hecho en las vidas pasadas.', value:false },
             { answer: 'Saturno es impredecible como parte de su proceso de evolución continua.', value:false },
-            { answer: 'Generalmente cada casa tiene más de un signo el cual cambia conforme Saturno avanza.', value:true },
-            { answer: 'Porque de acuerdo al movimiento de traslación de la Tierra, a veces Saturno se torna retrogrado.', value:false },
+            { answer: 'Generalmente las casas tiene más de un signo y Saturno puede cambiar de signo conforme avanza.', value:true },
+            { answer: 'Porque el movimiento de traslación de la Tierra ocasiona que Saturno se torne retrogrado una vez al año.', value:false },
         ]
     }, {
         question: '9. ¿Porqué Saturno es lento en su tránsito a través de las casas?',
