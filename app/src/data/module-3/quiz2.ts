@@ -122,7 +122,7 @@ export const quiz2:iQuestion[] = [
             { answer:'El respeto que tengo por mi cuerpo y hábitos.', value:true, house:6 },
             { answer:'Como mantienes la humildad a pesar de tu éxito.', value:true, house:10 },
             { answer:'Mis valores, especialmente lealtad y honestidad.', value:true, house:2 },
-            { answer:'La dedicación y aprecio que tienes por mis amig@s.', value:true, house:11 },
+            { answer:'La dedicación y aprecio que tengo por mis amig@s.', value:true, house:11 },
             { answer:'Mi capacidad de transformar lo negativo en positivo.', value:true, house:8 },
             { answer:'Mi capacidad de expresar quien soy de forma creativa.', value:true, house:5 },
             { answer:'El compromiso en mis relaciones de pareja y sociedades.', value:true, house:7 },
