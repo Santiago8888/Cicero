@@ -2,7 +2,7 @@
 
 ## Sunday
 - [ ] Index
-- [ ] Video Lessons
+- [X] Video Lessons
 - [ ] Quizzes 1 & 2.
 - [ ] First draft of lectures.
 - [ ] First sharing excercise.
