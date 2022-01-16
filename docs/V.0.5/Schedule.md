@@ -1,7 +1,7 @@
 # Schedule V5 
 
 ## Sunday
-- [ ] Index
+- [X] Index
 - [X] Video Lessons
 - [ ] Quizzes 1 & 2.
 - [ ] First draft of lectures.
