@@ -18,9 +18,9 @@ const lessons2:iLesson[] = [
 ]
 
 const lessons3:iLesson[] = [
-    { type:'Reading', title:'Saturno y el Shabbat' },
+    { type:'Reading', title:'El Shabbat' },
     { type:'Quiz', title:'Quiz 4.3', questions:[] },
-    { type:'Video', title:'Saturno en Acuario', link:'https://youtu.be/QnQr0FDW5gI' },
+    { type:'Video', title:'Saturno y el COVID', link:'https://youtu.be/QnQr0FDW5gI' },
     { type:'Reflection', title:'Reflexión Final' },
     { type:'Video', title:'Meditación', link:'https://youtu.be/BljfRq4j2uY' },
     { type:'Reading', title:'Siguientes Pasos' },
@@ -30,6 +30,6 @@ const lessons3:iLesson[] = [
 
 export const module4 = [
     { title: '4.1 Saturno en la Kabbalah', lessons:lessons1 },
-    { title: '4.2 Binah y el inicio de la existencia', lessons:lessons2 },
-    { title: '4.3 Saturno en Acuario y El COVID', lessons:lessons3 }
+    { title: '4.2 Binah y el Inicio de la Existencia', lessons:lessons2 },
+    { title: '4.3 Saturno en Acuario', lessons:lessons3 }
 ]
