@@ -36,6 +36,7 @@ const getCoordinates = async(query) => {
 const timeRoot = `http://api.timezonedb.com/v2.1/get-time-zone`
 const timeParams = `format=json&by=position&`
 const getTimeZone = async({ lat, lng, time }) => {
+    console.log(lat, lng)
     const url = `${timeRoot}?key=${timezone_key}&${timeParams}lat=${lat}&lng=${lng}&time=${time}`
     const { data } = await axios.get(url)
     return data.gmtOffset

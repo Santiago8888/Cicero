@@ -13,11 +13,12 @@ const mapSign = (sun:iPlanet):Sign => {
 
 
 const getChart = async(date:Date, location:string) => {
-    const chartParams = `?query="${location}"&year=${date.getFullYear()}&month=${
-        date.getMonth() + 1}&day=${date.getDate()}&hour=${date.getHours()}&minute=${date.getMinutes()
+    const chartParams = `?query="${location}"&year=${date.getUTCFullYear()}&month=${
+        date.getUTCMonth() + 1}&day=${date.getUTCDate()}&hour=${date.getUTCHours()}&minute=${date.getUTCMinutes()
     }`
+    console.log(chartParams)
 
-    const url = `https://astroconsciencia.gq/.netlify/functions/astro-chart${chartParams}`
+    const url = `http://localhost:8888/.netlify/functions/astro-chart${chartParams}`
     const { data: { houses, planets } } =  await axios.get(url)
 
     const sun = planets.find(({name}:{name:string}) => name === 'Saturn')

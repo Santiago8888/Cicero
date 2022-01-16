@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
+import { mapAstroText } from '../../utils/sign'
 import { iApprove, iUser } from '../../App'
-import { mapSign } from '../../utils/sign'
 import { questionStyle } from './Quiz'
 import { Approve } from '../Home'
 import { useState } from 'react'
@@ -41,7 +41,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
                 marginBottom: midScreen ? '2rem' : '1rem', 
                 color:'saddlebrown'
             }}
-        > { mapSign(title, user) } </h1>
+        > { mapAstroText(title, user) } </h1>
 
 
         <Divider midScreen={midScreen} />
@@ -60,7 +60,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
                         onClick={initCountdown}
                         target='_blank'
                         rel='noreferrer'
-                        href={mapSign(link, user)}
+                        href={mapAstroText(link, user).replace(' ', '-')}
                         className='button is-link'
                         style={{
                             borderRadius:12,
