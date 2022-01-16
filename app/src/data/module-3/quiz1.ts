@@ -5,7 +5,7 @@ export const quiz1:iQuestion[] = [
         question: '1. ¿Cuál es la casa en la que te sientes más satisfech@ actualmente?', 
         answers:[
             { answer:'Casa 4: la familia.', value:true },
-            { answer:'Casa 6: el trabajo.', value:true },
+            { answer:'Casa 6: la salud.', value:true },
             { answer:'Casa 7: la pareja.', value:true },
             { answer:'Casa 12: la espiritualidad.', value:true },
         ]

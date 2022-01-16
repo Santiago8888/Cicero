@@ -58,12 +58,12 @@ export const quiz3:iQuestion[] = [
             { answer: 'Porque el símbolo de Saturno representa a la mente que se concentra en un sólo punto.', value:false },
         ]
     }, {
-        question: '8. ¿Porqué Saturno cambia la forma de evaluar estando en diferente casa?',
+        question: '8. ¿Porqué Saturno cambia la forma de evaluar estando en la misma casa?',
         answers:[
-            { answer: 'Depende de nuestro y de lo que hemos hecho en las vidas pasadas.', value:false },
+            { answer: 'Por nuestro karma y de lo que hemos hecho en las vidas pasadas.', value:false },
             { answer: 'Saturno es impredecible como parte de su proceso de evolución continua.', value:false },
-            { answer: 'Generalmente cada casa tiene más de un signo el cual cambia en el transcurso de Saturno.', value:true },
-            { answer: 'Porque de acuerdo al movimiento de traslación de la Tierra, a veces se torna retrogrado.', value:false },
+            { answer: 'Generalmente las casas tiene más de un signo y Saturno puede cambiar de signo conforme avanza.', value:true },
+            { answer: 'Porque el movimiento de traslación de la Tierra ocasiona que Saturno se torne retrogrado una vez al año.', value:false },
         ]
     }, {
         question: '9. ¿Porqué Saturno es lento en su tránsito a través de las casas?',
