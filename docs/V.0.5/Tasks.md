@@ -1,7 +1,7 @@
 # Tasks
 
 ## Module 4
-- [ ] Index
+- [X] Index
 - [X] Video Lessons (6).
 - [ ] Quizzes (3).
 - [ ] Lectures
