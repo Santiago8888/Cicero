@@ -6,6 +6,7 @@ import { planets, houses } from './chart'
 import { module1 } from './module-1'
 import { module2 } from './module-2'
 import { module3 } from './module-3'
+import { module4 } from './module-4'
 import { iUser } from '../App'
 
 
@@ -42,12 +43,5 @@ export const Units:iUnit[] = [
     { title: '1. Saturno y el Karma', modules: module1 },
     { title: '2. El Signo de Saturno', modules: module2 },
     { title: '3. La Casa de Saturno', modules: module3 },
-    { 
-        title: '4. Saturno y la Kabbalah', 
-        modules: [
-            { title: '4.1 Binah y el inicio de la existencia', lessons:[] },
-            { title: '4.2 Saturno desde la Kabbalah', lessons:[] },
-            { title: '4.3 El COVID y Saturno en Acuario', lessons:[] }
-        ] 
-    }
+    { title: '4. Saturno y la Kabbalah', modules: module4 }
 ]
