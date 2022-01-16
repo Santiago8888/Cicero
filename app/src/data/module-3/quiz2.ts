@@ -192,7 +192,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Recordando que tratar de ayudar indebidamente a mis familiares traerá peores resultados.', value:true, house:4 },
             { answer:'Permaneciendo consciente de lo que puede salir mal a través de mis miedos e inseguridades.', value:true, house:1 },
             { answer:'Aceptando que la riqueza es producto del trabajo constante durante muchos años, incluso décadas.', value:true, house:2 },
-            { answer:'Reconociendo que mi valor en la sociedad proviene de las personas que conozco, no solo de quien soy.', value:true, house:3 },
+            { answer:'Reconociendo que mi éxito proviene de las personas que conozco y de quien soy cuando estoy con ellas.', value:true, house:3 },
             { answer:'Reconociendo que mi propio éxito solo será posible a partir del esfuerzo de las personas que lidero.', value:true, house:10 },
             { answer:'Siendo consciente que la causa por la que lucho no la puedo alcanzar sólo y requiero de la coperación de los demás.', value:true, house:11 },
         ]
@@ -201,9 +201,9 @@ export const quiz2:iQuestion[] = [
         question:'13. ¿Por que serás reconocido por las personas que te conozcan?',
         answers:[
             { answer:'Mi forma tan autentica de disfrutar la vida.', value:true, house:5 },
-            { answer:'Lo mucho que se sobre una gran cantidad de temas.', value:true, house:3 },
+            { answer:'Lo mucho que sé sobre una gran cantidad de temas.', value:true, house:3 },
             { answer:'Porque las personas saben que pueden confiar en mí.', value:true, house:8 },
-            { answer:'Mi unión familiar que me aporta seguridad y estabilidad.', value:true, house:4 },
+            { answer:'Mi unión familiar, que me aporta seguridad y estabilidad.', value:true, house:4 },
             { answer:'Mi alegría y lo expandidas que se sienten en mí presencia.', value:true, house:9 },
             { answer:'El genuino interés que tengo por el bienestar de los demás.', value:true, house:6 },
             { answer:'Mi compromiso hacia el grupo, y la causa a la que dedico mi servicio.', value:true, house:11 },
@@ -218,16 +218,16 @@ export const quiz2:iQuestion[] = [
         question:'14. ¿Qué ejemplo debes proyectar?',
         answers:[
             { answer:'Alguien que sabe divertirse sanamente.', value:true, house:5 },
-            { answer:'Una persona que devuelve generosamente a la sociedad.', value:true, house:11 },
-            { answer:'Una persona que toma su apariencia con absoluta seriedad.', value:true, house:1 },
-            { answer:'El de una persona que siempre busca una nueva meta o desafío.', value:true, house:9 },
             { answer:'De una persona estudiosa en constante preparación y capacitación.', value:true, house:3 },
             { answer:'Ser agradable y considerado con lo que es importante para cada quien.', value:true, house:7 },
-            { answer:'Una persona amable, siempre dispuesta a ayudar al prójimo eficientemente.', value:true, house:6 },
+            { answer:'El de una persona que siempre busca y alcanza una nueva meta o desafío.', value:true, house:9 },
             { answer:'La de una persona prospera, capaz de aprovechar las oportunidades económicas.', value:true, house:2 },
             { answer:'Líder familiar que muestra el mismo comportamiento en su hogar que en público.', value:true, house:4 },
             { answer:'De una persona sobria, responsable, práctica, centrada y que sabe lo que quiere.', value:true, house:10 },
+            { answer:'Una persona responsable, respetable y que toma su apariencia con absoluta seriedad.', value:true, house:1 },
+            { answer:'Una persona amable, servicial, siempre dispuesta a ayudar al prójimo eficientemente.', value:true, house:6 },
             { answer:'De un líder espiritual, que está consciente en todo momento de lo maravilloso del presente.', value:true, house:12 },
+            { answer:'Una persona que devuelve generosamente a la sociedad y actúa comprometida por un futuro mejor.', value:true, house:11 },
             { answer:'De tener el completo conocimiento de las intenciones de las personas, pero elegir ver el lado positivo.', value:true, house:8 },
         ]
     }, {
