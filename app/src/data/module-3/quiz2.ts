@@ -166,9 +166,9 @@ export const quiz2:iQuestion[] = [
         house:true,
         question:'11. ¿De donde obtendrás la motivación para liderar honorablemente?',
         answers:[
-            { answer:'De la delicioso consciencia de sentirme libre, sin ataduras o necesidad de imponer una autoridad.', value:true, house:9 },
             { answer:'Del beneficio común que se obtiene a partir de la causa por la que trabajamos en equipo.', value:true, house:11 },
-            { answer:'De todos los buenos y malos líderes que he tenido en el pasado.', value:true, house:10 },
+            { answer:'De la experiencia de los buenos y malos líderes que he tenido en el pasado.', value:true, house:10 },
+            { answer:'El miedo a la pobreza y saber que he hecho las cosas responsablemente.', value:true, house:2 },
             { answer:'La satisfacción de resolver problemas de las personas a mi alrededor.', value:true, house:3 },
             { answer:'Del amor y felicidad que me aporta la convivencia familiar.', value:true, house:4 },
             { answer:'Del genuino deseo de buscar el bien de los demás.', value:true, house:12 },
@@ -177,7 +177,7 @@ export const quiz2:iQuestion[] = [
             { answer:'La satisfacción de sentirme útil y saludable.', value:true, house:6 },
             { answer:'El temor y dolor que me causa la injusticia.', value:true, house:7 },
             { answer:'Querer ser la mejor versión de mí mism@', value:true, house:1 },
-            { answer:'El miedo a la pobreza.', value:true, house:2 },
+            { answer:'Del deseo de sentirte libre y sabi@.', value:true, house:9 },
         ]
     }, {
         house:true,
