@@ -1,9 +1,10 @@
+import { quiz1 } from './quiz1'
 import { iLesson } from '../../components/LayOut/Menu'
 
 
 const lessons1:iLesson[] = [
     { type:'Video', title:'Introducción a la Kabbalah', link:'https://youtu.be/9bjn7W2F-KM' },
-    { type:'Quiz', title:'Quiz 4.1', questions:[] },
+    { type:'Quiz', title:'Quiz 4.1', questions:quiz1 },
     { type:'Reading', title:'El próposito de la Kabbalah' },
     { type:'Video', title:'Saturno en el Árbol de la Vida', link:'https://youtu.be/jPLDQQq_CfM' },
     { type:'Reflection', title:'Ejercicio de Reflexión' }
