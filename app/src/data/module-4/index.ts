@@ -6,7 +6,7 @@ const lessons1:iLesson[] = [
     { type:'Video', title:'Introducción a la Kabbalah', link:'https://youtu.be/9bjn7W2F-KM' },
     { type:'Quiz', title:'Quiz 4.1', questions:quiz1 },
     { type:'Reading', title:'El próposito de la Kabbalah' },
-    { type:'Video', title:'Saturno en el Árbol de la Vida', link:'https://youtu.be/jPLDQQq_CfM' },
+    { type:'Video', title:'El Camino de la Manifestación', link:'https://youtu.be/votYUa9V12c' },
     { type:'Reflection', title:'Ejercicio de Reflexión' }
 ]
 
