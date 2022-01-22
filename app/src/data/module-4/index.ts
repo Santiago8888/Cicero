@@ -1,5 +1,5 @@
 import { iLesson } from '../../components/LayOut/Menu'
-import { posts1 } from './posts'
+import { posts1, posts2 } from './posts'
 import { quiz1 } from './quiz1'
 
 
@@ -16,7 +16,7 @@ const lessons2:iLesson[] = [
     { type:'Quiz', title:'Examen Final', questions:[] },
     { type:'Reading', title:'La Llave de la Creación' },
     { type:'Video', title:'Mi Misión Espiritual', link:'https://youtu.be/uE7kmnAwLhw' },
-    { type:'Reflection', title:'Ejercicio de Compartir' }
+    { type:'Reflection', title:'Ejercicio de Compartir', posts:posts2 }
 ]
 
 const lessons3:iLesson[] = [
