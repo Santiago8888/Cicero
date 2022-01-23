@@ -20,7 +20,7 @@ const lessons2:iLesson[] = [
 ]
 
 const lessons3:iLesson[] = [
-    { type:'Reading', title:'Shabbat' },
+    { type:'Reading', title:'Shabbat', link:'docs/Shabbath.pdf', min:3 },
     { type:'Video', title:'Saturno y el COVID', link:'https://youtu.be/QnQr0FDW5gI' },
     { type:'Reflection', title:'Reflexión de la Era de Acuario' },
     { type:'Video', title:'Meditación', link:'https://youtu.be/BljfRq4j2uY' },
