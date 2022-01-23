@@ -1,5 +1,5 @@
 import { iLesson } from '../../components/LayOut/Menu'
-import { posts1, posts2 } from './posts'
+import { posts1, posts2, posts3 } from './posts'
 import { quiz1 } from './quiz1'
 import { quiz2 } from './quiz2'
 
@@ -33,12 +33,22 @@ const description3 = [
     'Tiempo mínimo sugerido: 3 minutos.'
 ]
 
+const postsDescription = [
+    `En está última reflexión sólo hay una pregunta, pero te invitamos a que le respondas detallada y con mucha consciencia considerando los 3 pilares de la era de Acuario: tecnología, ecología y humanismo:`,
+]
+
+const nextDescription = [
+    'Desafortunadamente el curso está por terminar pero sabemos que algunos de ustedes querrán continuar su camino de aprendizaje y despertar.',
+    'Para dar continuidad puedes unirte a la comunidad y recibir cada semana 2 episodios de podcast: uno el lunes explicando los tránsitos astrológicos de la semana y el segundo los Viernes revelando las enseñanzas de la porción semanal de la Torah.',
+    'Puedes solicitar más información sobre la comunidad en WhatsApp. Esperamos que además continues visitando el curso, haciendo preguntas, asistiendo a los lives y guiando a los nuevos alumnos.'
+]
+
 const lessons3:iLesson[] = [
     { type:'Reading', title:'Shabbat', link:'docs/Shabbath.pdf', min:3, description:description3 },
     { type:'Video', title:'Saturno y el COVID', link:'https://youtu.be/QnQr0FDW5gI' },
-    { type:'Reflection', title:'Reflexión de la Era de Acuario' },
+    { type:'Reflection', title:'Reflexión de la Era de Acuario', posts:posts3, description:postsDescription, numbered:true },
     { type:'Video', title:'Meditación', link:'https://youtu.be/BljfRq4j2uY' },
-    { type:'Reading', title:'Siguientes Pasos' },
+    { type:'Reading', title:'Siguientes Pasos', description:nextDescription },
     { type:'Reflection', title:'Ejercicio Final', end:true, disabled:true },
 ]
 
