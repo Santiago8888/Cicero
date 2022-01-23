@@ -3,13 +3,13 @@
 ## Sunday
 - [X] Index
 - [X] Video Lessons
-- [ ] Quizzes 1 & 2.
+- [X] Quizzes 1 & 2.
+- [X] First and second sharing excercise.
 - [ ] First draft of lectures.
-- [ ] First sharing excercise.
 
 ## Monday
-- [ ] Third quiz.
-- [ ] Second and third sharing excercises.
+- [ ] Answers of quiz.
+- [ ] Third sharing excercises.
 - [ ] Edit on lectures.
 - [ ] Next step lectures.
 - [ ] Layout on Gumroad.
