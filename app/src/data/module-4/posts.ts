@@ -25,3 +25,7 @@ export const posts2 = [
     '¿Qué le dirías a alguien que ya no está con nosotros y sin embargo te encamino en tu misión espiritual?',
     '¿A quién le obsequiarías este curso, crees que la persona necesita la información o más bien ya está lista para recibirla?'
 ]
+
+export const posts3 = [
+    '¿Qué cambios imaginas para la humanidad en la era de Acuario y cómo contribuirás a liderarlos?'
+]
