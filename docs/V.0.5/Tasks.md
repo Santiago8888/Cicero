@@ -4,9 +4,9 @@
 - [X] Index
 - [X] Video Lessons (6).
 - [ ] Quizzes (2).
-- [ ] Lectures
-    - [ ] The Key of Creation.
-    - [ ] Saturn & the Shabbat.
+- [X] Lectures
+    - [X] The Key of Creation.
+    - [X] Saturn & the Shabbat.
 - [ ] Sharing excercises (3).
 - [ ] Next Steps.
 
