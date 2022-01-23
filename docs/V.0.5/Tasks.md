@@ -3,10 +3,9 @@
 ## Module 4
 - [X] Index
 - [X] Video Lessons (6).
-- [ ] Quizzes (3).
+- [ ] Quizzes (2).
 - [ ] Lectures
-    - [ ] The why of Kabbalah?
-    - [ ] The tree of life.
+    - [ ] The Key of Creation.
     - [ ] Saturn & the Shabbat.
 - [ ] Sharing excercises (3).
 - [ ] Next Steps.
