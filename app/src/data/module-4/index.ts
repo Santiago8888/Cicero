@@ -14,7 +14,7 @@ const lessons1:iLesson[] = [
 const lessons2:iLesson[] = [
     { type:'Video', title:'El Camino de la Manifestación', link:'https://youtu.be/votYUa9V12c' },
     { type:'Quiz', title:'Examen Final', questions:quiz2 },
-    { type:'Reading', title:'La Llave de la Creación' },
+    { type:'Reading', title:'La Llave de la Creación', link:'docs/La-Llave-de-la-Creación.pdf', min:6 },
     { type:'Video', title:'Mi Misión Espiritual', link:'https://youtu.be/uE7kmnAwLhw' },
     { type:'Reflection', title:'Ejercicio de Compartir', posts:posts2, numbered:true }
 ]
