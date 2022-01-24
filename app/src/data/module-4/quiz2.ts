@@ -28,16 +28,16 @@ export const quiz2:iQuestion[] = [
     }, {
         question: '4. ¿Qué contiene Keter?', 
         answers:[
-            { answer:'Sabiduria para discernir del bien y el mal.', value:false },
+            { answer:'Sabiduría para discernir del bien y el mal.', value:false },
             { answer:'La inspiración para realizar cualquier meta.', value:false },
             { answer:'Los ideales y creencias con los que nacemos.', value:false },
-            { answer:'Absolutamente todo lo que pudieramos haber deseado o ser.', value:true },
+            { answer:'Absolutamente todo lo que pudiéramos haber deseado o ser.', value:true },
         ]
     }, {
         question: '5. ¿Porqué no podemos absorber la luz infinita de Keter?', 
         answers:[
             { answer:'No habría luz para los demás.', value:false },
-            { answer:'Si lo hicieramos seriamos todo pero también nada.', value:true },
+            { answer:'Si lo hiciéramos seriamos todo pero también nada.', value:true },
             { answer:'Es una consecuencia de la dualidad de la creación.', value:false },
             { answer:'Sería algo egoísta en contra de la naturaleza de la luz.', value:false },
         ]
@@ -102,7 +102,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Repartir la luz equitativamente entre todos.', value:false },
             { answer:'Recompensar a quien hace buen uso de la luz.', value:false },
-            { answer:'Asegurarse de mantener la espiritualidad en los propositos para los que la luz será utilizada.', value:false },
+            { answer:'Asegurarse de mantener la espiritualidad en los propósitos para los que la luz será utilizada.', value:false },
             { answer:'Filtra la luz de Chokhmah que si se va a manifestar y deja a un lado la que todavía no se va a manifestar.', value:true },
         ]
     }, {
@@ -110,7 +110,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Darle tiempo a la luz para manifestarse.', value:false },
             { answer:'Evaluar que la luz sea utilizada responsablemente, en armonía con las leyes divinas.', value:false },
-            { answer:'Confinar o limitar para que podamos manifestarlo de acuerdo a nuestra capcidad y entendimiento.', value:true },
+            { answer:'Confinar o limitar para que podamos manifestarlo de acuerdo a nuestra capacidad y entendimiento.', value:true },
             { answer:'Mantener la conducta impecable de la luz y traer las consecuencias a quienes no la utilizan con absoluta consciencia.', value:false },
         ]
     }, {
@@ -133,7 +133,7 @@ export const quiz2:iQuestion[] = [
         question: '17. ¿Cuál debe ser el resultado de Binah?', 
         answers:[
             { answer:'Encontrar a través del discernimiento la mejor idea que viene de Chokhmah.', value:true },
-            { answer:'Buscar en el alma las verdaderas razones por la que se esta solicitando la luz.', value:false },
+            { answer:'Buscar en el alma las verdaderas razones por la que se está solicitando la luz.', value:false },
             { answer:'Eliminar todo lo que no conduce al progreso y crecimiento de nuestro ser superior.', value:false },
             { answer:'Trazar una línea de fuerza hacia Tiferet para encontrar la belleza entre el mundo espiritual y material.', value:false },
         ]
@@ -238,7 +238,7 @@ export const quiz2:iQuestion[] = [
         answers:[
             { answer:'Tiempo.', value:false },
             { answer:'Equilibrio.', value:true },
-            { answer:'Complitud.', value:false },
+            { answer:'Completud.', value:false },
             { answer:'Pensamientos positivos.', value:false },
         ]
     }, {
@@ -314,7 +314,7 @@ export const quiz2:iQuestion[] = [
             { answer:'Encontramos las emociones que son afines a nuestro deseo de manifestación.', value:true },
         ]
     }, {
-        question: '40. ¿Cuál es la atributo más virtuoso de Netzach?', 
+        question: '40. ¿Cuál es atributo más virtuoso de Netzach?', 
         answers:[
             { answer:'Espiritualidad.', value:false },
             { answer:'El entendimiento.', value:false },
@@ -389,7 +389,7 @@ export const quiz2:iQuestion[] = [
         question: '49. ¿Cuál es el último paso en el camino de la manifestación?', 
         answers:[
             { answer:'Escuchar nuestra alma para recibir los últimos consejos.', value:false },
-            { answer:'Empezar el ciclo desde cero para manfestar una nueva idea o meta.', value:false },
+            { answer:'Empezar el ciclo desde cero para manifestar una nueva idea o meta.', value:false },
             { answer:'Realizar un sacrificio como muestra de nuestro compromiso y agradecimiento.', value:false },
             { answer:'Dar el tiempo necesario a nuestras emociones, pensamientos, deseos y acciones para que logren materializarse.', value:true },
         ]
