@@ -1,5 +1,5 @@
+import { posts1, posts2, posts3, posts4 } from './posts'
 import { iLesson } from '../../components/LayOut/Menu'
-import { posts1, posts2, posts3 } from './posts'
 import { quiz1 } from './quiz1'
 import { quiz2 } from './quiz2'
 
@@ -43,13 +43,17 @@ const nextDescription = [
     'Puedes solicitar más información sobre la comunidad en WhatsApp. Esperamos que además continues visitando el curso, haciendo preguntas, asistiendo a los lives y guiando a los nuevos alumnos.'
 ]
 
+const finalDescription = [
+    'El último ejercicio es sobre compartir y enseñar. Recuerda que somos el promedio de las 5 personas con las que más pasamos el tiempo, así que una de las formas más sencillas de crecer es junto a las personas que amamos.',
+]
+
 const lessons3:iLesson[] = [
     { type:'Reading', title:'Shabbat', link:'docs/Shabbath.pdf', min:3, description:description3 },
     { type:'Video', title:'Saturno y el COVID', link:'https://youtu.be/QnQr0FDW5gI' },
     { type:'Reflection', title:'Reflexión de la Era de Acuario', posts:posts3, description:postsDescription, numbered:true },
     { type:'Video', title:'Meditación', link:'https://youtu.be/BljfRq4j2uY' },
     { type:'Reading', title:'Siguientes Pasos', description:nextDescription },
-    { type:'Reflection', title:'Ejercicio Final', end:true, disabled:true },
+    { type:'Reflection', title:'Ejercicio Final', end:true, disabled:true, description:finalDescription, posts:posts4, numbered:true },
 ]
 
 
