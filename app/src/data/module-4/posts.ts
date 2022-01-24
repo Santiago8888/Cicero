@@ -5,7 +5,7 @@ export const posts1 = [
     '¿Quiénes son en tu vida las personas que te limitan positivamente?', 
     '¿Qué fue algo que sólo a partir de haberlo perdido lo valoraste?',
     '¿Cómo recuperaste algo que habías perdido por no haberlo apreciado?',
-    '¿Pará que tí qué es el alma?',
+    '¿Pará tí qué es el alma?',
     'Comparte una experiencia en la que tu madre te limitó o restringió para educarte:',
     '¿Como madre o padre, que restringes el día de hoy a tus hijos y porqué?',
     '¿En qué te limitas a ti mism@?',
@@ -15,7 +15,7 @@ export const posts1 = [
 export const posts2 = [
     '¿Si tuvieras que definir tu misión sucintamente, como la expresarías?',
     '¿Cómo explicarías a un@ amig@ o compañer@ de trabajo porque es importante tener una misión?',
-    '¿Cuál es el cambio principal que el curso de Saturno ha traido a tu vida?',
+    '¿Cuál es el cambio principal que el curso de Saturno ha traído a tu vida?',
     '¿Ya sabes en donde quieres brillar, que llevarás a la excelencia?',
     '¿Qué te ha enseñado el COVID a través de tanta limitación?',
     '¿Qué fue lo más valioso que aportaste al mundo durante el último año?',
@@ -32,8 +32,8 @@ export const posts3 = [
 
 export const posts4 = [
     'Reflexiona sobre los aspectos positivos que te ha dejado este curso.',
-    'Haz una pequeña lista de las personas cercanas a tí que también podrían beneficiarse de este conocimiento.',
+    'Haz una pequeña lista de las personas cercanas a ti que también podrían beneficiarse de este conocimiento.',
     'Elige a las personas que piensas tienen el deseo suficiente para recibir este curso.',
     'Solicita por WhatsApp un precio especial para tus invitados, te agradeceremos si también nos compartes como fue tu experiencia con el curso.',
-    'Acompaña a tus invitados conforme avancen con el curso, motivalos para seguir adelante y escucha sus aprendizajes.'
+    'Acompaña a tus invitados conforme avancen con el curso, motívalos para seguir adelante y escucha sus aprendizajes.'
 ]
