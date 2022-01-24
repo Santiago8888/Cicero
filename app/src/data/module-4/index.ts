@@ -28,19 +28,19 @@ const lessons2:iLesson[] = [
 
 
 const description3 = [
-    'Respetar el Shabbat es una de las prácticas más poderosas de la Kabbalah',
-    'Durante el Shabbat se estudia, descansa y disfruta con el propósito de elevar nuestra conciencia espiritual. Conoce más sobre la práctica del Shabbat en esta lectura.',
+    'Respetar el Shabbath es una de las prácticas más poderosas de la Kabbalah',
+    'Durante el Shabbath se estudia, descansa y disfruta con el propósito de elevar nuestra conciencia espiritual. Conoce más sobre la práctica del Shabbath en esta lectura.',
     'Tiempo mínimo sugerido: 3 minutos.'
 ]
 
 const postsDescription = [
-    `En está última reflexión sólo hay una pregunta, pero te invitamos a que le respondas detallada y con mucha consciencia considerando los 3 pilares de la era de Acuario: tecnología, ecología y humanismo:`,
+    `En esta última reflexión sólo hay una pregunta, pero te invitamos a que le respondas detallada y con mucha consciencia considerando los 3 pilares de la era de Acuario: tecnología, ecología y humanismo:`,
 ]
 
 const nextDescription = [
-    'Desafortunadamente el curso está por terminar pero sabemos que algunos de ustedes querrán continuar su camino de aprendizaje y despertar.',
+    'El curso está por terminar pero sabemos que algunos de ustedes querrán continuar su camino de aprendizaje y despertar.',
     'Para dar continuidad puedes unirte a la comunidad y recibir cada semana 2 episodios de podcast: uno el lunes explicando los tránsitos astrológicos de la semana y el segundo los Viernes revelando las enseñanzas de la porción semanal de la Torah.',
-    'Puedes solicitar más información sobre la comunidad en WhatsApp. Esperamos que además continues visitando el curso, haciendo preguntas, asistiendo a los lives y guiando a los nuevos alumnos.'
+    'Puedes solicitar más información sobre la comunidad en WhatsApp. Esperamos que además continúes visitando el curso, haciendo preguntas, asistiendo a los lives y guiando a los nuevos alumnos.'
 ]
 
 const finalDescription = [
@@ -48,7 +48,7 @@ const finalDescription = [
 ]
 
 const lessons3:iLesson[] = [
-    { type:'Reading', title:'Shabbat', link:'docs/Shabbath.pdf', min:3, description:description3 },
+    { type:'Reading', title:'Shabbath', link:'docs/Shabbath.pdf', min:3, description:description3 },
     { type:'Video', title:'Saturno y el COVID', link:'https://youtu.be/QnQr0FDW5gI' },
     { type:'Reflection', title:'Reflexión de la Era de Acuario', posts:posts3, description:postsDescription, numbered:true },
     { type:'Video', title:'Meditación', link:'https://youtu.be/BljfRq4j2uY' },
