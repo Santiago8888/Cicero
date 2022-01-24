@@ -67,7 +67,7 @@ const misionDescription = [
     'Tiempo mínimo sugerido: 5 minutos'
 ]
 
-const returnDescription = ['En está primer lección de Kabbalah, empezamos a ver como liberar el Karma desde una consciencia espiritual alineada a nuestro ser superior.']
+const returnDescription = ['En esta primer lección de Kabbalah, empezamos a ver como liberar el Karma desde una consciencia espiritual alineada a nuestro ser superior.']
 const excersiceDescription = ['¡Felicidades! Has completado el segundo módulo.', 'Ahora, continuaremos con el proceso de aplicar los aprendizajes a nuestra vida diaria e incrementar nuestra voluntad de servir:']
 const lessons3:iLesson[] = [
     { type:'Video', title:'Ser un buen ejemplo', link:'https://youtu.be/MjU_S2C_cqc' },
