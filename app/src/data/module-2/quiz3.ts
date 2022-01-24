@@ -228,7 +228,7 @@ export const quiz3:iQuestion[] = [
         question:'14. ¿Cómo debes tomar tus decisiones?', 
         answers:[
             { answer:'Fe.', value:true, sign:'Pis' },
-            { answer:'Sabiduria.', value:true, sign:'Aqu' },
+            { answer:'Sabiduría.', value:true, sign:'Aqu' },
             { answer:'Responsabilidad.', value:true, sign:'Cap' },
             { answer:'Con inteligencia.', value:true, sign:'Sco' },
             { answer:'Con un proposito.', value:true, sign:'Sag' },
