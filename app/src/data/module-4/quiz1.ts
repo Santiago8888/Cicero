@@ -29,7 +29,7 @@ export const quiz1:iQuestion[] = [
         question: '4. ¿Cómo nos ayuda la Kabbalah en nuestra vida?', 
         answers:[
             { answer:'Nos brinda respuestas.', value:true },
-            { answer:'Nos enserña a meditar.', value:false },
+            { answer:'Nos enseña a meditar.', value:false },
             { answer:'Manifiesta todo lo que deseamos.', value:false },
             { answer:'Ofrece prácticas y rituales para aprender a conectarnos.', value:false },
         ]
@@ -70,7 +70,7 @@ export const quiz1:iQuestion[] = [
         answers:[
             { answer:'Tener más valor.', value:false },
             { answer:'Pensar antes de actuar.', value:false },
-            { answer:'Tener más espiritú, más luz.', value:true },
+            { answer:'Tener más espíritu, más luz.', value:true },
             { answer:'Escuchar más y hablar menos.', value:false },
         ]
     }, {
@@ -109,7 +109,7 @@ export const quiz1:iQuestion[] = [
         question: '14. ¿Qué es el árbol de la vida?', 
         answers:[
             { answer:'Un esquema integrado en cada ser viviente.', value:true },
-            { answer:'El árbol del Genesis del que comieron Adán y Eva.', value:false },
+            { answer:'El árbol del Génesis del que comieron Adán y Eva.', value:false },
             { answer:'Un concepto utilizado para delimitar el bien del mal.', value:false },
             { answer:'La semilla presente en las 14 dimensiones de la creación.', value:false },
         ]
@@ -119,7 +119,7 @@ export const quiz1:iQuestion[] = [
             { answer:'Desde el corazón a cada latido que da.', value:false },
             { answer:'Del Sol y los otros astros, especialmente Saturno.', value:false },
             { answer:'De las emociones y pensamientos de nuestros maestros.', value:false },
-            { answer:'Desde la luz infinita, recibimos gradualmente lo que podemos contenter y sostener.', value:true },
+            { answer:'Desde la luz infinita, recibimos gradualmente lo que podemos contener y sostener.', value:true },
         ]
     }, {
         question: '16. ¿De dónde provienen las limitaciones que nos impiden recibir más luz?', 
@@ -132,7 +132,7 @@ export const quiz1:iQuestion[] = [
     }, {
         question: '17. ¿Qué nos ayuda a recibir más luz cada semana?', 
         answers:[
-            { answer:'Empezar la semana en Domingo.', value:false },
+            { answer:'Empezar la semana en domingo.', value:false },
             { answer:'Lamentarse de todas nuestras limitaciones.', value:false },
             { answer:'Buscar la salida fácil de nuestros problemas.', value:false },
             { answer:'Alinearnos con el evento cósmico que nos indica que tipo de luz podemos recibir esa semana.', value:true },
@@ -176,23 +176,23 @@ export const quiz1:iQuestion[] = [
             { answer:'Utilizando la alquimia y el poder de la transmutación.', value:false },
             { answer:'Valorando y agradeciendo lo que si tenemos el día de hoy.', value:false },
             { answer:'Renunciando a lo que deseamos y entregando nuestro tiempo y servicio a los demás.', value:false },
-            { answer:'Conectando nuestro deseo de recibir con nuestros pensamiento y emociones para empezar a manifestar en el mundo astral.', value:true },
+            { answer:'Conectando nuestro deseo de recibir con nuestros pensamientos y emociones para empezar a manifestar en el mundo astral.', value:true },
         ]
     }, {
         question: '23. ¿Qué es la maduración del deseo?', 
         answers:[
-            { answer:'Buscar el lado buendo de las cosas.', value:false },
+            { answer:'Buscar el lado bueno de las cosas.', value:false },
             { answer:'Cuando estamos para que nuestros deseos se vuelvan realidad.', value:false },
             { answer:'Pasar de desear cosas para uno mismo para comenzar a desear para los demás.', value:true },
-            { answer:'Dar el tiempo, energia y visualización a cada deseo para que se materialize.', value:false },
+            { answer:'Dar el tiempo, energía y visualización a cada deseo para que se materialice.', value:false },
         ]
     }, {
         question: '24. ¿Cómo se desarrolla nuestro poder creador?', 
         answers:[
             { answer:'Utilizando palabras y enunciados mágicos.', value:false },
             { answer:'Ahorrando hasta que podamos comprar todo lo que queramos.', value:false },
-            { answer:'Uniendonos a otras personas que también buscan desarrollar su poder creador.', value:false },
-            { answer:'Al querer algo, enfocarnos, concetranos, visualizar y accionar hasta que obtengamos nuestro deseo. ', value:true },
+            { answer:'Uniéndonos a otras personas que también buscan desarrollar su poder creador.', value:false },
+            { answer:'Al querer algo, enfocarnos, concentramos, visualizar y accionar hasta que obtengamos nuestro deseo. ', value:true },
         ]
     }, {
         question: '25. ¿Por qué aquello que creamos cambia?', 
@@ -208,7 +208,7 @@ export const quiz1:iQuestion[] = [
             { answer:'A través del celular, las redes sociales, vídeos y mucha información.', value:false },
             { answer:'Con las emociones que experimentamos día a día, sobre todo las positivas.', value:false },
             { answer:'En la medida que la alimentemos de comida saludable y nos hidratemos frecuentemente.', value:false },
-            { answer:'A traves de muchas vidas en las que practicamos nuestro poder creador y compartimos cada vez más.', value:true },
+            { answer:'A través de muchas vidas en las que practicamos nuestro poder creador y compartimos cada vez más.', value:true },
         ]
     }, {
         question: '27. ¿Cuál es un gran ejemplo de compartir, de recibir para otros?', 
@@ -224,7 +224,7 @@ export const quiz1:iQuestion[] = [
             { answer:'Me quedo con menos, por lo que acabo de dar.', value:false },
             { answer:'Recibo más porque los demás también me comparten.', value:false },
             { answer:'Tengo que trabajar el doble para poder tener para mí y para los demás.', value:false },
-            { answer:'Mi vida cambia completamente de proposito, se convierte en amor, y mi alma se regocija.', value:true },
+            { answer:'Mi vida cambia completamente de propósito, se convierte en amor, y mi alma se regocija.', value:true },
         ]
     }, {
         question: '29. ¿Qué es el despertar?', 
@@ -239,7 +239,7 @@ export const quiz1:iQuestion[] = [
         answers:[
             { answer:'¿Quién creo esto?', value:false },
             { answer: '¿Qué o quién es Dios?', value:false },
-            { answer: '¿Quén hizo el universo?', value:false },
+            { answer: '¿Quién hizo el universo?', value:false },
             { answer:'¿Qué pasará en el futuro?', value:true },
         ]
     }, {
@@ -247,14 +247,14 @@ export const quiz1:iQuestion[] = [
         answers:[
             { answer:'¡Al despertar!', value:true },
             { answer:'Todo el tiempo.', value:false },
-            { answer:'Durante el Shabbat.', value:false },
+            { answer:'Durante el Shabbath.', value:false },
             { answer:'En el año nuevo astrológico, durante el mes de Aries.', value:false },
         ]
     }, {
         question: '32. ¿Qué nos explica la Kabbalah?', 
         answers:[
             { answer:'Cómo encontrar la abundancia material.', value:false },
-            { answer:'La historia de Moises y otros profetas.', value:false },
+            { answer:'La historia de Moisés y otros profetas.', value:false },
             { answer:'El control de las emociones y pensamientos.', value:false },
             { answer:'Cómo otros fueron encontrando el camino que les fue dando respuestas.', value:true },
         ]
@@ -270,8 +270,8 @@ export const quiz1:iQuestion[] = [
         question: '34. ¿Porqué las cosas parecen equivocadas, incorrectas o malas?', 
         answers:[
             { answer:'Para valorar que siempre podemos estar peor.', value:false },
-            { answer:'Es nuestra naturaleza parte del proceso para alcanzar la sabiduria.', value:true },
-            { answer:'Porque en este mundo hay mucha maldad, escacez, limitación y egoismo.', value:false },
+            { answer:'Es nuestra naturaleza parte del proceso para alcanzar la sabiduría.', value:true },
+            { answer:'Porque en este mundo hay mucha maldad, escasez, limitación y egoísmo.', value:false },
             { answer:'Porque realmente lo son y es nuestra responsabilidad cambiarlas y mejorarlas.', value:false },
         ]
     }, {
@@ -288,7 +288,7 @@ export const quiz1:iQuestion[] = [
             { answer:'Siempre estamos conectados a mundos superiores.', value:false },
             { answer:'Con rituales místicos incluyendo velas e invocaciones.', value:false },
             { answer:'A partir del regocijo del alma y las experiencias alineadas al propósito que adquirimos en esta vida. ', value:true },
-            { answer:'Esperando la correcta alineación de los planetas, por ejemplo cuando la Luna es nueva o está en Cancer.', value:false },
+            { answer:'Esperando la correcta alineación de los planetas, por ejemplo cuando la Luna es nueva o está en Cáncer.', value:false },
         ]
     }, {
         question: '37. ¿Para qué nos sirve el Árbol de la vida?', 
@@ -296,7 +296,7 @@ export const quiz1:iQuestion[] = [
             { answer:'Entender la diferencia entre el bien y el mal.', value:false },
             { answer:'Asociar un planeta a cada esfera del árbol de la vida.', value:false },
             { answer:'Sembrar las semillas de nuestra realidad en el plano astral.', value:false },
-            { answer:'Para ir paso a paso manifestando cada día más y alcanzar esferas superiores como la Sabiduria.', value:true },
+            { answer:'Para ir paso a paso manifestando cada día más y alcanzar esferas superiores como la Sabiduría.', value:true },
         ]
     }, {
         question: '38. ¿Qué nos toca manifestar en esta vida?', 
@@ -311,7 +311,7 @@ export const quiz1:iQuestion[] = [
         answers:[
             { answer:'Amor.', value:true },
             { answer:'Salud.', value:false },
-            { answer:'Energia.', value:false },
+            { answer:'Energía.', value:false },
             { answer:'No requiere alimento.', value:false },
         ]
     }, {
