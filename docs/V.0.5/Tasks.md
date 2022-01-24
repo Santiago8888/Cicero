@@ -6,7 +6,7 @@
 - [ ] Quizzes (2).
 - [X] Lectures
     - [X] The Key of Creation.
-    - [X] Saturn & the Shabbat.
+    - [X] Saturn & the Shabbath.
 - [ ] Sharing excercises (3).
 - [ ] Next Steps.
 
