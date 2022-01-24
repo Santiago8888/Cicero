@@ -90,7 +90,7 @@ Tal vez, queremos ofrecer un buen servicio y por lo tanto es posible que limitem
 Las lecturas podrás descargarlas, los vídeos y lives estarán al aire por lo menos durante un año y la plataforma durante 6 meses. En el futuro, abriremos nuevas comunidades (temporales y permanentes) para que puedas continuar en contact
 
 * ¿Qué formas de pago aceptan?
-En está págino aceptamos PayPal y tarjetas de crédito y débito. Si estás en México puedes también hacer una transferencia bancaria: por favor, ponte en contacto para obtener el número de cuenta.
+En esta págino aceptamos PayPal y tarjetas de crédito y débito. Si estás en México puedes también hacer una transferencia bancaria: por favor, ponte en contacto para obtener el número de cuenta.
 
 * ¿Ofrecen becas?
 Si, tenemos becas para estudiantes y otras circustanciales. Por favor envía un correo explicando tus circustancias y como podrías aportar a la comunidad, con gusto consideraremos tu petición.

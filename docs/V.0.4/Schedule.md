@@ -16,9 +16,9 @@
 
 ## Tuesday
 * [X] Quiz 3.2 (finalize).
-* [ ] Chart debugging.
-* [ ] Test Chart
-* [ ] Quiz 3.3
+* [X] Chart debugging.
+* [X] Test Chart
+* [X] Quiz 3.3
 
 ## Wednesday
 * [X] Readings.
@@ -26,11 +26,11 @@
 * [X] Dynamic house logic. 
 
 ## Thursday
-* [ ] Redirect on chat.
-* [ ] Doubt to finalize module.
+* [X] Redirect on chat.
+* [X] Doubt to finalize module.
 * [X] Last reading the Wisdom of Saturn.
 * [ ] Last questions on second reading from Module 2. 
 * [ ] Limit posts to last 100.
 * [ ] Avoid empty posts
-* [ ] Testing
-* [ ] Deploy
+* [X] Testing
+* [X] Deploy

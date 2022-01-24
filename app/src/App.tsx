@@ -177,7 +177,7 @@ export const App = () => {
         } else if (item === 'Posts') {   
             setHomeData({...homeData, forum:undefined, recordings:undefined, posts})
 
-            const fetchedPosts = await db.collection('posts').find({})
+            const fetchedPosts = await db.collection('posts').find({}, {limit:100, sort:{_id:-1}})
             setPosts(fetchedPosts.sort(() => -1))
             return setHomeData({...homeData, forum:undefined, recordings:undefined, posts:fetchedPosts})
         }
@@ -347,7 +347,7 @@ export const App = () => {
         if(!homeData.posts) setHomeData({...homeData, posts:[]}) 
 
         db.collection('posts').insertOne(newPost)
-        const newPosts = await db.collection('posts').find({})
+        const newPosts = await db.collection('posts').find({}, {limit:100, sort:{_id:-1}})
         const sortedPosts = newPosts.sort(() => -1)
  
         setPosts(sortedPosts)

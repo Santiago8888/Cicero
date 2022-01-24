@@ -54,7 +54,7 @@ export const Document = ({ user, title, link='', description, min, next, approve
 
         <div style={{ width:midScreen ? 800 : 280, margin:midScreen ? '3rem auto' : '1.5rem auto'}}>
             {
-                !isCounting
+                !isCounting && link
                 ?
                     <a 
                         onClick={initCountdown}

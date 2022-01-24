@@ -52,7 +52,7 @@ const lessons3:iLesson[] = [
     { type:'Quiz', title:'Quiz 3.3', questions:quiz3 },
     { type:'Reading', title:'La Sabiduría de Saturno', link:'docs/La-Sabiduría-de-Saturno.pdf', description:reading3Description, min:8 },
     { type:'Video', title:'Saturno y la Salud', link:'https://youtu.be/zenrgnOxS1A' },
-    { type:'Reflection', title:'Ejercicio Práctico', posts:posts3, end:true, description:excersiceDescription, numbered:true, disabled:true }
+    { type:'Reflection', title:'Ejercicio Práctico', posts:posts3, end:true, description:excersiceDescription, numbered:true }
 ]
 
 export const module3 = [
