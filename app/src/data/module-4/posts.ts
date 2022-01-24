@@ -29,3 +29,11 @@ export const posts2 = [
 export const posts3 = [
     '¿Qué cambios imaginas para la humanidad en la era de Acuario y cómo contribuirás a liderarlos?'
 ]
+
+export const posts4 = [
+    'Reflexiona sobre los aspectos positivos que te ha dejado este curso.',
+    'Haz una pequeña lista de las personas cercanas a tí que también podrían beneficiarse de este conocimiento.',
+    'Elige a las personas que piensas tienen el deseo suficiente para recibir este curso.',
+    'Solicita por WhatsApp un precio especial para tus invitados, te agradeceremos si también nos compartes como fue tu experiencia con el curso.',
+    'Acompaña a tus invitados conforme avancen con el curso, motivalos para seguir adelante y escucha sus aprendizajes.'
+]
