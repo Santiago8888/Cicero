@@ -1,7 +1,7 @@
 import { iPlanet } from '../app/src/components/Astral/AstralChart'
 import { App as RealmApp, Credentials } from 'realm-web'
-import users from './data/users.json'
 import { iUser } from '../app/src/App' 
+import users from './data/users.json'
 import { getHouse } from './house'
 import axios from 'axios'
 
@@ -92,3 +92,4 @@ const update = async(idx:number) => {
 
 
 // update(0)
+updateUser('')
