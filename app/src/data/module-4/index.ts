@@ -52,7 +52,7 @@ const lessons3:iLesson[] = [
     { type:'Video', title:'Saturno y el COVID', link:'https://youtu.be/QnQr0FDW5gI' },
     { type:'Reflection', title:'Reflexión de la Era de Acuario', posts:posts3, description:postsDescription, numbered:true },
     { type:'Video', title:'Meditación', link:'https://youtu.be/BljfRq4j2uY' },
-    { type:'Reading', title:'Siguientes Pasos', description:nextDescription },
+    { type:'Reading', title:'Siguientes Pasos', description:nextDescription, min:0 },
     { type:'Reflection', title:'Ejercicio Final', end:true, disabled:true, description:finalDescription, posts:posts4, numbered:true },
 ]
 
