@@ -23,7 +23,6 @@ import './App.css'
 export interface iNatalChart { planets:iPlanet[], houses:number[] }
 export type Sign = 'Ari' | 'Tau' | 'Gem' | 'Can' | 'Leo' | 'Vir' | 'Lib' | 'Sco' | 'Sag' | 'Cap' | 'Aqu' | 'Pis' 
 export interface iUser { 
-    date:Date
     sign?:Sign
     name:string
     email:string
@@ -177,7 +176,7 @@ export const App = () => {
         } else if (item === 'Posts') {   
             setHomeData({...homeData, forum:undefined, recordings:undefined, posts})
 
-            const fetchedPosts = await db.collection('posts').find({}, {limit:100, sort:{_id:-1}})
+            const fetchedPosts = await db.collection('posts').find({})
             setPosts(fetchedPosts.sort(() => -1))
             return setHomeData({...homeData, forum:undefined, recordings:undefined, posts:fetchedPosts})
         }
@@ -347,7 +346,7 @@ export const App = () => {
         if(!homeData.posts) setHomeData({...homeData, posts:[]}) 
 
         db.collection('posts').insertOne(newPost)
-        const newPosts = await db.collection('posts').find({}, {limit:100, sort:{_id:-1}})
+        const newPosts = await db.collection('posts').find({})
         const sortedPosts = newPosts.sort(() => -1)
  
         setPosts(sortedPosts)
