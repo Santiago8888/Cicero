@@ -81,11 +81,11 @@ export const Document = ({ user, title, link='', description, min, next, approve
                             fontWeight:600, 
                             backgroundColor:'saddlebrown'
                         }}
-                        disabled={
+                        disabled={!!link && (
                             user.current.module === user.progress.module 
                             && user.progress.unit === user.current.unit
                             && user.progress.lesson === user.current.lesson
-                        }
+                        )}
                     > CONTINUAR </button>
             }
         </div>
