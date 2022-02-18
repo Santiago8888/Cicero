@@ -5,43 +5,20 @@ interface iRecording { title:string, link:string, description:string }
 const Recording = ({ title, link, description }: iRecording) => {
     const midScreen = useMediaQuery({ query: '(min-width: 900px)' })
 
-    return <div style={{width:midScreen ? 800 : 'auto', textAlign:'left', margin:'auto', marginBottom:'2.5em'}}>
+    return <div style={{width:midScreen ? 800 : 'auto', textAlign:'center', margin:'auto', marginBottom:'2.5em'}}>
         <p 
             style={{
                 color:'saddlebrown', 
                 fontSize:'1.25rem', 
                 fontWeight:600, 
                 marginBottom:'0.75rem', 
-                textAlign: midScreen ? 'initial' : 'center'
+                textAlign: 'center'
             }}
         > { title } </p>
 
-        <article className='media' style={{marginBottom:0}}>
-            <ReactPlayer controls url={link} width={300} height={200} style={midScreen ? {} : {margin:'auto'}} />
-
-            {
-                midScreen && 
-                <div 
-                    className='media-content' 
-                    style={{paddingBottom:'0.5rem', paddingRight:'1rem', marginLeft:'1rem', width:400}}
-                >
-                    <div className='content'>
-                        <div className='content' style={{color:'#363636', marginTop:'1rem'}}> 
-                            { description } 
-                        </div>
-                    </div>
-                </div>
-            }
-        </article>
-
-        {
-            !midScreen && 
-            <div className='content' style={{marginBottom:'2rem', maxWidth:400}}>
-                <div className='content' style={{color:'gray', marginTop:'1rem'}}> 
-                    { description } 
-                </div>
-            </div>
-        }
+        <div style={{marginBottom:0}}>
+            <ReactPlayer controls url={link} width={300} height={200} style={{margin:'auto'}} />
+        </div>
     </div>
 }
 
